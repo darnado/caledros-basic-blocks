@@ -4,8 +4,8 @@
   "name": "caledros-basic-blocks/image-gallery",
   "title": "Image Gallery",
   "category": "caledros-basic-blocks",
-  "icon": "star",
-  "description": "A simple image gallery.",
+  "icon": "block-default",
+  "description": "A lightweight gallery block for displaying multiple images in a clean layout.",
   "keywords": [
     "gallery",
     "slider"

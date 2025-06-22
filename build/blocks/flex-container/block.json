@@ -4,8 +4,8 @@
   "name": "caledros-basic-blocks/flex-container",
   "title": "Flex Container",
   "category": "caledros-basic-blocks",
-  "icon": "star",
-  "description": "A versatile block for creating responsive, flexbox layouts.",
+  "icon": "block-default",
+  "description": "A responsive container using flexbox layout, perfect for arranging elements horizontally or vertically.",
   "keywords": [
     "container, wrapper"
   ],

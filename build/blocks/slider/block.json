@@ -4,8 +4,8 @@
   "name": "caledros-basic-blocks/links-slider",
   "title": "Slider",
   "category": "caledros-basic-blocks",
-  "icon": "star",
-  "description": "A customizable slider for template parts.",
+  "icon": "block-default",
+  "description": "A customizable slider block for showcasing template parts containing featured content.",
   "keywords": [
     "slider"
   ],

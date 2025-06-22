@@ -4,8 +4,8 @@
   "name": "caledros-basic-blocks/menu-link",
   "title": "Menu Link",
   "category": "caledros-basic-blocks",
-  "icon": "star",
-  "description": "A customizable, clickable link for the navigation menu.",
+  "icon": "block-default",
+  "description": "A navigation menu link with customizable label, style, and destination.",
   "keywords": [
     "menu"
   ],

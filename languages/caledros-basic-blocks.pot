@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Caledros Basic Blocks 1.0.0\n"
+"Project-Id-Version: Caledros Basic Blocks 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/caledros-basic-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-08T01:45:08+00:00\n"
+"POT-Creation-Date: 2025-06-16T02:06:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: caledros-basic-blocks\n"
@@ -2336,7 +2336,7 @@ msgstr ""
 #: build/blocks/button/block.json
 #: src/blocks/button/block.json
 msgctxt "block description"
-msgid "A button with different colors for the light and dark mode."
+msgid "A customizable button with different colors for the light and dark modes."
 msgstr ""
 
 #: build/blocks/button/block.json
@@ -2348,13 +2348,13 @@ msgstr ""
 #: build/blocks/category-loop/block.json
 #: src/blocks/category-loop/block.json
 msgctxt "block title"
-msgid "Category loop"
+msgid "Category Loop"
 msgstr ""
 
 #: build/blocks/category-loop/block.json
 #: src/blocks/category-loop/block.json
 msgctxt "block description"
-msgid "A block to show the published categories of the website."
+msgid "A block that displays a list of published categories from the website."
 msgstr ""
 
 #: build/blocks/category-loop/block.json
@@ -2386,7 +2386,7 @@ msgstr ""
 #: build/blocks/content-renderer/block.json
 #: src/blocks/content-renderer/block.json
 msgctxt "block description"
-msgid "Displays the content of the post or page. Unlike the default content block, this block does not add a wrapper."
+msgid "Displays post or page content without adding any wrapper elements. Ideal for custom layouts."
 msgstr ""
 
 #: build/blocks/dark-light-mode-switcher/block.json
@@ -2398,7 +2398,7 @@ msgstr ""
 #: build/blocks/dark-light-mode-switcher/block.json
 #: src/blocks/dark-light-mode-switcher/block.json
 msgctxt "block description"
-msgid "Allows switching between the dark and light modes. The toggle only works in the frontend."
+msgid "A frontend-only toggle that allows users to switch between dark and light themes. It should only be used once in the website's header."
 msgstr ""
 
 #: build/blocks/dark-light-mode-switcher/block.json
@@ -2422,7 +2422,7 @@ msgstr ""
 #: build/blocks/desktop-menu-container/block.json
 #: src/blocks/desktop-menu-container/block.json
 msgctxt "block description"
-msgid "Flexbox container for the desktop navigation menu. This block can only be used once."
+msgid "A flexbox container optimized for desktop navigation menus. It should only be used once in the website's header."
 msgstr ""
 
 #: build/blocks/desktop-menu-container/block.json
@@ -2446,7 +2446,7 @@ msgstr ""
 #: build/blocks/flex-container/block.json
 #: src/blocks/flex-container/block.json
 msgctxt "block description"
-msgid "A versatile block for creating responsive, flexbox layouts."
+msgid "A responsive container using flexbox layout, perfect for arranging elements horizontally or vertically."
 msgstr ""
 
 #: build/blocks/grid-container/block.json
@@ -2458,7 +2458,7 @@ msgstr ""
 #: build/blocks/grid-container/block.json
 #: src/blocks/grid-container/block.json
 msgctxt "block description"
-msgid "A flexible layout block that organizes content into responsive, customizable grid columns."
+msgid "A responsive layout block that organizes content into adjustable, customizable grid columns."
 msgstr ""
 
 #: build/blocks/icon/block.json
@@ -2488,7 +2488,7 @@ msgstr ""
 #: build/blocks/image-gallery/block.json
 #: src/blocks/image-gallery/block.json
 msgctxt "block description"
-msgid "A simple image gallery."
+msgid "A lightweight gallery block for displaying multiple images in a clean layout."
 msgstr ""
 
 #: build/blocks/image-gallery/block.json
@@ -2514,7 +2514,7 @@ msgstr ""
 #: build/blocks/menu-link/block.json
 #: src/blocks/menu-link/block.json
 msgctxt "block description"
-msgid "A customizable, clickable link for the navigation menu."
+msgid "A navigation menu link with customizable label, style, and destination."
 msgstr ""
 
 #: build/blocks/menu-link/block.json
@@ -2552,19 +2552,19 @@ msgstr ""
 #: build/blocks/mobile-menu-container/block.json
 #: src/blocks/mobile-menu-container/block.json
 msgctxt "block description"
-msgid "Flexbox container for the mobile navigation menu. This block can only be used once."
+msgid "A flexbox container designed for mobile navigation menus. It should only be used once in the website's header."
 msgstr ""
 
 #: build/blocks/posts-loop/block.json
 #: src/blocks/posts-loop/block.json
 msgctxt "block title"
-msgid "Posts loop"
+msgid "Posts Loop"
 msgstr ""
 
 #: build/blocks/posts-loop/block.json
 #: src/blocks/posts-loop/block.json
 msgctxt "block description"
-msgid "A block to show the published posts of the website."
+msgid "A block that dynamically displays a list of published posts from the website."
 msgstr ""
 
 #: build/blocks/responsive-image/block.json
@@ -2576,7 +2576,7 @@ msgstr ""
 #: build/blocks/responsive-image/block.json
 #: src/blocks/responsive-image/block.json
 msgctxt "block description"
-msgid "A block for adding fully responsive images with customizable settings and features."
+msgid "A block for inserting images that automatically adjust to different screen sizes with configurable settings."
 msgstr ""
 
 #: build/blocks/responsive-image/block.json
@@ -2594,7 +2594,7 @@ msgstr ""
 #: build/blocks/search-form/block.json
 #: src/blocks/search-form/block.json
 msgctxt "block description"
-msgid "A simple search form."
+msgid "A simple, accessible search form for site-wide content searches."
 msgstr ""
 
 #: build/blocks/search-form/block.json
@@ -2616,7 +2616,7 @@ msgstr ""
 #: build/blocks/sidebar-menu/block.json
 #: src/blocks/sidebar-menu/block.json
 msgctxt "block description"
-msgid "A customizable sidebar menu."
+msgid "A flexible, customizable sidebar menu for easy navigation. It should only be used once in the website's header."
 msgstr ""
 
 #: build/blocks/sidebar-menu/block.json
@@ -2634,7 +2634,7 @@ msgstr ""
 #: build/blocks/slider/block.json
 #: src/blocks/slider/block.json
 msgctxt "block description"
-msgid "A customizable slider for template parts."
+msgid "A customizable slider block for showcasing template parts containing featured content."
 msgstr ""
 
 #: build/blocks/social-icon/block.json
@@ -2646,7 +2646,7 @@ msgstr ""
 #: build/blocks/social-icon/block.json
 #: src/blocks/social-icon/block.json
 msgctxt "block description"
-msgid "Icon representing a social media platform"
+msgid "A single icon representing a social media platform, intended for individual use or custom layouts."
 msgstr ""
 
 #: build/blocks/social-icons-group/block.json
@@ -2658,5 +2658,5 @@ msgstr ""
 #: build/blocks/social-icons-group/block.json
 #: src/blocks/social-icons-group/block.json
 msgctxt "block description"
-msgid "A collection of social media icons"
+msgid "A group of social media icons, ideal for linking to external platforms."
 msgstr ""

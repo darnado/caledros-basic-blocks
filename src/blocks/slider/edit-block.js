@@ -47,6 +47,7 @@ import NavigationArrowsSettings from "./settings/navigation-arrows-settings";
 import EffectSettings from "./settings/effect-settings";
 import MinHeightSettings from "./settings/min-height-settings";
 import WidthSettings from "./settings/width-settings";
+import apiFetch from "@wordpress/api-fetch";
 
 export default function EditBlock({ attributes, setAttributes }) {
   // Block attributes
@@ -98,8 +99,9 @@ export default function EditBlock({ attributes, setAttributes }) {
   useEffect(() => {
     cardSlugs.forEach(({ key, slug }) => {
       if (slug) {
-        fetch(`/wp-json/caledros-basic-blocks/v1/template-part/${slug}`)
-          .then((response) => response.json())
+        apiFetch({
+          path: `/caledros-basic-blocks/v1/template-part/${slug}`,
+        })
           .then((part) => {
             if (part) {
               setCardContents((prevContents) => ({
@@ -108,9 +110,18 @@ export default function EditBlock({ attributes, setAttributes }) {
               }));
             }
           })
-          .catch((error) =>
-            console.error(`Error loading template part for ${slug}:`, error)
-          );
+          .catch((error) => {
+            console.error(
+              `Template part for slug '${slug}' failed to load. ${error}`
+            );
+            setCardContents((prevContents) => ({
+              ...prevContents,
+              [key]: `
+              <div style="height:100%;display: flex; flex-direction: column; justify-content: center; align-items: center; background-color:#2291BD">
+                <p style="color:#fff; font-size:25px">Unable to load content for ${slug}</p>
+              </div>`,
+            }));
+          });
       }
     });
   }, [
@@ -308,8 +319,9 @@ export default function EditBlock({ attributes, setAttributes }) {
             <SwiperSlide key={key}>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: cardContents[key] || `Slide ${index + 1}`,
+                  __html: cardContents[key],
                 }}
+                style={{ height: "100%" }}
               />
             </SwiperSlide>
           ))}

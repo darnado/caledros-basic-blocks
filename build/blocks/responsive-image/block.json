@@ -4,8 +4,8 @@
   "name": "caledros-basic-blocks/responsive-image",
   "title": "Responsive Image",
   "category": "caledros-basic-blocks",
-  "icon": "star",
-  "description": "A block for adding fully responsive images with customizable settings and features.",
+  "icon": "block-default",
+  "description": "A block for inserting images that automatically adjust to different screen sizes with configurable settings.",
   "keywords": [
     "image, responsive"
   ],

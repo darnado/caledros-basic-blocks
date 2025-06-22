@@ -4,8 +4,8 @@
   "name": "caledros-basic-blocks/button",
   "title": "Button",
   "category": "caledros-basic-blocks",
-  "icon": "star",
-  "description": "A button with different colors for the light and dark mode.",
+  "icon": "block-default",
+  "description": "A customizable button with different colors for the light and dark modes.",
   "keywords": [
     "button"
   ],

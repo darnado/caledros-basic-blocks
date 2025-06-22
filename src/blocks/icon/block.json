@@ -4,7 +4,7 @@
   "name": "caledros-basic-blocks/icon",
   "title": "Icon",
   "category": "caledros-basic-blocks",
-  "icon": "smiley",
+  "icon": "block-default",
   "description": "A collection of simple icons.",
   "keywords": ["icon"],
   "version": "1.0",

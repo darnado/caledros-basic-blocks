@@ -4,8 +4,8 @@
   "name": "caledros-basic-blocks/sidebar-menu",
   "title": "Sidebar Menu",
   "category": "caledros-basic-blocks",
-  "icon": "star",
-  "description": "A customizable sidebar menu.",
+  "icon": "block-default",
+  "description": "A flexible, customizable sidebar menu for easy navigation. It should only be used once in the website's header.",
   "keywords": [
     "sidebar",
     "menu"

@@ -4,8 +4,8 @@
   "name": "caledros-basic-blocks/social-icons-group",
   "title": "Social Icons Group",
   "category": "caledros-basic-blocks",
-  "icon": "smiley",
-  "description": "A collection of social media icons",
+  "icon": "block-default",
+  "description": "A group of social media icons, ideal for linking to external platforms.",
   "keywords": [
     "menu",
     "link"
