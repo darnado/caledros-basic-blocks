@@ -1,0 +1,126 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*Mobile menu container*/
+.cbb-mobile-menu-container {
+  display: flex;
+  background-size: cover;
+  background-blend-mode: overlay;
+  flex-direction: row;
+  transition:
+    height 0.2s,
+    background-color 0.3s;
+  height: var(--cbb-mm-height, 30px);
+  position: var(--cbb-dm-position, relative);
+  z-index: 900;
+}
+
+/*Ensure direct child elements do not overflow the parent container */
+.cbb-mobile-menu-container > * {
+  height: 100%;
+}
+
+/*Mobile menu container with background color*/
+.cbb-mobile-menu-container--has-bg-color {
+  background-color: var(--cbb-mm-light-bg-color, #00000000);
+}
+
+/*Mobile menu container with box shadow*/
+.cbb-mobile-menu-container--has-box-shadow {
+  box-shadow: var(--cbb-mm-light-box-shadow, none);
+}
+
+/*Mobile menu container with border*/
+.cbb-mobile-menu-container--has-border {
+  border-color: var(--cbb-mm-light-border-color, #00000000);
+}
+
+/*Mobile menu container with background image*/
+.cbb-mobile-menu-container--has-bg-gradient {
+  background-image: var(--cbb-mm-light-bg-gradient, none);
+}
+
+/*Sticky desktop navigation*/
+.cbb-mobile-menu-container--sticky {
+  position: fixed;
+  z-index: 900;
+  transition:
+    height 0.2s,
+    background-color 0.3s;
+}
+
+/*Spacer for the sticky navigation*/
+.cbb-mobile-menu-container__spacer-bottom {
+  margin-bottom: var(--cbb-spacer-bottom, 0px);
+}
+
+/*Sticky navigation enabled*/
+.cbb-mobile-menu-container--sticking-enabled {
+  height: var(--cbb-mm-sticky-height, 30px);
+  transition: all 0.5s;
+  background-color: var(--cbb-mm-sticky-light-bg-color, #00000000);
+}
+
+/*Fix for the editor admin bar*/
+@media (max-width: 600px) {
+  body.logged-in .cbb-mobile-menu-container--sticking-enabled {
+    top: 0px;
+  }
+}
+
+/*BLOCK VISIBILITY*/
+/*Hide mobile menu container in large devices with cursors*/
+@media (min-width: 811px) and (hover: hover) {
+  .cbb-mobile-menu-container {
+    display: none;
+  }
+  .cbb-mobile-menu-container__spacer-bottom {
+    display: none;
+  }
+  .cbb-mobile-menu-container__watcher {
+    display: none;
+  }
+}
+
+/*DARK MODE*/
+/*Mobile menu container with background color*/
+html[data-theme="dark"] .cbb-mobile-menu-container--has-bg-color {
+  background-color: var(--cbb-mm-dark-bg-color, #00000000);
+}
+
+/*Mobile menu container with box shadow*/
+html[data-theme="dark"] .cbb-mobile-menu-container--has-box-shadow {
+  box-shadow: var(--cbb-mm-dark-box-shadow, none);
+}
+
+/*Mobile menu container with border*/
+html[data-theme="dark"] .cbb-mobile-menu-container--has-border {
+  border-color: var(--cbb-mm-dark-border-color, #00000000);
+}
+
+/*Sticky navigation enabled*/
+html[data-theme="dark"] .cbb-mobile-menu-container--sticking-enabled {
+  background-color: var(--cbb-mm-sticky-dark-bg-color, #00000000);
+}
+
+/*Mobile menu container with background image*/
+html[data-theme="dark"] .cbb-mobile-menu-container--has-bg-gradient {
+  background-image: var(--cbb-mm-dark-bg-gradient, none);
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/posts-loop",
+  "title": "Posts loop",
+  "category": "caledros-basic-blocks",
+  "icon": "star",
+  "description": "A block to show the published posts of the website.",
+  "keywords": ["posts", "loop"],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "pageType": {
+      "type": "string",
+      "default": "regular-page"
+    },
+    "showNavigationLinks": {
+      "type": "boolean",
+      "default": false
+    },
+    "numberOfItems": {
+      "type": "number",
+      "default": 4
+    },
+    "orderType": {
+      "type": "string",
+      "default": "date"
+    },
+    "sortOrder": {
+      "type": "string",
+      "default": "desc"
+    },
+    "dateOptions": {
+      "type": "object",
+      "default": {
+        "showDate": true,
+        "dateFormat": "DD/MM/YYYY"
+      }
+    },
+    "showAuthor": {
+      "type": "boolean",
+      "default": false
+    },
+    "showCategory": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTags": {
+      "type": "boolean",
+      "default": true
+    },
+    "excerptOptions": {
+      "type": "object",
+      "default": {
+        "showExcerpt": false,
+        "excerptLength": 20,
+        "showEllipsis": false
+      }
+    },
+    "categoryFilter": {
+      "type": "object",
+      "default": {
+        "enable": false,
+        "categoryId": 1
+      }
+    },
+    "postsLoopTitle": {
+      "type": "string",
+      "default": "Website Title"
+    },
+    "postsLoopTitleIcon": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "alt": "",
+        "url": ""
+      }
+    },
+    "showDemoData": {
+      "type": "boolean",
+      "default": false
+    },
+    "tagFilter": {
+      "type": "object",
+      "default": {
+        "enable": false,
+        "tagId": ""
+      }
+    }
+  },
+  "supports": {
+    "className": false,
+    "html": false
+  }
+}

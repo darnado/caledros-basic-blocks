@@ -1,0 +1,95 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/* Switcher container */
+.cbb-dark-light-switcher {
+  display: flex;
+  align-items: center;
+}
+
+/* Switcher toggle */
+.cbb-dark-light-switcher__toggle {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 32px;
+}
+
+/* Switcher slider */
+.cbb-dark-light-switcher__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 25px;
+  transition: all 0.5s;
+}
+
+/*Switcher slider background for dark theme*/
+html[data-theme="dark"] .cbb-dark-light-switcher__slider {
+  background-color: #4d4d4d;
+  background-image: url("./assets/stars.svg");
+}
+
+/*Switcher slider background for light theme*/
+html[data-theme="light"] .cbb-dark-light-switcher__slider {
+  background: linear-gradient(
+    83deg,
+    rgba(104, 209, 224, 1) 11%,
+    rgba(68, 189, 214, 1) 56%,
+    rgba(31, 169, 203, 1) 98%
+  );
+}
+
+/*Switcher slider image for dark theme*/
+html[data-theme="dark"] .cbb-dark-light-switcher__slider::before {
+  position: absolute;
+  content: url("./assets/moon.svg");
+  height: 28px;
+  width: 28px;
+  left: 4px;
+  bottom: 2px;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+/*Switcher slider image for light theme*/
+html[data-theme="light"] .cbb-dark-light-switcher__slider::before {
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  left: 4px;
+  bottom: 2px;
+  border-radius: 50%;
+  transition: all 0.5s;
+  content: url("./assets/sun.svg");
+}
+
+/*Dark theme switcher slider movement*/
+html[data-theme="dark"] .cbb-dark-light-switcher__slider::before {
+  transform: translateX(36px);
+}
+
+/* Hide the switcher checkbox */
+.cbb-dark-light-switcher__checkbox {
+  display: none;
+}

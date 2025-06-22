@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/menu-link",
+  "title": "Menu Link",
+  "category": "caledros-basic-blocks",
+  "icon": "star",
+  "description": "A customizable, clickable link for the navigation menu.",
+  "keywords": [
+    "menu"
+  ],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "attributes": {
+    "menuLabel": {
+      "type": "string",
+      "default": "Menu link"
+    },
+    "menuLink": {
+      "type": "string",
+      "default": "#"
+    },
+    "contentType": {
+      "type": "string",
+      "default": "page"
+    },
+    "animationType": {
+      "type": "string",
+      "default": "slide-in-underline"
+    },
+    "menuTextLightColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "menuLightHoverColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "menuTextDarkColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "menuDarkHoverColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "menuFontFamily": {
+      "type": "string",
+      "default": ""
+    },
+    "menuFontWeight": {
+      "type": "number",
+      "default": 400
+    },
+    "menuFontStyle": {
+      "type": "string",
+      "default": "normal"
+    },
+    "menuFontSize": {
+      "type": "string",
+      "default": "var(--wp--preset--font-size--medium)"
+    },
+    "menuLineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "menuLetterSpacing": {
+      "type": "string",
+      "default": "normal"
+    },
+    "menuLetterCase": {
+      "type": "string",
+      "default": "none"
+    },
+    "menuType": {
+      "type": "string",
+      "default": "simple"
+    },
+    "megaMenuSlug": {
+      "type": "string",
+      "default": ""
+    },
+    "megaMenuWidth": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "variations": [
+    {
+      "name": "caledros-basic-blocks/mega-menu",
+      "title": "Mega Menu",
+      "description": "A customizable mega menu for the navigation bar.",
+      "attributes": {
+        "menuLabel": "Mega menu",
+        "menuType": "mega-menu",
+        "megaMenuWidth": 500
+      },
+      "isActive": [
+        "menuType"
+      ]
+    }
+  ],
+  "supports": {
+    "className": false,
+    "html": false
+  }
+}

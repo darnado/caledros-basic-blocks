@@ -1,0 +1,154 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/mobile-menu-container",
+  "title": "Mobile Menu Container",
+  "category": "caledros-basic-blocks",
+  "icon": "star",
+  "description": "Flexbox container for the mobile navigation menu. This block can only be used once.",
+  "keywords": [
+    "container, wrapper"
+  ],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./frontend.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "containerWidth": {
+      "type": "string",
+      "default": "100%"
+    },
+    "containerHeight": {
+      "type": "string",
+      "default": "40px"
+    },
+    "containerLightBackgroundColor": {
+      "type": "string",
+      "default": "#00000000"
+    },
+    "containerDarkBackgroundColor": {
+      "type": "string",
+      "default": "#00000000"
+    },
+    "containerBackgroundImage": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "alt": "",
+        "url": ""
+      }
+    },
+    "containerBgImageFocalPoint": {
+      "type": "object",
+      "default": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "containerLightBackgroundGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "containerDarkBackgroundGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "containerBorder": {
+      "type": "object",
+      "default": {
+        "style": "none",
+        "width": "0px",
+        "lightColor": "#00000000",
+        "darkColor": "#00000000",
+        "radius": "0px"
+      }
+    },
+    "containerBoxShadow": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "hOffset": "10px",
+        "vOffset": "10px",
+        "blur": "0px",
+        "spread": "0px",
+        "lightColor": "#000",
+        "darkColor": "#f4f4f4",
+        "style": ""
+      }
+    },
+    "containerMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "differentMarginsEnabled": false
+      }
+    },
+    "containerPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "differentPaddingsEnabled": false,
+        "useGlobalPadding": false
+      }
+    },
+    "containerJustifyContent": {
+      "type": "string",
+      "default": "flex-start"
+    },
+    "containerAlignItems": {
+      "type": "string",
+      "default": "center"
+    },
+    "containerColumnGap": {
+      "type": "string",
+      "default": "normal"
+    },
+    "containerOverflow": {
+      "type": "string",
+      "default": "visible"
+    },
+    "stickyNavigationEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "stickyNavHeight": {
+      "type": "string",
+      "default": "30px"
+    },
+    "stickyNavLightBackgroundColor": {
+      "type": "string",
+      "default": "#00000000"
+    },
+    "stickyNavDarkBackgroundColor": {
+      "type": "string",
+      "default": "#00000000"
+    },
+    "centerStickyNav": {
+      "type": "boolean",
+      "default": true
+    },
+    "overlayStickyNav": {
+      "type": "boolean",
+      "default": false
+    },
+    "overlayNav": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "align": false,
+    "alignWide": false,
+    "className": false,
+    "html": false,
+    "multiple": false
+  }
+}

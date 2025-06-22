@@ -1,0 +1,118 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*Desktop container*/
+.cbb-desktop-menu-container {
+  display: flex;
+  background-size: cover;
+  background-blend-mode: overlay;
+  flex-direction: row;
+  transition:
+    height 0.2s,
+    background-color 0.3s;
+  height: var(--cbb-dm-height, 30px);
+  position: var(--cbb-dm-position, relative);
+  z-index: 900;
+}
+
+/*Ensure direct child elements do not overflow the parent container */
+.cbb-desktop-menu-container > * {
+  height: 100%;
+}
+
+/*Desktop container with background color*/
+.cbb-desktop-menu-container--has-bg-color {
+  background-color: var(--cbb-dm-light-bg-color, #00000000);
+}
+
+/*Desktop container with box shadow*/
+.cbb-desktop-menu-container--has-box-shadow {
+  box-shadow: var(--cbb-dm-light-box-shadow, none);
+}
+
+/*Desktop container with border*/
+.cbb-desktop-menu-container--has-border {
+  border-color: var(--cbb-dm-light-border-color, #00000000);
+}
+
+/*Desktop container with background gradient*/
+.cbb-desktop-menu-container--has-bg-gradient {
+  background-image: var(--cbb-dm-light-bg-gradient, none);
+}
+
+/*Sticky desktop navigation*/
+.cbb-desktop-menu-container--sticky {
+  position: fixed;
+  z-index: 900;
+  transition:
+    height 0.2s,
+    background-color 0.3s;
+}
+
+/*Spacer for the sticky navigation*/
+.cbb-desktop-menu-container__spacer-bottom {
+  margin-bottom: var(--cbb-spacer-bottom, 0px);
+}
+
+/*Sticky navigation enabled*/
+.cbb-desktop-menu-container--sticking-enabled {
+  height: var(--cbb-dm-sticky-height, 30px);
+  transition: all 0.5s;
+  background-color: var(--cbb-dm-sticky-light-bg-color, #00000000);
+}
+
+/*Hide desktop menu container in small devices and devices without cursors*/
+@media (max-width: 810px), (min-width: 811px) and (hover: none) {
+  .cbb-desktop-menu-container {
+    display: none;
+  }
+  .cbb-desktop-menu-container__spacer-bottom {
+    display: none;
+  }
+  .cbb-desktop-menu-container__watcher {
+    display: none;
+  }
+}
+
+/*Dark mode*/
+/*Desktop container with background color*/
+html[data-theme="dark"] .cbb-desktop-menu-container--has-bg-color {
+  background-color: var(--cbb-dm-dark-bg-color, #00000000);
+}
+
+/*Desktop container with box shadow*/
+html[data-theme="dark"] .cbb-desktop-menu-container--has-box-shadow {
+  box-shadow: var(--cbb-dm-dark-box-shadow, none);
+}
+
+/*Desktop container with border*/
+html[data-theme="dark"] .cbb-desktop-menu-container--has-border {
+  border-color: var(--cbb-dm-dark-border-color, #00000000);
+}
+
+/*Sticky navigation enabled*/
+html[data-theme="dark"] .cbb-desktop-menu-container--sticking-enabled {
+  background-color: var(--cbb-dm-sticky-dark-bg-color, #00000000);
+}
+
+/*Desktop container with background image*/
+html[data-theme="dark"] .cbb-desktop-menu-container--has-bg-gradient {
+  background-image: var(--cbb-dm-dark-bg-gradient, none);
+}

@@ -1,0 +1,68 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+import { PanelBody, ToggleControl, SelectControl } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
+
+export default function PaginationSettings({ attributes, setAttributes }) {
+  const { enablePagination, paginationType } = attributes;
+
+  return (
+    <PanelBody
+      title={__("Pagination", "caledros-basic-blocks")}
+      initialOpen={false}
+    >
+      <ToggleControl
+        __nextHasNoMarginBottom
+        checked={enablePagination}
+        label={__("Enable pagination", "caledros-basic-blocks")}
+        onChange={(newValue) => {
+          setAttributes({ enablePagination: newValue });
+        }}
+      />
+      {enablePagination && (
+        <SelectControl
+          __nextHasNoMarginBottom
+          help={__("Choose the type of pagination", "caledros-basic-blocks")}
+          value={paginationType}
+          options={[
+            {
+              label: "Progress Bar",
+              value: "progressbar",
+            },
+            {
+              label: "Bullets",
+              value: "bullets",
+            },
+            {
+              label: "Fraction",
+              value: "fraction",
+            },
+          ]}
+          onChange={(newValue) => {
+            setAttributes({
+              paginationType: newValue,
+            });
+          }}
+        />
+      )}
+    </PanelBody>
+  );
+}

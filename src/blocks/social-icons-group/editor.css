@@ -1,0 +1,9 @@
+.cbb-social-icons-group
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: var(--cbb-icon-group-justify-content, center);
+  align-items: center;
+  gap: var(--cbb-icon-group-gap, 5px);
+}

@@ -1,0 +1,138 @@
+.cbb-icon {
+  width: var(--cbb-icon-size, 30px);
+  height: var(--cbb-icon-size, 30px);
+  position: relative;
+  clip-path: inset(0 0 0 0.4px);
+}
+
+.cbb-icon__main-link {
+  width: var(--cbb-icon-size, 30px);
+  height: var(--cbb-icon-size, 30px);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.cbb-icon__simple-icon {
+  width: var(--cbb-icon-size, 30px);
+  height: var(--cbb-icon-size, 30px);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cbb-icon__icon-container {
+  position: relative;
+  width: var(--cbb-icon-size, 30px);
+  height: var(--cbb-icon-size, 30px);
+  display: block;
+  margin-left: calc(var(--cbb-icon-size, 30px) * -1);
+}
+.cbb-icon__icon-container::before {
+  display: inline-block;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: var(--cbb-icon-size, 30px);
+  width: var(--cbb-icon-size, 30px);
+  top: 0;
+  left: 0px;
+  filter: drop-shadow(
+    var(--cbb-icon-size, 30px) 0px var(--cbb-icon-color, #000)
+  );
+}
+
+/*Icons*/
+.cbb-icon--alarm-fill .cbb-icon__icon-container::before {
+  background-image: url("./assets/alarm-fill.svg");
+}
+.cbb-icon--award .cbb-icon__icon-container::before {
+  background-image: url("./assets/award.svg");
+}
+.cbb-icon--bricks .cbb-icon__icon-container::before {
+  background-image: url("./assets/bricks.svg");
+}
+.cbb-icon--brightness-high .cbb-icon__icon-container::before {
+  background-image: url("./assets/brightness-high.svg");
+}
+.cbb-icon--building .cbb-icon__icon-container::before {
+  background-image: url("./assets/building.svg");
+}
+.cbb-icon--buildings .cbb-icon__icon-container::before {
+  background-image: url("./assets/buildings.svg");
+}
+.cbb-icon--cloud-sun .cbb-icon__icon-container::before {
+  background-image: url("./assets/cloud-sun.svg");
+}
+.cbb-icon--gear .cbb-icon__icon-container::before {
+  background-image: url("./assets/gear.svg");
+}
+.cbb-icon--hourglass .cbb-icon__icon-container::before {
+  background-image: url("./assets/hourglass.svg");
+}
+.cbb-icon--hourglass-bottom .cbb-icon__icon-container::before {
+  background-image: url("./assets/hourglass-bottom.svg");
+}
+.cbb-icon--hourglass-split .cbb-icon__icon-container::before {
+  background-image: url("./assets/hourglass-split.svg");
+}
+.cbb-icon--hourglass-top .cbb-icon__icon-container::before {
+  background-image: url("./assets/hourglass-top.svg");
+}
+.cbb-icon--lightbulb .cbb-icon__icon-container::before {
+  background-image: url("./assets/lightbulb.svg");
+}
+.cbb-icon--moon-stars .cbb-icon__icon-container::before {
+  background-image: url("./assets/moon-stars.svg");
+}
+.cbb-icon--people-fill .cbb-icon__icon-container::before {
+  background-image: url("./assets/people-fill.svg");
+}
+.cbb-icon--person-circle .cbb-icon__icon-container::before {
+  background-image: url("./assets/person-circle.svg");
+}
+.cbb-icon--quote .cbb-icon__icon-container::before {
+  background-image: url("./assets/quote.svg");
+}
+.cbb-icon--robot .cbb-icon__icon-container::before {
+  background-image: url("./assets/robot.svg");
+}
+.cbb-icon--rocket-takeoff .cbb-icon__icon-container::before {
+  background-image: url("./assets/rocket-takeoff.svg");
+}
+.cbb-icon--star .cbb-icon__icon-container::before {
+  background-image: url("./assets/star.svg");
+}
+.cbb-icon--stickies .cbb-icon__icon-container::before {
+  background-image: url("./assets/stickies.svg");
+}
+.cbb-icon--tools .cbb-icon__icon-container::before {
+  background-image: url("./assets/tools.svg");
+}
+.cbb-icon--umbrella-fill .cbb-icon__icon-container::before {
+  background-image: url("./assets/umbrella-fill.svg");
+}
+.cbb-icon--watch .cbb-icon__icon-container::before {
+  background-image: url("./assets/watch.svg");
+}
+.cbb-icon--wind .cbb-icon__icon-container::before {
+  background-image: url("./assets/wind.svg");
+}
+.cbb-icon--wrench .cbb-icon__icon-container::before {
+  background-image: url("./assets/wrench.svg");
+}
+.cbb-icon--wrench-adjustable .cbb-icon__icon-container::before {
+  background-image: url("./assets/wrench-adjustable.svg");
+}
+.cbb-icon--wrench-adjustable-circle .cbb-icon__icon-container::before {
+  background-image: url("./assets/wrench-adjustable-circle.svg");
+}
+
+/*Dark mode*/
+html[data-theme="dark"] .cbb-icon__icon-container::before {
+  filter: drop-shadow(
+    var(--cbb-icon-size, 30px) 0px var(--cbb-icon-dark-color, #fff)
+  );
+}

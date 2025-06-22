@@ -1,0 +1,80 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+/*Active tab in the Inspector Controls section*/
+.cbb-active-tab {
+  color: #007cba;
+  font-weight: bold;
+  border-bottom: 2px solid #007cba;
+}
+
+/*Editor label*/
+.cbb-editor-label {
+  margin: 15px 0px;
+  display: block;
+  border-top: solid 1px #d8d8d8;
+  padding-top: 15px;
+}
+
+/*Editor flexbox*/
+.cbb-editor__grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 5px;
+}
+
+/*The container occupies the whole editor window*/
+html :where(.wp-block) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  max-width: 100%;
+}
+
+/*Dark mode*/
+/*Background color*/
+html[data-theme="dark"] body {
+  background-color: var(--wp--preset--color--base-dark, #1f1f1f);
+}
+/*Paragraph text color*/
+html[data-theme="dark"] p {
+  color: var(--wp--preset--color--paragraph-dark, #f2f2f2);
+}
+/*Heading text color*/
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: var(--wp--preset--color--heading-dark, #f2f2f2);
+}
+/*Header heading link*/
+html[data-theme="dark"] .cbb-header-link a {
+  text-decoration: none;
+  color: var(--wp--preset--color--heading-dark, #f2f2f2);
+}
+/*Default Navigation links*/
+html[data-theme="dark"] .wp-block-navigation__container {
+  color: var(--wp--preset--color--paragraph-dark, #f2f2f2);
+}

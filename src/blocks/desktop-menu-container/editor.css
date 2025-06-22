@@ -1,0 +1,141 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*Desktop Menu Container*/
+.cbb-desktop-menu-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: var(--cbb-dm-just-content, flex-start);
+  align-items: var(--cbb-dm-align-items, normal);
+  column-gap: var(--cbb-dm-column-gap, normal);
+  height: var(--cbb-dm-height, 0);
+  background-size: cover;
+  background-blend-mode: overlay;
+  border-style: var(--cbb-dm-br-style, none);
+  border-width: var(--cbb-dm-br-width, 0px);
+  border-radius: var(--cbb-dm-br-radius, 0px);
+  padding: var(--cbb-dm-fc-padding, 0px);
+  background-position: var(--cbb-dm-bg-position, 0% 0%);
+  overflow: var(--cbb-dm-overflow, visible);
+  background-color: var(--cbb-dm-light-bg-color, #00000000);
+}
+
+/*Ensure direct child elements do not overflow the parent container */
+.cbb-desktop-menu-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout
+  > * {
+  height: 100%;
+}
+
+.cbb-desktop-menu-container {
+  background-color: #00000000;
+}
+
+/*Desktop container with box shadow*/
+.cbb-desktop-menu-container--has-box-shadow
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-shadow: var(--cbb-dm-light-box-shadow, none);
+}
+
+.cbb-desktop-menu-container--has-box-shadow {
+  box-shadow: none;
+}
+
+/*Desktop container with border*/
+.cbb-desktop-menu-container--has-border
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  border-color: var(--cbb-dm-light-border-color, "#00000000");
+}
+
+.cbb-desktop-menu-container--has-border {
+  border-color: "#00000000";
+}
+
+/*Desktop container with background image*/
+.cbb-desktop-menu-container--has-bg-gradient
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-image: var(--cbb-dm-light-bg-gradient, none);
+}
+
+.cbb-desktop-menu-container--has-bg-gradient {
+  background-image: none;
+}
+
+/*Fix editor layout*/
+.cbb-desktop-menu-container > .block-editor-inner-blocks {
+  width: 100%;
+  height: 100%;
+}
+
+/*Dark mode*/
+/*Desktop container with box shadow*/
+html[data-theme="dark"]
+  .cbb-desktop-menu-container--has-box-shadow
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-shadow: var(--cbb-dm-dark-box-shadow, none);
+}
+
+html[data-theme="dark"] .cbb-desktop-menu-container--has-box-shadow {
+  box-shadow: none;
+}
+
+/*Desktop Menu Container*/
+html[data-theme="dark"]
+  .cbb-desktop-menu-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-color: var(--cbb-dm-dark-bg-color, #00000000);
+}
+
+html[data-theme="dark"] .cbb-desktop-menu-container {
+  background-color: #00000000;
+}
+
+/*Desktop container with border*/
+html[data-theme="dark"]
+  .cbb-desktop-menu-container--has-border
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  border-color: var(--cbb-dm-dark-border-color, "#00000000");
+}
+
+html[data-theme="dark"] .cbb-desktop-menu-container--has-border {
+  border-color: "#00000000";
+}
+
+/*Desktop container with background image*/
+html[data-theme="dark"]
+  .cbb-desktop-menu-container--has-bg-gradient
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-image: var(--cbb-dm-dark-bg-gradient, none);
+}
+
+html[data-theme="dark"] .cbb-desktop-menu-container--has-bg-gradient {
+  background-image: none;
+}

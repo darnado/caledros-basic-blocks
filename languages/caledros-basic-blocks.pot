@@ -1,0 +1,2662 @@
+# Copyright (C) 2025 David Arnado
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Caledros Basic Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/caledros-basic-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-06-08T01:45:08+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: caledros-basic-blocks\n"
+
+#. Plugin Name of the plugin
+#: caledros-basic.php
+msgid "Caledros Basic Blocks"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: caledros-basic.php
+msgid "https://caledrosforge.com/"
+msgstr ""
+
+#. Description of the plugin
+#: caledros-basic.php
+msgid "Add easy-to-use Gutenberg blocks to your WordPress site."
+msgstr ""
+
+#. Author of the plugin
+#: caledros-basic.php
+msgid "David Arnado"
+msgstr ""
+
+#. Author URI of the plugin
+#: caledros-basic.php
+msgid "https://caledrosforge.com/about/"
+msgstr ""
+
+#: core/category-featured-img/category-featured-img.php:32
+msgid "Category Image"
+msgstr ""
+
+#: core/category-featured-img/category-featured-img.php:33
+#: core/category-featured-img/category-featured-img.php:73
+msgid "Select image"
+msgstr ""
+
+#: core/category-featured-img/category-featured-img.php:71
+msgid "Category image"
+msgstr ""
+
+#: core/category-featured-img/category-featured-img.php:107
+#: core/category-featured-img/category-featured-img.php:122
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/alt-text-settings.js:29
+msgid "Alt text"
+msgstr ""
+
+#: core/category-featured-img/category-featured-img.php:110
+#: core/category-featured-img/category-featured-img.php:125
+msgid "Write the alt text for the image"
+msgstr ""
+
+#: core/loaders/template-areas-loader.php:29
+msgid "Template area used to create mega menus"
+msgstr ""
+
+#: core/loaders/template-areas-loader.php:31
+msgid "Mega Menu"
+msgstr ""
+
+#: core/loaders/template-areas-loader.php:42
+msgid "Template area for the sidebar menu"
+msgstr ""
+
+#: core/loaders/template-areas-loader.php:44
+msgid "Sidebar Menu"
+msgstr ""
+
+#: core/loaders/template-areas-loader.php:55
+msgid "Slider card area for the sidebar menu"
+msgstr ""
+
+#: core/loaders/template-areas-loader.php:57
+msgid "Slider card"
+msgstr ""
+
+#: src/blocks/category-loop/demo-data-category-render.php:92
+#: src/blocks/category-loop/render-callback.php:90
+msgid "publication"
+msgstr ""
+
+#: src/blocks/category-loop/demo-data-category-render.php:93
+#: src/blocks/category-loop/render-callback.php:91
+msgid "publications"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/button/settings/button-light-border-color-settings.js:80
+#: src/blocks/button/settings/button-light-color-settings.js:80
+#: src/blocks/desktop-menu-container/settings/background-light-color-settings.js:79
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/sticky-nav-light-background-color-settings.js:79
+#: src/blocks/flex-container/settings/background-light-color-settings.js:80
+#: src/blocks/grid-container/settings/background-light-color-settings.js:80
+#: src/blocks/mobile-menu-container/settings/background-light-color-settings.js:79
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/sticky-nav-light-background-color-settings.js:79
+#: src/blocks/sidebar-menu/settings/background-light-color-settings.js:84
+msgid "Background color (light mode)"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/button/settings/button-dark-color-settings.js:77
+#: src/blocks/desktop-menu-container/settings/background-dark-color-settings.js:79
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/sticky-nav-dark-background-color-settings.js:79
+#: src/blocks/flex-container/settings/background-dark-color-settings.js:80
+#: src/blocks/grid-container/settings/background-dark-color-settings.js:80
+#: src/blocks/mobile-menu-container/settings/background-dark-color-settings.js:79
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/sticky-nav-dark-background-color-settings.js:79
+#: src/blocks/sidebar-menu/settings/background-dark-color-settings.js:80
+msgid "Background color (dark mode)"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/settings/button-light-color-hover-settings.js:80
+msgid "Hover color (light mode)"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/settings/button-dark-color-hover-settings.js:80
+msgid "Hover color (dark mode)"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/settings/button-text-light-color-settings.js:80
+msgid "Text color (light mode)"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/settings/button-text-dark-color-settings.js:80
+msgid "Text color (dark mode)"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/button/settings/typography/font-family-settings.js:54
+#: src/blocks/menu-link/settings/typography/font-family-settings.js:54
+msgid "Select the font family."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/button/settings/typography/font-weight-settings.js:55
+#: src/blocks/menu-link/settings/typography/font-weight-settings.js:55
+msgid "Select the font weight."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/button/settings/typography/font-style-settings.js:52
+#: src/blocks/menu-link/settings/typography/font-style-settings.js:52
+msgid "Select the font style."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/button/settings/typography/typography-group-settings.js:72
+#: src/blocks/menu-link/settings/typography/typography-group-settings.js:72
+msgid "Typography"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/border-dark-color-settings.js:84
+#: src/blocks/desktop-menu-container/settings/border-dark-color-settings.js:84
+#: src/blocks/flex-container/settings/border-dark-color-settings.js:84
+#: src/blocks/grid-container/settings/border-dark-color-settings.js:83
+#: src/blocks/mobile-menu-container/settings/border-dark-color-settings.js:84
+msgid "Border color (dark mode)"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-dark-color-settings.js:112
+#: src/blocks/button/settings/border-light-color-settings.js:115
+#: src/blocks/desktop-menu-container/settings/border-dark-color-settings.js:112
+#: src/blocks/desktop-menu-container/settings/border-light-color-settings.js:115
+#: src/blocks/flex-container/settings/border-dark-color-settings.js:112
+#: src/blocks/flex-container/settings/border-light-color-settings.js:115
+#: src/blocks/grid-container/settings/border-dark-color-settings.js:111
+#: src/blocks/grid-container/settings/border-light-color-settings.js:115
+#: src/blocks/mobile-menu-container/settings/border-dark-color-settings.js:112
+#: src/blocks/mobile-menu-container/settings/border-light-color-settings.js:115
+#: src/blocks/responsive-image/settings/border-color-settings.js:112
+msgid "Choose the border color"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-dark-color-settings.js:134
+#: src/blocks/button/settings/border-light-color-settings.js:137
+#: src/blocks/desktop-menu-container/settings/border-dark-color-settings.js:134
+#: src/blocks/desktop-menu-container/settings/border-light-color-settings.js:137
+#: src/blocks/flex-container/settings/border-dark-color-settings.js:134
+#: src/blocks/flex-container/settings/border-light-color-settings.js:137
+#: src/blocks/grid-container/settings/border-dark-color-settings.js:133
+#: src/blocks/grid-container/settings/border-light-color-settings.js:137
+#: src/blocks/mobile-menu-container/settings/border-dark-color-settings.js:134
+#: src/blocks/mobile-menu-container/settings/border-light-color-settings.js:137
+#: src/blocks/responsive-image/settings/border-color-settings.js:134
+msgid "Choose a color for the top border"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-dark-color-settings.js:153
+#: src/blocks/button/settings/border-light-color-settings.js:156
+#: src/blocks/desktop-menu-container/settings/border-dark-color-settings.js:153
+#: src/blocks/desktop-menu-container/settings/border-light-color-settings.js:156
+#: src/blocks/flex-container/settings/border-dark-color-settings.js:153
+#: src/blocks/flex-container/settings/border-light-color-settings.js:156
+#: src/blocks/grid-container/settings/border-dark-color-settings.js:152
+#: src/blocks/grid-container/settings/border-light-color-settings.js:156
+#: src/blocks/mobile-menu-container/settings/border-dark-color-settings.js:153
+#: src/blocks/mobile-menu-container/settings/border-light-color-settings.js:156
+#: src/blocks/responsive-image/settings/border-color-settings.js:153
+msgid "Choose a color for the right border"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-dark-color-settings.js:172
+#: src/blocks/button/settings/border-light-color-settings.js:175
+#: src/blocks/desktop-menu-container/settings/border-dark-color-settings.js:172
+#: src/blocks/desktop-menu-container/settings/border-light-color-settings.js:175
+#: src/blocks/flex-container/settings/border-dark-color-settings.js:172
+#: src/blocks/flex-container/settings/border-light-color-settings.js:175
+#: src/blocks/grid-container/settings/border-dark-color-settings.js:171
+#: src/blocks/grid-container/settings/border-light-color-settings.js:175
+#: src/blocks/mobile-menu-container/settings/border-dark-color-settings.js:172
+#: src/blocks/mobile-menu-container/settings/border-light-color-settings.js:175
+#: src/blocks/responsive-image/settings/border-color-settings.js:172
+msgid "Choose a color for the bottom border"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-dark-color-settings.js:194
+#: src/blocks/button/settings/border-light-color-settings.js:197
+#: src/blocks/desktop-menu-container/settings/border-dark-color-settings.js:194
+#: src/blocks/desktop-menu-container/settings/border-light-color-settings.js:197
+#: src/blocks/flex-container/settings/border-dark-color-settings.js:194
+#: src/blocks/flex-container/settings/border-light-color-settings.js:197
+#: src/blocks/grid-container/settings/border-dark-color-settings.js:193
+#: src/blocks/grid-container/settings/border-light-color-settings.js:197
+#: src/blocks/mobile-menu-container/settings/border-dark-color-settings.js:194
+#: src/blocks/mobile-menu-container/settings/border-light-color-settings.js:197
+#: src/blocks/responsive-image/settings/border-color-settings.js:194
+msgid "Choose a color for the left border"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/border-light-color-settings.js:87
+#: src/blocks/desktop-menu-container/settings/border-light-color-settings.js:87
+#: src/blocks/flex-container/settings/border-light-color-settings.js:87
+#: src/blocks/grid-container/settings/border-light-color-settings.js:87
+#: src/blocks/mobile-menu-container/settings/border-light-color-settings.js:87
+msgid "Border color (light mode)"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-radius-settings.js:63
+#: src/blocks/desktop-menu-container/settings/border-radius-settings.js:63
+#: src/blocks/flex-container/settings/border-radius-settings.js:63
+#: src/blocks/grid-container/settings/border-radius-settings.js:62
+#: src/blocks/mobile-menu-container/settings/border-radius-settings.js:63
+#: src/blocks/responsive-image/settings/border-radius-settings.js:62
+msgid "Border radius"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-style-settings.js:39
+#: src/blocks/desktop-menu-container/settings/border-style-settings.js:39
+#: src/blocks/flex-container/settings/border-style-settings.js:39
+#: src/blocks/grid-container/settings/border-style-settings.js:39
+#: src/blocks/mobile-menu-container/settings/border-style-settings.js:39
+#: src/blocks/responsive-image/settings/border-style-settings.js:39
+msgid "Border style"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-style-settings.js:67
+#: src/blocks/desktop-menu-container/settings/border-style-settings.js:67
+#: src/blocks/flex-container/settings/border-style-settings.js:67
+#: src/blocks/grid-container/settings/border-style-settings.js:67
+#: src/blocks/mobile-menu-container/settings/border-style-settings.js:67
+#: src/blocks/responsive-image/settings/border-style-settings.js:67
+msgid "Choose the border style."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-style-settings.js:124
+#: src/blocks/desktop-menu-container/settings/border-style-settings.js:124
+#: src/blocks/flex-container/settings/border-style-settings.js:124
+#: src/blocks/grid-container/settings/border-style-settings.js:124
+#: src/blocks/mobile-menu-container/settings/border-style-settings.js:124
+#: src/blocks/responsive-image/settings/border-style-settings.js:124
+msgid "Choose the style for the top border."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-style-settings.js:183
+#: src/blocks/desktop-menu-container/settings/border-style-settings.js:183
+#: src/blocks/flex-container/settings/border-style-settings.js:183
+#: src/blocks/grid-container/settings/border-style-settings.js:183
+#: src/blocks/mobile-menu-container/settings/border-style-settings.js:183
+#: src/blocks/responsive-image/settings/border-style-settings.js:183
+msgid "Choose the style for the right border."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-style-settings.js:242
+#: src/blocks/desktop-menu-container/settings/border-style-settings.js:242
+#: src/blocks/flex-container/settings/border-style-settings.js:242
+#: src/blocks/grid-container/settings/border-style-settings.js:242
+#: src/blocks/mobile-menu-container/settings/border-style-settings.js:242
+#: src/blocks/responsive-image/settings/border-style-settings.js:242
+msgid "Choose the style for the bottom border."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-style-settings.js:301
+#: src/blocks/desktop-menu-container/settings/border-style-settings.js:301
+#: src/blocks/flex-container/settings/border-style-settings.js:301
+#: src/blocks/grid-container/settings/border-style-settings.js:301
+#: src/blocks/mobile-menu-container/settings/border-style-settings.js:301
+#: src/blocks/responsive-image/settings/border-style-settings.js:301
+msgid "Choose the style for the left border."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/border-width-settings.js:39
+#: src/blocks/desktop-menu-container/settings/border-width-settings.js:39
+#: src/blocks/flex-container/settings/border-width-settings.js:39
+#: src/blocks/grid-container/settings/border-width-settings.js:39
+#: src/blocks/mobile-menu-container/settings/border-width-settings.js:39
+#: src/blocks/responsive-image/settings/border-width-settings.js:39
+msgid "Border width"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/border-width-settings.js:67
+#: src/blocks/desktop-menu-container/settings/border-width-settings.js:67
+#: src/blocks/flex-container/settings/border-width-settings.js:67
+#: src/blocks/grid-container/settings/border-width-settings.js:67
+#: src/blocks/mobile-menu-container/settings/border-width-settings.js:67
+msgid "Please select the border width (px) for the container."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/border-width-settings.js:87
+#: src/blocks/desktop-menu-container/settings/border-width-settings.js:87
+#: src/blocks/flex-container/settings/border-width-settings.js:87
+#: src/blocks/grid-container/settings/border-width-settings.js:87
+#: src/blocks/mobile-menu-container/settings/border-width-settings.js:87
+msgid "Please select the top border width (px) for the container."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/border-width-settings.js:106
+#: src/blocks/desktop-menu-container/settings/border-width-settings.js:106
+#: src/blocks/flex-container/settings/border-width-settings.js:106
+#: src/blocks/grid-container/settings/border-width-settings.js:106
+#: src/blocks/mobile-menu-container/settings/border-width-settings.js:106
+msgid "Please select the right border width (px) for the container."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/border-width-settings.js:125
+#: src/blocks/desktop-menu-container/settings/border-width-settings.js:125
+#: src/blocks/flex-container/settings/border-width-settings.js:125
+#: src/blocks/grid-container/settings/border-width-settings.js:125
+#: src/blocks/mobile-menu-container/settings/border-width-settings.js:125
+msgid "Please select the bottom border width (px) for the container."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/border-width-settings.js:144
+#: src/blocks/desktop-menu-container/settings/border-width-settings.js:144
+#: src/blocks/flex-container/settings/border-width-settings.js:144
+#: src/blocks/grid-container/settings/border-width-settings.js:144
+#: src/blocks/mobile-menu-container/settings/border-width-settings.js:144
+msgid "Please select the left border width (px) for the container."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/search-form/index.js:1
+#: src/blocks/button/settings/button-text-content-settings.js:32
+#: src/blocks/search-form/settings/button-text-settings.js:29
+msgid "Button text"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/settings/button-text-content-settings.js:37
+msgid "Type the text for the button."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/settings/button-link-settings.js:29
+msgid "Button link"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: src/blocks/button/settings/button-link-settings.js:34
+msgid "Paste the link for the button."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: build/blocks/social-icons-group/index.js:1
+#: src/blocks/button/settings/margin-settings.js:57
+#: src/blocks/desktop-menu-container/settings/margin-settings.js:57
+#: src/blocks/flex-container/settings/margin-settings.js:57
+#: src/blocks/grid-container/settings/margin-settings.js:57
+#: src/blocks/mobile-menu-container/settings/margin-settings.js:57
+#: src/blocks/responsive-image/settings/margin-settings.js:57
+#: src/blocks/social-icons-group/settings/margin-settings.js:57
+msgid "Margin"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: build/blocks/social-icons-group/index.js:1
+#: src/blocks/button/settings/margin-settings.js:62
+#: src/blocks/desktop-menu-container/settings/margin-settings.js:62
+#: src/blocks/flex-container/settings/margin-settings.js:62
+#: src/blocks/grid-container/settings/margin-settings.js:62
+#: src/blocks/mobile-menu-container/settings/margin-settings.js:62
+#: src/blocks/responsive-image/settings/margin-settings.js:62
+#: src/blocks/social-icons-group/settings/margin-settings.js:62
+msgid "Enable different margins"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/button/settings/padding-settings.js:54
+#: src/blocks/desktop-menu-container/settings/padding-settings.js:54
+#: src/blocks/flex-container/settings/padding-settings.js:54
+#: src/blocks/grid-container/settings/padding-settings.js:54
+#: src/blocks/mobile-menu-container/settings/padding-settings.js:54
+#: src/blocks/responsive-image/settings/padding-settings.js:53
+msgid "Padding"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/padding-settings.js:59
+#: src/blocks/desktop-menu-container/settings/padding-settings.js:59
+#: src/blocks/flex-container/settings/padding-settings.js:59
+#: src/blocks/grid-container/settings/padding-settings.js:59
+#: src/blocks/mobile-menu-container/settings/padding-settings.js:59
+msgid "Use global padding"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/button/settings/padding-settings.js:60
+#: src/blocks/desktop-menu-container/settings/padding-settings.js:60
+#: src/blocks/flex-container/settings/padding-settings.js:60
+#: src/blocks/grid-container/settings/padding-settings.js:60
+#: src/blocks/mobile-menu-container/settings/padding-settings.js:60
+msgid "This option applies predefined padding to the right and left sides of the block, ensuring consistency across the entire site. To adjust this padding, navigate to the Layout section in the Full Site Editor."
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/button/settings/padding-settings.js:77
+#: src/blocks/desktop-menu-container/settings/padding-settings.js:77
+#: src/blocks/flex-container/settings/padding-settings.js:77
+#: src/blocks/grid-container/settings/padding-settings.js:77
+#: src/blocks/mobile-menu-container/settings/padding-settings.js:77
+#: src/blocks/responsive-image/settings/padding-settings.js:58
+#: src/blocks/sidebar-menu/settings/open-button-padding-settings.js:48
+msgid "Enable different paddings"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/button/settings/letter-spacing-settings.js:60
+#: src/blocks/menu-link/settings/letter-spacing-settings.js:60
+msgid "Letter spacing"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/button/settings/letter-spacing-settings.js:65
+#: src/blocks/menu-link/settings/letter-spacing-settings.js:65
+msgid "Use normal letter spacing"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/button/settings/font-size-settings.js:131
+#: src/blocks/menu-link/settings/font-size-settings.js:131
+msgid "Font size"
+msgstr ""
+
+#: build/blocks/button/index.js:1
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/button/settings/font-size-settings.js:145
+#: src/blocks/menu-link/settings/font-size-settings.js:145
+msgid "Select the font size."
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/category-loop/settings/categories-loop-title-settings.js:54
+#: src/blocks/posts-loop/settings/posts-loop-title-settings.js:54
+msgid "Posts loop title"
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/category-loop/settings/categories-loop-title-settings.js:59
+#: src/blocks/posts-loop/settings/posts-loop-title-settings.js:59
+msgid "Write the title for the posts loop."
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/category-loop/settings/categories-loop-title-settings.js:72
+#: src/blocks/posts-loop/settings/posts-loop-title-settings.js:72
+msgid "Post title icon"
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/category-loop/settings/show-demo-data-settings.js:29
+#: src/blocks/image-gallery/settings/show-demo-data-settings.js:29
+#: src/blocks/posts-loop/settings/show-demo-data-settings.js:29
+msgid "Demo data options"
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/category-loop/settings/show-demo-data-settings.js:34
+#: src/blocks/image-gallery/settings/show-demo-data-settings.js:34
+#: src/blocks/posts-loop/settings/show-demo-data-settings.js:34
+msgid "Show demo data"
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/category-loop/settings/show-demo-data-settings.js:35
+#: src/blocks/posts-loop/settings/show-demo-data-settings.js:35
+msgid "Display demo data instead of published posts."
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: src/blocks/category-loop/settings/show-number-of-publications-settings.js:32
+#: src/blocks/category-loop/settings/show-number-of-publications-settings.js:37
+msgid "Show number of publications"
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: src/blocks/category-loop/settings/show-number-of-publications-settings.js:38
+msgid "Show the number of publications per category."
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: src/blocks/category-loop/settings/show-uncategorized-category-settings.js:32
+#: src/blocks/category-loop/settings/show-uncategorized-category-settings.js:37
+msgid "Show uncategorized category"
+msgstr ""
+
+#: build/blocks/category-loop/index.js:1
+#: src/blocks/category-loop/settings/show-uncategorized-category-settings.js:38
+msgid "Display the uncategorized category."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/desktop-menu-container/settings/width-settings.js:65
+#: src/blocks/flex-container/settings/width-settings.js:67
+#: src/blocks/image-gallery/settings/width-settings.js:67
+#: src/blocks/mobile-menu-container/settings/width-settings.js:65
+#: src/blocks/slider/settings/width-settings.js:67
+msgid "Maximum width"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/width-settings.js:79
+#: src/blocks/grid-container/settings/width-settings.js:76
+#: src/blocks/mobile-menu-container/settings/width-settings.js:79
+msgid "Choose the max width for the container."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/desktop-menu-container/settings/height-settings.js:49
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/sticky-nav-height-settings.js:49
+#: src/blocks/mobile-menu-container/settings/height-settings.js:49
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/sticky-nav-height-settings.js:49
+#: src/blocks/responsive-image/settings/height-settings.js:54
+msgid "Height"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/background-image-settings.js:51
+#: src/blocks/flex-container/settings/background-image-settings.js:51
+#: src/blocks/grid-container/settings/background-image-settings.js:51
+#: src/blocks/mobile-menu-container/settings/background-image-settings.js:51
+msgid "Background image"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/background-light-gradient-settings.js:40
+#: src/blocks/flex-container/settings/background-light-gradient-settings.js:40
+#: src/blocks/grid-container/settings/background-light-gradient-settings.js:40
+#: src/blocks/mobile-menu-container/settings/background-light-gradient-settings.js:40
+msgid "Background gradient (light mode)"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/background-light-gradient-settings.js:45
+#: src/blocks/flex-container/settings/background-dark-gradient-settings.js:45
+#: src/blocks/flex-container/settings/background-light-gradient-settings.js:45
+#: src/blocks/grid-container/settings/background-dark-gradient-settings.js:45
+#: src/blocks/grid-container/settings/background-light-gradient-settings.js:45
+#: src/blocks/mobile-menu-container/settings/background-light-gradient-settings.js:45
+msgid "Enable background gradient"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/background-dark-gradient-settings.js:40
+#: src/blocks/flex-container/settings/background-dark-gradient-settings.js:40
+#: src/blocks/grid-container/settings/background-dark-gradient-settings.js:40
+#: src/blocks/mobile-menu-container/settings/background-dark-gradient-settings.js:40
+msgid "Background gradient (dark mode)"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/background-dark-gradient-settings.js:45
+#: src/blocks/mobile-menu-container/settings/background-dark-gradient-settings.js:45
+msgid "Enable background gradient (dark mode)"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/background-dark-color-settings.js:84
+#: src/blocks/mobile-menu-container/settings/background-dark-color-settings.js:84
+msgid "Use transparent background."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:78
+#: src/blocks/flex-container/settings/box-shadow-settings.js:78
+#: src/blocks/grid-container/settings/box-shadow-settings.js:79
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:78
+#: src/blocks/responsive-image/settings/box-shadow-settings.js:79
+msgid "Box shadow"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:83
+#: src/blocks/flex-container/settings/box-shadow-settings.js:83
+#: src/blocks/grid-container/settings/box-shadow-settings.js:84
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:83
+#: src/blocks/responsive-image/settings/box-shadow-settings.js:84
+msgid "Enable box shadow"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:95
+#: src/blocks/flex-container/settings/box-shadow-settings.js:95
+#: src/blocks/grid-container/settings/box-shadow-settings.js:96
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:95
+#: src/blocks/responsive-image/settings/box-shadow-settings.js:96
+msgid "Choose the style for the box shadow."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:121
+#: src/blocks/flex-container/settings/box-shadow-settings.js:121
+#: src/blocks/grid-container/settings/box-shadow-settings.js:122
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:121
+#: src/blocks/responsive-image/settings/box-shadow-settings.js:122
+#: src/blocks/responsive-image/settings/filter-settings.js:247
+msgid "Please select the horizontal offset (px)."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:140
+#: src/blocks/flex-container/settings/box-shadow-settings.js:140
+#: src/blocks/grid-container/settings/box-shadow-settings.js:141
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:140
+#: src/blocks/responsive-image/settings/box-shadow-settings.js:141
+#: src/blocks/responsive-image/settings/filter-settings.js:266
+msgid "Please select the vertical offset (px)."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:159
+#: src/blocks/flex-container/settings/box-shadow-settings.js:159
+#: src/blocks/grid-container/settings/box-shadow-settings.js:160
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:159
+#: src/blocks/responsive-image/settings/box-shadow-settings.js:160
+#: src/blocks/responsive-image/settings/filter-settings.js:285
+msgid "Please select the blur (px)."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:175
+#: src/blocks/flex-container/settings/box-shadow-settings.js:175
+#: src/blocks/grid-container/settings/box-shadow-settings.js:176
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:175
+#: src/blocks/responsive-image/settings/box-shadow-settings.js:176
+msgid "Please select the spread (px)."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:190
+#: src/blocks/flex-container/settings/box-shadow-settings.js:190
+#: src/blocks/grid-container/settings/box-shadow-settings.js:191
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:190
+msgid "Choose a color for the box shadow (light mode)"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/box-shadow-settings.js:210
+#: src/blocks/flex-container/settings/box-shadow-settings.js:210
+#: src/blocks/grid-container/settings/box-shadow-settings.js:211
+#: src/blocks/mobile-menu-container/settings/box-shadow-settings.js:210
+msgid "Choose a color for the box shadow (dark mode)"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/justify-content-settings.js:29
+#: src/blocks/flex-container/settings/justify-content-settings.js:29
+#: src/blocks/mobile-menu-container/settings/justify-content-settings.js:29
+msgid "Justify content"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/justify-content-settings.js:34
+#: src/blocks/flex-container/settings/justify-content-settings.js:34
+#: src/blocks/mobile-menu-container/settings/justify-content-settings.js:34
+msgid "Select the value for the justify content property."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/align-items-settings.js:29
+#: src/blocks/flex-container/settings/align-items-settings.js:29
+#: src/blocks/mobile-menu-container/settings/align-items-settings.js:29
+msgid "Align items"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/align-items-settings.js:34
+#: src/blocks/flex-container/settings/align-items-settings.js:34
+#: src/blocks/mobile-menu-container/settings/align-items-settings.js:34
+msgid "Select the value for the align items property."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/column-gap-settings.js:32
+#: src/blocks/flex-container/settings/column-gap-settings.js:32
+#: src/blocks/grid-container/settings/column-gap-settings.js:32
+#: src/blocks/mobile-menu-container/settings/column-gap-settings.js:32
+msgid "Column gap"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/column-gap-settings.js:37
+#: src/blocks/flex-container/settings/column-gap-settings.js:37
+#: src/blocks/grid-container/settings/column-gap-settings.js:37
+#: src/blocks/mobile-menu-container/settings/column-gap-settings.js:37
+msgid "Use normal column gap (default value)"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/column-gap-settings.js:51
+#: src/blocks/flex-container/settings/column-gap-settings.js:51
+#: src/blocks/mobile-menu-container/settings/column-gap-settings.js:51
+msgid "Please select the column gap (px) for the flex container."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/overflow-settings.js:29
+#: src/blocks/flex-container/settings/overflow-settings.js:29
+#: src/blocks/grid-container/settings/overflow-settings.js:29
+#: src/blocks/mobile-menu-container/settings/overflow-settings.js:29
+msgid "Overflow"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/overflow-settings.js:34
+#: src/blocks/mobile-menu-container/settings/overflow-settings.js:34
+msgid "Select the value for the overflow property."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/enable-sticky-nav-settings.js:29
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/enable-sticky-nav-settings.js:29
+msgid "Sticky navigation"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/enable-sticky-nav-settings.js:34
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/enable-sticky-nav-settings.js:34
+msgid "Enable sticky navigation"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/enable-sticky-nav-settings.js:35
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/enable-sticky-nav-settings.js:35
+msgid "A sticky navigation bar will stick to the top of the screen while scrolling. The effect is only visible in the frontend, not in the editor."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/sticky-nav-dark-background-color-settings.js:85
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/sticky-nav-light-background-color-settings.js:85
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/sticky-nav-dark-background-color-settings.js:85
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/sticky-nav-light-background-color-settings.js:85
+msgid "Enable this option to set a transparent background for the sticky navigation bar. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/sticky-nav-dark-background-color-settings.js:98
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/sticky-nav-light-background-color-settings.js:98
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/sticky-nav-dark-background-color-settings.js:98
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/sticky-nav-light-background-color-settings.js:98
+msgid "Choose a custom background color for the sticky navigation bar. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/center-sticky-nav-settings.js:29
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/center-sticky-nav-settings.js:34
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/center-sticky-nav-settings.js:29
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/center-sticky-nav-settings.js:34
+msgid "Center navigation bar"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/center-sticky-nav-settings.js:35
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/center-sticky-nav-settings.js:35
+msgid "Center the sticky navigation bar when the maximum width has a fixed value, or when it's less than 100%. For this option to work, the container's left and right margins must be set to 'auto'."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/overlay-nav-settings.js:29
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/overlay-sticky-nav-settings.js:32
+#: src/blocks/mobile-menu-container/settings/overlay-nav-settings.js:29
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/overlay-sticky-nav-settings.js:32
+msgid "Overlay navigation"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/overlay-sticky-nav-settings.js:37
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/overlay-sticky-nav-settings.js:37
+msgid "Enable overlay sticky navigation"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/sticky-navigation/overlay-sticky-nav-settings.js:38
+#: src/blocks/mobile-menu-container/settings/sticky-navigation/overlay-sticky-nav-settings.js:38
+msgid "This option transforms the sticky navigation bar into an overlay, allowing it to overlap the website's content until the user begins scrolling."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/overlay-nav-settings.js:34
+#: src/blocks/mobile-menu-container/settings/overlay-nav-settings.js:34
+msgid "Enable overlay navigation"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/index.js:1
+#: build/blocks/mobile-menu-container/index.js:1
+#: src/blocks/desktop-menu-container/settings/overlay-nav-settings.js:35
+#: src/blocks/mobile-menu-container/settings/overlay-nav-settings.js:35
+msgid "This option transforms the navigation bar into an overlay, allowing it to overlap the website's content until the user begins scrolling."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/flex-container/settings/width-settings.js:81
+#: src/blocks/image-gallery/settings/width-settings.js:81
+#: src/blocks/slider/settings/width-settings.js:81
+msgid "Choose the maximum width for the container."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/flex-container/settings/min-height-settings.js:46
+#: src/blocks/grid-container/settings/min-height-settings.js:46
+#: src/blocks/image-gallery/settings/min-height-settings.js:46
+#: src/blocks/slider/settings/min-height-settings.js:46
+msgid "Minimum height"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/flex-direction-settings.js:29
+msgid "Flex direction (desktop)"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/flex-direction-settings.js:34
+msgid "Choose the flex direction for the container (desktop)."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/flex-direction-tablet-settings.js:32
+msgid "Flex direction (tablet)"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/flex-direction-tablet-settings.js:37
+msgid "Choose the flex direction for the container (tablet)."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/flex-direction-mobile-settings.js:32
+msgid "Flex direction (mobile)"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/flex-direction-mobile-settings.js:37
+msgid "Choose the flex direction for the container (mobile)."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/flex-container/settings/row-gap-settings.js:33
+#: src/blocks/grid-container/settings/row-gap-settings.js:32
+msgid "Row gap"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/flex-container/settings/row-gap-settings.js:38
+#: src/blocks/grid-container/settings/row-gap-settings.js:37
+msgid "Use normal row gap (default value)"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/row-gap-settings.js:52
+msgid "Please select the row gap (px) for the flex container."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/flex-container/settings/overflow-settings.js:34
+#: src/blocks/grid-container/settings/overflow-settings.js:34
+msgid "Select the value for the overflow property. The container will automatically have 'overflow:hidden' applied if it's the parent of a slider or image gallery block."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/flex-container/settings/full-width-tablet-settings.js:29
+#: src/blocks/grid-container/settings/full-width-tablet-settings.js:29
+msgid "Full Width (Tablet and Mobile)"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/full-width-tablet-settings.js:34
+msgid "Enable the flex container to expand to full width on tablets and mobile devices."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/flex-container/settings/full-width-mobile-settings.js:29
+#: src/blocks/grid-container/settings/full-width-mobile-settings.js:29
+msgid "Full Width (Mobile)"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: src/blocks/flex-container/settings/full-width-mobile-settings.js:34
+msgid "Enable the flex container to expand to full width only on mobile devices."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: build/blocks/search-form/index.js:1
+#: src/blocks/grid-container/settings/width-settings.js:64
+#: src/blocks/search-form/settings/width-settings.js:67
+msgid "Width"
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/number-of-columns-settings.js:28
+msgid "No. of columns (desktop)"
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/number-of-columns-settings.js:33
+msgid "Please select the number of columns for the container (desktop)."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/number-of-columns-tablet-settings.js:31
+msgid "No. of columns (tablet)"
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/number-of-columns-tablet-settings.js:36
+msgid "Please select the number of columns for the container (tablet)."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/number-of-columns-mobile-settings.js:31
+msgid "No. of columns (mobile)"
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/number-of-columns-mobile-settings.js:36
+msgid "Please select the number of columns for the container (mobile devices)."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/row-gap-settings.js:51
+msgid "Please select the row gap (px) for the grid container."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/column-gap-settings.js:51
+msgid "Please select the column gap (px) for the grid container."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/alignment-settings.js:28
+msgid "Content alignment"
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/alignment-settings.js:33
+msgid "Choose the vertical alignment for the container items."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/alignment-settings.js:71
+msgid "Choose the horizontal alignment for the container items."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/full-width-tablet-settings.js:34
+msgid "Enable the grid container to expand to full width on tablets and mobile devices."
+msgstr ""
+
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/grid-container/settings/full-width-mobile-settings.js:34
+msgid "Enable the grid container to expand to full width only on mobile devices."
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/icon-settings.js:27
+msgid "Icon"
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/icon-settings.js:29
+msgid "Choose the icon"
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/link-settings.js:28
+msgid "Icon link"
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/link-settings.js:34
+msgid "Enable icon link"
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/link-settings.js:43
+msgid "Paste the link for the icon"
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/icons-color-settings.js:73
+msgid "Icon color (light mode)"
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/icons-dark-color-settings.js:73
+msgid "Icon color (dark mode)"
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/icons-size-settings.js:29
+msgid "Icon size"
+msgstr ""
+
+#: build/blocks/icon/index.js:1
+#: src/blocks/icon/settings/icons-size-settings.js:33
+msgid "Adjust the size (px) of the icon"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/loop-settings.js:28
+#: src/blocks/slider/settings/loop-settings.js:28
+msgid "Loop"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/loop-settings.js:32
+#: src/blocks/slider/settings/loop-settings.js:32
+msgid "Enable loop"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/loop-settings.js:33
+#: src/blocks/slider/settings/loop-settings.js:33
+msgid "Enable the continuous loop mode."
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/identifier-settings.js:29
+#: src/blocks/slider/settings/identifier-settings.js:29
+msgid "Unique Identifier"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/identifier-settings.js:34
+#: src/blocks/slider/settings/identifier-settings.js:34
+msgid "Type the identifier for the slider. The identifier must be unique. If no unique identifier is provided, the slider won't work."
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/pagination-settings.js:29
+#: src/blocks/slider/settings/pagination-settings.js:29
+msgid "Pagination"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/pagination-settings.js:35
+#: src/blocks/slider/settings/pagination-settings.js:35
+msgid "Enable pagination"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/pagination-settings.js:43
+#: src/blocks/slider/settings/pagination-settings.js:43
+msgid "Choose the type of pagination"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/autoplay-settings.js:29
+#: src/blocks/slider/settings/autoplay-settings.js:29
+msgid "Autoplay"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/autoplay-settings.js:35
+#: src/blocks/slider/settings/autoplay-settings.js:35
+msgid "Enable autoplay"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/autoplay-settings.js:48
+#: src/blocks/slider/settings/autoplay-settings.js:48
+msgid "Select the delay between transitions (milliseconds)."
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/light-color-settings.js:77
+#: src/blocks/slider/settings/light-color-settings.js:77
+msgid "Navigation & Pagination Color (Light Mode)"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/dark-color-settings.js:77
+#: src/blocks/slider/settings/dark-color-settings.js:77
+msgid "Navigation & Pagination Color (Dark Mode)"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/navigation-arrows-settings.js:32
+#: src/blocks/slider/settings/navigation-arrows-settings.js:32
+msgid "Navigation Arrows"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/navigation-arrows-settings.js:38
+#: src/blocks/slider/settings/navigation-arrows-settings.js:38
+msgid "Enable navigation arrows"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/navigation-arrows-settings.js:39
+#: src/blocks/slider/settings/navigation-arrows-settings.js:39
+msgid "Choose whether or not the navigation arrows are visible."
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: src/blocks/image-gallery/settings/images-settings.js:41
+msgid "Image Settings"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: src/blocks/image-gallery/settings/images-settings.js:54
+msgid "Add Images"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: src/blocks/image-gallery/settings/images-settings.js:55
+msgid "Edit Gallery"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: build/blocks/slider/index.js:1
+#: src/blocks/image-gallery/settings/effect-settings.js:29
+#: src/blocks/slider/settings/effect-settings.js:29
+msgid "Effect"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: src/blocks/image-gallery/settings/effect-settings.js:34
+msgid "Choose the effect for the gallery."
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: src/blocks/image-gallery/settings/show-demo-data-settings.js:35
+msgid "Display demo images."
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: src/blocks/image-gallery/edit-block.js:205
+msgid "Image Gallery"
+msgstr ""
+
+#: build/blocks/image-gallery/index.js:1
+#: src/blocks/image-gallery/edit-block.js:206
+msgid "Add images to the gallery."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/page-link-settings.js:46
+msgid "Page link"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/page-link-settings.js:47
+msgid "Select the page to link with the menu item."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/post-link-settings.js:46
+msgid "Post link"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/post-link-settings.js:47
+msgid "Select the post to link with the menu item."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/custom-link-settings.js:30
+msgid "Custom link"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/custom-link-settings.js:31
+msgid "Paste the link for the menu item."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/content-type-group-settings.js:34
+msgid "Link"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/content-type-group-settings.js:37
+msgid "Content type"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/content-type/content-type-group-settings.js:38
+msgid "Select the content type to link to."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/animation-type-settings.js:29
+msgid "Animation type"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/animation-type-settings.js:34
+msgid "Select the animation type for the menu link."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/dark-color-settings.js:72
+msgid "Color (dark mode)"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/dark-hover-color-settings.js:72
+msgid "Hover/active color (dark mode)"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/label-settings.js:28
+msgid "Label"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/label-settings.js:31
+msgid "Type the label for the menu link."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/letter-case-settings.js:29
+msgid "Letter case"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/letter-case-settings.js:34
+msgid "Select the letter case transformation."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/light-color-settings.js:72
+msgid "Color (light mode)"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/light-hover-color-settings.js:72
+msgid "Hover/active color (light mode)"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/line-height-settings.js:33
+msgid "Line height"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/line-height-settings.js:38
+msgid "Use theme line height (default)"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/line-height-settings.js:52
+msgid "Please, select the line height for the menu link."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/mega-menu/mega-menu-template-settings.js:52
+msgid "Mega menu template"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/mega-menu/mega-menu-template-settings.js:57
+msgid "Select the template for the mega menu."
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/mega-menu/mega-menu-width-settings.js:29
+msgid "Mega menu width"
+msgstr ""
+
+#: build/blocks/menu-link/index.js:1
+#: src/blocks/menu-link/settings/mega-menu/mega-menu-width-settings.js:34
+msgid "Please select the width for the mega menu. To ensure a more cohesive design, the width of the mega menu should match the container width specified in the mega menu template editor."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/number-of-items-settings.js:28
+msgid "No. of items"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/number-of-items-settings.js:33
+msgid "Please select the number of items to be displayed per page."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/page-type-settings.js:29
+msgid "Page type"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/page-type-settings.js:34
+msgid "Choose the type of page where the loop will be displayed."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-navigation-links-settings.js:32
+msgid "Show navigation links"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-navigation-links-settings.js:37
+msgid "Show the  page navigation links."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-navigation-links-settings.js:38
+msgid "The page navigation links will be displayed below the post loop."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/sort-order-settings.js:29
+msgid "Sort order"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/sort-order-settings.js:34
+msgid "Choose the sort order: ascending or descending"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/order-type-settings.js:29
+msgid "Order type"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/order-type-settings.js:34
+msgid "Choose the criteria for ordering the posts."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/date-settings.js:29
+msgid "Date options"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/date-settings.js:34
+msgid "Show date"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/date-settings.js:35
+msgid "Each post card will show its publication date"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/date-settings.js:49
+msgid "Choose the date format"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-author-settings.js:29
+msgid "Author options"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-author-settings.js:34
+msgid "Show author"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-author-settings.js:35
+msgid "Display the name of the post's author."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-category-settings.js:29
+msgid "Category options"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-category-settings.js:34
+msgid "Show category"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-category-settings.js:35
+msgid "Display the name of the post's category."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-tag-settings.js:29
+msgid "Tag options"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-tag-settings.js:34
+msgid "Show tag"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/show-tag-settings.js:35
+msgid "Display the first tag of the post."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/excerpt-settings.js:29
+msgid "Excerpt options"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/excerpt-settings.js:34
+msgid "Show excerpt"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/excerpt-settings.js:35
+msgid "Each post card will displayed a short excerpt"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/excerpt-settings.js:50
+msgid "Show ellipsis"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/excerpt-settings.js:51
+msgid "A ellipsis will appear at the end of the excerpt."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/excerpt-settings.js:64
+msgid "Please select the excerpt length (number of words)."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/excerpt-settings.js:69
+msgid "Excerpt length"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/category-filter-settings.js:49
+msgid "Filter by category"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/category-filter-settings.js:54
+msgid "Filter posts by category"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/category-filter-settings.js:55
+msgid "Choose whether or not the posts will be filtered by category."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/category-filter-settings.js:73
+msgid "Choose the category."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/tag-filter-settings.js:49
+msgid "Filter by tag"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/tag-filter-settings.js:54
+msgid "Filter posts by tag"
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/tag-filter-settings.js:55
+msgid "Choose whether or not the posts will be filtered by tag."
+msgstr ""
+
+#: build/blocks/posts-loop/index.js:1
+#: src/blocks/posts-loop/settings/tag-filter-settings.js:73
+msgid "Choose the tag."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/width-settings.js:49
+msgid "Max width"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/object-fit-settings.js:28
+msgid "Object fit"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/object-fit-settings.js:33
+msgid "Choose the object fit property for the image."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/toolbar-group-settings.js:70
+msgid "Replace image"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/lazy-load-settings.js:29
+msgid "Lazy loading"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/lazy-load-settings.js:34
+msgid "Enable lazy loading"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/caption-settings.js:29
+msgid "Caption"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/caption-settings.js:35
+msgid "Enable image caption"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/caption-settings.js:46
+msgid "Write the image caption."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/alt-text-settings.js:37
+msgid "Write the alt text for the image."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/border-width-settings.js:67
+msgid "Please select the border width (px) for the image."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/border-width-settings.js:87
+msgid "Please select the top border width (px) for the image."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/border-width-settings.js:106
+msgid "Please select the right border width (px) for the image."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/border-width-settings.js:125
+msgid "Please select the bottom border width (px) for the image."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/border-width-settings.js:144
+msgid "Please select the left border width (px) for the image."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/border-color-settings.js:84
+msgid "Border color"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/box-shadow-settings.js:191
+msgid "Choose a color for the box shadow"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:124
+msgid "Filter"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:129
+msgid "Choose the filter type."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:192
+msgid "Choose the blur value (px)."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:210
+msgid "Choose the brightness value (%)."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:228
+msgid "Choose the contrast value (%)."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:300
+msgid "Choose a color for the drop shadow"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:321
+msgid "Choose the grayscale value (%)."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:347
+msgid "Hue-rotate value (deg)"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:353
+msgid "Choose the invert value (%)."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:371
+msgid "Choose the opacity value (%)."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:389
+msgid "Choose the saturation value (%)."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/filter-settings.js:407
+msgid "Choose the sepia filter value (%)."
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/image-link-settings.js:29
+msgid "Image link"
+msgstr ""
+
+#: build/blocks/responsive-image/index.js:1
+#: src/blocks/responsive-image/settings/image-link-settings.js:37
+msgid "Paste the link for the image"
+msgstr ""
+
+#: build/blocks/search-form/index.js:1
+#: src/blocks/search-form/settings/button-dark-background-color-settings.js:80
+msgid "Button background color (dark mode)"
+msgstr ""
+
+#: build/blocks/search-form/index.js:1
+#: src/blocks/search-form/settings/button-dark-text-color-settings.js:80
+msgid "Button text color (dark mode)"
+msgstr ""
+
+#: build/blocks/search-form/index.js:1
+#: src/blocks/search-form/settings/button-light-background-color-settings.js:80
+msgid "Button background color (light mode)"
+msgstr ""
+
+#: build/blocks/search-form/index.js:1
+#: src/blocks/search-form/settings/button-light-text-color-settings.js:80
+msgid "Button text color (light mode)"
+msgstr ""
+
+#: build/blocks/search-form/index.js:1
+#: src/blocks/search-form/settings/button-text-settings.js:37
+msgid "Write the button text."
+msgstr ""
+
+#: build/blocks/search-form/index.js:1
+#: src/blocks/search-form/settings/placeholder-text-settings.js:29
+msgid "Placeholder text"
+msgstr ""
+
+#: build/blocks/search-form/index.js:1
+#: src/blocks/search-form/settings/placeholder-text-settings.js:39
+msgid "Write the text for the placeholder."
+msgstr ""
+
+#: build/blocks/search-form/index.js:1
+#: src/blocks/search-form/settings/width-settings.js:79
+msgid "Choose the maximum width for the form."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/sidebar-template-settings.js:49
+msgid "Sidebar template"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/sidebar-template-settings.js:54
+msgid "Select the template for the sidebar menu."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/button-dark-color-settings.js:81
+msgid "Button color (dark mode)"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/button-light-color-settings.js:84
+msgid "Button color (light mode)"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-position-settings.js:33
+msgid "Close button position"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-position-settings.js:38
+msgid "Please select the top padding (px) for the close button. The close button is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-position-settings.js:57
+msgid "Please select the right padding (px) for the close button. The close button is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:33
+msgid "Close button styles"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:38
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:38
+msgid "Button height"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:39
+msgid "Please select the value (px) for the button height. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:58
+msgid "Button width"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:59
+msgid "Please select the value (px) for the button width. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:78
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:78
+msgid "Button border width"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:79
+msgid "Please select the width (px) for the button border. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:98
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:98
+msgid "Button border radius"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:99
+msgid "Please select the radius (px) for the button border. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:118
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:118
+msgid "Button bars' height"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:119
+msgid "Please select the height (px) of the button bars. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:138
+msgid "Button bars' width"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:139
+msgid "Please select the width (px) of the button bars. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:158
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:181
+msgid "Button bars' border radius"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/close-button-styles-settings.js:159
+msgid "Please select the border radius (px) for the button bars. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:33
+msgid "Open button styles"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:39
+msgid "Please select the value (px) for the button height."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:58
+msgid "Button gap"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:59
+msgid "Please select the value (px) for the gap between the button bars."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:79
+msgid "Please select the width (px) for the button border."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:99
+msgid "Please select the radius (px) for the button border."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:119
+msgid "Please select the height (px) of the button bars."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:138
+msgid "Width of the button's top and bottom bars"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:142
+msgid "Please select the width (px) of the button's top and bottom bars."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:161
+msgid "Width of the button's center bar"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:162
+msgid "Please select the width (px) of the button's center bar."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-styles-settings.js:182
+msgid "Please select the border radius (px) for the button bars."
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-padding-settings.js:43
+msgid "Open button padding"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-padding-settings.js:63
+msgid "Please select the padding (px) for the button"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-padding-settings.js:85
+msgid "Please select the top padding (px) for the button"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-padding-settings.js:104
+msgid "Please select the right padding (px) for the button"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-padding-settings.js:123
+msgid "Please select the bottom padding (px) for the button"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/open-button-padding-settings.js:142
+msgid "Please select the left padding (px) for the button"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/sidebar-min-width-settings.js:30
+msgid "Sidebar minimum width"
+msgstr ""
+
+#: build/blocks/sidebar-menu/index.js:1
+#: src/blocks/sidebar-menu/settings/sidebar-min-width-settings.js:35
+msgid "Please select the minimum width (%) for the sidebar menu. This setting only applies to screens with widths between 451px and 811px (tablet-sized screens). On smaller devices (450px or less), the sidebar menu spans the whole screen. This feature is only visible in the frontend."
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-one-template-settings.js:49
+msgid "1st Card Template"
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-one-template-settings.js:54
+msgid "Select the template for the 1st card."
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-two-template-settings.js:49
+msgid "2nd Card Template"
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-two-template-settings.js:54
+msgid "Select the template for the 2nd card."
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-three-template-settings.js:52
+msgid "3rd Card Template"
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-three-template-settings.js:57
+msgid "Select the template for the 3rd card."
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-four-template-settings.js:52
+msgid "4th Card Template"
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-four-template-settings.js:57
+msgid "Select the template for the 4th card."
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-five-template-settings.js:52
+msgid "5th Card Template"
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-five-template-settings.js:57
+msgid "Select the template for the 5th card."
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-six-template-settings.js:49
+msgid "6th Card Template"
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/card-six-template-settings.js:54
+msgid "Select the template for the 6th card."
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/number-of-cards-settings.js:28
+msgid "No. of Cards"
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/number-of-cards-settings.js:33
+msgid "Please select the number of cards to be displayed on the slider."
+msgstr ""
+
+#: build/blocks/slider/index.js:1
+#: src/blocks/slider/settings/effect-settings.js:34
+msgid "Choose the effect for the slider."
+msgstr ""
+
+#: build/blocks/social-icon/index.js:1
+#: src/blocks/social-icon/settings/icon-settings.js:28
+msgid "Social media icon"
+msgstr ""
+
+#: build/blocks/social-icon/index.js:1
+#: src/blocks/social-icon/settings/icon-settings.js:32
+msgid "Choose your social media icon"
+msgstr ""
+
+#: build/blocks/social-icon/index.js:1
+#: src/blocks/social-icon/settings/link-settings.js:28
+msgid "Social media link"
+msgstr ""
+
+#: build/blocks/social-icon/index.js:1
+#: src/blocks/social-icon/settings/link-settings.js:34
+msgid "Paste the link to your social media profile"
+msgstr ""
+
+#: build/blocks/social-icons-group/index.js:1
+#: src/blocks/social-icons-group/settings/icons-color-settings.js:73
+msgid "Social icons color (light mode)"
+msgstr ""
+
+#: build/blocks/social-icons-group/index.js:1
+#: src/blocks/social-icons-group/settings/icons-dark-color-settings.js:73
+msgid "Social icons color (dark mode)"
+msgstr ""
+
+#: build/blocks/social-icons-group/index.js:1
+#: src/blocks/social-icons-group/settings/icons-size-settings.js:29
+msgid "Social icons size"
+msgstr ""
+
+#: build/blocks/social-icons-group/index.js:1
+#: src/blocks/social-icons-group/settings/icons-size-settings.js:33
+msgid "Adjust the size (px) of the social media icons"
+msgstr ""
+
+#: build/blocks/social-icons-group/index.js:1
+#: src/blocks/social-icons-group/settings/space-between-icons-settings.js:32
+msgid "Space between icons"
+msgstr ""
+
+#: build/blocks/social-icons-group/index.js:1
+#: src/blocks/social-icons-group/settings/space-between-icons-settings.js:36
+msgid "Adjust the spacing (px) between the icons "
+msgstr ""
+
+#: src/blocks/slider/settings/fade-effect-settings.js:29
+msgid "Fade Effect"
+msgstr ""
+
+#: src/blocks/slider/settings/fade-effect-settings.js:35
+msgid "Enable fade effect"
+msgstr ""
+
+#: build/blocks/button/block.json
+#: src/blocks/button/block.json
+msgctxt "block title"
+msgid "Button"
+msgstr ""
+
+#: build/blocks/button/block.json
+#: src/blocks/button/block.json
+msgctxt "block description"
+msgid "A button with different colors for the light and dark mode."
+msgstr ""
+
+#: build/blocks/button/block.json
+#: src/blocks/button/block.json
+msgctxt "block keyword"
+msgid "button"
+msgstr ""
+
+#: build/blocks/category-loop/block.json
+#: src/blocks/category-loop/block.json
+msgctxt "block title"
+msgid "Category loop"
+msgstr ""
+
+#: build/blocks/category-loop/block.json
+#: src/blocks/category-loop/block.json
+msgctxt "block description"
+msgid "A block to show the published categories of the website."
+msgstr ""
+
+#: build/blocks/category-loop/block.json
+#: build/blocks/content-renderer/block.json
+#: build/blocks/posts-loop/block.json
+#: src/blocks/category-loop/block.json
+#: src/blocks/content-renderer/block.json
+#: src/blocks/posts-loop/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr ""
+
+#: build/blocks/category-loop/block.json
+#: build/blocks/content-renderer/block.json
+#: build/blocks/posts-loop/block.json
+#: src/blocks/category-loop/block.json
+#: src/blocks/content-renderer/block.json
+#: src/blocks/posts-loop/block.json
+msgctxt "block keyword"
+msgid "loop"
+msgstr ""
+
+#: build/blocks/content-renderer/block.json
+#: src/blocks/content-renderer/block.json
+msgctxt "block title"
+msgid "Content Renderer"
+msgstr ""
+
+#: build/blocks/content-renderer/block.json
+#: src/blocks/content-renderer/block.json
+msgctxt "block description"
+msgid "Displays the content of the post or page. Unlike the default content block, this block does not add a wrapper."
+msgstr ""
+
+#: build/blocks/dark-light-mode-switcher/block.json
+#: src/blocks/dark-light-mode-switcher/block.json
+msgctxt "block title"
+msgid "Dark/Light Mode Switcher"
+msgstr ""
+
+#: build/blocks/dark-light-mode-switcher/block.json
+#: src/blocks/dark-light-mode-switcher/block.json
+msgctxt "block description"
+msgid "Allows switching between the dark and light modes. The toggle only works in the frontend."
+msgstr ""
+
+#: build/blocks/dark-light-mode-switcher/block.json
+#: src/blocks/dark-light-mode-switcher/block.json
+msgctxt "block keyword"
+msgid "switcher"
+msgstr ""
+
+#: build/blocks/dark-light-mode-switcher/block.json
+#: src/blocks/dark-light-mode-switcher/block.json
+msgctxt "block keyword"
+msgid "dark mode"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/block.json
+#: src/blocks/desktop-menu-container/block.json
+msgctxt "block title"
+msgid "Desktop Menu Container"
+msgstr ""
+
+#: build/blocks/desktop-menu-container/block.json
+#: src/blocks/desktop-menu-container/block.json
+msgctxt "block description"
+msgid "Flexbox container for the desktop navigation menu. This block can only be used once."
+msgstr ""
+
+#: build/blocks/desktop-menu-container/block.json
+#: build/blocks/flex-container/block.json
+#: build/blocks/grid-container/block.json
+#: build/blocks/mobile-menu-container/block.json
+#: src/blocks/desktop-menu-container/block.json
+#: src/blocks/flex-container/block.json
+#: src/blocks/grid-container/block.json
+#: src/blocks/mobile-menu-container/block.json
+msgctxt "block keyword"
+msgid "container, wrapper"
+msgstr ""
+
+#: build/blocks/flex-container/block.json
+#: src/blocks/flex-container/block.json
+msgctxt "block title"
+msgid "Flex Container"
+msgstr ""
+
+#: build/blocks/flex-container/block.json
+#: src/blocks/flex-container/block.json
+msgctxt "block description"
+msgid "A versatile block for creating responsive, flexbox layouts."
+msgstr ""
+
+#: build/blocks/grid-container/block.json
+#: src/blocks/grid-container/block.json
+msgctxt "block title"
+msgid "Grid Container"
+msgstr ""
+
+#: build/blocks/grid-container/block.json
+#: src/blocks/grid-container/block.json
+msgctxt "block description"
+msgid "A flexible layout block that organizes content into responsive, customizable grid columns."
+msgstr ""
+
+#: build/blocks/icon/block.json
+#: src/blocks/icon/block.json
+msgctxt "block title"
+msgid "Icon"
+msgstr ""
+
+#: build/blocks/icon/block.json
+#: src/blocks/icon/block.json
+msgctxt "block description"
+msgid "A collection of simple icons."
+msgstr ""
+
+#: build/blocks/icon/block.json
+#: src/blocks/icon/block.json
+msgctxt "block keyword"
+msgid "icon"
+msgstr ""
+
+#: build/blocks/image-gallery/block.json
+#: src/blocks/image-gallery/block.json
+msgctxt "block title"
+msgid "Image Gallery"
+msgstr ""
+
+#: build/blocks/image-gallery/block.json
+#: src/blocks/image-gallery/block.json
+msgctxt "block description"
+msgid "A simple image gallery."
+msgstr ""
+
+#: build/blocks/image-gallery/block.json
+#: src/blocks/image-gallery/block.json
+msgctxt "block keyword"
+msgid "gallery"
+msgstr ""
+
+#: build/blocks/image-gallery/block.json
+#: build/blocks/slider/block.json
+#: src/blocks/image-gallery/block.json
+#: src/blocks/slider/block.json
+msgctxt "block keyword"
+msgid "slider"
+msgstr ""
+
+#: build/blocks/menu-link/block.json
+#: src/blocks/menu-link/block.json
+msgctxt "block title"
+msgid "Menu Link"
+msgstr ""
+
+#: build/blocks/menu-link/block.json
+#: src/blocks/menu-link/block.json
+msgctxt "block description"
+msgid "A customizable, clickable link for the navigation menu."
+msgstr ""
+
+#: build/blocks/menu-link/block.json
+#: build/blocks/search-form/block.json
+#: build/blocks/sidebar-menu/block.json
+#: build/blocks/social-icon/block.json
+#: build/blocks/social-icons-group/block.json
+#: src/blocks/menu-link/block.json
+#: src/blocks/search-form/block.json
+#: src/blocks/sidebar-menu/block.json
+#: src/blocks/social-icon/block.json
+#: src/blocks/social-icons-group/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr ""
+
+#: build/blocks/menu-link/block.json
+#: src/blocks/menu-link/block.json
+msgctxt "block variation title"
+msgid "Mega Menu"
+msgstr ""
+
+#: build/blocks/menu-link/block.json
+#: src/blocks/menu-link/block.json
+msgctxt "block variation description"
+msgid "A customizable mega menu for the navigation bar."
+msgstr ""
+
+#: build/blocks/mobile-menu-container/block.json
+#: src/blocks/mobile-menu-container/block.json
+msgctxt "block title"
+msgid "Mobile Menu Container"
+msgstr ""
+
+#: build/blocks/mobile-menu-container/block.json
+#: src/blocks/mobile-menu-container/block.json
+msgctxt "block description"
+msgid "Flexbox container for the mobile navigation menu. This block can only be used once."
+msgstr ""
+
+#: build/blocks/posts-loop/block.json
+#: src/blocks/posts-loop/block.json
+msgctxt "block title"
+msgid "Posts loop"
+msgstr ""
+
+#: build/blocks/posts-loop/block.json
+#: src/blocks/posts-loop/block.json
+msgctxt "block description"
+msgid "A block to show the published posts of the website."
+msgstr ""
+
+#: build/blocks/responsive-image/block.json
+#: src/blocks/responsive-image/block.json
+msgctxt "block title"
+msgid "Responsive Image"
+msgstr ""
+
+#: build/blocks/responsive-image/block.json
+#: src/blocks/responsive-image/block.json
+msgctxt "block description"
+msgid "A block for adding fully responsive images with customizable settings and features."
+msgstr ""
+
+#: build/blocks/responsive-image/block.json
+#: src/blocks/responsive-image/block.json
+msgctxt "block keyword"
+msgid "image, responsive"
+msgstr ""
+
+#: build/blocks/search-form/block.json
+#: src/blocks/search-form/block.json
+msgctxt "block title"
+msgid "Search Form"
+msgstr ""
+
+#: build/blocks/search-form/block.json
+#: src/blocks/search-form/block.json
+msgctxt "block description"
+msgid "A simple search form."
+msgstr ""
+
+#: build/blocks/search-form/block.json
+#: build/blocks/social-icon/block.json
+#: build/blocks/social-icons-group/block.json
+#: src/blocks/search-form/block.json
+#: src/blocks/social-icon/block.json
+#: src/blocks/social-icons-group/block.json
+msgctxt "block keyword"
+msgid "link"
+msgstr ""
+
+#: build/blocks/sidebar-menu/block.json
+#: src/blocks/sidebar-menu/block.json
+msgctxt "block title"
+msgid "Sidebar Menu"
+msgstr ""
+
+#: build/blocks/sidebar-menu/block.json
+#: src/blocks/sidebar-menu/block.json
+msgctxt "block description"
+msgid "A customizable sidebar menu."
+msgstr ""
+
+#: build/blocks/sidebar-menu/block.json
+#: src/blocks/sidebar-menu/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr ""
+
+#: build/blocks/slider/block.json
+#: src/blocks/slider/block.json
+msgctxt "block title"
+msgid "Slider"
+msgstr ""
+
+#: build/blocks/slider/block.json
+#: src/blocks/slider/block.json
+msgctxt "block description"
+msgid "A customizable slider for template parts."
+msgstr ""
+
+#: build/blocks/social-icon/block.json
+#: src/blocks/social-icon/block.json
+msgctxt "block title"
+msgid "Social Icon"
+msgstr ""
+
+#: build/blocks/social-icon/block.json
+#: src/blocks/social-icon/block.json
+msgctxt "block description"
+msgid "Icon representing a social media platform"
+msgstr ""
+
+#: build/blocks/social-icons-group/block.json
+#: src/blocks/social-icons-group/block.json
+msgctxt "block title"
+msgid "Social Icons Group"
+msgstr ""
+
+#: build/blocks/social-icons-group/block.json
+#: src/blocks/social-icons-group/block.json
+msgctxt "block description"
+msgid "A collection of social media icons"
+msgstr ""

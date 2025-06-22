@@ -1,0 +1,178 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*Grid container*/
+.cbb-grid-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--cbb-col-lg, 1), 1fr);
+  row-gap: var(--cbb-row-gap, normal);
+  column-gap: var(--cbb-column-gap, normal);
+  min-height: var(--cbb-min-height, 0);
+  background-size: cover;
+  background-color: var(--cbb-light-bg-color, rgba(0, 0, 0, 0));
+  border-style: var(--cbb-br-style, none);
+  border-width: var(--cbb-br-width, 0px);
+  border-color: var(--cbb-br-color, "#00000000");
+  border-radius: var(--cbb-br-radius, 0px);
+  box-shadow: var(--cbb-box-shadow, none);
+  padding: var(--cbb-gc-padding, 0px);
+  align-items: var(--cbb-gc-x-align, normal);
+  justify-items: var(--cbb-gc-y-align, legacy);
+  background-position: var(--cbb-bg-position, 0% 0%);
+  overflow: var(--cbb-overflow, visible);
+}
+
+.cbb-grid-container {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0px;
+}
+
+/*Grid container with background gradient*/
+.cbb-grid-container--has-bg-gradient
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-image: var(--cbb-light-bg-gradient, none);
+}
+
+.cbb-grid-container--has-bg-gradient {
+  background-image: none;
+}
+
+.cbb-grid-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout
+  .cbb-grid-container--has-bg-gradient {
+  background-image: none;
+}
+
+/*Grid container with background color*/
+.cbb-grid-container--has-bg-color
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-blend-mode: overlay;
+}
+
+.cbb-grid-container--has-bg-color {
+  background-color: transparent !important;
+}
+
+/*Grid container with box shadow*/
+.cbb-grid-container--has-box-shadow
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-shadow: var(--cbb-light-box-shadow, none);
+}
+
+.cbb-grid-container--has-box-shadow {
+  box-shadow: none !important;
+}
+
+/*Grid container with border*/
+.cbb-grid-container--has-border
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  border-color: var(--cbb-light-border-color, "#00000000");
+}
+
+.cbb-grid-container--has-border {
+  border-color: "#00000000";
+}
+
+/*Grid container (Tablet)*/
+@media (max-width: 810px) {
+  .cbb-grid-container
+    > .block-editor-inner-blocks
+    > .block-editor-block-list__layout {
+    grid-template-columns: repeat(var(--cbb-col-md, 1), 1fr);
+  }
+}
+
+/*Grid container (Mobile)*/
+@media (max-width: 450px) {
+  .cbb-grid-container
+    > .block-editor-inner-blocks
+    > .block-editor-block-list__layout {
+    grid-template-columns: repeat(var(--cbb-col-sm, 1), 1fr);
+  }
+}
+
+/*Dark mode*/
+html[data-theme="dark"]
+  .cbb-grid-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-color: var(--cbb-dark-bg-color, #00000000);
+}
+
+/*Grid container with box shadow*/
+html[data-theme="dark"]
+  .cbb-grid-container--has-box-shadow
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-shadow: var(--cbb-dark-box-shadow, none);
+}
+
+html[data-theme="dark"] .cbb-grid-container--has-box-shadow {
+  box-shadow: none !important;
+}
+
+/*Grid container with background gradient*/
+html[data-theme="dark"]
+  .cbb-grid-container--has-bg-gradient
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-image: var(--cbb-dark-bg-gradient, none);
+}
+
+html[data-theme="dark"] .cbb-grid-container--has-bg-gradient {
+  background-image: none;
+}
+
+/*Grid container with border*/
+html[data-theme="dark"]
+  .cbb-grid-container--has-border
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  border-color: var(--cbb-dark-border-color, "#00000000");
+}
+
+html[data-theme="dark"] .cbb-grid-container--has-border {
+  border-color: "#00000000";
+}
+
+/*Fix for the image gallery block*/
+.cbb-grid-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout
+  > .cbb-image-gallery {
+  overflow: hidden !important;
+}
+
+/*Fix for the slider block*/
+.cbb-grid-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout
+  > .cbb-slider {
+  overflow: hidden !important;
+}

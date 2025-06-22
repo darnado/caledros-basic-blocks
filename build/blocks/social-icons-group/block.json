@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/social-icons-group",
+  "title": "Social Icons Group",
+  "category": "caledros-basic-blocks",
+  "icon": "smiley",
+  "description": "A collection of social media icons",
+  "keywords": [
+    "menu",
+    "link"
+  ],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "iconsGap": {
+      "type": "number",
+      "default": 5
+    },
+    "groupMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "differentMarginsEnabled": false
+      }
+    },
+    "socialIconsSize": {
+      "type": "number",
+      "default": 20
+    },
+    "socialIconsColor": {
+      "type": "string",
+      "default": "#b8b8b8"
+    },
+    "socialIconsDarkColor": {
+      "type": "string",
+      "default": "#ffffff"
+    }
+  },
+  "supports": {
+    "className": false
+  }
+}

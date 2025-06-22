@@ -1,0 +1,229 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*Basic menu link styles*/
+.cbb-posts-loop {
+  width: 100%;
+}
+
+.cbb-posts-loop__container {
+  padding-bottom: 20px;
+  display: grid;
+  row-gap: 20px;
+  column-gap: 10px;
+}
+
+@media (max-width: 500px) {
+  .cbb-posts-loop__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 501px) {
+  .cbb-posts-loop__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 781px) {
+  .cbb-posts-loop__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/*Image container*/
+.cbb-posts-loop__img-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.cbb-posts-loop__img-container {
+  position: relative;
+  background: linear-gradient(5deg, #0553f5 0%, #bafffc 100%);
+}
+.cbb-posts-loop__img-link {
+  display: block;
+  height: 300px;
+  position: relative;
+}
+
+/*Post information*/
+.cbb-posts-loop__post-title {
+  line-height: 1.4;
+  font-size: 22px;
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: block;
+  padding: 0px 5px 0px 5px;
+  font-weight: 500;
+}
+
+.cbb-posts-loop_website-title-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.cbb-posts-loop__card {
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.cbb-posts-loop__post-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px 10px;
+}
+
+.cbb-posts-loop_post-header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  row-gap: 5px;
+}
+
+.cbb-posts-loop_post-author-and-date {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+
+.cbb-posts-loop__author,
+.cbb-posts-loop__date {
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cbb-posts-loop__author {
+  column-gap: 1px;
+}
+
+.cbb-posts-loop__date {
+  column-gap: 5px;
+}
+
+.cbb-posts-loop_website-title {
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 4px;
+  margin: 0px;
+}
+
+.cbb-posts-loop__category-and-tag {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+
+.cbb-posts-loop__category,
+.cbb-posts-loop__tag {
+  text-decoration: none;
+  color: var(--wp--preset--color--paragraph-light);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3px;
+  font-size: 13px;
+}
+
+.cbb-posts-loop__post-excerpt {
+  padding: 0px 10px 15px 10px;
+}
+
+/*Posts pagination*/
+.cbb-posts-loop_pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.cbb-posts-loop_pagination .page-numbers {
+  text-decoration: none;
+  padding: 4px 8px;
+  font-size: 16px;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.cbb-posts-loop_pagination .page-numbers:hover {
+  background-color: #eeeeee;
+}
+
+.cbb-posts-loop_pagination .page-numbers.current {
+  background-color: #eeeeee;
+}
+
+/*Dark mode*/
+html[data-theme="dark"] .cbb-posts-loop__card {
+  background-color: #272730;
+  box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.4);
+}
+
+/*Background color*/
+html[data-theme="dark"] .cbb-posts-loop__title {
+  color: var(--wp--preset--color--paragraph-dark);
+}
+.cbb-posts-loop__title:hover {
+  text-decoration: underline;
+}
+
+html[data-theme="dark"] .cbb-posts-loop_pagination .page-numbers {
+  color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  background-color: transparent;
+}
+
+html[data-theme="dark"] .cbb-posts-loop_pagination .page-numbers:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+html[data-theme="dark"] .cbb-posts-loop_pagination .page-numbers.current {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+html[data-theme="dark"] .cbb-posts-loop__author,
+html[data-theme="dark"] .cbb-posts-loop__date {
+  color: var(--wp--preset--color--paragraph-dark);
+}
+
+html[data-theme="dark"] .cbb-posts-loop__category,
+html[data-theme="dark"] .cbb-posts-loop__tag {
+  color: var(--wp--preset--color--paragraph-dark);
+}

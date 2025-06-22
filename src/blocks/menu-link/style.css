@@ -1,0 +1,130 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*Basic menu link styles*/
+.cbb-menu-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--cbb-menu-light-color, #000);
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+  position: relative;
+  display: block;
+  width: fit-content;
+}
+.cbb-menu-link:hover {
+  color: var(--cbb-menu-light-hover, #000);
+  transition: color 1s cubic-bezier(0.15, 1, 0.15, 1);
+}
+/*Active menu link*/
+.cbb-menu-link--active {
+  color: var(--cbb-menu-light-hover, #000);
+}
+
+/*Slide-in underline animation */
+.cbb-menu-link--slide-in-underline::before {
+  content: "";
+  background-color: var(--cbb-menu-light-color, #000);
+  display: block;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  transition: width 1s cubic-bezier(0.15, 1, 0.15, 1);
+  right: 0;
+  width: 0%;
+  left: auto;
+}
+.cbb-menu-link--slide-in-underline:hover::before {
+  left: 0;
+  width: 100%;
+  right: auto;
+  background-color: var(--cbb-menu-light-hover, #000);
+}
+
+/*Bounce underline animation*/
+.cbb-menu-link--bounce-underline::before {
+  content: "";
+  background-color: var(--cbb-menu-light-color, #000);
+  display: block;
+  height: 1px;
+  position: absolute;
+  transition: width 1s cubic-bezier(0.15, 1, 0.15, 1);
+  bottom: 0;
+  left: 0;
+  width: 0%;
+}
+.cbb-menu-link--bounce-underline:hover::before {
+  width: 100%;
+  background-color: var(--cbb-menu-light-hover, #000);
+}
+
+/*Dark mode*/
+/*Menu link*/
+html[data-theme="dark"] .cbb-menu-link {
+  color: var(--cbb-menu-dark-color, #fff);
+}
+
+html[data-theme="dark"] .cbb-menu-link:hover {
+  color: var(--cbb-menu-dark-hover, #000);
+  transition: color 1s cubic-bezier(0.15, 1, 0.15, 1);
+}
+
+/*Active menu link*/
+html[data-theme="dark"] .cbb-menu-link--active {
+  color: var(--cbb-menu-dark-hover, #000);
+}
+
+/*Slide-in underline animation */
+html[data-theme="dark"] .cbb-menu-link--slide-in-underline::before {
+  background-color: var(--cbb-menu-dark-color, #000);
+}
+html[data-theme="dark"] .cbb-menu-link--slide-in-underline:hover::before {
+  background-color: var(--cbb-menu-dark-hover, #000);
+}
+/*Bounce underline animation*/
+html[data-theme="dark"] .cbb-menu-link--bounce-underline::before {
+  background-color: var(--cbb-menu-dark-color, #000);
+}
+html[data-theme="dark"] .cbb-menu-link--bounce-underline:hover::before {
+  background-color: var(--cbb-menu-dark-hover, #000);
+}
+
+/*Mega menu*/
+.cbb-mega-menu {
+  position: relative;
+}
+.cbb-mega-menu__container {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  padding-top: 7px;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    z-index 0.3s;
+  z-index: -1;
+  pointer-events: none;
+}
+.cbb-mega-menu:hover .cbb-mega-menu__container {
+  opacity: 1;
+  z-index: 99;
+  pointer-events: visible;
+}

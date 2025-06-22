@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/category-loop",
+  "title": "Category loop",
+  "category": "caledros-basic-blocks",
+  "icon": "star",
+  "description": "A block to show the published categories of the website.",
+  "keywords": ["posts", "loop"],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "showNumberOfPublications": {
+      "type": "boolean",
+      "default": true
+    },
+    "categoriesLoopTitle": {
+      "type": "string",
+      "default": "Website Title"
+    },
+    "categoriesLoopTitleIcon": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "alt": "Icon",
+        "url": ""
+      }
+    },
+    "showDemoData": {
+      "type": "boolean",
+      "default": false
+    },
+    "showUncategorizedCategory": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "className": false,
+    "html": false
+  }
+}

@@ -1,0 +1,52 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+.cbb-search-form__form {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2px;
+  justify-content: center;
+  align-items: center;
+}
+.cbb-search-form__search-field {
+  font-size: 17px;
+  font-family: "Inter", sans-serif;
+  width: 80%;
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+.cbb-search-form__button {
+  font-size: 17px;
+  font-family: "Inter", sans-serif;
+  width: 20%;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: var(--cbb-light-bg-color, #000);
+  color: var(--cbb-light-text-color, #fff);
+}
+/*Dark mode*/
+html[data-theme="dark"] .cbb-search-form__button {
+  background-color: var(--cbb-dark-bg-color, #22aacc);
+  color: var(--cbb-dark-text-color, #fff);
+}

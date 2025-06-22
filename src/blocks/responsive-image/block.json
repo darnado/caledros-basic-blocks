@@ -1,0 +1,119 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/responsive-image",
+  "title": "Responsive Image",
+  "category": "caledros-basic-blocks",
+  "icon": "star",
+  "description": "A block for adding fully responsive images with customizable settings and features.",
+  "keywords": ["image, responsive"],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "sourceImage": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "alt": "",
+        "url": "",
+        "height": "",
+        "width": "",
+        "srcSet": "",
+        "sizes": ""
+      }
+    },
+    "imgWidth": {
+      "type": "object",
+      "default": {
+        "content": "100%",
+        "defaultWidthEnabled": true
+      }
+    },
+    "imgHeight": {
+      "type": "object",
+      "default": {
+        "content": "auto",
+        "defaultHeightEnabled": false
+      }
+    },
+    "imgObjectFit": {
+      "type": "string",
+      "default": "cover"
+    },
+    "imgMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "differentMarginsEnabled": false
+      }
+    },
+    "imgPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "differentPaddingsEnabled": false
+      }
+    },
+    "imgLazyLoad": {
+      "type": "boolean",
+      "default": false
+    },
+    "imgCaption": {
+      "type": "object",
+      "default": {
+        "content": "",
+        "enabled": false
+      }
+    },
+    "imgBorder": {
+      "type": "object",
+      "default": {
+        "style": "none",
+        "width": "0px",
+        "color": "#00000000",
+        "radius": "0px"
+      }
+    },
+    "imgBoxShadow": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "hOffset": "10px",
+        "vOffset": "10px",
+        "blur": "0px",
+        "spread": "0px",
+        "color": "#000",
+        "style": ""
+      }
+    },
+    "imgFilter": {
+      "type": "object",
+      "default": {
+        "type": "none",
+        "content": "",
+        "hOffset": "0px",
+        "vOffset": "0px",
+        "blur": "0px",
+        "color": "#000"
+      }
+    },
+    "imgLink": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": false,
+    "alignWide": false,
+    "className": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "caledros-basic-blocks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build --experimental-modules",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start --experimental-modules",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js",
+    "start:sidebar": "wp-scripts start --webpack-src-dir=plugin-sidebar/src --output-path=plugin-sidebar/build",
+    "build:sidebar": "wp-scripts build --webpack-src-dir=plugin-sidebar/src --output-path=plugin-sidebar/build"
+  },
+  "keywords": [],
+  "author": "David Arnado",
+  "license": "GPL-2.0-or-later",
+  "description": "",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.14.0"
+  },
+  "dependencies": {
+    "swiper": "^11.2.6"
+  }
+}

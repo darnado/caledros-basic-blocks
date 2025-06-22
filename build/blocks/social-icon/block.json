@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/social-icon",
+  "title": "Social Icon",
+  "category": "caledros-basic-blocks",
+  "icon": "smiley",
+  "description": "Icon representing a social media platform",
+  "keywords": [
+    "menu",
+    "link"
+  ],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "socialMediaIcon": {
+      "type": "string",
+      "default": "link"
+    },
+    "iconLink": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "a",
+      "attribute": "href",
+      "default": "#"
+    }
+  },
+  "parent": [
+    "caledros-basic-blocks/social-icons-group"
+  ],
+  "supports": {
+    "className": false
+  }
+}

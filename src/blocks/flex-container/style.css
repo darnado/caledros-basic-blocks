@@ -1,0 +1,118 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*Flexbox container*/
+.cbb-flex-container {
+  display: flex;
+  background-size: cover;
+  flex-direction: var(--cbb-fdir-lg, row);
+}
+
+/*Flexbox container with background color*/
+.cbb-flex-container--has-bg-color {
+  background-color: var(--cbb-light-bg-color, #00000000);
+  transition: background-color 0.3s;
+  background-blend-mode: overlay;
+}
+
+/*Flexbox container with box shadow*/
+.cbb-flex-container--has-box-shadow {
+  box-shadow: var(--cbb-light-box-shadow, none);
+}
+
+/*Flexbox container with background gradient*/
+.cbb-flex-container--has-bg-gradient {
+  background-image: var(--cbb-light-bg-gradient, none);
+}
+
+/*Flexbox container with border*/
+.cbb-flex-container--has-border {
+  border-color: var(--cbb-light-border-color, #00000000);
+}
+
+/*Flexbox container (Tablet)*/
+@media (max-width: 810px) {
+  .cbb-flex-container {
+    flex-direction: var(--cbb-fdir-md, row);
+  }
+}
+
+/*Flexbox container (Mobile)*/
+@media (max-width: 450px) {
+  .cbb-flex-container {
+    flex-direction: var(--cbb-fdir-sm, row);
+  }
+}
+
+/*Dark mode*/
+/*Flexbox container with background color*/
+html[data-theme="dark"] .cbb-flex-container--has-bg-color {
+  background-color: var(--cbb-dark-bg-color, #00000000);
+}
+
+/*Flexbox container with background gradient*/
+html[data-theme="dark"] .cbb-flex-container--has-bg-gradient {
+  background-image: var(--cbb-dark-bg-gradient, none);
+}
+
+/*Flexbox container with box shadow*/
+html[data-theme="dark"] .cbb-flex-container--has-box-shadow {
+  box-shadow: var(--cbb-dark-box-shadow, none);
+}
+
+/*Flexbox container with border*/
+html[data-theme="dark"] .cbb-flex-container--has-border {
+  border-color: var(--cbb-dark-border-color, #00000000);
+}
+
+/*Fixes*/
+/*Full width container for mobile and tablets*/
+@media (max-width: 810px) {
+  .cbb-flex-container--full-width-tablet {
+    max-width: 100% !important;
+  }
+}
+
+/*Full width container for mobile devices*/
+@media (max-width: 450px) {
+  .cbb-flex-container--full-width-mobile {
+    max-width: 100% !important;
+  }
+}
+
+/*Fix for the image gallery block*/
+.cbb-flex-container:has(> .cbb-image-gallery) {
+  overflow: hidden !important;
+}
+
+/*Fix for the slider block*/
+.cbb-flex-container:has(> .cbb-slider) {
+  overflow: hidden !important;
+}
+
+/*Fix for flex container with global padding*/
+.has-global-padding
+  :where(
+    :not(.alignfull.is-layout-flow)
+      > .has-global-padding:not(.wp-block-block, .alignfull)
+  ) {
+  padding-right: var(--wp--style--root--padding-right) !important;
+  padding-left: var(--wp--style--root--padding-left) !important;
+}

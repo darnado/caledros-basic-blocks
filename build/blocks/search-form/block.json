@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/search-form",
+  "title": "Search Form",
+  "category": "caledros-basic-blocks",
+  "icon": "smiley",
+  "description": "A simple search form.",
+  "keywords": [
+    "menu",
+    "link"
+  ],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "buttonText": {
+      "type": "string",
+      "default": "Go"
+    },
+    "placeholderText": {
+      "type": "string",
+      "default": "Search..."
+    },
+    "buttonLightBackgroundColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "buttonDarkBackgroundColor": {
+      "type": "string",
+      "default": "#22aacc"
+    },
+    "buttonLightTextColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "buttonDarkTextColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "formWidth": {
+      "type": "string",
+      "default": "200px"
+    }
+  },
+  "supports": {
+    "className": false
+  }
+}

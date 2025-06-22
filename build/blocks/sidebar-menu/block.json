@@ -1,0 +1,92 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/sidebar-menu",
+  "title": "Sidebar Menu",
+  "category": "caledros-basic-blocks",
+  "icon": "star",
+  "description": "A customizable sidebar menu.",
+  "keywords": [
+    "sidebar",
+    "menu"
+  ],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "viewScriptModule": "file:./view.js",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "sidebarSlug": {
+      "type": "string",
+      "default": ""
+    },
+    "lightBackgroundColor": {
+      "type": "string",
+      "default": "#f4f4f4"
+    },
+    "darkBackgroundColor": {
+      "type": "string",
+      "default": "#333333"
+    },
+    "buttonLightColor": {
+      "type": "string",
+      "default": "#333333"
+    },
+    "buttonDarkColor": {
+      "type": "string",
+      "default": "#f4f4f4"
+    },
+    "openButtonStyles": {
+      "type": "object",
+      "default": {
+        "buttonHeight": "45px",
+        "buttonGap": "5px",
+        "buttonBorderWidth": "0px",
+        "buttonBorderRadius": "0px",
+        "barsHeight": "3px",
+        "topAndBottomBarsWidth": "30px",
+        "centerBarWidth": "30px",
+        "barsBorderRadius": "100px"
+      }
+    },
+    "openButtonPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "differentPaddingsEnabled": false
+      }
+    },
+    "closeButtonStyles": {
+      "type": "object",
+      "default": {
+        "buttonHeight": "40px",
+        "buttonWidth": "40px",
+        "buttonBorderWidth": "1px",
+        "buttonBorderRadius": "5px",
+        "barsHeight": "4px",
+        "barsWidth": "35px",
+        "barsBorderRadius": "50px"
+      }
+    },
+    "closeButtonPosition": {
+      "type": "object",
+      "default": {
+        "top": "20px",
+        "right": "20px"
+      }
+    },
+    "sidebarMinWidth": {
+      "type": "string",
+      "default": "50%"
+    }
+  },
+  "supports": {
+    "className": false,
+    "html": false,
+    "interactivity": true,
+    "multiple": false
+  }
+}

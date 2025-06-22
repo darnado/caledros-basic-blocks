@@ -1,0 +1,115 @@
+.cbb-social-icon {
+  width: var(--cbb-social-icon-size, 30px);
+  height: var(--cbb-social-icon-size, 30px);
+  position: relative;
+  clip-path: inset(0 0 0 0);
+}
+
+.cbb-social-icon__main-link {
+  width: var(--cbb-social-icon-size, 30px);
+  height: var(--cbb-social-icon-size, 30px);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.cbb-social-icon__icon-container {
+  position: relative;
+  width: var(--cbb-social-icon-size, 30px);
+  height: var(--cbb-social-icon-size, 30px);
+  display: block;
+  margin-left: calc(var(--cbb-social-icon-size, 30px) * -1);
+}
+.cbb-social-icon__icon-container::before {
+  display: inline-block;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: var(--cbb-social-icon-size, 30px);
+  width: var(--cbb-social-icon-size, 30px);
+  top: 0;
+  left: 0;
+  filter: drop-shadow(
+    var(--cbb-social-icon-size, 30px) 0px var(--cbb-social-icon-color, #333)
+  );
+}
+/*Social media icons*/
+.cbb-social-icon--link .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/link.svg");
+}
+.cbb-social-icon--amazon .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/amazon.svg");
+}
+.cbb-social-icon--behance .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/behance.svg");
+}
+.cbb-social-icon--dropbox .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/dropbox.svg");
+}
+.cbb-social-icon--envelope .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/envelope.svg");
+}
+.cbb-social-icon--envelope-fill .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/envelope-fill.svg");
+}
+.cbb-social-icon--facebook .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/facebook.svg");
+}
+.cbb-social-icon--github .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/github.svg");
+}
+.cbb-social-icon--instagram .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/instagram.svg");
+}
+.cbb-social-icon--linkeding .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/linkedin.svg");
+}
+.cbb-social-icon--pinterest .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/pinterest.svg");
+}
+.cbb-social-icon--skype .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/skype.svg");
+}
+.cbb-social-icon--snapchat .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/snapchat.svg");
+}
+.cbb-social-icon--spotify .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/spotify.svg");
+}
+.cbb-social-icon--threads .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/threads-fill.svg");
+}
+.cbb-social-icon--tiktok .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/tiktok.svg");
+}
+.cbb-social-icon--twitch .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/twitch.svg");
+}
+.cbb-social-icon--twitter-x .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/twitter-x.svg");
+}
+.cbb-social-icon--twitter .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/twitter.svg");
+}
+.cbb-social-icon--vimeo .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/vimeo.svg");
+}
+.cbb-social-icon--whatsapp .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/whatsapp.svg");
+}
+.cbb-social-icon--wordpress .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/wordpress.svg");
+}
+.cbb-social-icon--youtube .cbb-social-icon__icon-container::before {
+  background-image: url("./assets/youtube.svg");
+}
+
+/*Dark mode*/
+html[data-theme="dark"] .cbb-social-icon__icon-container::before {
+  filter: drop-shadow(
+    var(--cbb-social-icon-size, 30px) 0px
+      var(--cbb-social-icon-dark-color, #fff)
+  );
+}

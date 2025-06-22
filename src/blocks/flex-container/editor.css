@@ -1,0 +1,184 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*Flex container*/
+.cbb-flex-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: var(--cbb-fdir-lg, row);
+  justify-content: var(--cbb-just-content, flex-start);
+  align-items: var(--cbb-align-items, normal);
+  row-gap: var(--cbb-row-gap, normal);
+  column-gap: var(--cbb-column-gap, normal);
+  min-height: var(--cbb-min-height, 0);
+  background-size: cover;
+  background-color: var(--cbb-light-bg-color, #00000000);
+  border-style: var(--cbb-br-style, none);
+  border-width: var(--cbb-br-width, 0px);
+  border-radius: var(--cbb-br-radius, 0px);
+  box-shadow: var(--cbb-box-shadow, none);
+  padding: var(--cbb-fc-padding, 0px);
+  background-position: var(--cbb-bg-position, 0% 0%);
+  overflow: var(--cbb-overflow, visible);
+}
+
+.cbb-flex-container > .block-editor-inner-blocks {
+  width: 100%;
+  height: 100%;
+}
+
+/*Flexbox container with background gradient*/
+.cbb-flex-container--has-bg-gradient
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-image: var(--cbb-light-bg-gradient, none);
+}
+
+.cbb-flex-container--has-bg-gradient {
+  background-image: none;
+}
+
+.cbb-flex-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout
+  .cbb-flex-container--has-bg-gradient {
+  background-image: none;
+}
+
+/*Flexbox container with background color*/
+.cbb-flex-container--has-bg-color
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-blend-mode: overlay;
+}
+
+.cbb-flex-container--has-bg-color {
+  background-color: transparent !important;
+}
+
+/*Fix for the slider block*/
+.cbb-slider .cbb-flex-container {
+  background-image: var(--cbb-light-bg-gradient, none);
+}
+
+/*Flexbox container with box shadow*/
+.cbb-flex-container--has-box-shadow
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-shadow: var(--cbb-light-box-shadow, none);
+}
+
+.cbb-flex-container--has-box-shadow {
+  box-shadow: none !important;
+}
+
+/*Flexbox container with border*/
+.cbb-flex-container--has-border
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  border-color: var(--cbb-light-border-color, "#00000000");
+}
+
+.cbb-flex-container--has-border {
+  border-color: "#00000000";
+}
+
+/*Flexbox container (Tablet)*/
+@media (max-width: 810px) {
+  .cbb-flex-container
+    > .block-editor-inner-blocks
+    > .block-editor-block-list__layout {
+    flex-direction: var(--cbb-fdir-md, row);
+  }
+}
+
+/*Flexbox container (Mobile)*/
+@media (max-width: 450px) {
+  .cbb-flex-container
+    > .block-editor-inner-blocks
+    > .block-editor-block-list__layout {
+    flex-direction: var(--cbb-fdir-sm, row);
+  }
+}
+
+/*Dark mode*/
+html[data-theme="dark"]
+  .cbb-flex-container
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-color: var(--cbb-dark-bg-color, #00000000);
+}
+
+/*Flexbox container with box shadow*/
+html[data-theme="dark"]
+  .cbb-flex-container--has-box-shadow
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  box-shadow: var(--cbb-dark-box-shadow, none);
+}
+
+html[data-theme="dark"] .cbb-flex-container--has-box-shadow {
+  box-shadow: none !important;
+}
+
+/*Flexbox container with background gradient*/
+html[data-theme="dark"]
+  .cbb-flex-container--has-bg-gradient
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  background-image: var(--cbb-dark-bg-gradient, none);
+}
+
+html[data-theme="dark"] .cbb-flex-container--has-bg-gradient {
+  background-image: none;
+}
+
+/*Flexbox container with border*/
+html[data-theme="dark"]
+  .cbb-flex-container--has-border
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  border-color: var(--cbb-dark-border-color, "#00000000");
+}
+
+html[data-theme="dark"] .cbb-flex-container--has-border {
+  border-color: "#00000000";
+}
+
+/*Fix for the image gallery block*/
+.cbb-flex-container:has(
+    > .block-editor-inner-blocks
+      > .block-editor-block-list__layout
+      > .cbb-image-gallery
+  ) {
+  overflow: hidden !important;
+}
+
+/*Fix for the slider block*/
+.cbb-flex-container:has(
+    > .block-editor-inner-blocks
+      > .block-editor-block-list__layout
+      > .cbb-slider
+  ) {
+  overflow: hidden !important;
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "caledros-basic-blocks/image-gallery",
+  "title": "Image Gallery",
+  "category": "caledros-basic-blocks",
+  "icon": "star",
+  "description": "A simple image gallery.",
+  "keywords": ["gallery", "slider"],
+  "version": "1.0",
+  "textdomain": "caledros-basic-blocks",
+  "editorScript": "file:./index.js",
+  "viewScriptModule": "file:./view.js",
+  "style": ["file:./style-index.css", "file:./view.css"],
+  "render": "file:./render.php",
+  "attributes": {
+    "images": {
+      "type": "array",
+      "default": []
+    },
+    "identifier": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfCards": {
+      "type": "number",
+      "default": 6
+    },
+    "enableLoop": {
+      "type": "boolean",
+      "default": false
+    },
+    "enablePagination": {
+      "type": "boolean",
+      "default": true
+    },
+    "paginationType": {
+      "type": "string",
+      "default": "bullets"
+    },
+    "autoplay": {
+      "type": "object",
+      "default": {
+        "enableAutoplay": false,
+        "delay": 3000
+      }
+    },
+    "lightColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "darkColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "enableNavigationArrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "width": {
+      "type": "string",
+      "default": "100%"
+    },
+    "minHeight": {
+      "type": "string",
+      "default": "auto"
+    },
+    "galleryEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "showDemoData": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "className": false,
+    "html": false,
+    "interactivity": true
+  }
+}
