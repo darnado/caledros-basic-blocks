@@ -81,15 +81,22 @@ p a {
   text-decoration: none;
 }
 
+/*List*/
+.wp-block-list {
+  color: var(--wp--preset--color--paragraph-light, #000000);
+}
+
 /*Dark mode*/
 /*Background color*/
 html[data-theme="dark"] body {
   background-color: var(--wp--preset--color--base-dark, #1f1f1f);
 }
+
 /*Paragraph text color*/
 html[data-theme="dark"] p {
   color: var(--wp--preset--color--paragraph-dark, #f2f2f2);
 }
+
 /*Heading text color*/
 html[data-theme="dark"] h1,
 html[data-theme="dark"] h2,
@@ -99,16 +106,24 @@ html[data-theme="dark"] h5,
 html[data-theme="dark"] h6 {
   color: var(--wp--preset--color--heading-dark, #f2f2f2);
 }
+
 /*Header heading link*/
 html[data-theme="dark"] .cbb-header-link a {
   text-decoration: none;
   color: var(--wp--preset--color--heading-dark, #f2f2f2);
 }
+
 /*Default Navigation links*/
 html[data-theme="dark"] .wp-block-navigation__container {
   color: var(--wp--preset--color--paragraph-dark, #f2f2f2);
 }
+
 /*Links inside paragraphs color*/
 html[data-theme="dark"] p a {
   color: var(--wp--preset--color--link-dark, #38d16e);
+}
+
+/*Lists*/
+html[data-theme="dark"] .wp-block-list {
+  color: var(--wp--preset--color--paragraph-dark, #f2f2f2);
 }

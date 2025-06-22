@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -192,19 +192,29 @@ However, other third party plugins can slow down your website if they are used t
 
 * Updated README.txt. "Requires at least" information added.
 
+= 1.1.1 =
+
+**Default Gutenberg List block:**
+
+* Added fallback colors for the default Gutenberg list block. It now uses the same colors as paragraph text in both dark and light modes.
+
+**Project Structure:**
+
+* Deleted empty folder located inside core &#8594; resources &#8594; src
+
 == Upgrade Notice ==
 
-= Version 1.0.0 =
-
+= 1.0.0 =
 Welcome to the first release of Caledros Basic Blocks! This version introduces 18 new performance-optimized Gutenberg blocks. The plugin includes an optional CSS preloader.
 
-= Version 1.0.1 =
-
+= 1.0.1 =
 This update includes important bug fixes for the Slider block, improved compatibility using apiFetch(), and enhanced fallback handling.
 
-= Version 1.1.0 =
-
+= 1.1.0 =
 This version includes new settings for the Posts Loop and Category Loop blocks, default CSS styles for links, and updates to user-interface components.
+
+= 1.1.1 =
+Added fallback colors for the default Gutenberg list block. It now uses the same colors as paragraph text in both dark and light modes.
 
 == Installation ==
 
@@ -232,4 +242,4 @@ You have two easy ways to install the Caledros Basic Blocks plugin:
 
 **Need help or want to see what each block can do?**
 
-Visit our [YouTube](https://www.youtube.com/@CaledrosForge) channel for step-by-step tutorials and tips on using Caledros Basic Blocks.
+Visit my [YouTube](https://www.youtube.com/@CaledrosForge) channel for step-by-step tutorials and tips on using Caledros Basic Blocks.
