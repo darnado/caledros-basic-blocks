@@ -34,6 +34,7 @@ export default function ButtonTextContentSettings({
     >
       <TextControl
         __nextHasNoMarginBottom
+        __next40pxDefaultSize
         help={__("Type the text for the button.", "caledros-basic-blocks")}
         value={buttonText}
         onChange={(newValue) => {

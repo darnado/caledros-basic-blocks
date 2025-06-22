@@ -48,6 +48,7 @@ export default function RowGapSettings({ attributes, setAttributes }) {
       />
       {!useNormalRowGap && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Please select the row gap (px) for the flex container.",

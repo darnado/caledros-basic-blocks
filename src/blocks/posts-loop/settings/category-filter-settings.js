@@ -69,6 +69,7 @@ export default function CategoryFilterSettings({ attributes, setAttributes }) {
       />
       {categoryFilter.enable && (
         <ComboboxControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the category.", "caledros-basic-blocks")}
           value={categoryFilter.categoryId}

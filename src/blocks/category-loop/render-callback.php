@@ -45,6 +45,12 @@ function caledros_basic_blocks_category_loop_render_cb($attributes){
     $categories_loop_title_icon_alt  = sanitize_text_field($attributes['categoriesLoopTitleIcon']['alt'] ?? 'Icon');
     $show_demo_data                  = filter_var($attributes['showDemoData'] ?? false, FILTER_VALIDATE_BOOLEAN);
     $show_uncategorized_category     = filter_var($attributes['showUncategorizedCategory'] ?? false, FILTER_VALIDATE_BOOLEAN);
+    $column_no_desktop_enable_custom_value = filter_var( $attributes['columnNoDesktop']['enableCustomValue'] ?? false, FILTER_VALIDATE_BOOLEAN );
+    $column_no_desktop_number = intval( $attributes['columnNoDesktop']['columnNo'] ?? 4);
+    $column_no_tablet_enable_custom_value = filter_var( $attributes['columnNoTablet']['enableCustomValue'] ?? false, FILTER_VALIDATE_BOOLEAN );
+    $column_no_tablet_number = intval( $attributes['columnNoTablet']['columnNo'] ?? 2);
+    $column_no_mobile_enable_custom_value = filter_var( $attributes['columnNoMobile']['enableCustomValue'] ?? false, FILTER_VALIDATE_BOOLEAN );
+    $column_no_mobile_number = intval( $attributes['columnNoMobile']['columnNo'] ?? 1);
 
     // Sanitize content
     $default_allowed_tags = wp_kses_allowed_html('post');
@@ -64,12 +70,23 @@ function caledros_basic_blocks_category_loop_render_cb($attributes){
 
     $allowed_tags = array_merge($default_allowed_tags, $svg_sanitize_options);
 
+    // Set inline styles
+    $style = $column_no_desktop_enable_custom_value ? "--cbb-column-no-desktop:$column_no_desktop_number" : "";
+    $style .= ($column_no_desktop_enable_custom_value && $column_no_tablet_enable_custom_value) ? ";" : "";
+    $style .= $column_no_tablet_enable_custom_value ? "--cbb-column-no-tablet:$column_no_tablet_number" : "";
+    $style .= ($column_no_tablet_enable_custom_value && $column_no_mobile_enable_custom_value) ? ";" : "";
+    $style .= ($column_no_desktop_enable_custom_value && $column_no_mobile_enable_custom_value) ? ";" : "";
+    $style .= $column_no_mobile_enable_custom_value ? "--cbb-column-no-mobile:$column_no_mobile_number" : "";
+
+    // Show inline styles
+    $inline_styles = ($column_no_desktop_enable_custom_value || $column_no_tablet_enable_custom_value || $column_no_mobile_enable_custom_value) ? 'style="'. $style .'"': '';
+
     // Start output buffering
     ob_start();
     ?>
 
     <?php if (!$show_demo_data): ?>
-        <div class="cbb-categories-loop">
+        <div class="cbb-categories-loop" <?php echo wp_kses_post($inline_styles);?>>
             <div class="cbb-categories-loop__container">
                 <?php
                 $categories = get_categories(['parent' => 0]);

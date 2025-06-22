@@ -46,6 +46,12 @@ h6 {
   color: var(--wp--preset--color--heading-light, #000000);
 }
 
+/*Links inside paragraphs color*/
+p a {
+  color: var(--wp--preset--color--link-light, #00abe7);
+  text-decoration: none;
+}
+
 /*Dark mode*/
 /*Background color*/
 html[data-theme="dark"] body {
@@ -72,4 +78,9 @@ html[data-theme="dark"] .cbb-header-link a {
 /*Default Navigation links*/
 html[data-theme="dark"] .wp-block-navigation__container {
   color: var(--wp--preset--color--paragraph-dark, #f2f2f2);
+}
+
+/*Links inside paragraphs color*/
+html[data-theme="dark"] p a {
+  color: var(--wp--preset--color--link-dark, #38d16e);
 }

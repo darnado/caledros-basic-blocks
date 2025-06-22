@@ -29,6 +29,7 @@ export default function NumberOfItemsSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Please select the number of items to be displayed per page.",

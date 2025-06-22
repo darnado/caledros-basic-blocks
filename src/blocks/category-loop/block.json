@@ -36,6 +36,27 @@
     "showUncategorizedCategory": {
       "type": "boolean",
       "default": false
+    },
+    "columnNoDesktop": {
+      "type": "object",
+      "default": {
+        "enableCustomValue": false,
+        "columnNo": 4
+      }
+    },
+    "columnNoTablet": {
+      "type": "object",
+      "default": {
+        "enableCustomValue": false,
+        "columnNo": 2
+      }
+    },
+    "columnNoMobile": {
+      "type": "object",
+      "default": {
+        "enableCustomValue": false,
+        "columnNo": 1
+      }
     }
   },
   "supports": {

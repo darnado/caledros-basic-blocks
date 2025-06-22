@@ -141,6 +141,7 @@ export default function FontSizeSettings({ attributes, setAttributes }) {
       />
       {!useCustomFontSize && (
         <SelectControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Select the font size.", "caledros-basic-blocks")}
           value={
@@ -162,6 +163,7 @@ export default function FontSizeSettings({ attributes, setAttributes }) {
       {useCustomFontSize && (
         <div className="cbb-editor__grid">
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               `Please select the custom font size (${fontSizeUnit}).`,
@@ -185,6 +187,7 @@ export default function FontSizeSettings({ attributes, setAttributes }) {
             }}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             value={fontSizeUnit}
             options={[

@@ -77,6 +77,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
       />
       {!useCustomWidth && (
         <SelectControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Choose the maximum width for the container.",
@@ -116,6 +117,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
       {useCustomWidth && (
         <div className="cbb-editor__grid">
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               `Please select the custom maximum width (${widthUnit}) for the container.`,
@@ -135,6 +137,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
             }}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             value={widthUnit}
             options={[

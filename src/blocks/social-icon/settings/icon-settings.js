@@ -29,6 +29,8 @@ export default function IconSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
+        __nextHasNoMarginBottom
         help={__("Choose your social media icon", "caledros-basic-blocks")}
         value={socialMediaIcon}
         options={[

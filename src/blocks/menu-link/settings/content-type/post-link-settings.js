@@ -42,6 +42,7 @@ export default function PostLinkSettings({ attributes, setAttributes }) {
 
   return (
     <ComboboxControl
+      __next40pxDefaultSize
       __nextHasNoMarginBottom
       label={__("Post link", "caledros-basic-blocks")}
       help={__(

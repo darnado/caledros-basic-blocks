@@ -48,6 +48,7 @@ export default function MinHeightSettings({ attributes, setAttributes }) {
     >
       <div className="cbb-editor__grid">
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             `Please select the minimum height (${minHeightUnit}) for the container.`,
@@ -68,6 +69,7 @@ export default function MinHeightSettings({ attributes, setAttributes }) {
           disabled={minHeightUnit === "auto"}
         />
         <SelectControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           value={minHeightUnit}
           options={[

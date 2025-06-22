@@ -38,6 +38,8 @@ export default function LinkSettings({ attributes, setAttributes }) {
       />
       {iconLinkEnabled && (
         <TextControl
+          __next40pxDefaultSize
+          __nextHasNoMarginBottom
           onChange={(newLink) => setAttributes({ iconLink: newLink })}
           value={__(iconLink, "caledros-basic-blocks")}
           help={__("Paste the link for the icon", "caledros-basic-blocks")}

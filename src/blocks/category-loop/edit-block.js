@@ -27,6 +27,9 @@ import CategoriesLoopTitle from "./settings/categories-loop-title-settings";
 import ShowDemoDataSettings from "./settings/show-demo-data-settings";
 import ShowNumberOfPublicationsSettings from "./settings/show-number-of-publications-settings";
 import ShowUncategorizedCategorySettings from "./settings/show-uncategorized-category-settings";
+import NumberOfColumnsDesktopSettings from "./settings/no-of-columns-desktop-settings";
+import NumberOfColumnsTabletSettings from "./settings/no-of-columns-tablet-settings";
+import NumberOfColumnsMobileSettings from "./settings/no-of-columns-mobile-settings";
 import DemoData from "./demo-data";
 
 export default function EditBlock({ attributes, setAttributes }) {
@@ -37,6 +40,9 @@ export default function EditBlock({ attributes, setAttributes }) {
     categoriesLoopTitleIcon,
     showDemoData,
     showUncategorizedCategory,
+    columnNoDesktop,
+    columnNoTablet,
+    columnNoMobile,
   } = attributes;
 
   // Published categories array
@@ -69,6 +75,17 @@ export default function EditBlock({ attributes, setAttributes }) {
   // Block props
   const blockProps = useBlockProps({
     className: "cbb-categories-loop",
+    style: {
+      ...(columnNoDesktop.enableCustomValue && {
+        "--cbb-column-no-desktop": columnNoDesktop.columnNo,
+      }),
+      ...(columnNoTablet.enableCustomValue && {
+        "--cbb-column-no-tablet": columnNoTablet.columnNo,
+      }),
+      ...(columnNoMobile.enableCustomValue && {
+        "--cbb-column-no-mobile": columnNoMobile.columnNo,
+      }),
+    },
   });
 
   return (
@@ -80,6 +97,10 @@ export default function EditBlock({ attributes, setAttributes }) {
             {
               name: "content",
               title: "Content",
+            },
+            {
+              name: "style",
+              title: "Style",
             },
             {
               name: "additional",
@@ -95,6 +116,24 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></CategoriesLoopTitle>
+                </>
+              );
+            }
+            if (tab.name === "style") {
+              return (
+                <>
+                  <NumberOfColumnsDesktopSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></NumberOfColumnsDesktopSettings>
+                  <NumberOfColumnsTabletSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></NumberOfColumnsTabletSettings>
+                  <NumberOfColumnsMobileSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></NumberOfColumnsMobileSettings>
                 </>
               );
             }

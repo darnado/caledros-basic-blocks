@@ -2,8 +2,9 @@
 
 Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
+Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -167,6 +168,30 @@ However, other third party plugins can slow down your website if they are used t
 * Updated block descriptions for improved clarity (block.json files updated).
 * Set icon property to "block-default" in block.json for all 18 blocks. Provides a fallback icon for non-JavaScript environments.
 
+= 1.1.0 =
+
+**Posts Loop Block:**
+
+* Added "Style" tab in the editor. 
+* Added 3 new settings to control the number of columns in desktop, tablet, and mobile screens.
+
+**Category Loop Block:**
+
+* Added "Style" tab in the editor. 
+* Added 3 new settings to control the number of columns in desktop, tablet, and mobile screens.
+
+**CSS Styles:**
+
+* Added default colors for links ("a" HTML tags) located inside paragraphs ("p" HTML tags).  The default colors apply to the dark and light modes.
+
+**Updates to user-interface components in WordPress:**
+
+* Added missing props (__nextHasNoMarginBottom and __next40pxDefaultSize) to the UI components used as controls for the plugin blocks. Based on the following articles: [Updates to user-interface components in WordPress 6.8](https://make.wordpress.org/core/2025/03/25/updates-to-user-interface-components-in-wordpress-6-8/) and [Updates to user-interface components in WordPress 6.7](https://make.wordpress.org/core/2024/10/18/editor-components-updates-in-wordpress-6-7/).
+
+**Documentation:**
+
+* Updated README.txt. "Requires at least" information added.
+
 == Upgrade Notice ==
 
 = Version 1.0.0 =
@@ -176,6 +201,10 @@ Welcome to the first release of Caledros Basic Blocks! This version introduces 1
 = Version 1.0.1 =
 
 This update includes important bug fixes for the Slider block, improved compatibility using apiFetch(), and enhanced fallback handling.
+
+= Version 1.1.0 =
+
+This version includes new settings for the Posts Loop and Category Loop blocks, default CSS styles for links, and updates to user-interface components.
 
 == Installation ==
 

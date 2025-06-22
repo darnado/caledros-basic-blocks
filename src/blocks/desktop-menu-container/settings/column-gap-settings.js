@@ -48,6 +48,7 @@ export default function ColumnGapSettings({ attributes, setAttributes }) {
       {!useNormalColumnGap && (
         <RangeControl
           __nextHasNoMarginBottom
+          __next40pxDefaultSize
           help={__(
             "Please select the column gap (px) for the flex container.",
             "caledros-basic-blocks"

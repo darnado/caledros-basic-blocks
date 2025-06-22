@@ -30,6 +30,7 @@ export default function LetterCaseSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Select the letter case transformation.",

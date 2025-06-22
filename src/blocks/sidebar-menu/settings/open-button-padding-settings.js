@@ -18,12 +18,7 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import {
-  PanelBody,
-  ToggleControl,
-  SelectControl,
-  RangeControl,
-} from "@wordpress/components";
+import { PanelBody, ToggleControl, RangeControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 
 export default function OpenButtonPaddingSettings({
@@ -59,6 +54,7 @@ export default function OpenButtonPaddingSettings({
 
       {!openButtonPadding.differentPaddingsEnabled && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Please select the padding (px) for the button",
@@ -81,6 +77,7 @@ export default function OpenButtonPaddingSettings({
       {openButtonPadding.differentPaddingsEnabled && (
         <>
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the top padding (px) for the button",
@@ -100,6 +97,7 @@ export default function OpenButtonPaddingSettings({
             }}
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the right padding (px) for the button",
@@ -119,6 +117,7 @@ export default function OpenButtonPaddingSettings({
             }}
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the bottom padding (px) for the button",
@@ -138,6 +137,7 @@ export default function OpenButtonPaddingSettings({
             }}
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the left padding (px) for the button",

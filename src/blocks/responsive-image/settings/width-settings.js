@@ -68,6 +68,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
       {!imgWidth.defaultWidthEnabled && (
         <div className="cbb-editor__grid">
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               `Choose the width (${widthUnit}) for the image.`,
@@ -84,6 +85,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
             }
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             value={widthUnit}
             options={[

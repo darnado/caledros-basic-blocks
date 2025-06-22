@@ -69,6 +69,7 @@ export default function TagFilterSettings({ attributes, setAttributes }) {
       />
       {tagFilter.enable && (
         <ComboboxControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the tag.", "caledros-basic-blocks")}
           value={tagFilter.tagId}

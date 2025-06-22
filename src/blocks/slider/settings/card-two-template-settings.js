@@ -50,6 +50,7 @@ export default function CardTwoTemplateSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <ComboboxControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Select the template for the 2nd card.",

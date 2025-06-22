@@ -29,6 +29,7 @@ export default function ObjectFitSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Choose the object fit property for the image.",

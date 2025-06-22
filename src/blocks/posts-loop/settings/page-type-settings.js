@@ -30,6 +30,7 @@ export default function PageTypeSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Choose the type of page where the loop will be displayed.",

@@ -30,6 +30,8 @@ export default function ImgLinkSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <TextControl
+        __next40pxDefaultSize
+        __nextHasNoMarginBottom
         onChange={(newValue) => {
           setAttributes({ imgLink: newValue });
         }}

@@ -73,6 +73,7 @@ export default function HeightSettings({ attributes, setAttributes }) {
       {!imgHeight.defaultHeightEnabled && (
         <div className="cbb-editor__grid">
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               `Choose the height (${heightUnit}) for the image.`,
@@ -93,6 +94,7 @@ export default function HeightSettings({ attributes, setAttributes }) {
             disabled={imgHeight.content === "auto"}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             value={heightUnit}
             options={[

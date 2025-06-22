@@ -88,6 +88,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
       {!useDifferentBorderRadiuses && (
         <div className="cbb-editor__grid">
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               `Please select the border radius (${topLeftUnit}) for the container.`,
@@ -107,6 +108,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
             }}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             value={topLeftUnit}
             options={[
@@ -137,6 +139,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
         <>
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the top-left border radius (${topLeftUnit}).`,
@@ -156,6 +159,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
               }}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={topLeftUnit}
               options={[
@@ -183,6 +187,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
           </div>
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the top-right border radius (${topRightUnit}).`,
@@ -202,6 +207,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
               }}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={topRightUnit}
               options={[
@@ -229,6 +235,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
           </div>
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the bottom-right border radius (${bottomRightUnit}).`,
@@ -248,6 +255,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
               }}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={bottomRightUnit}
               options={[
@@ -275,6 +283,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
           </div>
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the bottom-left border radius (${bottomLeftUnit}).`,
@@ -294,6 +303,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
               }}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={bottomLeftUnit}
               options={[

@@ -63,6 +63,7 @@ export default function BorderStyleSettings({ attributes, setAttributes }) {
       />
       {!useDifferentBorderStyles && (
         <SelectControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the border style.", "caledros-basic-blocks")}
           value={imgBorder.style}
@@ -120,6 +121,7 @@ export default function BorderStyleSettings({ attributes, setAttributes }) {
       {useDifferentBorderStyles && (
         <>
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Choose the style for the top border.",
@@ -179,6 +181,7 @@ export default function BorderStyleSettings({ attributes, setAttributes }) {
             }}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Choose the style for the right border.",
@@ -238,6 +241,7 @@ export default function BorderStyleSettings({ attributes, setAttributes }) {
             }}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Choose the style for the bottom border.",
@@ -297,6 +301,7 @@ export default function BorderStyleSettings({ attributes, setAttributes }) {
             }}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Choose the style for the left border.",

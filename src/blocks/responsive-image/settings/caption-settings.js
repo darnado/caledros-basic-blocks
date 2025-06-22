@@ -39,6 +39,8 @@ export default function CaptionSettings({ attributes, setAttributes }) {
       />
       {imgCaption.enabled && (
         <TextControl
+          __next40pxDefaultSize
+          __nextHasNoMarginBottom
           onChange={(newValue) => {
             setAttributes({ imgCaption: { ...imgCaption, content: newValue } });
           }}

@@ -30,6 +30,7 @@ export default function MegaMenuWidthSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Please select the width for the mega menu. To ensure a more cohesive design, the width of the mega menu should match the container width specified in the mega menu template editor.",

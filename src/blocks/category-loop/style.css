@@ -31,19 +31,19 @@
 
 @media (max-width: 500px) {
   .cbb-categories-loop__container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(var(--cbb-column-no-mobile, 1), 1fr);
   }
 }
 
 @media (min-width: 501px) {
   .cbb-categories-loop__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(var(--cbb-column-no-tablet, 2), 1fr);
   }
 }
 
 @media (min-width: 781px) {
   .cbb-categories-loop__container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--cbb-column-no-desktop, 4), 1fr);
   }
 }
 /*Image container*/

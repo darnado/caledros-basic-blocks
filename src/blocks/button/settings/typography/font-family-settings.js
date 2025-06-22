@@ -50,6 +50,7 @@ export default function FontFamilySettings({
 
   return (
     <SelectControl
+      __next40pxDefaultSize
       __nextHasNoMarginBottom
       help={__("Select the font family.", "caledros-basic-blocks")}
       value={buttonFontFamily}

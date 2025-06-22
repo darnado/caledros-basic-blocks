@@ -30,6 +30,8 @@ export default function IconsSizeSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
+        __nextHasNoMarginBottom
         help={__(
           "Adjust the size (px) of the social media icons",
           "caledros-basic-blocks"

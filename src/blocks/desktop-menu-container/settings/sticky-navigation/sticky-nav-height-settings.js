@@ -51,6 +51,7 @@ export default function StickyNavHeightSettings({ attributes, setAttributes }) {
     >
       <div className="cbb-editor__grid">
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             `Please select the height (${heightUnit}) for the sticky navigation bar. This feature is only visible in the frontend.`,
@@ -67,6 +68,7 @@ export default function StickyNavHeightSettings({ attributes, setAttributes }) {
           }
         />
         <SelectControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           value={heightUnit}
           options={[

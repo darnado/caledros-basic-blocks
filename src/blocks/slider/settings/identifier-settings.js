@@ -30,6 +30,7 @@ export default function IdentifierSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <TextControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Type the identifier for the slider. The identifier must be unique. If no unique identifier is provided, the slider won't work.",

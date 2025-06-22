@@ -44,6 +44,7 @@ export default function AutoplaySettings({ attributes, setAttributes }) {
       />
       {autoplay.enableAutoplay && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Select the delay between transitions (milliseconds).",

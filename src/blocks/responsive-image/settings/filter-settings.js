@@ -125,6 +125,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__("Choose the filter type.", "caledros-basic-blocks")}
         value={imgFilter.type}
@@ -188,6 +189,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       />
       {imgFilter.type === "blur" && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the blur value (px).", "caledros-basic-blocks")}
           value={filterNumber}
@@ -206,6 +208,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       )}
       {imgFilter.type === "brightness" && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the brightness value (%).", "caledros-basic-blocks")}
           value={filterNumber}
@@ -224,6 +227,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       )}
       {imgFilter.type === "contrast" && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the contrast value (%).", "caledros-basic-blocks")}
           value={filterNumber}
@@ -243,6 +247,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       {imgFilter.type === "drop-shadow" && (
         <>
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the horizontal offset (px).",
@@ -262,6 +267,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
             }
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the vertical offset (px).",
@@ -281,6 +287,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
             }
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__("Please select the blur (px).", "caledros-basic-blocks")}
             value={parseInt(imgFilter.blur)}
@@ -317,6 +324,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       )}
       {imgFilter.type === "grayscale" && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the grayscale value (%).", "caledros-basic-blocks")}
           value={filterNumber > 100 ? 100 : filterNumber}
@@ -349,6 +357,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       )}
       {imgFilter.type === "invert" && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the invert value (%).", "caledros-basic-blocks")}
           value={filterNumber > 100 ? 100 : filterNumber}
@@ -367,6 +376,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       )}
       {imgFilter.type === "opacity" && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the opacity value (%).", "caledros-basic-blocks")}
           value={filterNumber > 100 ? 100 : filterNumber}
@@ -385,6 +395,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       )}
       {imgFilter.type === "saturate" && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the saturation value (%).", "caledros-basic-blocks")}
           value={filterNumber > 100 ? 100 : filterNumber}
@@ -403,6 +414,7 @@ export default function FilterSettings({ attributes, setAttributes }) {
       )}
       {imgFilter.type === "sepia" && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Choose the sepia filter value (%).",

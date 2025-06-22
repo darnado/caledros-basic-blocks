@@ -29,6 +29,8 @@ export default function LinkSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <TextControl
+        __nextHasNoMarginBottom
+        __next40pxDefaultSize
         onChange={(newLink) => setAttributes({ iconLink: newLink })}
         value={__(iconLink, "caledros-basic-blocks")}
         help={__(

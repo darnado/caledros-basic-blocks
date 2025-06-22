@@ -30,6 +30,7 @@ export default function FlexDirectionSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Choose the flex direction for the container (desktop).",

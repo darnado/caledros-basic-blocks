@@ -39,6 +39,7 @@ export default function PaginationSettings({ attributes, setAttributes }) {
       />
       {enablePagination && (
         <SelectControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the type of pagination", "caledros-basic-blocks")}
           value={paginationType}

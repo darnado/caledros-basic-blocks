@@ -26,6 +26,7 @@ export default function CustomLinkSettings({ attributes, setAttributes }) {
 
   return (
     <TextControl
+      __next40pxDefaultSize
       __nextHasNoMarginBottom
       label={__("Custom link", "caledros-basic-blocks")}
       help={__("Paste the link for the menu item.", "caledros-basic-blocks")}

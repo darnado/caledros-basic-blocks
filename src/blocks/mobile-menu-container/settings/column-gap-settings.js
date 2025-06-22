@@ -47,6 +47,7 @@ export default function ColumnGapSettings({ attributes, setAttributes }) {
       />
       {!useNormalColumnGap && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Please select the column gap (px) for the flex container.",

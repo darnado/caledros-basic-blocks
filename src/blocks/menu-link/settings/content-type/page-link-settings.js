@@ -42,6 +42,7 @@ export default function PageLinkSettings({ attributes, setAttributes }) {
 
   return (
     <ComboboxControl
+      __next40pxDefaultSize
       __nextHasNoMarginBottom
       label={__("Page link", "caledros-basic-blocks")}
       help={__(

@@ -60,6 +60,7 @@ export default function ExcerptSettings({ attributes, setAttributes }) {
             }}
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the excerpt length (number of words).",

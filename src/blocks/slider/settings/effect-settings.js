@@ -30,6 +30,7 @@ export default function EffectSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__("Choose the effect for the slider.", "caledros-basic-blocks")}
         value={sliderEffect}

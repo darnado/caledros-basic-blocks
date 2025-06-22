@@ -30,6 +30,7 @@ export default function OverflowSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Select the value for the overflow property. The container will automatically have 'overflow:hidden' applied if it's the parent of a slider or image gallery block.",

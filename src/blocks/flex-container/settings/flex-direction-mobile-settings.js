@@ -33,6 +33,7 @@ export default function FlexDirectionMobileSettings({
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Choose the flex direction for the container (mobile).",

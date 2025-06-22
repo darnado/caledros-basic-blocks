@@ -56,6 +56,12 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
     $show_demo_data = filter_var($attributes['showDemoData'] ?? false, FILTER_VALIDATE_BOOLEAN);
     $tag_filter_enabled = filter_var( $attributes['tagFilter']['enable'] ?? false, FILTER_VALIDATE_BOOLEAN);
     $tag_id = sanitize_text_field($attributes['tagFilter']['tagId'] ?? "");
+    $column_no_desktop_enable_custom_value = filter_var( $attributes['columnNoDesktop']['enableCustomValue'] ?? false, FILTER_VALIDATE_BOOLEAN );
+    $column_no_desktop_number = intval( $attributes['columnNoDesktop']['columnNo'] ?? 4);
+    $column_no_tablet_enable_custom_value = filter_var( $attributes['columnNoTablet']['enableCustomValue'] ?? false, FILTER_VALIDATE_BOOLEAN );
+    $column_no_tablet_number = intval( $attributes['columnNoTablet']['columnNo'] ?? 2);
+    $column_no_mobile_enable_custom_value = filter_var( $attributes['columnNoMobile']['enableCustomValue'] ?? false, FILTER_VALIDATE_BOOLEAN );
+    $column_no_mobile_number = intval( $attributes['columnNoMobile']['columnNo'] ?? 1);
 
     // Format the post date
     $dateFormatMap = [
@@ -91,6 +97,17 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
         ],
     ];
     $allowed_tags = array_merge($default_allowed_tags, $svg_sanitize_options);
+
+    // Set inline styles
+    $style = $column_no_desktop_enable_custom_value ? "--cbb-column-no-desktop:$column_no_desktop_number" : "";
+    $style .= ($column_no_desktop_enable_custom_value && $column_no_tablet_enable_custom_value) ? ";" : "";
+    $style .= $column_no_tablet_enable_custom_value ? "--cbb-column-no-tablet:$column_no_tablet_number" : "";
+    $style .= ($column_no_tablet_enable_custom_value && $column_no_mobile_enable_custom_value) ? ";" : "";
+    $style .= ($column_no_desktop_enable_custom_value && $column_no_mobile_enable_custom_value) ? ";" : "";
+    $style .= $column_no_mobile_enable_custom_value ? "--cbb-column-no-mobile:$column_no_mobile_number" : "";
+
+    // Show inline styles
+    $inline_styles = ($column_no_desktop_enable_custom_value || $column_no_tablet_enable_custom_value || $column_no_mobile_enable_custom_value) ? 'style="'. $style .'"': '';
 
     // Start ouput buffering
     ob_start(); 
@@ -133,7 +150,7 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
                 Search results for: "<?php echo esc_html(get_search_query());?>"
             </h1>
         <?php endif;?>
-        <div class="cbb-posts-loop">
+        <div class="cbb-posts-loop" <?php echo wp_kses_post($inline_styles);?>>
             <div class="cbb-posts-loop__container">
                 <?php             
                     if($featured->have_posts()):

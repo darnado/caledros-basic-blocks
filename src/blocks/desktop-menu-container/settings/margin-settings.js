@@ -73,6 +73,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
       {!containerMargin.differentMarginsEnabled && (
         <div className="cbb-editor__grid">
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               `Please select the margin (${topUnit}) for the container.`,
@@ -93,6 +94,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
             disabled={topUnit === "auto"}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             value={topUnit}
             options={[
@@ -136,6 +138,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
         <>
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the top margin (${topUnit}) for the container.`,
@@ -156,6 +159,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
               disabled={topUnit === "auto"}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={topUnit}
               options={[
@@ -196,6 +200,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
           </div>
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the right margin (${rightUnit}) for the container.`,
@@ -218,6 +223,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
               disabled={rightUnit === "auto"}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={rightUnit}
               options={[
@@ -258,6 +264,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
           </div>
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the bottom margin (${bottomUnit}) for the container.`,
@@ -280,6 +287,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
               disabled={bottomUnit === "auto"}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={bottomUnit}
               options={[
@@ -323,6 +331,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
           </div>
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the left margin (${leftUnit}) for the container.`,
@@ -343,6 +352,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
               disabled={leftUnit === "auto"}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={leftUnit}
               options={[

@@ -90,6 +90,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
         !containerPadding.useGlobalPadding && (
           <div className="cbb-editor__grid">
             <RangeControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
                 `Please select the padding (${topUnit}) for the container`,
@@ -109,6 +110,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
               }}
             />
             <SelectControl
+              __next40pxDefaultSize
               __nextHasNoMarginBottom
               value={topUnit}
               options={[
@@ -149,6 +151,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
           <>
             <div className="cbb-editor__grid">
               <RangeControl
+                __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 help={__(
                   `Please select the top padding (${topUnit}) for the container`,
@@ -168,6 +171,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
                 }}
               />
               <SelectControl
+                __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 value={topUnit}
                 options={[
@@ -204,6 +208,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
             </div>
             <div className="cbb-editor__grid">
               <RangeControl
+                __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 help={__(
                   `Please select the right padding (${rightUnit}) for the container`,
@@ -223,6 +228,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
                 }}
               />
               <SelectControl
+                __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 value={rightUnit}
                 options={[
@@ -262,6 +268,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
             </div>
             <div className="cbb-editor__grid">
               <RangeControl
+                __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 help={__(
                   `Please select the bottom padding (${bottomUnit}) for the container`,
@@ -281,6 +288,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
                 }}
               />
               <SelectControl
+                __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 value={bottomUnit}
                 options={[
@@ -320,6 +328,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
             </div>
             <div className="cbb-editor__grid">
               <RangeControl
+                __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 help={__(
                   `Please select the left padding (${leftUnit}) for the container`,
@@ -339,6 +348,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
                 }}
               />
               <SelectControl
+                __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 value={leftUnit}
                 options={[

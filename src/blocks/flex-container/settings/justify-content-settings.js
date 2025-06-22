@@ -30,6 +30,7 @@ export default function JustifyContentSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Select the value for the justify content property.",

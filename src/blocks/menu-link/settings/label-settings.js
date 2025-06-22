@@ -27,6 +27,7 @@ export default function LabelSettings({ attributes, setAttributes }) {
   return (
     <PanelBody title={__("Label", "caledros-basic-blocks")} initialOpen={false}>
       <TextControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__("Type the label for the menu link.", "caledros-basic-blocks")}
         value={menuLabel}

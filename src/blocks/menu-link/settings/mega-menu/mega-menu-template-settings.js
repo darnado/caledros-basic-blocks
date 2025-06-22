@@ -53,6 +53,7 @@ export default function MegaMenuTemplateSettings({
       initialOpen={false}
     >
       <ComboboxControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Select the template for the mega menu.",

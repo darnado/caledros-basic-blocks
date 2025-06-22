@@ -31,6 +31,7 @@ export default function ButtonLinkSettings({ attributes, setAttributes }) {
     >
       <TextControl
         __nextHasNoMarginBottom
+        __next40pxDefaultSize
         help={__("Paste the link for the button.", "caledros-basic-blocks")}
         value={buttonLink}
         onChange={(newValue) => {

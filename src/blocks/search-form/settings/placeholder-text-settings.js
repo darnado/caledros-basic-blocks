@@ -30,6 +30,8 @@ export default function PlaceholderTextSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <TextControl
+        __nextHasNoMarginBottom
+        __next40pxDefaultSize
         onChange={(newValue) => {
           setAttributes({
             placeholderText: newValue,

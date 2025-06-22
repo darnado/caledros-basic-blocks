@@ -33,6 +33,7 @@ export default function ContentTypeGroupSettings({
   return (
     <PanelBody title={__("Link", "caledros-basic-blocks")} initialOpen={false}>
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__("Content type", "caledros-basic-blocks")}
         help={__(

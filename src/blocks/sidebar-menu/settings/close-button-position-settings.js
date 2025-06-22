@@ -34,6 +34,7 @@ export default function CloseButtonPositionSettings({
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           `Please select the top padding (px) for the close button. The close button is only visible in the frontend.`,
@@ -53,6 +54,7 @@ export default function CloseButtonPositionSettings({
         }
       />
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           `Please select the right padding (px) for the close button. The close button is only visible in the frontend.`,

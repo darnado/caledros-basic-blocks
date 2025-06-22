@@ -32,6 +32,7 @@ export default function NumberOfColumnsMobileSettings({
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Please select the number of columns for the container (mobile devices).",

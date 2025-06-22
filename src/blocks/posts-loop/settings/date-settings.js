@@ -45,6 +45,7 @@ export default function DateSettings({ attributes, setAttributes }) {
       />
       {dateOptions.showDate && (
         <SelectControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__("Choose the date format", "caledros-basic-blocks")}
           value={dateOptions.dateFormat}

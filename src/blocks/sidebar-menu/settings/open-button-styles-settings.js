@@ -34,6 +34,7 @@ export default function OpenButtonStylesSettings({
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__("Button height", "caledros-basic-blocks")}
         help={__(
@@ -54,6 +55,7 @@ export default function OpenButtonStylesSettings({
         }
       />
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__("Button gap", "caledros-basic-blocks")}
         help={__(
@@ -74,6 +76,7 @@ export default function OpenButtonStylesSettings({
         }
       />
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__("Button border width", "caledros-basic-blocks")}
         help={__(
@@ -94,6 +97,7 @@ export default function OpenButtonStylesSettings({
         }
       />
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__("Button border radius", "caledros-basic-blocks")}
         help={__(
@@ -114,6 +118,7 @@ export default function OpenButtonStylesSettings({
         }
       />
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__("Button bars' height", "caledros-basic-blocks")}
         help={__(
@@ -134,6 +139,7 @@ export default function OpenButtonStylesSettings({
         }
       />
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__(
           "Width of the button's top and bottom bars",
@@ -157,6 +163,7 @@ export default function OpenButtonStylesSettings({
         }
       />
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__("Width of the button's center bar", "caledros-basic-blocks")}
         help={__(
@@ -177,6 +184,7 @@ export default function OpenButtonStylesSettings({
         }
       />
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         label={__("Button bars' border radius", "caledros-basic-blocks")}
         help={__(

@@ -92,6 +92,7 @@ export default function BoxShadowSettings({ attributes, setAttributes }) {
       {imgBoxShadow.enabled && (
         <>
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Choose the style for the box shadow.",
@@ -118,6 +119,7 @@ export default function BoxShadowSettings({ attributes, setAttributes }) {
             }}
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the horizontal offset (px).",
@@ -137,6 +139,7 @@ export default function BoxShadowSettings({ attributes, setAttributes }) {
             }
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the vertical offset (px).",
@@ -156,6 +159,7 @@ export default function BoxShadowSettings({ attributes, setAttributes }) {
             }
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__("Please select the blur (px).", "caledros-basic-blocks")}
             value={parseInt(imgBoxShadow.blur)}
@@ -172,6 +176,7 @@ export default function BoxShadowSettings({ attributes, setAttributes }) {
             }
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__("Please select the spread (px).", "caledros-basic-blocks")}
             value={parseInt(imgBoxShadow.spread)}

@@ -18,7 +18,7 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl, ToggleControl } from "@wordpress/components";
+import { PanelBody, ToggleControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 
 export default function ShowAuthorSettings({ attributes, setAttributes }) {

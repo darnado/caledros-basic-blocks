@@ -63,6 +63,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
       />
       {!useDifferentBorderWidths && (
         <RangeControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Please select the border width (px) for the image.",
@@ -83,6 +84,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
       {useDifferentBorderWidths && (
         <>
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the top border width (px) for the image.",
@@ -102,6 +104,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
             }}
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the right border width (px) for the image.",
@@ -121,6 +124,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
             }}
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the bottom border width (px) for the image.",
@@ -140,6 +144,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
             }}
           />
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               "Please select the left border width (px) for the image.",

@@ -30,6 +30,7 @@ export default function OrderTypeSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Choose the criteria for ordering the posts.",

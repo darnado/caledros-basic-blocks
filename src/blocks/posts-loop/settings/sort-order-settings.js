@@ -30,6 +30,7 @@ export default function SortOrderSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Choose the sort order: ascending or descending",

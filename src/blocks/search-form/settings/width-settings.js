@@ -24,7 +24,6 @@ import {
   ToggleControl,
   SelectControl,
 } from "@wordpress/components";
-import { TabPanel } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { useState } from "@wordpress/element";
 import { useSettings } from "@wordpress/block-editor";
@@ -75,6 +74,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
       />
       {!useCustomWidth && (
         <SelectControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Choose the maximum width for the form.",
@@ -114,6 +114,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
       {useCustomWidth && (
         <div className="cbb-editor__grid">
           <RangeControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
               `Please select the custom maximum width (${widthUnit}) for the search form.`,
@@ -133,6 +134,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
             }}
           />
           <SelectControl
+            __next40pxDefaultSize
             __nextHasNoMarginBottom
             value={widthUnit}
             options={[

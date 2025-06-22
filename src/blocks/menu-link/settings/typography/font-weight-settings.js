@@ -51,6 +51,7 @@ export default function FontWeightSettings({
 
   return (
     <SelectControl
+      __next40pxDefaultSize
       __nextHasNoMarginBottom
       help={__("Select the font weight.", "caledros-basic-blocks")}
       value={menuFontWeight}

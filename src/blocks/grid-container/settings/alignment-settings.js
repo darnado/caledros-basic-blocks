@@ -29,6 +29,7 @@ export default function AlignmentSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Choose the vertical alignment for the container items.",
@@ -67,6 +68,7 @@ export default function AlignmentSettings({ attributes, setAttributes }) {
         }}
       />
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Choose the horizontal alignment for the container items.",

@@ -56,6 +56,7 @@ export default function CategoriesLoopTitle({ attributes, setAttributes }) {
       >
         <TextControl
           __nextHasNoMarginBottom
+          __next40pxDefaultSize
           help={__(
             "Write the title for the posts loop.",
             "caledros-basic-blocks"

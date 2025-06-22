@@ -33,6 +33,8 @@ export default function SpaceBetweenIconsSettings({
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
+        __nextHasNoMarginBottom
         help={__(
           "Adjust the spacing (px) between the icons ",
           "caledros-basic-blocks"

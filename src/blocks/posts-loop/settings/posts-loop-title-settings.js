@@ -55,6 +55,7 @@ export default function PostsLoopTitle({ attributes, setAttributes }) {
         initialOpen={false}
       >
         <TextControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
             "Write the title for the posts loop.",

@@ -31,6 +31,7 @@ export default function SidebarMinWidthSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Please select the minimum width (%) for the sidebar menu. This setting only applies to screens with widths between 451px and 811px (tablet-sized screens). On smaller devices (450px or less), the sidebar menu spans the whole screen. This feature is only visible in the frontend.",

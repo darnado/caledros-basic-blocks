@@ -48,6 +48,7 @@ export default function FontStyleSettings({
 
   return (
     <SelectControl
+      __next40pxDefaultSize
       __nextHasNoMarginBottom
       help={__("Select the font style.", "caledros-basic-blocks")}
       value={buttonFontStyle}

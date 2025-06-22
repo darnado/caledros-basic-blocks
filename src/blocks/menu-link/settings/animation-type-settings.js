@@ -30,6 +30,7 @@ export default function AnimationTypeSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <SelectControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Select the animation type for the menu link.",

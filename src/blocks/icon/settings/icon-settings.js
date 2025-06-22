@@ -26,6 +26,8 @@ export default function IconSettings({ attributes, setAttributes }) {
   return (
     <PanelBody title={__("Icon", "caledros-basic-blocks")} initialOpen={false}>
       <SelectControl
+        __next40pxDefaultSize
+        __nextHasNoMarginBottom
         help={__("Choose the icon", "caledros-basic-blocks")}
         value={icon}
         options={[

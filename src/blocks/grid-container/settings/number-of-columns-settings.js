@@ -29,6 +29,7 @@ export default function NumberOfColumnsSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <RangeControl
+        __next40pxDefaultSize
         __nextHasNoMarginBottom
         help={__(
           "Please select the number of columns for the container (desktop).",

@@ -37,6 +37,9 @@ import CategoryFilterSettings from "./settings/category-filter-settings";
 import PostsLoopTitle from "./settings/posts-loop-title-settings";
 import ShowDemoDataSettings from "./settings/show-demo-data-settings";
 import TagFilterSettings from "./settings/tag-filter-settings";
+import NumberOfColumnsDesktopSettings from "./settings/no-of-columns-desktop-settings";
+import NumberOfColumnsTabletSettings from "./settings/no-of-columns-tablet-settings";
+import NumberOfColumnsMobileSettings from "./settings/no-of-columns-mobile-settings";
 import DemoData from "./demo-data";
 
 export default function EditBlock({ attributes, setAttributes }) {
@@ -56,6 +59,9 @@ export default function EditBlock({ attributes, setAttributes }) {
     showNavigationLinks,
     showDemoData,
     tagFilter,
+    columnNoDesktop,
+    columnNoTablet,
+    columnNoMobile,
   } = attributes;
 
   // Published posts array
@@ -154,6 +160,17 @@ export default function EditBlock({ attributes, setAttributes }) {
   // Block props
   const blockProps = useBlockProps({
     className: "cbb-posts-loop",
+    style: {
+      ...(columnNoDesktop.enableCustomValue && {
+        "--cbb-column-no-desktop": columnNoDesktop.columnNo,
+      }),
+      ...(columnNoTablet.enableCustomValue && {
+        "--cbb-column-no-tablet": columnNoTablet.columnNo,
+      }),
+      ...(columnNoMobile.enableCustomValue && {
+        "--cbb-column-no-mobile": columnNoMobile.columnNo,
+      }),
+    },
   });
 
   return (
@@ -165,6 +182,10 @@ export default function EditBlock({ attributes, setAttributes }) {
             {
               name: "content",
               title: "Content",
+            },
+            {
+              name: "style",
+              title: "Style",
             },
             {
               name: "additional",
@@ -204,6 +225,24 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></SortOrderSettings>
+                </>
+              );
+            }
+            if (tab.name === "style") {
+              return (
+                <>
+                  <NumberOfColumnsDesktopSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></NumberOfColumnsDesktopSettings>
+                  <NumberOfColumnsTabletSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></NumberOfColumnsTabletSettings>
+                  <NumberOfColumnsMobileSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></NumberOfColumnsMobileSettings>
                 </>
               );
             }

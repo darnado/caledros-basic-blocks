@@ -30,6 +30,8 @@ export default function ButtonTextSettings({ attributes, setAttributes }) {
       initialOpen={false}
     >
       <TextControl
+        __next40pxDefaultSize
+        __nextHasNoMarginBottom
         onChange={(newValue) => {
           setAttributes({ buttonText: newValue });
         }}
