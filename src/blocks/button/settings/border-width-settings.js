@@ -66,7 +66,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
           __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
-            "Please select the border width (px) for the container.",
+            "Please select the border width (px) for the button.",
             "caledros-basic-blocks"
           )}
           value={parseInt(buttonBorder.width)}
@@ -87,7 +87,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
             __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
-              "Please select the top border width (px) for the container.",
+              "Please select the top border width (px) for the button.",
               "caledros-basic-blocks"
             )}
             value={topBorder}
@@ -107,7 +107,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
             __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
-              "Please select the right border width (px) for the container.",
+              "Please select the right border width (px) for the button.",
               "caledros-basic-blocks"
             )}
             value={rightBorder}
@@ -127,7 +127,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
             __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
-              "Please select the bottom border width (px) for the container.",
+              "Please select the bottom border width (px) for the button.",
               "caledros-basic-blocks"
             )}
             value={bottomBorder}
@@ -147,7 +147,7 @@ export default function BorderWidthSettings({ attributes, setAttributes }) {
             __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
-              "Please select the left border width (px) for the container.",
+              "Please select the left border width (px) for the button.",
               "caledros-basic-blocks"
             )}
             value={leftBorder}

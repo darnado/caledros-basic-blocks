@@ -51,7 +51,7 @@ export default function MinHeightSettings({ attributes, setAttributes }) {
           __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
-            `Please select the minimum height (${minHeightUnit}) for the container.`,
+            `Please select the minimum height (${minHeightUnit}) for the gallery.`,
             "caledros-basic-blocks"
           )}
           initialPosition={0}

@@ -80,7 +80,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
           __next40pxDefaultSize
           __nextHasNoMarginBottom
           help={__(
-            "Choose the maximum width for the container.",
+            "Choose the maximum width for the gallery.",
             "caledros-basic-blocks"
           )}
           value={
@@ -120,7 +120,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
             __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
-              `Please select the custom maximum width (${widthUnit}) for the container.`,
+              `Please select the custom maximum width (${widthUnit}) for the gallery.`,
               "caledros-basic-blocks"
             )}
             value={

@@ -94,7 +94,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
               __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
-                `Please select the padding (${topUnit}) for the container`,
+                `Please select the padding (${topUnit}) for the button`,
                 "caledros-basic-blocks"
               )}
               value={topPadding}
@@ -155,7 +155,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
                 __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 help={__(
-                  `Please select the top padding (${topUnit}) for the container`,
+                  `Please select the top padding (${topUnit}) for the button`,
                   "caledros-basic-blocks"
                 )}
                 value={topPadding}
@@ -212,7 +212,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
                 __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 help={__(
-                  `Please select the right padding (${rightUnit}) for the container`,
+                  `Please select the right padding (${rightUnit}) for the button`,
                   "caledros-basic-blocks"
                 )}
                 value={rightPadding}
@@ -272,7 +272,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
                 __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 help={__(
-                  `Please select the bottom padding (${bottomUnit}) for the container`,
+                  `Please select the bottom padding (${bottomUnit}) for the button`,
                   "caledros-basic-blocks"
                 )}
                 value={bottomPadding}
@@ -332,7 +332,7 @@ export default function PaddingSettings({ attributes, setAttributes }) {
                 __next40pxDefaultSize
                 __nextHasNoMarginBottom
                 help={__(
-                  `Please select the left padding (${leftUnit}) for the container`,
+                  `Please select the left padding (${leftUnit}) for the button`,
                   "caledros-basic-blocks"
                 )}
                 value={leftPadding}

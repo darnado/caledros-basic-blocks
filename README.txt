@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -32,9 +32,7 @@ The plugin includes a built-in CSS stylesheet preloader, ensuring faster page lo
 
 Perfect for developers, designers, and content creators who want more control and better performance without the overhead of large block libraries.
 
-## Contact information
-
-You can contact me at: **info@caledrosforge.com**
+## More Projects & Information
 
 For more information about my projects, you can visit my website: [caledrosforge.com](https://caledrosforge.com/)
 
@@ -202,6 +200,11 @@ However, other third party plugins can slow down your website if they are used t
 
 * Deleted empty folder located inside core &#8594; resources &#8594; src
 
+= 1.2.0 =
+
+* Added an option in the plugin admin bar to apply a flex-column layout to the wp-site-blocks container.
+* Fixed typos in some of the settings descriptions for the plugin blocks.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -215,6 +218,9 @@ This version includes new settings for the Posts Loop and Category Loop blocks, 
 
 = 1.1.1 =
 Added fallback colors for the default Gutenberg list block. It now uses the same colors as paragraph text in both dark and light modes.
+
+= 1.2.0 =
+This update adds an option in the plugin admin bar to apply a flex-column layout to the wp-site-blocks container.
 
 == Installation ==
 

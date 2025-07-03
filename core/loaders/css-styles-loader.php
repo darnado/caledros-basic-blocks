@@ -57,3 +57,12 @@ function caledros_basic_blocks_preload_all_stylesheets($html, $handle, $href, $m
     return $html;
 }
 add_filter('style_loader_tag', 'caledros_basic_blocks_preload_all_stylesheets', 10, 4);
+
+// Load custom CSS for wp site blocks
+function caledros_basic_blocks_load_custom_css_wp_site_blocks(){
+    if ( !is_admin() && get_option('caledros_basic_blocks_add_column_layout_to_wp_site_blocks', 1)){
+        $custom_css_wp_site_blocks = ".wp-site-blocks{display:flex; flex-direction:column;}";
+        wp_add_inline_style('caledros-general-css', $custom_css_wp_site_blocks );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'caledros_basic_blocks_load_custom_css_wp_site_blocks' );

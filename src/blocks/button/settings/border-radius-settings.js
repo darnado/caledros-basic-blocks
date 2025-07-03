@@ -91,7 +91,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
             __nextHasNoMarginBottom
             __next40pxDefaultSize
             help={__(
-              `Please select the border radius (${topLeftUnit}) for the container.`,
+              `Please select the border radius (${topLeftUnit}) for the button.`,
               "caledros-basic-blocks"
             )}
             value={parseInt(buttonBorder.radius)}

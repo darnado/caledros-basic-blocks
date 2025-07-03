@@ -76,7 +76,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
             __next40pxDefaultSize
             __nextHasNoMarginBottom
             help={__(
-              `Please select the margin (${topUnit}) for the container.`,
+              `Please select the margin (${topUnit}) for the button.`,
               "caledros-basic-blocks"
             )}
             value={topMargin}
@@ -141,7 +141,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
               __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
-                `Please select the top margin (${topUnit}) for the container.`,
+                `Please select the top margin (${topUnit}) for the button.`,
                 "caledros-basic-blocks"
               )}
               value={topMargin}
@@ -203,7 +203,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
               __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
-                `Please select the right margin (${rightUnit}) for the container.`,
+                `Please select the right margin (${rightUnit}) for the button.`,
                 "caledros-basic-blocks"
               )}
               value={rightMargin}
@@ -267,7 +267,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
               __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
-                `Please select the bottom margin (${bottomUnit}) for the container.`,
+                `Please select the bottom margin (${bottomUnit}) for the button.`,
                 "caledros-basic-blocks"
               )}
               value={bottomMargin}
@@ -334,7 +334,7 @@ export default function MarginSettings({ attributes, setAttributes }) {
               __next40pxDefaultSize
               __nextHasNoMarginBottom
               help={__(
-                `Please select the left margin (${leftUnit}) for the container.`,
+                `Please select the left margin (${leftUnit}) for the button.`,
                 "caledros-basic-blocks"
               )}
               value={leftMargin}

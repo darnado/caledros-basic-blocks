@@ -82,7 +82,7 @@ export default function ButtonTextDarkColorSettings({
     >
       <ToggleControl
         __nextHasNoMarginBottom
-        label="Use transparent background"
+        label="Use transparent color"
         checked={useTransparentBackground}
         onChange={() => {
           setUseTransparentBackground((oldValue) => !oldValue);

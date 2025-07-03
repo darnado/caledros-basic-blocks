@@ -33,7 +33,7 @@ export default function OverlayNavSettings({ attributes, setAttributes }) {
         __nextHasNoMarginBottom
         label={__("Enable overlay navigation", "caledros-basic-blocks")}
         help={__(
-          "This option transforms the navigation bar into an overlay, allowing it to overlap the website's content until the user begins scrolling.",
+          "This option transforms the navigation bar into an overlay, allowing it to overlap the website's content.",
           "caledros-basic-blocks"
         )}
         checked={overlayNav}

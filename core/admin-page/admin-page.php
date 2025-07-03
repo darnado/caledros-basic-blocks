@@ -23,9 +23,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-// Register setting with sanitization callback
+// Register settings 
 function caledros_basic_blocks_register_settings() {
-    $args = array(
+    // Preloader
+    $preload_args = array(
         'type' => "integer", 
         'sanitize_callback' => 'caledros_basic_blocks_sanitize_enable_preload',
         'show_in_rest' => false,
@@ -34,13 +35,33 @@ function caledros_basic_blocks_register_settings() {
     register_setting(
         'caledros_basic_blocks_settings_group',
         'caledros_basic_blocks_enable_preload',
-        $args
+        $preload_args
+    );
+
+    // Custom CSS for wp site blocks
+    $column_layout_args = array(
+        'type' => "integer", 
+        'sanitize_callback' => 'caledros_basic_blocks_sanitize_add_column_layout_to_wp_site_blocks',
+        'show_in_rest' => false,
+        'default' => 1,
+    );
+    register_setting(
+        'caledros_basic_blocks_settings_group',
+        'caledros_basic_blocks_add_column_layout_to_wp_site_blocks',
+        $column_layout_args
     );
 }
 add_action('admin_init', 'caledros_basic_blocks_register_settings');
 
-// Sanitization callback function
+// Sanitization callback functions
+// Preload sanitization callback function
 function caledros_basic_blocks_sanitize_enable_preload($input) {
+    // Checkbox: save '1' if checked, otherwise '0'
+    return ($input === '1') ? 1 : 0;
+}
+
+// Load optional CSS sanitization callback function
+function caledros_basic_blocks_sanitize_add_column_layout_to_wp_site_blocks($input) {
     // Checkbox: save '1' if checked, otherwise '0'
     return ($input === '1') ? 1 : 0;
 }
@@ -69,6 +90,10 @@ function caledros_basic_blocks_render_settings_page() {
             <div style="display:flex; flex-direction:row; column-gap:10px; margin-bottom:10px;">                
                 <div>Enable Stylesheet Preloading</div>
                 <div><input type="checkbox" name="caledros_basic_blocks_enable_preload" value="1" <?php checked(1, get_option('caledros_basic_blocks_enable_preload'), true); ?> /></div>
+            </div>
+            <div style="display:flex; flex-direction:row; column-gap:10px; margin-bottom:10px;">                
+                <div>Add flex-column layout to the "wp-site-blocks" container</div>
+                <div><input type="checkbox" name="caledros_basic_blocks_add_column_layout_to_wp_site_blocks" value="1" <?php checked(1, get_option('caledros_basic_blocks_add_column_layout_to_wp_site_blocks'), true); ?> /></div>
             </div>
             <?php submit_button('Save Changes', 'primary', 'submit', false); ?>
         </form>
