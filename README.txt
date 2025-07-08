@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -205,6 +205,10 @@ However, other third party plugins can slow down your website if they are used t
 * Added an option in the plugin admin bar to apply a flex-column layout to the wp-site-blocks container.
 * Fixed typos in some of the settings descriptions for the plugin blocks.
 
+= 1.2.1 =
+
+* Fixed a CSS style bug in grid and flex containers located inside the Slider block. Now their background colors, gradients, box shadows, and border colors show correctly in the Gutenberg editor.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -221,6 +225,9 @@ Added fallback colors for the default Gutenberg list block. It now uses the same
 
 = 1.2.0 =
 This update adds an option in the plugin admin bar to apply a flex-column layout to the wp-site-blocks container.
+
+= 1.2.1 =
+This update fixes a CSS style bug in grid and flex containers located inside the Slider block.
 
 == Installation ==
 
