@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -209,6 +209,12 @@ However, other third party plugins can slow down your website if they are used t
 
 * Fixed a CSS style bug in grid and flex containers located inside the Slider block. Now their background colors, gradients, box shadows, and border colors show correctly in the Gutenberg editor.
 
+= 1.2.2 =
+
+* Fixed a bug with the navigation links of the Posts Loop block. The navigation links were not displaying correctly on the frontend.
+* Added CSS styles to the excerpt text of the Posts Loop block.
+* Added fallback colors for the Posts Loop and Category Loop blocks.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -228,6 +234,9 @@ This update adds an option in the plugin admin bar to apply a flex-column layout
 
 = 1.2.1 =
 This update fixes a CSS style bug in grid and flex containers located inside the Slider block.
+
+= 1.2.2 =
+This update fixes a bug with the navigation links of the Posts Loop block. It also adds CSS styles to the Posts Loop and Category Loop blocks.
 
 == Installation ==
 

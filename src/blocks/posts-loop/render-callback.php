@@ -252,7 +252,7 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
             </div>     
             <?php if($show_navigation_links){?>  
             <div class="cbb-posts-loop_pagination">
-                <?php echo esc_html(paginate_links(
+                <?php echo wp_kses_post(paginate_links(
                     array(
                         'total'=>$featured->max_num_pages,
                         'prev_text' => '<',

@@ -118,7 +118,7 @@
 
 .cbb-categories-loop__number-of-publications {
   text-decoration: none;
-  color: var(--wp--preset--color--paragraph-light);
+  color: var(--wp--preset--color--paragraph-light, #000);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -135,10 +135,10 @@ html[data-theme="dark"] .cbb-categories-loop__card {
 
 /*Background color*/
 html[data-theme="dark"] .cbb-categories-loop__title {
-  color: var(--wp--preset--color--paragraph-dark);
+  color: var(--wp--preset--color--paragraph-dark, #fff);
 }
 
 html[data-theme="dark"] .cbb-categories-loop__category,
 html[data-theme="dark"] .cbb-categories-loop__number-of-publications {
-  color: var(--wp--preset--color--paragraph-dark);
+  color: var(--wp--preset--color--paragraph-dark, #fff);
 }
