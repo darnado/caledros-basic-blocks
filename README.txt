@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 1.2.2
+Stable tag: 2.0.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ The plugin includes a built-in CSS stylesheet preloader, ensuring faster page lo
 
 ## Features
 
-* Adds 18 new custom Gutenberg blocks
+* Adds 18 new custom Gutenberg blocks. 5 blocks and 1 variation block can only be used in templates, template parts, and patterns
 * Flex and grid containers blocks included
 * Dark/Light mode block included
 * Blocks built with performance and minimalism in mind
@@ -215,6 +215,13 @@ However, other third party plugins can slow down your website if they are used t
 * Added CSS styles to the excerpt text of the Posts Loop block.
 * Added fallback colors for the Posts Loop and Category Loop blocks.
 
+= 2.0.0 =
+
+* Disabled 5 blocks and 1 block variation for the Gutenberg editor on pages and posts. The disabled blocks are: Content Renderer, Dark Light Mode Switcher, Desktop Menu Container, Mobile Menu Container, and Sidebar Menu. The disable block variation is the Mega Menu block.
+* The Gutenberg editor for pages and posts now only has 12 blocks available for use.
+* The Gutenberg editor for templates, template parts, and patterns has access to the 18 custom blocks. 
+* Added support for translating the texts in the plugin's admin menu.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -237,6 +244,9 @@ This update fixes a CSS style bug in grid and flex containers located inside the
 
 = 1.2.2 =
 This update fixes a bug with the navigation links of the Posts Loop block. It also adds CSS styles to the Posts Loop and Category Loop blocks.
+
+= 2.0.0 =
+This update disables 5 blocks and 1 variation block for the Gutenberg editor in pages and posts.
 
 == Installation ==
 

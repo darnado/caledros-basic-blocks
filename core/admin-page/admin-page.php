@@ -84,15 +84,15 @@ add_action('admin_menu', 'caledros_basic_blocks_add_settings_page');
 function caledros_basic_blocks_render_settings_page() {
     ?>
     <div>
-        <h1>Caledros Plugin Settings</h1>
+        <h1><?php esc_html_e('Caledros Plugin Settings', 'caledros-basic-blocks'); ?></h1>
         <form method="post" action="options.php">
             <?php settings_fields('caledros_basic_blocks_settings_group'); ?>            
             <div style="display:flex; flex-direction:row; column-gap:10px; margin-bottom:10px;">                
-                <div>Enable Stylesheet Preloading</div>
+                <div><?php esc_html_e('Enable Stylesheet Preloading', 'caledros-basic-blocks'); ?></div>
                 <div><input type="checkbox" name="caledros_basic_blocks_enable_preload" value="1" <?php checked(1, get_option('caledros_basic_blocks_enable_preload'), true); ?> /></div>
             </div>
             <div style="display:flex; flex-direction:row; column-gap:10px; margin-bottom:10px;">                
-                <div>Add flex-column layout to the "wp-site-blocks" container</div>
+                <div><?php esc_html_e('Add flex-column layout to the "wp-site-blocks" container', 'caledros-basic-blocks'); ?></div>
                 <div><input type="checkbox" name="caledros_basic_blocks_add_column_layout_to_wp_site_blocks" value="1" <?php checked(1, get_option('caledros_basic_blocks_add_column_layout_to_wp_site_blocks'), true); ?> /></div>
             </div>
             <?php submit_button('Save Changes', 'primary', 'submit', false); ?>
