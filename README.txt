@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -222,6 +222,10 @@ However, other third party plugins can slow down your website if they are used t
 * The Gutenberg editor for templates, template parts, and patterns has access to the 18 custom blocks. 
 * Added support for translating the texts in the plugin's admin menu.
 
+= 2.0.1 =
+
+* Fixed bug in the Linkedin icon of the Social Icon block. Now the Linkedin icon is visible.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -247,6 +251,9 @@ This update fixes a bug with the navigation links of the Posts Loop block. It al
 
 = 2.0.0 =
 This update disables 5 blocks and 1 variation block for the Gutenberg editor in pages and posts.
+
+= 2.0.1 =
+This update fixes a bug in the Linkedin icon of the Social Icon block.
 
 == Installation ==
 

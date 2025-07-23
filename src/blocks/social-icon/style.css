@@ -63,7 +63,7 @@
 .cbb-social-icon--instagram .cbb-social-icon__icon-container::before {
   background-image: url("./assets/instagram.svg");
 }
-.cbb-social-icon--linkeding .cbb-social-icon__icon-container::before {
+.cbb-social-icon--linkedin .cbb-social-icon__icon-container::before {
   background-image: url("./assets/linkedin.svg");
 }
 .cbb-social-icon--pinterest .cbb-social-icon__icon-container::before {
