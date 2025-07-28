@@ -77,7 +77,7 @@ export default function ButtonDarkColorHoverSettings({
 
   return (
     <PanelBody
-      title={__("Hover color (dark mode)", "caledros-basic-blocks")}
+      title={__("Hover bg color (dark mode)", "caledros-basic-blocks")}
       initialOpen={false}
     >
       <ToggleControl

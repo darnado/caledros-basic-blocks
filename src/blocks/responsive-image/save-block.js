@@ -36,6 +36,7 @@ export default function SaveBlock({ attributes }) {
     imgBoxShadow,
     imgFilter,
     imgLink,
+    lazyLoadingOverlayColor,
   } = attributes;
 
   // Function to ouput the margin and padding
@@ -88,6 +89,9 @@ export default function SaveBlock({ attributes }) {
         imgBorder.radius !== "0%" && {
           "--inset-border-radius": imgBorder.radius,
         }),
+      ...(lazyLoadingOverlayColor !== "#00000000" && {
+        "--lazy-loading-overlay-color": lazyLoadingOverlayColor,
+      }),
     },
   });
   return (

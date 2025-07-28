@@ -3,7 +3,7 @@
  * Plugin Name: Caledros Basic Blocks
  * Plugin URI: https://caledrosforge.com/
  * Description: Add easy-to-use Gutenberg blocks to your WordPress site.
- * Version: 2.0.1
+ * Version: 2.1.0
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Author: David Arnado
@@ -83,5 +83,6 @@ require_once(CALEDROS_BASIC_BLOCKS_BASE_FOLDER . 'core/disable-blocks/disable-bl
 function caledros_basic_blocks_activate_plugin() {    
     update_option('caledros_basic_blocks_enable_preload', 1);
     update_option('caledros_basic_blocks_add_column_layout_to_wp_site_blocks', 0);
+    update_option('caledros_basic_blocks_set_custom_height_to_wp_site_blocks', 0);
 }
 register_activation_hook(__FILE__, 'caledros_basic_blocks_activate_plugin');

@@ -1,3 +1,23 @@
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
 .cbb-icon {
   width: var(--cbb-icon-size, 30px);
   height: var(--cbb-icon-size, 30px);
@@ -48,8 +68,44 @@
 .cbb-icon--alarm-fill .cbb-icon__icon-container::before {
   background-image: url("./assets/alarm-fill.svg");
 }
+.cbb-icon--arrow-left-circle-fill .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-left-circle-fill.svg");
+}
+.cbb-icon--arrow-left-circle .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-left-circle.svg");
+}
+.cbb-icon--arrow-right-circle-fill .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-right-circle-fill.svg");
+}
+.cbb-icon--arrow-right-circle .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-right-circle.svg");
+}
+.cbb-icon--arrow-up-left-square .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-up-left-square.svg");
+}
+.cbb-icon--arrow-up-right-circle-fill .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-up-right-circle-fill.svg");
+}
+.cbb-icon--arrow-up-right-circle .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-up-right-circle.svg");
+}
+.cbb-icon--arrow-up-right-square-fill .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-up-right-square-fill.svg");
+}
+.cbb-icon--arrow-up-right-square .cbb-icon__icon-container::before {
+  background-image: url("./assets/arrow-up-right-square.svg");
+}
 .cbb-icon--award .cbb-icon__icon-container::before {
   background-image: url("./assets/award.svg");
+}
+.cbb-icon--battery-charging .cbb-icon__icon-container::before {
+  background-image: url("./assets/battery-charging.svg");
+}
+.cbb-icon--box-seam .cbb-icon__icon-container::before {
+  background-image: url("./assets/box-seam.svg");
+}
+.cbb-icon--boxes .cbb-icon__icon-container::before {
+  background-image: url("./assets/boxes.svg");
 }
 .cbb-icon--bricks .cbb-icon__icon-container::before {
   background-image: url("./assets/bricks.svg");
@@ -57,17 +113,59 @@
 .cbb-icon--brightness-high .cbb-icon__icon-container::before {
   background-image: url("./assets/brightness-high.svg");
 }
+.cbb-icon--bug .cbb-icon__icon-container::before {
+  background-image: url("./assets/bug.svg");
+}
 .cbb-icon--building .cbb-icon__icon-container::before {
   background-image: url("./assets/building.svg");
 }
 .cbb-icon--buildings .cbb-icon__icon-container::before {
   background-image: url("./assets/buildings.svg");
 }
+.cbb-icon--chat-text .cbb-icon__icon-container::before {
+  background-image: url("./assets/chat-text.svg");
+}
+.cbb-icon--cloud-check .cbb-icon__icon-container::before {
+  background-image: url("./assets/cloud-check.svg");
+}
 .cbb-icon--cloud-sun .cbb-icon__icon-container::before {
   background-image: url("./assets/cloud-sun.svg");
 }
+.cbb-icon--code-square .cbb-icon__icon-container::before {
+  background-image: url("./assets/code-square.svg");
+}
+.cbb-icon--coin .cbb-icon__icon-container::before {
+  background-image: url("./assets/coin.svg");
+}
+.cbb-icon--columns .cbb-icon__icon-container::before {
+  background-image: url("./assets/columns.svg");
+}
+.cbb-icon--columns-gap .cbb-icon__icon-container::before {
+  background-image: url("./assets/columns-gap.svg");
+}
+.cbb-icon--database-down .cbb-icon__icon-container::before {
+  background-image: url("./assets/database-down.svg");
+}
+.cbb-icon--database-up .cbb-icon__icon-container::before {
+  background-image: url("./assets/database-up.svg");
+}
+.cbb-icon--file-bar-graph .cbb-icon__icon-container::before {
+  background-image: url("./assets/file-bar-graph.svg");
+}
+.cbb-icon--fire .cbb-icon__icon-container::before {
+  background-image: url("./assets/fire.svg");
+}
 .cbb-icon--gear .cbb-icon__icon-container::before {
   background-image: url("./assets/gear.svg");
+}
+.cbb-icon--globe2 .cbb-icon__icon-container::before {
+  background-image: url("./assets/globe2.svg");
+}
+.cbb-icon--graph-down-arrow .cbb-icon__icon-container::before {
+  background-image: url("./assets/graph-down-arrow.svg");
+}
+.cbb-icon--graph-up-arrow .cbb-icon__icon-container::before {
+  background-image: url("./assets/graph-up-arrow.svg");
 }
 .cbb-icon--hourglass .cbb-icon__icon-container::before {
   background-image: url("./assets/hourglass.svg");
@@ -83,6 +181,9 @@
 }
 .cbb-icon--lightbulb .cbb-icon__icon-container::before {
   background-image: url("./assets/lightbulb.svg");
+}
+.cbb-icon--magic .cbb-icon__icon-container::before {
+  background-image: url("./assets/magic.svg");
 }
 .cbb-icon--moon-stars .cbb-icon__icon-container::before {
   background-image: url("./assets/moon-stars.svg");
@@ -105,11 +206,20 @@
 .cbb-icon--star .cbb-icon__icon-container::before {
   background-image: url("./assets/star.svg");
 }
+.cbb-icon--stars .cbb-icon__icon-container::before {
+  background-image: url("./assets/stars.svg");
+}
 .cbb-icon--stickies .cbb-icon__icon-container::before {
   background-image: url("./assets/stickies.svg");
 }
 .cbb-icon--tools .cbb-icon__icon-container::before {
   background-image: url("./assets/tools.svg");
+}
+.cbb-icon--ui-checks-grid .cbb-icon__icon-container::before {
+  background-image: url("./assets/ui-checks-grid.svg");
+}
+.cbb-icon--ui-checks .cbb-icon__icon-container::before {
+  background-image: url("./assets/ui-checks.svg");
 }
 .cbb-icon--umbrella-fill .cbb-icon__icon-container::before {
   background-image: url("./assets/umbrella-fill.svg");

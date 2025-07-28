@@ -44,6 +44,7 @@ import BorderRadiusSettings from "./settings/border-radius-settings";
 import BoxShadowSettings from "./settings/box-shadow-settings";
 import FilterSettings from "./settings/filter-settings";
 import ImgLinkSettings from "./settings/image-link-settings";
+import LazyLoadingOverlayColorSettings from "./settings/lazy-loading-overlay-color-settings";
 
 export default function EditBlock({ attributes, setAttributes }) {
   const {
@@ -58,6 +59,7 @@ export default function EditBlock({ attributes, setAttributes }) {
     imgBorder,
     imgBoxShadow,
     imgFilter,
+    lazyLoadingOverlayColor,
   } = attributes;
 
   const [showSpinner, setShowSpinner] = useState(false);
@@ -92,6 +94,9 @@ export default function EditBlock({ attributes, setAttributes }) {
         imgBorder.radius !== "0%" && {
           "--inset-border-radius": imgBorder.radius,
         }),
+      ...(lazyLoadingOverlayColor !== "#00000000" && {
+        "--lazy-loading-overlay-color": lazyLoadingOverlayColor,
+      }),
     },
   });
 
@@ -191,6 +196,10 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></LazyLoadSettings>
+                  <LazyLoadingOverlayColorSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></LazyLoadingOverlayColorSettings>
                 </>
               );
             }

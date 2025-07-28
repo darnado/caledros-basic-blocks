@@ -46,6 +46,7 @@ export default function SaveBlock({ attributes }) {
     centerStickyNav,
     overlayStickyNav,
     overlayNav,
+    stickyNavBoxShadow,
   } = attributes;
 
   // Function to generate the content of background-image
@@ -195,6 +196,12 @@ export default function SaveBlock({ attributes }) {
         : {
             "--cbb-dm-position": "relative",
           }),
+      ...(stickyNavBoxShadow.enabled && {
+        "--cbb-mm-sticky-light-box-shadow": `${stickyNavBoxShadow.style} ${stickyNavBoxShadow.hOffset} ${stickyNavBoxShadow.vOffset} ${stickyNavBoxShadow.blur} ${stickyNavBoxShadow.spread} ${stickyNavBoxShadow.lightColor}`,
+      }),
+      ...(stickyNavBoxShadow.enabled && {
+        "--cbb-mm-sticky-dark-box-shadow": `${stickyNavBoxShadow.style} ${stickyNavBoxShadow.hOffset} ${stickyNavBoxShadow.vOffset} ${stickyNavBoxShadow.blur} ${stickyNavBoxShadow.spread} ${stickyNavBoxShadow.darkColor}`,
+      }),
     },
   });
 

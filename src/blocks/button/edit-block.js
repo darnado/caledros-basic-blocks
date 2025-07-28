@@ -39,6 +39,17 @@ import MarginSettings from "./settings/margin-settings";
 import PaddingSettings from "./settings/padding-settings";
 import LetterSpacingSettings from "./settings/letter-spacing-settings";
 import FontSizeSettings from "./settings/font-size-settings";
+import IconSettings from "./settings/icon/icon-settings";
+import IconColorSettings from "./settings/icon/icon-color-settings";
+import IconDarkColorSettings from "./settings/icon/icon-dark-color-settings";
+import IconSizeSettings from "./settings/icon/icon-size-settings";
+import IconFlexDirectionSettings from "./settings/icon/icon-flex-direction-settings";
+import ButtonHoverTextLightColorSettings from "./settings/button-hover-text-light-color-settings";
+import ButtonHoverTextDarkColorSettings from "./settings/button-hover-text-dark-color-settings";
+import IconHoverLightColorSettings from "./settings/icon/icon-hover-light-color-settings";
+import IconHoverDarkColorSettings from "./settings/icon/icon-hover-dark-color-settings";
+import BorderHoverLightColorSettings from "./settings/border-hover-light-color-settings";
+import BorderHoverDarkColorSettings from "./settings/border-hover-dark-color-settings";
 
 export default function EditBlock({ attributes, setAttributes }) {
   const {
@@ -57,18 +68,67 @@ export default function EditBlock({ attributes, setAttributes }) {
     buttonBorder,
     buttonMargin,
     buttonPadding,
+    buttonType,
+    buttonIcon,
+    buttonIconSize,
+    buttonIconColor,
+    buttonIconDarkColor,
+    buttonIconFlexDirection,
+    buttonHoverTextLightColor,
+    buttonHoverTextDarkColor,
+    iconHoverLightColor,
+    iconHoverDarkColor,
+    borderHoverLightColor,
+    borderHoverDarkColor,
   } = attributes;
+
+  // Class list
+  const classesList = [
+    "cbb-button",
+    `${buttonType === "button-with-icon" ? "cbb-button-with-icon" : ""}`,
+    `${
+      buttonHoverTextLightColor.enabled
+        ? "cbb-button--hover-text-light-color"
+        : ""
+    }`,
+    `${
+      buttonHoverTextDarkColor.enabled
+        ? "cbb-button--hover-text-dark-color"
+        : ""
+    }`,
+    `${iconHoverLightColor.enabled ? "cbb-button--icon-text-light-color" : ""}`,
+    `${iconHoverDarkColor.enabled ? "cbb-button--icon-text-dark-color" : ""}`,
+    `${
+      borderHoverLightColor.enabled
+        ? "cbb-button--hover-border-light-color"
+        : ""
+    }`,
+    `${
+      borderHoverDarkColor.enabled ? "cbb-button--hover-border-dark-color" : ""
+    }`,
+  ]
+    .filter((classItem) => classItem)
+    .join(" ");
 
   // Block props
   const blockProps = useBlockProps({
-    className: "cbb-button",
+    className: classesList,
     style: {
       "--cbb-button-light-color": buttonLightColor,
       "--cbb-button-dark-color": buttonDarkColor,
       "--cbb-button-hover-light-color": buttonHoverLightColor,
       "--cbb-button-hover-dark-color": buttonHoverDarkColor,
       "--cbb-button-text-light-color": buttonTextLightColor,
+      ...(buttonHoverTextLightColor.enabled && {
+        "--cbb-button-hover-text-light-color": buttonHoverTextLightColor.value,
+      }),
       "--cbb-button-text-dark-color": buttonTextDarkColor,
+      ...(buttonHoverTextDarkColor.enabled && {
+        "--cbb-button-hover-text-dark-color": buttonHoverTextDarkColor.value,
+      }),
+      ...(buttonType === "button-with-icon" && {
+        "--cbb-button-flex-direction": buttonIconFlexDirection,
+      }),
       ...(buttonFontFamily !== "" && {
         fontFamily: `var(--wp--preset--font-family--${buttonFontFamily})`,
       }),
@@ -100,6 +160,12 @@ export default function EditBlock({ attributes, setAttributes }) {
         buttonBorder.darkColor !== "#00000000" && {
           "--cbb-button-dark-border-color": buttonBorder.darkColor,
         }),
+      ...(borderHoverLightColor.enabled && {
+        "--cbb-button-border-hover-light-color": borderHoverLightColor.value,
+      }),
+      ...(borderHoverDarkColor.enabled && {
+        "--cbb-button-border-hover-dark-color": borderHoverDarkColor.value,
+      }),
       ...(buttonBorder.radius !== "0px" &&
         buttonBorder.radius !== "0%" && {
           borderRadius: buttonBorder.radius,
@@ -135,60 +201,162 @@ export default function EditBlock({ attributes, setAttributes }) {
         >
           {(tab) => {
             if (tab.name === "content") {
-              return (
-                <>
-                  <ButtonTextContentSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></ButtonTextContentSettings>
-                  <ButtonLinkSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></ButtonLinkSettings>
-                  <TypographyGroupSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></TypographyGroupSettings>
-                  <FontSizeSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></FontSizeSettings>
-                  <LetterSpacingSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></LetterSpacingSettings>
-                </>
-              );
+              if (buttonType === "simple-button") {
+                return (
+                  <>
+                    <ButtonTextContentSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonTextContentSettings>
+                    <ButtonLinkSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonLinkSettings>
+                    <TypographyGroupSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></TypographyGroupSettings>
+                    <FontSizeSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></FontSizeSettings>
+                    <LetterSpacingSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></LetterSpacingSettings>
+                  </>
+                );
+              } else {
+                return (
+                  <>
+                    <ButtonTextContentSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonTextContentSettings>
+                    <ButtonLinkSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonLinkSettings>
+                    <TypographyGroupSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></TypographyGroupSettings>
+                    <FontSizeSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></FontSizeSettings>
+                    <LetterSpacingSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></LetterSpacingSettings>
+                    <IconSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></IconSettings>
+                    <IconSizeSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></IconSizeSettings>
+                  </>
+                );
+              }
             }
             if (tab.name === "style") {
-              return (
-                <>
-                  <ButtonLightColorSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></ButtonLightColorSettings>
-                  <ButtonDarkColorSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></ButtonDarkColorSettings>
-                  <ButtonLightColorHoverSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></ButtonLightColorHoverSettings>
-                  <ButtonDarkColorHoverSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></ButtonDarkColorHoverSettings>
-                  <ButtonTextLightColorSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></ButtonTextLightColorSettings>
-                  <ButtonTextDarkColorSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></ButtonTextDarkColorSettings>
-                </>
-              );
+              if (buttonType === "simple-button") {
+                return (
+                  <>
+                    <ButtonLightColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonLightColorSettings>
+                    <ButtonDarkColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonDarkColorSettings>
+                    <ButtonLightColorHoverSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonLightColorHoverSettings>
+                    <ButtonDarkColorHoverSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonDarkColorHoverSettings>
+                    <ButtonTextLightColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonTextLightColorSettings>
+                    <ButtonTextDarkColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonTextDarkColorSettings>
+                    <ButtonHoverTextLightColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonHoverTextLightColorSettings>
+                    <ButtonHoverTextDarkColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonHoverTextDarkColorSettings>
+                  </>
+                );
+              } else {
+                return (
+                  <>
+                    <ButtonLightColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonLightColorSettings>
+                    <ButtonDarkColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonDarkColorSettings>
+                    <ButtonLightColorHoverSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonLightColorHoverSettings>
+                    <ButtonDarkColorHoverSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonDarkColorHoverSettings>
+                    <ButtonTextLightColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonTextLightColorSettings>
+                    <ButtonTextDarkColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonTextDarkColorSettings>
+                    <ButtonHoverTextLightColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonHoverTextLightColorSettings>
+                    <ButtonHoverTextDarkColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ButtonHoverTextDarkColorSettings>
+                    <IconColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></IconColorSettings>
+                    <IconDarkColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></IconDarkColorSettings>
+                    <IconHoverLightColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></IconHoverLightColorSettings>
+                    <IconHoverDarkColorSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></IconHoverDarkColorSettings>
+                    <IconFlexDirectionSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></IconFlexDirectionSettings>
+                  </>
+                );
+              }
             }
             if (tab.name === "additional") {
               return (
@@ -205,6 +373,14 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></BorderLightColorSettings>
+                  <BorderHoverLightColorSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></BorderHoverLightColorSettings>
+                  <BorderHoverDarkColorSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></BorderHoverDarkColorSettings>
                   <BorderDarkColorSettings
                     attributes={attributes}
                     setAttributes={setAttributes}
@@ -228,7 +404,29 @@ export default function EditBlock({ attributes, setAttributes }) {
           }}
         </TabPanel>
       </InspectorControls>
-      <a {...blockProps}>{buttonText}</a>
+      {buttonType === "simple-button" && <a {...blockProps}>{buttonText}</a>}
+      {buttonType !== "simple-button" && (
+        <a {...blockProps}>
+          {buttonText}
+          <span
+            className={`cbb-button__icon cbb-button__icon--${buttonIcon}`}
+            style={{
+              "--cbb-icon-size": `${buttonIconSize}px`,
+              "--cbb-icon-color": buttonIconColor,
+              "--cbb-icon-dark-color": buttonIconDarkColor,
+              ...(iconHoverLightColor.enabled && {
+                "--cbb-hover-icon-light-color": iconHoverLightColor.value,
+              }),
+              ...(iconHoverDarkColor.enabled && {
+                "--cbb-hover-icon-dark-color": iconHoverDarkColor.value,
+              }),
+            }}
+          >
+            <span className="cbb-button__icon-container"></span>
+            <span className="cbb-button__icon-content"></span>
+          </span>
+        </a>
+      )}
     </>
   );
 }

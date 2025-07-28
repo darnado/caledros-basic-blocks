@@ -51,6 +51,7 @@ import BorderDarkColorSettings from "./settings/border-dark-color-settings";
 import CenterStickyNavSettings from "./settings/sticky-navigation/center-sticky-nav-settings";
 import OverlayStickyNavSettings from "./settings/sticky-navigation/overlay-sticky-nav-settings";
 import OverlayNavSettings from "./settings/overlay-nav-settings";
+import StickyNavBoxShadowSettings from "./settings/sticky-navigation/sticky-nav-box-shadow-settings";
 
 export default function EditBlock({ attributes, setAttributes }) {
   const {
@@ -312,6 +313,10 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></OverlayStickyNavSettings>
+                  <StickyNavBoxShadowSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></StickyNavBoxShadowSettings>
                 </>
               );
             }

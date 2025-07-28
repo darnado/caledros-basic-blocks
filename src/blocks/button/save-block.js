@@ -39,18 +39,67 @@ export default function SaveBlock({ attributes }) {
     buttonBorder,
     buttonMargin,
     buttonPadding,
+    buttonType,
+    buttonIcon,
+    buttonIconSize,
+    buttonIconColor,
+    buttonIconDarkColor,
+    buttonIconFlexDirection,
+    buttonHoverTextLightColor,
+    buttonHoverTextDarkColor,
+    iconHoverLightColor,
+    iconHoverDarkColor,
+    borderHoverLightColor,
+    borderHoverDarkColor,
   } = attributes;
+
+  // Class list
+  const classesList = [
+    "cbb-button",
+    `${buttonType === "button-with-icon" ? "cbb-button-with-icon" : ""}`,
+    `${
+      buttonHoverTextLightColor.enabled
+        ? "cbb-button--hover-text-light-color"
+        : ""
+    }`,
+    `${
+      buttonHoverTextDarkColor.enabled
+        ? "cbb-button--hover-text-dark-color"
+        : ""
+    }`,
+    `${iconHoverLightColor.enabled ? "cbb-button--icon-text-light-color" : ""}`,
+    `${iconHoverDarkColor.enabled ? "cbb-button--icon-text-dark-color" : ""}`,
+    `${
+      borderHoverLightColor.enabled
+        ? "cbb-button--hover-border-light-color"
+        : ""
+    }`,
+    `${
+      borderHoverDarkColor.enabled ? "cbb-button--hover-border-dark-color" : ""
+    }`,
+  ]
+    .filter((classItem) => classItem)
+    .join(" ");
 
   // Block properties
   const blockProperties = useBlockProps.save({
-    className: "cbb-button",
+    className: classesList,
     style: {
       "--cbb-button-light-color": buttonLightColor,
       "--cbb-button-dark-color": buttonDarkColor,
       "--cbb-button-hover-light-color": buttonHoverLightColor,
       "--cbb-button-hover-dark-color": buttonHoverDarkColor,
       "--cbb-button-text-light-color": buttonTextLightColor,
+      ...(buttonHoverTextLightColor.enabled && {
+        "--cbb-button-hover-text-light-color": buttonHoverTextLightColor.value,
+      }),
       "--cbb-button-text-dark-color": buttonTextDarkColor,
+      ...(buttonHoverTextDarkColor.enabled && {
+        "--cbb-button-hover-text-dark-color": buttonHoverTextDarkColor.value,
+      }),
+      ...(buttonType === "button-with-icon" && {
+        "--cbb-button-flex-direction": buttonIconFlexDirection,
+      }),
       ...(buttonFontFamily !== "" && {
         fontFamily: `var(--wp--preset--font-family--${buttonFontFamily})`,
       }),
@@ -79,6 +128,12 @@ export default function SaveBlock({ attributes }) {
         buttonBorder.darkColor !== "#00000000" && {
           "--cbb-button-dark-border-color": buttonBorder.darkColor,
         }),
+      ...(borderHoverLightColor.enabled && {
+        "--cbb-button-border-hover-light-color": borderHoverLightColor.value,
+      }),
+      ...(borderHoverDarkColor.enabled && {
+        "--cbb-button-border-hover-dark-color": borderHoverDarkColor.value,
+      }),
       ...(buttonBorder.radius !== "0px" &&
         buttonBorder.radius !== "0%" && {
           borderRadius: buttonBorder.radius,
@@ -96,8 +151,34 @@ export default function SaveBlock({ attributes }) {
   });
 
   return (
-    <a {...blockProperties} href={buttonLink}>
-      {buttonText}
-    </a>
+    <>
+      {buttonType === "simple-button" && (
+        <a {...blockProperties} href={buttonLink}>
+          {buttonText}
+        </a>
+      )}
+      {buttonType !== "simple-button" && (
+        <a {...blockProperties} href={buttonLink}>
+          {buttonText}
+          <span
+            className={`cbb-button__icon cbb-button__icon--${buttonIcon}`}
+            style={{
+              "--cbb-icon-size": `${buttonIconSize}px`,
+              "--cbb-icon-color": buttonIconColor,
+              "--cbb-icon-dark-color": buttonIconDarkColor,
+              ...(iconHoverLightColor.enabled && {
+                "--cbb-hover-icon-light-color": iconHoverLightColor.value,
+              }),
+              ...(iconHoverDarkColor.enabled && {
+                "--cbb-hover-icon-dark-color": iconHoverDarkColor.value,
+              }),
+            }}
+          >
+            <span className="cbb-button__icon-container"></span>
+            <span className="cbb-button__icon-content"></span>
+          </span>
+        </a>
+      )}
+    </>
   );
 }

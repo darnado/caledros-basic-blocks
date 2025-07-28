@@ -76,6 +76,7 @@
   height: var(--cbb-dm-sticky-height, 30px);
   transition: all 0.5s;
   background-color: var(--cbb-dm-sticky-light-bg-color, #00000000);
+  box-shadow: var(--cbb-dm-sticky-light-box-shadow, none);
 }
 
 /*Hide desktop menu container in small devices and devices without cursors*/
@@ -110,6 +111,7 @@ html[data-theme="dark"] .cbb-desktop-menu-container--has-border {
 /*Sticky navigation enabled*/
 html[data-theme="dark"] .cbb-desktop-menu-container--sticking-enabled {
   background-color: var(--cbb-dm-sticky-dark-bg-color, #00000000);
+  box-shadow: var(--cbb-dm-sticky-dark-box-shadow, none);
 }
 
 /*Desktop container with background image*/

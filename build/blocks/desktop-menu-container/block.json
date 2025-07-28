@@ -142,6 +142,19 @@
     "overlayNav": {
       "type": "boolean",
       "default": false
+    },
+    "stickyNavBoxShadow": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "hOffset": "10px",
+        "vOffset": "10px",
+        "blur": "0px",
+        "spread": "0px",
+        "lightColor": "#000",
+        "darkColor": "#f4f4f4",
+        "style": ""
+      }
     }
   },
   "supports": {

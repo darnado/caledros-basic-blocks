@@ -110,9 +110,37 @@
       "type": "string",
       "default": "flex-start"
     },
+    "containerJustifyContentTablet": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "flex-start"
+      }
+    },
+    "containerJustifyContentMobile": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "flex-start"
+      }
+    },
     "containerAlignItems": {
       "type": "string",
       "default": "normal"
+    },
+    "containerAlignItemsTablet": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "normal"
+      }
+    },
+    "containerAlignItemsMobile": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "normal"
+      }
     },
     "containerColumnGap": {
       "type": "string",

@@ -94,8 +94,98 @@
         "left": "10px",
         "differentPaddingsEnabled": false
       }
+    },
+    "buttonType": {
+      "type": "string",
+      "default": "simple-button"
+    },
+    "buttonIcon": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonIconSize": {
+      "type": "number",
+      "default": 0
+    },
+    "buttonIconColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "buttonIconDarkColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "buttonIconFlexDirection": {
+      "type": "string",
+      "default": "row"
+    },
+    "buttonHoverTextLightColor": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "#000000"
+      }
+    },
+    "buttonHoverTextDarkColor": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "#f4f4f4"
+      }
+    },
+    "iconHoverLightColor": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "#00000000"
+      }
+    },
+    "iconHoverDarkColor": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "#00000000"
+      }
+    },
+    "borderHoverLightColor": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "#000000"
+      }
+    },
+    "borderHoverDarkColor": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "#f4f4f4"
+      }
     }
   },
+  "variations": [
+    {
+      "name": "caledros-basic-blocks/button-with-icon",
+      "title": "Button with Icon",
+      "description": "A customizable button with an icon.",
+      "attributes": {
+        "buttonType": "button-with-icon",
+        "buttonIcon": "arrow-right-circle-fill",
+        "buttonIconSize": 30,
+        "buttonIconColor": "#000000",
+        "buttonIconDarkColor": "#ffffff",
+        "buttonIconFlexDirection": "row",
+        "iconHoverLightColor": {
+          "enabled": false,
+          "value": "#000000"
+        },
+        "iconHoverDarkColor": {
+          "enabled": false,
+          "value": "#f4f4f4"
+        }
+      },
+      "isActive": ["buttonType"]
+    }
+  ],
   "supports": {
     "align": false,
     "alignWide": false,

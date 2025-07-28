@@ -52,12 +52,24 @@
   .cbb-flex-container {
     flex-direction: var(--cbb-fdir-md, row);
   }
+  .cbb-flex-container--custom-just-content-tablet {
+    justify-content: var(--cbb-just-content-md, flex-start) !important;
+  }
+  .cbb-flex-container--custom-align-items-tablet {
+    align-items: var(--cbb-align-items-md, normal) !important;
+  }
 }
 
 /*Flexbox container (Mobile)*/
 @media (max-width: 450px) {
   .cbb-flex-container {
     flex-direction: var(--cbb-fdir-sm, row);
+  }
+  .cbb-flex-container--custom-just-content-mobile {
+    justify-content: var(--cbb-just-content-sm, flex-start) !important;
+  }
+  .cbb-flex-container--custom-align-items-mobile {
+    align-items: var(--cbb-align-items-sm, normal) !important;
   }
 }
 

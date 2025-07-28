@@ -21,3 +21,6 @@
 .cbb-resp-img img {
   vertical-align: top;
 }
+.cbb-resp-img {
+  display: inline-block;
+}

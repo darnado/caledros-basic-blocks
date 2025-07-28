@@ -77,7 +77,7 @@ export default function ButtonLightColorHoverSettings({
 
   return (
     <PanelBody
-      title={__("Hover color (light mode)", "caledros-basic-blocks")}
+      title={__("Hover bg color (light mode)", "caledros-basic-blocks")}
       initialOpen={false}
     >
       <ToggleControl

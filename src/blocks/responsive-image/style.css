@@ -21,7 +21,7 @@
 /* Initial styling for lazy-loaded images */
 .lazy-image {
   display: block;
-  background-color: #f0f0f0;
+  background-color: var(--lazy-loading-overlay-color, #00000000);
   filter: blur(10px);
   opacity: 0;
   transition:

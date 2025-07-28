@@ -109,6 +109,10 @@
     "imgLink": {
       "type": "string",
       "default": ""
+    },
+    "lazyLoadingOverlayColor": {
+      "type": "string",
+      "default": "#00000000"
     }
   },
   "supports": {

@@ -76,6 +76,7 @@
   height: var(--cbb-mm-sticky-height, 30px);
   transition: all 0.5s;
   background-color: var(--cbb-mm-sticky-light-bg-color, #00000000);
+  box-shadow: var(--cbb-mm-sticky-light-box-shadow, none);
 }
 
 /*Fix for the editor admin bar*/
@@ -118,6 +119,7 @@ html[data-theme="dark"] .cbb-mobile-menu-container--has-border {
 /*Sticky navigation enabled*/
 html[data-theme="dark"] .cbb-mobile-menu-container--sticking-enabled {
   background-color: var(--cbb-mm-sticky-dark-bg-color, #00000000);
+  box-shadow: var(--cbb-mm-sticky-dark-box-shadow, none);
 }
 
 /*Mobile menu container with background image*/

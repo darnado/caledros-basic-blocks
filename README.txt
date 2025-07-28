@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 2.0.1
+Stable tag: 2.1.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -44,7 +44,7 @@ Caledros Basic Blocks bundles the following third-party resources:
 
 **1.1. Bootstrap Icons**, *Copyright (c) 2019-2024 The Bootstrap Authors*
 
-The icons (SVG files) used in the Icon block and the Social Icon block were downloaded from Bootstrap Icons. 
+The icons (SVG files) used in the Icon block, Social Icon block, and the Button Block were downloaded from Bootstrap Icons. 
 
 Additionally, the four icons used in the Posts Loop block (user, date, category, and tag) as well as the publications icon in the Category Loop block, were all sourced from Bootstrap Icons.
 
@@ -226,6 +226,19 @@ However, other third party plugins can slow down your website if they are used t
 
 * Fixed bug in the Linkedin icon of the Social Icon block. Now the Linkedin icon is visible.
 
+= 2.1.0 =
+
+* Added a new option to set the height of the wp-site-blocks container to 100vh. This new option is available as a checkbox in the plugin Admin menu.
+* Added new 30 icons to the Icon Block. These icons, like the initial set, are sourced from Bootstrap Icons and are used under the MIT license.
+* Added missing license notice to the CSS stylesheet of the Icon Block.
+* Added new responsive controls to the Flex Container Block. These controls allow to change the "justify content" and "align items" properties for tablets and mobile devices. In total, there are 4 new controls: Justify Content (Tablet and Mobile), Justify Content (Mobile), Align Items (Tablet and Mobile), and Align Items (Mobile). These controls are available in the "Additional" tab.
+* Fixed bug in the Responsive Image Block. This bug was causing the lazy loading overlay to be visible in the Gutenberg editor, while it remained hidden on the frontend. This bug was affecting images with the object-fit property set to "contain", and images with borders.
+* Added a new control to change the color of the lazy-loading overlay. This control is available for the Responsive Image Block in the Additional Tab.
+* Added a new control named "Box Shadow", which is available for the Desktop Menu Container and the Mobile Menu Container blocks. It allows to set a custom box shadow for the sticky navigation bar. This control is located in the Sticky tab of the aforementioned blocks.
+* Added a new block variation for the Button Block. This block variation is named "Button with Icon" and allows the user to select an icon for the button. These icons are the same as those available for the Icon Block. Also, they are sourced from Bootstrap Icons and are used under the MIT license.
+* Added new controls to the Button Block. These controls allow to change the hover color for the text and border, both for the light and dark mode. 
+* Updated title of the hover background color control for the Button Block.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -254,6 +267,9 @@ This update disables 5 blocks and 1 variation block for the Gutenberg editor in 
 
 = 2.0.1 =
 This update fixes a bug in the Linkedin icon of the Social Icon block.
+
+= 2.1.0 =
+This update adds several new features to the blocks included in the plugin. 
 
 == Installation ==
 

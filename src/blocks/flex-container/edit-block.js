@@ -50,6 +50,10 @@ import ColumnGapSettings from "./settings/column-gap-settings";
 import OverflowSettings from "./settings/overflow-settings";
 import FullWidthTabletSettings from "./settings/full-width-tablet-settings";
 import FullWidthMobileSettings from "./settings/full-width-mobile-settings";
+import JustifyContentTabletSettings from "./settings/justify-content-tablet-settings";
+import JustifyContentMobileSettings from "./settings/justify-content-mobile-settings";
+import AlignItemsTabletSettings from "./settings/align-items-tablet-settings";
+import AlignItemsMobileSettings from "./settings/align-items-mobile-settings";
 
 export default function EditBlock({ attributes, setAttributes }) {
   // Block attributes
@@ -74,6 +78,10 @@ export default function EditBlock({ attributes, setAttributes }) {
     containerOverflow,
     fullWidthMobileEnabled,
     fullWidthTabletEnabled,
+    containerJustifyContentTablet,
+    containerJustifyContentMobile,
+    containerAlignItemsTablet,
+    containerAlignItemsMobile,
   } = attributes;
 
   // Function to generate the content of background-image
@@ -104,8 +112,16 @@ export default function EditBlock({ attributes, setAttributes }) {
       containerDarkBackgroundGradient !== "" ||
       containerBackgroundImage.url) &&
       "cbb-flex-container--has-bg-gradient",
-    fullWidthTabletEnabled && "cbb-flex-container--full-width-tablet ",
+    fullWidthTabletEnabled && "cbb-flex-container--full-width-tablet",
     fullWidthMobileEnabled && "cbb-flex-container--full-width-mobile",
+    containerJustifyContentTablet.enabled &&
+      "cbb-flex-container--custom-just-content-tablet",
+    containerJustifyContentMobile.enabled &&
+      "cbb-flex-container--custom-just-content-mobile",
+    containerAlignItemsTablet.enabled &&
+      "cbb-flex-container--custom-align-items-tablet",
+    containerAlignItemsMobile.enabled &&
+      "cbb-flex-container--custom-align-items-mobile",
   ]
     .filter((className) => className)
     .join(" ");
@@ -133,7 +149,19 @@ export default function EditBlock({ attributes, setAttributes }) {
       "--cbb-fdir-md": containerFlexDirection.tablet,
       "--cbb-fdir-sm": containerFlexDirection.mobile,
       "--cbb-just-content": containerJustifyContent,
+      ...(containerJustifyContentTablet.enabled && {
+        "--cbb-just-content-md": containerJustifyContentTablet.value,
+      }),
+      ...(containerJustifyContentMobile.enabled && {
+        "--cbb-just-content-sm": containerJustifyContentMobile.value,
+      }),
       "--cbb-align-items": containerAlignItems,
+      ...(containerAlignItemsTablet.enabled && {
+        "--cbb-align-items-md": containerAlignItemsTablet.value,
+      }),
+      ...(containerAlignItemsMobile.enabled && {
+        "--cbb-align-items-sm": containerAlignItemsMobile.value,
+      }),
       "--cbb-min-height": containerMinHeight,
       "--cbb-row-gap": containerRowGap,
       "--cbb-column-gap": containerColumnGap,
@@ -313,10 +341,26 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></JustifyContentSettings>
+                  <JustifyContentTabletSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></JustifyContentTabletSettings>
+                  <JustifyContentMobileSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></JustifyContentMobileSettings>
                   <AlignItemsSettings
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></AlignItemsSettings>
+                  <AlignItemsTabletSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></AlignItemsTabletSettings>
+                  <AlignItemsMobileSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></AlignItemsMobileSettings>
                   <OverflowSettings
                     attributes={attributes}
                     setAttributes={setAttributes}

@@ -43,6 +43,10 @@ export default function SaveBlock({ attributes }) {
     containerOverflow,
     fullWidthMobileEnabled,
     fullWidthTabletEnabled,
+    containerJustifyContentTablet,
+    containerJustifyContentMobile,
+    containerAlignItemsTablet,
+    containerAlignItemsMobile,
   } = attributes;
 
   // Function to generate the content of background-image
@@ -73,8 +77,16 @@ export default function SaveBlock({ attributes }) {
     (containerLightBackgroundGradient !== "" ||
       containerDarkBackgroundGradient !== "") &&
       "cbb-flex-container--has-bg-gradient",
-    fullWidthTabletEnabled && "cbb-flex-container--full-width-tablet ",
+    fullWidthTabletEnabled && "cbb-flex-container--full-width-tablet",
     fullWidthMobileEnabled && "cbb-flex-container--full-width-mobile",
+    containerJustifyContentTablet.enabled &&
+      "cbb-flex-container--custom-just-content-tablet",
+    containerJustifyContentMobile.enabled &&
+      "cbb-flex-container--custom-just-content-mobile",
+    containerAlignItemsTablet.enabled &&
+      "cbb-flex-container--custom-align-items-tablet",
+    containerAlignItemsMobile.enabled &&
+      "cbb-flex-container--custom-align-items-mobile",
   ]
     .filter((className) => className)
     .join(" ");
@@ -102,8 +114,20 @@ export default function SaveBlock({ attributes }) {
       ...(containerJustifyContent !== "flex-start" && {
         justifyContent: containerJustifyContent,
       }),
+      ...(containerJustifyContentTablet.enabled && {
+        "--cbb-just-content-md": containerJustifyContentTablet.value,
+      }),
+      ...(containerJustifyContentMobile.enabled && {
+        "--cbb-just-content-sm": containerJustifyContentMobile.value,
+      }),
       ...(containerAlignItems !== "normal" && {
         alignItems: containerAlignItems,
+      }),
+      ...(containerAlignItemsTablet.enabled && {
+        "--cbb-align-items-md": containerAlignItemsTablet.value,
+      }),
+      ...(containerAlignItemsMobile.enabled && {
+        "--cbb-align-items-sm": containerAlignItemsMobile.value,
       }),
       ...(containerMinHeight !== 0 && {
         minHeight: containerMinHeight,

@@ -30,7 +30,7 @@ add_action('wp_enqueue_scripts', 'caledros_basic_blocks_enqueue_frontend_styles'
 
 // Enqueue editor-only styles
 function caledros_basic_blocks_enqueue_editor_styles() {
-    if ( is_admin() ){
+    if (is_admin()){
         wp_enqueue_style('caledros-editor-css', plugin_dir_url(dirname(__FILE__)) . 'resources/dist/cbb-editor-styles.min.css', array(), '1.0');
     }
 }
@@ -38,7 +38,7 @@ add_action('enqueue_block_assets', 'caledros_basic_blocks_enqueue_editor_styles'
 
 // Preload all enqueued stylesheets
 function caledros_basic_blocks_preload_all_stylesheets($html, $handle, $href, $media) {
-    if ( !is_admin() && get_option('caledros_basic_blocks_enable_preload', 1)){
+    if (!is_admin() && get_option('caledros_basic_blocks_enable_preload', 1)){
         // Replace `rel="stylesheet"` with `rel="preload"` for all stylesheets
         $html = str_replace("rel='stylesheet'", "rel='preload' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"", $html);
 
@@ -60,9 +60,27 @@ add_filter('style_loader_tag', 'caledros_basic_blocks_preload_all_stylesheets', 
 
 // Load custom CSS for wp site blocks
 function caledros_basic_blocks_load_custom_css_wp_site_blocks(){
-    if ( !is_admin() && get_option('caledros_basic_blocks_add_column_layout_to_wp_site_blocks', 1)){
-        $custom_css_wp_site_blocks = ".wp-site-blocks{display:flex; flex-direction:column;}";
-        wp_add_inline_style('caledros-general-css', $custom_css_wp_site_blocks );
-    }
+    if (!is_admin()){
+        $custom_css_wp_site_blocks = "";
+        $add_column_layout = get_option('caledros_basic_blocks_add_column_layout_to_wp_site_blocks', 1);
+        $set_custom_height = get_option('caledros_basic_blocks_set_custom_height_to_wp_site_blocks', 1);
+
+        if ($add_column_layout){
+            $custom_css_wp_site_blocks .= ".wp-site-blocks{display:flex; flex-direction:column;}";            
+        }
+
+        if ($set_custom_height){
+           if($add_column_layout){
+             $custom_css_wp_site_blocks = str_replace("}", " height:100vh;}", $custom_css_wp_site_blocks);
+           }else{
+             $custom_css_wp_site_blocks = ".wp-site-blocks{height:100vh;}";
+           }
+        }
+
+        if (!empty($custom_css_wp_site_blocks)){
+            wp_add_inline_style('caledros-general-css', $custom_css_wp_site_blocks );
+        }
+
+    }  
 }
 add_action( 'wp_enqueue_scripts', 'caledros_basic_blocks_load_custom_css_wp_site_blocks' );
