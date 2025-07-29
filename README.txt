@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -239,6 +239,10 @@ However, other third party plugins can slow down your website if they are used t
 * Added new controls to the Button Block. These controls allow to change the hover color for the text and border, both for the light and dark mode. 
 * Updated title of the hover background color control for the Button Block.
 
+= 2.1.1 =
+* Changed the order of controls in the Additional tab of the Button Block.
+* Changed the default value to zero for the "caledros_basic_blocks_add_column_layout_to_wp_site_blocks" and "caledros_basic_blocks_set_custom_height_to_wp_site_blocks" settings. These settings are used in the plugin Admin menu.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -270,6 +274,9 @@ This update fixes a bug in the Linkedin icon of the Social Icon block.
 
 = 2.1.0 =
 This update adds several new features to the blocks included in the plugin. 
+
+= 2.1.1 =
+This update changes the order of controls of the Button block and modifies the default values of 2 plugin settings.
 
 == Installation ==
 

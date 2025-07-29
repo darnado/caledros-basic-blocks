@@ -43,7 +43,7 @@ function caledros_basic_blocks_register_settings() {
         'type' => "integer", 
         'sanitize_callback' => 'caledros_basic_blocks_sanitize_add_column_layout_to_wp_site_blocks',
         'show_in_rest' => false,
-        'default' => 1,
+        'default' => 0,
     );
     register_setting(
         'caledros_basic_blocks_settings_group',
@@ -56,7 +56,7 @@ function caledros_basic_blocks_register_settings() {
         'type' => "integer", 
         'sanitize_callback' => 'caledros_basic_blocks_sanitize_set_custom_height_to_wp_site_blocks',
         'show_in_rest' => false,
-        'default' => 1,
+        'default' => 0,
     );
     register_setting(
         'caledros_basic_blocks_settings_group',
