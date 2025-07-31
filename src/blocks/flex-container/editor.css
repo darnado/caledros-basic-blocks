@@ -103,6 +103,17 @@
   border-color: "#00000000";
 }
 
+/*Flexbox container with blur*/
+.cbb-flex-container--has-blur
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  backdrop-filter: blur(var(--cbb-blur, 10px));
+}
+
+.cbb-flex-container--has-blur {
+  backdrop-filter: blur(0px);
+}
+
 /*Flexbox container (Tablet)*/
 @media (max-width: 810px) {
   .cbb-flex-container

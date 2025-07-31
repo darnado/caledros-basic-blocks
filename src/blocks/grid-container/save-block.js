@@ -44,6 +44,7 @@ export default function SaveBlock({ attributes }) {
     containerOverflow,
     fullWidthMobileEnabled,
     fullWidthTabletEnabled,
+    containerBlur,
   } = attributes;
 
   // Function to generate the content of background-image
@@ -76,6 +77,7 @@ export default function SaveBlock({ attributes }) {
       "cbb-grid-container--has-bg-gradient",
     fullWidthTabletEnabled && "cbb-grid-container--full-width-tablet",
     fullWidthMobileEnabled && "cbb-grid-container--full-width-mobile",
+    containerBlur.enabled && "cbb-grid-container--has-blur",
   ]
     .filter((className) => className)
     .join(" ");
@@ -172,6 +174,9 @@ export default function SaveBlock({ attributes }) {
       }),
       ...(containerOverflow !== "visible" && {
         overflow: containerOverflow,
+      }),
+      ...(containerBlur.enabled && {
+        "--cbb-blur": `${containerBlur.value}`,
       }),
       "--cbb-col-lg": `${numberOfColumns}`,
       "--cbb-col-md": `${numberOfColumnsTablet}`,

@@ -73,7 +73,7 @@ export default function BorderHoverLightColorSettings({
 
   return (
     <PanelBody
-      title={__("Hover border color (Light mode)", "caledros-basic-blocks")}
+      title={__("Hover border color (light mode)", "caledros-basic-blocks")}
       initialOpen={false}
     >
       <ToggleControl

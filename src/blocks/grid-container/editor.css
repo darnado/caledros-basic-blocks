@@ -99,6 +99,17 @@
   border-color: "#00000000";
 }
 
+/*Grid container with blur*/
+.cbb-grid-container--has-blur
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  backdrop-filter: blur(var(--cbb-blur, 10px));
+}
+
+.cbb-grid-container--has-blur {
+  backdrop-filter: blur(0px);
+}
+
 /*Grid container (Tablet)*/
 @media (max-width: 810px) {
   .cbb-grid-container

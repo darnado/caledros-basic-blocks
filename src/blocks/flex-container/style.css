@@ -47,6 +47,11 @@
   border-color: var(--cbb-light-border-color, #00000000);
 }
 
+/*Flex container with blur*/
+.cbb-flex-container--has-blur {
+  backdrop-filter: blur(var(--cbb-blur, 10px));
+}
+
 /*Flexbox container (Tablet)*/
 @media (max-width: 810px) {
   .cbb-flex-container {

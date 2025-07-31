@@ -73,7 +73,7 @@ export default function BorderHoverDarkColorSettings({
 
   return (
     <PanelBody
-      title={__("Hover border color (Dark mode)", "caledros-basic-blocks")}
+      title={__("Hover border color (dark mode)", "caledros-basic-blocks")}
       initialOpen={false}
     >
       <ToggleControl

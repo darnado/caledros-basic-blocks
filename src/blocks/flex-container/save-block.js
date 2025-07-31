@@ -47,6 +47,7 @@ export default function SaveBlock({ attributes }) {
     containerJustifyContentMobile,
     containerAlignItemsTablet,
     containerAlignItemsMobile,
+    containerBlur,
   } = attributes;
 
   // Function to generate the content of background-image
@@ -87,6 +88,7 @@ export default function SaveBlock({ attributes }) {
       "cbb-flex-container--custom-align-items-tablet",
     containerAlignItemsMobile.enabled &&
       "cbb-flex-container--custom-align-items-mobile",
+    containerBlur.enabled && "cbb-flex-container--has-blur",
   ]
     .filter((className) => className)
     .join(" ");
@@ -196,6 +198,9 @@ export default function SaveBlock({ attributes }) {
       }),
       ...(containerOverflow !== "visible" && {
         overflow: containerOverflow,
+      }),
+      ...(containerBlur.enabled && {
+        "--cbb-blur": `${containerBlur.value}`,
       }),
       "--cbb-fdir-lg": containerFlexDirection.desktop,
       "--cbb-fdir-md": containerFlexDirection.tablet,

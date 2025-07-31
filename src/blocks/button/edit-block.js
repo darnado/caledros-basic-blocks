@@ -373,14 +373,14 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></BorderLightColorSettings>
-                  <BorderHoverLightColorSettings
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                  ></BorderHoverLightColorSettings>
                   <BorderDarkColorSettings
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></BorderDarkColorSettings>
+                  <BorderHoverLightColorSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></BorderHoverLightColorSettings>
                   <BorderHoverDarkColorSettings
                     attributes={attributes}
                     setAttributes={setAttributes}

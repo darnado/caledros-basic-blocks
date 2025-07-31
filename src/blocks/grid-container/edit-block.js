@@ -49,6 +49,7 @@ import AlignmentSettings from "./settings/alignment-settings";
 import OverflowSettings from "./settings/overflow-settings";
 import FullWidthTabletSettings from "./settings/full-width-tablet-settings";
 import FullWidthMobileSettings from "./settings/full-width-mobile-settings";
+import BlurSettings from "./settings/blur-settings";
 
 export default function EditBlock({ attributes, setAttributes }) {
   const {
@@ -73,6 +74,7 @@ export default function EditBlock({ attributes, setAttributes }) {
     containerDarkBackgroundGradient,
     fullWidthMobileEnabled,
     fullWidthTabletEnabled,
+    containerBlur,
   } = attributes;
 
   // Class names list
@@ -93,6 +95,7 @@ export default function EditBlock({ attributes, setAttributes }) {
       "cbb-grid-container--has-bg-gradient",
     fullWidthTabletEnabled && "cbb-grid-container--full-width-tablet",
     fullWidthMobileEnabled && "cbb-grid-container--full-width-mobile",
+    containerBlur.enabled && "cbb-grid-container--has-blur",
   ]
     .filter((className) => className)
     .join(" ");
@@ -172,6 +175,9 @@ export default function EditBlock({ attributes, setAttributes }) {
         containerBorder.darkColor !== "#00000000"
           ? containerBorder.darkColor
           : "#00000000",
+      ...(containerBlur.enabled && {
+        "--cbb-blur": `${containerBlur.value}`,
+      }),
       "--cbb-br-radius": containerBorder.radius,
       "--cbb-light-box-shadow": `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.lightColor}`,
       "--cbb-dark-box-shadow": `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.darkColor}`,
@@ -294,6 +300,10 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></BoxShadowSettings>
+                  <BlurSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></BlurSettings>
                 </>
               );
             }

@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 2.1.1
+Stable tag: 2.2.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -240,8 +240,17 @@ However, other third party plugins can slow down your website if they are used t
 * Updated title of the hover background color control for the Button Block.
 
 = 2.1.1 =
+
 * Changed the order of controls in the Additional tab of the Button Block.
 * Changed the default value to zero for the "caledros_basic_blocks_add_column_layout_to_wp_site_blocks" and "caledros_basic_blocks_set_custom_height_to_wp_site_blocks" settings. These settings are used in the plugin Admin menu.
+
+= 2.2.0 =
+
+* Added new blur control to the Flex and Grid Containers blocks. This control is available under the Style tab.
+* Changed the inset CSS property of the Button block. The previous value was cropping a part of the button icon.
+* Changed the default values for the "buttonIconColor" and "buttonIconDarkColor" attributes of the Button with Icon variation block.
+* Reordered the controls for the hover border color in the Button block. Also, the labels of such controls have been modified.
+* Removed unused CSS styles for the "swiper-slider" class in the Slider and Image Gallery blocks.
 
 == Upgrade Notice ==
 
@@ -277,6 +286,9 @@ This update adds several new features to the blocks included in the plugin.
 
 = 2.1.1 =
 This update changes the order of controls of the Button block and modifies the default values of 2 plugin settings.
+
+= 2.2.0 =
+This update adds a new blur control to the Flex and Grid Containers blocks.
 
 == Installation ==
 

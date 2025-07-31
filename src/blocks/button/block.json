@@ -171,8 +171,8 @@
         "buttonType": "button-with-icon",
         "buttonIcon": "arrow-right-circle-fill",
         "buttonIconSize": 30,
-        "buttonIconColor": "#000000",
-        "buttonIconDarkColor": "#ffffff",
+        "buttonIconColor": "#ffffff",
+        "buttonIconDarkColor": "#000000",
         "buttonIconFlexDirection": "row",
         "iconHoverLightColor": {
           "enabled": false,

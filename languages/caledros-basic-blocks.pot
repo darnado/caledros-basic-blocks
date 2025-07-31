@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Caledros Basic Blocks 2.1.1\n"
+"Project-Id-Version: Caledros Basic Blocks 2.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/caledros-basic-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-29T15:00:53+00:00\n"
+"POT-Creation-Date: 2025-07-31T02:18:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: caledros-basic-blocks\n"
@@ -680,12 +680,12 @@ msgstr ""
 
 #: build/blocks/button/index.js:1
 #: src/blocks/button/settings/border-hover-light-color-settings.js:76
-msgid "Hover border color (Light mode)"
+msgid "Hover border color (light mode)"
 msgstr ""
 
 #: build/blocks/button/index.js:1
 #: src/blocks/button/settings/border-hover-dark-color-settings.js:76
-msgid "Hover border color (Dark mode)"
+msgid "Hover border color (dark mode)"
 msgstr ""
 
 #: build/blocks/category-loop/index.js:1
@@ -1438,6 +1438,27 @@ msgstr ""
 #: build/blocks/flex-container/index.js:1
 #: src/blocks/flex-container/settings/align-items-mobile-settings.js:38
 msgid "This control enables selecting a custom value for the 'align items' property in mobile devices."
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/flex-container/settings/blur-settings.js:28
+#: src/blocks/grid-container/settings/blur-settings.js:28
+msgid "Blur"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/flex-container/settings/blur-settings.js:31
+#: src/blocks/grid-container/settings/blur-settings.js:31
+msgid "Enable blur"
+msgstr ""
+
+#: build/blocks/flex-container/index.js:1
+#: build/blocks/grid-container/index.js:1
+#: src/blocks/flex-container/settings/blur-settings.js:44
+#: src/blocks/grid-container/settings/blur-settings.js:44
+msgid "Please select the value for the blur filter (px)."
 msgstr ""
 
 #: build/blocks/grid-container/index.js:1

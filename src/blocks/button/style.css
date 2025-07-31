@@ -56,7 +56,7 @@ html[data-theme="dark"] .cbb-button--hover-border-dark-color:hover {
   border-color: var(--cbb-button-border-hover-dark-color, #00000000);
 }
 
-/*Icon settings*/
+/*Button with Icon settings*/
 .cbb-button-with-icon {
   display: flex;
   flex-direction: var(--cbb-button-flex-direction, row);
@@ -69,7 +69,7 @@ html[data-theme="dark"] .cbb-button--hover-border-dark-color:hover {
   width: var(--cbb-icon-size, 30px);
   height: var(--cbb-icon-size, 30px);
   position: relative;
-  clip-path: inset(0 0 0 0.4px);
+  clip-path: inset(0 0 0 0px);
 }
 
 .cbb-button__icon-content {

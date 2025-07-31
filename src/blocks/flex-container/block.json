@@ -156,6 +156,13 @@
     "fullWidthTabletEnabled": {
       "type": "boolean",
       "default": false
+    },
+    "containerBlur": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "10px"
+      }
     }
   },
   "supports": {
