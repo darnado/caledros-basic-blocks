@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -252,6 +252,10 @@ However, other third party plugins can slow down your website if they are used t
 * Reordered the controls for the hover border color in the Button block. Also, the labels of such controls have been modified.
 * Removed unused CSS styles for the "swiper-slider" class in the Slider and Image Gallery blocks.
 
+= 2.2.1 =
+
+* Fixed a bug affecting Flex Container blocks located inside the Slider block. The issue caused the Flex Container blocks to display the same background image as the Slider block within the Gutenberg editor. The CSS rule responsible for this bug was removed.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -289,6 +293,9 @@ This update changes the order of controls of the Button block and modifies the d
 
 = 2.2.0 =
 This update adds a new blur control to the Flex and Grid Containers blocks.
+
+= 2.2.1 =
+This update fixes a CSS bug in Flex Container blocks located inside the Slider block.
 
 == Installation ==
 

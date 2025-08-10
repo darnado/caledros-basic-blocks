@@ -76,11 +76,6 @@
   background-color: transparent !important;
 }
 
-/*Fix for the slider block*/
-.cbb-slider .cbb-flex-container {
-  background-image: var(--cbb-light-bg-gradient, none);
-}
-
 /*Flexbox container with box shadow*/
 .cbb-flex-container--has-box-shadow
   > .block-editor-inner-blocks
