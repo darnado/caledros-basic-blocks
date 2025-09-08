@@ -16,7 +16,9 @@
   "viewScript": "file:./frontend.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "attributes": {},
+  "example": {
+    "viewportWidth": 300
+  },
   "supports": {
     "className": false,
     "html": false

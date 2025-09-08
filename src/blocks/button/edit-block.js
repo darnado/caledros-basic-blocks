@@ -50,6 +50,7 @@ import IconHoverLightColorSettings from "./settings/icon/icon-hover-light-color-
 import IconHoverDarkColorSettings from "./settings/icon/icon-hover-dark-color-settings";
 import BorderHoverLightColorSettings from "./settings/border-hover-light-color-settings";
 import BorderHoverDarkColorSettings from "./settings/border-hover-dark-color-settings";
+import ContentGapSettings from "./settings/content-gap";
 
 export default function EditBlock({ attributes, setAttributes }) {
   const {
@@ -80,6 +81,7 @@ export default function EditBlock({ attributes, setAttributes }) {
     iconHoverDarkColor,
     borderHoverLightColor,
     borderHoverDarkColor,
+    contentGap,
   } = attributes;
 
   // Class list
@@ -176,6 +178,9 @@ export default function EditBlock({ attributes, setAttributes }) {
       padding: buttonPadding.differentPaddingsEnabled
         ? `${buttonPadding.top} ${buttonPadding.right} ${buttonPadding.bottom} ${buttonPadding.left}`
         : `${buttonPadding.top}`,
+      ...(contentGap.enabled && {
+        "--cbb-content-gap": `${contentGap.value}px`,
+      }),
     },
   });
 
@@ -257,6 +262,10 @@ export default function EditBlock({ attributes, setAttributes }) {
                       attributes={attributes}
                       setAttributes={setAttributes}
                     ></IconSizeSettings>
+                    <ContentGapSettings
+                      attributes={attributes}
+                      setAttributes={setAttributes}
+                    ></ContentGapSettings>
                   </>
                 );
               }

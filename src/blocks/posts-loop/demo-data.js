@@ -1,5 +1,5 @@
 import placeholder from "./assets/placeholder.webp";
-import placeholderBackground from "./assets/placeholder-background.webp";
+import placeholderMountains from "./assets/placeholder-mountains.webp";
 
 export default function DemoData() {
   return (
@@ -50,7 +50,7 @@ export default function DemoData() {
           </div>
           <div className="cbb-posts-loop__img-container">
             <a className="cbb-posts-loop__img-link" href="#">
-              <img src={placeholderBackground} alt="Placeholder" />
+              <img src={placeholderMountains} alt="Placeholder" />
               <span className="cbb-posts-loop__post-title">
                 Marketing Moves That Matter
               </span>
@@ -135,7 +135,7 @@ export default function DemoData() {
           </div>
           <div className="cbb-posts-loop__img-container">
             <a className="cbb-posts-loop__img-link" href="#">
-              <img src={placeholderBackground} alt="Placeholder" />
+              <img src={placeholderMountains} alt="Placeholder" />
               <span className="cbb-posts-loop__post-title">
                 What’s Working in 2025
               </span>
@@ -220,7 +220,7 @@ export default function DemoData() {
           </div>
           <div className="cbb-posts-loop__img-container">
             <a className="cbb-posts-loop__img-link" href="#">
-              <img src={placeholderBackground} alt="Placeholder" />
+              <img src={placeholderMountains} alt="Placeholder" />
               <span className="cbb-posts-loop__post-title">
                 Quick Wins for Smart Marketers
               </span>
@@ -305,7 +305,7 @@ export default function DemoData() {
           </div>
           <div className="cbb-posts-loop__img-container">
             <a className="cbb-posts-loop__img-link" href="#">
-              <img src={placeholderBackground} alt="Placeholder" />
+              <img src={placeholderMountains} alt="Placeholder" />
               <span className="cbb-posts-loop__post-title">
                 Trends to Watch This Quarter
               </span>

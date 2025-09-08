@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function caledros_basic_blocks_posts_loop_render_cb($attributes){
     // Placeholder images 
-    $placeholder_background_url = plugins_url('build/images/placeholder-background.d25a2ca6.webp', dirname(dirname(dirname(__FILE__))));  
+    $placeholder_background_url = plugins_url('build/images/placeholder-mountains.7da2eb2d.webp', dirname(dirname(dirname(__FILE__))));  
     if (!filter_var($placeholder_background_url, FILTER_VALIDATE_URL)) { 
         $placeholder_background_url = ''; 
     }    

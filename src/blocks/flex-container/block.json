@@ -5,13 +5,127 @@
   "title": "Flex Container",
   "category": "caledros-basic-blocks",
   "icon": "block-default",
-  "description": "A responsive container using flexbox layout, perfect for arranging elements horizontally or vertically.",
+  "description": "A responsive container with a flexbox layout, perfect for arranging elements horizontally or vertically.",
   "keywords": ["container, wrapper"],
   "version": "1.0",
   "textdomain": "caledros-basic-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
+  "example": {
+    "attributes": {
+      "containerMinHeight": "50px",
+      "containerBorder": {
+        "style": "solid",
+        "width": "2px",
+        "lightColor": "#000",
+        "darkColor": "#fff"
+      },
+      "containerFlexDirection": "row",
+      "containerJustifyContent": "space-around",
+      "containerAlignItems": "center",
+      "containerPadding": {
+        "top": "10px",
+        "right": "10px",
+        "bottom": "10px",
+        "left": "10px",
+        "differentPaddingsEnabled": true,
+        "useGlobalPadding": false
+      }
+    },
+    "innerBlocks": [
+      {
+        "name": "caledros-basic-blocks/flex-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "50px",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/flex-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "50px",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/flex-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "50px",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/flex-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "50px",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/flex-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "50px",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/flex-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "50px",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      }
+    ]
+  },
   "attributes": {
     "containerWidth": {
       "type": "string",

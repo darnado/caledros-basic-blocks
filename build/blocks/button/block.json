@@ -14,6 +14,12 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
+  "example": {
+    "attributes": {
+      "buttonText": "Button text"
+    },
+    "viewportWidth": 300
+  },
   "attributes": {
     "buttonText": {
       "type": "string",
@@ -25,27 +31,27 @@
     },
     "buttonLightColor": {
       "type": "string",
-      "default": "#333"
+      "default": "#252533"
     },
     "buttonDarkColor": {
       "type": "string",
-      "default": "#f4f4f4"
+      "default": "#01A7C2"
     },
     "buttonHoverLightColor": {
       "type": "string",
-      "default": "#616161"
+      "default": "#197278"
     },
     "buttonHoverDarkColor": {
       "type": "string",
-      "default": "#cbcbcb"
+      "default": "#B5FFE1"
     },
     "buttonTextLightColor": {
       "type": "string",
-      "default": "#f4f4f4"
+      "default": "#fff"
     },
     "buttonTextDarkColor": {
       "type": "string",
-      "default": "#333"
+      "default": "#000"
     },
     "buttonFontFamily": {
       "type": "string",
@@ -74,7 +80,7 @@
         "width": "0px",
         "lightColor": "#00000000",
         "darkColor": "#00000000",
-        "radius": "5px"
+        "radius": "60px"
       }
     },
     "buttonMargin": {
@@ -90,11 +96,11 @@
     "buttonPadding": {
       "type": "object",
       "default": {
-        "top": "5px",
-        "right": "10px",
-        "bottom": "5px",
-        "left": "10px",
-        "differentPaddingsEnabled": false
+        "top": "9px",
+        "right": "18px",
+        "bottom": "9px",
+        "left": "18px",
+        "differentPaddingsEnabled": true
       }
     },
     "buttonType": {
@@ -162,6 +168,13 @@
         "enabled": false,
         "value": "#f4f4f4"
       }
+    },
+    "contentGap": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": 0
+      }
     }
   },
   "variations": [
@@ -171,8 +184,8 @@
       "description": "A customizable button with an icon.",
       "attributes": {
         "buttonType": "button-with-icon",
-        "buttonIcon": "arrow-right-circle-fill",
-        "buttonIconSize": 30,
+        "buttonIcon": "battery-charging",
+        "buttonIconSize": 26,
         "buttonIconColor": "#ffffff",
         "buttonIconDarkColor": "#000000",
         "buttonIconFlexDirection": "row",
@@ -183,6 +196,17 @@
         "iconHoverDarkColor": {
           "enabled": false,
           "value": "#f4f4f4"
+        },
+        "contentGap": {
+          "enabled": false,
+          "value": 0
+        },
+        "buttonPadding": {
+          "top": "5px",
+          "right": "18px",
+          "bottom": "5px",
+          "left": "18px",
+          "differentPaddingsEnabled": true
         }
       },
       "isActive": [

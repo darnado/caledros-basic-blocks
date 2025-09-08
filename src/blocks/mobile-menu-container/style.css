@@ -47,6 +47,15 @@
   box-shadow: var(--cbb-mm-light-box-shadow, none);
 }
 
+/*Mobile container with blur*/
+.cbb-mobile-menu-container--has-blur::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(var(--cbb-blur, 10px));
+}
+
 /*Mobile menu container with border*/
 .cbb-mobile-menu-container--has-border {
   border-color: var(--cbb-mm-light-border-color, #00000000);

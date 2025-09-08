@@ -51,6 +51,7 @@ export default function SaveBlock({ attributes }) {
     iconHoverDarkColor,
     borderHoverLightColor,
     borderHoverDarkColor,
+    contentGap,
   } = attributes;
 
   // Class list
@@ -147,6 +148,9 @@ export default function SaveBlock({ attributes }) {
       padding: buttonPadding.differentPaddingsEnabled
         ? `${buttonPadding.top} ${buttonPadding.right} ${buttonPadding.bottom} ${buttonPadding.left}`
         : `${buttonPadding.top}`,
+      ...(contentGap.enabled && {
+        "--cbb-content-gap": `${contentGap.value}px`,
+      }),
     },
   });
 

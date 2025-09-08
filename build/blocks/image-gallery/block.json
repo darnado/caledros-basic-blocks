@@ -19,6 +19,13 @@
     "file:./view.css"
   ],
   "render": "file:./render.php",
+  "example": {
+    "attributes": {
+      "showDemoData": true,
+      "minHeight": "500px"
+    },
+    "viewportWidth": 600
+  },
   "attributes": {
     "images": {
       "type": "array",

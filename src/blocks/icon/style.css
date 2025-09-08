@@ -22,7 +22,8 @@
   width: var(--cbb-icon-size, 30px);
   height: var(--cbb-icon-size, 30px);
   position: relative;
-  clip-path: inset(0 0 0 0.4px);
+  clip-path: inset(0 0 0 0px);
+  overflow: hidden;
 }
 
 .cbb-icon__main-link {
@@ -211,6 +212,9 @@
 }
 .cbb-icon--stickies .cbb-icon__icon-container::before {
   background-image: url("./assets/stickies.svg");
+}
+.cbb-icon--telephone .cbb-icon__icon-container::before {
+  background-image: url("./assets/telephone.svg");
 }
 .cbb-icon--tools .cbb-icon__icon-container::before {
   background-image: url("./assets/tools.svg");

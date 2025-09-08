@@ -1,5 +1,5 @@
 import placeholder from "./assets/placeholder.webp";
-import placeholderBackground from "./assets/placeholder-background.webp";
+import placeholderMountains from "./assets/placeholder-mountains.webp";
 
 export default function DemoData() {
   return (
@@ -18,7 +18,7 @@ export default function DemoData() {
           </div>
           <div class="cbb-categories-loop__img-container">
             <a class="cbb-categories-loop__img-link" href="#">
-              <img src={placeholderBackground} alt="placeholder" />
+              <img src={placeholderMountains} alt="placeholder" />
               <span class="cbb-categories-loop__post-title">Marketing</span>
             </a>
           </div>
@@ -54,7 +54,7 @@ export default function DemoData() {
           </div>
           <div class="cbb-categories-loop__img-container">
             <a class="cbb-categories-loop__img-link" href="#">
-              <img src={placeholderBackground} alt="placeholder" />
+              <img src={placeholderMountains} alt="placeholder" />
               <span class="cbb-categories-loop__post-title">Web Design</span>
             </a>
           </div>
@@ -90,7 +90,7 @@ export default function DemoData() {
           </div>
           <div class="cbb-categories-loop__img-container">
             <a class="cbb-categories-loop__img-link" href="#">
-              <img src={placeholderBackground} alt="placeholder" />
+              <img src={placeholderMountains} alt="placeholder" />
               <span class="cbb-categories-loop__post-title">
                 Graphic Design
               </span>
@@ -128,7 +128,7 @@ export default function DemoData() {
           </div>
           <div class="cbb-categories-loop__img-container">
             <a class="cbb-categories-loop__img-link" href="#">
-              <img src={placeholderBackground} alt="placeholder" />
+              <img src={placeholderMountains} alt="placeholder" />
               <span class="cbb-categories-loop__post-title">Latest News</span>
             </a>
           </div>

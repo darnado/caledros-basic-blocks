@@ -15,6 +15,12 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
+  "example": {
+    "attributes": {
+      "showDemoData": true
+    },
+    "viewportWidth": 1000
+  },
   "attributes": {
     "pageType": {
       "type": "string",

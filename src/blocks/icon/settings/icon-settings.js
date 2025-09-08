@@ -101,6 +101,7 @@ export default function IconSettings({ attributes, setAttributes }) {
           { label: "Star", value: "star" },
           { label: "Stars", value: "stars" },
           { label: "Stickies", value: "stickies" },
+          { label: "Telephone", value: "telephone" },
           { label: "Tools", value: "tools" },
           { label: "UI Checks Grid", value: "ui-checks-grid" },
           { label: "UI Checks", value: "ui-checks" },

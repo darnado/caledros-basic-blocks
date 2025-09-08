@@ -60,7 +60,7 @@ html[data-theme="dark"] .cbb-button--hover-border-dark-color:hover {
 .cbb-button-with-icon {
   display: flex;
   flex-direction: var(--cbb-button-flex-direction, row);
-  column-gap: 10px;
+  column-gap: var(--cbb-content-gap, 10px);
   align-items: center;
   justify-content: center;
 }
@@ -267,6 +267,9 @@ html[data-theme="dark"]
 }
 .cbb-button__icon--stickies .cbb-button__icon-container::before {
   background-image: url("./assets/stickies.svg");
+}
+.cbb-button__icon--telephone .cbb-button__icon-container::before {
+  background-image: url("./assets/telephone.svg");
 }
 .cbb-button__icon--tools .cbb-button__icon-container::before {
   background-image: url("./assets/tools.svg");

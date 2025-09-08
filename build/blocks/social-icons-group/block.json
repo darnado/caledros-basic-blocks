@@ -15,6 +15,29 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
+  "example": {
+    "innerBlocks": [
+      {
+        "name": "caledros-basic-blocks/social-icon",
+        "attributes": {
+          "socialMediaIcon": "facebook"
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/social-icon",
+        "attributes": {
+          "socialMediaIcon": "youtube"
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/social-icon",
+        "attributes": {
+          "socialMediaIcon": "instagram"
+        }
+      }
+    ],
+    "viewportWidth": 250
+  },
   "attributes": {
     "iconsGap": {
       "type": "number",
@@ -32,11 +55,11 @@
     },
     "socialIconsSize": {
       "type": "number",
-      "default": 20
+      "default": 30
     },
     "socialIconsColor": {
       "type": "string",
-      "default": "#b8b8b8"
+      "default": "#000"
     },
     "socialIconsDarkColor": {
       "type": "string",

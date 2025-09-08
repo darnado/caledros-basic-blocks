@@ -13,10 +13,17 @@
   "textdomain": "caledros-basic-blocks",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",
+  "example": {
+    "attributes": {
+      "icon": "robot",
+      "iconsSize": 80
+    },
+    "viewportWidth": 300
+  },
   "attributes": {
     "icon": {
       "type": "string",
-      "default": "alarm-fill"
+      "default": "robot"
     },
     "iconLinkEnabled": {
       "type": "boolean",

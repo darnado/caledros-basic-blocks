@@ -52,6 +52,7 @@ import CenterStickyNavSettings from "./settings/sticky-navigation/center-sticky-
 import OverlayStickyNavSettings from "./settings/sticky-navigation/overlay-sticky-nav-settings";
 import OverlayNavSettings from "./settings/overlay-nav-settings";
 import StickyNavBoxShadowSettings from "./settings/sticky-navigation/sticky-nav-box-shadow-settings";
+import BlurSettings from "./settings/blur-settings";
 
 export default function EditBlock({ attributes, setAttributes }) {
   const {
@@ -71,6 +72,7 @@ export default function EditBlock({ attributes, setAttributes }) {
     containerAlignItems,
     containerOverflow,
     containerDarkBackgroundColor,
+    containerBlur,
   } = attributes;
 
   // Function to generate the content of background-image
@@ -98,6 +100,7 @@ export default function EditBlock({ attributes, setAttributes }) {
       containerDarkBackgroundGradient !== "" ||
       containerBackgroundImage.url) &&
       "cbb-desktop-menu-container--has-bg-gradient",
+    containerBlur.enabled && "cbb-desktop-menu-container--has-blur",
   ]
     .filter((className) => className)
     .join(" ");
@@ -166,6 +169,9 @@ export default function EditBlock({ attributes, setAttributes }) {
         containerBorder.darkColor !== "#00000000"
           ? containerBorder.darkColor
           : "#00000000",
+      ...(containerBlur.enabled && {
+        "--cbb-blur": `${containerBlur.value}`,
+      }),
       "--cbb-dm-br-radius": containerBorder.radius,
       "--cbb-dm-light-box-shadow": `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.lightColor}`,
       "--cbb-dm-dark-box-shadow": `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.darkColor}`,
@@ -283,6 +289,10 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></BoxShadowSettings>
+                  <BlurSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></BlurSettings>
                 </>
               );
             }

@@ -11,6 +11,13 @@
   "textdomain": "caledros-basic-blocks",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",
+  "example": {
+    "attributes": {
+      "buttonText": "Go",
+      "formWidth": "300px"
+    },
+    "viewportWidth": 300
+  },
   "attributes": {
     "buttonText": {
       "type": "string",

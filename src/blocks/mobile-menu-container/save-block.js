@@ -47,6 +47,7 @@ export default function SaveBlock({ attributes }) {
     overlayStickyNav,
     overlayNav,
     stickyNavBoxShadow,
+    containerBlur,
   } = attributes;
 
   // Function to generate the content of background-image
@@ -78,6 +79,7 @@ export default function SaveBlock({ attributes }) {
     (containerLightBackgroundGradient !== "" ||
       containerDarkBackgroundGradient !== "") &&
       "cbb-mobile-menu-container--has-bg-gradient",
+    containerBlur.enabled && "cbb-mobile-menu-container--has-blur",
   ]
     .filter((className) => className)
     .join(" ");
@@ -201,6 +203,9 @@ export default function SaveBlock({ attributes }) {
       }),
       ...(stickyNavBoxShadow.enabled && {
         "--cbb-mm-sticky-dark-box-shadow": `${stickyNavBoxShadow.style} ${stickyNavBoxShadow.hOffset} ${stickyNavBoxShadow.vOffset} ${stickyNavBoxShadow.blur} ${stickyNavBoxShadow.spread} ${stickyNavBoxShadow.darkColor}`,
+      }),
+      ...(containerBlur.enabled && {
+        "--cbb-blur": `${containerBlur.value}`,
       }),
     },
   });

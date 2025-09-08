@@ -25,17 +25,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 // Demo images
-$bird_image_url = plugins_url('build/images/bird.a6a2c4c9.webp', dirname(dirname(dirname(__FILE__))));
+$bird_image_url = plugins_url('build/images/bird.8dbbb5a8.webp', dirname(dirname(dirname(__FILE__))));
 if (!filter_var($bird_image_url, FILTER_VALIDATE_URL)) { 
     $bird_image_url = ''; 
 }
-$flower_image_url = plugins_url('build/images/flower.0f364da1.webp', dirname(dirname(dirname(__FILE__))));
+$flower_image_url = plugins_url('build/images/flower.1092b3c8.webp', dirname(dirname(dirname(__FILE__))));
 if (!filter_var($flower_image_url, FILTER_VALIDATE_URL)) { 
     $flower_image_url = ''; 
 }
-$pier_image_url = plugins_url('build/images/pier.d4435397.webp', dirname(dirname(dirname(__FILE__))));
-if (!filter_var($pier_image_url, FILTER_VALIDATE_URL)) { 
-    $pier_image_url = ''; 
+$mountains_image_url = plugins_url('build/images/mountains.2b50cd4a.webp', dirname(dirname(dirname(__FILE__))));
+if (!filter_var($mountains_image_url, FILTER_VALIDATE_URL)) { 
+    $mountains_image_url = ''; 
 }
 
 // BLOCK ATTRIBUTES
@@ -111,7 +111,7 @@ ob_start();
                 // I'm using a direct <img> tag because the image is a static plugin asset,
                 // not a WordPress media library attachment. Therefore, wp_get_attachment_image()
                 // is not applicable, as it requires an attachment ID and is intended for media uploads.?>
-                <img decoding="async" width="800" height="600" src=<?php echo esc_url($pier_image_url); // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?> class="attachment-full size-full" alt="pier" style="<?php echo esc_attr($style);?>">
+                <img decoding="async" width="800" height="600" src=<?php echo esc_url($mountains_image_url); // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?> class="attachment-full size-full" alt="pier" style="<?php echo esc_attr($style);?>">
             </div>
             <div class="swiper-slide">
                 <?php 

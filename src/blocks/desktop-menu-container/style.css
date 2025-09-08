@@ -47,6 +47,15 @@
   box-shadow: var(--cbb-dm-light-box-shadow, none);
 }
 
+/*Desktop container with blur*/
+.cbb-desktop-menu-container--has-blur::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(var(--cbb-blur, 10px));
+}
+
 /*Desktop container with border*/
 .cbb-desktop-menu-container--has-border {
   border-color: var(--cbb-dm-light-border-color, #00000000);

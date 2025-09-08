@@ -44,7 +44,7 @@ import EffectSettings from "./settings/effect-settings";
 import ShowDemoDataSettings from "./settings/show-demo-data-settings";
 import birdImage from "./assets/bird.webp";
 import flowerImage from "./assets/flower.webp";
-import pierImage from "./assets/pier.webp";
+import mountainsImage from "./assets/mountains.webp";
 
 export default function EditBlock({ attributes, setAttributes }) {
   // Block attributes
@@ -321,7 +321,7 @@ export default function EditBlock({ attributes, setAttributes }) {
               </SwiperSlide>
               <SwiperSlide key={1}>
                 <img
-                  src={pierImage}
+                  src={mountainsImage}
                   alt="pier"
                   key={1}
                   style={{ width: width, height: minHeight }}

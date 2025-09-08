@@ -3,6 +3,7 @@
   height: var(--cbb-social-icon-size, 30px);
   position: relative;
   clip-path: inset(0 0 0 0);
+  overflow:hidden;
 }
 
 .cbb-social-icon__main-link {

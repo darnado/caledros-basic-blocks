@@ -15,6 +15,13 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "render": "file:./render.php",
+  "example": {
+    "attributes": {
+      "menuLabel": "Menu link",
+      "menuFontSize": "30px"
+    },
+    "viewportWidth": 300
+  },
   "attributes": {
     "menuLabel": {
       "type": "string",

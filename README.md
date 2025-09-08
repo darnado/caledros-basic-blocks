@@ -10,11 +10,12 @@ Many block libraries introduce unnecessary bloat and slow down websites. Caledro
 
 Features include:
 
-- 18 new custom Gutenberg blocks. 5 blocks and 1 variation block can only be used in templates, template parts, and patterns
+- 18 new custom Gutenberg blocks, and 2 new variation blocks. 4 blocks and 1 variation block are only available for header template parts. 1 block (Content Renderer) is limited to templates
 - Flex and grid containers blocks included
 - Dark/Light mode block included
 - Blocks built with performance and minimalism in mind
 - Includes a toggleable preloader for CSS stylesheets to improve loading speed
+- Includes toggleable controls for adding/removing pre-defined CSS styles to the “wp-site-blocks” container
 - Enable featured images for post categories
 - Clean, modern design for seamless visual integration
 - Fully responsive and compatible with Full Site Editing Themes

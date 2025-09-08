@@ -15,6 +15,111 @@
   "viewScript": "file:./frontend.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
+  "example": {
+    "attributes": {
+      "containerHeight": "100px",
+      "containerBorder": {
+        "style": "solid",
+        "width": "2px",
+        "lightColor": "#000",
+        "darkColor": "#fff",
+        "radius": "0px"
+      },
+      "containerJustifyContent": "space-between",
+      "containerAlignItems": "center",
+      "containerPadding": {
+        "top": "10px",
+        "right": "10px",
+        "bottom": "10px",
+        "left": "10px",
+        "differentPaddingsEnabled": true,
+        "useGlobalPadding": false
+      }
+    },
+    "innerBlocks": [
+      {
+        "name": "core/heading",
+        "attributes": {
+          "content": "Site Title",
+          "level": 1,
+          "textAlign": "center",
+          "style": {
+            "typography": {
+              "fontSize": "32px",
+              "fontWeight": "700"
+            },
+            "color": {
+              "text": "#ffffff",
+              "background": "#000000"
+            },
+            "spacing": {
+              "margin": {
+                "top": "20px",
+                "bottom": "20px"
+              },
+              "padding": {
+                "top": "10px",
+                "bottom": "10px",
+                "left": "15px",
+                "right": "15px"
+              }
+            },
+            "border": {
+              "radius": "8px",
+              "width": "0px",
+              "style": "none",
+              "color": "#00000000"
+            }
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/flex-container",
+        "attributes": {
+          "containerMinHeight": "60px",
+          "containerWidth": "250px",
+          "containerLightBackgroundColor": "#519872",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          },
+          "containerMargin": {
+            "top": "20px",
+            "right": "0px",
+            "bottom": "20px",
+            "left": "0px",
+            "differentMarginsEnabled": true
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/flex-container",
+        "attributes": {
+          "containerMinHeight": "60px",
+          "containerWidth": "125px",
+          "containerLightBackgroundColor": "#3E7CB1",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          },
+          "containerMargin": {
+            "top": "20px",
+            "right": "0px",
+            "bottom": "20px",
+            "left": "0px",
+            "differentMarginsEnabled": true
+          }
+        }
+      }
+    ],
+    "viewportWidth": 811
+  },
   "attributes": {
     "containerWidth": {
       "type": "string",
@@ -154,6 +259,13 @@
         "lightColor": "#000",
         "darkColor": "#f4f4f4",
         "style": ""
+      }
+    },
+    "containerBlur": {
+      "type": "object",
+      "default": {
+        "enabled": false,
+        "value": "10px"
       }
     }
   },

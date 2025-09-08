@@ -12,6 +12,9 @@
   "editorScript": "file:./index.js",
   "viewScriptModule": "file:./view.js",
   "style": "file:./style-index.css",
+  "example": {
+    "viewportWidth": 250
+  },
   "attributes": {
     "sidebarSlug": {
       "type": "string",

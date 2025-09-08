@@ -12,6 +12,150 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
+  "example": {
+    "attributes": {
+      "containerBorder": {
+        "style": "solid",
+        "width": "2px",
+        "lightColor": "#000",
+        "darkColor": "#fff"
+      },
+      "numberOfColumns": 4,
+      "containerPadding": {
+        "top": "20px",
+        "right": "20px",
+        "bottom": "20px",
+        "left": "20px",
+        "differentPaddingsEnabled": true,
+        "useGlobalPadding": false
+      },
+      "containerRowGap": "20px",
+      "containerColumnGap": "20px"
+    },
+    "viewportWidth": 900,
+    "innerBlocks": [
+      {
+        "name": "caledros-basic-blocks/grid-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "100%",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/grid-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "100%",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/grid-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "100%",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/grid-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "100%",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/grid-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "100%",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/grid-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "100%",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/grid-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "100%",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      },
+      {
+        "name": "caledros-basic-blocks/grid-container",
+        "attributes": {
+          "containerMinHeight": "80px",
+          "containerWidth": "100%",
+          "containerLightBackgroundColor": "#0E9594",
+          "containerBorder": {
+            "style": "solid",
+            "width": "0px",
+            "lightColor": "#00000000",
+            "darkColor": "#00000000",
+            "radius": "10px"
+          }
+        }
+      }
+    ]
+  },
   "attributes": {
     "containerWidth": {
       "type": "string",

@@ -85,6 +85,21 @@
   background-image: none;
 }
 
+/*Desktop container with blur*/
+.cbb-desktop-menu-container--has-blur
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(var(--cbb-blur, 10px));
+}
+
+.cbb-desktop-menu-container--has-blur::before {
+  backdrop-filter: blur(0px);
+}
+
 /*Fix editor layout*/
 .cbb-desktop-menu-container > .block-editor-inner-blocks {
   width: 100%;
