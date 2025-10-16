@@ -49,7 +49,7 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
     $excerpt_length = intval($attributes['excerptOptions']['excerptLength'] ?? 20);
     $show_excerpt_ellipsis = filter_var( $attributes['excerptOptions']['showEllipsis'] ?? false, FILTER_VALIDATE_BOOLEAN);
     $category_filter_enabled = filter_var( $attributes['categoryFilter']['enable'] ?? false, FILTER_VALIDATE_BOOLEAN);
-    $category_id = intval($attributes['categoryFilter']['categoryId'] ?? 1);
+    $category_id = intval($attributes['categoryFilter']['categoryId'] ?? 0);
     $posts_loop_title = sanitize_text_field( $attributes['postsLoopTitle'] ?? "Website Title");
     $posts_loop_title_icon_url = sanitize_text_field($attributes['postsLoopTitleIcon']['url'] ?? "");
     $posts_loop_title_icon_alt = sanitize_text_field($attributes['postsLoopTitleIcon']['alt'] ?? "");
@@ -62,9 +62,12 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
     $column_no_tablet_number = intval( $attributes['columnNoTablet']['columnNo'] ?? 2);
     $column_no_mobile_enable_custom_value = filter_var( $attributes['columnNoMobile']['enableCustomValue'] ?? false, FILTER_VALIDATE_BOOLEAN );
     $column_no_mobile_number = intval( $attributes['columnNoMobile']['columnNo'] ?? 1);
+    $author_filter_enabled = filter_var( $attributes['authorFilter']['enable'] ?? false, FILTER_VALIDATE_BOOLEAN);
+    $author_id = sanitize_text_field($attributes['authorFilter']['authorId'] ?? "");
+    $author_link_enabled = filter_var( $attributes['authorFilter']['enableAuthorLink'] ?? false, FILTER_VALIDATE_BOOLEAN);
 
     // Format the post date
-    $dateFormatMap = [
+    $date_format_map = [
         "MM/DD/YYYY" => "m/d/Y",
         "DD/MM/YYYY" => "d/m/Y",
         "YYYY-MM-DD" => "Y-m-d",
@@ -73,13 +76,13 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
         "Day, Month DD, YYYY" => "l, F d, Y",
         "Month DD" => "F d"
     ];
-    $selectedDateFormat = $dateFormatMap[$attributes['dateOptions']["dateFormat"]] ?? 'F d, Y';
+    $selected_date_format = $date_format_map[$attributes['dateOptions']["dateFormat"]] ?? 'F d, Y';
 
     // Page type attribute
     $page_type_query = $page_type === "front-page" ? "page" : "paged";
 
     // Recover current page
-    $currentPage = get_query_var("$page_type_query") ? get_query_var("$page_type_query") : 1;
+    $current_page = get_query_var($page_type_query) ? get_query_var($page_type_query) : 1;
 
     // SANITIZE CONTENT
     $default_allowed_tags = wp_kses_allowed_html('post');
@@ -119,7 +122,7 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
                 'posts_per_page'=>(int) $number_of_items,
                 'order'=>"$sort_order",
                 'orderby'=>"$order_type",
-                'paged'=>$currentPage                    
+                'paged'=>$current_page                  
             );
             if($page_type === "search-results-page"){
                 $search_string = get_search_query();
@@ -131,17 +134,25 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
                 $args['cat'] = $cat_id;                     
             }
             if($category_filter_enabled && $page_type !== "category-template"){
-                $args['cat'] = $category_id;
+                $args['category__in'] = array($category_id);
             }
             if ($page_type === "tag-template" && is_tag()) {
                 $current_tag = get_queried_object();
                 $tag_id = $current_tag->term_id;
                 $args['tag_id'] = $tag_id;
             }
-            if ($tag_filter_enabled) {
+            if ($tag_filter_enabled && $page_type !== "tag-template") {
                 $args['tag__in'] = array($tag_id); 
             }
-            $featured = new WP_Query($args);     
+            if ($page_type === "author-template" && is_author()) {
+                $current_author = get_queried_object();
+                $author_id = $current_author->ID;
+                $args['author'] = $author_id;    
+            }
+            if ($author_filter_enabled && $page_type !== "author-template") {
+                $args['author__in'] = array($author_id);
+            }
+            $featured = new WP_Query($args); 
         ?>
 
         <?php if(!$show_demo_data): ?>
@@ -175,13 +186,27 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
                                 <?php echo esc_html( $posts_loop_title ); ?>
                             </p>
                             <div class="cbb-posts-loop_post-author-and-date">
-                                <?php if($show_author):?>
-                                    <span class="cbb-posts-loop__author">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-                                    </svg>
-                                    <?php the_author(); ?> 
-                                    </span>
+                                <?php if($show_author):?>                                    
+                                    <?php    
+                                        $current_post_author_id = get_the_author_meta('ID') ;   
+                                        $current_post_author_display_name = get_the_author_meta('display_name');                           
+                                        $current_post_author_url = get_author_posts_url($current_post_author_id);    
+                                    ?>
+                                    <?php if($author_link_enabled):?> 
+                                        <a class="cbb-posts-loop__author" href="<?php echo esc_url($current_post_author_url); ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                                            </svg>                                        
+                                            <?php echo esc_html($current_post_author_display_name)?>
+                                        </a>  
+                                    <?php else:?>
+                                        <span class="cbb-posts-loop__author">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                                            </svg>                                        
+                                            <?php echo esc_html($current_post_author_display_name)?>
+                                        </span>  
+                                    <?php endif;?>                                 
                                 <?php endif;?> 
                                 <?php if($show_date):?>
                                     <span class="cbb-posts-loop__date">
@@ -190,7 +215,7 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
                                         <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/>
                                         <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z"/>
                                     </svg>  
-                                    <?php echo get_the_date($selectedDateFormat); ?>
+                                    <?php echo get_the_date($selected_date_format); ?>
                                     </span>
                                 <?php endif;?>
                             </div>
@@ -202,37 +227,73 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
                             </a>                       
                         </div>      
                         <div class="cbb-posts-loop__post-info">
-                            <div class="cbb-posts-loop__category-and-tag">
-                                <?php 
-                                    $categories = get_the_category();
-                                    $category = $categories[0];
-                                    $category_name = $category->name;
-                                    $category_link = get_category_link( $category->term_id );
-                                    if($show_category):
-                                ?>                            
-                                    <a class="cbb-posts-loop__category" href="<?php echo esc_url($category_link); ?>">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16">
-                                        <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"/>
-                                        <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"/>
-                                        </svg>
-                                        <?php echo esc_html($category_name); ?>
-                                    </a>
-                                <?php endif;?>
-                                <?php 
+                            <div class="cbb-posts-loop__category-and-tag">  
+                                <?php if((($page_type === "category-template" && is_category()) || ($category_filter_enabled && $page_type !== "category-template")) && $show_category):                                    
+                                    $category_name = $current_category->name ?? get_cat_name($category_id);
+                                    $category_link = get_category_link($current_category->term_id ?? $category_id);
+                                ?>
+                                    <div class="cbb-posts-loop__categories-container">  
+                                        <a class="cbb-posts-loop__category" href="<?php echo esc_url($category_link); ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16">
+                                            <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"/>
+                                            <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"/>
+                                            </svg>
+                                            <?php echo esc_html($category_name); ?>
+                                        </a>  
+                                    </div> 
+                                <?php else:                                    
+                                    $categories = get_the_category();                                    
+                                    if(!empty($categories) && $show_category):
+                                ?>   
+                                    <div class="cbb-posts-loop__categories-container">  
+                                        <?php foreach($categories as $category): 
+                                            $category_name = $category->name;
+                                            $category_link = get_category_link( $category->term_id );
+                                        ?>    
+                                        <a class="cbb-posts-loop__category" href="<?php echo esc_url($category_link); ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16">
+                                            <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"/>
+                                            <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"/>
+                                            </svg>
+                                            <?php echo esc_html($category_name); ?>
+                                        </a>      
+                                        <?php endforeach;?>   
+                                    </div>
+                                    <?php endif;?>                                    
+                                <?php endif;?>  
+                                <?php if((($page_type === "tag-template" && is_tag()) || ($tag_filter_enabled && $page_type !== "tag-template")) && $show_tags):
+                                    $tag_name = $current_tag->name ?? get_term($tag_id, 'post_tag')->name;
+                                    $tag_link = get_tag_link($current_tag->term_id ?? $tag_id);
+                                ?>   
+                                    <div class="cbb-posts-loop__tags-container">  
+                                        <a class="cbb-posts-loop__tag" href="<?php echo esc_url($tag_link); ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+                                            <path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z"/>
+                                            <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z"/>
+                                            </svg>
+                                            <?php echo esc_html($tag_name); ?>
+                                        </a>  
+                                    </div>
+                                <?php else:
                                     $tags = get_the_tags();
                                     if(!empty($tags) && $show_tags):
-                                        $first_tag = $tags[0];
-                                        $tag_name = $first_tag->name;
-                                        $tag_link = get_tag_link( $first_tag->term_id);
-                                    ?>                                
-                                    <a class="cbb-posts-loop__tag" href="<?php echo esc_url($tag_link); ?>">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
-                                        <path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z"/>
-                                        <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z"/>
-                                        </svg>
-                                        <?php echo esc_html($tag_name); ?>
-                                    </a>                           
-                                <?php endif;?>
+                                ?>     
+                                    <div class="cbb-posts-loop__tags-container">  
+                                        <?php foreach($tags as $tag): 
+                                            $tag_name = $tag->name;
+                                            $tag_link = get_tag_link($tag->term_id);
+                                        ?>  
+                                        <a class="cbb-posts-loop__tag" href="<?php echo esc_url($tag_link); ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+                                            <path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z"/>
+                                            <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z"/>
+                                            </svg>
+                                            <?php echo esc_html($tag_name); ?>
+                                        </a>  
+                                        <?php endforeach;?>  
+                                    </div>  
+                                    <?php endif;?>
+                                <?php endif;?>     
                             </div>                    
                         </div>  
                         <?php 
@@ -252,14 +313,17 @@ function caledros_basic_blocks_posts_loop_render_cb($attributes){
             </div>     
             <?php if($show_navigation_links){?>  
             <div class="cbb-posts-loop_pagination">
-                <?php echo wp_kses_post(paginate_links(
-                    array(
+                <?php 
+                    $pagination = paginate_links(array(
                         'total'=>$featured->max_num_pages,
                         'prev_text' => '<',
                         'next_text'=>'>',
-                        'current' => max( 1, get_query_var("$page_type_query") )
-                    )
-                ));?>
+                        'current' => max( 1, get_query_var($page_type_query) )
+                    ));
+                    if($pagination){
+                        echo wp_kses_post($pagination);
+                    }  
+                ?>
             </div>     
             <?php }?>  
         </div>

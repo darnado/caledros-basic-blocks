@@ -40,6 +40,7 @@ import TagFilterSettings from "./settings/tag-filter-settings";
 import NumberOfColumnsDesktopSettings from "./settings/no-of-columns-desktop-settings";
 import NumberOfColumnsTabletSettings from "./settings/no-of-columns-tablet-settings";
 import NumberOfColumnsMobileSettings from "./settings/no-of-columns-mobile-settings";
+import AuthorFilterSettings from "./settings/author-filter-settings";
 import DemoData from "./demo-data";
 
 export default function EditBlock({ attributes, setAttributes }) {
@@ -62,6 +63,7 @@ export default function EditBlock({ attributes, setAttributes }) {
     columnNoDesktop,
     columnNoTablet,
     columnNoMobile,
+    authorFilter,
   } = attributes;
 
   // Published posts array
@@ -73,8 +75,18 @@ export default function EditBlock({ attributes, setAttributes }) {
     _embed: true,
     order: sortOrder,
     orderby: orderType,
-    ...(categoryFilter.enable ? { categories: categoryFilter.categoryId } : {}),
+    ...(categoryFilter.enable && categoryFilter.categoryId
+      ? { categories: categoryFilter.categoryId }
+      : {}),
+    ...(categoryFilter.enable && !categoryFilter.categoryId
+      ? { include: [0] }
+      : {}),
     ...(tagFilter.enable && tagFilter.tagId ? { tags: tagFilter.tagId } : {}),
+    ...(tagFilter.enable && !tagFilter.tagId ? { include: [0] } : {}),
+    ...(authorFilter.enable && authorFilter.authorId
+      ? { author: authorFilter.authorId }
+      : {}),
+    ...(authorFilter.enable && !authorFilter.authorId ? { include: [0] } : {}),
   });
 
   // Recover the available posts
@@ -84,10 +96,8 @@ export default function EditBlock({ attributes, setAttributes }) {
       permaLink: post?.link,
       date: post?.date,
       author: post?._embedded?.author[0]?.name,
-      category: post?._embedded["wp:term"]?.[0]?.[0]?.name,
-      categoryLink: post?._embedded["wp:term"]?.[0]?.[0]?.link,
-      tag: post?._embedded["wp:term"][1]?.[0]?.name ?? null,
-      tagLink: post?._embedded["wp:term"][1]?.[0]?.link ?? null,
+      categories: post?._embedded["wp:term"]?.[0],
+      tags: post?._embedded["wp:term"]?.[1],
       excerpt: post?.excerpt.raw,
       featuredImage: post?._embedded["wp:featuredmedia"]?.[0]?.source_url ?? "",
     }));
@@ -217,6 +227,10 @@ export default function EditBlock({ attributes, setAttributes }) {
                     attributes={attributes}
                     setAttributes={setAttributes}
                   ></TagFilterSettings>
+                  <AuthorFilterSettings
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                  ></AuthorFilterSettings>
                   <OrderTypeSettings
                     attributes={attributes}
                     setAttributes={setAttributes}
@@ -348,37 +362,94 @@ export default function EditBlock({ attributes, setAttributes }) {
                     </div>
                     <div className="cbb-posts-loop__post-info">
                       <div className="cbb-posts-loop__category-and-tag">
-                        {showCategory && (
-                          <a className="cbb-posts-loop__category">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              class="bi bi-bookmarks"
-                              viewBox="0 0 16 16"
-                            >
-                              <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z" />
-                              <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1" />
-                            </svg>
-                            {post.category}
-                          </a>
+                        {showCategory && !categoryFilter.enable && (
+                          <div className="cbb-posts-loop__categories-container">
+                            {post.categories.map((category) => (
+                              <a className="cbb-posts-loop__category">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="16"
+                                  height="16"
+                                  fill="currentColor"
+                                  class="bi bi-bookmarks"
+                                  viewBox="0 0 16 16"
+                                >
+                                  <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z" />
+                                  <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1" />
+                                </svg>
+                                {category.name}
+                              </a>
+                            ))}
+                          </div>
                         )}
-                        {showTags && post.tag !== null && (
-                          <a className="cbb-posts-loop__tag">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              class="bi bi-tags"
-                              viewBox="0 0 16 16"
-                            >
-                              <path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
-                              <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
-                            </svg>
-                            {post.tag}
-                          </a>
+                        {showCategory && categoryFilter.enable && (
+                          <div className="cbb-posts-loop__categories-container">
+                            <a className="cbb-posts-loop__category">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-bookmarks"
+                                viewBox="0 0 16 16"
+                              >
+                                <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z" />
+                                <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1" />
+                              </svg>
+                              {post.categories
+                                .filter(
+                                  (category) =>
+                                    category.id === categoryFilter.categoryId
+                                )
+                                .map((category) => (
+                                  <span>{category.name}</span>
+                                ))}
+                            </a>
+                          </div>
+                        )}
+                        {showTags &&
+                          post.tags !== null &&
+                          !tagFilter.enable && (
+                            <div className="cbb-posts-loop__tags-container">
+                              {post.tags.map((tag) => (
+                                <a className="cbb-posts-loop__tag">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-tags"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
+                                    <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
+                                  </svg>
+                                  {tag.name}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        {showTags && post.tags !== null && tagFilter.enable && (
+                          <div className="cbb-posts-loop__tags-container">
+                            <a className="cbb-posts-loop__tag">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-tags"
+                                viewBox="0 0 16 16"
+                              >
+                                <path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
+                                <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
+                              </svg>
+                              {post.tags
+                                .filter((tag) => tag.id === tagFilter.tagId)
+                                .map((tag) => (
+                                  <span>{tag.name}</span>
+                                ))}
+                            </a>
+                          </div>
                         )}
                       </div>
                     </div>

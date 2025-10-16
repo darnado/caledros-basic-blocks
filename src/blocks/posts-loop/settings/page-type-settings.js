@@ -22,7 +22,7 @@ import { PanelBody, SelectControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 
 export default function PageTypeSettings({ attributes, setAttributes }) {
-  const { pageType, categoryFilter } = attributes;
+  const { pageType, categoryFilter, tagFilter, authorFilter } = attributes;
 
   return (
     <PanelBody
@@ -55,6 +55,10 @@ export default function PageTypeSettings({ attributes, setAttributes }) {
             value: "tag-template",
           },
           {
+            label: "Author template",
+            value: "author-template",
+          },
+          {
             label: "Search results page",
             value: "search-results-page",
           },
@@ -67,6 +71,20 @@ export default function PageTypeSettings({ attributes, setAttributes }) {
           if (newValue === "category-template") {
             newAttributes.categoryFilter = {
               ...categoryFilter,
+              enable: false,
+            };
+          }
+
+          if (newValue === "tag-template") {
+            newAttributes.tagFilter = {
+              ...tagFilter,
+              enable: false,
+            };
+          }
+
+          if (newValue === "author-template") {
+            newAttributes.authorFilter = {
+              ...authorFilter,
               enable: false,
             };
           }

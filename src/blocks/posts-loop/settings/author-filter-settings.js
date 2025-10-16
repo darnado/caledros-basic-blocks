@@ -18,45 +18,68 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
+import {
+  PanelBody,
+  ComboboxControl,
+  ToggleControl,
+} from "@wordpress/components";
+import { useEntityRecords } from "@wordpress/core-data";
 import { __ } from "@wordpress/i18n";
 
-export default function ShowAuthorSettings({ attributes, setAttributes }) {
-  const { showAuthor, authorFilter } = attributes;
+export default function AuthorFilterSettings({ attributes, setAttributes }) {
+  const { authorFilter, pageType } = attributes;
+
+  let authorOptions = [];
+
+  // Fetch all categories
+  const { hasResolved, records } = useEntityRecords("root", "user", {
+    who: "authors",
+    per_page: -1,
+  });
+
+  // Build options once data is fetched
+  if (hasResolved && records) {
+    authorOptions = records.map((author) => ({
+      label: author.name,
+      value: author.id,
+    }));
+  }
 
   return (
     <PanelBody
-      title={__("Author options", "caledros-basic-blocks")}
+      title={__("Filter by author", "caledros-basic-blocks")}
       initialOpen={false}
     >
       <ToggleControl
         __nextHasNoMarginBottom
-        label={__("Show author", "caledros-basic-blocks")}
+        label={__("Filter posts by author", "caledros-basic-blocks")}
         help={__(
-          "Display the name of the post's author.",
+          "Choose whether or not the posts will be filtered by author.",
           "caledros-basic-blocks"
         )}
-        checked={showAuthor}
+        checked={authorFilter.enable}
+        disabled={pageType === "author-template"}
         onChange={(newValue) => {
           setAttributes({
-            showAuthor: newValue,
+            authorFilter: {
+              ...authorFilter,
+              enable: newValue,
+            },
           });
         }}
       />
-      {showAuthor && (
-        <ToggleControl
+      {authorFilter.enable && (
+        <ComboboxControl
+          __next40pxDefaultSize
           __nextHasNoMarginBottom
-          label={__("Enable author's page link", "caledros-basic-blocks")}
-          help={__(
-            "Turn the name of the post's author into a link to the author's page.",
-            "caledros-basic-blocks"
-          )}
-          checked={authorFilter.enableAuthorLink}
-          onChange={(newValue) => {
+          help={__("Choose the author.", "caledros-basic-blocks")}
+          value={authorFilter.authorId}
+          options={authorOptions}
+          onChange={(selectedValue) => {
             setAttributes({
               authorFilter: {
                 ...authorFilter,
-                enableAuthorLink: newValue,
+                authorId: selectedValue,
               },
             });
           }}

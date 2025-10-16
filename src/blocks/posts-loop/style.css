@@ -141,13 +141,21 @@
   column-gap: 10px;
 }
 
+.cbb-posts-loop__categories-container,
+.cbb-posts-loop__tags-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .cbb-posts-loop__category,
-.cbb-posts-loop__tag {
+.cbb-posts-loop__tag,
+.cbb-posts-loop__author {
   text-decoration: none;
   color: var(--wp--preset--color--paragraph-light, #000);
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   column-gap: 3px;
   font-size: 13px;

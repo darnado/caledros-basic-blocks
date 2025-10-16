@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 3.0.0
+Stable tag: 3.1.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -149,6 +149,25 @@ However, other third party plugins can slow down your website if they are used t
 == Changelog ==
 
 This changelog format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Also, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+= 3.1.0 - 2025-10-16 =
+
+**Added**
+
+* New "Filter by Author" control to the Posts Loop block.
+* New option to the "Page Type" control in the Posts Loop block. This option is "Author template", and it allows to use this block on the default WordPress Author Template. Thus, this option enables the Posts Loop block to automatically retrieve posts from an especific author using the WordPress Query class.
+* New option to the "Author options" control in the Posts Loop block. This option is named "Enable author's page link". It allows to turn the author's name into a link to the author's page.
+
+**Changed**
+
+* @wordpress/scripts version. This package has been updated to version 30.25.0. The previous version was 30.14.0.
+* Category filter behavior in the Posts Loop block. When the filter is disabled, the block displays all the categories of each post.
+* Tag filter behavior in the Posts Loop block. When the filter is disabled, the block displays all the tags of each post.
+
+**Fixed**
+
+* Bug in the Posts Loop block. This block displayed content when the category, tag, or author filters were enabled, but no specific filter was selected.
+* Bug when the WordPress debug mode was enabled. A notice was displayed in the pagination section of the Posts Loop block. This notice was visible when the number of items per page exceeded the number of items returned by the WordPress loop. 
 
 = 3.0.0 - 2025-09-07 =
 
@@ -320,6 +339,9 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 * CSS stylesheet preloader for improved performance. This preloader can be disabled.
 
 == Upgrade Notice ==
+
+= 3.1.0 =
+This update adds a new control and two new control options to the Posts Loop block.
 
 = 3.0.0 =
 This update removes blocks from the block inserter for non-header template parts.

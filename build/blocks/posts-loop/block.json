@@ -119,6 +119,14 @@
         "enableCustomValue": false,
         "columnNo": 1
       }
+    },
+    "authorFilter": {
+      "type": "object",
+      "default": {
+        "enable": false,
+        "authorId": 1,
+        "enableAuthorLink": false
+      }
     }
   },
   "supports": {
