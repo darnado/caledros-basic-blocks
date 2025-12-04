@@ -26,97 +26,97 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Recover current URL
 global $wp;
-$permalink_structure = get_option('permalink_structure');
-$permalink_structure = sanitize_option('permalink_structure', $permalink_structure );
-$current_url = "";
-if($permalink_structure === ""){
-    $current_url = add_query_arg( $wp->query_vars, home_url( $wp->request ) );
+$caledros_basic_blocks_permalink_structure = get_option('permalink_structure');
+$caledros_basic_blocks_permalink_structure = sanitize_option('permalink_structure', $caledros_basic_blocks_permalink_structure );
+$caledros_basic_blocks_current_url = "";
+if($caledros_basic_blocks_permalink_structure === ""){
+    $caledros_basic_blocks_current_url = add_query_arg( $wp->query_vars, home_url( $wp->request ) );
 }else{ 
-    if(substr($permalink_structure, -1) === "/"){
-        $current_url =  trailingslashit( home_url( $wp->request ) );
+    if(substr($caledros_basic_blocks_permalink_structure, -1) === "/"){
+        $caledros_basic_blocks_current_url =  trailingslashit( home_url( $wp->request ) );
     }else{
-        $current_url =  home_url( $wp->request );
+        $caledros_basic_blocks_current_url =  home_url( $wp->request );
     }    
 }
-$current_url = sanitize_url($current_url);
+$caledros_basic_blocks_current_url = sanitize_url($caledros_basic_blocks_current_url);
 
 // Recover block attributes
-$menu_link = sanitize_text_field($attributes['menuLink'] ?? '#');
-$mega_menu_width = intval($attributes['megaMenuWidth'] ?? 0);
-$menu_label = sanitize_text_field( $attributes['menuLabel'] ?? 'Menu link' );
-$animation_type = sanitize_text_field( $attributes['animationType'] ?? '');
-$menu_text_light_color = sanitize_text_field( $attributes['menuTextLightColor'] ?? '#000000');
-$menu_text_light_hover_color = sanitize_text_field( $attributes['menuLightHoverColor'] ?? '#000000');
-$menu_text_dark_color = sanitize_text_field( $attributes['menuTextDarkColor'] ?? '#ffffff');
-$menu_text_dark_hover_color = sanitize_text_field( $attributes['menuDarkHoverColor'] ?? '#ffffff');
-$menu_font_weight = intval($attributes['menuFontWeight'] ?? 400);
-$menu_font_style = sanitize_text_field( $attributes['menuFontStyle'] ?? 'normal');
-$menu_font_size = sanitize_text_field($attributes['menuFontSize'] ?? 'var(--wp--preset--font-size--medium)');
-$menu_font_family = sanitize_text_field( $attributes['menuFontFamily'] ?? '');
-$menu_line_height = sanitize_text_field( $attributes['menuLineHeight'] ?? '');
-$menu_letter_spacing = sanitize_text_field( $attributes['menuLetterSpacing'] ?? 'normal');
-$menu_letter_case = sanitize_text_field( $attributes['menuLetterCase'] ?? 'none');
-$menu_type = sanitize_text_field( $attributes['menuType'] ?? 'simple');
-$mega_menu_slug = sanitize_text_field( $attributes['megaMenuSlug'] ?? '');
+$caledros_basic_blocks_menu_link = sanitize_text_field($attributes['menuLink'] ?? '#');
+$caledros_basic_blocks_mega_menu_width = intval($attributes['megaMenuWidth'] ?? 0);
+$caledros_basic_blocks_menu_label = sanitize_text_field( $attributes['menuLabel'] ?? 'Menu link' );
+$caledros_basic_blocks_animation_type = sanitize_text_field( $attributes['animationType'] ?? '');
+$caledros_basic_blocks_menu_text_light_color = sanitize_text_field( $attributes['menuTextLightColor'] ?? '#000000');
+$caledros_basic_blocks_menu_text_light_hover_color = sanitize_text_field( $attributes['menuLightHoverColor'] ?? '#000000');
+$caledros_basic_blocks_menu_text_dark_color = sanitize_text_field( $attributes['menuTextDarkColor'] ?? '#ffffff');
+$caledros_basic_blocks_menu_text_dark_hover_color = sanitize_text_field( $attributes['menuDarkHoverColor'] ?? '#ffffff');
+$caledros_basic_blocks_menu_font_weight = intval($attributes['menuFontWeight'] ?? 400);
+$caledros_basic_blocks_menu_font_style = sanitize_text_field( $attributes['menuFontStyle'] ?? 'normal');
+$caledros_basic_blocks_menu_font_size = sanitize_text_field($attributes['menuFontSize'] ?? 'var(--wp--preset--font-size--medium)');
+$caledros_basic_blocks_menu_font_family = sanitize_text_field( $attributes['menuFontFamily'] ?? '');
+$caledros_basic_blocks_menu_line_height = sanitize_text_field( $attributes['menuLineHeight'] ?? '');
+$caledros_basic_blocks_menu_letter_spacing = sanitize_text_field( $attributes['menuLetterSpacing'] ?? 'normal');
+$caledros_basic_blocks_menu_letter_case = sanitize_text_field( $attributes['menuLetterCase'] ?? 'none');
+$caledros_basic_blocks_menu_type = sanitize_text_field( $attributes['menuType'] ?? 'simple');
+$caledros_basic_blocks_mega_menu_slug = sanitize_text_field( $attributes['megaMenuSlug'] ?? '');
 
 // Check if menu link is active
-$is_active_link = false;
-if($current_url === $menu_link){
-  $is_active_link = true;
+$caledros_basic_blocks_is_active_link = false;
+if($caledros_basic_blocks_current_url === $caledros_basic_blocks_menu_link){
+  $caledros_basic_blocks_is_active_link = true;
 }
-$active_link_class = $is_active_link ? " cbb-menu-link--active" : "";
-$active_link_class = esc_attr( $active_link_class );
+$caledros_basic_blocks_active_link_class = $caledros_basic_blocks_is_active_link ? " cbb-menu-link--active" : "";
+$caledros_basic_blocks_active_link_class = esc_attr( $caledros_basic_blocks_active_link_class );
 
 // Set light-mode color
-$menu_text_light_color = $is_active_link ? $menu_text_light_hover_color : $menu_text_light_color;
+$caledros_basic_blocks_menu_text_light_color = $caledros_basic_blocks_is_active_link ? $caledros_basic_blocks_menu_text_light_hover_color : $caledros_basic_blocks_menu_text_light_color;
 
 // Set dark-mode color
-$menu_text_dark_color = $is_active_link ? $menu_text_dark_hover_color : $menu_text_dark_color;
+$caledros_basic_blocks_menu_text_dark_color = $caledros_basic_blocks_is_active_link ? $caledros_basic_blocks_menu_text_dark_hover_color : $caledros_basic_blocks_menu_text_dark_color;
 
 // Set inline styles
-$style = "--cbb-menu-light-color:$menu_text_light_color";
-$style .= ";--cbb-menu-light-hover:$menu_text_light_hover_color";
-$style .= ";--cbb-menu-dark-color:$menu_text_dark_color";
-$style .= ";--cbb-menu-dark-hover:$menu_text_dark_hover_color";
-$style .= ";font-weight:$menu_font_weight";
-$style .= ";font-style:$menu_font_style";
-$style .= ";font-size:$menu_font_size";
-$style .= $menu_font_family !== "" ? ";font-family:var(--wp--preset--font-family--$menu_font_family)" : "";
-$style .= $menu_line_height !== "" ? ";line-height:$menu_line_height" : "";
-$style .= $menu_letter_spacing !== "normal" ? ";letter-spacing:$menu_letter_spacing" : "";
-$style .= $menu_letter_case !== "none" ? ";text-transform:$menu_letter_case" : "";
+$caledros_basic_blocks_style = "--cbb-menu-light-color:$caledros_basic_blocks_menu_text_light_color";
+$caledros_basic_blocks_style .= ";--cbb-menu-light-hover:$caledros_basic_blocks_menu_text_light_hover_color";
+$caledros_basic_blocks_style .= ";--cbb-menu-dark-color:$caledros_basic_blocks_menu_text_dark_color";
+$caledros_basic_blocks_style .= ";--cbb-menu-dark-hover:$caledros_basic_blocks_menu_text_dark_hover_color";
+$caledros_basic_blocks_style .= ";font-weight:$caledros_basic_blocks_menu_font_weight";
+$caledros_basic_blocks_style .= ";font-style:$caledros_basic_blocks_menu_font_style";
+$caledros_basic_blocks_style .= ";font-size:$caledros_basic_blocks_menu_font_size";
+$caledros_basic_blocks_style .= $caledros_basic_blocks_menu_font_family !== "" ? ";font-family:var(--wp--preset--font-family--$caledros_basic_blocks_menu_font_family)" : "";
+$caledros_basic_blocks_style .= $caledros_basic_blocks_menu_line_height !== "" ? ";line-height:$caledros_basic_blocks_menu_line_height" : "";
+$caledros_basic_blocks_style .= $caledros_basic_blocks_menu_letter_spacing !== "normal" ? ";letter-spacing:$caledros_basic_blocks_menu_letter_spacing" : "";
+$caledros_basic_blocks_style .= $caledros_basic_blocks_menu_letter_case !== "none" ? ";text-transform:$caledros_basic_blocks_menu_letter_case" : "";
 
 // Set classes
-$classes = "cbb-menu-link";
-$classes .= $animation_type === "none" ? "" : " cbb-menu-link--$animation_type";
-$classes .= $active_link_class;
+$caledros_basic_blocks_classes = "cbb-menu-link";
+$caledros_basic_blocks_classes .= $caledros_basic_blocks_animation_type === "none" ? "" : " cbb-menu-link--$caledros_basic_blocks_animation_type";
+$caledros_basic_blocks_classes .= $caledros_basic_blocks_active_link_class;
 
 // Start output buffering
 ob_start(); 
 ?>   
 <?php 
-if($menu_type === "simple" && $menu_label !== ""){
+if($caledros_basic_blocks_menu_type === "simple" && $caledros_basic_blocks_menu_label !== ""){
 ?>
-<a href="<?php echo esc_url($menu_link); ?>" class="<?php echo esc_attr($classes); ?>" style="<?php echo esc_attr($style); ?>">
-    <?php echo esc_html($menu_label); ?>
+<a href="<?php echo esc_url($caledros_basic_blocks_menu_link); ?>" class="<?php echo esc_attr($caledros_basic_blocks_classes); ?>" style="<?php echo esc_attr($caledros_basic_blocks_style); ?>">
+    <?php echo esc_html($caledros_basic_blocks_menu_label); ?>
 </a>
 <?php
 }
-if($menu_type === "mega-menu" && $menu_label !== "" && $mega_menu_slug !== "" ){
+if($caledros_basic_blocks_menu_type === "mega-menu" && $caledros_basic_blocks_menu_label !== "" && $caledros_basic_blocks_mega_menu_slug !== "" ){
 ?>
 <div class="cbb-mega-menu">
-    <a href="<?php echo esc_url($menu_link); ?>" class="<?php echo esc_attr($classes); ?>" style="<?php echo esc_attr($style); ?>">
-        <?php echo esc_html($menu_label); ?>
+    <a href="<?php echo esc_url($caledros_basic_blocks_menu_link); ?>" class="<?php echo esc_attr($caledros_basic_blocks_classes); ?>" style="<?php echo esc_attr($caledros_basic_blocks_style); ?>">
+        <?php echo esc_html($caledros_basic_blocks_menu_label); ?>
     </a>
-    <div class="cbb-mega-menu__container" style="width:<?php echo esc_attr($mega_menu_width); ?>px;">        
-        <?php block_template_part( $mega_menu_slug ); ?>
+    <div class="cbb-mega-menu__container" style="width:<?php echo esc_attr($caledros_basic_blocks_mega_menu_width); ?>px;">        
+        <?php block_template_part( $caledros_basic_blocks_mega_menu_slug ); ?>
     </div>    
 </div>
 <?php 
 }
 // Fetch the content of the ouput buffer
-$output = ob_get_contents();
+$caledros_basic_blocks_output = ob_get_contents();
 // Stop output buffering
 ob_end_clean();
 // Ouput the stored content
-echo wp_kses_post($output); 
+echo wp_kses_post($caledros_basic_blocks_output); 
