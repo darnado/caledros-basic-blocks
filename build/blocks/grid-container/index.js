@@ -1,1 +1,4492 @@
-(()=>{"use strict";var e,t={857:()=>{const e=window.wp.blocks,t=JSON.parse('{"UU":"caledros-basic-blocks/grid-container"}'),a=window.wp.i18n,o=window.ReactJSXRuntime,l={icon:(0,o.jsx)("svg",{width:"24",height:"24",version:"1.1",viewBox:"0 0 6.35 6.35",xmlns:"http://www.w3.org/2000/svg",children:(0,o.jsx)("g",{transform:"translate(-96.573 -101.07)",children:(0,o.jsxs)("g",{transform:"matrix(.087396 0 0 .087396 90.571 91.268)",children:[(0,o.jsx)("path",{d:"m141.33 148.5a36.329 36.329 0 0 1-36.329 36.329 36.329 36.329 0 0 1-36.329-36.329 36.329 36.329 0 0 1 36.329-36.329 36.329 36.329 0 0 1 36.329 36.329z",fill:"#e0ebe0","stroke-width":"0"}),(0,o.jsx)("path",{d:"m138.18 148.5a33.177 33.177 0 0 1-33.177 33.177 33.177 33.177 0 0 1-33.177-33.177 33.177 33.177 0 0 1 33.177-33.177 33.177 33.177 0 0 1 33.177 33.177z",fill:"#252533","stroke-width":"0"}),(0,o.jsx)("path",{d:"m135.4 148.5a30.397 30.397 0 0 1-30.397 30.397 30.397 30.397 0 0 1-30.397-30.397 30.397 30.397 0 0 1 30.397-30.397 30.397 30.397 0 0 1 30.397 30.397z",fill:"#e0ebe0","stroke-width":"0"}),(0,o.jsxs)("g",{transform:"matrix(.90041 0 0 .90041 31.823 90.353)",fill:"#252533","stroke-width":"1.1106",children:[(0,o.jsx)("path",{d:"m93.777 55.9v9.3361c7.8313 1.1492 16.709-9.4028 15.094-9.3963z"}),(0,o.jsx)("path",{d:"m97.104 59.499c2.0783-0.03527 3.9177 0.15195 8.6289-2.233-5.125 1.0559-5.7944 0.56153-8.6392 0.57438-0.78106 0.0035-0.68526 1.6378 0.01037 1.6586z","stroke-width":"0"}),(0,o.jsx)("path",{d:"m53.478 56.801h38.884v9.3252s-3.9882 1.7008-3.4603 4.8679c0.52784 3.1671 3.1084 6.862 10.088 6.9206v7.1928h-7.2969s-4.3545-4.1057-10.865-3.8568-10.078 3.691-10.078 3.691h-7.4648v-7.3819s10.451 0.62207 9.9531-7.1331c-0.49766-7.7551-19.699-9.2481-19.699-9.2481z"})]}),(0,o.jsx)("path",{d:"m106.41 126.27a0.78523 0.78523 0 0 0-0.94136 0.59044l-2.4602 10.727a0.78523 0.78523 0 0 0 0.58951 0.94136 0.78523 0.78523 0 0 0 0.94044-0.59044l2.4611-10.727a0.78523 0.78523 0 0 0-0.58951-0.94136z",color:"#000000",fill:"#fc571b","stroke-width":"0"}),(0,o.jsx)("path",{d:"m100.45 127.77-5.9517 3.9678a0.78531 0.78531 0 0 0 0 1.3062l5.9517 3.9678a0.78523 0.78523 0 0 0 1.089-0.21724 0.78523 0.78523 0 0 0-0.21816-1.089l-4.9723-3.3152 4.9723-3.3143a0.78523 0.78523 0 0 0 0.21816-1.089 0.78523 0.78523 0 0 0-1.089-0.21724z",color:"#000000",fill:"#fc571b","stroke-width":"0"}),(0,o.jsx)("path",{d:"m109.55 127.77a0.78523 0.78523 0 0 0-1.089 0.21724 0.78523 0.78523 0 0 0 0.21816 1.089l4.9714 3.3143-4.9714 3.3152a0.78523 0.78523 0 0 0-0.21816 1.089 0.78523 0.78523 0 0 0 1.089 0.21724l5.9517-3.9678a0.78531 0.78531 0 0 0 0-1.3062z",color:"#000000",fill:"#fc571b","stroke-width":"0"})]})})})},n=window.wp.blockEditor,r=window.wp.components,i=window.wp.element;function s({attributes:e,setAttributes:t}){const{containerWidth:l}=e,s=l.replace(/\d+/g,"")||"px",c=["px","%","em","rem","vw"].includes(s)?s:"px",d=parseInt(l)||0,[b,u]=(0,i.useState)("100%"!==l&&"var(--wp--style--global--content-size)"!==l&&"var(--wp--style--global--wide-size)"!==l),g=(0,n.useSettings)("layout.contentSize","layout.wideSize")||[],[h="620px",x="1280px"]=g,p=(e,t)=>["%","vw"].includes(e)&&t>100?100:t;return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Width","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:"Use custom width",checked:b,onChange:()=>u((e=>!e))}),!b&&(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the max width for the container.","caledros-basic-blocks"),value:"100%"===l||"var(--wp--style--global--content-size)"===l||"var(--wp--style--global--wide-size)"===l?l:"",options:[{disabled:!0,label:"Select an option",value:""},{label:"Full width",value:"100%"},{label:`Content size (${h})`,value:"var(--wp--style--global--content-size)"},{label:`Wide size (${x})`,value:"var(--wp--style--global--wide-size)"}],onChange:e=>{t({containerWidth:e})}}),b&&(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the custom width (${c}) for the container.`,"caledros-basic-blocks"),value:"var(--wp--style--global--content-size)"===l||"var(--wp--style--global--wide-size)"===l?0:parseInt(l),max:["%","vw"].includes(c)?100:3e3,min:0,step:1,onChange:e=>{t({containerWidth:`${e}${c}`})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:c,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"}],onChange:e=>{t({containerWidth:`${p(e,d)}${e}`})}})]})]})}function c({attributes:e,setAttributes:t}){const{containerMinHeight:l}=e,n=l.replace(/\d+/g,"")||"px",i=parseInt(l)||0,s=(e,t)=>"auto"===e?"":"vh"===e&&t>100?100:t;return(0,o.jsx)(r.PanelBody,{title:(0,a.__)("Minimum height","caledros-basic-blocks"),initialOpen:!1,children:(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the minimum height (${n}) for the container.`,"caledros-basic-blocks"),initialPosition:0,max:"vh"===n?100:1e3,min:0,step:1,value:"auto"===n?0:i,onChange:e=>t({containerMinHeight:`${"auto"!==n?e:""}${n}`}),disabled:"auto"===n}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:n,options:[{label:"px",value:"px"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vh",value:"vh"},{label:"auto",value:"auto"}],onChange:e=>{t({containerMinHeight:`${s(e,i)}${e}`})}})]})})}const d=window.wp.data;function b({attributes:e,setAttributes:t}){const{containerLightBackgroundColor:l}=e,[s,c]=(0,i.useState)("#00000000"===l),[b,u]=(0,n.useSettings)("color.palette","color.defaultPalette"),g=b.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),h=(0,d.select)("core/editor")?.getEditorSettings(),x=h?.__experimentalFeatures?.color?.palette,p=(e,t)=>({colors:e?.[t]?.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),name:`${t}`}),_=p(x,"default"),m=p(x,"theme"),v=p(x,"custom"),f=[...u?[_]:[],m,...v.colors?[v]:[]];return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Background color (light mode)","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:"Use transparent background",checked:s,onChange:()=>{c((e=>!e)),t({containerLightBackgroundColor:"#00000000"})}}),!s&&(0,o.jsx)(r.ColorPalette,{colors:x?f:g,value:l,onChange:e=>t({containerLightBackgroundColor:e}),enableAlpha:!0,clearable:!1})]})}function u({attributes:e,setAttributes:t}){const{containerDarkBackgroundColor:l}=e,[s,c]=(0,i.useState)("#00000000"===l),[b,u]=(0,n.useSettings)("color.palette","color.defaultPalette"),g=b.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),h=(0,d.select)("core/editor")?.getEditorSettings(),x=h?.__experimentalFeatures?.color?.palette,p=(e,t)=>({colors:e?.[t]?.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),name:`${t}`}),_=p(x,"default"),m=p(x,"theme"),v=p(x,"custom"),f=[...u?[_]:[],m,...v.colors?[v]:[]];return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Background color (dark mode)","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:"Use transparent background",checked:s,onChange:()=>{c((e=>!e)),t({containerDarkBackgroundColor:"#00000000"})}}),!s&&(0,o.jsx)(r.ColorPalette,{colors:x?f:g,value:l,onChange:e=>t({containerDarkBackgroundColor:e}),enableAlpha:!0,clearable:!1})]})}function g({attributes:e,setAttributes:t}){const{numberOfColumns:l}=e;return(0,o.jsx)(r.PanelBody,{title:(0,a.__)("No. of columns (desktop)","caledros-basic-blocks"),initialOpen:!1,children:(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the number of columns for the container (desktop).","caledros-basic-blocks"),value:l,initialPosition:1,max:6,min:1,step:1,onChange:e=>t({numberOfColumns:e})})})}function h({attributes:e,setAttributes:t}){const{numberOfColumnsTablet:l}=e;return(0,o.jsx)(r.PanelBody,{title:(0,a.__)("No. of columns (tablet)","caledros-basic-blocks"),initialOpen:!1,children:(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the number of columns for the container (tablet).","caledros-basic-blocks"),value:l,initialPosition:1,max:6,min:1,step:1,onChange:e=>t({numberOfColumnsTablet:e})})})}function x({attributes:e,setAttributes:t}){const{numberOfColumnsMobile:l}=e;return(0,o.jsx)(r.PanelBody,{title:(0,a.__)("No. of columns (mobile)","caledros-basic-blocks"),initialOpen:!1,children:(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the number of columns for the container (mobile devices).","caledros-basic-blocks"),value:l,initialPosition:1,max:6,min:1,step:1,onChange:e=>t({numberOfColumnsMobile:e})})})}function p({attributes:e,setAttributes:t}){const{containerRowGap:l}=e,[n,s]=(0,i.useState)("normal"===l);return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Row gap","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Use normal row gap (default value)","caledros-basic-blocks"),checked:n,onChange:()=>{let e=n?"0":"normal";s((e=>!e)),t({containerRowGap:e})}}),!n&&(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the row gap (px) for the grid container.","caledros-basic-blocks"),value:isNaN(parseInt(l))?0:parseInt(l),max:200,min:0,step:1,onChange:e=>t({containerRowGap:`${e}px`})})]})}function _({attributes:e,setAttributes:t}){const{containerColumnGap:l}=e,[n,s]=(0,i.useState)("normal"===l);return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Column gap","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Use normal column gap (default value)","caledros-basic-blocks"),checked:n,onChange:()=>{let e=n?"0":"normal";s((e=>!e)),t({containerColumnGap:e})}}),!n&&(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the column gap (px) for the grid container.","caledros-basic-blocks"),value:isNaN(parseInt(l))?0:parseInt(l),max:200,min:0,step:1,onChange:e=>t({containerColumnGap:`${e}px`})})]})}function m({attributes:e,setAttributes:t}){const{containerBackgroundImage:l,containerBgImageFocalPoint:i}=e,s=()=>{t({containerBackgroundImage:{id:"",alt:"",url:""}})};return(0,o.jsx)(r.PanelBody,{title:(0,a.__)("Background image","caledros-basic-blocks"),initialOpen:!1,children:(0,o.jsx)(n.MediaUploadCheck,{children:(0,o.jsx)(n.MediaUpload,{allowedTypes:["image"],value:l.id,render:({open:e})=>(0,o.jsxs)(o.Fragment,{children:[l.url&&(0,o.jsx)(r.FocalPointPicker,{__nextHasNoMarginBottom:!0,onChange:e=>{t({containerBgImageFocalPoint:e})},url:l.url,value:i}),(0,o.jsxs)("div",{style:{display:"flex",gap:"10px"},children:[(0,o.jsx)(r.Button,{variant:"primary",onClick:e,children:"Select image"}),(0,o.jsx)(r.Button,{variant:"secondary",onClick:s,children:"Remove image"})]})]}),onSelect:e=>{t({containerBackgroundImage:{id:e.id,alt:e.alt,url:e.url}})}})})})}function v({attributes:e,setAttributes:t}){const{containerLightBackgroundGradient:l}=e,[n,s]=(0,i.useState)(""!==l);return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Background gradient (light mode)","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Enable background gradient","caledros-basic-blocks"),checked:n,onChange:()=>{s((e=>!e)),t({containerLightBackgroundGradient:""})}}),n&&(0,o.jsx)(r.CustomGradientPicker,{onChange:e=>{t({containerLightBackgroundGradient:e})},value:""===l?"linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))":l})]})}function f({attributes:e,setAttributes:t}){const{containerDarkBackgroundGradient:l}=e,[n,s]=(0,i.useState)(""!==l);return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Background gradient (dark mode)","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Enable background gradient","caledros-basic-blocks"),checked:n,onChange:()=>{s((e=>!e)),t({containerDarkBackgroundGradient:""})}}),n&&(0,o.jsx)(r.CustomGradientPicker,{onChange:e=>{t({containerDarkBackgroundGradient:e})},value:""===l?"linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))":l})]})}function C({attributes:e,setAttributes:t}){const{containerBorder:l}=e,n=l.style.split(" "),s=n[0]||"solid",c=n[1]||"none",d=n[2]||"none",b=n[3]||"none",[u,g]=(0,i.useState)(!!l.style.includes(" "));return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Border style","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:"Use different border styles for each side",checked:u,onChange:()=>{const e=!u;g(e),t(e?{containerBorder:{...l,style:"solid none none none"}}:{containerBorder:{...l,style:"solid"}})}}),!u&&(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the border style.","caledros-basic-blocks"),value:l.style,options:[{disabled:!0,label:"Select an option",value:""},{label:"None",value:"none"},{label:"Dotted",value:"dotted"},{label:"Dashed",value:"dashed"},{label:"Solid",value:"solid"},{label:"Double",value:"double"},{label:"Groove",value:"groove"},{label:"Ridge",value:"ridge"},{label:"Inset",value:"inset"},{label:"Outset",value:"outset"}],onChange:e=>{t({containerBorder:{...l,style:e}})}}),u&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the style for the top border.","caledros-basic-blocks"),value:s,options:[{disabled:!0,label:"Select an option",value:""},{label:"None",value:"none"},{label:"Dotted",value:"dotted"},{label:"Dashed",value:"dashed"},{label:"Solid",value:"solid"},{label:"Double",value:"double"},{label:"Groove",value:"groove"},{label:"Ridge",value:"ridge"},{label:"Inset",value:"inset"},{label:"Outset",value:"outset"}],onChange:e=>{t({containerBorder:{...l,style:`${e} ${c} ${d} ${b}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the style for the right border.","caledros-basic-blocks"),value:c,options:[{disabled:!0,label:"Select an option",value:""},{label:"None",value:"none"},{label:"Dotted",value:"dotted"},{label:"Dashed",value:"dashed"},{label:"Solid",value:"solid"},{label:"Double",value:"double"},{label:"Groove",value:"groove"},{label:"Ridge",value:"ridge"},{label:"Inset",value:"inset"},{label:"Outset",value:"outset"}],onChange:e=>{t({containerBorder:{...l,style:`${s} ${e} ${d} ${b}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the style for the bottom border.","caledros-basic-blocks"),value:d,options:[{disabled:!0,label:"Select an option",value:""},{label:"None",value:"none"},{label:"Dotted",value:"dotted"},{label:"Dashed",value:"dashed"},{label:"Solid",value:"solid"},{label:"Double",value:"double"},{label:"Groove",value:"groove"},{label:"Ridge",value:"ridge"},{label:"Inset",value:"inset"},{label:"Outset",value:"outset"}],onChange:e=>{t({containerBorder:{...l,style:`${s} ${c} ${e} ${b}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the style for the left border.","caledros-basic-blocks"),value:b,options:[{disabled:!0,label:"Select an option",value:""},{label:"None",value:"none"},{label:"Dotted",value:"dotted"},{label:"Dashed",value:"dashed"},{label:"Solid",value:"solid"},{label:"Double",value:"double"},{label:"Groove",value:"groove"},{label:"Ridge",value:"ridge"},{label:"Inset",value:"inset"},{label:"Outset",value:"outset"}],onChange:e=>{t({containerBorder:{...l,style:`${s} ${c} ${d} ${e}`}})}})]})]})}function $({attributes:e,setAttributes:t}){const{containerBorder:l}=e,n=l.width.split(" "),s=parseInt(n[0])||0,c=parseInt(n[1])||0,d=parseInt(n[2])||0,b=parseInt(n[3])||0,[u,g]=(0,i.useState)(!!l.width.includes(" "));return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Border width","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:"Use different border widths for each side",checked:u,onChange:()=>{const e=!u;g(e),t(e?{containerBorder:{...l,width:"1px 1px 1px 1px"}}:{containerBorder:{...l,width:"1px"}})}}),!u&&(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the border width (px) for the container.","caledros-basic-blocks"),value:parseInt(l.width),max:50,min:0,step:1,onChange:e=>{t({containerBorder:{...l,width:`${e}px`}})}}),u&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the top border width (px) for the container.","caledros-basic-blocks"),value:s,max:50,min:0,step:1,onChange:e=>{t({containerBorder:{...l,width:`${e}px ${c}px ${d}px ${b}px`}})}}),(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the right border width (px) for the container.","caledros-basic-blocks"),value:c,max:50,min:0,step:1,onChange:e=>{t({containerBorder:{...l,width:`${s}px ${e}px ${d}px ${b}px`}})}}),(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the bottom border width (px) for the container.","caledros-basic-blocks"),value:d,max:50,min:0,step:1,onChange:e=>{t({containerBorder:{...l,width:`${s}px ${c}px ${e}px ${b}px`}})}}),(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the left border width (px) for the container.","caledros-basic-blocks"),value:b,max:50,min:0,step:1,onChange:e=>{t({containerBorder:{...l,width:`${s}px ${c}px ${d}px ${e}px`}})}})]})]})}function k({attributes:e,setAttributes:t}){const{containerBorder:l}=e,s=l.lightColor.split(" "),c=s[0]||"#000",b=s[1]||"#000",u=s[2]||"#000",g=s[3]||"#000",[h,x]=(0,i.useState)(!!l.lightColor.includes(" ")),[p,_]=(0,n.useSettings)("color.palette","color.defaultPalette"),m=p.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),v=(0,d.select)("core/editor")?.getEditorSettings(),f=v?.__experimentalFeatures?.color?.palette,C=(e,t)=>({colors:e?.[t]?.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),name:`${t}`}),$=C(f,"default"),k=C(f,"theme"),j=C(f,"custom"),B=[..._?[$]:[],k,...j.colors?[j]:[]];return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Border color (light mode)","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:"Use different border colors for each side",checked:h,onChange:()=>{const e=!h;x(e),t(e?{containerBorder:{...l,lightColor:"#000 #000 #000 #000"}}:{containerBorder:{...l,lightColor:"#000"}})}}),!h&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose the border color","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:fallbackColorOptionse,value:l.lightColor,onChange:e=>t({containerBorder:{...l,lightColor:e||"#00000000"}}),enableAlpha:!0,clearable:!0})]}),h&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the top border","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:c,onChange:e=>{t({containerBorder:{...l,lightColor:`${e||"#00000000"} ${b} ${u} ${g}`}})},enableAlpha:!0,clearable:!0}),(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the right border","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:b,onChange:e=>{t({containerBorder:{...l,lightColor:`${c} ${e||"#00000000"} ${u} ${g}`}})},enableAlpha:!0,clearable:!0}),(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the bottom border","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:u,onChange:e=>{t({containerBorder:{...l,lightColor:`${c} ${b} ${e||"#00000000"} ${g}`}})},enableAlpha:!0,clearable:!0}),(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the left border","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:g,onChange:e=>{t({containerBorder:{...l,lightColor:`${c} ${b} ${u} ${e||"#00000000"}`}})},enableAlpha:!0,clearable:!0})]})]})}function j({attributes:e,setAttributes:t}){const{containerBorder:l}=e,s=l.darkColor.split(" "),c=s[0]||"#000",b=s[1]||"#000",u=s[2]||"#000",g=s[3]||"#000",[h,x]=(0,i.useState)(!!l.darkColor.includes(" ")),[p,_]=(0,n.useSettings)("color.palette","color.defaultPalette"),m=p.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),v=(0,d.select)("core/editor")?.getEditorSettings(),f=v?.__experimentalFeatures?.color?.palette,C=(e,t)=>({colors:e?.[t]?.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),name:`${t}`}),$=C(f,"default"),k=C(f,"theme"),j=C(f,"custom"),B=[..._?[$]:[],k,...j.colors?[j]:[]];return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Border color (dark mode)","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:"Use different border colors for each side",checked:h,onChange:()=>{const e=!h;x(e),t(e?{containerBorder:{...l,darkColor:"#000 #000 #000 #000"}}:{containerBorder:{...l,darkColor:"#000"}})}}),!h&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose the border color","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:l.darkColor,onChange:e=>t({containerBorder:{...l,darkColor:e||"#00000000"}}),enableAlpha:!0,clearable:!0})]}),h&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the top border","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:c,onChange:e=>{t({containerBorder:{...l,darkColor:`${e||"#00000000"} ${b} ${u} ${g}`}})},enableAlpha:!0,clearable:!0}),(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the right border","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:b,onChange:e=>{t({containerBorder:{...l,darkColor:`${c} ${e||"#00000000"} ${u} ${g}`}})},enableAlpha:!0,clearable:!0}),(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the bottom border","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:u,onChange:e=>{t({containerBorder:{...l,darkColor:`${c} ${b} ${e||"#00000000"} ${g}`}})},enableAlpha:!0,clearable:!0}),(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the left border","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:f?B:m,value:g,onChange:e=>{t({containerBorder:{...l,darkColor:`${c} ${b} ${u} ${e||"#00000000"}`}})},enableAlpha:!0,clearable:!0})]})]})}function B({attributes:e,setAttributes:t}){const{containerBorder:l}=e,n=l.radius.split(" "),s=parseInt(n[0])||0,c=parseInt(n[1])||0,d=parseInt(n[2])||0,b=parseInt(n[3])||0,u=l.radius.split(" "),g=u[0]?u[0].replace(/\d+/g,""):"px",h=u[1]?u[1].replace(/\d+/g,""):"px",x=u[2]?u[2].replace(/\d+/g,""):"px",p=u[3]?u[3].replace(/\d+/g,""):"px",[_,m]=(0,i.useState)(!!l.radius.includes(" ")),v=(e,t)=>"%"===e&&t>100?100:t;return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Border radius","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:"Use different border radiuses for each corner",checked:_,onChange:()=>{const e=!_;m(e),t(e?{containerBorder:{...l,radius:"10px 10px 10px 10px"}}:{containerBorder:{...l,radius:"10px"}})}}),!_&&(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the border radius (${g}) for the container.`,"caledros-basic-blocks"),value:parseInt(l.radius),max:"%"===g?100:150,min:0,step:1,onChange:e=>{t({containerBorder:{...l,radius:`${e}${g}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:g,options:[{label:"px",value:"px"},{label:"%",value:"%"}],onChange:e=>{t({containerBorder:{...l,radius:`${v(e,parseInt(l.radius))}${e}`}})}})]}),_&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the top-left border radius (${g}).`,"caledros-basic-blocks"),value:s,max:"%"===g?100:150,min:0,step:1,onChange:e=>{t({containerBorder:{...l,radius:`${e}${g} ${c}${h} ${d}${x} ${b}${p}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:g,options:[{label:"px",value:"px"},{label:"%",value:"%"}],onChange:e=>{t({containerBorder:{...l,radius:`${v(e,s)}${e} ${c}${h} ${d}${x} ${b}${p}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the top-right border radius (${h}).`,"caledros-basic-blocks"),value:c,max:"%"===h?100:150,min:0,step:1,onChange:e=>{t({containerBorder:{...l,radius:`${s}${g} ${e}${h} ${d}${x} ${b}${p}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:h,options:[{label:"px",value:"px"},{label:"%",value:"%"}],onChange:e=>{t({containerBorder:{...l,radius:`${s}${g} ${v(e,c)}${e} ${d}${x} ${b}${p}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the bottom-right border radius (${x}).`,"caledros-basic-blocks"),value:d,max:"%"===x?100:150,min:0,step:1,onChange:e=>{t({containerBorder:{...l,radius:`${s}${g} ${c}${h} ${e}${x} ${b}${p}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:x,options:[{label:"px",value:"px"},{label:"%",value:"%"}],onChange:e=>{t({containerBorder:{...l,radius:`${s}${g} ${c}${h} ${v(e,d)}${e} ${b}${p}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the bottom-left border radius (${p}).`,"caledros-basic-blocks"),value:b,max:"%"===p?100:150,min:0,step:1,onChange:e=>{t({containerBorder:{...l,radius:`${s}${g} ${c}${h} ${d}${x} ${e}${p}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:p,options:[{label:"px",value:"px"},{label:"%",value:"%"}],onChange:e=>{t({containerBorder:{...l,radius:`${s}${g} ${c}${h} ${d}${x} ${v(e,b)}${e}`}})}})]})]})]})}function w({attributes:e,setAttributes:t}){const{containerBoxShadow:l}=e,[i,s]=(0,n.useSettings)("color.palette","color.defaultPalette"),c=i.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),b=(0,d.select)("core/editor")?.getEditorSettings(),u=b?.__experimentalFeatures?.color?.palette,g=(e,t)=>({colors:e?.[t]?.map((e=>({color:`var(--wp--preset--color--${e.slug})`,name:e.name}))),name:`${t}`}),h=g(u,"default"),x=g(u,"theme"),p=g(u,"custom"),_=[...s?[h]:[],x,...p.colors?[p]:[]];return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Box shadow","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Enable box shadow","caledros-basic-blocks"),checked:l.enabled,onChange:e=>{t({containerBoxShadow:{...l,enabled:e}})}}),l.enabled&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the style for the box shadow.","caledros-basic-blocks"),value:""===l.style?"outline":"inset",options:[{label:"Outline",value:"outline"},{label:"Inset",value:"inset"}],onChange:e=>{t({containerBoxShadow:{...l,style:`${"outline"===e?"":e}`}})}}),(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the horizontal offset (px).","caledros-basic-blocks"),value:parseInt(l.hOffset),max:100,min:-100,step:1,onChange:e=>t({containerBoxShadow:{...l,hOffset:`${e}px`}})}),(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the vertical offset (px).","caledros-basic-blocks"),value:parseInt(l.vOffset),max:100,min:-100,step:1,onChange:e=>t({containerBoxShadow:{...l,vOffset:`${e}px`}})}),(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the blur (px).","caledros-basic-blocks"),value:parseInt(l.blur),max:100,min:0,step:1,onChange:e=>t({containerBoxShadow:{...l,blur:`${e}px`}})}),(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the spread (px).","caledros-basic-blocks"),value:parseInt(l.spread),max:100,min:-100,step:1,onChange:e=>t({containerBoxShadow:{...l,spread:`${e}px`}})}),(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the box shadow (light mode)","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:u?_:c,value:l.lightColor,onChange:e=>t({containerBoxShadow:{...l,lightColor:e||"#00000000"}}),enableAlpha:!0,clearable:!0}),(0,o.jsx)("label",{className:"cbb-editor-label",children:(0,a.__)("Choose a color for the box shadow (dark mode)","caledros-basic-blocks")}),(0,o.jsx)(r.ColorPalette,{colors:u?_:c,value:l.darkColor,onChange:e=>t({containerBoxShadow:{...l,darkColor:e||"#00000000"}}),enableAlpha:!0,clearable:!0})]})]})}function S({attributes:e,setAttributes:t}){const{containerMargin:l}=e,n=parseInt(l.top)||0,i=parseInt(l.left)||0,s=parseInt(l.bottom)||0,c=parseInt(l.right)||0,d=l.top.replace(/\d+/g,""),b=l.left.replace(/\d+/g,""),u=l.bottom.replace(/\d+/g,""),g=l.right.replace(/\d+/g,""),h=(e,t)=>"auto"===e?"":["%","vw"].includes(e)&&t>100?100:t;return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Margin","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Enable different margins","caledros-basic-blocks"),checked:l.differentMarginsEnabled,onChange:e=>{t({containerMargin:{...l,differentMarginsEnabled:e}})}}),!l.differentMarginsEnabled&&(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the margin (${d}) for the container.`,"caledros-basic-blocks"),value:n,max:["%","vw"].includes(d)?100:500,min:0,step:1,onChange:e=>{t({containerMargin:{...l,top:`${"auto"===d?"":e}${d}`}})},disabled:"auto"===d}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:d,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"},{label:"auto",value:"auto"}],onChange:e=>{t({containerMargin:{...l,top:`${h(e,n)}${e}`}})}})]}),l.differentMarginsEnabled&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the top margin (${d}) for the container.`,"caledros-basic-blocks"),value:n,max:["%","vw"].includes(d)?100:500,min:0,step:1,onChange:e=>{t({containerMargin:{...l,top:`${"auto"===d?"":e}${d}`}})},disabled:"auto"===d}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:d,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"},{label:"auto",value:"auto"}],onChange:e=>{t({containerMargin:{...l,top:`${h(e,n)}${e}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the right margin (${g}) for the container.`,"caledros-basic-blocks"),value:c,max:["%","vw"].includes(g)?100:500,min:0,step:1,onChange:e=>{t({containerMargin:{...l,right:`${"auto"===g?"":e}${g}`}})},disabled:"auto"===g}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:g,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"},{label:"auto",value:"auto"}],onChange:e=>{t({containerMargin:{...l,right:`${h(e,c)}${e}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the bottom margin (${u}) for the container.`,"caledros-basic-blocks"),value:s,max:["%","vw"].includes(u)?100:500,min:0,step:1,onChange:e=>{t({containerMargin:{...l,bottom:`${"auto"===u?"":e}${u}`}})},disabled:"auto"===u}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:u,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"},{label:"auto",value:"auto"}],onChange:e=>{t({containerMargin:{...l,bottom:`${h(e,s)}${e}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the left margin (${b}) for the container.`,"caledros-basic-blocks"),value:i,max:["%","vw"].includes(b)?100:500,min:0,step:1,onChange:e=>{t({containerMargin:{...l,left:`${"auto"===b?"":e}${b}`}})},disabled:"auto"===b}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:b,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"},{label:"auto",value:"auto"}],onChange:e=>{t({containerMargin:{...l,left:`${h(e,i)}${e}`}})}})]})]})]})}function N({attributes:e,setAttributes:t}){const{containerPadding:l}=e,n=parseInt(l.top)||0,i=parseInt(l.left)||0,s=parseInt(l.bottom)||0,c=parseInt(l.right)||0,d=l.top.replace(/\d+/g,""),b=l.left.replace(/\d+/g,""),u=l.bottom.replace(/\d+/g,""),g=l.right.replace(/\d+/g,""),h=(e,t)=>["%","vw"].includes(e)&&t>100?100:t;return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Padding","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Use global padding","caledros-basic-blocks"),help:(0,a.__)("This option applies predefined padding to the right and left sides of the block, ensuring consistency across the entire site. To adjust this padding, navigate to the Layout section in the Full Site Editor.","caledros-basic-blocks"),checked:l.useGlobalPadding,onChange:e=>{t({containerPadding:{...l,useGlobalPadding:e}})}}),!l.useGlobalPadding&&(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Enable different paddings","caledros-basic-blocks"),checked:l.differentPaddingsEnabled,onChange:e=>{t({containerPadding:{...l,differentPaddingsEnabled:e}})}}),!l.differentPaddingsEnabled&&!l.useGlobalPadding&&(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the padding (${d}) for the container`,"caledros-basic-blocks"),value:n,max:["%","vw"].includes(d)?100:500,min:0,step:1,onChange:e=>{t({containerPadding:{...l,top:`${e}${d}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:d,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"}],onChange:e=>{t({containerPadding:{...l,top:`${h(e,n)}${e}`}})}})]}),l.differentPaddingsEnabled&&!l.useGlobalPadding&&(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the top padding (${d}) for the container`,"caledros-basic-blocks"),value:n,max:["%","vw"].includes(d)?100:500,min:0,step:1,onChange:e=>{t({containerPadding:{...l,top:`${e}${d}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:d,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"}],onChange:e=>{t({containerPadding:{...l,top:`${h(e,n)}${e}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the right padding (${g}) for the container`,"caledros-basic-blocks"),value:c,max:["%","vw"].includes(g)?100:500,min:0,step:1,onChange:e=>{t({containerPadding:{...l,right:`${e}${g}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:g,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"}],onChange:e=>{t({containerPadding:{...l,right:`${h(e,c)}${e}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the bottom padding (${u}) for the container`,"caledros-basic-blocks"),value:s,max:["%","vw"].includes(u)?100:500,min:0,step:1,onChange:e=>{t({containerPadding:{...l,bottom:`${e}${u}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:u,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"}],onChange:e=>{t({containerPadding:{...l,bottom:`${h(e,s)}${e}`}})}})]}),(0,o.jsxs)("div",{className:"cbb-editor__grid",children:[(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)(`Please select the left padding (${b}) for the container`,"caledros-basic-blocks"),value:i,max:["%","vw"].includes(b)?100:500,min:0,step:1,onChange:e=>{t({containerPadding:{...l,left:`${e}${b}`}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,value:b,options:[{label:"px",value:"px"},{label:"%",value:"%"},{label:"em",value:"em"},{label:"rem",value:"rem"},{label:"vw",value:"vw"}],onChange:e=>{t({containerPadding:{...l,left:`${h(e,i)}${e}`}})}})]})]})]})}function P({attributes:e,setAttributes:t}){const{containerAlignment:l}=e;return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Content alignment","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the vertical alignment for the container items.","caledros-basic-blocks"),value:l.verticalAlignment,options:[{label:"Start",value:"start"},{label:"Center",value:"center"},{label:"End",value:"end"},{label:"Stretch",value:"stretch"},{label:"Normal (default value)",value:"normal"}],onChange:e=>{t({containerAlignment:{...l,verticalAlignment:e}})}}),(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Choose the horizontal alignment for the container items.","caledros-basic-blocks"),value:l.horizontalAlignment,options:[{label:"Start",value:"start"},{label:"Center",value:"center"},{label:"End",value:"end"},{label:"Stretch",value:"stretch"},{label:"Legacy (default value)",value:"legacy"}],onChange:e=>{t({containerAlignment:{...l,horizontalAlignment:e}})}})]})}function M({attributes:e,setAttributes:t}){const{containerOverflow:l}=e;return(0,o.jsx)(r.PanelBody,{title:(0,a.__)("Overflow","caledros-basic-blocks"),initialOpen:!1,children:(0,o.jsx)(r.SelectControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Select the value for the overflow property. The container will automatically have 'overflow:hidden' applied if it's the parent of a slider or image gallery block.","caledros-basic-blocks"),value:l,options:[{label:"Visible (default)",value:"visible"},{label:"Hidden",value:"hidden"},{label:"Scroll",value:"scroll"},{label:"Auto",value:"auto"}],onChange:e=>{t({containerOverflow:e})}})})}function y({attributes:e,setAttributes:t}){const{fullWidthTabletEnabled:l}=e;return(0,o.jsx)(r.PanelBody,{title:(0,a.__)("Full Width (Tablet and Mobile)","caledros-basic-blocks"),initialOpen:!1,children:(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Enable the grid container to expand to full width on tablets and mobile devices.","caledros-basic-blocks"),checked:l,onChange:e=>{t({fullWidthTabletEnabled:e})}})})}function z({attributes:e,setAttributes:t}){const{fullWidthMobileEnabled:l}=e;return(0,o.jsx)(r.PanelBody,{title:(0,a.__)("Full Width (Mobile)","caledros-basic-blocks"),initialOpen:!1,children:(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Enable the grid container to expand to full width only on mobile devices.","caledros-basic-blocks"),checked:l,onChange:e=>{t({fullWidthMobileEnabled:e})}})})}function H({attributes:e,setAttributes:t}){const{containerBlur:l}=e;return(0,o.jsxs)(r.PanelBody,{title:(0,a.__)("Blur","caledros-basic-blocks"),initialOpen:!1,children:[(0,o.jsx)(r.ToggleControl,{__nextHasNoMarginBottom:!0,label:(0,a.__)("Enable blur","caledros-basic-blocks"),checked:l.enabled,onChange:e=>{t({containerBlur:{...l,enabled:e}})}}),l.enabled&&(0,o.jsx)(o.Fragment,{children:(0,o.jsx)(r.RangeControl,{__next40pxDefaultSize:!0,__nextHasNoMarginBottom:!0,help:(0,a.__)("Please select the value for the blur filter (px).","caledros-basic-blocks"),value:parseInt(l.value),max:100,min:0,step:1,onChange:e=>t({containerBlur:{...l,value:`${e}px`}})})})]})}(0,e.registerBlockType)(t.UU,{icon:l.icon,edit:function({attributes:e,setAttributes:t}){const{containerWidth:a,numberOfColumns:l,numberOfColumnsTablet:i,numberOfColumnsMobile:d,containerMinHeight:D,containerLightBackgroundColor:A,containerDarkBackgroundColor:O,containerRowGap:I,containerColumnGap:R,containerBackgroundImage:E,containerBgImageFocalPoint:G,containerBorder:T,containerBoxShadow:F,containerMargin:W,containerPadding:U,containerAlignment:L,containerOverflow:J,containerLightBackgroundGradient:V,containerDarkBackgroundGradient:X,fullWidthMobileEnabled:q,fullWidthTabletEnabled:K,containerBlur:Q}=e,Y=["cbb-grid-container",F.enabled&&"cbb-grid-container--has-box-shadow","0px"!==T.width&&"none"!==T.style&&("#00000000"!==T.lightColor||"#00000000"!==T.darkColor)&&"cbb-grid-container--has-border",("#00000000"!==A||"#00000000"!==O)&&"cbb-grid-container--has-bg-color",(""!==V||""!==X||E.url)&&"cbb-grid-container--has-bg-gradient",K&&"cbb-grid-container--full-width-tablet",q&&"cbb-grid-container--full-width-mobile",Q.enabled&&"cbb-grid-container--has-blur"].filter((e=>e)).join(" "),Z=(e,t,a)=>e||t?{[`--cbb-${a}-bg-gradient`]:[t,e&&`url(${e})`].filter((e=>e)).join(", ")}:{},ee=(0,n.useBlockProps)({className:`${Y}`,style:{maxWidth:a,width:"100%",margin:W.differentMarginsEnabled?`${W.top} ${W.right} ${W.bottom} ${W.left}`:`${W.top}`,...U.useGlobalPadding?{"--cbb-gc-padding":"0px var(--wp--style--root--padding-right, 0px) 0px var(--wp--style--root--padding-left, 0px)"}:{"--cbb-gc-padding":U.differentPaddingsEnabled?`${U.top} ${U.right} ${U.bottom} ${U.left}`:`${U.top}`},"--cbb-min-height":D,"--cbb-row-gap":I,"--cbb-column-gap":R,"--cbb-light-bg-color":A,"--cbb-dark-bg-color":O,...Z(E.url,X,"dark"),...Z(E.url,V,"light"),"--cbb-bg-position":`${100*G.x}% ${100*G.y}%`,"--cbb-br-style":"0px"===T.width||"none"===T.style||"#00000000"===T.lightColor&&"#00000000"===T.darkColor?"none":T.style,"--cbb-br-width":"0px"===T.width||"none"===T.style||"#00000000"===T.lightColor&&"#00000000"===T.darkColor?"0px":T.width,"--cbb-light-border-color":"0px"!==T.width&&"none"!==T.style&&"#00000000"!==T.lightColor?T.lightColor:"#00000000","--cbb-dark-border-color":"0px"!==T.width&&"none"!==T.style&&"#00000000"!==T.darkColor?T.darkColor:"#00000000",...Q.enabled&&{"--cbb-blur":`${Q.value}`},"--cbb-br-radius":T.radius,"--cbb-light-box-shadow":`${F.style} ${F.hOffset} ${F.vOffset} ${F.blur} ${F.spread} ${F.lightColor}`,"--cbb-dark-box-shadow":`${F.style} ${F.hOffset} ${F.vOffset} ${F.blur} ${F.spread} ${F.darkColor}`,"--cbb-gc-x-align":L.verticalAlignment,"--cbb-gc-y-align":L.horizontalAlignment,"--cbb-col-lg":`${l}`,"--cbb-col-md":`${i}`,"--cbb-col-sm":`${d}`,"--cbb-overflow":J}});return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(n.InspectorControls,{children:(0,o.jsx)(r.TabPanel,{activeClass:"cbb-active-tab",tabs:[{name:"layout",title:"Layout"},{name:"style",title:"Style"},{name:"additional",title:"Additional"}],children:a=>"layout"===a.name?(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(g,{attributes:e,setAttributes:t}),(0,o.jsx)(h,{attributes:e,setAttributes:t}),(0,o.jsx)(x,{attributes:e,setAttributes:t}),(0,o.jsx)(s,{attributes:e,setAttributes:t}),(0,o.jsx)(y,{attributes:e,setAttributes:t}),(0,o.jsx)(z,{attributes:e,setAttributes:t}),(0,o.jsx)(c,{attributes:e,setAttributes:t}),(0,o.jsx)(p,{attributes:e,setAttributes:t}),(0,o.jsx)(_,{attributes:e,setAttributes:t})]}):"style"===a.name?(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(b,{attributes:e,setAttributes:t}),(0,o.jsx)(u,{attributes:e,setAttributes:t}),(0,o.jsx)(m,{attributes:e,setAttributes:t}),(0,o.jsx)(v,{attributes:e,setAttributes:t}),(0,o.jsx)(f,{attributes:e,setAttributes:t}),(0,o.jsx)(C,{attributes:e,setAttributes:t}),(0,o.jsx)($,{attributes:e,setAttributes:t}),(0,o.jsx)(k,{attributes:e,setAttributes:t}),(0,o.jsx)(j,{attributes:e,setAttributes:t}),(0,o.jsx)(B,{attributes:e,setAttributes:t}),(0,o.jsx)(w,{attributes:e,setAttributes:t}),(0,o.jsx)(H,{attributes:e,setAttributes:t})]}):"additional"===a.name?(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(S,{attributes:e,setAttributes:t}),(0,o.jsx)(N,{attributes:e,setAttributes:t}),(0,o.jsx)(P,{attributes:e,setAttributes:t}),(0,o.jsx)(M,{attributes:e,setAttributes:t})]}):null})}),(0,o.jsx)("div",{...ee,children:(0,o.jsx)(n.InnerBlocks,{})})]})},save:function({attributes:e}){const{containerWidth:t,numberOfColumns:a,numberOfColumnsTablet:l,numberOfColumnsMobile:r,containerMinHeight:i,containerLightBackgroundColor:s,containerDarkBackgroundColor:c,containerRowGap:d,containerColumnGap:b,containerBackgroundImage:u,containerBgImageFocalPoint:g,containerLightBackgroundGradient:h,containerDarkBackgroundGradient:x,containerBorder:p,containerBoxShadow:_,containerMargin:m,containerPadding:v,containerAlignment:f,containerOverflow:C,fullWidthMobileEnabled:$,fullWidthTabletEnabled:k,containerBlur:j}=e,B=(e,t,a)=>e||t?{[`--cbb-${a}-bg-gradient`]:[t,e&&`url(${e})`].filter((e=>e)).join(", ")}:{},w=["cbb-grid-container",v.useGlobalPadding&&"has-global-padding",_.enabled&&"cbb-grid-container--has-box-shadow","0px"!==p.width&&"none"!==p.style&&("#00000000"!==p.lightColor||"#00000000"!==p.darkColor)&&"cbb-grid-container--has-border",("#00000000"!==s||"#00000000"!==c)&&"cbb-grid-container--has-bg-color",(""!==h||""!==x)&&"cbb-grid-container--has-bg-gradient",k&&"cbb-grid-container--full-width-tablet",$&&"cbb-grid-container--full-width-mobile",j.enabled&&"cbb-grid-container--has-blur"].filter((e=>e)).join(" "),S=n.useBlockProps.save({className:`${w}`,style:{maxWidth:t,width:"100%",margin:m.differentMarginsEnabled?`${m.top} ${m.right} ${m.bottom} ${m.left}`:`${m.top}`,...!v.useGlobalPadding&&{padding:v.differentPaddingsEnabled?`${v.top} ${v.right} ${v.bottom} ${v.left}`:`${v.top}`},...0!==i&&{minHeight:i},..."normal"!==d&&{rowGap:d},..."normal"!==b&&{columnGap:b},..."#00000000"!==s&&{"--cbb-light-bg-color":s},..."#00000000"!==c&&{"--cbb-dark-bg-color":c},...""!==h||""!==x?{...B(u.url,x,"dark"),...B(u.url,h,"light")}:{...u.url&&{backgroundImage:`url(${u.url})`}},...""!==u.url&&{backgroundPosition:`${100*g.x}% ${100*g.y}%`},..."0px"!==p.width&&"none"!==p.style&&("#00000000"!==p.lightColor||"#00000000"!==p.darkColor)&&{borderStyle:p.style},..."0px"!==p.width&&"none"!==p.style&&("#00000000"!==p.lightColor||"#00000000"!==p.darkColor)&&{borderWidth:p.width},..."0px"!==p.width&&"none"!==p.style&&"#00000000"!==p.lightColor&&{"--cbb-light-border-color":p.lightColor},..."0px"!==p.width&&"none"!==p.style&&"#00000000"!==p.darkColor&&{"--cbb-dark-border-color":p.darkColor},..."0px"!==p.radius&&"0%"!==p.radius&&{borderRadius:p.radius},..._.enabled&&{"--cbb-light-box-shadow":`${_.style} ${_.hOffset} ${_.vOffset} ${_.blur} ${_.spread} ${_.lightColor}`},..._.enabled&&{"--cbb-dark-box-shadow":`${_.style} ${_.hOffset} ${_.vOffset} ${_.blur} ${_.spread} ${_.darkColor}`},..."normal"!==f.verticalAlignment&&{alignItems:f.verticalAlignment},..."legacy"!==f.horizontalAlignment&&{justifyItems:f.horizontalAlignment},..."visible"!==C&&{overflow:C},...j.enabled&&{"--cbb-blur":`${j.value}`},"--cbb-col-lg":`${a}`,"--cbb-col-md":`${l}`,"--cbb-col-sm":`${r}`}});return(0,o.jsx)("div",{...S,children:(0,o.jsx)(n.InnerBlocks.Content,{})})}})}},a={};function o(e){var l=a[e];if(void 0!==l)return l.exports;var n=a[e]={exports:{}};return t[e](n,n.exports,o),n.exports}o.m=t,e=[],o.O=(t,a,l,n)=>{if(!a){var r=1/0;for(d=0;d<e.length;d++){for(var[a,l,n]=e[d],i=!0,s=0;s<a.length;s++)(!1&n||r>=n)&&Object.keys(o.O).every((e=>o.O[e](a[s])))?a.splice(s--,1):(i=!1,n<r&&(r=n));if(i){e.splice(d--,1);var c=l();void 0!==c&&(t=c)}}return t}n=n||0;for(var d=e.length;d>0&&e[d-1][2]>n;d--)e[d]=e[d-1];e[d]=[a,l,n]},o.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{var e={75:0,19:0};o.O.j=t=>0===e[t];var t=(t,a)=>{var l,n,[r,i,s]=a,c=0;if(r.some((t=>0!==e[t]))){for(l in i)o.o(i,l)&&(o.m[l]=i[l]);if(s)var d=s(o)}for(t&&t(a);c<r.length;c++)n=r[c],o.o(e,n)&&e[n]&&e[n][0](),e[n]=0;return o.O(d)},a=globalThis.webpackChunkcaledros_basic_blocks=globalThis.webpackChunkcaledros_basic_blocks||[];a.forEach(t.bind(null,0)),a.push=t.bind(null,a.push.bind(a))})();var l=o.O(void 0,[19],(()=>o(857)));l=o.O(l)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/assets/blocks-icon.js":
+/*!***********************************!*\
+  !*** ./src/assets/blocks-icon.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+    width: "24",
+    height: "24",
+    version: "1.1",
+    viewBox: "0 0 6.35 6.35",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
+      transform: "translate(-96.573 -101.07)",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+        transform: "matrix(.087396 0 0 .087396 90.571 91.268)",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+          d: "m141.33 148.5a36.329 36.329 0 0 1-36.329 36.329 36.329 36.329 0 0 1-36.329-36.329 36.329 36.329 0 0 1 36.329-36.329 36.329 36.329 0 0 1 36.329 36.329z",
+          fill: "#e0ebe0",
+          "stroke-width": "0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+          d: "m138.18 148.5a33.177 33.177 0 0 1-33.177 33.177 33.177 33.177 0 0 1-33.177-33.177 33.177 33.177 0 0 1 33.177-33.177 33.177 33.177 0 0 1 33.177 33.177z",
+          fill: "#252533",
+          "stroke-width": "0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+          d: "m135.4 148.5a30.397 30.397 0 0 1-30.397 30.397 30.397 30.397 0 0 1-30.397-30.397 30.397 30.397 0 0 1 30.397-30.397 30.397 30.397 0 0 1 30.397 30.397z",
+          fill: "#e0ebe0",
+          "stroke-width": "0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+          transform: "matrix(.90041 0 0 .90041 31.823 90.353)",
+          fill: "#252533",
+          "stroke-width": "1.1106",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+            d: "m93.777 55.9v9.3361c7.8313 1.1492 16.709-9.4028 15.094-9.3963z"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+            d: "m97.104 59.499c2.0783-0.03527 3.9177 0.15195 8.6289-2.233-5.125 1.0559-5.7944 0.56153-8.6392 0.57438-0.78106 0.0035-0.68526 1.6378 0.01037 1.6586z",
+            "stroke-width": "0"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+            d: "m53.478 56.801h38.884v9.3252s-3.9882 1.7008-3.4603 4.8679c0.52784 3.1671 3.1084 6.862 10.088 6.9206v7.1928h-7.2969s-4.3545-4.1057-10.865-3.8568-10.078 3.691-10.078 3.691h-7.4648v-7.3819s10.451 0.62207 9.9531-7.1331c-0.49766-7.7551-19.699-9.2481-19.699-9.2481z"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+          d: "m106.41 126.27a0.78523 0.78523 0 0 0-0.94136 0.59044l-2.4602 10.727a0.78523 0.78523 0 0 0 0.58951 0.94136 0.78523 0.78523 0 0 0 0.94044-0.59044l2.4611-10.727a0.78523 0.78523 0 0 0-0.58951-0.94136z",
+          color: "#000000",
+          fill: "#fc571b",
+          "stroke-width": "0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+          d: "m100.45 127.77-5.9517 3.9678a0.78531 0.78531 0 0 0 0 1.3062l5.9517 3.9678a0.78523 0.78523 0 0 0 1.089-0.21724 0.78523 0.78523 0 0 0-0.21816-1.089l-4.9723-3.3152 4.9723-3.3143a0.78523 0.78523 0 0 0 0.21816-1.089 0.78523 0.78523 0 0 0-1.089-0.21724z",
+          color: "#000000",
+          fill: "#fc571b",
+          "stroke-width": "0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+          d: "m109.55 127.77a0.78523 0.78523 0 0 0-1.089 0.21724 0.78523 0.78523 0 0 0 0.21816 1.089l4.9714 3.3143-4.9714 3.3152a0.78523 0.78523 0 0 0-0.21816 1.089 0.78523 0.78523 0 0 0 1.089 0.21724l5.9517-3.9678a0.78531 0.78531 0 0 0 0-1.3062z",
+          color: "#000000",
+          fill: "#fc571b",
+          "stroke-width": "0"
+        })]
+      })
+    })
+  })
+});
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/block.json":
+/*!**********************************************!*\
+  !*** ./src/blocks/grid-container/block.json ***!
+  \**********************************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"caledros-basic-blocks/grid-container","title":"Grid Container","category":"caledros-basic-blocks","icon":"block-default","description":"A responsive layout block that organizes content into adjustable, customizable grid columns.","keywords":["container, wrapper"],"version":"1.0","textdomain":"caledros-basic-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","example":{"attributes":{"containerBorder":{"style":"solid","width":"2px","lightColor":"#000","darkColor":"#fff"},"numberOfColumns":4,"containerPadding":{"top":"20px","right":"20px","bottom":"20px","left":"20px","differentPaddingsEnabled":true,"useGlobalPadding":false},"containerRowGap":"20px","containerColumnGap":"20px"},"viewportWidth":900,"innerBlocks":[{"name":"caledros-basic-blocks/grid-container","attributes":{"containerMinHeight":"80px","containerWidth":"100%","containerLightBackgroundColor":"#0E9594","containerBorder":{"style":"solid","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"10px"}}},{"name":"caledros-basic-blocks/grid-container","attributes":{"containerMinHeight":"80px","containerWidth":"100%","containerLightBackgroundColor":"#0E9594","containerBorder":{"style":"solid","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"10px"}}},{"name":"caledros-basic-blocks/grid-container","attributes":{"containerMinHeight":"80px","containerWidth":"100%","containerLightBackgroundColor":"#0E9594","containerBorder":{"style":"solid","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"10px"}}},{"name":"caledros-basic-blocks/grid-container","attributes":{"containerMinHeight":"80px","containerWidth":"100%","containerLightBackgroundColor":"#0E9594","containerBorder":{"style":"solid","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"10px"}}},{"name":"caledros-basic-blocks/grid-container","attributes":{"containerMinHeight":"80px","containerWidth":"100%","containerLightBackgroundColor":"#0E9594","containerBorder":{"style":"solid","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"10px"}}},{"name":"caledros-basic-blocks/grid-container","attributes":{"containerMinHeight":"80px","containerWidth":"100%","containerLightBackgroundColor":"#0E9594","containerBorder":{"style":"solid","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"10px"}}},{"name":"caledros-basic-blocks/grid-container","attributes":{"containerMinHeight":"80px","containerWidth":"100%","containerLightBackgroundColor":"#0E9594","containerBorder":{"style":"solid","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"10px"}}},{"name":"caledros-basic-blocks/grid-container","attributes":{"containerMinHeight":"80px","containerWidth":"100%","containerLightBackgroundColor":"#0E9594","containerBorder":{"style":"solid","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"10px"}}}]},"attributes":{"containerWidth":{"type":"string","default":"100%"},"numberOfColumns":{"type":"number","default":1},"numberOfColumnsTablet":{"type":"number","default":1},"numberOfColumnsMobile":{"type":"number","default":1},"containerMinHeight":{"type":"string","default":"auto"},"containerLightBackgroundColor":{"type":"string","default":"#00000000"},"containerDarkBackgroundColor":{"type":"string","default":"#00000000"},"containerRowGap":{"type":"string","default":"normal"},"containerColumnGap":{"type":"string","default":"normal"},"containerBackgroundImage":{"type":"object","default":{"id":0,"alt":"","url":""}},"containerBgImageFocalPoint":{"type":"object","default":{"x":0.5,"y":0.5}},"containerLightBackgroundGradient":{"type":"string","default":""},"containerDarkBackgroundGradient":{"type":"string","default":""},"containerBorder":{"type":"object","default":{"style":"none","width":"0px","lightColor":"#00000000","darkColor":"#00000000","radius":"0px"}},"containerBoxShadow":{"type":"object","default":{"enabled":false,"hOffset":"10px","vOffset":"10px","blur":"0px","spread":"0px","lightColor":"#000","darkColor":"#f4f4f4","style":""}},"containerMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px","differentMarginsEnabled":false}},"containerPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px","differentPaddingsEnabled":false,"useGlobalPadding":false}},"containerAlignment":{"type":"object","default":{"verticalAlignment":"normal","horizontalAlignment":"legacy"}},"containerOverflow":{"type":"string","default":"visible"},"fullWidthMobileEnabled":{"type":"boolean","default":false},"fullWidthTabletEnabled":{"type":"boolean","default":false},"containerBlur":{"type":"object","default":{"enabled":false,"value":"10px"}}},"supports":{"align":false,"alignWide":false,"className":false,"html":false}}');
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/edit-block.js":
+/*!*************************************************!*\
+  !*** ./src/blocks/grid-container/edit-block.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EditBlock)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _settings_width_settings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./settings/width-settings */ "./src/blocks/grid-container/settings/width-settings.js");
+/* harmony import */ var _settings_min_height_settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./settings/min-height-settings */ "./src/blocks/grid-container/settings/min-height-settings.js");
+/* harmony import */ var _settings_background_light_color_settings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./settings/background-light-color-settings */ "./src/blocks/grid-container/settings/background-light-color-settings.js");
+/* harmony import */ var _settings_background_dark_color_settings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./settings/background-dark-color-settings */ "./src/blocks/grid-container/settings/background-dark-color-settings.js");
+/* harmony import */ var _settings_number_of_columns_settings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./settings/number-of-columns-settings */ "./src/blocks/grid-container/settings/number-of-columns-settings.js");
+/* harmony import */ var _settings_number_of_columns_tablet_settings__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./settings/number-of-columns-tablet-settings */ "./src/blocks/grid-container/settings/number-of-columns-tablet-settings.js");
+/* harmony import */ var _settings_number_of_columns_mobile_settings__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./settings/number-of-columns-mobile-settings */ "./src/blocks/grid-container/settings/number-of-columns-mobile-settings.js");
+/* harmony import */ var _settings_row_gap_settings__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./settings/row-gap-settings */ "./src/blocks/grid-container/settings/row-gap-settings.js");
+/* harmony import */ var _settings_column_gap_settings__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./settings/column-gap-settings */ "./src/blocks/grid-container/settings/column-gap-settings.js");
+/* harmony import */ var _settings_background_image_settings__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./settings/background-image-settings */ "./src/blocks/grid-container/settings/background-image-settings.js");
+/* harmony import */ var _settings_background_light_gradient_settings__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./settings/background-light-gradient-settings */ "./src/blocks/grid-container/settings/background-light-gradient-settings.js");
+/* harmony import */ var _settings_background_dark_gradient_settings__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./settings/background-dark-gradient-settings */ "./src/blocks/grid-container/settings/background-dark-gradient-settings.js");
+/* harmony import */ var _settings_border_style_settings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./settings/border-style-settings */ "./src/blocks/grid-container/settings/border-style-settings.js");
+/* harmony import */ var _settings_border_width_settings__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./settings/border-width-settings */ "./src/blocks/grid-container/settings/border-width-settings.js");
+/* harmony import */ var _settings_border_light_color_settings__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./settings/border-light-color-settings */ "./src/blocks/grid-container/settings/border-light-color-settings.js");
+/* harmony import */ var _settings_border_dark_color_settings__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./settings/border-dark-color-settings */ "./src/blocks/grid-container/settings/border-dark-color-settings.js");
+/* harmony import */ var _settings_border_radius_settings__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./settings/border-radius-settings */ "./src/blocks/grid-container/settings/border-radius-settings.js");
+/* harmony import */ var _settings_box_shadow_settings__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./settings/box-shadow-settings */ "./src/blocks/grid-container/settings/box-shadow-settings.js");
+/* harmony import */ var _settings_margin_settings__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./settings/margin-settings */ "./src/blocks/grid-container/settings/margin-settings.js");
+/* harmony import */ var _settings_padding_settings__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./settings/padding-settings */ "./src/blocks/grid-container/settings/padding-settings.js");
+/* harmony import */ var _settings_alignment_settings__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./settings/alignment-settings */ "./src/blocks/grid-container/settings/alignment-settings.js");
+/* harmony import */ var _settings_overflow_settings__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./settings/overflow-settings */ "./src/blocks/grid-container/settings/overflow-settings.js");
+/* harmony import */ var _settings_full_width_tablet_settings__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./settings/full-width-tablet-settings */ "./src/blocks/grid-container/settings/full-width-tablet-settings.js");
+/* harmony import */ var _settings_full_width_mobile_settings__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./settings/full-width-mobile-settings */ "./src/blocks/grid-container/settings/full-width-mobile-settings.js");
+/* harmony import */ var _settings_blur_settings__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./settings/blur-settings */ "./src/blocks/grid-container/settings/blur-settings.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function EditBlock({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerWidth,
+    numberOfColumns,
+    numberOfColumnsTablet,
+    numberOfColumnsMobile,
+    containerMinHeight,
+    containerLightBackgroundColor,
+    containerDarkBackgroundColor,
+    containerRowGap,
+    containerColumnGap,
+    containerBackgroundImage,
+    containerBgImageFocalPoint,
+    containerBorder,
+    containerBoxShadow,
+    containerMargin,
+    containerPadding,
+    containerAlignment,
+    containerOverflow,
+    containerLightBackgroundGradient,
+    containerDarkBackgroundGradient,
+    fullWidthMobileEnabled,
+    fullWidthTabletEnabled,
+    containerBlur
+  } = attributes;
+
+  // Class names list
+  const classNamesList = ["cbb-grid-container", containerBoxShadow.enabled && "cbb-grid-container--has-box-shadow", containerBorder.width !== "0px" && containerBorder.style !== "none" && (containerBorder.lightColor !== "#00000000" || containerBorder.darkColor !== "#00000000") && "cbb-grid-container--has-border", (containerLightBackgroundColor !== "#00000000" || containerDarkBackgroundColor !== "#00000000") && "cbb-grid-container--has-bg-color", (containerLightBackgroundGradient !== "" || containerDarkBackgroundGradient !== "" || containerBackgroundImage.url) && "cbb-grid-container--has-bg-gradient", fullWidthTabletEnabled && "cbb-grid-container--full-width-tablet", fullWidthMobileEnabled && "cbb-grid-container--full-width-mobile", containerBlur.enabled && "cbb-grid-container--has-blur"].filter(className => className).join(" ");
+
+  // Function to generate the content of background-image
+  const bgImageCssVariable = (imgUrl, gradient, theme) => {
+    if (!imgUrl && !gradient) {
+      return {};
+    }
+    return {
+      [`--cbb-${theme}-bg-gradient`]: [gradient, imgUrl && `url(${imgUrl})`].filter(value => value).join(", ")
+    };
+  };
+
+  // Block properties
+  const blockProperties = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+    className: `${classNamesList}`,
+    style: {
+      maxWidth: containerWidth,
+      width: "100%",
+      margin: containerMargin.differentMarginsEnabled ? `${containerMargin.top} ${containerMargin.right} ${containerMargin.bottom} ${containerMargin.left}` : `${containerMargin.top}`,
+      ...(containerPadding.useGlobalPadding ? {
+        "--cbb-gc-padding": "0px var(--wp--style--root--padding-right, 0px) 0px var(--wp--style--root--padding-left, 0px)"
+      } : {
+        "--cbb-gc-padding": containerPadding.differentPaddingsEnabled ? `${containerPadding.top} ${containerPadding.right} ${containerPadding.bottom} ${containerPadding.left}` : `${containerPadding.top}`
+      }),
+      "--cbb-min-height": containerMinHeight,
+      "--cbb-row-gap": containerRowGap,
+      "--cbb-column-gap": containerColumnGap,
+      "--cbb-light-bg-color": containerLightBackgroundColor,
+      "--cbb-dark-bg-color": containerDarkBackgroundColor,
+      ...bgImageCssVariable(containerBackgroundImage.url, containerDarkBackgroundGradient, "dark"),
+      ...bgImageCssVariable(containerBackgroundImage.url, containerLightBackgroundGradient, "light"),
+      "--cbb-bg-position": `${containerBgImageFocalPoint.x * 100}% ${containerBgImageFocalPoint.y * 100}%`,
+      "--cbb-br-style": containerBorder.width !== "0px" && containerBorder.style !== "none" && (containerBorder.lightColor !== "#00000000" || containerBorder.darkColor !== "#00000000") ? containerBorder.style : "none",
+      "--cbb-br-width": containerBorder.width !== "0px" && containerBorder.style !== "none" && (containerBorder.lightColor !== "#00000000" || containerBorder.darkColor !== "#00000000") ? containerBorder.width : "0px",
+      "--cbb-light-border-color": containerBorder.width !== "0px" && containerBorder.style !== "none" && containerBorder.lightColor !== "#00000000" ? containerBorder.lightColor : "#00000000",
+      "--cbb-dark-border-color": containerBorder.width !== "0px" && containerBorder.style !== "none" && containerBorder.darkColor !== "#00000000" ? containerBorder.darkColor : "#00000000",
+      ...(containerBlur.enabled && {
+        "--cbb-blur": `${containerBlur.value}`
+      }),
+      "--cbb-br-radius": containerBorder.radius,
+      "--cbb-light-box-shadow": `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.lightColor}`,
+      "--cbb-dark-box-shadow": `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.darkColor}`,
+      "--cbb-gc-x-align": containerAlignment.verticalAlignment,
+      "--cbb-gc-y-align": containerAlignment.horizontalAlignment,
+      "--cbb-col-lg": `${numberOfColumns}`,
+      "--cbb-col-md": `${numberOfColumnsTablet}`,
+      "--cbb-col-sm": `${numberOfColumnsMobile}`,
+      "--cbb-overflow": containerOverflow
+    }
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+        activeClass: "cbb-active-tab",
+        tabs: [{
+          name: "layout",
+          title: "Layout"
+        }, {
+          name: "style",
+          title: "Style"
+        }, {
+          name: "additional",
+          title: "Additional"
+        }],
+        children: tab => {
+          if (tab.name === "layout") {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_number_of_columns_settings__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_number_of_columns_tablet_settings__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_number_of_columns_mobile_settings__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_width_settings__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_full_width_tablet_settings__WEBPACK_IMPORTED_MODULE_25__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_full_width_mobile_settings__WEBPACK_IMPORTED_MODULE_26__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_min_height_settings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_row_gap_settings__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_column_gap_settings__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              })]
+            });
+          }
+          if (tab.name === "style") {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_background_light_color_settings__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_background_dark_color_settings__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_background_image_settings__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_background_light_gradient_settings__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_background_dark_gradient_settings__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_border_style_settings__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_border_width_settings__WEBPACK_IMPORTED_MODULE_16__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_border_light_color_settings__WEBPACK_IMPORTED_MODULE_17__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_border_dark_color_settings__WEBPACK_IMPORTED_MODULE_18__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_border_radius_settings__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_box_shadow_settings__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_blur_settings__WEBPACK_IMPORTED_MODULE_27__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              })]
+            });
+          }
+          if (tab.name === "additional") {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_margin_settings__WEBPACK_IMPORTED_MODULE_21__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_padding_settings__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_alignment_settings__WEBPACK_IMPORTED_MODULE_23__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_settings_overflow_settings__WEBPACK_IMPORTED_MODULE_24__["default"], {
+                attributes: attributes,
+                setAttributes: setAttributes
+              })]
+            });
+          }
+          return null;
+        }
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)("div", {
+      ...blockProperties,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {})
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/editor.css":
+/*!**********************************************!*\
+  !*** ./src/blocks/grid-container/editor.css ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/index.js":
+/*!********************************************!*\
+  !*** ./src/blocks/grid-container/index.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/blocks/grid-container/block.json");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./src/blocks/grid-container/style.css");
+/* harmony import */ var _editor_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.css */ "./src/blocks/grid-container/editor.css");
+/* harmony import */ var _assets_blocks_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/blocks-icon */ "./src/assets/blocks-icon.js");
+/* harmony import */ var _edit_block__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./edit-block */ "./src/blocks/grid-container/edit-block.js");
+/* harmony import */ var _save_block__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./save-block */ "./src/blocks/grid-container/save-block.js");
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+
+
+
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_1__.name, {
+  icon: _assets_blocks_icon__WEBPACK_IMPORTED_MODULE_5__["default"].icon,
+  edit: _edit_block__WEBPACK_IMPORTED_MODULE_6__["default"],
+  save: _save_block__WEBPACK_IMPORTED_MODULE_7__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/save-block.js":
+/*!*************************************************!*\
+  !*** ./src/blocks/grid-container/save-block.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SaveBlock)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function SaveBlock({
+  attributes
+}) {
+  const {
+    containerWidth,
+    numberOfColumns,
+    numberOfColumnsTablet,
+    numberOfColumnsMobile,
+    containerMinHeight,
+    containerLightBackgroundColor,
+    containerDarkBackgroundColor,
+    containerRowGap,
+    containerColumnGap,
+    containerBackgroundImage,
+    containerBgImageFocalPoint,
+    containerLightBackgroundGradient,
+    containerDarkBackgroundGradient,
+    containerBorder,
+    containerBoxShadow,
+    containerMargin,
+    containerPadding,
+    containerAlignment,
+    containerOverflow,
+    fullWidthMobileEnabled,
+    fullWidthTabletEnabled,
+    containerBlur
+  } = attributes;
+
+  // Function to generate the content of background-image
+  const bgImageCssVariable = (imgUrl, gradient, theme) => {
+    if (!imgUrl && !gradient) {
+      return {};
+    }
+    return {
+      [`--cbb-${theme}-bg-gradient`]: [gradient, imgUrl && `url(${imgUrl})`].filter(value => value).join(", ")
+    };
+  };
+
+  // Class Names List
+  const classNamesList = ["cbb-grid-container", containerPadding.useGlobalPadding && "has-global-padding", containerBoxShadow.enabled && "cbb-grid-container--has-box-shadow", containerBorder.width !== "0px" && containerBorder.style !== "none" && (containerBorder.lightColor !== "#00000000" || containerBorder.darkColor !== "#00000000") && "cbb-grid-container--has-border", (containerLightBackgroundColor !== "#00000000" || containerDarkBackgroundColor !== "#00000000") && "cbb-grid-container--has-bg-color", (containerLightBackgroundGradient !== "" || containerDarkBackgroundGradient !== "") && "cbb-grid-container--has-bg-gradient", fullWidthTabletEnabled && "cbb-grid-container--full-width-tablet", fullWidthMobileEnabled && "cbb-grid-container--full-width-mobile", containerBlur.enabled && "cbb-grid-container--has-blur"].filter(className => className).join(" ");
+  const blockProperties = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+    className: `${classNamesList}`,
+    style: {
+      maxWidth: containerWidth,
+      width: "100%",
+      margin: containerMargin.differentMarginsEnabled ? `${containerMargin.top} ${containerMargin.right} ${containerMargin.bottom} ${containerMargin.left}` : `${containerMargin.top}`,
+      ...(!containerPadding.useGlobalPadding && {
+        padding: containerPadding.differentPaddingsEnabled ? `${containerPadding.top} ${containerPadding.right} ${containerPadding.bottom} ${containerPadding.left}` : `${containerPadding.top}`
+      }),
+      ...(containerMinHeight !== 0 && {
+        minHeight: containerMinHeight
+      }),
+      ...(containerRowGap !== "normal" && {
+        rowGap: containerRowGap
+      }),
+      ...(containerColumnGap !== "normal" && {
+        columnGap: containerColumnGap
+      }),
+      ...(containerLightBackgroundColor !== "#00000000" && {
+        "--cbb-light-bg-color": containerLightBackgroundColor
+      }),
+      ...(containerDarkBackgroundColor !== "#00000000" && {
+        "--cbb-dark-bg-color": containerDarkBackgroundColor
+      }),
+      ...(containerLightBackgroundGradient !== "" || containerDarkBackgroundGradient !== "" ? {
+        ...bgImageCssVariable(containerBackgroundImage.url, containerDarkBackgroundGradient, "dark"),
+        ...bgImageCssVariable(containerBackgroundImage.url, containerLightBackgroundGradient, "light")
+      } : {
+        ...(containerBackgroundImage.url && {
+          backgroundImage: `url(${containerBackgroundImage.url})`
+        })
+      }),
+      ...(containerBackgroundImage.url !== "" && {
+        backgroundPosition: `${containerBgImageFocalPoint.x * 100}% ${containerBgImageFocalPoint.y * 100}%`
+      }),
+      ...(containerBorder.width !== "0px" && containerBorder.style !== "none" && (containerBorder.lightColor !== "#00000000" || containerBorder.darkColor !== "#00000000") && {
+        borderStyle: containerBorder.style
+      }),
+      ...(containerBorder.width !== "0px" && containerBorder.style !== "none" && (containerBorder.lightColor !== "#00000000" || containerBorder.darkColor !== "#00000000") && {
+        borderWidth: containerBorder.width
+      }),
+      ...(containerBorder.width !== "0px" && containerBorder.style !== "none" && containerBorder.lightColor !== "#00000000" && {
+        "--cbb-light-border-color": containerBorder.lightColor
+      }),
+      ...(containerBorder.width !== "0px" && containerBorder.style !== "none" && containerBorder.darkColor !== "#00000000" && {
+        "--cbb-dark-border-color": containerBorder.darkColor
+      }),
+      ...(containerBorder.radius !== "0px" && containerBorder.radius !== "0%" && {
+        borderRadius: containerBorder.radius
+      }),
+      ...(containerBoxShadow.enabled && {
+        "--cbb-light-box-shadow": `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.lightColor}`
+      }),
+      ...(containerBoxShadow.enabled && {
+        "--cbb-dark-box-shadow": `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.darkColor}`
+      }),
+      ...(containerAlignment.verticalAlignment !== "normal" && {
+        alignItems: containerAlignment.verticalAlignment
+      }),
+      ...(containerAlignment.horizontalAlignment !== "legacy" && {
+        justifyItems: containerAlignment.horizontalAlignment
+      }),
+      ...(containerOverflow !== "visible" && {
+        overflow: containerOverflow
+      }),
+      ...(containerBlur.enabled && {
+        "--cbb-blur": `${containerBlur.value}`
+      }),
+      "--cbb-col-lg": `${numberOfColumns}`,
+      "--cbb-col-md": `${numberOfColumnsTablet}`,
+      "--cbb-col-sm": `${numberOfColumnsMobile}`
+    }
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    ...blockProperties,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {})
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/alignment-settings.js":
+/*!******************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/alignment-settings.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AlignmentSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function AlignmentSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerAlignment
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content alignment", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the vertical alignment for the container items.", "caledros-basic-blocks"),
+      value: containerAlignment.verticalAlignment,
+      options: [{
+        label: "Start",
+        value: "start"
+      }, {
+        label: "Center",
+        value: "center"
+      }, {
+        label: "End",
+        value: "end"
+      }, {
+        label: "Stretch",
+        value: "stretch"
+      }, {
+        label: "Normal (default value)",
+        value: "normal"
+      }],
+      onChange: newAlignment => {
+        setAttributes({
+          containerAlignment: {
+            ...containerAlignment,
+            verticalAlignment: newAlignment
+          }
+        });
+      }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the horizontal alignment for the container items.", "caledros-basic-blocks"),
+      value: containerAlignment.horizontalAlignment,
+      options: [{
+        label: "Start",
+        value: "start"
+      }, {
+        label: "Center",
+        value: "center"
+      }, {
+        label: "End",
+        value: "end"
+      }, {
+        label: "Stretch",
+        value: "stretch"
+      }, {
+        label: "Legacy (default value)",
+        value: "legacy"
+      }],
+      onChange: newAlignment => {
+        setAttributes({
+          containerAlignment: {
+            ...containerAlignment,
+            horizontalAlignment: newAlignment
+          }
+        });
+      }
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/background-dark-color-settings.js":
+/*!******************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/background-dark-color-settings.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BackgroundDarkColorSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+
+
+function BackgroundDarkColorSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerDarkBackgroundColor
+  } = attributes;
+  const [useTransparentBackground, setUseTransparentBackground] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(containerDarkBackgroundColor === "#00000000" ? true : false);
+  const [themeJsonPalette, defaultPalette] = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useSettings)("color.palette", "color.defaultPalette");
+
+  // Define fallback color options
+  const fallbackColorOptions = themeJsonPalette.map(registeredColor => {
+    return {
+      color: `var(--wp--preset--color--${registeredColor.slug})`,
+      name: registeredColor.name
+    };
+  });
+
+  // Get available color palettes present in the Full Site Editor
+  const editorSettings = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)("core/editor")?.getEditorSettings();
+  const editorPalette = editorSettings?.__experimentalFeatures?.color?.palette;
+
+  // Function to get the color palettes
+  const createColorOptions = (editorPalette, paletteType) => {
+    return {
+      colors: editorPalette?.[paletteType]?.map(palette => {
+        return {
+          color: `var(--wp--preset--color--${palette.slug})`,
+          name: palette.name
+        };
+      }),
+      name: `${paletteType}`
+    };
+  };
+
+  // Available color palettes
+  const defaultColors = createColorOptions(editorPalette, "default");
+  const themeColors = createColorOptions(editorPalette, "theme");
+  const customColors = createColorOptions(editorPalette, "custom");
+
+  // Define color options for the controller
+  const colorOptions = [...(defaultPalette ? [defaultColors] : []), themeColors, ...(customColors.colors ? [customColors] : [])];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background color (dark mode)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: "Use transparent background",
+      checked: useTransparentBackground,
+      onChange: () => {
+        setUseTransparentBackground(oldValue => !oldValue);
+        setAttributes({
+          containerDarkBackgroundColor: "#00000000"
+        });
+      }
+    }), !useTransparentBackground && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+      colors: editorPalette ? colorOptions : fallbackColorOptions,
+      value: containerDarkBackgroundColor,
+      onChange: newColor => setAttributes({
+        containerDarkBackgroundColor: newColor
+      }),
+      enableAlpha: true,
+      clearable: false
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/background-dark-gradient-settings.js":
+/*!*********************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/background-dark-gradient-settings.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BackgroundDarkGradientSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+function BackgroundDarkGradientSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerDarkBackgroundGradient
+  } = attributes;
+  const [enableGradient, setEnableGradient] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(containerDarkBackgroundGradient !== "" ? true : false);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background gradient (dark mode)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable background gradient", "caledros-basic-blocks"),
+      checked: enableGradient,
+      onChange: () => {
+        setEnableGradient(oldValue => !oldValue);
+        setAttributes({
+          containerDarkBackgroundGradient: ""
+        });
+      }
+    }), enableGradient && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.CustomGradientPicker, {
+      onChange: newGradient => {
+        setAttributes({
+          containerDarkBackgroundGradient: newGradient
+        });
+      },
+      value: containerDarkBackgroundGradient === "" ? "linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))" : containerDarkBackgroundGradient
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/background-image-settings.js":
+/*!*************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/background-image-settings.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BackgroundImageSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+function BackgroundImageSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerBackgroundImage,
+    containerBgImageFocalPoint
+  } = attributes;
+
+  // Function for choosing the image
+  const selectImg = image => {
+    setAttributes({
+      containerBackgroundImage: {
+        id: image.id,
+        alt: image.alt,
+        url: image.url
+      }
+    });
+  };
+
+  // Function for removing the image
+  const removeImg = () => {
+    setAttributes({
+      containerBackgroundImage: {
+        id: "",
+        alt: "",
+        url: ""
+      }
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background image", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+        allowedTypes: ["image"],
+        value: containerBackgroundImage.id,
+        render: ({
+          open
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+          children: [containerBackgroundImage.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FocalPointPicker, {
+            __nextHasNoMarginBottom: true,
+            onChange: newValue => {
+              setAttributes({
+                containerBgImageFocalPoint: newValue
+              });
+            },
+            url: containerBackgroundImage.url,
+            value: containerBgImageFocalPoint
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            style: {
+              display: "flex",
+              gap: "10px"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+              variant: "primary",
+              onClick: open,
+              children: "Select image"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+              variant: "secondary",
+              onClick: removeImg,
+              children: "Remove image"
+            })]
+          })]
+        }),
+        onSelect: selectImg
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/background-light-color-settings.js":
+/*!*******************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/background-light-color-settings.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BackgroundLightColorSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+
+
+function BackgroundLightColorSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerLightBackgroundColor
+  } = attributes;
+  const [useTransparentBackground, setUseTransparentBackground] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(containerLightBackgroundColor === "#00000000" ? true : false);
+  const [themeJsonPalette, defaultPalette] = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useSettings)("color.palette", "color.defaultPalette");
+
+  // Define fallback color options
+  const fallbackColorOptions = themeJsonPalette.map(registeredColor => {
+    return {
+      color: `var(--wp--preset--color--${registeredColor.slug})`,
+      name: registeredColor.name
+    };
+  });
+
+  // Get available color palettes present in the Full Site Editor
+  const editorSettings = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)("core/editor")?.getEditorSettings();
+  const editorPalette = editorSettings?.__experimentalFeatures?.color?.palette;
+
+  // Function to get the color palettes
+  const createColorOptions = (editorPalette, paletteType) => {
+    return {
+      colors: editorPalette?.[paletteType]?.map(palette => {
+        return {
+          color: `var(--wp--preset--color--${palette.slug})`,
+          name: palette.name
+        };
+      }),
+      name: `${paletteType}`
+    };
+  };
+
+  // Available color palettes
+  const defaultColors = createColorOptions(editorPalette, "default");
+  const themeColors = createColorOptions(editorPalette, "theme");
+  const customColors = createColorOptions(editorPalette, "custom");
+
+  // Define color options for the controller
+  const colorOptions = [...(defaultPalette ? [defaultColors] : []), themeColors, ...(customColors.colors ? [customColors] : [])];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background color (light mode)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: "Use transparent background",
+      checked: useTransparentBackground,
+      onChange: () => {
+        setUseTransparentBackground(oldValue => !oldValue);
+        setAttributes({
+          containerLightBackgroundColor: "#00000000"
+        });
+      }
+    }), !useTransparentBackground && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+      colors: editorPalette ? colorOptions : fallbackColorOptions,
+      value: containerLightBackgroundColor,
+      onChange: newColor => setAttributes({
+        containerLightBackgroundColor: newColor
+      }),
+      enableAlpha: true,
+      clearable: false
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/background-light-gradient-settings.js":
+/*!**********************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/background-light-gradient-settings.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BackgroundLightGradientSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+function BackgroundLightGradientSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerLightBackgroundGradient
+  } = attributes;
+  const [enableGradient, setEnableGradient] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(containerLightBackgroundGradient !== "" ? true : false);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background gradient (light mode)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable background gradient", "caledros-basic-blocks"),
+      checked: enableGradient,
+      onChange: () => {
+        setEnableGradient(oldValue => !oldValue);
+        setAttributes({
+          containerLightBackgroundGradient: ""
+        });
+      }
+    }), enableGradient && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.CustomGradientPicker, {
+      onChange: newGradient => {
+        setAttributes({
+          containerLightBackgroundGradient: newGradient
+        });
+      },
+      value: containerLightBackgroundGradient === "" ? "linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))" : containerLightBackgroundGradient
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/blur-settings.js":
+/*!*************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/blur-settings.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BlurSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function BlurSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerBlur
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Blur", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable blur", "caledros-basic-blocks"),
+      checked: containerBlur.enabled,
+      onChange: newValue => {
+        setAttributes({
+          containerBlur: {
+            ...containerBlur,
+            enabled: newValue
+          }
+        });
+      }
+    }), containerBlur.enabled && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the value for the blur filter (px).", "caledros-basic-blocks"),
+        value: parseInt(containerBlur.value),
+        max: 100,
+        min: 0,
+        step: 1,
+        onChange: newValue => setAttributes({
+          containerBlur: {
+            ...containerBlur,
+            value: `${newValue}px`
+          }
+        })
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/border-dark-color-settings.js":
+/*!**************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/border-dark-color-settings.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BorderDarkColorSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+
+
+function BorderDarkColorSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerBorder
+  } = attributes;
+  const borderArray = containerBorder.darkColor.split(" ");
+  const topBorderColor = borderArray[0] || "#000";
+  const rightBorderColor = borderArray[1] || "#000";
+  const bottomBorderColor = borderArray[2] || "#000";
+  const leftBorderColor = borderArray[3] || "#000";
+  const [useDifferentBorderColors, setUseDifferentBorderColors] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(containerBorder.darkColor.includes(" ") ? true : false);
+  const [themeJsonPalette, defaultPalette] = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useSettings)("color.palette", "color.defaultPalette");
+
+  // Define fallback color options
+  const fallbackColorOptions = themeJsonPalette.map(registeredColor => {
+    return {
+      color: `var(--wp--preset--color--${registeredColor.slug})`,
+      name: registeredColor.name
+    };
+  });
+
+  // Get available color palettes present in the Full Site Editor
+  const editorSettings = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)("core/editor")?.getEditorSettings();
+  const editorPalette = editorSettings?.__experimentalFeatures?.color?.palette;
+
+  // Function to get the color palettes
+  const createColorOptions = (editorPalette, paletteType) => {
+    return {
+      colors: editorPalette?.[paletteType]?.map(palette => {
+        return {
+          color: `var(--wp--preset--color--${palette.slug})`,
+          name: palette.name
+        };
+      }),
+      name: `${paletteType}`
+    };
+  };
+
+  // Available color palettes
+  const defaultColors = createColorOptions(editorPalette, "default");
+  const themeColors = createColorOptions(editorPalette, "theme");
+  const customColors = createColorOptions(editorPalette, "custom");
+
+  // Define color options for the controller
+  const colorOptions = [...(defaultPalette ? [defaultColors] : []), themeColors, ...(customColors.colors ? [customColors] : [])];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border color (dark mode)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: "Use different border colors for each side",
+      checked: useDifferentBorderColors,
+      onChange: () => {
+        const enableDifferentColors = !useDifferentBorderColors;
+        setUseDifferentBorderColors(enableDifferentColors);
+        if (enableDifferentColors) {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              darkColor: "#000 #000 #000 #000"
+            }
+          });
+        } else {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              darkColor: "#000"
+            }
+          });
+        }
+      }
+    }), !useDifferentBorderColors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the border color", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: containerBorder.darkColor,
+        onChange: newColor => setAttributes({
+          containerBorder: {
+            ...containerBorder,
+            darkColor: newColor || "#00000000"
+          }
+        }),
+        enableAlpha: true,
+        clearable: true
+      })]
+    }), useDifferentBorderColors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the top border", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: topBorderColor,
+        onChange: newColor => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              darkColor: `${newColor || "#00000000"} ${rightBorderColor} ${bottomBorderColor} ${leftBorderColor}`
+            }
+          });
+        },
+        enableAlpha: true,
+        clearable: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the right border", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: rightBorderColor,
+        onChange: newColor => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              darkColor: `${topBorderColor} ${newColor || "#00000000"} ${bottomBorderColor} ${leftBorderColor}`
+            }
+          });
+        },
+        enableAlpha: true,
+        clearable: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the bottom border", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: bottomBorderColor,
+        onChange: newColor => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              darkColor: `${topBorderColor} ${rightBorderColor} ${newColor || "#00000000"} ${leftBorderColor}`
+            }
+          });
+        },
+        enableAlpha: true,
+        clearable: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the left border", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: leftBorderColor,
+        onChange: newColor => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              darkColor: `${topBorderColor} ${rightBorderColor} ${bottomBorderColor} ${newColor || "#00000000"}`
+            }
+          });
+        },
+        enableAlpha: true,
+        clearable: true
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/border-light-color-settings.js":
+/*!***************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/border-light-color-settings.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BorderLightColorSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+
+
+function BorderLightColorSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerBorder
+  } = attributes;
+  const borderArray = containerBorder.lightColor.split(" ");
+  const topBorderColor = borderArray[0] || "#000";
+  const rightBorderColor = borderArray[1] || "#000";
+  const bottomBorderColor = borderArray[2] || "#000";
+  const leftBorderColor = borderArray[3] || "#000";
+  const [useDifferentBorderColors, setUseDifferentBorderColors] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(containerBorder.lightColor.includes(" ") ? true : false);
+  const [themeJsonPalette, defaultPalette] = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useSettings)("color.palette", "color.defaultPalette");
+
+  // Define fallback color options
+  const fallbackColorOptions = themeJsonPalette.map(registeredColor => {
+    return {
+      color: `var(--wp--preset--color--${registeredColor.slug})`,
+      name: registeredColor.name
+    };
+  });
+
+  // Get available color palettes present in the Full Site Editor
+  const editorSettings = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)("core/editor")?.getEditorSettings();
+  const editorPalette = editorSettings?.__experimentalFeatures?.color?.palette;
+
+  // Function to get the color palettes
+  const createColorOptions = (editorPalette, paletteType) => {
+    return {
+      colors: editorPalette?.[paletteType]?.map(palette => {
+        return {
+          color: `var(--wp--preset--color--${palette.slug})`,
+          name: palette.name
+        };
+      }),
+      name: `${paletteType}`
+    };
+  };
+
+  // Available color palettes
+  const defaultColors = createColorOptions(editorPalette, "default");
+  const themeColors = createColorOptions(editorPalette, "theme");
+  const customColors = createColorOptions(editorPalette, "custom");
+
+  // Define color options for the controller
+  const colorOptions = [...(defaultPalette ? [defaultColors] : []), themeColors, ...(customColors.colors ? [customColors] : [])];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border color (light mode)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: "Use different border colors for each side",
+      checked: useDifferentBorderColors,
+      onChange: () => {
+        const enableDifferentColors = !useDifferentBorderColors;
+        setUseDifferentBorderColors(enableDifferentColors);
+        if (enableDifferentColors) {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              lightColor: "#000 #000 #000 #000"
+            }
+          });
+        } else {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              lightColor: "#000"
+            }
+          });
+        }
+      }
+    }), !useDifferentBorderColors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the border color", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptionse,
+        value: containerBorder.lightColor,
+        onChange: newColor => setAttributes({
+          containerBorder: {
+            ...containerBorder,
+            lightColor: newColor || "#00000000"
+          }
+        }),
+        enableAlpha: true,
+        clearable: true
+      })]
+    }), useDifferentBorderColors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the top border", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: topBorderColor,
+        onChange: newColor => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              lightColor: `${newColor || "#00000000"} ${rightBorderColor} ${bottomBorderColor} ${leftBorderColor}`
+            }
+          });
+        },
+        enableAlpha: true,
+        clearable: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the right border", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: rightBorderColor,
+        onChange: newColor => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              lightColor: `${topBorderColor} ${newColor || "#00000000"} ${bottomBorderColor} ${leftBorderColor}`
+            }
+          });
+        },
+        enableAlpha: true,
+        clearable: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the bottom border", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: bottomBorderColor,
+        onChange: newColor => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              lightColor: `${topBorderColor} ${rightBorderColor} ${newColor || "#00000000"} ${leftBorderColor}`
+            }
+          });
+        },
+        enableAlpha: true,
+        clearable: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the left border", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: leftBorderColor,
+        onChange: newColor => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              lightColor: `${topBorderColor} ${rightBorderColor} ${bottomBorderColor} ${newColor || "#00000000"}`
+            }
+          });
+        },
+        enableAlpha: true,
+        clearable: true
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/border-radius-settings.js":
+/*!**********************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/border-radius-settings.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BorderRadiusSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+function BorderRadiusSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerBorder
+  } = attributes;
+
+  // Recover the border radius of each corner
+  const borderArray = containerBorder.radius.split(" ");
+  const topLeftCorner = parseInt(borderArray[0]) || 0;
+  const topRightCorner = parseInt(borderArray[1]) || 0;
+  const bottomRightCorner = parseInt(borderArray[2]) || 0;
+  const bottomLeftCorner = parseInt(borderArray[3]) || 0;
+
+  // Recover the unit used in the border radiuses
+  const unitArray = containerBorder.radius.split(" ");
+  const topLeftUnit = unitArray[0] ? unitArray[0].replace(/\d+/g, "") : "px";
+  const topRightUnit = unitArray[1] ? unitArray[1].replace(/\d+/g, "") : "px";
+  const bottomRightUnit = unitArray[2] ? unitArray[2].replace(/\d+/g, "") : "px";
+  const bottomLeftUnit = unitArray[3] ? unitArray[3].replace(/\d+/g, "") : "px";
+  const [useDifferentBorderRadiuses, setUseDifferentBorderRadiuses] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(containerBorder.radius.includes(" ") ? true : false);
+
+  // Restrict maximum value for % and vw units
+  const enforceMaxValue = (newUnit, valueNumber) => {
+    if (newUnit === "%" && valueNumber > 100) {
+      return 100;
+    }
+    return valueNumber;
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border radius", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: "Use different border radiuses for each corner",
+      checked: useDifferentBorderRadiuses,
+      onChange: () => {
+        const differentRadiusesEnabled = !useDifferentBorderRadiuses;
+        setUseDifferentBorderRadiuses(differentRadiusesEnabled);
+        if (differentRadiusesEnabled) {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              radius: "10px 10px 10px 10px"
+            }
+          });
+        } else {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              radius: "10px"
+            }
+          });
+        }
+      }
+    }), !useDifferentBorderRadiuses && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "cbb-editor__grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the border radius (${topLeftUnit}) for the container.`, "caledros-basic-blocks"),
+        value: parseInt(containerBorder.radius),
+        max: topLeftUnit === "%" ? 100 : 150,
+        min: 0,
+        step: 1,
+        onChange: newRadius => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              radius: `${newRadius}${topLeftUnit}`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        value: topLeftUnit,
+        options: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "%",
+          value: "%"
+        }],
+        onChange: newUnit => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              radius: `${enforceMaxValue(newUnit, parseInt(containerBorder.radius))}${newUnit}`
+            }
+          });
+        }
+      })]
+    }), useDifferentBorderRadiuses && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the top-left border radius (${topLeftUnit}).`, "caledros-basic-blocks"),
+          value: topLeftCorner,
+          max: topLeftUnit === "%" ? 100 : 150,
+          min: 0,
+          step: 1,
+          onChange: newRadius => {
+            setAttributes({
+              containerBorder: {
+                ...containerBorder,
+                radius: `${newRadius}${topLeftUnit} ${topRightCorner}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`
+              }
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: topLeftUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerBorder: {
+                ...containerBorder,
+                radius: `${enforceMaxValue(newUnit, topLeftCorner)}${newUnit} ${topRightCorner}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the top-right border radius (${topRightUnit}).`, "caledros-basic-blocks"),
+          value: topRightCorner,
+          max: topRightUnit === "%" ? 100 : 150,
+          min: 0,
+          step: 1,
+          onChange: newRadius => {
+            setAttributes({
+              containerBorder: {
+                ...containerBorder,
+                radius: `${topLeftCorner}${topLeftUnit} ${newRadius}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`
+              }
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: topRightUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerBorder: {
+                ...containerBorder,
+                radius: `${topLeftCorner}${topLeftUnit} ${enforceMaxValue(newUnit, topRightCorner)}${newUnit} ${bottomRightCorner}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the bottom-right border radius (${bottomRightUnit}).`, "caledros-basic-blocks"),
+          value: bottomRightCorner,
+          max: bottomRightUnit === "%" ? 100 : 150,
+          min: 0,
+          step: 1,
+          onChange: newRadius => {
+            setAttributes({
+              containerBorder: {
+                ...containerBorder,
+                radius: `${topLeftCorner}${topLeftUnit} ${topRightCorner}${topRightUnit} ${newRadius}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`
+              }
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: bottomRightUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerBorder: {
+                ...containerBorder,
+                radius: `${topLeftCorner}${topLeftUnit} ${topRightCorner}${topRightUnit} ${enforceMaxValue(newUnit, bottomRightCorner)}${newUnit} ${bottomLeftCorner}${bottomLeftUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the bottom-left border radius (${bottomLeftUnit}).`, "caledros-basic-blocks"),
+          value: bottomLeftCorner,
+          max: bottomLeftUnit === "%" ? 100 : 150,
+          min: 0,
+          step: 1,
+          onChange: newRadius => {
+            setAttributes({
+              containerBorder: {
+                ...containerBorder,
+                radius: `${topLeftCorner}${topLeftUnit} ${topRightCorner}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${newRadius}${bottomLeftUnit}`
+              }
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: bottomLeftUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerBorder: {
+                ...containerBorder,
+                radius: `${topLeftCorner}${topLeftUnit} ${topRightCorner}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${enforceMaxValue(newUnit, bottomLeftCorner)}${newUnit}`
+              }
+            });
+          }
+        })]
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/border-style-settings.js":
+/*!*********************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/border-style-settings.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BorderStyleSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+function BorderStyleSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerBorder
+  } = attributes;
+  const borderArray = containerBorder.style.split(" ");
+  const topBorder = borderArray[0] || "solid";
+  const rightBorder = borderArray[1] || "none";
+  const bottomBorder = borderArray[2] || "none";
+  const leftBorder = borderArray[3] || "none";
+  const [useDifferentBorderStyles, setUseDifferentBorderStyles] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(containerBorder.style.includes(" ") ? true : false);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border style", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: "Use different border styles for each side",
+      checked: useDifferentBorderStyles,
+      onChange: () => {
+        const newValue = !useDifferentBorderStyles;
+        setUseDifferentBorderStyles(newValue);
+        if (newValue) {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              style: "solid none none none"
+            }
+          });
+        } else {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              style: "solid"
+            }
+          });
+        }
+      }
+    }), !useDifferentBorderStyles && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the border style.", "caledros-basic-blocks"),
+      value: containerBorder.style,
+      options: [{
+        disabled: true,
+        label: "Select an option",
+        value: ""
+      }, {
+        label: "None",
+        value: "none"
+      }, {
+        label: "Dotted",
+        value: "dotted"
+      }, {
+        label: "Dashed",
+        value: "dashed"
+      }, {
+        label: "Solid",
+        value: "solid"
+      }, {
+        label: "Double",
+        value: "double"
+      }, {
+        label: "Groove",
+        value: "groove"
+      }, {
+        label: "Ridge",
+        value: "ridge"
+      }, {
+        label: "Inset",
+        value: "inset"
+      }, {
+        label: "Outset",
+        value: "outset"
+      }],
+      onChange: newValue => {
+        setAttributes({
+          containerBorder: {
+            ...containerBorder,
+            style: newValue
+          }
+        });
+      }
+    }), useDifferentBorderStyles && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the style for the top border.", "caledros-basic-blocks"),
+        value: topBorder,
+        options: [{
+          disabled: true,
+          label: "Select an option",
+          value: ""
+        }, {
+          label: "None",
+          value: "none"
+        }, {
+          label: "Dotted",
+          value: "dotted"
+        }, {
+          label: "Dashed",
+          value: "dashed"
+        }, {
+          label: "Solid",
+          value: "solid"
+        }, {
+          label: "Double",
+          value: "double"
+        }, {
+          label: "Groove",
+          value: "groove"
+        }, {
+          label: "Ridge",
+          value: "ridge"
+        }, {
+          label: "Inset",
+          value: "inset"
+        }, {
+          label: "Outset",
+          value: "outset"
+        }],
+        onChange: newValue => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              style: `${newValue} ${rightBorder} ${bottomBorder} ${leftBorder}`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the style for the right border.", "caledros-basic-blocks"),
+        value: rightBorder,
+        options: [{
+          disabled: true,
+          label: "Select an option",
+          value: ""
+        }, {
+          label: "None",
+          value: "none"
+        }, {
+          label: "Dotted",
+          value: "dotted"
+        }, {
+          label: "Dashed",
+          value: "dashed"
+        }, {
+          label: "Solid",
+          value: "solid"
+        }, {
+          label: "Double",
+          value: "double"
+        }, {
+          label: "Groove",
+          value: "groove"
+        }, {
+          label: "Ridge",
+          value: "ridge"
+        }, {
+          label: "Inset",
+          value: "inset"
+        }, {
+          label: "Outset",
+          value: "outset"
+        }],
+        onChange: newValue => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              style: `${topBorder} ${newValue} ${bottomBorder} ${leftBorder}`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the style for the bottom border.", "caledros-basic-blocks"),
+        value: bottomBorder,
+        options: [{
+          disabled: true,
+          label: "Select an option",
+          value: ""
+        }, {
+          label: "None",
+          value: "none"
+        }, {
+          label: "Dotted",
+          value: "dotted"
+        }, {
+          label: "Dashed",
+          value: "dashed"
+        }, {
+          label: "Solid",
+          value: "solid"
+        }, {
+          label: "Double",
+          value: "double"
+        }, {
+          label: "Groove",
+          value: "groove"
+        }, {
+          label: "Ridge",
+          value: "ridge"
+        }, {
+          label: "Inset",
+          value: "inset"
+        }, {
+          label: "Outset",
+          value: "outset"
+        }],
+        onChange: newValue => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              style: `${topBorder} ${rightBorder} ${newValue} ${leftBorder}`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the style for the left border.", "caledros-basic-blocks"),
+        value: leftBorder,
+        options: [{
+          disabled: true,
+          label: "Select an option",
+          value: ""
+        }, {
+          label: "None",
+          value: "none"
+        }, {
+          label: "Dotted",
+          value: "dotted"
+        }, {
+          label: "Dashed",
+          value: "dashed"
+        }, {
+          label: "Solid",
+          value: "solid"
+        }, {
+          label: "Double",
+          value: "double"
+        }, {
+          label: "Groove",
+          value: "groove"
+        }, {
+          label: "Ridge",
+          value: "ridge"
+        }, {
+          label: "Inset",
+          value: "inset"
+        }, {
+          label: "Outset",
+          value: "outset"
+        }],
+        onChange: newValue => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              style: `${topBorder} ${rightBorder} ${bottomBorder} ${newValue}`
+            }
+          });
+        }
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/border-width-settings.js":
+/*!*********************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/border-width-settings.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BorderWidthSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+function BorderWidthSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerBorder
+  } = attributes;
+  const borderArray = containerBorder.width.split(" ");
+  const topBorder = parseInt(borderArray[0]) || 0;
+  const rightBorder = parseInt(borderArray[1]) || 0;
+  const bottomBorder = parseInt(borderArray[2]) || 0;
+  const leftBorder = parseInt(borderArray[3]) || 0;
+  const [useDifferentBorderWidths, setUseDifferentBorderWidths] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(containerBorder.width.includes(" ") ? true : false);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: "Use different border widths for each side",
+      checked: useDifferentBorderWidths,
+      onChange: () => {
+        const differentWidthsEnabled = !useDifferentBorderWidths;
+        setUseDifferentBorderWidths(differentWidthsEnabled);
+        if (differentWidthsEnabled) {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              width: "1px 1px 1px 1px"
+            }
+          });
+        } else {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              width: "1px"
+            }
+          });
+        }
+      }
+    }), !useDifferentBorderWidths && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the border width (px) for the container.", "caledros-basic-blocks"),
+      value: parseInt(containerBorder.width),
+      max: 50,
+      min: 0,
+      step: 1,
+      onChange: newWidth => {
+        setAttributes({
+          containerBorder: {
+            ...containerBorder,
+            width: `${newWidth}px`
+          }
+        });
+      }
+    }), useDifferentBorderWidths && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the top border width (px) for the container.", "caledros-basic-blocks"),
+        value: topBorder,
+        max: 50,
+        min: 0,
+        step: 1,
+        onChange: newWidth => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              width: `${newWidth}px ${rightBorder}px ${bottomBorder}px ${leftBorder}px`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the right border width (px) for the container.", "caledros-basic-blocks"),
+        value: rightBorder,
+        max: 50,
+        min: 0,
+        step: 1,
+        onChange: newWidth => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              width: `${topBorder}px ${newWidth}px ${bottomBorder}px ${leftBorder}px`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the bottom border width (px) for the container.", "caledros-basic-blocks"),
+        value: bottomBorder,
+        max: 50,
+        min: 0,
+        step: 1,
+        onChange: newWidth => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              width: `${topBorder}px ${rightBorder}px ${newWidth}px ${leftBorder}px`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the left border width (px) for the container.", "caledros-basic-blocks"),
+        value: leftBorder,
+        max: 50,
+        min: 0,
+        step: 1,
+        onChange: newWidth => {
+          setAttributes({
+            containerBorder: {
+              ...containerBorder,
+              width: `${topBorder}px ${rightBorder}px ${bottomBorder}px ${newWidth}px`
+            }
+          });
+        }
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/box-shadow-settings.js":
+/*!*******************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/box-shadow-settings.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BoxShadowSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+
+function BoxShadowSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerBoxShadow
+  } = attributes;
+  const [themeJsonPalette, defaultPalette] = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useSettings)("color.palette", "color.defaultPalette");
+
+  // Define fallback color options
+  const fallbackColorOptions = themeJsonPalette.map(registeredColor => {
+    return {
+      color: `var(--wp--preset--color--${registeredColor.slug})`,
+      name: registeredColor.name
+    };
+  });
+
+  // Get available color palettes present in the Full Site Editor
+  const editorSettings = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)("core/editor")?.getEditorSettings();
+  const editorPalette = editorSettings?.__experimentalFeatures?.color?.palette;
+
+  // Function to get the color palettes
+  const createColorOptions = (editorPalette, paletteType) => {
+    return {
+      colors: editorPalette?.[paletteType]?.map(palette => {
+        return {
+          color: `var(--wp--preset--color--${palette.slug})`,
+          name: palette.name
+        };
+      }),
+      name: `${paletteType}`
+    };
+  };
+
+  // Available color palettes
+  const defaultColors = createColorOptions(editorPalette, "default");
+  const themeColors = createColorOptions(editorPalette, "theme");
+  const customColors = createColorOptions(editorPalette, "custom");
+
+  // Define color options for the controller
+  const colorOptions = [...(defaultPalette ? [defaultColors] : []), themeColors, ...(customColors.colors ? [customColors] : [])];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Box shadow", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable box shadow", "caledros-basic-blocks"),
+      checked: containerBoxShadow.enabled,
+      onChange: newValue => {
+        setAttributes({
+          containerBoxShadow: {
+            ...containerBoxShadow,
+            enabled: newValue
+          }
+        });
+      }
+    }), containerBoxShadow.enabled && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the style for the box shadow.", "caledros-basic-blocks"),
+        value: containerBoxShadow.style === "" ? "outline" : "inset",
+        options: [{
+          label: "Outline",
+          value: "outline"
+        }, {
+          label: "Inset",
+          value: "inset"
+        }],
+        onChange: newValue => {
+          setAttributes({
+            containerBoxShadow: {
+              ...containerBoxShadow,
+              style: `${newValue === "outline" ? "" : newValue}`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the horizontal offset (px).", "caledros-basic-blocks"),
+        value: parseInt(containerBoxShadow.hOffset),
+        max: 100,
+        min: -100,
+        step: 1,
+        onChange: newValue => setAttributes({
+          containerBoxShadow: {
+            ...containerBoxShadow,
+            hOffset: `${newValue}px`
+          }
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the vertical offset (px).", "caledros-basic-blocks"),
+        value: parseInt(containerBoxShadow.vOffset),
+        max: 100,
+        min: -100,
+        step: 1,
+        onChange: newValue => setAttributes({
+          containerBoxShadow: {
+            ...containerBoxShadow,
+            vOffset: `${newValue}px`
+          }
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the blur (px).", "caledros-basic-blocks"),
+        value: parseInt(containerBoxShadow.blur),
+        max: 100,
+        min: 0,
+        step: 1,
+        onChange: newValue => setAttributes({
+          containerBoxShadow: {
+            ...containerBoxShadow,
+            blur: `${newValue}px`
+          }
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the spread (px).", "caledros-basic-blocks"),
+        value: parseInt(containerBoxShadow.spread),
+        max: 100,
+        min: -100,
+        step: 1,
+        onChange: newValue => setAttributes({
+          containerBoxShadow: {
+            ...containerBoxShadow,
+            spread: `${newValue}px`
+          }
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the box shadow (light mode)", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: containerBoxShadow.lightColor,
+        onChange: newColor => setAttributes({
+          containerBoxShadow: {
+            ...containerBoxShadow,
+            lightColor: newColor || "#00000000"
+          }
+        }),
+        enableAlpha: true,
+        clearable: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+        className: "cbb-editor-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a color for the box shadow (dark mode)", "caledros-basic-blocks")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        colors: editorPalette ? colorOptions : fallbackColorOptions,
+        value: containerBoxShadow.darkColor,
+        onChange: newColor => setAttributes({
+          containerBoxShadow: {
+            ...containerBoxShadow,
+            darkColor: newColor || "#00000000"
+          }
+        }),
+        enableAlpha: true,
+        clearable: true
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/column-gap-settings.js":
+/*!*******************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/column-gap-settings.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ColumnGapSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+function ColumnGapSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerColumnGap
+  } = attributes;
+  const [useNormalColumnGap, setUseNormalColumnGap] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(containerColumnGap === "normal" ? true : false);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column gap", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Use normal column gap (default value)", "caledros-basic-blocks"),
+      checked: useNormalColumnGap,
+      onChange: () => {
+        let temporalValue = useNormalColumnGap ? "0" : "normal";
+        setUseNormalColumnGap(oldValue => !oldValue);
+        setAttributes({
+          containerColumnGap: temporalValue
+        });
+      }
+    }), !useNormalColumnGap && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the column gap (px) for the grid container.", "caledros-basic-blocks"),
+      value: isNaN(parseInt(containerColumnGap)) ? 0 : parseInt(containerColumnGap),
+      max: 200,
+      min: 0,
+      step: 1,
+      onChange: newColumnGap => setAttributes({
+        containerColumnGap: `${newColumnGap}px`
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/full-width-mobile-settings.js":
+/*!**************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/full-width-mobile-settings.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FullWidthMobileSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function FullWidthMobileSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    fullWidthMobileEnabled
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Full Width (Mobile)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable the grid container to expand to full width only on mobile devices.", "caledros-basic-blocks"),
+      checked: fullWidthMobileEnabled,
+      onChange: newValue => {
+        setAttributes({
+          fullWidthMobileEnabled: newValue
+        });
+      }
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/full-width-tablet-settings.js":
+/*!**************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/full-width-tablet-settings.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FullWidthTabletSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function FullWidthTabletSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    fullWidthTabletEnabled
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Full Width (Tablet and Mobile)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable the grid container to expand to full width on tablets and mobile devices.", "caledros-basic-blocks"),
+      checked: fullWidthTabletEnabled,
+      onChange: newValue => {
+        setAttributes({
+          fullWidthTabletEnabled: newValue
+        });
+      }
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/margin-settings.js":
+/*!***************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/margin-settings.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MarginSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function MarginSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerMargin
+  } = attributes;
+
+  // Recover the margins
+  const topMargin = parseInt(containerMargin.top) || 0;
+  const leftMargin = parseInt(containerMargin.left) || 0;
+  const bottomMargin = parseInt(containerMargin.bottom) || 0;
+  const rightMargin = parseInt(containerMargin.right) || 0;
+
+  // Recover the unit used in the margins
+  const topUnit = containerMargin.top.replace(/\d+/g, "");
+  const leftUnit = containerMargin.left.replace(/\d+/g, "");
+  const bottomUnit = containerMargin.bottom.replace(/\d+/g, "");
+  const rightUnit = containerMargin.right.replace(/\d+/g, "");
+
+  // Restrict maximum value for % and vw units
+  const enforceMaxValue = (newUnit, valueNumber) => {
+    if (newUnit === "auto") {
+      return "";
+    }
+    if (["%", "vw"].includes(newUnit) && valueNumber > 100) {
+      return 100;
+    }
+    return valueNumber;
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Margin", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable different margins", "caledros-basic-blocks"),
+      checked: containerMargin.differentMarginsEnabled,
+      onChange: newMargin => {
+        setAttributes({
+          containerMargin: {
+            ...containerMargin,
+            differentMarginsEnabled: newMargin
+          }
+        });
+      }
+    }), !containerMargin.differentMarginsEnabled && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "cbb-editor__grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the margin (${topUnit}) for the container.`, "caledros-basic-blocks"),
+        value: topMargin,
+        max: ["%", "vw"].includes(topUnit) ? 100 : 500,
+        min: 0,
+        step: 1,
+        onChange: newMargin => {
+          setAttributes({
+            containerMargin: {
+              ...containerMargin,
+              top: `${topUnit === "auto" ? "" : newMargin}${topUnit}`
+            }
+          });
+        },
+        disabled: topUnit === "auto"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        value: topUnit,
+        options: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "%",
+          value: "%"
+        }, {
+          label: "em",
+          value: "em"
+        }, {
+          label: "rem",
+          value: "rem"
+        }, {
+          label: "vw",
+          value: "vw"
+        }, {
+          label: "auto",
+          value: "auto"
+        }],
+        onChange: newUnit => {
+          setAttributes({
+            containerMargin: {
+              ...containerMargin,
+              top: `${enforceMaxValue(newUnit, topMargin)}${newUnit}`
+            }
+          });
+        }
+      })]
+    }), containerMargin.differentMarginsEnabled && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the top margin (${topUnit}) for the container.`, "caledros-basic-blocks"),
+          value: topMargin,
+          max: ["%", "vw"].includes(topUnit) ? 100 : 500,
+          min: 0,
+          step: 1,
+          onChange: newMargin => {
+            setAttributes({
+              containerMargin: {
+                ...containerMargin,
+                top: `${topUnit === "auto" ? "" : newMargin}${topUnit}`
+              }
+            });
+          },
+          disabled: topUnit === "auto"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: topUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }, {
+            label: "em",
+            value: "em"
+          }, {
+            label: "rem",
+            value: "rem"
+          }, {
+            label: "vw",
+            value: "vw"
+          }, {
+            label: "auto",
+            value: "auto"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerMargin: {
+                ...containerMargin,
+                top: `${enforceMaxValue(newUnit, topMargin)}${newUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the right margin (${rightUnit}) for the container.`, "caledros-basic-blocks"),
+          value: rightMargin,
+          max: ["%", "vw"].includes(rightUnit) ? 100 : 500,
+          min: 0,
+          step: 1,
+          onChange: newMargin => {
+            setAttributes({
+              containerMargin: {
+                ...containerMargin,
+                right: `${rightUnit === "auto" ? "" : newMargin}${rightUnit}`
+              }
+            });
+          },
+          disabled: rightUnit === "auto"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: rightUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }, {
+            label: "em",
+            value: "em"
+          }, {
+            label: "rem",
+            value: "rem"
+          }, {
+            label: "vw",
+            value: "vw"
+          }, {
+            label: "auto",
+            value: "auto"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerMargin: {
+                ...containerMargin,
+                right: `${enforceMaxValue(newUnit, rightMargin)}${newUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the bottom margin (${bottomUnit}) for the container.`, "caledros-basic-blocks"),
+          value: bottomMargin,
+          max: ["%", "vw"].includes(bottomUnit) ? 100 : 500,
+          min: 0,
+          step: 1,
+          onChange: newMargin => {
+            setAttributes({
+              containerMargin: {
+                ...containerMargin,
+                bottom: `${bottomUnit === "auto" ? "" : newMargin}${bottomUnit}`
+              }
+            });
+          },
+          disabled: bottomUnit === "auto"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: bottomUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }, {
+            label: "em",
+            value: "em"
+          }, {
+            label: "rem",
+            value: "rem"
+          }, {
+            label: "vw",
+            value: "vw"
+          }, {
+            label: "auto",
+            value: "auto"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerMargin: {
+                ...containerMargin,
+                bottom: `${enforceMaxValue(newUnit, bottomMargin)}${newUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the left margin (${leftUnit}) for the container.`, "caledros-basic-blocks"),
+          value: leftMargin,
+          max: ["%", "vw"].includes(leftUnit) ? 100 : 500,
+          min: 0,
+          step: 1,
+          onChange: newMargin => {
+            setAttributes({
+              containerMargin: {
+                ...containerMargin,
+                left: `${leftUnit === "auto" ? "" : newMargin}${leftUnit}`
+              }
+            });
+          },
+          disabled: leftUnit === "auto"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: leftUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }, {
+            label: "em",
+            value: "em"
+          }, {
+            label: "rem",
+            value: "rem"
+          }, {
+            label: "vw",
+            value: "vw"
+          }, {
+            label: "auto",
+            value: "auto"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerMargin: {
+                ...containerMargin,
+                left: `${enforceMaxValue(newUnit, leftMargin)}${newUnit}`
+              }
+            });
+          }
+        })]
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/min-height-settings.js":
+/*!*******************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/min-height-settings.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MinHeightSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function MinHeightSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerMinHeight
+  } = attributes;
+
+  // Recover the unit used in the minimum height
+  const minHeightUnit = containerMinHeight.replace(/\d+/g, "") || "px";
+
+  // Recover the numeric value of the minimum height
+  const minHeightNumber = parseInt(containerMinHeight) || 0;
+
+  // Restrict maximum value for % and vw units
+  const enforceMaxValue = (newUnit, valueNumber) => {
+    if (newUnit === "auto") {
+      return "";
+    }
+    if (newUnit === "vh" && valueNumber > 100) {
+      return 100;
+    }
+    return valueNumber;
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Minimum height", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "cbb-editor__grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the minimum height (${minHeightUnit}) for the container.`, "caledros-basic-blocks"),
+        initialPosition: 0,
+        max: minHeightUnit === "vh" ? 100 : 1000,
+        min: 0,
+        step: 1,
+        value: minHeightUnit === "auto" ? 0 : minHeightNumber,
+        onChange: newValue => setAttributes({
+          containerMinHeight: `${minHeightUnit !== "auto" ? newValue : ""}${minHeightUnit}`
+        }),
+        disabled: minHeightUnit === "auto"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        value: minHeightUnit,
+        options: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "em",
+          value: "em"
+        }, {
+          label: "rem",
+          value: "rem"
+        }, {
+          label: "vh",
+          value: "vh"
+        }, {
+          label: "auto",
+          value: "auto"
+        }],
+        onChange: newUnit => {
+          setAttributes({
+            containerMinHeight: `${enforceMaxValue(newUnit, minHeightNumber)}${newUnit}`
+          });
+        }
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/number-of-columns-mobile-settings.js":
+/*!*********************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/number-of-columns-mobile-settings.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NumberOfColumnsMobileSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function NumberOfColumnsMobileSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    numberOfColumnsMobile
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("No. of columns (mobile)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the number of columns for the container (mobile devices).", "caledros-basic-blocks"),
+      value: numberOfColumnsMobile,
+      initialPosition: 1,
+      max: 6,
+      min: 1,
+      step: 1,
+      onChange: newValue => setAttributes({
+        numberOfColumnsMobile: newValue
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/number-of-columns-settings.js":
+/*!**************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/number-of-columns-settings.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NumberOfColumnsSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function NumberOfColumnsSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    numberOfColumns
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("No. of columns (desktop)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the number of columns for the container (desktop).", "caledros-basic-blocks"),
+      value: numberOfColumns,
+      initialPosition: 1,
+      max: 6,
+      min: 1,
+      step: 1,
+      onChange: newValue => setAttributes({
+        numberOfColumns: newValue
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/number-of-columns-tablet-settings.js":
+/*!*********************************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/number-of-columns-tablet-settings.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NumberOfColumnsTabletSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function NumberOfColumnsTabletSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    numberOfColumnsTablet
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("No. of columns (tablet)", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the number of columns for the container (tablet).", "caledros-basic-blocks"),
+      value: numberOfColumnsTablet,
+      initialPosition: 1,
+      max: 6,
+      min: 1,
+      step: 1,
+      onChange: newValue => setAttributes({
+        numberOfColumnsTablet: newValue
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/overflow-settings.js":
+/*!*****************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/overflow-settings.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ OverflowSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function OverflowSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerOverflow
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Overflow", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select the value for the overflow property. The container will automatically have 'overflow:hidden' applied if it's the parent of a slider or image gallery block.", "caledros-basic-blocks"),
+      value: containerOverflow,
+      options: [{
+        label: "Visible (default)",
+        value: "visible"
+      }, {
+        label: "Hidden",
+        value: "hidden"
+      }, {
+        label: "Scroll",
+        value: "scroll"
+      }, {
+        label: "Auto",
+        value: "auto"
+      }],
+      onChange: newValue => {
+        setAttributes({
+          containerOverflow: newValue
+        });
+      }
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/padding-settings.js":
+/*!****************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/padding-settings.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PaddingSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+function PaddingSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerPadding
+  } = attributes;
+
+  // Recover the paddings
+  const topPadding = parseInt(containerPadding.top) || 0;
+  const leftPadding = parseInt(containerPadding.left) || 0;
+  const bottomPadding = parseInt(containerPadding.bottom) || 0;
+  const rightPadding = parseInt(containerPadding.right) || 0;
+
+  // Recover the unit used in the paddings
+  const topUnit = containerPadding.top.replace(/\d+/g, "");
+  const leftUnit = containerPadding.left.replace(/\d+/g, "");
+  const bottomUnit = containerPadding.bottom.replace(/\d+/g, "");
+  const rightUnit = containerPadding.right.replace(/\d+/g, "");
+
+  // Restrict maximum value for % and vw units
+  const enforceMaxValue = (newUnit, valueNumber) => {
+    if (["%", "vw"].includes(newUnit) && valueNumber > 100) {
+      return 100;
+    }
+    return valueNumber;
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Padding", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Use global padding", "caledros-basic-blocks"),
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("This option applies predefined padding to the right and left sides of the block, ensuring consistency across the entire site. To adjust this padding, navigate to the Layout section in the Full Site Editor.", "caledros-basic-blocks"),
+      checked: containerPadding.useGlobalPadding,
+      onChange: newValue => {
+        setAttributes({
+          containerPadding: {
+            ...containerPadding,
+            useGlobalPadding: newValue
+          }
+        });
+      }
+    }), !containerPadding.useGlobalPadding && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable different paddings", "caledros-basic-blocks"),
+      checked: containerPadding.differentPaddingsEnabled,
+      onChange: newPadding => {
+        setAttributes({
+          containerPadding: {
+            ...containerPadding,
+            differentPaddingsEnabled: newPadding
+          }
+        });
+      }
+    }), !containerPadding.differentPaddingsEnabled && !containerPadding.useGlobalPadding && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "cbb-editor__grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the padding (${topUnit}) for the container`, "caledros-basic-blocks"),
+        value: topPadding,
+        max: ["%", "vw"].includes(topUnit) ? 100 : 500,
+        min: 0,
+        step: 1,
+        onChange: newPadding => {
+          setAttributes({
+            containerPadding: {
+              ...containerPadding,
+              top: `${newPadding}${topUnit}`
+            }
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        value: topUnit,
+        options: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "%",
+          value: "%"
+        }, {
+          label: "em",
+          value: "em"
+        }, {
+          label: "rem",
+          value: "rem"
+        }, {
+          label: "vw",
+          value: "vw"
+        }],
+        onChange: newUnit => {
+          setAttributes({
+            containerPadding: {
+              ...containerPadding,
+              top: `${enforceMaxValue(newUnit, topPadding)}${newUnit}`
+            }
+          });
+        }
+      })]
+    }), containerPadding.differentPaddingsEnabled && !containerPadding.useGlobalPadding && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the top padding (${topUnit}) for the container`, "caledros-basic-blocks"),
+          value: topPadding,
+          max: ["%", "vw"].includes(topUnit) ? 100 : 500,
+          min: 0,
+          step: 1,
+          onChange: newPadding => {
+            setAttributes({
+              containerPadding: {
+                ...containerPadding,
+                top: `${newPadding}${topUnit}`
+              }
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: topUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }, {
+            label: "em",
+            value: "em"
+          }, {
+            label: "rem",
+            value: "rem"
+          }, {
+            label: "vw",
+            value: "vw"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerPadding: {
+                ...containerPadding,
+                top: `${enforceMaxValue(newUnit, topPadding)}${newUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the right padding (${rightUnit}) for the container`, "caledros-basic-blocks"),
+          value: rightPadding,
+          max: ["%", "vw"].includes(rightUnit) ? 100 : 500,
+          min: 0,
+          step: 1,
+          onChange: newPadding => {
+            setAttributes({
+              containerPadding: {
+                ...containerPadding,
+                right: `${newPadding}${rightUnit}`
+              }
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: rightUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }, {
+            label: "em",
+            value: "em"
+          }, {
+            label: "rem",
+            value: "rem"
+          }, {
+            label: "vw",
+            value: "vw"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerPadding: {
+                ...containerPadding,
+                right: `${enforceMaxValue(newUnit, rightPadding)}${newUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the bottom padding (${bottomUnit}) for the container`, "caledros-basic-blocks"),
+          value: bottomPadding,
+          max: ["%", "vw"].includes(bottomUnit) ? 100 : 500,
+          min: 0,
+          step: 1,
+          onChange: newPadding => {
+            setAttributes({
+              containerPadding: {
+                ...containerPadding,
+                bottom: `${newPadding}${bottomUnit}`
+              }
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: bottomUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }, {
+            label: "em",
+            value: "em"
+          }, {
+            label: "rem",
+            value: "rem"
+          }, {
+            label: "vw",
+            value: "vw"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerPadding: {
+                ...containerPadding,
+                bottom: `${enforceMaxValue(newUnit, bottomPadding)}${newUnit}`
+              }
+            });
+          }
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "cbb-editor__grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the left padding (${leftUnit}) for the container`, "caledros-basic-blocks"),
+          value: leftPadding,
+          max: ["%", "vw"].includes(leftUnit) ? 100 : 500,
+          min: 0,
+          step: 1,
+          onChange: newPadding => {
+            setAttributes({
+              containerPadding: {
+                ...containerPadding,
+                left: `${newPadding}${leftUnit}`
+              }
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          __next40pxDefaultSize: true,
+          __nextHasNoMarginBottom: true,
+          value: leftUnit,
+          options: [{
+            label: "px",
+            value: "px"
+          }, {
+            label: "%",
+            value: "%"
+          }, {
+            label: "em",
+            value: "em"
+          }, {
+            label: "rem",
+            value: "rem"
+          }, {
+            label: "vw",
+            value: "vw"
+          }],
+          onChange: newUnit => {
+            setAttributes({
+              containerPadding: {
+                ...containerPadding,
+                left: `${enforceMaxValue(newUnit, leftPadding)}${newUnit}`
+              }
+            });
+          }
+        })]
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/row-gap-settings.js":
+/*!****************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/row-gap-settings.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RowGapSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+function RowGapSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerRowGap
+  } = attributes;
+  const [useNormalRowGap, setUseNormalRowGap] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(containerRowGap === "normal" ? true : false);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Row gap", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Use normal row gap (default value)", "caledros-basic-blocks"),
+      checked: useNormalRowGap,
+      onChange: () => {
+        let temporalValue = useNormalRowGap ? "0" : "normal";
+        setUseNormalRowGap(oldValue => !oldValue);
+        setAttributes({
+          containerRowGap: temporalValue
+        });
+      }
+    }), !useNormalRowGap && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Please select the row gap (px) for the grid container.", "caledros-basic-blocks"),
+      value: isNaN(parseInt(containerRowGap)) ? 0 : parseInt(containerRowGap),
+      max: 200,
+      min: 0,
+      step: 1,
+      onChange: newRowGap => setAttributes({
+        containerRowGap: `${newRowGap}px`
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/settings/width-settings.js":
+/*!**************************************************************!*\
+  !*** ./src/blocks/grid-container/settings/width-settings.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ WidthSettings)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+
+
+
+function WidthSettings({
+  attributes,
+  setAttributes
+}) {
+  const {
+    containerWidth
+  } = attributes;
+
+  // Recover the unit used in the width
+  const unit = containerWidth.replace(/\d+/g, "") || "px";
+  const widthUnit = ["px", "%", "em", "rem", "vw"].includes(unit) ? unit : "px";
+
+  // Recover the numeric value of the width
+  const widthNumber = parseInt(containerWidth) || 0;
+  const [useCustomWidth, setUseCustomWidth] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(containerWidth === "100%" || containerWidth === "var(--wp--style--global--content-size)" || containerWidth === "var(--wp--style--global--wide-size)" ? false : true);
+
+  // Retrieve settings for the block
+  const themeSettings = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useSettings)("layout.contentSize", "layout.wideSize") || [];
+  const [layoutContentSize = "620px", layoutWideSize = "1280px"] = themeSettings;
+
+  // Restrict maximum value for % and vw units
+  const enforceMaxValue = (newUnit, valueNumber) => {
+    if (["%", "vw"].includes(newUnit) && valueNumber > 100) {
+      return 100;
+    }
+    return valueNumber;
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Width", "caledros-basic-blocks"),
+    initialOpen: false,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      __nextHasNoMarginBottom: true,
+      label: "Use custom width",
+      checked: useCustomWidth,
+      onChange: () => setUseCustomWidth(oldUseCustomWidth => !oldUseCustomWidth)
+    }), !useCustomWidth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the max width for the container.", "caledros-basic-blocks"),
+      value: containerWidth === "100%" || containerWidth === "var(--wp--style--global--content-size)" || containerWidth === "var(--wp--style--global--wide-size)" ? containerWidth : "",
+      options: [{
+        disabled: true,
+        label: "Select an option",
+        value: ""
+      }, {
+        label: "Full width",
+        value: "100%"
+      }, {
+        label: `Content size (${layoutContentSize})`,
+        value: "var(--wp--style--global--content-size)"
+      }, {
+        label: `Wide size (${layoutWideSize})`,
+        value: "var(--wp--style--global--wide-size)"
+      }],
+      onChange: newWidth => {
+        setAttributes({
+          containerWidth: newWidth
+        });
+      }
+    }), useCustomWidth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "cbb-editor__grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(`Please select the custom width (${widthUnit}) for the container.`, "caledros-basic-blocks"),
+        value: containerWidth === "var(--wp--style--global--content-size)" || containerWidth === "var(--wp--style--global--wide-size)" ? 0 : parseInt(containerWidth),
+        max: ["%", "vw"].includes(widthUnit) ? 100 : 3000,
+        min: 0,
+        step: 1,
+        onChange: newWidth => {
+          setAttributes({
+            containerWidth: `${newWidth}${widthUnit}`
+          });
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        __next40pxDefaultSize: true,
+        __nextHasNoMarginBottom: true,
+        value: widthUnit,
+        options: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "%",
+          value: "%"
+        }, {
+          label: "em",
+          value: "em"
+        }, {
+          label: "rem",
+          value: "rem"
+        }, {
+          label: "vw",
+          value: "vw"
+        }],
+        onChange: newUnit => {
+          setAttributes({
+            containerWidth: `${enforceMaxValue(newUnit, widthNumber)}${newUnit}`
+          });
+        }
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/grid-container/style.css":
+/*!*********************************************!*\
+  !*** ./src/blocks/grid-container/style.css ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["data"];
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"blocks/grid-container/index": 0,
+/******/ 			"blocks/grid-container/style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkcaledros_basic_blocks"] = globalThis["webpackChunkcaledros_basic_blocks"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/grid-container/style-index"], () => (__webpack_require__("./src/blocks/grid-container/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

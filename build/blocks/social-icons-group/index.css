@@ -1,1 +1,15 @@
-.cbb-social-icons-group>.block-editor-inner-blocks>.block-editor-block-list__layout{align-items:center;display:flex;flex-direction:row;gap:var(--cbb-icon-group-gap,5px);justify-content:var(--cbb-icon-group-justify-content,center)}
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/blocks/social-icons-group/editor.css ***!
+  \**********************************************************************************************************************************************************************************************/
+.cbb-social-icons-group
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: var(--cbb-icon-group-justify-content, center);
+  align-items: center;
+  gap: var(--cbb-icon-group-gap, 5px);
+}
+
+
+/*# sourceMappingURL=index.css.map*/
