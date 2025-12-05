@@ -23,7 +23,7 @@ import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
 export default function ImagesSettings({ attributes, setAttributes }) {
-  const { images } = attributes;
+  const { images, enableLoop, galleryEffect } = attributes;
 
   // Functions
   const onSelectImages = (newImages) => {
@@ -33,6 +33,9 @@ export default function ImagesSettings({ attributes, setAttributes }) {
         url: image.url,
         alt: image.alt,
       })),
+      ...(newImages.length < 3 &&
+        enableLoop &&
+        galleryEffect === "coverflow" && { enableLoop: false }),
     });
   };
 

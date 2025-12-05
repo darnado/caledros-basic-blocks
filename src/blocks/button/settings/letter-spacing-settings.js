@@ -98,6 +98,7 @@ export default function LetterSpacingSettings({ attributes, setAttributes }) {
           />
           <SelectControl
             __nextHasNoMarginBottom
+            __next40pxDefaultSize
             value={letterSpacingUnit}
             options={[
               {

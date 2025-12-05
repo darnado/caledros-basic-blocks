@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Add form fields for selecting the category image (ID, URL)
 // Add category image form field
-function add_category_image_field() {    
+function caledros_basic_blocks_add_category_image_field() {    
     wp_enqueue_media();
     ?>
     <div class="form-field">
@@ -53,7 +53,7 @@ function caledros_basic_blocks_add_category_image_script($hook) {
 add_action('admin_enqueue_scripts', 'caledros_basic_blocks_add_category_image_script');
 
 // Edit category image form field
-function edit_category_image_field($term) { 
+function caledros_basic_blocks_edit_category_image_field($term) { 
     // Category image id      
     $category_image_raw = get_term_meta($term->term_id, 'category_image', true);
     $category_image = intval($category_image_raw); // Sanitize: force to integer (safe to store or use)
@@ -96,12 +96,12 @@ function caledros_basic_blocks_edit_category_image_script($hook) {
 add_action('admin_enqueue_scripts', 'caledros_basic_blocks_edit_category_image_script');
 
 // Run functions for adding the category image field to the add and edit forms 
-add_action('category_add_form_fields', 'add_category_image_field');
-add_action('category_edit_form_fields', 'edit_category_image_field');
+add_action('category_add_form_fields', 'caledros_basic_blocks_add_category_image_field');
+add_action('category_edit_form_fields', 'caledros_basic_blocks_edit_category_image_field');
 
 // Add alt text fields
 // Alt text field when adding a new category
-function add_alt_text_category_image(){
+function caledros_basic_blocks_add_alt_text_category_image(){
     ?>
     <div class="form-field">
         <label for="alt-text-category-image"><?php esc_html_e("Alt text", "caledros-basic-blocks");?></label>
@@ -113,7 +113,7 @@ function add_alt_text_category_image(){
 }
 
 // Alt text field when editing an existing category
-function edit_alt_text_category_image($term){    
+function caledros_basic_blocks_edit_alt_text_category_image($term){    
     $alt_text_category_image = get_term_meta($term->term_id, 'alt_text_category_image', true);
     $alt_text_category_image = sanitize_text_field($alt_text_category_image); // Sanitize: remove unwanted characters. Validation is not critical, as alt text is free-form
     ?>
@@ -129,11 +129,11 @@ function edit_alt_text_category_image($term){
 }
 
 // Run functions for adding the alt text fields to the add and edit category forms
-add_action('category_add_form_fields', 'add_alt_text_category_image');
-add_action('category_edit_form_fields', 'edit_alt_text_category_image');
+add_action('category_add_form_fields', 'caledros_basic_blocks_add_alt_text_category_image');
+add_action('category_edit_form_fields', 'caledros_basic_blocks_edit_alt_text_category_image');
 
 // Function for saving the category image (includes image ID, alt text, and image URL) 
-function save_category_image($term_id) {
+function caledros_basic_blocks_save_category_image($term_id) {
     // Verify category image (ID, URL) nonce
     if (!isset($_POST['category_image_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['category_image_nonce'])), 'save_category_image_action')) { 
         return; 
@@ -166,8 +166,8 @@ function save_category_image($term_id) {
 }
 
 // Run function for saving the category image (includes image ID, alt text, and image URL) 
-add_action('created_category', 'save_category_image');
-add_action('edited_category', 'save_category_image');
+add_action('created_category', 'caledros_basic_blocks_save_category_image');
+add_action('edited_category', 'caledros_basic_blocks_save_category_image');
 
 // Register new meta data for the categories
 add_action('init', function() {
