@@ -12110,8 +12110,27 @@ function EffectSettings({
   setAttributes
 }) {
   const {
-    galleryEffect
+    galleryEffect,
+    images,
+    enableLoop
   } = attributes;
+  const defaultOptions = [{
+    label: "None",
+    value: "none"
+  }, {
+    label: "Fade",
+    value: "fade"
+  }, {
+    label: "Coverflow",
+    value: "coverflow"
+  }];
+  const coverflowLoopTwoImgOptions = [{
+    label: "None",
+    value: "none"
+  }, {
+    label: "Fade",
+    value: "fade"
+  }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Effect", "caledros-basic-blocks"),
     initialOpen: false,
@@ -12120,19 +12139,13 @@ function EffectSettings({
       __nextHasNoMarginBottom: true,
       help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the effect for the gallery.", "caledros-basic-blocks"),
       value: galleryEffect,
-      options: [{
-        label: "None",
-        value: "none"
-      }, {
-        label: "Fade",
-        value: "fade"
-      }, {
-        label: "Coverflow",
-        value: "coverflow"
-      }],
+      options: enableLoop && images.length < 3 ? coverflowLoopTwoImgOptions : defaultOptions,
       onChange: newValue => {
         setAttributes({
-          galleryEffect: newValue
+          galleryEffect: newValue,
+          ...(newValue === "coverflow" && enableLoop && images.length < 3 && {
+            enableLoop: false
+          })
         });
       }
     })
@@ -12253,7 +12266,9 @@ function ImagesSettings({
   setAttributes
 }) {
   const {
-    images
+    images,
+    enableLoop,
+    galleryEffect
   } = attributes;
 
   // Functions
@@ -12263,7 +12278,10 @@ function ImagesSettings({
         id: image.id,
         url: image.url,
         alt: image.alt
-      }))
+      })),
+      ...(newImages.length < 3 && enableLoop && galleryEffect === "coverflow" && {
+        enableLoop: false
+      })
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
@@ -12451,7 +12469,9 @@ function LoopSettings({
   setAttributes
 }) {
   const {
-    enableLoop
+    enableLoop,
+    galleryEffect,
+    images
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Loop", "caledros-basic-blocks"),
@@ -12459,6 +12479,7 @@ function LoopSettings({
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
       __nextHasNoMarginBottom: true,
       checked: enableLoop,
+      disabled: galleryEffect === "coverflow" && images.length < 3,
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable loop", "caledros-basic-blocks"),
       help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable the continuous loop mode.", "caledros-basic-blocks"),
       onChange: newValue => {
