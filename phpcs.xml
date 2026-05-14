@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<ruleset name="Caledros Basic Blocks">
+    <description>Coding standards for the Caledros Basic Blocks plugin.</description>
+
+    <!-- What to scan -->
+    <file>.</file>
+
+    <!-- What to skip -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern>*.min.js</exclude-pattern>
+    <exclude-pattern>*.asset.php</exclude-pattern>
+
+    <!-- CLI arguments -->
+    <arg value="sp"/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="8"/>
+
+    <!-- PHP version compatibility -->
+    <config name="testVersion" value="8.3-"/>
+
+    <!-- Minimum WordPress version supported -->
+    <config name="minimum_supported_wp_version" value="6.9"/>
+
+    <!-- Apply the full WordPress ruleset -->
+    <rule ref="WordPress">
+        <exclude name="WordPress.Files.FileName"/>
+    </rule>
+
+    <!-- Text domain check -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="caledros-basic-blocks"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Prefix check for global functions, classes, constants, hooks -->
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="caledros_basic_blocks"/>
+                <element value="CALEDROS_BASIC_BLOCKS_BASE_FOLDER"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>
