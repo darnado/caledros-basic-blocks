@@ -19,6 +19,10 @@
  */
 
 /*Flex container*/
+.cbb-flex-container {
+  border-style: none;
+}
+
 .cbb-flex-container
   > .block-editor-inner-blocks
   > .block-editor-block-list__layout {

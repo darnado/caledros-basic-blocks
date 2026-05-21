@@ -1,1 +1,86 @@
-.lazy-image{background-color:var(--lazy-loading-overlay-color,#00000000);display:block;filter:blur(10px);opacity:0;transition:opacity .5s ease,filter .5s ease}.lazy-image:not([src=""]){filter:blur(0);opacity:1}.cbb-resp-img img{max-width:100%}.cbb-resp-img{align-items:center;display:flex;flex-direction:column;justify-content:center;margin:0}.cbb-resp-img.inset-shadow{position:relative}.cbb-resp-img.inset-shadow:after{border-radius:var(--inset-border-radius,0);bottom:0;box-shadow:var(--inset-box-shadow,0 0 0 0 #00000000);content:"";right:0;position:absolute;left:0;top:0}.cbb-resp-img.inset-shadow:after,.cbb-resp-img__link{display:block;height:100%;width:100%}
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/blocks/responsive-image/style.css ***!
+  \*******************************************************************************************************************************************************************************************/
+/*
+ * Caledros Basic Blocks - Easy to use Gutenberg blocks
+ * Copyright (C) 2025  David Arnado
+ * 
+ * This file is part of Caledros Basic Blocks.
+ * 
+ * Caledros Basic Blocks is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * Caledros Basic Blocks is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License along
+ * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
+ */
+
+/* Initial styling for lazy-loaded images */
+
+.lazy-image {
+  display: block;
+  background-color: var(--lazy-loading-overlay-color, #00000000);
+  filter: blur(10px);
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    filter 0.5s ease;
+}
+
+/* Remove blur and set opacity to 1 when image is loaded */
+
+.lazy-image:not([src=""]) {
+  filter: blur(0);
+  opacity: 1;
+}
+
+/* Max width for the image */
+
+.cbb-resp-img img {
+  max-width: 100%;
+}
+
+/*Remove default margins for the figure element*/
+
+.cbb-resp-img {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Inset shadow*/
+
+.cbb-resp-img.inset-shadow {
+  position: relative;
+}
+
+.cbb-resp-img.inset-shadow::after {
+  box-shadow: var(--inset-box-shadow, 0px 0px 0px 0px #00000000);
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  border-radius: var(--inset-border-radius, 0px);
+}
+
+/*Image link*/
+
+.cbb-resp-img__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
