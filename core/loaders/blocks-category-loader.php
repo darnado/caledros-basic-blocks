@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * hooked to the 'block_categories_all' filter.
  *
  * @param array $caledros_basic_blocks_category Block category list.
- * @return array    Updated block category list.
+ * @return array Updated block category list.
  */
 function caledros_basic_blocks_category_loader( $caledros_basic_blocks_category ) {
 	array_unshift(

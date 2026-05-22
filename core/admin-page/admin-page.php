@@ -87,7 +87,7 @@ add_action( 'admin_init', 'caledros_basic_blocks_register_settings' );
  *
  * @param string $input The option checkbox value.
  *
- * @return integer  The setting value ready to be registered.
+ * @return integer The setting value ready to be registered.
  */
 function caledros_basic_blocks_sanitize_enable_preload( $input ) {
 	return ( '1' === $input ) ? 1 : 0;
@@ -102,7 +102,7 @@ function caledros_basic_blocks_sanitize_enable_preload( $input ) {
  *
  * @param string $input The option checkbox value.
  *
- * @return integer  The setting value ready to be registered.
+ * @return integer The setting value ready to be registered.
  */
 function caledros_basic_blocks_sanitize_add_column_layout_to_wp_site_blocks( $input ) {
 	return ( '1' === $input ) ? 1 : 0;
@@ -117,7 +117,7 @@ function caledros_basic_blocks_sanitize_add_column_layout_to_wp_site_blocks( $in
  *
  * @param string $input The option checkbox value.
  *
- * @return integer  The setting value ready to be registered.
+ * @return integer The setting value ready to be registered.
  */
 function caledros_basic_blocks_sanitize_set_custom_height_to_wp_site_blocks( $input ) {
 	return ( '1' === $input ) ? 1 : 0;
