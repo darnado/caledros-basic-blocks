@@ -1,13 +1,19 @@
 <?php
+/**
+ * Manages custom editor sidebar
+ *
+ * @package Caledros_Basic_Blocks
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 /**
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
- * 
+ * Copyright (C) 2025-2026  David Arnado
+ *
  * This file is part of Caledros Basic Blocks.
- * 
+ *
  * Caledros Basic Blocks is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -22,20 +28,36 @@ if ( ! defined( 'ABSPATH' ) ) {
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
+/**
+ * Register plugin sidebar
+ *
+ * Registers the JS file (sidebar script) responsible for managing the plugin sidebar.
+ * This is an editor sidebar responsible for switching between dark and light mode.
+ * Hooked to 'init'.
+ *
+ * @return void
+ */
 function caledros_basic_blocks_plugin_sidebar() {
-    wp_register_script(
-        'cbb-plugin-editor-sidebar',
-        plugins_url('plugin-sidebar/build/index.js', dirname(__DIR__)),
-        array( 'wp-editor', 'wp-components', "wp-element", "wp-i18n" ),
-        "1.0",
-        array('strategy' => 'defer')
-    );
+	wp_register_script(
+		'cbb-plugin-editor-sidebar',
+		plugins_url( 'plugin-sidebar/build/index.js', dirname( __DIR__ ) ),
+		array( 'wp-editor', 'wp-components', 'wp-element', 'wp-i18n' ),
+		'1.0',
+		array( 'strategy' => 'defer' )
+	);
 }
 add_action( 'init', 'caledros_basic_blocks_plugin_sidebar' );
 
+/**
+ * Enqueue plugin sidebar
+ *
+ * Loads the plugin sidebar script. Hooked to 'enqueue_block_editor_assets'.
+ *
+ * @return void
+ */
 function caledros_basic_blocks_plugin_sidebar_enqueue() {
-    if ( is_admin() ){
-        wp_enqueue_script( 'cbb-plugin-editor-sidebar' );
-    }    
+	if ( is_admin() ) {
+		wp_enqueue_script( 'cbb-plugin-editor-sidebar' );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'caledros_basic_blocks_plugin_sidebar_enqueue' );
