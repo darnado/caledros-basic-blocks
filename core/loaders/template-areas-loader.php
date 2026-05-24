@@ -1,13 +1,19 @@
 <?php
+/**
+ * Loads custom template areas
+ *
+ * @package Caledros_Basic_Blocks
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 /**
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
- * 
+ * Copyright (C) 2025-2026  David Arnado
+ *
  * This file is part of Caledros Basic Blocks.
- * 
+ *
  * Caledros Basic Blocks is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -22,6 +28,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
+/**
+ * Loads Mega Menu Template Area
+ *
+ * Hooked to the 'default_wp_template_part_areas' filter.
+ *
+ * @param array $areas Current list of template areas.
+ * @return array    Updated list of available template areas including the Mega
+ *                  Menu Template Area
+ */
 function caledros_basic_blocks_mega_menu_template_area( array $areas ) {
 	$areas[] = array(
 		'area'        => 'mega-menu',
@@ -35,6 +50,15 @@ function caledros_basic_blocks_mega_menu_template_area( array $areas ) {
 }
 add_filter( 'default_wp_template_part_areas', 'caledros_basic_blocks_mega_menu_template_area' );
 
+/**
+ * Loads Sidebar Menu Template Area
+ *
+ * Hooked to the 'default_wp_template_part_areas' filter.
+ *
+ * @param array $areas Current list of template areas.
+ * @return array    Updated list of available template areas including the Sidebar Menu
+ *                  Template Area.
+ */
 function caledros_basic_blocks_sidebar_menu_template_area( array $areas ) {
 	$areas[] = array(
 		'area'        => 'sidebar-menu',
@@ -48,6 +72,15 @@ function caledros_basic_blocks_sidebar_menu_template_area( array $areas ) {
 }
 add_filter( 'default_wp_template_part_areas', 'caledros_basic_blocks_sidebar_menu_template_area' );
 
+/**
+ * Loads Slider Card Template Area
+ *
+ * Hooked to the 'default_wp_template_part_areas' filter.
+ *
+ * @param array $areas Current list of template areas.
+ * @return array    Updated list of available template areas including the Slider Card
+ *                  Template Area.
+ */
 function caledros_basic_blocks_slider_card_template_area( array $areas ) {
 	$areas[] = array(
 		'area'        => 'slider-card',
