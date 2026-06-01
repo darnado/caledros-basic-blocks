@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,60 +18,66 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function FontStyleSettings({
-  attributes,
-  setAttributes,
-  getAvailableFontStyles,
-  getAvailableFontWeights,
-  doesFontExist,
-}) {
-  const { buttonFontFamily, buttonFontStyle, buttonFontWeight } = attributes;
+export default function FontStyleSettings( {
+	attributes,
+	setAttributes,
+	getAvailableFontStyles,
+	getAvailableFontWeights,
+	doesFontExist,
+} ) {
+	const { buttonFontFamily, buttonFontStyle, buttonFontWeight } = attributes;
 
-  // Default font styles
-  const defaultFontStyles = [
-    { label: "Normal", value: "normal" },
-    { label: "Italic", value: "italic" },
-  ];
+	// Default font styles
+	const defaultFontStyles = [
+		{ label: 'Normal', value: 'normal' },
+		{ label: 'Italic', value: 'italic' },
+	];
 
-  // Create options array for the controller
-  const fontStyleOptions = getAvailableFontStyles(buttonFontFamily)?.map(
-    (styleValue) => {
-      return {
-        label: `${styleValue[0].toUpperCase()}${styleValue.slice(1)}`,
-        value: `${styleValue}`,
-      };
-    }
-  );
+	// Create options array for the controller
+	const fontStyleOptions = getAvailableFontStyles( buttonFontFamily )?.map(
+		( styleValue ) => {
+			return {
+				label: `${ styleValue[ 0 ].toUpperCase() }${ styleValue.slice(
+					1
+				) }`,
+				value: `${ styleValue }`,
+			};
+		}
+	);
 
-  return (
-    <SelectControl
-      __next40pxDefaultSize
-      __nextHasNoMarginBottom
-      help={__("Select the font style.", "caledros-basic-blocks")}
-      value={buttonFontStyle}
-      options={
-        fontStyleOptions.length === 0 ? defaultFontStyles : fontStyleOptions
-      }
-      onChange={(newFontStyle) => {
-        const availableFontWeights = doesFontExist(buttonFontFamily)
-          ? getAvailableFontWeights(buttonFontFamily, newFontStyle)
-          : [];
+	return (
+		<SelectControl
+			__next40pxDefaultSize
+			__nextHasNoMarginBottom
+			help={ __( 'Select the font style.', 'caledros-basic-blocks' ) }
+			value={ buttonFontStyle }
+			options={
+				fontStyleOptions.length === 0
+					? defaultFontStyles
+					: fontStyleOptions
+			}
+			onChange={ ( newFontStyle ) => {
+				const availableFontWeights = doesFontExist( buttonFontFamily )
+					? getAvailableFontWeights( buttonFontFamily, newFontStyle )
+					: [];
 
-        const newFontWeight = availableFontWeights.includes(buttonFontWeight)
-          ? buttonFontWeight
-          : availableFontWeights[0];
+				const newFontWeight = availableFontWeights.includes(
+					buttonFontWeight
+				)
+					? buttonFontWeight
+					: availableFontWeights[ 0 ];
 
-        setAttributes({
-          buttonFontStyle: newFontStyle,
-          ...(doesFontExist(buttonFontFamily) &&
-            buttonFontWeight !== newFontWeight && {
-              buttonFontWeight: newFontWeight,
-            }),
-        });
-      }}
-    />
-  );
+				setAttributes( {
+					buttonFontStyle: newFontStyle,
+					...( doesFontExist( buttonFontFamily ) &&
+						buttonFontWeight !== newFontWeight && {
+							buttonFontWeight: newFontWeight,
+						} ),
+				} );
+			} }
+		/>
+	);
 }

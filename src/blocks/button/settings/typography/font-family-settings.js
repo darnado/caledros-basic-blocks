@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,74 +18,78 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function FontFamilySettings({
-  attributes,
-  setAttributes,
-  registeredFonts,
-  getAvailableFontStyles,
-  getAvailableFontWeights,
-  doesFontExist,
-}) {
-  const { buttonFontFamily, buttonFontWeight, buttonFontStyle } = attributes;
+export default function FontFamilySettings( {
+	attributes,
+	setAttributes,
+	registeredFonts,
+	getAvailableFontStyles,
+	getAvailableFontWeights,
+	doesFontExist,
+} ) {
+	const { buttonFontFamily, buttonFontWeight, buttonFontStyle } = attributes;
 
-  // Recover theme fonts and custom fonts
-  const themeFonts =
-    registeredFonts?.theme?.map((font) => {
-      return { label: font.name, value: font.slug };
-    }) || [];
+	// Recover theme fonts and custom fonts
+	const themeFonts =
+		registeredFonts?.theme?.map( ( font ) => {
+			return { label: font.name, value: font.slug };
+		} ) || [];
 
-  const customFonts =
-    registeredFonts?.custom?.map((font) => {
-      return { label: font?.name, value: font?.slug };
-    }) || [];
+	const customFonts =
+		registeredFonts?.custom?.map( ( font ) => {
+			return { label: font?.name, value: font?.slug };
+		} ) || [];
 
-  const fontOptions = [
-    { label: "Default", value: "" },
-    ...(themeFonts.length !== 0 ? themeFonts : []),
-    ...(customFonts && customFonts?.length !== 0 ? customFonts : []),
-  ];
+	const fontOptions = [
+		{ label: 'Default', value: '' },
+		...( themeFonts.length !== 0 ? themeFonts : [] ),
+		...( customFonts && customFonts?.length !== 0 ? customFonts : [] ),
+	];
 
-  return (
-    <SelectControl
-      __next40pxDefaultSize
-      __nextHasNoMarginBottom
-      help={__("Select the font family.", "caledros-basic-blocks")}
-      value={buttonFontFamily}
-      options={fontOptions}
-      onChange={(newFontFamily) => {
-        // Compute available font styles for the new font family and update if necessary
-        const availableFontStyles = doesFontExist(newFontFamily)
-          ? getAvailableFontStyles(newFontFamily)
-          : [];
+	return (
+		<SelectControl
+			__next40pxDefaultSize
+			__nextHasNoMarginBottom
+			help={ __( 'Select the font family.', 'caledros-basic-blocks' ) }
+			value={ buttonFontFamily }
+			options={ fontOptions }
+			onChange={ ( newFontFamily ) => {
+				// Compute available font styles for the new font family and update if necessary
+				const availableFontStyles = doesFontExist( newFontFamily )
+					? getAvailableFontStyles( newFontFamily )
+					: [];
 
-        const newFontStyle = availableFontStyles.includes(buttonFontStyle)
-          ? buttonFontStyle
-          : availableFontStyles[0];
+				const newFontStyle = availableFontStyles.includes(
+					buttonFontStyle
+				)
+					? buttonFontStyle
+					: availableFontStyles[ 0 ];
 
-        // Compute available font weights for the new font family and update if necessary
-        const availableFontWeights = doesFontExist(newFontFamily)
-          ? getAvailableFontWeights(newFontFamily, newFontStyle)
-          : [];
+				// Compute available font weights for the new font family and update if necessary
+				const availableFontWeights = doesFontExist( newFontFamily )
+					? getAvailableFontWeights( newFontFamily, newFontStyle )
+					: [];
 
-        const newFontWeight = availableFontWeights.includes(buttonFontWeight)
-          ? buttonFontWeight
-          : availableFontWeights[0];
+				const newFontWeight = availableFontWeights.includes(
+					buttonFontWeight
+				)
+					? buttonFontWeight
+					: availableFontWeights[ 0 ];
 
-        setAttributes({
-          buttonFontFamily: newFontFamily,
-          ...(doesFontExist(newFontFamily) &&
-            newFontStyle !== buttonFontStyle && {
-              buttonFontStyle: newFontStyle,
-            }),
-          ...(doesFontExist(newFontFamily) &&
-            newFontWeight !== buttonFontWeight && {
-              buttonFontWeight: newFontWeight,
-            }),
-        });
-      }}
-    />
-  );
+				setAttributes( {
+					buttonFontFamily: newFontFamily,
+					...( doesFontExist( newFontFamily ) &&
+						newFontStyle !== buttonFontStyle && {
+							buttonFontStyle: newFontStyle,
+						} ),
+					...( doesFontExist( newFontFamily ) &&
+						newFontWeight !== buttonFontWeight && {
+							buttonFontWeight: newFontWeight,
+						} ),
+				} );
+			} }
+		/>
+	);
 }
