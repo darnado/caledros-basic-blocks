@@ -1,1 +1,0 @@
-import{getContext as e,store as i}from"@wordpress/interactivity";i("mobile-overlay",{actions:{click:()=>{const i=e();i.visible=!i.visible;const s=document.querySelector("body");i.visible?s.classList.add("visible-overlay"):s.classList.remove("visible-overlay")}}});
