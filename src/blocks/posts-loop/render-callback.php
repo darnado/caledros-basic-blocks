@@ -144,7 +144,7 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 				$cat_id           = $current_category->term_id;
 				$args['cat']      = $cat_id;
 			}
-			if ( 'category-template' !== $category_filter_enabled && $page_type ) {
+			if ( $category_filter_enabled && 'category-template' !== $page_type ) {
 				$args['category__in'] = array( $category_id );
 			}
 			if ( 'tag-template' === $page_type && is_tag() ) {
