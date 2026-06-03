@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,34 +18,40 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function ShowUncategorizedCategorySettings({
-  attributes,
-  setAttributes,
-}) {
-  const { showUncategorizedCategory } = attributes;
+export default function ShowUncategorizedCategorySettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { showUncategorizedCategory } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Show uncategorized category", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Show uncategorized category", "caledros-basic-blocks")}
-        help={__(
-          "Display the uncategorized category.",
-          "caledros-basic-blocks"
-        )}
-        checked={showUncategorizedCategory}
-        onChange={(newValue) => {
-          setAttributes({
-            showUncategorizedCategory: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __(
+				'Show uncategorized category',
+				'caledros-basic-blocks'
+			) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __(
+					'Show uncategorized category',
+					'caledros-basic-blocks'
+				) }
+				help={ __(
+					'Display the uncategorized category.',
+					'caledros-basic-blocks'
+				) }
+				checked={ showUncategorizedCategory }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						showUncategorizedCategory: newValue,
+					} );
+				} }
+			/>
+		</PanelBody>
+	);
 }

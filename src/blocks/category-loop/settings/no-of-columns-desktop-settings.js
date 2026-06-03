@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,56 +18,65 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function NumberOfColumnsDesktopSettings({
-  attributes,
-  setAttributes,
-}) {
-  const { columnNoDesktop } = attributes;
+export default function NumberOfColumnsDesktopSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { columnNoDesktop } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Number of columns (desktop)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable custom columns number", "caledros-basic-blocks")}
-        help={__(
-          "Use a custom number of columns for desktop screens. If this option is not enabled, the default value is 4 columns.",
-          "caledros-basic-blocks"
-        )}
-        checked={columnNoDesktop.enableCustomValue}
-        onChange={(newValue) => {
-          setAttributes({
-            columnNoDesktop: {
-              ...columnNoDesktop,
-              enableCustomValue: newValue,
-            },
-          });
-        }}
-      />
-      {columnNoDesktop.enableCustomValue && (
-        <RangeControl
-          __nextHasNoMarginBottom
-          __next40pxDefaultSize
-          help={__(
-            "Please select the number columns for the categories container (desktop screens).",
-            "caledros-basic-blocks"
-          )}
-          value={columnNoDesktop.columnNo}
-          max={6}
-          min={1}
-          step={1}
-          onChange={(newValue) =>
-            setAttributes({
-              columnNoDesktop: { ...columnNoDesktop, columnNo: newValue },
-            })
-          }
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __(
+				'Number of columns (desktop)',
+				'caledros-basic-blocks'
+			) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __(
+					'Enable custom columns number',
+					'caledros-basic-blocks'
+				) }
+				help={ __(
+					'Use a custom number of columns for desktop screens. If this option is not enabled, the default value is 4 columns.',
+					'caledros-basic-blocks'
+				) }
+				checked={ columnNoDesktop.enableCustomValue }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						columnNoDesktop: {
+							...columnNoDesktop,
+							enableCustomValue: newValue,
+						},
+					} );
+				} }
+			/>
+			{ columnNoDesktop.enableCustomValue && (
+				<RangeControl
+					__nextHasNoMarginBottom
+					__next40pxDefaultSize
+					help={ __(
+						'Please select the number columns for the categories container (desktop screens).',
+						'caledros-basic-blocks'
+					) }
+					value={ columnNoDesktop.columnNo }
+					max={ 6 }
+					min={ 1 }
+					step={ 1 }
+					onChange={ ( newValue ) =>
+						setAttributes( {
+							columnNoDesktop: {
+								...columnNoDesktop,
+								columnNo: newValue,
+							},
+						} )
+					}
+				/>
+			) }
+		</PanelBody>
+	);
 }
