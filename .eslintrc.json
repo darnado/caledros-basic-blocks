@@ -1,4 +1,9 @@
 {
     "root": true,
-    "extends": [ "plugin:@wordpress/eslint-plugin/recommended" ]
+    "extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
+    "ignorePatterns": [
+        "node_modules/",
+        "dist/",
+        "build/"
+    ]
 }

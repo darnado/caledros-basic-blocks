@@ -79,7 +79,7 @@ function caledros_basic_blocks_get_demo_category_data( $placeholder_background_u
 					</div>  
 
 					<div class="cbb-categories-loop__img-container">
-						<a class="cbb-categories-loop__img-link" href="#">
+						<div class="cbb-categories-loop__img-link cbb-categories-loop__img-link--demo">
 							<img 
 								src="<?php echo esc_url( $placeholder_background_url ); ?>" 
 								alt="placeholder"
@@ -87,7 +87,7 @@ function caledros_basic_blocks_get_demo_category_data( $placeholder_background_u
 							<span class="cbb-categories-loop__post-title">
 								<?php echo esc_html( $category['title'] ); ?>
 							</span>
-						</a>                       
+						</div>                       
 					</div> 
 
 					<div class="cbb-categories-loop__post-info">

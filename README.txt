@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 7.0
-Stable tag: 3.1.2
+Stable tag: 3.2.0
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -149,6 +149,12 @@ However, other third party plugins can slow down your website if they are used t
 == Changelog ==
 
 This changelog format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Also, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+= 3.2.0 - 2026-06-03 =
+
+** Changed **
+
+* Plugin admin menu's position. Now such menu is located after "Settings" in the WordPress sidebar.
 
 = 3.1.2 - 2026-05-21 =
 
@@ -361,6 +367,9 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 * CSS stylesheet preloader for improved performance. This preloader can be disabled.
 
 == Upgrade Notice ==
+
+= 3.2.0 =
+This update changes the position of the plugin admin menu.
 
 = 3.1.2 =
 This update removes a default border that was being added to the flex and grid blocks in WordPress 7.0.

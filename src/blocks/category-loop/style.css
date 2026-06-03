@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -141,4 +141,9 @@ html[data-theme="dark"] .cbb-categories-loop__title {
 html[data-theme="dark"] .cbb-categories-loop__category,
 html[data-theme="dark"] .cbb-categories-loop__number-of-publications {
   color: var(--wp--preset--color--paragraph-dark, #fff);
+}
+
+/*Demo links*/
+.cbb-categories-loop__img-link--demo {
+  cursor: pointer;
 }
