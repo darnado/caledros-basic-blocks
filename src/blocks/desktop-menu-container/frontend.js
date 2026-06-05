@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -19,19 +19,19 @@
  */
 
 const desktopMenuContainer = document.querySelector(
-  ".cbb-desktop-menu-container"
+	'.cbb-desktop-menu-container'
 );
 const scrollWatcher = document.querySelector(
-  ".cbb-desktop-menu-container__watcher"
+	'.cbb-desktop-menu-container__watcher'
 );
 
-if (scrollWatcher) {
-  const navigationObserver = new IntersectionObserver((entries) => {
-    desktopMenuContainer.classList.toggle(
-      "cbb-desktop-menu-container--sticking-enabled",
-      !entries[0].isIntersecting
-    );
-  });
+if ( scrollWatcher ) {
+	const navigationObserver = new IntersectionObserver( ( entries ) => {
+		desktopMenuContainer.classList.toggle(
+			'cbb-desktop-menu-container--sticking-enabled',
+			! entries[ 0 ].isIntersecting
+		);
+	} );
 
-  navigationObserver.observe(scrollWatcher);
+	navigationObserver.observe( scrollWatcher );
 }
