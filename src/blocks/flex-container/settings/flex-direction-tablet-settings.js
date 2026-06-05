@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,55 +18,55 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function FlexDirectionTabletSettings({
-  attributes,
-  setAttributes,
-}) {
-  const { containerFlexDirection } = attributes;
+export default function FlexDirectionTabletSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { containerFlexDirection } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Flex direction (tablet)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Choose the flex direction for the container (tablet).",
-          "caledros-basic-blocks"
-        )}
-        value={containerFlexDirection.tablet}
-        options={[
-          {
-            label: "Row",
-            value: "row",
-          },
-          {
-            label: "Row reverse",
-            value: "row-reverse",
-          },
-          {
-            label: "Column",
-            value: "column",
-          },
-          {
-            label: "Column reverse",
-            value: "column-reverse",
-          },
-        ]}
-        onChange={(newValue) => {
-          setAttributes({
-            containerFlexDirection: {
-              ...containerFlexDirection,
-              tablet: newValue,
-            },
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Flex direction (tablet)', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={ __(
+					'Choose the flex direction for the container (tablet).',
+					'caledros-basic-blocks'
+				) }
+				value={ containerFlexDirection.tablet }
+				options={ [
+					{
+						label: 'Row',
+						value: 'row',
+					},
+					{
+						label: 'Row reverse',
+						value: 'row-reverse',
+					},
+					{
+						label: 'Column',
+						value: 'column',
+					},
+					{
+						label: 'Column reverse',
+						value: 'column-reverse',
+					},
+				] }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						containerFlexDirection: {
+							...containerFlexDirection,
+							tablet: newValue,
+						},
+					} );
+				} }
+			/>
+		</PanelBody>
+	);
 }
