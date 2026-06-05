@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,82 +18,82 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function JustifyContentMobileSettings({
-  attributes,
-  setAttributes,
-}) {
-  const { containerJustifyContentMobile } = attributes;
+export default function JustifyContentMobileSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { containerJustifyContentMobile } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Justify content (Mobile)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable control", "caledros-basic-blocks")}
-        help={__(
-          "This control enables selecting a custom value for the 'justify content' property in mobile devices.",
-          "caledros-basic-blocks"
-        )}
-        checked={containerJustifyContentMobile.enabled}
-        onChange={(newValue) => {
-          setAttributes({
-            containerJustifyContentMobile: {
-              ...containerJustifyContentMobile,
-              enabled: newValue,
-            },
-          });
-        }}
-      />
-      {containerJustifyContentMobile.enabled && (
-        <SelectControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            "Select the value for the justify content property.",
-            "caledros-basic-blocks"
-          )}
-          value={containerJustifyContentMobile.value}
-          options={[
-            {
-              label: "Flex start (default)",
-              value: "flex-start",
-            },
-            {
-              label: "Flex end",
-              value: "flex-end",
-            },
-            {
-              label: "Center",
-              value: "center",
-            },
-            {
-              label: "Space between",
-              value: "space-between",
-            },
-            {
-              label: "Space around",
-              value: "space-around",
-            },
-            {
-              label: "Space evenly",
-              value: "space-evenly",
-            },
-          ]}
-          onChange={(newValue) => {
-            setAttributes({
-              containerJustifyContentMobile: {
-                ...containerJustifyContentMobile,
-                value: newValue,
-              },
-            });
-          }}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Justify content (Mobile)', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __( 'Enable control', 'caledros-basic-blocks' ) }
+				help={ __(
+					"This control enables selecting a custom value for the 'justify content' property in mobile devices.",
+					'caledros-basic-blocks'
+				) }
+				checked={ containerJustifyContentMobile.enabled }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						containerJustifyContentMobile: {
+							...containerJustifyContentMobile,
+							enabled: newValue,
+						},
+					} );
+				} }
+			/>
+			{ containerJustifyContentMobile.enabled && (
+				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={ __(
+						'Select the value for the justify content property.',
+						'caledros-basic-blocks'
+					) }
+					value={ containerJustifyContentMobile.value }
+					options={ [
+						{
+							label: 'Flex start (default)',
+							value: 'flex-start',
+						},
+						{
+							label: 'Flex end',
+							value: 'flex-end',
+						},
+						{
+							label: 'Center',
+							value: 'center',
+						},
+						{
+							label: 'Space between',
+							value: 'space-between',
+						},
+						{
+							label: 'Space around',
+							value: 'space-around',
+						},
+						{
+							label: 'Space evenly',
+							value: 'space-evenly',
+						},
+					] }
+					onChange={ ( newValue ) => {
+						setAttributes( {
+							containerJustifyContentMobile: {
+								...containerJustifyContentMobile,
+								value: newValue,
+							},
+						} );
+					} }
+				/>
+			) }
+		</PanelBody>
+	);
 }
