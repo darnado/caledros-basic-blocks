@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -19,49 +19,43 @@
  */
 
 // FUNCTIONS
-// Sync all toggle switches with the current theme
-const syncToggles = (isDarkMode) => {
-  document.querySelectorAll(".cbb-dark-light-switcher").forEach((toggle) => {
-    toggle.checked = isDarkMode;
-  });
-};
-
-// Apply the selected theme and save it in localStorage
-const applyTheme = (theme) => {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-  syncToggles(theme === "dark");
+// Save selected color theme
+const saveTheme = ( theme ) => {
+	document.documentElement.setAttribute( 'data-theme', theme );
+	localStorage.setItem( 'theme', theme );
 };
 
 // Toggle between light and dark themes
 const switchTheme = () => {
-  const currentTheme = document.documentElement.getAttribute("data-theme");
-  applyTheme(currentTheme === "dark" ? "light" : "dark");
+	const currentTheme = document.documentElement.getAttribute( 'data-theme' );
+	saveTheme( currentTheme === 'dark' ? 'light' : 'dark' );
 };
 
 // Load and apply the initial theme based on saved preferences or system settings
 const loadTheme = () => {
-  const savedTheme = localStorage.getItem("theme");
-  const systemPrefersDark = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
-  applyTheme(savedTheme || (systemPrefersDark ? "dark" : "light"));
+	const savedTheme = localStorage.getItem( 'theme' );
+	const systemPrefersDark = window.matchMedia(
+		'(prefers-color-scheme: dark)'
+	).matches;
+	saveTheme( savedTheme || ( systemPrefersDark ? 'dark' : 'light' ) );
 };
 
 // EXECUTION
 // Listen for changes in the system color scheme
 window
-  .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", (e) => {
-    if (!localStorage.getItem("theme")) {
-      applyTheme(e.matches ? "dark" : "light");
-    }
-  });
+	.matchMedia( '(prefers-color-scheme: dark)' )
+	.addEventListener( 'change', ( e ) => {
+		if ( ! localStorage.getItem( 'theme' ) ) {
+			saveTheme( e.matches ? 'dark' : 'light' );
+		}
+	} );
 
 // Attach theme toggle event listeners to switches
-document.querySelectorAll(".cbb-dark-light-switcher").forEach((toggle) => {
-  toggle.addEventListener("change", switchTheme);
-});
+document
+	.querySelectorAll( '.cbb-dark-light-switcher__toggle' )
+	.forEach( ( toggle ) => {
+		toggle.addEventListener( 'click', switchTheme );
+	} );
 
 // Load the theme on page load
 loadTheme();

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,25 +18,19 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { useBlockProps } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
+import { useBlockProps } from '@wordpress/block-editor';
 
 export default function EditBlock() {
-  // Block props
-  const blockProps = useBlockProps({
-    className: "cbb-dark-light-switcher",
-  });
+	// Block props
+	const blockProps = useBlockProps( {
+		className: 'cbb-dark-light-switcher',
+	} );
 
-  return (
-    <div {...blockProps}>
-      <label className="cbb-dark-light-switcher__toggle">
-        <input
-          type="checkbox"
-          className="cbb-dark-light-switcher__checkbox"
-          name="cbb-dark-mode-switcher"
-        ></input>
-        <span className="cbb-dark-light-switcher__slider"></span>
-      </label>
-    </div>
-  );
+	return (
+		<div { ...blockProps }>
+			<div className="cbb-dark-light-switcher__toggle">
+				<span className="cbb-dark-light-switcher__slider"></span>
+			</div>
+		</div>
+	);
 }
