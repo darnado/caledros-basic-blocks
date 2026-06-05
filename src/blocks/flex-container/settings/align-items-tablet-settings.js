@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,82 +18,85 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function AlignItemsTabletSettings({
-  attributes,
-  setAttributes,
-}) {
-  const { containerAlignItemsTablet } = attributes;
+export default function AlignItemsTabletSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { containerAlignItemsTablet } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Align Items (Tablet and Mobile)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable control", "caledros-basic-blocks")}
-        help={__(
-          "This control enables selecting a custom value for the 'align items' property in both tablets and mobile devices.",
-          "caledros-basic-blocks"
-        )}
-        checked={containerAlignItemsTablet.enabled}
-        onChange={(newValue) => {
-          setAttributes({
-            containerAlignItemsTablet: {
-              ...containerAlignItemsTablet,
-              enabled: newValue,
-            },
-          });
-        }}
-      />
-      {containerAlignItemsTablet.enabled && (
-        <SelectControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            "Select the value for the align items property.",
-            "caledros-basic-blocks"
-          )}
-          value={containerAlignItemsTablet.value}
-          options={[
-            {
-              label: "Flex start",
-              value: "flex-start",
-            },
-            {
-              label: "Flex end",
-              value: "flex-end",
-            },
-            {
-              label: "Center",
-              value: "center",
-            },
-            {
-              label: "Stretch",
-              value: "stretch",
-            },
-            {
-              label: "Baseline",
-              value: "baseline",
-            },
-            {
-              label: "Normal (default)",
-              value: "normal",
-            },
-          ]}
-          onChange={(newValue) => {
-            setAttributes({
-              containerAlignItemsTablet: {
-                ...containerAlignItemsTablet,
-                value: newValue,
-              },
-            });
-          }}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __(
+				'Align Items (Tablet and Mobile)',
+				'caledros-basic-blocks'
+			) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __( 'Enable control', 'caledros-basic-blocks' ) }
+				help={ __(
+					"This control enables selecting a custom value for the 'align items' property in both tablets and mobile devices.",
+					'caledros-basic-blocks'
+				) }
+				checked={ containerAlignItemsTablet.enabled }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						containerAlignItemsTablet: {
+							...containerAlignItemsTablet,
+							enabled: newValue,
+						},
+					} );
+				} }
+			/>
+			{ containerAlignItemsTablet.enabled && (
+				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={ __(
+						'Select the value for the align items property.',
+						'caledros-basic-blocks'
+					) }
+					value={ containerAlignItemsTablet.value }
+					options={ [
+						{
+							label: 'Flex start',
+							value: 'flex-start',
+						},
+						{
+							label: 'Flex end',
+							value: 'flex-end',
+						},
+						{
+							label: 'Center',
+							value: 'center',
+						},
+						{
+							label: 'Stretch',
+							value: 'stretch',
+						},
+						{
+							label: 'Baseline',
+							value: 'baseline',
+						},
+						{
+							label: 'Normal (default)',
+							value: 'normal',
+						},
+					] }
+					onChange={ ( newValue ) => {
+						setAttributes( {
+							containerAlignItemsTablet: {
+								...containerAlignItemsTablet,
+								value: newValue,
+							},
+						} );
+					} }
+				/>
+			) }
+		</PanelBody>
+	);
 }

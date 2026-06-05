@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,82 +18,82 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function AlignItemsMobileSettings({
-  attributes,
-  setAttributes,
-}) {
-  const { containerAlignItemsMobile } = attributes;
+export default function AlignItemsMobileSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { containerAlignItemsMobile } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Align Items (Mobile)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable control", "caledros-basic-blocks")}
-        help={__(
-          "This control enables selecting a custom value for the 'align items' property in mobile devices.",
-          "caledros-basic-blocks"
-        )}
-        checked={containerAlignItemsMobile.enabled}
-        onChange={(newValue) => {
-          setAttributes({
-            containerAlignItemsMobile: {
-              ...containerAlignItemsMobile,
-              enabled: newValue,
-            },
-          });
-        }}
-      />
-      {containerAlignItemsMobile.enabled && (
-        <SelectControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            "Select the value for the align items property.",
-            "caledros-basic-blocks"
-          )}
-          value={containerAlignItemsMobile.value}
-          options={[
-            {
-              label: "Flex start",
-              value: "flex-start",
-            },
-            {
-              label: "Flex end",
-              value: "flex-end",
-            },
-            {
-              label: "Center",
-              value: "center",
-            },
-            {
-              label: "Stretch",
-              value: "stretch",
-            },
-            {
-              label: "Baseline",
-              value: "baseline",
-            },
-            {
-              label: "Normal (default)",
-              value: "normal",
-            },
-          ]}
-          onChange={(newValue) => {
-            setAttributes({
-              containerAlignItemsMobile: {
-                ...containerAlignItemsMobile,
-                value: newValue,
-              },
-            });
-          }}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Align Items (Mobile)', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __( 'Enable control', 'caledros-basic-blocks' ) }
+				help={ __(
+					"This control enables selecting a custom value for the 'align items' property in mobile devices.",
+					'caledros-basic-blocks'
+				) }
+				checked={ containerAlignItemsMobile.enabled }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						containerAlignItemsMobile: {
+							...containerAlignItemsMobile,
+							enabled: newValue,
+						},
+					} );
+				} }
+			/>
+			{ containerAlignItemsMobile.enabled && (
+				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={ __(
+						'Select the value for the align items property.',
+						'caledros-basic-blocks'
+					) }
+					value={ containerAlignItemsMobile.value }
+					options={ [
+						{
+							label: 'Flex start',
+							value: 'flex-start',
+						},
+						{
+							label: 'Flex end',
+							value: 'flex-end',
+						},
+						{
+							label: 'Center',
+							value: 'center',
+						},
+						{
+							label: 'Stretch',
+							value: 'stretch',
+						},
+						{
+							label: 'Baseline',
+							value: 'baseline',
+						},
+						{
+							label: 'Normal (default)',
+							value: 'normal',
+						},
+					] }
+					onChange={ ( newValue ) => {
+						setAttributes( {
+							containerAlignItemsMobile: {
+								...containerAlignItemsMobile,
+								value: newValue,
+							},
+						} );
+					} }
+				/>
+			) }
+		</PanelBody>
+	);
 }
