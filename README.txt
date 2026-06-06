@@ -159,6 +159,7 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 **Fixed**
 
 * Automatic border that was being added to the desktop menu container in the editor. Now this border is no longer visible.
+* Variable name in the border light color control of the grid container block.
 
 = 3.1.2 - 2026-05-21 =
 
