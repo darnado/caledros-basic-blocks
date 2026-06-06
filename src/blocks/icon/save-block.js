@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,37 +18,39 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { useBlockProps } from "@wordpress/block-editor";
+import { useBlockProps } from '@wordpress/block-editor';
 
-export default function SaveBlock({ attributes }) {
-  const {
-    icon,
-    iconLink,
-    iconLinkEnabled,
-    iconsSize,
-    iconsColor,
-    iconsDarkColor,
-  } = attributes;
-  // Block props
-  const blockProps = useBlockProps.save({
-    className: `cbb-icon cbb-icon--${icon}`,
-    style: {
-      "--cbb-icon-size": `${iconsSize}px`,
-      "--cbb-icon-color": `${iconsColor}`,
-      "--cbb-icon-dark-color": `${iconsDarkColor}`,
-    },
-  });
-  return (
-    <div {...blockProps}>
-      <span className="cbb-icon__icon-container"></span>
-      {iconLinkEnabled && (
-        <a
-          href={iconLink}
-          className="cbb-icon__main-link"
-          aria-label={icon}
-        ></a>
-      )}
-      {!iconLinkEnabled && <span className="cbb-icon__simple-icon"></span>}
-    </div>
-  );
+export default function SaveBlock( { attributes } ) {
+	const {
+		icon,
+		iconLink,
+		iconLinkEnabled,
+		iconsSize,
+		iconsColor,
+		iconsDarkColor,
+	} = attributes;
+	// Block props
+	const blockProps = useBlockProps.save( {
+		className: `cbb-icon cbb-icon--${ icon }`,
+		style: {
+			'--cbb-icon-size': `${ iconsSize }px`,
+			'--cbb-icon-color': `${ iconsColor }`,
+			'--cbb-icon-dark-color': `${ iconsDarkColor }`,
+		},
+	} );
+	return (
+		<div { ...blockProps }>
+			<span className="cbb-icon__icon-container"></span>
+			{ iconLinkEnabled && (
+				<a
+					href={ iconLink }
+					className="cbb-icon__main-link"
+					aria-label={ icon }
+				></a>
+			) }
+			{ ! iconLinkEnabled && (
+				<span className="cbb-icon__simple-icon"></span>
+			) }
+		</div>
+	);
 }

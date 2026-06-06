@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,57 +18,58 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
-import IconSettings from "./settings/icon-settings";
-import LinkSettings from "./settings/link-settings";
-import IconsColorSettings from "./settings/icons-color-settings";
-import IconsDarkColorSettings from "./settings/icons-dark-color-settings";
-import IconsSizeSettings from "./settings/icons-size-settings";
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import IconSettings from './settings/icon-settings';
+import LinkSettings from './settings/link-settings';
+import IconsColorSettings from './settings/icons-color-settings';
+import IconsDarkColorSettings from './settings/icons-dark-color-settings';
+import IconsSizeSettings from './settings/icons-size-settings';
 
-export default function EditBlock({ attributes, setAttributes }) {
-  const { icon, iconLinkEnabled, iconsSize, iconsColor, iconsDarkColor } =
-    attributes;
+export default function EditBlock( { attributes, setAttributes } ) {
+	const { icon, iconLinkEnabled, iconsSize, iconsColor, iconsDarkColor } =
+		attributes;
 
-  // Block props
-  const blockProps = useBlockProps({
-    className: `cbb-icon cbb-icon--${icon}`,
-    style: {
-      "--cbb-icon-size": `${iconsSize}px`,
-      "--cbb-icon-color": `${iconsColor}`,
-      "--cbb-icon-dark-color": `${iconsDarkColor}`,
-    },
-  });
+	// Block props
+	const blockProps = useBlockProps( {
+		className: `cbb-icon cbb-icon--${ icon }`,
+		style: {
+			'--cbb-icon-size': `${ iconsSize }px`,
+			'--cbb-icon-color': `${ iconsColor }`,
+			'--cbb-icon-dark-color': `${ iconsDarkColor }`,
+		},
+	} );
 
-  return (
-    <>
-      <InspectorControls>
-        <IconSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></IconSettings>
-        <LinkSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></LinkSettings>
-        <IconsColorSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></IconsColorSettings>
-        <IconsDarkColorSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></IconsDarkColorSettings>
-        <IconsSizeSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></IconsSizeSettings>
-      </InspectorControls>
-      <div {...blockProps}>
-        <span className="cbb-icon__icon-container"></span>
-        {iconLinkEnabled && <a className="cbb-icon__main-link"></a>}
-        {!iconLinkEnabled && <span className="cbb-icon__simple-icon"></span>}
-      </div>
-    </>
-  );
+	return (
+		<>
+			<InspectorControls>
+				<IconSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></IconSettings>
+				<LinkSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></LinkSettings>
+				<IconsColorSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></IconsColorSettings>
+				<IconsDarkColorSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></IconsDarkColorSettings>
+				<IconsSizeSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></IconsSizeSettings>
+			</InspectorControls>
+			<div { ...blockProps }>
+				<span className="cbb-icon__icon-container"></span>
+				{ iconLinkEnabled && <p className="cbb-icon__main-link"></p> }
+				{ ! iconLinkEnabled && (
+					<span className="cbb-icon__simple-icon"></span>
+				) }
+			</div>
+		</>
+	);
 }
