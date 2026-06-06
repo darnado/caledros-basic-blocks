@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,28 +18,33 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function IconsSizeSettings({ attributes, setAttributes }) {
-  const { iconsSize } = attributes;
+export default function IconsSizeSettings( { attributes, setAttributes } ) {
+	const { iconsSize } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Icon size", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__("Adjust the size (px) of the icon", "caledros-basic-blocks")}
-        initialPosition={iconsSize}
-        value={iconsSize}
-        max={300}
-        min={0}
-        step={1}
-        onChange={(newValue) => setAttributes({ iconsSize: newValue })}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Icon size', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={ __(
+					'Adjust the size (px) of the icon',
+					'caledros-basic-blocks'
+				) }
+				initialPosition={ iconsSize }
+				value={ iconsSize }
+				max={ 300 }
+				min={ 0 }
+				step={ 1 }
+				onChange={ ( newValue ) =>
+					setAttributes( { iconsSize: newValue } )
+				}
+			/>
+		</PanelBody>
+	);
 }
