@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,40 +18,42 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { ComboboxControl } from "@wordpress/components";
-import { useEntityRecords } from "@wordpress/core-data";
-import { __ } from "@wordpress/i18n";
+import { ComboboxControl } from '@wordpress/components';
+import { useEntityRecords } from '@wordpress/core-data';
+import { __ } from '@wordpress/i18n';
 
-export default function PageLinkSettings({ attributes, setAttributes }) {
-  const { menuLink } = attributes;
-  let linkOptions = [];
+export default function PageLinkSettings( { attributes, setAttributes } ) {
+	const { menuLink } = attributes;
+	let linkOptions = [];
 
-  // Fetch available links for the menu item (pages, posts)
-  const { hasResolved, records } = useEntityRecords("postType", "page", {
-    per_page: -1,
-    status: "publish",
-  });
+	// Fetch available links for the menu item (pages, posts)
+	const { hasResolved, records } = useEntityRecords( 'postType', 'page', {
+		per_page: -1,
+		status: 'publish',
+	} );
 
-  // Recover the available links
-  if (hasResolved) {
-    linkOptions = records.map((item) => ({
-      label: item.title.rendered,
-      value: item.link,
-    }));
-  }
+	// Recover the available links
+	if ( hasResolved ) {
+		linkOptions = records.map( ( item ) => ( {
+			label: item.title.rendered,
+			value: item.link,
+		} ) );
+	}
 
-  return (
-    <ComboboxControl
-      __next40pxDefaultSize
-      __nextHasNoMarginBottom
-      label={__("Page link", "caledros-basic-blocks")}
-      help={__(
-        "Select the page to link with the menu item.",
-        "caledros-basic-blocks"
-      )}
-      value={menuLink}
-      options={linkOptions}
-      onChange={(linkValue) => setAttributes({ menuLink: linkValue })}
-    />
-  );
+	return (
+		<ComboboxControl
+			__next40pxDefaultSize
+			__nextHasNoMarginBottom
+			label={ __( 'Page link', 'caledros-basic-blocks' ) }
+			help={ __(
+				'Select the page to link with the menu item.',
+				'caledros-basic-blocks'
+			) }
+			value={ menuLink }
+			options={ linkOptions }
+			onChange={ ( linkValue ) =>
+				setAttributes( { menuLink: linkValue } )
+			}
+		/>
+	);
 }

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,24 +18,27 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { TextControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { TextControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function CustomLinkSettings({ attributes, setAttributes }) {
-  const { menuLink } = attributes;
+export default function CustomLinkSettings( { attributes, setAttributes } ) {
+	const { menuLink } = attributes;
 
-  return (
-    <TextControl
-      __next40pxDefaultSize
-      __nextHasNoMarginBottom
-      label={__("Custom link", "caledros-basic-blocks")}
-      help={__("Paste the link for the menu item.", "caledros-basic-blocks")}
-      value={menuLink}
-      onChange={(newValue) => {
-        setAttributes({
-          menuLink: newValue,
-        });
-      }}
-    />
-  );
+	return (
+		<TextControl
+			__next40pxDefaultSize
+			__nextHasNoMarginBottom
+			label={ __( 'Custom link', 'caledros-basic-blocks' ) }
+			help={ __(
+				'Paste the link for the menu item.',
+				'caledros-basic-blocks'
+			) }
+			value={ menuLink }
+			onChange={ ( newValue ) => {
+				setAttributes( {
+					menuLink: newValue,
+				} );
+			} }
+		/>
+	);
 }
