@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,28 +18,28 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function ShowDemoDataSettings({ attributes, setAttributes }) {
-  const { showDemoData } = attributes;
+export default function ShowDemoDataSettings( { attributes, setAttributes } ) {
+	const { showDemoData } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Demo data options", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Show demo data", "caledros-basic-blocks")}
-        help={__("Display demo images.", "caledros-basic-blocks")}
-        checked={showDemoData}
-        onChange={(newValue) => {
-          setAttributes({
-            showDemoData: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Demo data options', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __( 'Show demo data', 'caledros-basic-blocks' ) }
+				help={ __( 'Display demo images.', 'caledros-basic-blocks' ) }
+				checked={ showDemoData }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						showDemoData: newValue,
+					} );
+				} }
+			/>
+		</PanelBody>
+	);
 }

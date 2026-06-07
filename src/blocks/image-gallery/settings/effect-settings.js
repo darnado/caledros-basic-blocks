@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,64 +18,67 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function EffectSettings({ attributes, setAttributes }) {
-  const { galleryEffect, images, enableLoop } = attributes;
+export default function EffectSettings( { attributes, setAttributes } ) {
+	const { galleryEffect, images, enableLoop } = attributes;
 
-  const defaultOptions = [
-    {
-      label: "None",
-      value: "none",
-    },
-    {
-      label: "Fade",
-      value: "fade",
-    },
-    {
-      label: "Coverflow",
-      value: "coverflow",
-    },
-  ];
+	const defaultOptions = [
+		{
+			label: 'None',
+			value: 'none',
+		},
+		{
+			label: 'Fade',
+			value: 'fade',
+		},
+		{
+			label: 'Coverflow',
+			value: 'coverflow',
+		},
+	];
 
-  const coverflowLoopTwoImgOptions = [
-    {
-      label: "None",
-      value: "none",
-    },
-    {
-      label: "Fade",
-      value: "fade",
-    },
-  ];
+	const coverflowLoopTwoImgOptions = [
+		{
+			label: 'None',
+			value: 'none',
+		},
+		{
+			label: 'Fade',
+			value: 'fade',
+		},
+	];
 
-  return (
-    <PanelBody
-      title={__("Effect", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__("Choose the effect for the gallery.", "caledros-basic-blocks")}
-        value={galleryEffect}
-        options={
-          enableLoop && images.length < 3
-            ? coverflowLoopTwoImgOptions
-            : defaultOptions
-        }
-        onChange={(newValue) => {
-          setAttributes({
-            galleryEffect: newValue,
-            ...(newValue === "coverflow" &&
-              enableLoop &&
-              images.length < 3 && {
-                enableLoop: false,
-              }),
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Effect', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={ __(
+					'Choose the effect for the gallery.',
+					'caledros-basic-blocks'
+				) }
+				value={ galleryEffect }
+				options={
+					enableLoop && images.length < 3
+						? coverflowLoopTwoImgOptions
+						: defaultOptions
+				}
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						galleryEffect: newValue,
+						...( newValue === 'coverflow' &&
+							enableLoop &&
+							images.length < 3 && {
+								enableLoop: false,
+							} ),
+					} );
+				} }
+			/>
+		</PanelBody>
+	);
 }

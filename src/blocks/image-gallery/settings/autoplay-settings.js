@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,52 +18,52 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function AutoplaySettings({ attributes, setAttributes }) {
-  const { autoplay } = attributes;
+export default function AutoplaySettings( { attributes, setAttributes } ) {
+	const { autoplay } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Autoplay", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        checked={autoplay.enableAutoplay}
-        label={__("Enable autoplay", "caledros-basic-blocks")}
-        onChange={(newValue) => {
-          setAttributes({
-            autoplay: {
-              ...autoplay,
-              enableAutoplay: newValue,
-            },
-          });
-        }}
-      />
-      {autoplay.enableAutoplay && (
-        <RangeControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            "Select the delay between transitions (milliseconds).",
-            "caledros-basic-blocks"
-          )}
-          value={autoplay.delay}
-          max={20000}
-          min={100}
-          step={100}
-          onChange={(newValue) => {
-            setAttributes({
-              autoplay: {
-                ...autoplay,
-                delay: newValue,
-              },
-            });
-          }}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Autoplay', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				checked={ autoplay.enableAutoplay }
+				label={ __( 'Enable autoplay', 'caledros-basic-blocks' ) }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						autoplay: {
+							...autoplay,
+							enableAutoplay: newValue,
+						},
+					} );
+				} }
+			/>
+			{ autoplay.enableAutoplay && (
+				<RangeControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={ __(
+						'Select the delay between transitions (milliseconds).',
+						'caledros-basic-blocks'
+					) }
+					value={ autoplay.delay }
+					max={ 20000 }
+					min={ 100 }
+					step={ 100 }
+					onChange={ ( newValue ) => {
+						setAttributes( {
+							autoplay: {
+								...autoplay,
+								delay: newValue,
+							},
+						} );
+					} }
+				/>
+			) }
+		</PanelBody>
+	);
 }
