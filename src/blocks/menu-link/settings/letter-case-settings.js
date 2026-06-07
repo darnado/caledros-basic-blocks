@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,49 +18,49 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function LetterCaseSettings({ attributes, setAttributes }) {
-  const { menuLetterCase } = attributes;
+export default function LetterCaseSettings( { attributes, setAttributes } ) {
+	const { menuLetterCase } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Letter case", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Select the letter case transformation.",
-          "caledros-basic-blocks"
-        )}
-        value={menuLetterCase}
-        options={[
-          {
-            label: "Capitalize",
-            value: "capitalize",
-          },
-          {
-            label: "Uppercase",
-            value: "uppercase",
-          },
-          {
-            label: "Lowercase",
-            value: "lowercase",
-          },
-          {
-            label: "None",
-            value: "none",
-          },
-        ]}
-        onChange={(newValue) => {
-          setAttributes({
-            menuLetterCase: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Letter case', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={ __(
+					'Select the letter case transformation.',
+					'caledros-basic-blocks'
+				) }
+				value={ menuLetterCase }
+				options={ [
+					{
+						label: 'Capitalize',
+						value: 'capitalize',
+					},
+					{
+						label: 'Uppercase',
+						value: 'uppercase',
+					},
+					{
+						label: 'Lowercase',
+						value: 'lowercase',
+					},
+					{
+						label: 'None',
+						value: 'none',
+					},
+				] }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						menuLetterCase: newValue,
+					} );
+				} }
+			/>
+		</PanelBody>
+	);
 }
