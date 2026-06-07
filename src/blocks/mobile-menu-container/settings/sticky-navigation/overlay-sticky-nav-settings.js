@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,30 +18,35 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function OverlayStickyNavSettings({
-  attributes,
-  setAttributes,
-}) {
-  const { overlayStickyNav } = attributes;
+export default function OverlayStickyNavSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { overlayStickyNav } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Overlay navigation", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable overlay sticky navigation", "caledros-basic-blocks")}
-        help={__(
-          "This option transforms the sticky navigation bar into an overlay, allowing it to overlap the website's content until the user begins scrolling.",
-          "caledros-basic-blocks"
-        )}
-        checked={overlayStickyNav}
-        onChange={(newValue) => setAttributes({ overlayStickyNav: newValue })}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Overlay navigation', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __(
+					'Enable overlay sticky navigation',
+					'caledros-basic-blocks'
+				) }
+				help={ __(
+					"This option transforms the sticky navigation bar into an overlay, allowing it to overlap the website's content until the user begins scrolling.",
+					'caledros-basic-blocks'
+				) }
+				checked={ overlayStickyNav }
+				onChange={ ( newValue ) =>
+					setAttributes( { overlayStickyNav: newValue } )
+				}
+			/>
+		</PanelBody>
+	);
 }

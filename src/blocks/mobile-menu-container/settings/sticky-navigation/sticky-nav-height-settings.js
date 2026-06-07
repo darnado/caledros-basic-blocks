@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,87 +18,95 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
+import { __, sprintf } from '@wordpress/i18n';
 
-export default function StickyNavHeightSettings({ attributes, setAttributes }) {
-  const { stickyNavHeight } = attributes;
+export default function StickyNavHeightSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { stickyNavHeight } = attributes;
 
-  // Recover the unit used in the height
-  const heightUnit = stickyNavHeight.replace(/[\d.]+/g, "") || "px";
+	// Recover the unit used in the height
+	const heightUnit = stickyNavHeight.replace( /[\d.]+/g, '' ) || 'px';
 
-  // Recover the numeric value of the height
-  const heightNumber = (unit) => {
-    if (unit === "px") {
-      return parseInt(stickyNavHeight) || 0;
-    } else {
-      return parseFloat(stickyNavHeight) || 0;
-    }
-  };
+	// Recover the numeric value of the height
+	const heightNumber = ( unit ) => {
+		if ( unit === 'px' ) {
+			return parseInt( stickyNavHeight ) || 0;
+		}
+		return parseFloat( stickyNavHeight ) || 0;
+	};
 
-  // Restrict maximum value for vh units
-  const enforceMaxValue = (newUnit, valueNumber) => {
-    if (newUnit === "vh" && valueNumber > 100) {
-      return 100;
-    }
-    return valueNumber;
-  };
+	// Restrict maximum value for vh units
+	const enforceMaxValue = ( newUnit, valueNumber ) => {
+		if ( newUnit === 'vh' && valueNumber > 100 ) {
+			return 100;
+		}
+		return valueNumber;
+	};
 
-  return (
-    <PanelBody
-      title={__("Height", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <div className="cbb-editor__grid">
-        <RangeControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            `Please select the height (${heightUnit}) for the sticky navigation bar. This feature is only visible in the frontend.`,
-            "caledros-basic-blocks"
-          )}
-          value={heightNumber(heightUnit)}
-          max={heightUnit === "vh" ? 100 : 3000}
-          min={0}
-          step={heightUnit === "px" ? 1 : 0.01}
-          onChange={(newValue) =>
-            setAttributes({
-              stickyNavHeight: `${newValue}${heightUnit}`,
-            })
-          }
-        />
-        <SelectControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          value={heightUnit}
-          options={[
-            {
-              label: "px",
-              value: "px",
-            },
-            {
-              label: "em",
-              value: "em",
-            },
-            {
-              label: "rem",
-              value: "rem",
-            },
-            {
-              label: "vh",
-              value: "vh",
-            },
-          ]}
-          onChange={(newUnit) => {
-            setAttributes({
-              stickyNavHeight: `${enforceMaxValue(
-                newUnit,
-                heightNumber(newUnit)
-              )}${newUnit}`,
-            });
-          }}
-        />
-      </div>
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Height', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<div className="cbb-editor__grid">
+				<RangeControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={ sprintf(
+						/**
+						 * translators: %s height's unit
+						 */
+						__(
+							'Please select the height (%s) for the sticky navigation bar. This feature is only visible in the frontend.',
+							'caledros-basic-blocks'
+						),
+						heightUnit
+					) }
+					value={ heightNumber( heightUnit ) }
+					max={ heightUnit === 'vh' ? 100 : 3000 }
+					min={ 0 }
+					step={ heightUnit === 'px' ? 1 : 0.01 }
+					onChange={ ( newValue ) =>
+						setAttributes( {
+							stickyNavHeight: `${ newValue }${ heightUnit }`,
+						} )
+					}
+				/>
+				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					value={ heightUnit }
+					options={ [
+						{
+							label: 'px',
+							value: 'px',
+						},
+						{
+							label: 'em',
+							value: 'em',
+						},
+						{
+							label: 'rem',
+							value: 'rem',
+						},
+						{
+							label: 'vh',
+							value: 'vh',
+						},
+					] }
+					onChange={ ( newUnit ) => {
+						setAttributes( {
+							stickyNavHeight: `${ enforceMaxValue(
+								newUnit,
+								heightNumber( newUnit )
+							) }${ newUnit }`,
+						} );
+					} }
+				/>
+			</div>
+		</PanelBody>
+	);
 }
