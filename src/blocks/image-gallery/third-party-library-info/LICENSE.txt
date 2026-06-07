@@ -1,4 +1,4 @@
-*** License information for the Swiper library used in the Image Gallery block ***
+*** License information of the Swiper library used in the Image Gallery block ***
 
 The MIT License (MIT)
 
