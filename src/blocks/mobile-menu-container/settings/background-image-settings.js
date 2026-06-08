@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,71 +18,78 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Button, PanelBody, FocalPointPicker } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
-import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
+import { Button, PanelBody, FocalPointPicker } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
-export default function BackgroundImageSettings({ attributes, setAttributes }) {
-  const { containerBackgroundImage, containerBgImageFocalPoint } = attributes;
+export default function BackgroundImageSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { containerBackgroundImage, containerBgImageFocalPoint } = attributes;
 
-  // Function for choosing the image
-  const selectImg = (image) => {
-    setAttributes({
-      containerBackgroundImage: {
-        id: image.id,
-        alt: image.alt,
-        url: image.url,
-      },
-    });
-  };
+	// Function for choosing the image
+	const selectImg = ( image ) => {
+		setAttributes( {
+			containerBackgroundImage: {
+				id: image.id,
+				alt: image.alt,
+				url: image.url,
+			},
+		} );
+	};
 
-  // Function for removing the image
-  const removeImg = () => {
-    setAttributes({
-      containerBackgroundImage: {
-        id: "",
-        alt: "",
-        url: "",
-      },
-    });
-  };
-  return (
-    <PanelBody
-      title={__("Background image", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <MediaUploadCheck>
-        <MediaUpload
-          allowedTypes={["image"]}
-          value={containerBackgroundImage.id}
-          render={({ open }) => (
-            <>
-              {containerBackgroundImage.url && (
-                <FocalPointPicker
-                  __nextHasNoMarginBottom={true}
-                  onChange={(newValue) => {
-                    setAttributes({
-                      containerBgImageFocalPoint: newValue,
-                    });
-                  }}
-                  url={containerBackgroundImage.url}
-                  value={containerBgImageFocalPoint}
-                />
-              )}
+	// Function for removing the image
+	const removeImg = () => {
+		setAttributes( {
+			containerBackgroundImage: {
+				id: '',
+				alt: '',
+				url: '',
+			},
+		} );
+	};
+	return (
+		<PanelBody
+			title={ __( 'Background image', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<MediaUploadCheck>
+				<MediaUpload
+					allowedTypes={ [ 'image' ] }
+					value={ containerBackgroundImage.id }
+					render={ ( { open } ) => (
+						<>
+							{ containerBackgroundImage.url && (
+								<FocalPointPicker
+									__nextHasNoMarginBottom={ true }
+									onChange={ ( newValue ) => {
+										setAttributes( {
+											containerBgImageFocalPoint:
+												newValue,
+										} );
+									} }
+									url={ containerBackgroundImage.url }
+									value={ containerBgImageFocalPoint }
+								/>
+							) }
 
-              <div style={{ display: "flex", gap: "10px" }}>
-                <Button variant="primary" onClick={open}>
-                  Select image
-                </Button>
-                <Button variant="secondary" onClick={removeImg}>
-                  Remove image
-                </Button>
-              </div>
-            </>
-          )}
-          onSelect={selectImg}
-        />
-      </MediaUploadCheck>
-    </PanelBody>
-  );
+							<div style={ { display: 'flex', gap: '10px' } }>
+								<Button variant="primary" onClick={ open }>
+									Select image
+								</Button>
+								<Button
+									variant="secondary"
+									onClick={ removeImg }
+								>
+									Remove image
+								</Button>
+							</div>
+						</>
+					) }
+					onSelect={ selectImg }
+				/>
+			</MediaUploadCheck>
+		</PanelBody>
+	);
 }
