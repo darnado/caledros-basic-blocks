@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,41 +18,41 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function OrderTypeSettings({ attributes, setAttributes }) {
-  const { orderType } = attributes;
+export default function OrderTypeSettings( { attributes, setAttributes } ) {
+	const { orderType } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Order type", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Choose the criteria for ordering the posts.",
-          "caledros-basic-blocks"
-        )}
-        value={orderType}
-        options={[
-          {
-            label: "Date",
-            value: "date",
-          },
-          {
-            label: "Title",
-            value: "title",
-          },
-        ]}
-        onChange={(newValue) => {
-          setAttributes({
-            orderType: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Order type', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={ __(
+					'Choose the criteria for ordering the posts.',
+					'caledros-basic-blocks'
+				) }
+				value={ orderType }
+				options={ [
+					{
+						label: 'Date',
+						value: 'date',
+					},
+					{
+						label: 'Title',
+						value: 'title',
+					},
+				] }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						orderType: newValue,
+					} );
+				} }
+			/>
+		</PanelBody>
+	);
 }

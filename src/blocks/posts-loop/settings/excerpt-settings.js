@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,67 +18,79 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function ExcerptSettings({ attributes, setAttributes }) {
-  const { excerptOptions } = attributes;
+export default function ExcerptSettings( { attributes, setAttributes } ) {
+	const { excerptOptions } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Excerpt options", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Show excerpt", "caledros-basic-blocks")}
-        help={__(
-          "Each post card will displayed a short excerpt",
-          "caledros-basic-blocks"
-        )}
-        checked={excerptOptions.showExcerpt}
-        onChange={(newValue) => {
-          setAttributes({
-            excerptOptions: { ...excerptOptions, showExcerpt: newValue },
-          });
-        }}
-      />
-      {excerptOptions.showExcerpt && (
-        <>
-          <ToggleControl
-            __nextHasNoMarginBottom
-            label={__("Show ellipsis", "caledros-basic-blocks")}
-            help={__(
-              "A ellipsis will appear at the end of the excerpt.",
-              "caledros-basic-blocks"
-            )}
-            checked={excerptOptions.showEllipsis}
-            onChange={(newValue) => {
-              setAttributes({
-                excerptOptions: { ...excerptOptions, showEllipsis: newValue },
-              });
-            }}
-          />
-          <RangeControl
-            __next40pxDefaultSize
-            __nextHasNoMarginBottom
-            help={__(
-              "Please select the excerpt length (number of words).",
-              "caledros-basic-blocks"
-            )}
-            value={excerptOptions.excerptLength}
-            label={__("Excerpt length", "caledros-basic-blocks")}
-            max={50}
-            min={1}
-            step={1}
-            onChange={(newValue) =>
-              setAttributes({
-                excerptOptions: { ...excerptOptions, excerptLength: newValue },
-              })
-            }
-          />
-        </>
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Excerpt options', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __( 'Show excerpt', 'caledros-basic-blocks' ) }
+				help={ __(
+					'Each post card will displayed a short excerpt',
+					'caledros-basic-blocks'
+				) }
+				checked={ excerptOptions.showExcerpt }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						excerptOptions: {
+							...excerptOptions,
+							showExcerpt: newValue,
+						},
+					} );
+				} }
+			/>
+			{ excerptOptions.showExcerpt && (
+				<>
+					<ToggleControl
+						__nextHasNoMarginBottom
+						label={ __( 'Show ellipsis', 'caledros-basic-blocks' ) }
+						help={ __(
+							'A ellipsis will appear at the end of the excerpt.',
+							'caledros-basic-blocks'
+						) }
+						checked={ excerptOptions.showEllipsis }
+						onChange={ ( newValue ) => {
+							setAttributes( {
+								excerptOptions: {
+									...excerptOptions,
+									showEllipsis: newValue,
+								},
+							} );
+						} }
+					/>
+					<RangeControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						help={ __(
+							'Please select the excerpt length (number of words).',
+							'caledros-basic-blocks'
+						) }
+						value={ excerptOptions.excerptLength }
+						label={ __(
+							'Excerpt length',
+							'caledros-basic-blocks'
+						) }
+						max={ 50 }
+						min={ 1 }
+						step={ 1 }
+						onChange={ ( newValue ) =>
+							setAttributes( {
+								excerptOptions: {
+									...excerptOptions,
+									excerptLength: newValue,
+								},
+							} )
+						}
+					/>
+				</>
+			) }
+		</PanelBody>
+	);
 }

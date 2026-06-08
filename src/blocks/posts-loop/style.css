@@ -237,3 +237,8 @@ html[data-theme="dark"] .cbb-posts-loop__category,
 html[data-theme="dark"] .cbb-posts-loop__tag {
   color: var(--wp--preset--color--paragraph-dark, #fff);
 }
+
+/*Custom styles for the image link demo content*/
+.cbb-posts-loop__link--demo {
+  cursor: pointer;
+}

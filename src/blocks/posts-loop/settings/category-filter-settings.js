@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -19,71 +19,80 @@
  */
 
 import {
-  PanelBody,
-  ComboboxControl,
-  ToggleControl,
-} from "@wordpress/components";
-import { useEntityRecords } from "@wordpress/core-data";
-import { __ } from "@wordpress/i18n";
+	PanelBody,
+	ComboboxControl,
+	ToggleControl,
+} from '@wordpress/components';
+import { useEntityRecords } from '@wordpress/core-data';
+import { __ } from '@wordpress/i18n';
 
-export default function CategoryFilterSettings({ attributes, setAttributes }) {
-  const { categoryFilter, pageType } = attributes;
+export default function CategoryFilterSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { categoryFilter, pageType } = attributes;
 
-  let categoryOptions = [];
+	let categoryOptions = [];
 
-  // Fetch all categories
-  const { hasResolved, records } = useEntityRecords("taxonomy", "category", {
-    per_page: -1,
-  });
+	// Fetch all categories
+	const { hasResolved, records } = useEntityRecords( 'taxonomy', 'category', {
+		per_page: -1,
+	} );
 
-  // Build options once data is fetched
-  if (hasResolved && records) {
-    categoryOptions = records.map((category) => ({
-      label: category.name,
-      value: category.id,
-    }));
-  }
+	// Build options once data is fetched
+	if ( hasResolved && records ) {
+		categoryOptions = records.map( ( category ) => ( {
+			label: category.name,
+			value: category.id,
+		} ) );
+	}
 
-  return (
-    <PanelBody
-      title={__("Filter by category", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Filter posts by category", "caledros-basic-blocks")}
-        help={__(
-          "Choose whether or not the posts will be filtered by category.",
-          "caledros-basic-blocks"
-        )}
-        checked={categoryFilter.enable}
-        disabled={pageType === "category-template"}
-        onChange={(newValue) => {
-          setAttributes({
-            categoryFilter: {
-              ...categoryFilter,
-              enable: newValue,
-            },
-          });
-        }}
-      />
-      {categoryFilter.enable && (
-        <ComboboxControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__("Choose the category.", "caledros-basic-blocks")}
-          value={categoryFilter.categoryId}
-          options={categoryOptions}
-          onChange={(selectedValue) => {
-            setAttributes({
-              categoryFilter: {
-                ...categoryFilter,
-                categoryId: selectedValue,
-              },
-            });
-          }}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Filter by category', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __(
+					'Filter posts by category',
+					'caledros-basic-blocks'
+				) }
+				help={ __(
+					'Choose whether or not the posts will be filtered by category.',
+					'caledros-basic-blocks'
+				) }
+				checked={ categoryFilter.enable }
+				disabled={ pageType === 'category-template' }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						categoryFilter: {
+							...categoryFilter,
+							enable: newValue,
+						},
+					} );
+				} }
+			/>
+			{ categoryFilter.enable && (
+				<ComboboxControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={ __(
+						'Choose the category.',
+						'caledros-basic-blocks'
+					) }
+					value={ categoryFilter.categoryId }
+					options={ categoryOptions }
+					onChange={ ( selectedValue ) => {
+						setAttributes( {
+							categoryFilter: {
+								...categoryFilter,
+								categoryId: selectedValue,
+							},
+						} );
+					} }
+				/>
+			) }
+		</PanelBody>
+	);
 }
