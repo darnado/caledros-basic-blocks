@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,25 +18,25 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function LazyLoadSettings({ attributes, setAttributes }) {
-  const { imgLazyLoad } = attributes;
+export default function LazyLoadSettings( { attributes, setAttributes } ) {
+	const { imgLazyLoad } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Lazy loading", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable lazy loading", "caledros-basic-blocks")}
-        checked={imgLazyLoad}
-        onChange={(value) => {
-          setAttributes({ imgLazyLoad: value });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Lazy loading', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={ __( 'Enable lazy loading', 'caledros-basic-blocks' ) }
+				checked={ imgLazyLoad }
+				onChange={ ( value ) => {
+					setAttributes( { imgLazyLoad: value } );
+				} }
+			/>
+		</PanelBody>
+	);
 }

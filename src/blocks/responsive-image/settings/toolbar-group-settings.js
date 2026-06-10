@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,63 +18,66 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { ToolbarGroup } from "@wordpress/components";
-import { MediaReplaceFlow } from "@wordpress/block-editor";
-import { isBlobURL, revokeBlobURL } from "@wordpress/blob";
-import { __ } from "@wordpress/i18n";
+import { ToolbarGroup } from '@wordpress/components';
+import { MediaReplaceFlow } from '@wordpress/block-editor';
+import { isBlobURL, revokeBlobURL } from '@wordpress/blob';
+import { __ } from '@wordpress/i18n';
 
-export default function ToolbarGroupSettings({
-  attributes,
-  setAttributes,
-  setShowSpinner,
-}) {
-  const { sourceImage } = attributes;
+export default function ToolbarGroupSettings( {
+	attributes,
+	setAttributes,
+	setShowSpinner,
+} ) {
+	const { sourceImage } = attributes;
 
-  // Function for formatting the srcset
-  const formatSrcset = (imgSizes) => {
-    return Object.keys(imgSizes)
-      .filter((imgSize) => imgSize !== "thumbnail")
-      .map((imgSize) => {
-        const { url, width, source_url } = imgSizes[imgSize];
-        return `${url || source_url} ${width}w`;
-      })
-      .join(", ");
-  };
+	// Function for formatting the srcset
+	const formatSrcset = ( imgSizes ) => {
+		return Object.keys( imgSizes )
+			.filter( ( imgSize ) => imgSize !== 'thumbnail' )
+			.map( ( imgSize ) => {
+				const { url, width, sourceUrl } = imgSizes[ imgSize ];
+				return `${ url || sourceUrl } ${ width }w`;
+			} )
+			.join( ', ' );
+	};
 
-  // Function for choosing the image
-  const selectImg = (image) => {
-    if (isBlobURL(image.url)) {
-      setShowSpinner(true);
-    } else {
-      setShowSpinner(false);
-      setAttributes({
-        sourceImage: {
-          id: image.id,
-          alt: image.alt,
-          url: image.url,
-          height: image.media_details?.height || image.height,
-          width: image.media_details?.width || image.width,
-          srcSet: `${formatSrcset(image.media_details?.sizes || image.sizes)}`,
-          sizes: `(max-width:${
-            image.media_details?.width || image.width
-          }px) 100vw, ${image.media_details?.width || image.width}px`,
-        },
-      });
-      revokeBlobURL(image.url);
-    }
-  };
+	// Function for choosing the image
+	const selectImg = ( image ) => {
+		if ( isBlobURL( image.url ) ) {
+			setShowSpinner( true );
+		} else {
+			setShowSpinner( false );
+			setAttributes( {
+				sourceImage: {
+					id: image.id,
+					alt: image.alt,
+					url: image.url,
+					height: image.media_details?.height || image.height,
+					width: image.media_details?.width || image.width,
+					srcSet: `${ formatSrcset(
+						image.media_details?.sizes || image.sizes
+					) }`,
+					sizes: `(max-width:${
+						image.media_details?.width || image.width
+					}px) 100vw, ${
+						image.media_details?.width || image.width
+					}px`,
+				},
+			} );
+			revokeBlobURL( image.url );
+		}
+	};
 
-  return (
-    <ToolbarGroup>
-      <MediaReplaceFlow
-        name={__("Replace image", "caledros-basic-blocks")}
-        mediaId={sourceImage.id}
-        mediaURL={sourceImage.url}
-        allowedTypes={["image"]}
-        accept={"image/*"}
-        onError={(error) => console.error(error)}
-        onSelect={(img) => selectImg(img)}
-      />
-    </ToolbarGroup>
-  );
+	return (
+		<ToolbarGroup>
+			<MediaReplaceFlow
+				name={ __( 'Replace image', 'caledros-basic-blocks' ) }
+				mediaId={ sourceImage.id }
+				mediaURL={ sourceImage.url }
+				allowedTypes={ [ 'image' ] }
+				accept={ 'image/*' }
+				onSelect={ ( img ) => selectImg( img ) }
+			/>
+		</ToolbarGroup>
+	);
 }

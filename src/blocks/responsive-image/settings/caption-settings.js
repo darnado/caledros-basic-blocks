@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,36 +18,43 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, TextControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, TextControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function CaptionSettings({ attributes, setAttributes }) {
-  const { imgCaption } = attributes;
+export default function CaptionSettings( { attributes, setAttributes } ) {
+	const { imgCaption } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Caption", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        checked={imgCaption.enabled}
-        label={__("Enable image caption", "caledros-basic-blocks")}
-        onChange={(newValue) => {
-          setAttributes({ imgCaption: { ...imgCaption, enabled: newValue } });
-        }}
-      />
-      {imgCaption.enabled && (
-        <TextControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          onChange={(newValue) => {
-            setAttributes({ imgCaption: { ...imgCaption, content: newValue } });
-          }}
-          value={imgCaption.content}
-          help={__("Write the image caption.", "caledros-basic-blocks")}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Caption', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				checked={ imgCaption.enabled }
+				label={ __( 'Enable image caption', 'caledros-basic-blocks' ) }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						imgCaption: { ...imgCaption, enabled: newValue },
+					} );
+				} }
+			/>
+			{ imgCaption.enabled && (
+				<TextControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					onChange={ ( newValue ) => {
+						setAttributes( {
+							imgCaption: { ...imgCaption, content: newValue },
+						} );
+					} }
+					value={ imgCaption.content }
+					help={ __(
+						'Write the image caption.',
+						'caledros-basic-blocks'
+					) }
+				/>
+			) }
+		</PanelBody>
+	);
 }
