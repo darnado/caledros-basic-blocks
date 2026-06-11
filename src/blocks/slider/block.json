@@ -85,10 +85,6 @@
       "type": "string",
       "default": "auto"
     },
-    "enableFadeEffect": {
-      "type": "boolean",
-      "default": true
-    },
     "sliderEffect": {
       "type": "string",
       "default": "none"

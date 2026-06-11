@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,126 +18,136 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Swiper } from "swiper";
+import { Swiper } from 'swiper';
 import {
-  Navigation,
-  Pagination,
-  Autoplay,
-  EffectFade,
-  EffectCoverflow,
-} from "swiper/modules";
-import "swiper/css/bundle";
-import { store, getContext } from "@wordpress/interactivity";
+	Navigation,
+	Pagination,
+	Autoplay,
+	EffectFade,
+	EffectCoverflow,
+} from 'swiper/modules';
+import 'swiper/css/bundle';
+import { store, getContext } from '@wordpress/interactivity';
 
-store("cbb-slider-store", {
-  callbacks: {
-    onInit: () => {
-      const context = getContext();
-      const swiperClass = `.cbb-swiper-${context.identifier}`;
-      const paginationEnabled = getContext().pagination;
-      const paginationType = getContext().paginationType;
-      const autoplayEnabled = getContext().autoPlayEnabled;
-      const autoplayDelay = getContext().autoplayDelay;
-      const enableNavigationArrows = getContext().enableNavigationArrows;
-      const enableFadeEffect = getContext().enableFadeEffect;
-      const sliderEffect = getContext().sliderEffect;
+store( 'cbb-slider-store', {
+	callbacks: {
+		onInit: () => {
+			const context = getContext();
+			const swiperClass = `.cbb-swiper-${ context.identifier }`;
+			const paginationEnabled = getContext().pagination;
+			const paginationType = getContext().paginationType;
+			const autoplayEnabled = getContext().autoPlayEnabled;
+			const autoplayDelay = getContext().autoplayDelay;
+			const enableNavigationArrows = getContext().enableNavigationArrows;
+			const sliderEffect = getContext().sliderEffect;
 
-      const paginationSettings = () => {
-        if (paginationEnabled && paginationType === "bullets") {
-          return {
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-              type: "bullets",
-            },
-          };
-        }
-        if (paginationEnabled && paginationType === "fraction") {
-          return { pagination: { el: ".swiper-pagination", type: "fraction" } };
-        }
-        if (paginationEnabled && paginationType === "progressbar") {
-          return {
-            pagination: { el: ".swiper-pagination", type: "progressbar" },
-          };
-        }
-        if (!paginationEnabled) {
-          return { pagination: false };
-        }
-      };
-      const autoplaySettings = () => {
-        if (autoplayEnabled) {
-          return {
-            autoplay: {
-              delay: autoplayDelay,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            },
-          };
-        } else {
-          return {
-            autoplay: false,
-          };
-        }
-      };
-      const navigationSettings = () => {
-        if (enableNavigationArrows) {
-          return {
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          };
-        }
-        return {};
-      };
+			const paginationSettings = () => {
+				if ( paginationEnabled && paginationType === 'bullets' ) {
+					return {
+						pagination: {
+							el: '.swiper-pagination',
+							clickable: true,
+							type: 'bullets',
+						},
+					};
+				}
+				if ( paginationEnabled && paginationType === 'fraction' ) {
+					return {
+						pagination: {
+							el: '.swiper-pagination',
+							type: 'fraction',
+						},
+					};
+				}
+				if ( paginationEnabled && paginationType === 'progressbar' ) {
+					return {
+						pagination: {
+							el: '.swiper-pagination',
+							type: 'progressbar',
+						},
+					};
+				}
+				if ( ! paginationEnabled ) {
+					return { pagination: false };
+				}
+			};
+			const autoplaySettings = () => {
+				if ( autoplayEnabled ) {
+					return {
+						autoplay: {
+							delay: autoplayDelay,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
+						},
+					};
+				}
+				return {
+					autoplay: false,
+				};
+			};
+			const navigationSettings = () => {
+				if ( enableNavigationArrows ) {
+					return {
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+					};
+				}
+				return {};
+			};
 
-      // Load modules
-      const navigationModules = enableNavigationArrows ? [Navigation] : [];
-      const paginationModules = paginationEnabled ? [Pagination] : [];
-      const autoplayModules = autoplayEnabled ? [Autoplay] : [];
-      const fadeEffectModule = sliderEffect === "fade" ? [EffectFade] : [];
-      const coverflowEffectModule =
-        sliderEffect === "coverflow" ? [EffectCoverflow] : [];
+			// Load modules
+			const navigationModules = enableNavigationArrows
+				? [ Navigation ]
+				: [];
+			const paginationModules = paginationEnabled ? [ Pagination ] : [];
+			const autoplayModules = autoplayEnabled ? [ Autoplay ] : [];
+			const fadeEffectModule =
+				sliderEffect === 'fade' ? [ EffectFade ] : [];
+			const coverflowEffectModule =
+				sliderEffect === 'coverflow' ? [ EffectCoverflow ] : [];
 
-      // Slider creation
-      const swiper = new Swiper(swiperClass, {
-        cssMode: !(sliderEffect === "fade"),
-        modules: [
-          ...navigationModules,
-          ...paginationModules,
-          ...autoplayModules,
-          ...fadeEffectModule,
-          ...coverflowEffectModule,
-        ],
-        loop: context.loopEnabled,
-        ...navigationSettings(),
-        ...paginationSettings(),
-        ...autoplaySettings(),
-        ...(sliderEffect === "fade" && {
-          effect: "fade",
-          fadeEffect: { crossFade: true },
-        }),
-        ...(sliderEffect === "coverflow" && {
-          effect: "coverflow",
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: 1.5,
-          coverflowEffect: {
-            rotate: 50,
-            depth: 50,
-            modifier: 1,
-            slideShadows: true,
-          },
-          breakpoints: {
-            810: {
-              slidesPerView: 1.5,
-            },
-            0: {
-              slidesPerView: 1,
-            },
-          },
-        }),
-      });
-    },
-  },
-});
+			// Slider creation
+			// eslint-disable-next-line no-unused-vars
+			const swiper = new Swiper( swiperClass, {
+				cssMode: ! ( sliderEffect === 'fade' ),
+				modules: [
+					...navigationModules,
+					...paginationModules,
+					...autoplayModules,
+					...fadeEffectModule,
+					...coverflowEffectModule,
+				],
+				loop: context.loopEnabled,
+				...navigationSettings(),
+				...paginationSettings(),
+				...autoplaySettings(),
+				...( sliderEffect === 'fade' && {
+					effect: 'fade',
+					fadeEffect: { crossFade: true },
+				} ),
+				...( sliderEffect === 'coverflow' && {
+					effect: 'coverflow',
+					grabCursor: true,
+					centeredSlides: true,
+					slidesPerView: 1.5,
+					coverflowEffect: {
+						rotate: 50,
+						depth: 50,
+						modifier: 1,
+						slideShadows: true,
+					},
+					breakpoints: {
+						810: {
+							slidesPerView: 1.5,
+						},
+						0: {
+							slidesPerView: 1,
+						},
+					},
+				} ),
+			} );
+		},
+	},
+} );
