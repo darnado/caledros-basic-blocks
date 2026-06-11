@@ -155,6 +155,7 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 ** Changed **
 
 * Plugin admin menu's position. Now such menu is located after "Settings" in the WordPress sidebar.
+* Source code format. PHP files now comply with PHPCS+WPCS standards. JS files now comply with WordPress coding standards for Javascript, which are defined in @wordpress/eslint-plugin.
 
 **Fixed**
 
