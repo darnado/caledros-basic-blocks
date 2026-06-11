@@ -1,4 +1,4 @@
-/**
+/*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
  * Copyright (C) 2025-2026  David Arnado
  *

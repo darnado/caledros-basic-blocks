@@ -1,4 +1,4 @@
-/**
+/*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
  * Copyright (C) 2025-2026  David Arnado
  *
@@ -36,9 +36,9 @@ export default function DarkLightModeToggle() {
 			) || document.querySelector( 'iframe[name="editor-canvas"]' );
 
 		if ( ! iframe ) {
-			console.error(
-				'Iframe editor not found. Please refresh and try again.'
-			);
+			// console.error(
+			// 	'Iframe editor not found. Please refresh and try again.'
+			// );
 			return;
 		}
 
@@ -46,9 +46,9 @@ export default function DarkLightModeToggle() {
 			iframe.contentDocument || iframe.contentWindow.document;
 
 		if ( ! iframeDocument || iframeDocument.readyState !== 'complete' ) {
-			console.error(
-				'Iframe document not ready. Please refresh and try again.'
-			);
+			// console.error(
+			// 	'Iframe document not ready. Please refresh and try again.'
+			// );
 			return;
 		}
 
@@ -57,9 +57,9 @@ export default function DarkLightModeToggle() {
 		);
 
 		if ( ! iframeEditor ) {
-			console.error(
-				'Iframe editor not found. Please refresh and try again.'
-			);
+			// console.error(
+			// 	'Iframe editor not found. Please refresh and try again.'
+			// );
 			return;
 		}
 
