@@ -1,4 +1,4 @@
-*** License information for the Swiper library used in the Slider block ***
+*** License information of the Swiper library used in the Slider block ***
 
 The MIT License (MIT)
 

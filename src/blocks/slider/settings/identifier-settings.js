@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,31 +18,31 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, TextControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, TextControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function IdentifierSettings({ attributes, setAttributes }) {
-  const { identifier } = attributes;
+export default function IdentifierSettings( { attributes, setAttributes } ) {
+	const { identifier } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Unique Identifier", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <TextControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Type the identifier for the slider. The identifier must be unique. If no unique identifier is provided, the slider won't work.",
-          "caledros-basic-blocks"
-        )}
-        value={identifier}
-        onChange={(newValue) => {
-          setAttributes({
-            identifier: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Unique Identifier', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<TextControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={ __(
+					"Type the identifier for the slider. The identifier must be unique. If no unique identifier is provided, the slider won't work.",
+					'caledros-basic-blocks'
+				) }
+				value={ identifier }
+				onChange={ ( newValue ) => {
+					setAttributes( {
+						identifier: newValue,
+					} );
+				} }
+			/>
+		</PanelBody>
+	);
 }

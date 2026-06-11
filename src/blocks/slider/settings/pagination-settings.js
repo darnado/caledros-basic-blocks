@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,52 +18,55 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export default function PaginationSettings({ attributes, setAttributes }) {
-  const { enablePagination, paginationType } = attributes;
+export default function PaginationSettings( { attributes, setAttributes } ) {
+	const { enablePagination, paginationType } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Pagination", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        checked={enablePagination}
-        label={__("Enable pagination", "caledros-basic-blocks")}
-        onChange={(newValue) => {
-          setAttributes({ enablePagination: newValue });
-        }}
-      />
-      {enablePagination && (
-        <SelectControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__("Choose the type of pagination", "caledros-basic-blocks")}
-          value={paginationType}
-          options={[
-            {
-              label: "Progress Bar",
-              value: "progressbar",
-            },
-            {
-              label: "Bullets",
-              value: "bullets",
-            },
-            {
-              label: "Fraction",
-              value: "fraction",
-            },
-          ]}
-          onChange={(newValue) => {
-            setAttributes({
-              paginationType: newValue,
-            });
-          }}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={ __( 'Pagination', 'caledros-basic-blocks' ) }
+			initialOpen={ false }
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				checked={ enablePagination }
+				label={ __( 'Enable pagination', 'caledros-basic-blocks' ) }
+				onChange={ ( newValue ) => {
+					setAttributes( { enablePagination: newValue } );
+				} }
+			/>
+			{ enablePagination && (
+				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={ __(
+						'Choose the type of pagination',
+						'caledros-basic-blocks'
+					) }
+					value={ paginationType }
+					options={ [
+						{
+							label: 'Progress Bar',
+							value: 'progressbar',
+						},
+						{
+							label: 'Bullets',
+							value: 'bullets',
+						},
+						{
+							label: 'Fraction',
+							value: 'fraction',
+						},
+					] }
+					onChange={ ( newValue ) => {
+						setAttributes( {
+							paginationType: newValue,
+						} );
+					} }
+				/>
+			) }
+		</PanelBody>
+	);
 }
