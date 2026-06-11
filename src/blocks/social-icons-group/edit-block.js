@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -19,74 +19,73 @@
  */
 
 import {
-  useBlockProps,
-  InspectorControls,
-  InnerBlocks,
-} from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
-import IconsColorSettings from "./settings/icons-color-settings";
-import IconsDarkColorSettings from "./settings/icons-dark-color-settings";
-import IconsSizeSettings from "./settings/icons-size-settings";
-import MarginSettings from "./settings/margin-settings";
-import SpaceBetweenIconsSettings from "./settings/space-between-icons-settings";
+	useBlockProps,
+	InspectorControls,
+	InnerBlocks,
+} from '@wordpress/block-editor';
+import IconsColorSettings from './settings/icons-color-settings';
+import IconsDarkColorSettings from './settings/icons-dark-color-settings';
+import IconsSizeSettings from './settings/icons-size-settings';
+import MarginSettings from './settings/margin-settings';
+import SpaceBetweenIconsSettings from './settings/space-between-icons-settings';
 
-export default function EditBlock({ attributes, setAttributes }) {
-  const {
-    iconsGap,
-    groupMargin,
-    socialIconsSize,
-    socialIconsColor,
-    socialIconsDarkColor,
-  } = attributes;
+export default function EditBlock( { attributes, setAttributes } ) {
+	const {
+		iconsGap,
+		groupMargin,
+		socialIconsSize,
+		socialIconsColor,
+		socialIconsDarkColor,
+	} = attributes;
 
-  // Block props
-  const blockProps = useBlockProps({
-    className: "cbb-social-icons-group",
-    style: {
-      margin: groupMargin.differentMarginsEnabled
-        ? `${groupMargin.top} ${groupMargin.right} ${groupMargin.bottom} ${groupMargin.left}`
-        : `${groupMargin.top}`,
-      "--cbb-icon-group-gap": `${iconsGap}px`,
-      "--cbb-social-icon-size": `${socialIconsSize}px`,
-      "--cbb-social-icon-color": `${socialIconsColor}`,
-      "--cbb-social-icon-dark-color": `${socialIconsDarkColor}`,
-    },
-  });
+	// Block props
+	const blockProps = useBlockProps( {
+		className: 'cbb-social-icons-group',
+		style: {
+			margin: groupMargin.differentMarginsEnabled
+				? `${ groupMargin.top } ${ groupMargin.right } ${ groupMargin.bottom } ${ groupMargin.left }`
+				: `${ groupMargin.top }`,
+			'--cbb-icon-group-gap': `${ iconsGap }px`,
+			'--cbb-social-icon-size': `${ socialIconsSize }px`,
+			'--cbb-social-icon-color': `${ socialIconsColor }`,
+			'--cbb-social-icon-dark-color': `${ socialIconsDarkColor }`,
+		},
+	} );
 
-  return (
-    <>
-      <InspectorControls>
-        <IconsColorSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></IconsColorSettings>
-        <IconsDarkColorSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></IconsDarkColorSettings>
-        <IconsSizeSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></IconsSizeSettings>
-        <SpaceBetweenIconsSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></SpaceBetweenIconsSettings>
-        <MarginSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></MarginSettings>
-      </InspectorControls>
-      <div {...blockProps}>
-        <InnerBlocks
-          template={[
-            ["caledros-basic-blocks/social-icon"],
-            ["caledros-basic-blocks/social-icon"],
-            ["caledros-basic-blocks/social-icon"],
-          ]}
-          allowedBlocks={["caledros-basic-blocks/social-icon"]}
-        />
-      </div>
-    </>
-  );
+	return (
+		<>
+			<InspectorControls>
+				<IconsColorSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></IconsColorSettings>
+				<IconsDarkColorSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></IconsDarkColorSettings>
+				<IconsSizeSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></IconsSizeSettings>
+				<SpaceBetweenIconsSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></SpaceBetweenIconsSettings>
+				<MarginSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				></MarginSettings>
+			</InspectorControls>
+			<div { ...blockProps }>
+				<InnerBlocks
+					template={ [
+						[ 'caledros-basic-blocks/social-icon' ],
+						[ 'caledros-basic-blocks/social-icon' ],
+						[ 'caledros-basic-blocks/social-icon' ],
+					] }
+					allowedBlocks={ [ 'caledros-basic-blocks/social-icon' ] }
+				/>
+			</div>
+		</>
+	);
 }
