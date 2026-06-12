@@ -242,3 +242,15 @@ html[data-theme="dark"] .cbb-posts-loop__tag {
 .cbb-posts-loop__link--demo {
   cursor: pointer;
 }
+
+/*Posts Loop styles*/
+.cbb-posts-loop__post-title--style-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.cbb-posts-loop__post-info--style-2 {
+  padding: 0px 10px 10px 10px;
+}

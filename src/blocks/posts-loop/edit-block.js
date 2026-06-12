@@ -64,6 +64,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		columnNoTablet,
 		columnNoMobile,
 		authorFilter,
+		loopStyle,
 	} = attributes;
 
 	// Published posts array
@@ -173,6 +174,14 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		}
 		return words.slice( 0, wordLimit ).join( ' ' ) + more;
 	}
+
+	// Post info classes
+	const postInfoClasses = [
+		'cbb-posts-loop__post-info',
+		loopStyle === 'style-2' && 'cbb-posts-loop__post-info--style-2 ',
+	]
+		.filter( Boolean )
+		.join( ' ' );
 
 	// Block props
 	const blockProps = useBlockProps( {
@@ -381,167 +390,176 @@ export default function EditBlock( { attributes, setAttributes } ) {
 														alt="Single post"
 													/>
 												) }
-												<span className="cbb-posts-loop__post-title">
-													{ post.title }
-												</span>
+												{ loopStyle === 'style-1' && (
+													<span className="cbb-posts-loop__post-title">
+														{ post.title }
+													</span>
+												) }
 											</div>
 										</div>
-										<div className="cbb-posts-loop__post-info">
-											<div className="cbb-posts-loop__category-and-tag">
-												{ showCategory &&
-													! categoryFilter.enable && (
-														<div className="cbb-posts-loop__categories-container">
-															{ post.categories.map(
-																(
-																	category,
-																	catIndex
-																) => (
-																	<div
-																		key={
-																			catIndex
-																		}
-																		className="cbb-posts-loop__category cbb-posts-loop__link--demo "
-																	>
-																		<svg
-																			xmlns="http://www.w3.org/2000/svg"
-																			width="16"
-																			height="16"
-																			fill="currentColor"
-																			className="bi bi-bookmarks"
-																			viewBox="0 0 16 16"
-																		>
-																			<path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z" />
-																			<path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1" />
-																		</svg>
-																		{
-																			category.name
-																		}
-																	</div>
-																)
-															) }
-														</div>
-													) }
-												{ showCategory &&
-													categoryFilter.enable && (
-														<div className="cbb-posts-loop__categories-container">
-															<div className="cbb-posts-loop__category cbb-posts-loop__link--demo ">
-																<svg
-																	xmlns="http://www.w3.org/2000/svg"
-																	width="16"
-																	height="16"
-																	fill="currentColor"
-																	className="bi bi-bookmarks"
-																	viewBox="0 0 16 16"
-																>
-																	<path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z" />
-																	<path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1" />
-																</svg>
-																{ post.categories
-																	.filter(
-																		(
-																			category
-																		) =>
-																			category.id ===
-																			categoryFilter.categoryId
-																	)
-																	.map(
-																		(
-																			category,
-																			catIndex
-																		) => (
-																			<span
-																				key={
-																					catIndex
-																				}
-																			>
-																				{
-																					category.name
-																				}
-																			</span>
-																		)
-																	) }
-															</div>
-														</div>
-													) }
-												{ showTags &&
-													post.tags !== null &&
-													! tagFilter.enable && (
-														<div className="cbb-posts-loop__tags-container">
-															{ post.tags.map(
-																(
-																	tag,
-																	tagIndex
-																) => (
-																	<div
-																		key={
-																			tagIndex
-																		}
-																		className="cbb-posts-loop__tag cbb-posts-loop__link--demo "
-																	>
-																		<svg
-																			xmlns="http://www.w3.org/2000/svg"
-																			width="16"
-																			height="16"
-																			fill="currentColor"
-																			className="bi bi-tags"
-																			viewBox="0 0 16 16"
-																		>
-																			<path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
-																			<path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
-																		</svg>
-																		{
-																			tag.name
-																		}
-																	</div>
-																)
-															) }
-														</div>
-													) }
-												{ showTags &&
-													post.tags !== null &&
-													tagFilter.enable && (
-														<div className="cbb-posts-loop__tags-container">
-															<div className="cbb-posts-loop__tag">
-																<svg
-																	xmlns="http://www.w3.org/2000/svg"
-																	width="16"
-																	height="16"
-																	fill="currentColor"
-																	className="bi bi-tags"
-																	viewBox="0 0 16 16"
-																>
-																	<path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
-																	<path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
-																</svg>
-																{ post.tags
-																	.filter(
-																		(
-																			tag
-																		) =>
-																			tag.id ===
-																			tagFilter.tagId
-																	)
-																	.map(
-																		(
-																			tag,
-																			tagIndex
-																		) => (
-																			<span
-																				key={
-																					tagIndex
-																				}
-																			>
-																				{
-																					tag.name
-																				}
-																			</span>
-																		)
-																	) }
-															</div>
-														</div>
-													) }
+										{ loopStyle === 'style-2' && (
+											<div className="cbb-posts-loop__post-title--style-2">
+												{ post.title }
 											</div>
-										</div>
+										) }
+										{ ( showCategory || showTags ) && (
+											<div className={ postInfoClasses }>
+												<div className="cbb-posts-loop__category-and-tag">
+													{ showCategory &&
+														! categoryFilter.enable && (
+															<div className="cbb-posts-loop__categories-container">
+																{ post.categories.map(
+																	(
+																		category,
+																		catIndex
+																	) => (
+																		<div
+																			key={
+																				catIndex
+																			}
+																			className="cbb-posts-loop__category cbb-posts-loop__link--demo "
+																		>
+																			<svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16"
+																				height="16"
+																				fill="currentColor"
+																				className="bi bi-bookmarks"
+																				viewBox="0 0 16 16"
+																			>
+																				<path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z" />
+																				<path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1" />
+																			</svg>
+																			{
+																				category.name
+																			}
+																		</div>
+																	)
+																) }
+															</div>
+														) }
+													{ showCategory &&
+														categoryFilter.enable && (
+															<div className="cbb-posts-loop__categories-container">
+																<div className="cbb-posts-loop__category cbb-posts-loop__link--demo ">
+																	<svg
+																		xmlns="http://www.w3.org/2000/svg"
+																		width="16"
+																		height="16"
+																		fill="currentColor"
+																		className="bi bi-bookmarks"
+																		viewBox="0 0 16 16"
+																	>
+																		<path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z" />
+																		<path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1" />
+																	</svg>
+																	{ post.categories
+																		.filter(
+																			(
+																				category
+																			) =>
+																				category.id ===
+																				categoryFilter.categoryId
+																		)
+																		.map(
+																			(
+																				category,
+																				catIndex
+																			) => (
+																				<span
+																					key={
+																						catIndex
+																					}
+																				>
+																					{
+																						category.name
+																					}
+																				</span>
+																			)
+																		) }
+																</div>
+															</div>
+														) }
+													{ showTags &&
+														post.tags !== null &&
+														! tagFilter.enable && (
+															<div className="cbb-posts-loop__tags-container">
+																{ post.tags.map(
+																	(
+																		tag,
+																		tagIndex
+																	) => (
+																		<div
+																			key={
+																				tagIndex
+																			}
+																			className="cbb-posts-loop__tag cbb-posts-loop__link--demo "
+																		>
+																			<svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16"
+																				height="16"
+																				fill="currentColor"
+																				className="bi bi-tags"
+																				viewBox="0 0 16 16"
+																			>
+																				<path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
+																				<path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
+																			</svg>
+																			{
+																				tag.name
+																			}
+																		</div>
+																	)
+																) }
+															</div>
+														) }
+													{ showTags &&
+														post.tags !== null &&
+														tagFilter.enable && (
+															<div className="cbb-posts-loop__tags-container">
+																<div className="cbb-posts-loop__tag">
+																	<svg
+																		xmlns="http://www.w3.org/2000/svg"
+																		width="16"
+																		height="16"
+																		fill="currentColor"
+																		className="bi bi-tags"
+																		viewBox="0 0 16 16"
+																	>
+																		<path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
+																		<path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
+																	</svg>
+																	{ post.tags
+																		.filter(
+																			(
+																				tag
+																			) =>
+																				tag.id ===
+																				tagFilter.tagId
+																		)
+																		.map(
+																			(
+																				tag,
+																				tagIndex
+																			) => (
+																				<span
+																					key={
+																						tagIndex
+																					}
+																				>
+																					{
+																						tag.name
+																					}
+																				</span>
+																			)
+																		) }
+																</div>
+															</div>
+														) }
+												</div>
+											</div>
+										) }
 										{ excerptOptions.showExcerpt && (
 											<p className="cbb-posts-loop__post-excerpt">
 												{ trimWords(
