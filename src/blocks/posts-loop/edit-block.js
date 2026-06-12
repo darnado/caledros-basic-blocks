@@ -40,6 +40,7 @@ import NumberOfColumnsDesktopSettings from './settings/no-of-columns-desktop-set
 import NumberOfColumnsTabletSettings from './settings/no-of-columns-tablet-settings';
 import NumberOfColumnsMobileSettings from './settings/no-of-columns-mobile-settings';
 import AuthorFilterSettings from './settings/author-filter-settings';
+import LoopStyleSettings from './settings/loop-style-settings';
 import DemoData from './demo-data';
 
 export default function EditBlock( { attributes, setAttributes } ) {
@@ -263,6 +264,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 										attributes={ attributes }
 										setAttributes={ setAttributes }
 									></NumberOfColumnsMobileSettings>
+									<LoopStyleSettings
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									></LoopStyleSettings>
 								</>
 							);
 						}

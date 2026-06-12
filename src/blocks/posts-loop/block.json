@@ -124,6 +124,10 @@
         "authorId": 1,
         "enableAuthorLink": false
       }
+    },
+    "loopStyle":{
+      "type":"string",
+      "default": "style-1"
     }
   },
   "supports": {
