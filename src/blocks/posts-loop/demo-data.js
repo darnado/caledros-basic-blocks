@@ -26,17 +26,17 @@ export default function DemoData() {
 		<>
 			<div className="cbb-posts-loop__container">
 				<div className="cbb-posts-loop__card">
-					<div className="cbb-posts-loop_post-header">
-						<p className="cbb-posts-loop_website-title">
+					<div className="cbb-posts-loop__post-header">
+						<p className="cbb-posts-loop__website-title">
 							<img
 								decoding="async"
-								className="cbb-posts-loop_website-title-icon"
+								className="cbb-posts-loop__website-title-icon"
 								src={ placeholder }
 								alt="placeholder"
 							/>
 							Basic Theme
 						</p>
-						<div className="cbb-posts-loop_post-author-and-date">
+						<div className="cbb-posts-loop__post-author-and-date">
 							<span className="cbb-posts-loop__author">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -114,17 +114,17 @@ export default function DemoData() {
 					</div>
 				</div>
 				<div className="cbb-posts-loop__card">
-					<div className="cbb-posts-loop_post-header">
-						<p className="cbb-posts-loop_website-title">
+					<div className="cbb-posts-loop__post-header">
+						<p className="cbb-posts-loop__website-title">
 							<img
 								decoding="async"
-								className="cbb-posts-loop_website-title-icon"
+								className="cbb-posts-loop__website-title-icon"
 								src={ placeholder }
 								alt="placeholder"
 							/>
 							Basic Theme
 						</p>
-						<div className="cbb-posts-loop_post-author-and-date">
+						<div className="cbb-posts-loop__post-author-and-date">
 							<span className="cbb-posts-loop__author">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -202,17 +202,17 @@ export default function DemoData() {
 					</div>
 				</div>
 				<div className="cbb-posts-loop__card">
-					<div className="cbb-posts-loop_post-header">
-						<p className="cbb-posts-loop_website-title">
+					<div className="cbb-posts-loop__post-header">
+						<p className="cbb-posts-loop__website-title">
 							<img
 								decoding="async"
-								className="cbb-posts-loop_website-title-icon"
+								className="cbb-posts-loop__website-title-icon"
 								src={ placeholder }
 								alt="placeholder"
 							/>
 							Basic Theme
 						</p>
-						<div className="cbb-posts-loop_post-author-and-date">
+						<div className="cbb-posts-loop__post-author-and-date">
 							<span className="cbb-posts-loop__author">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -290,17 +290,17 @@ export default function DemoData() {
 					</div>
 				</div>
 				<div className="cbb-posts-loop__card">
-					<div className="cbb-posts-loop_post-header">
-						<p className="cbb-posts-loop_website-title">
+					<div className="cbb-posts-loop__post-header">
+						<p className="cbb-posts-loop__website-title">
 							<img
 								decoding="async"
-								className="cbb-posts-loop_website-title-icon"
+								className="cbb-posts-loop__website-title-icon"
 								src={ placeholder }
 								alt="placeholder"
 							/>
 							Basic Theme
 						</p>
-						<div className="cbb-posts-loop_post-author-and-date">
+						<div className="cbb-posts-loop__post-author-and-date">
 							<span className="cbb-posts-loop__author">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"

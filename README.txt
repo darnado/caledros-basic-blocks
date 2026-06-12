@@ -152,6 +152,10 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 
 = 3.2.0 - 2026-06-03 =
 
+** Added **
+
+* Style control to the Posts Loop block. This new control allows to select between 2 block styles. Each style displays the post title in a different position.
+
 ** Changed **
 
 * Plugin admin menu's position. Now such menu is located after "Settings" in the WordPress sidebar.

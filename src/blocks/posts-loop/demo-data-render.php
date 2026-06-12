@@ -45,17 +45,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 function caledros_basic_blocks_render_card( $placeholder_url, $placeholder_background_url, $title, $date ) {
 	?>
 	<div class="cbb-posts-loop__card">
-		<div class="cbb-posts-loop_post-header">
-			<p class="cbb-posts-loop_website-title">
+		<div class="cbb-posts-loop__post-header">
+			<p class="cbb-posts-loop__website-title">
 				<img
 					decoding="async"
-					class="cbb-posts-loop_website-title-icon"
+					class="cbb-posts-loop__website-title-icon"
 					src="<?php echo esc_url( $placeholder_url ); ?>"
 					alt="placeholder"
 				/>
 				Basic Theme
 			</p>
-			<div class="cbb-posts-loop_post-author-and-date">
+			<div class="cbb-posts-loop__post-author-and-date">
 				<span class="cbb-posts-loop__author">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 						class="bi bi-person" viewBox="0 0 16 16">

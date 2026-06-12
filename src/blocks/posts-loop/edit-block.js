@@ -328,10 +328,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 										className="cbb-posts-loop__card"
 										key={ index }
 									>
-										<div className="cbb-posts-loop_post-header">
-											<p className="cbb-posts-loop_website-title">
+										<div className="cbb-posts-loop__post-header">
+											<p className="cbb-posts-loop__website-title">
 												<img
-													className="cbb-posts-loop_website-title-icon"
+													className="cbb-posts-loop__website-title-icon"
 													src={
 														postsLoopTitleIcon.url ===
 														''
@@ -342,7 +342,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 												></img>
 												{ postsLoopTitle }
 											</p>
-											<div className="cbb-posts-loop_post-author-and-date">
+											<div className="cbb-posts-loop__post-author-and-date">
 												{ showAuthor && (
 													<span className="cbb-posts-loop__author">
 														<svg

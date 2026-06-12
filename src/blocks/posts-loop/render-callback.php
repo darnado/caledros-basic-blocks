@@ -76,6 +76,7 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 	$author_filter_enabled                 = filter_var( $attributes['authorFilter']['enable'] ?? false, FILTER_VALIDATE_BOOLEAN );
 	$author_id                             = sanitize_text_field( $attributes['authorFilter']['authorId'] ?? '' );
 	$author_link_enabled                   = filter_var( $attributes['authorFilter']['enableAuthorLink'] ?? false, FILTER_VALIDATE_BOOLEAN );
+	$loop_style                            = sanitize_text_field( $attributes['loopStyle'] ?? 'style-1' );
 
 	// Format the post date.
 	$date_format_map      = array(
@@ -122,6 +123,10 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 
 	// Show inline styles.
 	$inline_styles = ( $column_no_desktop_enable_custom_value || $column_no_tablet_enable_custom_value || $column_no_mobile_enable_custom_value ) ? 'style="' . $style . '"' : '';
+
+	// Post info classes.
+	$post_info_classes  = 'cbb-posts-loop__post-info';
+	$post_info_classes .= ( 'style-2' === $loop_style ) ? ' cbb-posts-loop__post-info--style-2' : '';
 
 	// Start ouput buffering.
 	ob_start();
@@ -180,24 +185,24 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 						$featured->the_post();
 						?>
 					<div class="cbb-posts-loop__card">  
-						<div class="cbb-posts-loop_post-header">
-							<p class="cbb-posts-loop_website-title">
+						<div class="cbb-posts-loop__post-header">
+							<p class="cbb-posts-loop__website-title">
 							<?php
 							if ( '' === $posts_loop_title_icon_url ) {
 								// I'm using a direct <img> tag because the image is a static plugin asset,
 								// not a WordPress media library attachment. Therefore, wp_get_attachment_image()
 								// is not applicable, as it requires an attachment ID and is intended for media uploads.
-								echo '<img class="cbb-posts-loop_website-title-icon" src="' . esc_url( $placeholder_url ) . '" alt="placeholder">'; // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+								echo '<img class="cbb-posts-loop__website-title-icon" src="' . esc_url( $placeholder_url ) . '" alt="placeholder">'; // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 							} else {
 								// I'm using a direct <img> tag because the image is a static plugin asset,
 								// not a WordPress media library attachment. Therefore, wp_get_attachment_image()
 								// is not applicable, as it requires an attachment ID and is intended for media uploads.
-								echo '<img class="cbb-posts-loop_website-title-icon" src="' . esc_url( $posts_loop_title_icon_url ) . '" alt="' . esc_attr( $posts_loop_title_icon_alt ) . '">'; // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+								echo '<img class="cbb-posts-loop__website-title-icon" src="' . esc_url( $posts_loop_title_icon_url ) . '" alt="' . esc_attr( $posts_loop_title_icon_alt ) . '">'; // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 							}
 							?>
 								<?php echo esc_html( $posts_loop_title ); ?>
 							</p>
-							<div class="cbb-posts-loop_post-author-and-date">
+							<div class="cbb-posts-loop__post-author-and-date">
 								<?php if ( $show_author ) : ?>                                    
 									<?php
 										$current_post_author_id           = get_the_author_meta( 'ID' );
@@ -235,10 +240,18 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 						<div class="cbb-posts-loop__img-container">
 							<a class="cbb-posts-loop__img-link" href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail(); ?>
-								<span class="cbb-posts-loop__post-title"><?php the_title(); ?></span>
+								<?php if ( 'style-1' === $loop_style ) : ?>
+									<span class="cbb-posts-loop__post-title"><?php the_title(); ?></span>
+								<?php endif; ?>								
 							</a>                       
-						</div>      
-						<div class="cbb-posts-loop__post-info">
+						</div>    
+						<?php if ( 'style-2' === $loop_style ) : ?>
+						<div class="cbb-posts-loop__post-title--style-2">
+							<?php the_title(); ?>			
+						</div>
+						<?php endif; ?>
+						<?php if ( $show_category || $show_tags ) : ?>
+						<div class="<?php echo wp_kses_post( $post_info_classes ); ?>">
 							<div class="cbb-posts-loop__category-and-tag">  
 								<?php
 								if ( ( ( 'category-template' === $page_type && is_category() ) || ( $category_filter_enabled && 'category-template' !== $page_type ) ) && $show_category ) :
@@ -313,7 +326,8 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 									<?php endif; ?>
 								<?php endif; ?>     
 							</div>                    
-						</div>  
+						</div> 
+						<?php endif; ?> 
 						<?php
 						$excerpt_ellipsis = $show_excerpt_ellipsis ? '...' : '';
 						if ( $show_excerpt && has_excerpt() ) :
@@ -324,9 +338,9 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 						<?php endif; ?> 
 					</div>  
 						<?php
-					endwhile;
-					wp_reset_postdata();
-				endif;
+						endwhile;
+						wp_reset_postdata();
+						endif;
 				?>
 			</div>     
 			<?php if ( $show_navigation_links ) { ?>  
@@ -347,12 +361,12 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 			</div>     
 			<?php } ?>  
 		</div>
-		<?php endif; ?>
-		<?php
-		if ( $show_demo_data ) {
-			echo wp_kses( caledros_basic_blocks_get_demo_data( $placeholder_background_url, $placeholder_url ), $allowed_tags );
-		}
-		?>
+			<?php endif; ?>
+			<?php
+			if ( $show_demo_data ) {
+				echo wp_kses( caledros_basic_blocks_get_demo_data( $placeholder_background_url, $placeholder_url ), $allowed_tags );
+			}
+			?>
 			<?php
 			// Fetch the content of the ouput buffer.
 			$output = ob_get_contents();
