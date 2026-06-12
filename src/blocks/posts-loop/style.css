@@ -251,6 +251,10 @@ html[data-theme="dark"] .cbb-posts-loop__tag {
   padding: 10px;
 }
 
+html[data-theme="dark"] .cbb-posts-loop__post-title--style-2 {
+  color: #fff;
+}
+
 .cbb-posts-loop__post-info--style-2 {
   padding: 0px 10px 10px 10px;
 }
