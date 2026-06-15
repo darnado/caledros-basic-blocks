@@ -41,6 +41,8 @@ import NumberOfColumnsTabletSettings from './settings/no-of-columns-tablet-setti
 import NumberOfColumnsMobileSettings from './settings/no-of-columns-mobile-settings';
 import AuthorFilterSettings from './settings/author-filter-settings';
 import LoopStyleSettings from './settings/loop-style-settings';
+import TypographyGroupSettings from './settings/typography/typography-group-settings';
+import LetterSpacingSettings from './settings/letter-spacing-settings';
 import DemoData from './demo-data';
 
 export default function EditBlock( { attributes, setAttributes } ) {
@@ -273,6 +275,14 @@ export default function EditBlock( { attributes, setAttributes } ) {
 										attributes={ attributes }
 										setAttributes={ setAttributes }
 									></NumberOfColumnsMobileSettings>
+									<TypographyGroupSettings
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									></TypographyGroupSettings>
+									<LetterSpacingSettings
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									></LetterSpacingSettings>
 									<LoopStyleSettings
 										attributes={ attributes }
 										setAttributes={ setAttributes }
