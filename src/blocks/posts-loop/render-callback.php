@@ -77,6 +77,11 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 	$author_id                             = sanitize_text_field( $attributes['authorFilter']['authorId'] ?? '' );
 	$author_link_enabled                   = filter_var( $attributes['authorFilter']['enableAuthorLink'] ?? false, FILTER_VALIDATE_BOOLEAN );
 	$loop_style                            = sanitize_text_field( $attributes['loopStyle'] ?? 'style-1' );
+	$post_title_font_family                = sanitize_text_field( $attributes['postTitleFontFamily'] ?? '' );
+	$post_title_font_weight                = intval( $attributes['postTitleFontWeight'] ?? 400 );
+	$post_title_font_style                 = sanitize_text_field( $attributes['postTitleFontStyle'] ?? 'normal' );
+	$post_title_font_size                  = sanitize_text_field( $attributes['postTitleFontSize'] ?? 'var(--wp--preset--font-size--medium)' );
+	$post_title_letter_spacing             = sanitize_text_field( $attributes['postTitleLetterSpacing'] ?? 'normal' );
 
 	// Format the post date.
 	$date_format_map      = array(
@@ -217,7 +222,7 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 											<?php echo esc_html( $current_post_author_display_name ); ?>
 										</a>  
 									<?php else : ?>
-										<span class="cbb-posts-loop__author">
+										<span class="cbb-posts-loop__author">postTitleFontStyle
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
 											<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
 											</svg>                                        
