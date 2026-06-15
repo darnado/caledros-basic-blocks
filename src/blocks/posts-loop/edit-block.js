@@ -41,8 +41,9 @@ import NumberOfColumnsTabletSettings from './settings/no-of-columns-tablet-setti
 import NumberOfColumnsMobileSettings from './settings/no-of-columns-mobile-settings';
 import AuthorFilterSettings from './settings/author-filter-settings';
 import LoopStyleSettings from './settings/loop-style-settings';
-import TypographyGroupSettings from './settings/typography/typography-group-settings';
-import LetterSpacingSettings from './settings/letter-spacing-settings';
+import PostTitleTypographyGroupSettings from './settings/post-title-typography/post-title-typography-group-settings';
+import PostTitleLetterSpacingSettings from './settings/post-title-letter-spacing-settings';
+import PostTitleFontSizeSettings from './settings/post-title-font-size-settings';
 import DemoData from './demo-data';
 
 export default function EditBlock( { attributes, setAttributes } ) {
@@ -67,6 +68,11 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		columnNoMobile,
 		authorFilter,
 		loopStyle,
+		postTitleFontFamily,
+		postTitleFontWeight,
+		postTitleFontStyle,
+		postTitleFontSize,
+		postTitleLetterSpacing,
 	} = attributes;
 
 	// Published posts array
@@ -185,6 +191,19 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		.filter( Boolean )
 		.join( ' ' );
 
+	// Post title inline styles
+	const postTitleInlineStyles = {
+		...( postTitleFontFamily !== '' && {
+			fontFamily: `var(--wp--preset--font-family--${ postTitleFontFamily })`,
+		} ),
+		fontWeight: postTitleFontWeight,
+		fontStyle: postTitleFontStyle,
+		fontSize: postTitleFontSize,
+		...( postTitleLetterSpacing !== 'normal' && {
+			letterSpacing: postTitleLetterSpacing,
+		} ),
+	};
+
 	// Block props
 	const blockProps = useBlockProps( {
 		className: 'cbb-posts-loop',
@@ -275,14 +294,18 @@ export default function EditBlock( { attributes, setAttributes } ) {
 										attributes={ attributes }
 										setAttributes={ setAttributes }
 									></NumberOfColumnsMobileSettings>
-									<TypographyGroupSettings
+									<PostTitleTypographyGroupSettings
 										attributes={ attributes }
 										setAttributes={ setAttributes }
-									></TypographyGroupSettings>
-									<LetterSpacingSettings
+									></PostTitleTypographyGroupSettings>
+									<PostTitleLetterSpacingSettings
 										attributes={ attributes }
 										setAttributes={ setAttributes }
-									></LetterSpacingSettings>
+									></PostTitleLetterSpacingSettings>
+									<PostTitleFontSizeSettings
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									></PostTitleFontSizeSettings>
 									<LoopStyleSettings
 										attributes={ attributes }
 										setAttributes={ setAttributes }
@@ -401,14 +424,22 @@ export default function EditBlock( { attributes, setAttributes } ) {
 													/>
 												) }
 												{ loopStyle === 'style-1' && (
-													<span className="cbb-posts-loop__post-title">
+													<span
+														className="cbb-posts-loop__post-title"
+														style={
+															postTitleInlineStyles
+														}
+													>
 														{ post.title }
 													</span>
 												) }
 											</div>
 										</div>
 										{ loopStyle === 'style-2' && (
-											<div className="cbb-posts-loop__post-title--style-2">
+											<div
+												className="cbb-posts-loop__post-title--style-2"
+												style={ postTitleInlineStyles }
+											>
 												{ post.title }
 											</div>
 										) }

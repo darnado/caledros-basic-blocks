@@ -27,14 +27,17 @@ import {
 import { __, sprintf } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
-export default function LetterSpacingSettings( { attributes, setAttributes } ) {
-	const { letterSpacing } = attributes;
+export default function PostTitleLetterSpacingSettings( {
+	attributes,
+	setAttributes,
+} ) {
+	const { postTitleLetterSpacing } = attributes;
 	const [ useNormalLetterSpacing, setUseNormalLetterSpacing ] = useState(
-		letterSpacing === 'normal' ? true : false
+		postTitleLetterSpacing === 'normal' ? true : false
 	);
 
 	// Recover the unit used in the letter spacing
-	const unit = letterSpacing.replace( /[\d.]+/g, '' ) || 'px';
+	const unit = postTitleLetterSpacing.replace( /[\d.]+/g, '' ) || 'px';
 	const letterSpacingUnit = [ 'px', 'em', 'rem' ].includes( unit )
 		? unit
 		: 'px';
@@ -42,9 +45,9 @@ export default function LetterSpacingSettings( { attributes, setAttributes } ) {
 	// Recover the numeric value of the letter spacing
 	const letterSpacingNumber = ( unitP ) => {
 		if ( unitP === 'px' ) {
-			return parseInt( letterSpacing ) || 0;
+			return parseInt( postTitleLetterSpacing ) || 0;
 		}
-		return parseFloat( letterSpacing ) || 0;
+		return parseFloat( postTitleLetterSpacing ) || 0;
 	};
 
 	// Enforce max value for pixels
@@ -57,7 +60,7 @@ export default function LetterSpacingSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Letter spacing', 'caledros-basic-blocks' ) }
+			title={ __( 'Post Title Letter spacing', 'caledros-basic-blocks' ) }
 			initialOpen={ false }
 		>
 			<ToggleControl
@@ -73,7 +76,7 @@ export default function LetterSpacingSettings( { attributes, setAttributes } ) {
 						: 'normal';
 					setUseNormalLetterSpacing( ( oldValue ) => ! oldValue );
 					setAttributes( {
-						letterSpacing: `${ temporalValue }${
+						postTitleLetterSpacing: `${ temporalValue }${
 							temporalValue === 'normal' ? '' : letterSpacingUnit
 						}`,
 					} );
@@ -94,13 +97,13 @@ export default function LetterSpacingSettings( { attributes, setAttributes } ) {
 							),
 							letterSpacingUnit
 						) }
-						value={ parseFloat( letterSpacing ) || 0 }
+						value={ parseFloat( postTitleLetterSpacing ) || 0 }
 						max={ letterSpacingUnit === 'px' ? 50 : 10 }
 						min={ 0 }
 						step={ letterSpacingUnit === 'px' ? 1 : 0.01 }
 						onChange={ ( newLetterSpacing ) => {
 							setAttributes( {
-								letterSpacing: `${ enforceMaxValue(
+								postTitleLetterSpacing: `${ enforceMaxValue(
 									letterSpacingUnit,
 									newLetterSpacing
 								) }${ letterSpacingUnit }`,
@@ -127,7 +130,7 @@ export default function LetterSpacingSettings( { attributes, setAttributes } ) {
 						] }
 						onChange={ ( newUnit ) => {
 							setAttributes( {
-								letterSpacing: `${ enforceMaxValue(
+								postTitleLetterSpacing: `${ enforceMaxValue(
 									newUnit,
 									letterSpacingNumber( newUnit )
 								) }${ newUnit }`,

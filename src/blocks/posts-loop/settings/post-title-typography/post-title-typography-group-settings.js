@@ -21,11 +21,11 @@
 import { PanelBody } from '@wordpress/components';
 import { useSettings } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-import FontFamilySettings from './font-family-settings';
-import FontWeightSettings from './font-weight-settings';
-import FontStyleSettings from './font-style-settings';
+import PostTitleFontFamilySettings from './post-title-font-family-settings';
+import PostTitleFontWeightSettings from './post-title-font-weight-settings';
+import PostTitleFontStyleSettings from './post-title-font-style-settings';
 
-export default function TypographyGroupSettings( {
+export default function PostTitleTypographyGroupSettings( {
 	attributes,
 	setAttributes,
 } ) {
@@ -78,29 +78,29 @@ export default function TypographyGroupSettings( {
 
 	return (
 		<PanelBody
-			title={ __( 'Typography', 'caledros-basic-blocks' ) }
+			title={ __( 'Post Title Typography', 'caledros-basic-blocks' ) }
 			initialOpen={ false }
 		>
-			<FontFamilySettings
+			<PostTitleFontFamilySettings
 				attributes={ attributes }
 				setAttributes={ setAttributes }
 				registeredFonts={ registeredFonts }
 				getAvailableFontStyles={ getAvailableFontStyles }
 				getAvailableFontWeights={ getAvailableFontWeights }
 				doesFontExist={ doesFontExist }
-			></FontFamilySettings>
-			<FontStyleSettings
+			></PostTitleFontFamilySettings>
+			<PostTitleFontStyleSettings
 				attributes={ attributes }
 				setAttributes={ setAttributes }
 				getAvailableFontStyles={ getAvailableFontStyles }
 				getAvailableFontWeights={ getAvailableFontWeights }
 				doesFontExist={ doesFontExist }
-			></FontStyleSettings>
-			<FontWeightSettings
+			></PostTitleFontStyleSettings>
+			<PostTitleFontWeightSettings
 				attributes={ attributes }
 				setAttributes={ setAttributes }
 				getAvailableFontWeights={ getAvailableFontWeights }
-			></FontWeightSettings>
+			></PostTitleFontWeightSettings>
 		</PanelBody>
 	);
 }

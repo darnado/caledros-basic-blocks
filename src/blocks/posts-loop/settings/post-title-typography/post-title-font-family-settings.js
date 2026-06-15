@@ -21,7 +21,7 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FontFamilySettings( {
+export default function PostTitleFontFamilySettings( {
 	attributes,
 	setAttributes,
 	registeredFonts,
@@ -29,7 +29,8 @@ export default function FontFamilySettings( {
 	getAvailableFontWeights,
 	doesFontExist,
 } ) {
-	const { fontFamily, fontWeight, fontStyle } = attributes;
+	const { postTitleFontFamily, postTitleFontWeight, postTitleFontStyle } =
+		attributes;
 
 	// Recover theme fonts and custom fonts
 	const themeFonts =
@@ -53,7 +54,7 @@ export default function FontFamilySettings( {
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
 			help={ __( 'Select the font family.', 'caledros-basic-blocks' ) }
-			value={ fontFamily }
+			value={ postTitleFontFamily }
 			options={ fontOptions }
 			onChange={ ( newFontFamily ) => {
 				// Compute available font styles for the new font family and update if necessary
@@ -61,8 +62,10 @@ export default function FontFamilySettings( {
 					? getAvailableFontStyles( newFontFamily )
 					: [];
 
-				const newFontStyle = availableFontStyles.includes( fontStyle )
-					? fontStyle
+				const newFontStyle = availableFontStyles.includes(
+					postTitleFontStyle
+				)
+					? postTitleFontStyle
 					: availableFontStyles[ 0 ];
 
 				// Compute available font weights for the new font family and update if necessary
@@ -71,20 +74,20 @@ export default function FontFamilySettings( {
 					: [];
 
 				const newFontWeight = availableFontWeights.includes(
-					fontWeight
+					postTitleFontWeight
 				)
-					? fontWeight
+					? postTitleFontWeight
 					: availableFontWeights[ 0 ];
 
 				setAttributes( {
-					fontFamily: newFontFamily,
+					postTitleFontFamily: newFontFamily,
 					...( doesFontExist( newFontFamily ) &&
-						newFontStyle !== fontStyle && {
-							fontStyle: newFontStyle,
+						newFontStyle !== postTitleFontStyle && {
+							postTitleFontStyle: newFontStyle,
 						} ),
 					...( doesFontExist( newFontFamily ) &&
-						newFontWeight !== fontWeight && {
-							fontWeight: newFontWeight,
+						newFontWeight !== postTitleFontWeight && {
+							postTitleFontWeight: newFontWeight,
 						} ),
 				} );
 			} }

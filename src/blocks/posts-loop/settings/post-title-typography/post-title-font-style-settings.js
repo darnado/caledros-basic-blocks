@@ -21,14 +21,15 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FontStyleSettings( {
+export default function PostTitleFontStyleSettings( {
 	attributes,
 	setAttributes,
 	getAvailableFontStyles,
 	getAvailableFontWeights,
 	doesFontExist,
 } ) {
-	const { fontFamily, fontStyle, fontWeight } = attributes;
+	const { postTitleFontFamily, postTitleFontStyle, postTitleFontWeight } =
+		attributes;
 
 	// Default font styles
 	const defaultFontStyles = [
@@ -37,7 +38,7 @@ export default function FontStyleSettings( {
 	];
 
 	// Create options array for the controller
-	const fontStyleOptions = getAvailableFontStyles( fontFamily )?.map(
+	const fontStyleOptions = getAvailableFontStyles( postTitleFontFamily )?.map(
 		( styleValue ) => {
 			return {
 				label: `${ styleValue[ 0 ].toUpperCase() }${ styleValue.slice(
@@ -53,28 +54,33 @@ export default function FontStyleSettings( {
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
 			help={ __( 'Select the font style.', 'caledros-basic-blocks' ) }
-			value={ fontStyle }
+			value={ postTitleFontStyle }
 			options={
 				fontStyleOptions.length === 0
 					? defaultFontStyles
 					: fontStyleOptions
 			}
 			onChange={ ( newFontStyle ) => {
-				const availableFontWeights = doesFontExist( fontFamily )
-					? getAvailableFontWeights( fontFamily, newFontStyle )
+				const availableFontWeights = doesFontExist(
+					postTitleFontFamily
+				)
+					? getAvailableFontWeights(
+							postTitleFontFamily,
+							newFontStyle
+					  )
 					: [];
 
 				const newFontWeight = availableFontWeights.includes(
-					fontWeight
+					postTitleFontWeight
 				)
-					? fontWeight
+					? postTitleFontWeight
 					: availableFontWeights[ 0 ];
 
 				setAttributes( {
-					fontStyle: newFontStyle,
-					...( doesFontExist( fontFamily ) &&
-						fontWeight !== newFontWeight && {
-							fontWeight: newFontWeight,
+					postTitleFontStyle: newFontStyle,
+					...( doesFontExist( postTitleFontFamily ) &&
+						postTitleFontWeight !== newFontWeight && {
+							postTitleFontWeight: newFontWeight,
 						} ),
 				} );
 			} }

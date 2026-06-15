@@ -125,27 +125,27 @@
         "enableAuthorLink": false
       }
     },
-    "loopStyle":{
-      "type":"string",
+    "loopStyle": {
+      "type": "string",
       "default": "style-1"
     },
-     "fontFamily": {
+    "postTitleFontFamily": {
       "type": "string",
       "default": ""
     },
-    "fontWeight": {
+    "postTitleFontWeight": {
       "type": "number",
       "default": 400
     },
-    "fontStyle": {
+    "postTitleFontStyle": {
       "type": "string",
       "default": "normal"
     },
-    "fontSize": {
+    "postTitleFontSize": {
       "type": "string",
       "default": "var(--wp--preset--font-size--medium)"
     },
-    "letterSpacing": {
+    "postTitleLetterSpacing": {
       "type": "string",
       "default": "normal"
     }
