@@ -194,13 +194,19 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	// Post title inline styles
 	const postTitleInlineStyles = {
 		...( postTitleFontFamily !== '' && {
-			fontFamily: `var(--wp--preset--font-family--${ postTitleFontFamily })`,
+			'--cbb-post-title-font-family': `var(--wp--preset--font-family--${ postTitleFontFamily })`,
 		} ),
-		fontWeight: postTitleFontWeight,
-		fontStyle: postTitleFontStyle,
-		fontSize: postTitleFontSize,
+		...( postTitleFontWeight !== 400 && {
+			'--cbb-post-title-font-weight': postTitleFontWeight,
+		} ),
+		...( postTitleFontStyle !== 'normal' && {
+			'--cbb-post-title-font-style': postTitleFontStyle,
+		} ),
+		...( postTitleFontSize !== '18px' && {
+			'--cbb-post-title-font-size': postTitleFontSize,
+		} ),
 		...( postTitleLetterSpacing !== 'normal' && {
-			letterSpacing: postTitleLetterSpacing,
+			'--cbb-post-title-letter-spacing': postTitleLetterSpacing,
 		} ),
 	};
 
@@ -217,6 +223,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			...( columnNoMobile.enableCustomValue && {
 				'--cbb-column-no-mobile': columnNoMobile.columnNo,
 			} ),
+			...postTitleInlineStyles,
 		},
 	} );
 
@@ -424,22 +431,14 @@ export default function EditBlock( { attributes, setAttributes } ) {
 													/>
 												) }
 												{ loopStyle === 'style-1' && (
-													<span
-														className="cbb-posts-loop__post-title"
-														style={
-															postTitleInlineStyles
-														}
-													>
+													<span className="cbb-posts-loop__post-title">
 														{ post.title }
 													</span>
 												) }
 											</div>
 										</div>
 										{ loopStyle === 'style-2' && (
-											<div
-												className="cbb-posts-loop__post-title--style-2"
-												style={ postTitleInlineStyles }
-											>
+											<div className="cbb-posts-loop__post-title cbb-posts-loop__post-title--style-2">
 												{ post.title }
 											</div>
 										) }

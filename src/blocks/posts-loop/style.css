@@ -67,7 +67,6 @@
 /*Post information*/
 .cbb-posts-loop__post-title {
   line-height: 1.4;
-  font-size: 22px;
   text-decoration: none;
   color: #fff;
   position: absolute;
@@ -75,7 +74,11 @@
   bottom: 10px;
   display: block;
   padding: 0px 5px 0px 5px;
-  font-weight: 500;
+  font-family: var(--cbb-post-title-font-family, inherit);
+  font-weight: var(--cbb-post-title-font-weight, 400);
+  font-style: var(--cbb-post-title-font-style, normal);
+  font-size: var(--cbb-post-title-font-size, 18px);
+  letter-spacing: var(--cbb-post-title-letter-spacing, normal);
 }
 
 .cbb-posts-loop__website-title-icon {
@@ -246,10 +249,14 @@ html[data-theme="dark"] .cbb-posts-loop__tag {
 
 /*Posts Loop styles*/
 .cbb-posts-loop__post-title--style-2 {
+  position: relative;
+  left: 0px;
+  bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
+  color: #000;
 }
 
 .cbb-posts-loop__post-info--style-2 {

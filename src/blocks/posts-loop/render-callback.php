@@ -133,6 +133,9 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 	$post_info_classes  = 'cbb-posts-loop__post-info';
 	$post_info_classes .= ( 'style-2' === $loop_style ) ? ' cbb-posts-loop__post-info--style-2' : '';
 
+	// Post title inline styles.
+	$post_title_inline_styles = '';
+
 	// Start ouput buffering.
 	ob_start();
 	?>     
