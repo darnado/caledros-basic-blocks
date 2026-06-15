@@ -150,11 +150,12 @@ However, other third party plugins can slow down your website if they are used t
 
 This changelog format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Also, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-= 3.2.0 - 2026-06-03 =
+= 3.2.0 - 2026-06-15 =
 
 ** Added **
 
 * Style control to the Posts Loop block. This new control allows to select between 2 block styles. Each style displays the post title in a different position.
+* Typography, font size, and letter spacing controls for the post titles in the Posts Loop Block. These new controls allow to change the appearance of the post titles text.
 
 ** Changed **
 
