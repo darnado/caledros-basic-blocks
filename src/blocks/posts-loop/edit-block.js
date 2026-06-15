@@ -305,14 +305,14 @@ export default function EditBlock( { attributes, setAttributes } ) {
 										attributes={ attributes }
 										setAttributes={ setAttributes }
 									></PostTitleTypographyGroupSettings>
-									<PostTitleLetterSpacingSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
-									></PostTitleLetterSpacingSettings>
 									<PostTitleFontSizeSettings
 										attributes={ attributes }
 										setAttributes={ setAttributes }
 									></PostTitleFontSizeSettings>
+									<PostTitleLetterSpacingSettings
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									></PostTitleLetterSpacingSettings>
 									<LoopStyleSettings
 										attributes={ attributes }
 										setAttributes={ setAttributes }

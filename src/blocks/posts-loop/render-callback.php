@@ -80,7 +80,7 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 	$post_title_font_family                = sanitize_text_field( $attributes['postTitleFontFamily'] ?? '' );
 	$post_title_font_weight                = intval( $attributes['postTitleFontWeight'] ?? 400 );
 	$post_title_font_style                 = sanitize_text_field( $attributes['postTitleFontStyle'] ?? 'normal' );
-	$post_title_font_size                  = sanitize_text_field( $attributes['postTitleFontSize'] ?? 'var(--wp--preset--font-size--medium)' );
+	$post_title_font_size                  = sanitize_text_field( $attributes['postTitleFontSize'] ?? '18px' );
 	$post_title_letter_spacing             = sanitize_text_field( $attributes['postTitleLetterSpacing'] ?? 'normal' );
 
 	// Format the post date.
@@ -118,23 +118,40 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 	);
 	$allowed_tags         = array_merge( $default_allowed_tags, $svg_sanitize_options );
 
-	// Set inline styles.
-	$style  = $column_no_desktop_enable_custom_value ? "--cbb-column-no-desktop:$column_no_desktop_number" : '';
-	$style .= ( $column_no_desktop_enable_custom_value && $column_no_tablet_enable_custom_value ) ? ';' : '';
-	$style .= $column_no_tablet_enable_custom_value ? "--cbb-column-no-tablet:$column_no_tablet_number" : '';
-	$style .= ( $column_no_tablet_enable_custom_value && $column_no_mobile_enable_custom_value ) ? ';' : '';
-	$style .= ( $column_no_desktop_enable_custom_value && $column_no_mobile_enable_custom_value ) ? ';' : '';
-	$style .= $column_no_mobile_enable_custom_value ? "--cbb-column-no-mobile:$column_no_mobile_number" : '';
+	// Store inline style declarations.
+	$declarations = array();
+
+	if ( $column_no_desktop_enable_custom_value ) {
+		$declarations[] = "--cbb-column-no-desktop:$column_no_desktop_number";
+	}
+	if ( $column_no_tablet_enable_custom_value ) {
+		$declarations[] = "--cbb-column-no-tablet:$column_no_tablet_number";
+	}
+	if ( $column_no_mobile_enable_custom_value ) {
+		$declarations[] = "--cbb-column-no-mobile:$column_no_mobile_number";
+	}
+	if ( '' !== $post_title_font_family ) {
+		$declarations[] = "--cbb-post-title-font-family:var(--wp--preset--font-family--$post_title_font_family)";
+	}
+	if ( 400 !== $post_title_font_weight ) {
+		$declarations[] = "--cbb-post-title-font-weight:$post_title_font_weight";
+	}
+	if ( 'normal' !== $post_title_font_style ) {
+		$declarations[] = "--cbb-post-title-font-style:$post_title_font_style";
+	}
+	if ( '18px' !== $post_title_font_size ) {
+		$declarations[] = "--cbb-post-title-font-size:$post_title_font_size";
+	}
+	if ( 'normal' !== $post_title_letter_spacing ) {
+		$declarations[] = "--cbb-post-title-letter-spacing:$post_title_letter_spacing";
+	}
 
 	// Show inline styles.
-	$inline_styles = ( $column_no_desktop_enable_custom_value || $column_no_tablet_enable_custom_value || $column_no_mobile_enable_custom_value ) ? 'style="' . $style . '"' : '';
+	$inline_styles = empty( $declarations ) ? '' : 'style="' . implode( ';', $declarations ) . '"';
 
 	// Post info classes.
 	$post_info_classes  = 'cbb-posts-loop__post-info';
 	$post_info_classes .= ( 'style-2' === $loop_style ) ? ' cbb-posts-loop__post-info--style-2' : '';
-
-	// Post title inline styles.
-	$post_title_inline_styles = '';
 
 	// Start ouput buffering.
 	ob_start();
@@ -254,7 +271,7 @@ function caledros_basic_blocks_posts_loop_render_cb( $attributes ) {
 							</a>                       
 						</div>    
 						<?php if ( 'style-2' === $loop_style ) : ?>
-						<div class="cbb-posts-loop__post-title--style-2">
+						<div class="cbb-posts-loop__post-title cbb-posts-loop__post-title--style-2">
 							<?php the_title(); ?>			
 						</div>
 						<?php endif; ?>
