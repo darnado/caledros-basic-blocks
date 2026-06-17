@@ -37,7 +37,6 @@ import CardFiveTemplateSettings from './settings/card-five-template-settings';
 import CardSixTemplateSettings from './settings/card-six-template-settings';
 import NumberOfCards from './settings/number-of-cards-settings';
 import LoopSettings from './settings/loop-settings';
-import IdentifierSettings from './settings/identifier-settings';
 import PaginationSettings from './settings/pagination-settings';
 import AutoplaySettings from './settings/autoplay-settings';
 import LightColorSettings from './settings/light-color-settings';
@@ -48,6 +47,8 @@ import MinHeightSettings from './settings/min-height-settings';
 import WidthSettings from './settings/width-settings';
 import apiFetch from '@wordpress/api-fetch';
 
+// Global store used only at editor runtime (never saved in database)
+const uniqueIds = [];
 export default function EditBlock( { attributes, setAttributes } ) {
 	// Block attributes
 	const {
@@ -70,6 +71,24 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		width,
 		minHeight,
 	} = attributes;
+
+	// Function to generate a persistent ID
+	const generateId = () => Math.random().toString( 36 ).substring( 2, 10 );
+
+	// Assign a unique ID only if:
+	// - Block is newly created (uniqueId is missing)
+	// - Block was duplicated (uniqueId already exists in uniqueIds[])
+	useEffect( () => {
+		let id = identifier;
+
+		if ( ! id || uniqueIds.includes( id ) ) {
+			id = generateId();
+			setAttributes( { identifier: id } );
+		}
+
+		uniqueIds.push( id );
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [] ); // runs only once per block instance
 
 	// Block properties
 	const blockProps = useBlockProps( {
@@ -185,10 +204,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 						if ( tab.name === 'content' ) {
 							return (
 								<>
-									<IdentifierSettings
+									{ /* <IdentifierSettings
 										attributes={ attributes }
 										setAttributes={ setAttributes }
-									></IdentifierSettings>
+									></IdentifierSettings> */ }
 									<NumberOfCards
 										attributes={ attributes }
 										setAttributes={ setAttributes }
