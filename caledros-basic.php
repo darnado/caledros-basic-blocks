@@ -3,7 +3,7 @@
  * Plugin Name: Caledros Basic Blocks
  * Plugin URI: https://caledrosforge.com/
  * Description: Add easy-to-use Gutenberg blocks to your WordPress site.
- * Version: 3.2.0
+ * Version: 4.0.0
  * Requires at least: 6.7
  * Requires PHP: 8.3
  * Author: David Arnado
@@ -14,7 +14,7 @@
  * Domain Path: /languages
  *
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  *
  * This file is part of Caledros Basic Blocks.
  *

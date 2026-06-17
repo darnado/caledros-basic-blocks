@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 7.0
-Stable tag: 3.2.0
+Stable tag: 4.0.0
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -150,7 +150,7 @@ However, other third party plugins can slow down your website if they are used t
 
 This changelog format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Also, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-= 3.2.0 - 2026-06-15 =
+= 4.0.0 - 2026-06-16 =
 
 ** Added **
 
@@ -167,6 +167,10 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 * Automatic border that was being added to the desktop menu container in the editor. Now this border is no longer visible.
 * Automatic border that was being added to the mobile menu container in the editor. Now this border is no longer visible.
 * Variable name in the border light color control of the grid container block.
+
+**Removed**
+
+* Unique identifier control in the Slider block. Now, the identifier attribute's value is generated automatically on block creation.  
 
 = 3.1.2 - 2026-05-21 =
 
@@ -380,8 +384,8 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 
 == Upgrade Notice ==
 
-= 3.2.0 =
-This update changes the position of the plugin admin menu.
+= 4.0.0 =
+This update removes the unique identifier control in the Slider block.
 
 = 3.1.2 =
 This update removes a default border that was being added to the flex and grid blocks in WordPress 7.0.
