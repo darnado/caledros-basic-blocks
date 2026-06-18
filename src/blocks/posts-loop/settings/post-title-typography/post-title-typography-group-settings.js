@@ -25,81 +25,80 @@ import PostTitleFontFamilySettings from './post-title-font-family-settings';
 import PostTitleFontWeightSettings from './post-title-font-weight-settings';
 import PostTitleFontStyleSettings from './post-title-font-style-settings';
 
-export default function PostTitleTypographyGroupSettings( {
+export default function PostTitleTypographyGroupSettings({
 	attributes,
 	setAttributes,
-} ) {
-	const [ registeredFonts ] = useSettings( 'typography.fontFamilies' );
+}) {
+	const [registeredFonts] = useSettings('typography.fontFamilies');
 	const { theme = [], custom = [] } = registeredFonts || {};
-	const allFonts = [ ...theme, ...custom ];
+	const allFonts = [...theme, ...custom];
 
-	const doesFontExist = ( fontFamily ) => {
-		return allFonts.some( ( font ) => font?.slug === fontFamily );
+	const doesFontExist = (fontFamily) => {
+		return allFonts.some((font) => font?.slug === fontFamily);
 	};
 
-	const getAvailableFontStyles = ( fontFamily ) => {
+	const getAvailableFontStyles = (fontFamily) => {
 		const fontFamilyData = allFonts.find(
-			( font ) => font?.slug === fontFamily
+			(font) => font?.slug === fontFamily
 		);
 		const fontStyles =
-			fontFamilyData?.fontFace?.map(
-				( fontFace ) => fontFace?.fontStyle
-			) || [];
+			fontFamilyData?.fontFace?.map((fontFace) => fontFace?.fontStyle) ||
+			[];
 
-		return [ ...new Set( fontStyles ) ];
+		return [...new Set(fontStyles)];
 	};
 
-	const getAvailableFontWeights = ( fontFamily, fontStyle ) => {
+	const getAvailableFontWeights = (fontFamily, fontStyle) => {
 		const fontFamilyData = allFonts.find(
-			( font ) => font?.slug === fontFamily
+			(font) => font?.slug === fontFamily
 		);
-		const fontStyles = fontFamilyData?.fontFace?.filter( ( fontFace ) => {
+		const fontStyles = fontFamilyData?.fontFace?.filter((fontFace) => {
 			return fontFace?.fontStyle === fontStyle;
-		} );
+		});
 		const fontWeights = fontStyles
-			?.map( ( fontStyleEl ) => {
-				if ( fontStyleEl?.fontWeight?.includes( ' ' ) ) {
-					const [ start, end ] = fontStyleEl?.fontWeight
-						.split( ' ' )
-						.map( ( value ) => parseInt( value ) );
+			?.map((fontStyleEl) => {
+				if (fontStyleEl?.fontWeight?.includes(' ')) {
+					const [start, end] = fontStyleEl?.fontWeight
+						.split(' ')
+						.map((value) => parseInt(value));
 					const range = [];
-					for ( let i = start; i <= end; i += 100 ) {
-						range.push( i );
+					for (let i = start; i <= end; i += 100) {
+						range.push(i);
 					}
 					return range;
 				}
-				return parseInt( fontStyleEl?.fontWeight );
-			} )
+				return parseInt(fontStyleEl?.fontWeight);
+			})
 			.flat()
-			.sort( ( a, b ) => a - b );
+			.sort((a, b) => a - b);
 
 		return fontWeights;
 	};
 
 	return (
 		<PanelBody
-			title={ __( 'Post Title Typography', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Post Title Typography', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<PostTitleFontFamilySettings
-				attributes={ attributes }
-				setAttributes={ setAttributes }
-				registeredFonts={ registeredFonts }
-				getAvailableFontStyles={ getAvailableFontStyles }
-				getAvailableFontWeights={ getAvailableFontWeights }
-				doesFontExist={ doesFontExist }
+				attributes={attributes}
+				setAttributes={setAttributes}
+				registeredFonts={registeredFonts}
+				getAvailableFontStyles={getAvailableFontStyles}
+				getAvailableFontWeights={getAvailableFontWeights}
+				doesFontExist={doesFontExist}
 			></PostTitleFontFamilySettings>
 			<PostTitleFontStyleSettings
-				attributes={ attributes }
-				setAttributes={ setAttributes }
-				getAvailableFontStyles={ getAvailableFontStyles }
-				getAvailableFontWeights={ getAvailableFontWeights }
-				doesFontExist={ doesFontExist }
+				attributes={attributes}
+				setAttributes={setAttributes}
+				getAvailableFontStyles={getAvailableFontStyles}
+				getAvailableFontWeights={getAvailableFontWeights}
+				doesFontExist={doesFontExist}
 			></PostTitleFontStyleSettings>
 			<PostTitleFontWeightSettings
-				attributes={ attributes }
-				setAttributes={ setAttributes }
-				getAvailableFontWeights={ getAvailableFontWeights }
+				attributes={attributes}
+				setAttributes={setAttributes}
+				getAvailableFontWeights={getAvailableFontWeights}
 			></PostTitleFontWeightSettings>
 		</PanelBody>
 	);

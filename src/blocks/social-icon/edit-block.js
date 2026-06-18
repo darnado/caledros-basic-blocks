@@ -22,27 +22,27 @@ import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import IconSettings from './settings/icon-settings';
 import LinkSettings from './settings/link-settings';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	const { socialMediaIcon } = attributes;
 
 	// Block props
-	const blockProps = useBlockProps( {
-		className: `cbb-social-icon cbb-social-icon--${ socialMediaIcon }`,
-	} );
+	const blockProps = useBlockProps({
+		className: `cbb-social-icon cbb-social-icon--${socialMediaIcon}`,
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<IconSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></IconSettings>
 				<LinkSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></LinkSettings>
 			</InspectorControls>
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<span className="cbb-social-icon__icon-container"></span>
 				<p className="cbb-social-icon__main-link"></p>
 			</div>

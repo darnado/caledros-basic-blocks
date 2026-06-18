@@ -21,27 +21,27 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ShowDemoDataSettings( { attributes, setAttributes } ) {
+export default function ShowDemoDataSettings({ attributes, setAttributes }) {
 	const { showDemoData } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Demo data options', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Demo data options', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Show demo data', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Show demo data', 'caledros-basic-blocks')}
+				help={__(
 					'Display demo data instead of published posts.',
 					'caledros-basic-blocks'
-				) }
-				checked={ showDemoData }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={showDemoData}
+				onChange={(newValue) => {
+					setAttributes({
 						showDemoData: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

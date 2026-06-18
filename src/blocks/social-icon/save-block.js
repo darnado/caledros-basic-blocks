@@ -20,19 +20,19 @@
 
 import { useBlockProps } from '@wordpress/block-editor';
 
-export default function SaveBlock( { attributes } ) {
+export default function SaveBlock({ attributes }) {
 	const { socialMediaIcon, iconLink } = attributes;
 	// Block props
-	const blockProps = useBlockProps.save( {
-		className: `cbb-social-icon cbb-social-icon--${ socialMediaIcon }`,
-	} );
+	const blockProps = useBlockProps.save({
+		className: `cbb-social-icon cbb-social-icon--${socialMediaIcon}`,
+	});
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<span className="cbb-social-icon__icon-container"></span>
 			<a
-				href={ iconLink }
+				href={iconLink}
 				className="cbb-social-icon__main-link"
-				aria-label={ socialMediaIcon }
+				aria-label={socialMediaIcon}
 			></a>
 		</div>
 	);

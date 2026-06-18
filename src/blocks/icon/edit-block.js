@@ -25,50 +25,50 @@ import IconsColorSettings from './settings/icons-color-settings';
 import IconsDarkColorSettings from './settings/icons-dark-color-settings';
 import IconsSizeSettings from './settings/icons-size-settings';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	const { icon, iconLinkEnabled, iconsSize, iconsColor, iconsDarkColor } =
 		attributes;
 
 	// Block props
-	const blockProps = useBlockProps( {
-		className: `cbb-icon cbb-icon--${ icon }`,
+	const blockProps = useBlockProps({
+		className: `cbb-icon cbb-icon--${icon}`,
 		style: {
-			'--cbb-icon-size': `${ iconsSize }px`,
-			'--cbb-icon-color': `${ iconsColor }`,
-			'--cbb-icon-dark-color': `${ iconsDarkColor }`,
+			'--cbb-icon-size': `${iconsSize}px`,
+			'--cbb-icon-color': `${iconsColor}`,
+			'--cbb-icon-dark-color': `${iconsDarkColor}`,
 		},
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<IconSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></IconSettings>
 				<LinkSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></LinkSettings>
 				<IconsColorSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></IconsColorSettings>
 				<IconsDarkColorSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></IconsDarkColorSettings>
 				<IconsSizeSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></IconsSizeSettings>
 			</InspectorControls>
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<span className="cbb-icon__icon-container"></span>
-				{ iconLinkEnabled && <p className="cbb-icon__main-link"></p> }
-				{ ! iconLinkEnabled && (
+				{iconLinkEnabled && <p className="cbb-icon__main-link"></p>}
+				{!iconLinkEnabled && (
 					<span className="cbb-icon__simple-icon"></span>
-				) }
+				)}
 			</div>
 		</>
 	);

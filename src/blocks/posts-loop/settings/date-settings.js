@@ -21,38 +21,35 @@
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function DateSettings( { attributes, setAttributes } ) {
+export default function DateSettings({ attributes, setAttributes }) {
 	const { dateOptions } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Date options', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Date options', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Show date', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Show date', 'caledros-basic-blocks')}
+				help={__(
 					'Each post card will show its publication date',
 					'caledros-basic-blocks'
-				) }
-				checked={ dateOptions.showDate }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={dateOptions.showDate}
+				onChange={(newValue) => {
+					setAttributes({
 						dateOptions: { ...dateOptions, showDate: newValue },
-					} );
-				} }
+					});
+				}}
 			/>
-			{ dateOptions.showDate && (
+			{dateOptions.showDate && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
-						'Choose the date format',
-						'caledros-basic-blocks'
-					) }
-					value={ dateOptions.dateFormat }
-					options={ [
+					help={__('Choose the date format', 'caledros-basic-blocks')}
+					value={dateOptions.dateFormat}
+					options={[
 						{
 							label: 'MM/DD/YYYY',
 							value: 'MM/DD/YYYY',
@@ -81,17 +78,17 @@ export default function DateSettings( { attributes, setAttributes } ) {
 							label: 'Month DD',
 							value: 'Month DD',
 						},
-					] }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					]}
+					onChange={(newValue) => {
+						setAttributes({
 							dateOptions: {
 								...dateOptions,
 								dateFormat: newValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

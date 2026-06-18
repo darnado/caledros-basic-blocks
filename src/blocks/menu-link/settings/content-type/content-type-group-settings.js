@@ -24,27 +24,27 @@ import PageLinkSettings from './page-link-settings';
 import PostLinkSettings from './post-link-settings';
 import CustomLinkSettings from './custom-link-settings';
 
-export default function ContentTypeGroupSettings( {
+export default function ContentTypeGroupSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { contentType } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Link', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Link', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				label={ __( 'Content type', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Content type', 'caledros-basic-blocks')}
+				help={__(
 					'Select the content type to link to.',
 					'caledros-basic-blocks'
-				) }
-				value={ contentType }
-				options={ [
+				)}
+				value={contentType}
+				options={[
 					{
 						label: 'Page',
 						value: 'page',
@@ -57,31 +57,31 @@ export default function ContentTypeGroupSettings( {
 						label: 'Custom link',
 						value: 'custom',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						contentType: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
-			{ contentType === 'page' && (
+			{contentType === 'page' && (
 				<PageLinkSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></PageLinkSettings>
-			) }
-			{ contentType === 'post' && (
+			)}
+			{contentType === 'post' && (
 				<PostLinkSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></PostLinkSettings>
-			) }
-			{ contentType === 'custom' && (
+			)}
+			{contentType === 'custom' && (
 				<CustomLinkSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></CustomLinkSettings>
-			) }
+			)}
 		</PanelBody>
 	);
 }

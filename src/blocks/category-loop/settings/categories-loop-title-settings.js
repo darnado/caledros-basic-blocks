@@ -23,62 +23,62 @@ import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import placeholder from '../assets/placeholder.webp';
 
-export default function CategoriesLoopTitle( { attributes, setAttributes } ) {
+export default function CategoriesLoopTitle({ attributes, setAttributes }) {
 	const { categoriesLoopTitle, categoriesLoopTitleIcon } = attributes;
 
 	// Function for choosing the image
-	const selectImg = ( image ) => {
-		setAttributes( {
+	const selectImg = (image) => {
+		setAttributes({
 			categoriesLoopTitleIcon: {
 				id: image.id,
 				alt: image.alt,
 				url: image.url,
 			},
-		} );
+		});
 	};
 
 	// Function for removing the image
 	const removeImg = () => {
-		setAttributes( {
+		setAttributes({
 			categoriesLoopTitleIcon: {
 				id: '',
 				alt: '',
 				url: '',
 			},
-		} );
+		});
 	};
 
 	return (
 		<>
 			<PanelBody
-				title={ __( 'Category loop title', 'caledros-basic-blocks' ) }
-				initialOpen={ false }
+				title={__('Category loop title', 'caledros-basic-blocks')}
+				initialOpen={false}
 			>
 				<TextControl
 					__nextHasNoMarginBottom
 					__next40pxDefaultSize
-					help={ __(
+					help={__(
 						'Write the title for the category loop.',
 						'caledros-basic-blocks'
-					) }
-					value={ categoriesLoopTitle }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					)}
+					value={categoriesLoopTitle}
+					onChange={(newValue) => {
+						setAttributes({
 							categoriesLoopTitle: newValue,
-						} );
-					} }
+						});
+					}}
 				/>
 			</PanelBody>
 			<PanelBody
-				title={ __( 'Title icon', 'caledros-basic-blocks' ) }
-				initialOpen={ false }
+				title={__('Title icon', 'caledros-basic-blocks')}
+				initialOpen={false}
 			>
 				<div
-					style={ {
+					style={{
 						display: 'flex',
 						flexDirection: 'row',
 						padding: '0px 5px 10px 5px',
-					} }
+					}}
 				>
 					<img
 						src={
@@ -91,26 +91,26 @@ export default function CategoriesLoopTitle( { attributes, setAttributes } ) {
 				</div>
 				<MediaUploadCheck>
 					<MediaUpload
-						allowedTypes={ [ 'image' ] }
-						value={ categoriesLoopTitleIcon.id }
-						render={ ( { open } ) => (
+						allowedTypes={['image']}
+						value={categoriesLoopTitleIcon.id}
+						render={({ open }) => (
 							<>
-								<div style={ { display: 'flex', gap: '10px' } }>
-									<Button variant="primary" onClick={ open }>
+								<div style={{ display: 'flex', gap: '10px' }}>
+									<Button variant="primary" onClick={open}>
 										Select image
 									</Button>
-									{ categoriesLoopTitleIcon.url !== '' && (
+									{categoriesLoopTitleIcon.url !== '' && (
 										<Button
 											variant="secondary"
-											onClick={ removeImg }
+											onClick={removeImg}
 										>
 											Remove image
 										</Button>
-									) }
+									)}
 								</div>
 							</>
-						) }
-						onSelect={ selectImg }
+						)}
+						onSelect={selectImg}
 					/>
 				</MediaUploadCheck>
 			</PanelBody>

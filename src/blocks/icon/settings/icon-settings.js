@@ -21,19 +21,19 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function IconSettings( { attributes, setAttributes } ) {
+export default function IconSettings({ attributes, setAttributes }) {
 	const { icon } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'Icon', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Icon', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __( 'Choose the icon', 'caledros-basic-blocks' ) }
-				value={ icon }
-				options={ [
+				help={__('Choose the icon', 'caledros-basic-blocks')}
+				value={icon}
+				options={[
 					{ label: 'Alarm Fill', value: 'alarm-fill' },
 					{
 						label: 'Arrow Left Circle Fill',
@@ -120,8 +120,8 @@ export default function IconSettings( { attributes, setAttributes } ) {
 						label: 'Wrench Adjustable Circle',
 						value: 'wrench-adjustable-circle',
 					},
-				] }
-				onChange={ ( newValue ) => setAttributes( { icon: newValue } ) }
+				]}
+				onChange={(newValue) => setAttributes({ icon: newValue })}
 			/>
 		</PanelBody>
 	);

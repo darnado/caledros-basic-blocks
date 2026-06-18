@@ -21,75 +21,75 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FontFamilySettings( {
+export default function FontFamilySettings({
 	attributes,
 	setAttributes,
 	registeredFonts,
 	getAvailableFontStyles,
 	getAvailableFontWeights,
 	doesFontExist,
-} ) {
+}) {
 	const { buttonFontFamily, buttonFontWeight, buttonFontStyle } = attributes;
 
 	// Recover theme fonts and custom fonts
 	const themeFonts =
-		registeredFonts?.theme?.map( ( font ) => {
+		registeredFonts?.theme?.map((font) => {
 			return { label: font.name, value: font.slug };
-		} ) || [];
+		}) || [];
 
 	const customFonts =
-		registeredFonts?.custom?.map( ( font ) => {
+		registeredFonts?.custom?.map((font) => {
 			return { label: font?.name, value: font?.slug };
-		} ) || [];
+		}) || [];
 
 	const fontOptions = [
 		{ label: 'Default', value: '' },
-		...( themeFonts.length !== 0 ? themeFonts : [] ),
-		...( customFonts && customFonts?.length !== 0 ? customFonts : [] ),
+		...(themeFonts.length !== 0 ? themeFonts : []),
+		...(customFonts && customFonts?.length !== 0 ? customFonts : []),
 	];
 
 	return (
 		<SelectControl
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
-			help={ __( 'Select the font family.', 'caledros-basic-blocks' ) }
-			value={ buttonFontFamily }
-			options={ fontOptions }
-			onChange={ ( newFontFamily ) => {
+			help={__('Select the font family.', 'caledros-basic-blocks')}
+			value={buttonFontFamily}
+			options={fontOptions}
+			onChange={(newFontFamily) => {
 				// Compute available font styles for the new font family and update if necessary
-				const availableFontStyles = doesFontExist( newFontFamily )
-					? getAvailableFontStyles( newFontFamily )
+				const availableFontStyles = doesFontExist(newFontFamily)
+					? getAvailableFontStyles(newFontFamily)
 					: [];
 
 				const newFontStyle = availableFontStyles.includes(
 					buttonFontStyle
 				)
 					? buttonFontStyle
-					: availableFontStyles[ 0 ];
+					: availableFontStyles[0];
 
 				// Compute available font weights for the new font family and update if necessary
-				const availableFontWeights = doesFontExist( newFontFamily )
-					? getAvailableFontWeights( newFontFamily, newFontStyle )
+				const availableFontWeights = doesFontExist(newFontFamily)
+					? getAvailableFontWeights(newFontFamily, newFontStyle)
 					: [];
 
 				const newFontWeight = availableFontWeights.includes(
 					buttonFontWeight
 				)
 					? buttonFontWeight
-					: availableFontWeights[ 0 ];
+					: availableFontWeights[0];
 
-				setAttributes( {
+				setAttributes({
 					buttonFontFamily: newFontFamily,
-					...( doesFontExist( newFontFamily ) &&
+					...(doesFontExist(newFontFamily) &&
 						newFontStyle !== buttonFontStyle && {
 							buttonFontStyle: newFontStyle,
-						} ),
-					...( doesFontExist( newFontFamily ) &&
+						}),
+					...(doesFontExist(newFontFamily) &&
 						newFontWeight !== buttonFontWeight && {
 							buttonFontWeight: newFontWeight,
-						} ),
-				} );
-			} }
+						}),
+				});
+			}}
 		/>
 	);
 }

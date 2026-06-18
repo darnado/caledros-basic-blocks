@@ -21,30 +21,30 @@
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ButtonTextContentSettings( {
+export default function ButtonTextContentSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { buttonText } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Button text', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Button text', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<TextControl
 				__nextHasNoMarginBottom
 				__next40pxDefaultSize
-				help={ __(
+				help={__(
 					'Type the text for the button.',
 					'caledros-basic-blocks'
-				) }
-				value={ buttonText }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				value={buttonText}
+				onChange={(newValue) => {
+					setAttributes({
 						buttonText: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

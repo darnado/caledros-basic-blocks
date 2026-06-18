@@ -21,22 +21,22 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function IconSettings( { attributes, setAttributes } ) {
+export default function IconSettings({ attributes, setAttributes }) {
 	const { socialMediaIcon } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'Social media icon', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Social media icon', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose your social media icon',
 					'caledros-basic-blocks'
-				) }
-				value={ socialMediaIcon }
-				options={ [
+				)}
+				value={socialMediaIcon}
+				options={[
 					{
 						label: 'Amazon',
 						value: 'amazon',
@@ -129,9 +129,9 @@ export default function IconSettings( { attributes, setAttributes } ) {
 						label: 'Youtube',
 						value: 'youtube',
 					},
-				] }
-				onChange={ ( newValue ) =>
-					setAttributes( { socialMediaIcon: newValue } )
+				]}
+				onChange={(newValue) =>
+					setAttributes({ socialMediaIcon: newValue })
 				}
 			/>
 		</PanelBody>

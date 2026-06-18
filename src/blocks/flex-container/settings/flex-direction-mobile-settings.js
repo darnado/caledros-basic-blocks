@@ -21,26 +21,26 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FlexDirectionMobileSettings( {
+export default function FlexDirectionMobileSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { containerFlexDirection } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Flex direction (mobile)', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Flex direction (mobile)', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the flex direction for the container (mobile).',
 					'caledros-basic-blocks'
-				) }
-				value={ containerFlexDirection.mobile }
-				options={ [
+				)}
+				value={containerFlexDirection.mobile}
+				options={[
 					{
 						label: 'Row',
 						value: 'row',
@@ -57,15 +57,15 @@ export default function FlexDirectionMobileSettings( {
 						label: 'Column reverse',
 						value: 'column-reverse',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						containerFlexDirection: {
 							...containerFlexDirection,
 							mobile: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

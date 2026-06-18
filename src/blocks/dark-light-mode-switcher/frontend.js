@@ -20,42 +20,42 @@
 
 // FUNCTIONS
 // Save selected color theme
-const saveTheme = ( theme ) => {
-	document.documentElement.setAttribute( 'data-theme', theme );
-	localStorage.setItem( 'theme', theme );
+const saveTheme = (theme) => {
+	document.documentElement.setAttribute('data-theme', theme);
+	localStorage.setItem('theme', theme);
 };
 
 // Toggle between light and dark themes
 const switchTheme = () => {
-	const currentTheme = document.documentElement.getAttribute( 'data-theme' );
-	saveTheme( currentTheme === 'dark' ? 'light' : 'dark' );
+	const currentTheme = document.documentElement.getAttribute('data-theme');
+	saveTheme(currentTheme === 'dark' ? 'light' : 'dark');
 };
 
 // Load and apply the initial theme based on saved preferences or system settings
 const loadTheme = () => {
-	const savedTheme = localStorage.getItem( 'theme' );
+	const savedTheme = localStorage.getItem('theme');
 	const systemPrefersDark = window.matchMedia(
 		'(prefers-color-scheme: dark)'
 	).matches;
-	saveTheme( savedTheme || ( systemPrefersDark ? 'dark' : 'light' ) );
+	saveTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
 };
 
 // EXECUTION
 // Listen for changes in the system color scheme
 window
-	.matchMedia( '(prefers-color-scheme: dark)' )
-	.addEventListener( 'change', ( e ) => {
-		if ( ! localStorage.getItem( 'theme' ) ) {
-			saveTheme( e.matches ? 'dark' : 'light' );
+	.matchMedia('(prefers-color-scheme: dark)')
+	.addEventListener('change', (e) => {
+		if (!localStorage.getItem('theme')) {
+			saveTheme(e.matches ? 'dark' : 'light');
 		}
-	} );
+	});
 
 // Attach theme toggle event listeners to switches
 document
-	.querySelectorAll( '.cbb-dark-light-switcher__toggle' )
-	.forEach( ( toggle ) => {
-		toggle.addEventListener( 'click', switchTheme );
-	} );
+	.querySelectorAll('.cbb-dark-light-switcher__toggle')
+	.forEach((toggle) => {
+		toggle.addEventListener('click', switchTheme);
+	});
 
 // Load the theme on page load
 loadTheme();

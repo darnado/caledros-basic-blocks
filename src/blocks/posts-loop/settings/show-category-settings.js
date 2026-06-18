@@ -21,27 +21,27 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ShowCategorySettings( { attributes, setAttributes } ) {
+export default function ShowCategorySettings({ attributes, setAttributes }) {
 	const { showCategory } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Category options', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Category options', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Show category', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Show category', 'caledros-basic-blocks')}
+				help={__(
 					"Display the name of the post's category.",
 					'caledros-basic-blocks'
-				) }
-				checked={ showCategory }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={showCategory}
+				onChange={(newValue) => {
+					setAttributes({
 						showCategory: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

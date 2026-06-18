@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function AlignItemsSettings( { attributes, setAttributes } ) {
+export default function AlignItemsSettings({ attributes, setAttributes }) {
 	const { containerAlignItems } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Align items', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Align items', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Select the value for the align items property.',
 					'caledros-basic-blocks'
-				) }
-				value={ containerAlignItems }
-				options={ [
+				)}
+				value={containerAlignItems}
+				options={[
 					{
 						label: 'Flex start',
 						value: 'flex-start',
@@ -62,12 +62,12 @@ export default function AlignItemsSettings( { attributes, setAttributes } ) {
 						label: 'Normal (default)',
 						value: 'normal',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						containerAlignItems: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

@@ -26,24 +26,24 @@ import {
 } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
 
-export default function HeightSettings( { attributes, setAttributes } ) {
+export default function HeightSettings({ attributes, setAttributes }) {
 	const { imgHeight, sourceImage } = attributes;
 
 	// Recover the unit used in the width
-	const unit = imgHeight.content.replace( /\d+/g, '' ) || 'px';
-	const heightUnit = [ 'px', '%', 'em', 'rem', 'vw', 'auto' ].includes( unit )
+	const unit = imgHeight.content.replace(/\d+/g, '') || 'px';
+	const heightUnit = ['px', '%', 'em', 'rem', 'vw', 'auto'].includes(unit)
 		? unit
 		: 'px';
 
 	// Recover the numeric value of the width
-	const heightNumber = parseInt( imgHeight.content ) || 0;
+	const heightNumber = parseInt(imgHeight.content) || 0;
 
 	// Restrict maximum value for % and vw units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( newUnit === 'auto' ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (newUnit === 'auto') {
 			return '';
 		}
-		if ( [ '%', 'vw' ].includes( newUnit ) && valueNumber > 100 ) {
+		if (['%', 'vw'].includes(newUnit) && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
@@ -51,34 +51,34 @@ export default function HeightSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Height', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Height', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ sprintf(
+				label={sprintf(
 					/**
 					 * translators: %s source image height's unit
 					 */
-					__( 'Use actual height (%spx)', 'caledros-basic-blocks' ),
+					__('Use actual height (%spx)', 'caledros-basic-blocks'),
 					sourceImage.height
-				) }
-				checked={ imgHeight.defaultHeightEnabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={imgHeight.defaultHeightEnabled}
+				onChange={(newValue) => {
+					setAttributes({
 						imgHeight: {
-							content: `${ sourceImage.height }px`,
+							content: `${sourceImage.height}px`,
 							defaultHeightEnabled: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ ! imgHeight.defaultHeightEnabled && (
+			{!imgHeight.defaultHeightEnabled && (
 				<div className="cbb-editor__grid">
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ sprintf(
+						help={sprintf(
 							/**
 							 * translators: %s image height's unit
 							 */
@@ -87,30 +87,30 @@ export default function HeightSettings( { attributes, setAttributes } ) {
 								'caledros-basic-blocks'
 							),
 							heightUnit
-						) }
-						value={ parseInt( imgHeight.content ) }
+						)}
+						value={parseInt(imgHeight.content)}
 						max={
 							heightUnit === '%' || heightUnit === 'vw'
 								? 100
 								: 2000
 						}
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						min={0}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgHeight: {
 									...imgHeight,
-									content: `${ newValue }${ heightUnit }`,
+									content: `${newValue}${heightUnit}`,
 								},
-							} )
+							})
 						}
-						disabled={ imgHeight.content === 'auto' }
+						disabled={imgHeight.content === 'auto'}
 					/>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						value={ heightUnit }
-						options={ [
+						value={heightUnit}
+						options={[
 							{
 								label: 'px',
 								value: 'px',
@@ -135,21 +135,21 @@ export default function HeightSettings( { attributes, setAttributes } ) {
 								label: 'auto',
 								value: 'auto',
 							},
-						] }
-						onChange={ ( newUnit ) =>
-							setAttributes( {
+						]}
+						onChange={(newUnit) =>
+							setAttributes({
 								imgHeight: {
 									...imgHeight,
-									content: `${ enforceMaxValue(
+									content: `${enforceMaxValue(
 										newUnit,
 										heightNumber
-									) }${ newUnit }`,
+									)}${newUnit}`,
 								},
-							} )
+							})
 						}
 					/>
 				</div>
-			) }
+			)}
 		</PanelBody>
 	);
 }

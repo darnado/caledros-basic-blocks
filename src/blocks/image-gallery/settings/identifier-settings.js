@@ -21,27 +21,27 @@
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function IdentifierSettings( { attributes, setAttributes } ) {
+export default function IdentifierSettings({ attributes, setAttributes }) {
 	const { identifier } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Unique Identifier', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Unique Identifier', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<TextControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					"Type the identifier for the slider. The identifier must be unique. If no unique identifier is provided, the slider won't work.",
 					'caledros-basic-blocks'
-				) }
-				value={ identifier }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				value={identifier}
+				onChange={(newValue) => {
+					setAttributes({
 						identifier: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

@@ -21,60 +21,58 @@
 import { MediaPlaceholder } from '@wordpress/block-editor';
 import { isBlobURL, revokeBlobURL } from '@wordpress/blob';
 
-export default function MediaPlaceholderSettings( {
+export default function MediaPlaceholderSettings({
 	attributes,
 	setAttributes,
 	showSpinner,
 	setShowSpinner,
-} ) {
+}) {
 	const { sourceImage } = attributes;
 
 	// Function for formatting the srcset
-	const formatSrcset = ( imgSizes ) => {
-		return Object.keys( imgSizes )
-			.filter( ( imgSize ) => imgSize !== 'thumbnail' )
-			.map( ( imgSize ) => {
-				const { url, width, sourceUrl } = imgSizes[ imgSize ];
-				return `${ url || sourceUrl } ${ width }w`;
-			} )
-			.join( ', ' );
+	const formatSrcset = (imgSizes) => {
+		return Object.keys(imgSizes)
+			.filter((imgSize) => imgSize !== 'thumbnail')
+			.map((imgSize) => {
+				const { url, width, sourceUrl } = imgSizes[imgSize];
+				return `${url || sourceUrl} ${width}w`;
+			})
+			.join(', ');
 	};
 
 	// Function for choosing the image
-	const selectImg = ( image ) => {
-		if ( isBlobURL( image.url ) ) {
-			setShowSpinner( true );
+	const selectImg = (image) => {
+		if (isBlobURL(image.url)) {
+			setShowSpinner(true);
 		} else {
-			setShowSpinner( false );
-			setAttributes( {
+			setShowSpinner(false);
+			setAttributes({
 				sourceImage: {
 					id: image.id,
 					alt: image.alt,
 					url: image.url,
 					height: image.media_details?.height || image.height,
 					width: image.media_details?.width || image.width,
-					srcSet: `${ formatSrcset(
+					srcSet: `${formatSrcset(
 						image.media_details?.sizes || image.sizes
-					) }`,
+					)}`,
 					sizes: `(max-width:${
 						image.media_details?.width || image.width
-					}px) 100vw, ${
-						image.media_details?.width || image.width
-					}px`,
+					}px) 100vw, ${image.media_details?.width || image.width}px`,
 				},
-			} );
-			revokeBlobURL( image.url );
+			});
+			revokeBlobURL(image.url);
 		}
 	};
 
 	return (
 		<>
 			<MediaPlaceholder
-				allowedTypes={ [ 'image' ] }
-				accept={ 'image/*' }
-				icon={ 'camera' }
-				onSelect={ selectImg }
-				disableMediaButtons={ sourceImage.url || showSpinner }
+				allowedTypes={['image']}
+				accept={'image/*'}
+				icon={'camera'}
+				onSelect={selectImg}
+				disableMediaButtons={sourceImage.url || showSpinner}
 			/>
 		</>
 	);

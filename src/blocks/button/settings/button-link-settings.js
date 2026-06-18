@@ -21,27 +21,27 @@
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ButtonLinkSettings( { attributes, setAttributes } ) {
+export default function ButtonLinkSettings({ attributes, setAttributes }) {
 	const { buttonLink } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Button link', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Button link', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<TextControl
 				__nextHasNoMarginBottom
 				__next40pxDefaultSize
-				help={ __(
+				help={__(
 					'Paste the link for the button.',
 					'caledros-basic-blocks'
-				) }
-				value={ buttonLink }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				value={buttonLink}
+				onChange={(newValue) => {
+					setAttributes({
 						buttonLink: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

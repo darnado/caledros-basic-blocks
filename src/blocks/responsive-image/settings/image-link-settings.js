@@ -21,25 +21,25 @@
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ImgLinkSettings( { attributes, setAttributes } ) {
+export default function ImgLinkSettings({ attributes, setAttributes }) {
 	const { imgLink } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Image link', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Image link', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<TextControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				onChange={ ( newValue ) => {
-					setAttributes( { imgLink: newValue } );
-				} }
-				value={ imgLink }
-				help={ __(
+				onChange={(newValue) => {
+					setAttributes({ imgLink: newValue });
+				}}
+				value={imgLink}
+				help={__(
 					'Paste the link for the image',
 					'caledros-basic-blocks'
-				) }
+				)}
 			/>
 		</PanelBody>
 	);

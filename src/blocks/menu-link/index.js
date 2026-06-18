@@ -26,12 +26,12 @@ import EditBlock from './edit-block';
 import './style.css';
 
 // Add custom menu link block to the navigation menu
-const addToNavigationBlock = ( blockSettings, blockName ) => {
-	if ( blockName === 'core/navigation' ) {
+const addToNavigationBlock = (blockSettings, blockName) => {
+	if (blockName === 'core/navigation') {
 		return {
 			...blockSettings,
 			allowedBlocks: [
-				...( blockSettings.allowedBlocks ?? [] ),
+				...(blockSettings.allowedBlocks ?? []),
 				'caledros-basic-blocks/menu-link',
 			],
 		};
@@ -45,7 +45,7 @@ addFilter(
 	addToNavigationBlock
 );
 
-registerBlockType( metadata.name, {
+registerBlockType(metadata.name, {
 	icon: blocksIcon.icon,
 	edit: EditBlock,
-} );
+});

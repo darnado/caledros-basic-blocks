@@ -45,7 +45,7 @@ import birdImage from './assets/bird.webp';
 import flowerImage from './assets/flower.webp';
 import mountainsImage from './assets/mountains.webp';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	// Block attributes
 	const {
 		images,
@@ -64,7 +64,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	} = attributes;
 
 	// Block properties
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: 'cbb-image-gallery',
 		style: {
 			'--cbb-slider-light-color': lightColor,
@@ -72,27 +72,27 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			width,
 			height: minHeight,
 		},
-	} );
+	});
 
 	// Pagination Settings
 	const paginationSettings = () => {
-		if ( enablePagination && paginationType === 'bullets' ) {
+		if (enablePagination && paginationType === 'bullets') {
 			return { clickable: true, type: 'bullets' };
 		}
-		if ( enablePagination && paginationType === 'fraction' ) {
+		if (enablePagination && paginationType === 'fraction') {
 			return { type: 'fraction' };
 		}
-		if ( enablePagination && paginationType === 'progressbar' ) {
+		if (enablePagination && paginationType === 'progressbar') {
 			return { type: 'progressbar' };
 		}
-		if ( ! enablePagination ) {
+		if (!enablePagination) {
 			return false;
 		}
 	};
 
 	// Autoplay settings
 	const autoplaySettings = () => {
-		if ( autoplay.enableAutoplay ) {
+		if (autoplay.enableAutoplay) {
 			return {
 				delay: autoplay.delay,
 				disableOnInteraction: false,
@@ -107,7 +107,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'content',
 							title: 'Content',
@@ -120,119 +120,119 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'content' ) {
+					{(tab) => {
+						if (tab.name === 'content') {
 							return (
 								<>
 									<IdentifierSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></IdentifierSettings>
-									{ ! showDemoData && (
+									{!showDemoData && (
 										<ImagesSettings
-											attributes={ attributes }
-											setAttributes={ setAttributes }
+											attributes={attributes}
+											setAttributes={setAttributes}
 										></ImagesSettings>
-									) }
+									)}
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<LightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LightColorSettings>
 									<DarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></DarkColorSettings>
 									<WidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></WidthSettings>
 									<MinHeightSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></MinHeightSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<LoopSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LoopSettings>
 									<NavigationArrowsSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NavigationArrowsSettings>
 									<PaginationSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PaginationSettings>
 									<AutoplaySettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></AutoplaySettings>
 									<EffectSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></EffectSettings>
 									<ShowDemoDataSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowDemoDataSettings>
 								</>
 							);
 						}
 						return null;
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			<div { ...blockProps }>
-				{ ! showDemoData && (
+			<div {...blockProps}>
+				{!showDemoData && (
 					<>
-						{ images.length === 0 ? (
+						{images.length === 0 ? (
 							<Placeholder
-								label={ __(
+								label={__(
 									'Image Gallery',
 									'caledros-basic-blocks'
-								) }
-								instructions={ __(
+								)}
+								instructions={__(
 									'Add images to the gallery.',
 									'caledros-basic-blocks'
-								) }
+								)}
 								icon="format-gallery"
 								className="wp-block-my-block-placeholder"
 							></Placeholder>
 						) : (
 							<>
 								<Swiper
-									key={ `${ paginationType }-${ enableLoop }-${ autoplay.enableAutoplay }-${ autoplay.delay }-${ enableNavigationArrows }-${ galleryEffect }` }
-									navigation={ enableNavigationArrows }
-									allowTouchMove={ false }
-									modules={ [
+									key={`${paginationType}-${enableLoop}-${autoplay.enableAutoplay}-${autoplay.delay}-${enableNavigationArrows}-${galleryEffect}`}
+									navigation={enableNavigationArrows}
+									allowTouchMove={false}
+									modules={[
 										Navigation,
 										Pagination,
 										Autoplay,
 										EffectFade,
 										EffectCoverflow,
-									] }
-									className={ `cbb-image-gallery-${ identifier }` }
-									loop={ enableLoop }
-									pagination={ paginationSettings() }
-									autoplay={ autoplaySettings() }
-									{ ...( galleryEffect === 'fade' && {
+									]}
+									className={`cbb-image-gallery-${identifier}`}
+									loop={enableLoop}
+									pagination={paginationSettings()}
+									autoplay={autoplaySettings()}
+									{...(galleryEffect === 'fade' && {
 										effect: 'fade',
 										fadeEffect: { crossFade: true },
-									} ) }
-									{ ...( galleryEffect === 'coverflow' && {
+									})}
+									{...(galleryEffect === 'coverflow' && {
 										effect: 'coverflow',
 										grabCursor: true,
 										centeredSlides: true,
@@ -252,48 +252,48 @@ export default function EditBlock( { attributes, setAttributes } ) {
 												slidesPerView: 1,
 											},
 										},
-									} ) }
+									})}
 								>
-									{ images.map( ( image, index ) => (
-										<SwiperSlide key={ index }>
+									{images.map((image, index) => (
+										<SwiperSlide key={index}>
 											<img
-												src={ image.url }
-												alt={ image.alt }
-												key={ image.id }
-												style={ {
+												src={image.url}
+												alt={image.alt}
+												key={image.id}
+												style={{
 													width,
 													height: minHeight,
-												} }
+												}}
 											/>
 										</SwiperSlide>
-									) ) }
+									))}
 								</Swiper>
 							</>
-						) }
+						)}
 					</>
-				) }
-				{ showDemoData && (
+				)}
+				{showDemoData && (
 					<>
 						<Swiper
-							key={ `${ paginationType }-${ enableLoop }-${ autoplay.enableAutoplay }-${ autoplay.delay }-${ enableNavigationArrows }-${ galleryEffect }` }
-							navigation={ enableNavigationArrows }
-							allowTouchMove={ false }
-							modules={ [
+							key={`${paginationType}-${enableLoop}-${autoplay.enableAutoplay}-${autoplay.delay}-${enableNavigationArrows}-${galleryEffect}`}
+							navigation={enableNavigationArrows}
+							allowTouchMove={false}
+							modules={[
 								Navigation,
 								Pagination,
 								Autoplay,
 								EffectFade,
 								EffectCoverflow,
-							] }
-							className={ `cbb-image-gallery-${ identifier }` }
-							loop={ enableLoop }
-							pagination={ paginationSettings() }
-							autoplay={ autoplaySettings() }
-							{ ...( galleryEffect === 'fade' && {
+							]}
+							className={`cbb-image-gallery-${identifier}`}
+							loop={enableLoop}
+							pagination={paginationSettings()}
+							autoplay={autoplaySettings()}
+							{...(galleryEffect === 'fade' && {
 								effect: 'fade',
 								fadeEffect: { crossFade: true },
-							} ) }
-							{ ...( galleryEffect === 'coverflow' && {
+							})}
+							{...(galleryEffect === 'coverflow' && {
 								effect: 'coverflow',
 								grabCursor: true,
 								centeredSlides: true,
@@ -313,44 +313,44 @@ export default function EditBlock( { attributes, setAttributes } ) {
 										slidesPerView: 1,
 									},
 								},
-							} ) }
+							})}
 						>
-							<SwiperSlide key={ 0 }>
+							<SwiperSlide key={0}>
 								<img
-									src={ birdImage }
+									src={birdImage}
 									alt="bird"
-									key={ 0 }
-									style={ {
+									key={0}
+									style={{
 										width,
 										height: minHeight,
-									} }
+									}}
 								/>
 							</SwiperSlide>
-							<SwiperSlide key={ 1 }>
+							<SwiperSlide key={1}>
 								<img
-									src={ mountainsImage }
+									src={mountainsImage}
 									alt="pier"
-									key={ 1 }
-									style={ {
+									key={1}
+									style={{
 										width,
 										height: minHeight,
-									} }
+									}}
 								/>
 							</SwiperSlide>
-							<SwiperSlide key={ 2 }>
+							<SwiperSlide key={2}>
 								<img
-									src={ flowerImage }
+									src={flowerImage}
 									alt="flower"
-									key={ 2 }
-									style={ {
+									key={2}
+									style={{
 										width,
 										height: minHeight,
-									} }
+									}}
 								/>
 							</SwiperSlide>
 						</Swiper>
 					</>
-				) }
+				)}
 			</div>
 		</>
 	);

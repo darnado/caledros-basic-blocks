@@ -21,30 +21,27 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FullWidthTabletSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function FullWidthTabletSettings({ attributes, setAttributes }) {
 	const { fullWidthTabletEnabled } = attributes;
 
 	return (
 		<PanelBody
-			title={ __(
+			title={__(
 				'Full Width (Tablet and Mobile)',
 				'caledros-basic-blocks'
-			) }
-			initialOpen={ false }
+			)}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Enable the grid container to expand to full width on tablets and mobile devices.',
 					'caledros-basic-blocks'
-				) }
-				checked={ fullWidthTabletEnabled }
-				onChange={ ( newValue ) => {
-					setAttributes( { fullWidthTabletEnabled: newValue } );
-				} }
+				)}
+				checked={fullWidthTabletEnabled}
+				onChange={(newValue) => {
+					setAttributes({ fullWidthTabletEnabled: newValue });
+				}}
 			/>
 		</PanelBody>
 	);

@@ -21,6 +21,6 @@
 import { registerPlugin } from '@wordpress/plugins';
 import DarkLightModeToggle from './dark-light-mode-toggle';
 
-registerPlugin( 'dark-light-mode-sidebar', {
+registerPlugin('dark-light-mode-sidebar', {
 	render: DarkLightModeToggle,
-} );
+});

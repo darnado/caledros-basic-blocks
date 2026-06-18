@@ -21,33 +21,30 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function SidebarMinWidthSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function SidebarMinWidthSettings({ attributes, setAttributes }) {
 	// Block attributes
 	const { sidebarMinWidth } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Sidebar minimum width', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Sidebar minimum width', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Please select the minimum width (%) for the sidebar menu. This setting only applies to screens with widths between 451px and 811px (tablet-sized screens). On smaller devices (450px or less), the sidebar menu spans the whole screen. This feature is only visible in the frontend.',
 					'caledros-basic-blocks'
-				) }
-				max={ 100 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( sidebarMinWidth ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
-						sidebarMinWidth: `${ newValue }%`,
-					} )
+				)}
+				max={100}
+				min={0}
+				step={1}
+				value={parseInt(sidebarMinWidth)}
+				onChange={(newValue) =>
+					setAttributes({
+						sidebarMinWidth: `${newValue}%`,
+					})
 				}
 			/>
 		</PanelBody>

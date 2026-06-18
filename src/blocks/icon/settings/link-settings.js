@@ -21,35 +21,33 @@
 import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function LinkSettings( { attributes, setAttributes } ) {
+export default function LinkSettings({ attributes, setAttributes }) {
 	const { iconLink, iconLinkEnabled } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'Icon link', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Icon link', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				checked={ iconLinkEnabled }
-				label={ __( 'Enable icon link', 'caledros-basic-blocks' ) }
-				onChange={ ( newValue ) => {
-					setAttributes( { iconLinkEnabled: newValue } );
-				} }
+				checked={iconLinkEnabled}
+				label={__('Enable icon link', 'caledros-basic-blocks')}
+				onChange={(newValue) => {
+					setAttributes({ iconLinkEnabled: newValue });
+				}}
 			/>
-			{ iconLinkEnabled && (
+			{iconLinkEnabled && (
 				<TextControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					onChange={ ( newLink ) =>
-						setAttributes( { iconLink: newLink } )
-					}
-					value={ iconLink }
-					help={ __(
+					onChange={(newLink) => setAttributes({ iconLink: newLink })}
+					value={iconLink}
+					help={__(
 						'Paste the link for the icon',
 						'caledros-basic-blocks'
-					) }
+					)}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

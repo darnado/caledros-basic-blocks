@@ -21,24 +21,22 @@
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function LinkSettings( { attributes, setAttributes } ) {
+export default function LinkSettings({ attributes, setAttributes }) {
 	const { iconLink } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'Social media link', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Social media link', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<TextControl
 				__nextHasNoMarginBottom
 				__next40pxDefaultSize
-				onChange={ ( newLink ) =>
-					setAttributes( { iconLink: newLink } )
-				}
-				value={ iconLink }
-				help={ __(
+				onChange={(newLink) => setAttributes({ iconLink: newLink })}
+				value={iconLink}
+				help={__(
 					'Paste the link to your social media profile',
 					'caledros-basic-blocks'
-				) }
+				)}
 			/>
 		</PanelBody>
 	);

@@ -21,166 +21,166 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function CloseButtonStylesSettings( {
+export default function CloseButtonStylesSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	// Block attributes
 	const { closeButtonStyles } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Close button styles', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Close button styles', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				label={ __( 'Button height', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Button height', 'caledros-basic-blocks')}
+				help={__(
 					'Please select the value (px) for the button height. This feature is only visible in the frontend.',
 					'caledros-basic-blocks'
-				) }
-				max={ 100 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonStyles.buttonHeight ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={100}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonStyles.buttonHeight)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonStyles: {
 							...closeButtonStyles,
-							buttonHeight: `${ newValue }px`,
+							buttonHeight: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				label={ __( 'Button width', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Button width', 'caledros-basic-blocks')}
+				help={__(
 					'Please select the value (px) for the button width. This feature is only visible in the frontend.',
 					'caledros-basic-blocks'
-				) }
-				max={ 100 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonStyles.buttonWidth ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={100}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonStyles.buttonWidth)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonStyles: {
 							...closeButtonStyles,
-							buttonWidth: `${ newValue }px`,
+							buttonWidth: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				label={ __( 'Button border width', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Button border width', 'caledros-basic-blocks')}
+				help={__(
 					'Please select the width (px) for the button border. This feature is only visible in the frontend.',
 					'caledros-basic-blocks'
-				) }
-				max={ 10 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonStyles.buttonBorderWidth ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={10}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonStyles.buttonBorderWidth)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonStyles: {
 							...closeButtonStyles,
-							buttonBorderWidth: `${ newValue }px`,
+							buttonBorderWidth: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				label={ __( 'Button border radius', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Button border radius', 'caledros-basic-blocks')}
+				help={__(
 					'Please select the radius (px) for the button border. This feature is only visible in the frontend.',
 					'caledros-basic-blocks'
-				) }
-				max={ 50 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonStyles.buttonBorderRadius ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={50}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonStyles.buttonBorderRadius)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonStyles: {
 							...closeButtonStyles,
-							buttonBorderRadius: `${ newValue }px`,
+							buttonBorderRadius: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				label={ __( "Button bars' height", 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__("Button bars' height", 'caledros-basic-blocks')}
+				help={__(
 					'Please select the height (px) of the button bars. This feature is only visible in the frontend.',
 					'caledros-basic-blocks'
-				) }
-				max={ 10 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonStyles.barsHeight ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={10}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonStyles.barsHeight)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonStyles: {
 							...closeButtonStyles,
-							barsHeight: `${ newValue }px`,
+							barsHeight: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				label={ __( "Button bars' width", 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__("Button bars' width", 'caledros-basic-blocks')}
+				help={__(
 					'Please select the width (px) of the button bars. This feature is only visible in the frontend.',
 					'caledros-basic-blocks'
-				) }
-				max={ 50 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonStyles.barsWidth ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={50}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonStyles.barsWidth)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonStyles: {
 							...closeButtonStyles,
-							barsWidth: `${ newValue }px`,
+							barsWidth: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					"Button bars' border radius",
 					'caledros-basic-blocks'
-				) }
-				help={ __(
+				)}
+				help={__(
 					'Please select the border radius (px) for the button bars. This feature is only visible in the frontend.',
 					'caledros-basic-blocks'
-				) }
-				max={ 50 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonStyles.barsBorderRadius ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={50}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonStyles.barsBorderRadius)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonStyles: {
 							...closeButtonStyles,
-							barsBorderRadius: `${ newValue }px`,
+							barsBorderRadius: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 		</PanelBody>

@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function EffectSettings( { attributes, setAttributes } ) {
+export default function EffectSettings({ attributes, setAttributes }) {
 	const { sliderEffect } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Effect', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Effect', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the effect for the slider.',
 					'caledros-basic-blocks'
-				) }
-				value={ sliderEffect }
-				options={ [
+				)}
+				value={sliderEffect}
+				options={[
 					{
 						label: 'None',
 						value: 'none',
@@ -50,12 +50,12 @@ export default function EffectSettings( { attributes, setAttributes } ) {
 						label: 'Coverflow',
 						value: 'coverflow',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						sliderEffect: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

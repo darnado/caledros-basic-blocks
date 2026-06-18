@@ -21,30 +21,27 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function NumberOfColumnsSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function NumberOfColumnsSettings({ attributes, setAttributes }) {
 	const { numberOfColumns } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'No. of columns (desktop)', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('No. of columns (desktop)', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Please select the number of columns for the container (desktop).',
 					'caledros-basic-blocks'
-				) }
-				value={ numberOfColumns }
-				initialPosition={ 1 }
-				max={ 6 }
-				min={ 1 }
-				step={ 1 }
-				onChange={ ( newValue ) =>
-					setAttributes( { numberOfColumns: newValue } )
+				)}
+				value={numberOfColumns}
+				initialPosition={1}
+				max={6}
+				min={1}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ numberOfColumns: newValue })
 				}
 			/>
 		</PanelBody>

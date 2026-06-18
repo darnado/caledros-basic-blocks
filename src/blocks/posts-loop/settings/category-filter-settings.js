@@ -26,73 +26,64 @@ import {
 import { useEntityRecords } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
 
-export default function CategoryFilterSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function CategoryFilterSettings({ attributes, setAttributes }) {
 	const { categoryFilter, pageType } = attributes;
 
 	let categoryOptions = [];
 
 	// Fetch all categories
-	const { hasResolved, records } = useEntityRecords( 'taxonomy', 'category', {
+	const { hasResolved, records } = useEntityRecords('taxonomy', 'category', {
 		per_page: -1,
-	} );
+	});
 
 	// Build options once data is fetched
-	if ( hasResolved && records ) {
-		categoryOptions = records.map( ( category ) => ( {
+	if (hasResolved && records) {
+		categoryOptions = records.map((category) => ({
 			label: category.name,
 			value: category.id,
-		} ) );
+		}));
 	}
 
 	return (
 		<PanelBody
-			title={ __( 'Filter by category', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Filter by category', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
-					'Filter posts by category',
-					'caledros-basic-blocks'
-				) }
-				help={ __(
+				label={__('Filter posts by category', 'caledros-basic-blocks')}
+				help={__(
 					'Choose whether or not the posts will be filtered by category.',
 					'caledros-basic-blocks'
-				) }
-				checked={ categoryFilter.enable }
-				disabled={ pageType === 'category-template' }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={categoryFilter.enable}
+				disabled={pageType === 'category-template'}
+				onChange={(newValue) => {
+					setAttributes({
 						categoryFilter: {
 							...categoryFilter,
 							enable: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ categoryFilter.enable && (
+			{categoryFilter.enable && (
 				<ComboboxControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
-						'Choose the category.',
-						'caledros-basic-blocks'
-					) }
-					value={ categoryFilter.categoryId }
-					options={ categoryOptions }
-					onChange={ ( selectedValue ) => {
-						setAttributes( {
+					help={__('Choose the category.', 'caledros-basic-blocks')}
+					value={categoryFilter.categoryId}
+					options={categoryOptions}
+					onChange={(selectedValue) => {
+						setAttributes({
 							categoryFilter: {
 								...categoryFilter,
 								categoryId: selectedValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

@@ -21,32 +21,32 @@
 import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function PaginationSettings( { attributes, setAttributes } ) {
+export default function PaginationSettings({ attributes, setAttributes }) {
 	const { enablePagination, paginationType } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Pagination', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Pagination', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				checked={ enablePagination }
-				label={ __( 'Enable pagination', 'caledros-basic-blocks' ) }
-				onChange={ ( newValue ) => {
-					setAttributes( { enablePagination: newValue } );
-				} }
+				checked={enablePagination}
+				label={__('Enable pagination', 'caledros-basic-blocks')}
+				onChange={(newValue) => {
+					setAttributes({ enablePagination: newValue });
+				}}
 			/>
-			{ enablePagination && (
+			{enablePagination && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the type of pagination',
 						'caledros-basic-blocks'
-					) }
-					value={ paginationType }
-					options={ [
+					)}
+					value={paginationType}
+					options={[
 						{
 							label: 'Progress Bar',
 							value: 'progressbar',
@@ -59,14 +59,14 @@ export default function PaginationSettings( { attributes, setAttributes } ) {
 							label: 'Fraction',
 							value: 'fraction',
 						},
-					] }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					]}
+					onChange={(newValue) => {
+						setAttributes({
 							paginationType: newValue,
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

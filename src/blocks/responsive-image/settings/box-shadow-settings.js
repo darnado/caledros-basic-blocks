@@ -29,80 +29,78 @@ import { __ } from '@wordpress/i18n';
 import { useSettings } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 
-export default function BoxShadowSettings( { attributes, setAttributes } ) {
+export default function BoxShadowSettings({ attributes, setAttributes }) {
 	const { imgBoxShadow } = attributes;
 
-	const [ themeJsonPalette, defaultPalette ] = useSettings(
+	const [themeJsonPalette, defaultPalette] = useSettings(
 		'color.palette',
 		'color.defaultPalette'
 	);
 
 	// Define fallback color options
-	const fallbackColorOptions = themeJsonPalette.map( ( registeredColor ) => {
+	const fallbackColorOptions = themeJsonPalette.map((registeredColor) => {
 		return {
-			color: `var(--wp--preset--color--${ registeredColor.slug })`,
+			color: `var(--wp--preset--color--${registeredColor.slug})`,
 			name: registeredColor.name,
 		};
-	} );
+	});
 
 	// Get available color palettes present in the Full Site Editor
-	const editorSettings = select( 'core/editor' )?.getEditorSettings();
+	const editorSettings = select('core/editor')?.getEditorSettings();
 	const editorPalette =
 		editorSettings?.__experimentalFeatures?.color?.palette;
 
 	// Function to get the color palettes
-	const createColorOptions = ( colorPalette, paletteType ) => {
+	const createColorOptions = (colorPalette, paletteType) => {
 		return {
-			colors: colorPalette?.[ paletteType ]?.map( ( palette ) => {
+			colors: colorPalette?.[paletteType]?.map((palette) => {
 				return {
-					color: `var(--wp--preset--color--${ palette.slug })`,
+					color: `var(--wp--preset--color--${palette.slug})`,
 					name: palette.name,
 				};
-			} ),
-			name: `${ paletteType }`,
+			}),
+			name: `${paletteType}`,
 		};
 	};
 
 	// Available color palettes
-	const defaultColors = createColorOptions( editorPalette, 'default' );
-	const themeColors = createColorOptions( editorPalette, 'theme' );
-	const customColors = createColorOptions( editorPalette, 'custom' );
+	const defaultColors = createColorOptions(editorPalette, 'default');
+	const themeColors = createColorOptions(editorPalette, 'theme');
+	const customColors = createColorOptions(editorPalette, 'custom');
 
 	// Define color options for the controller
 	const colorOptions = [
-		...( defaultPalette ? [ defaultColors ] : [] ),
+		...(defaultPalette ? [defaultColors] : []),
 		themeColors,
-		...( customColors.colors ? [ customColors ] : [] ),
+		...(customColors.colors ? [customColors] : []),
 	];
 
 	return (
 		<PanelBody
-			title={ __( 'Box shadow', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Box shadow', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Enable box shadow', 'caledros-basic-blocks' ) }
-				checked={ imgBoxShadow.enabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				label={__('Enable box shadow', 'caledros-basic-blocks')}
+				checked={imgBoxShadow.enabled}
+				onChange={(newValue) => {
+					setAttributes({
 						imgBoxShadow: { ...imgBoxShadow, enabled: newValue },
-					} );
-				} }
+					});
+				}}
 			/>
-			{ imgBoxShadow.enabled && (
+			{imgBoxShadow.enabled && (
 				<>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Choose the style for the box shadow.',
 							'caledros-basic-blocks'
-						) }
-						value={
-							imgBoxShadow.style === '' ? 'outline' : 'inset'
-						}
-						options={ [
+						)}
+						value={imgBoxShadow.style === '' ? 'outline' : 'inset'}
+						options={[
 							{
 								label: 'Outline',
 								value: 'outline',
@@ -111,122 +109,122 @@ export default function BoxShadowSettings( { attributes, setAttributes } ) {
 								label: 'Inset',
 								value: 'inset',
 							},
-						] }
-						onChange={ ( newValue ) => {
-							setAttributes( {
+						]}
+						onChange={(newValue) => {
+							setAttributes({
 								imgBoxShadow: {
 									...imgBoxShadow,
 									style: `${
 										newValue === 'outline' ? '' : newValue
 									}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the horizontal offset (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( imgBoxShadow.hOffset ) }
-						max={ 100 }
-						min={ -100 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(imgBoxShadow.hOffset)}
+						max={100}
+						min={-100}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgBoxShadow: {
 									...imgBoxShadow,
-									hOffset: `${ newValue }px`,
+									hOffset: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the vertical offset (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( imgBoxShadow.vOffset ) }
-						max={ 100 }
-						min={ -100 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(imgBoxShadow.vOffset)}
+						max={100}
+						min={-100}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgBoxShadow: {
 									...imgBoxShadow,
-									vOffset: `${ newValue }px`,
+									vOffset: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the blur (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( imgBoxShadow.blur ) }
-						max={ 100 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(imgBoxShadow.blur)}
+						max={100}
+						min={0}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgBoxShadow: {
 									...imgBoxShadow,
-									blur: `${ newValue }px`,
+									blur: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the spread (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( imgBoxShadow.spread ) }
-						max={ 100 }
-						min={ -100 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(imgBoxShadow.spread)}
+						max={100}
+						min={-100}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgBoxShadow: {
 									...imgBoxShadow,
-									spread: `${ newValue }px`,
+									spread: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<p className="cbb-editor-label">
-						{ __(
+						{__(
 							'Choose a color for the box shadow',
 							'caledros-basic-blocks'
-						) }
+						)}
 					</p>
 					<ColorPalette
 						colors={
 							editorPalette ? colorOptions : fallbackColorOptions
 						}
-						value={ imgBoxShadow.color }
-						onChange={ ( newColor ) =>
-							setAttributes( {
+						value={imgBoxShadow.color}
+						onChange={(newColor) =>
+							setAttributes({
 								imgBoxShadow: {
 									...imgBoxShadow,
 									color: newColor || '#00000000',
 								},
-							} )
+							})
 						}
-						enableAlpha={ true }
-						clearable={ true }
+						enableAlpha={true}
+						clearable={true}
 					/>
 				</>
-			) }
+			)}
 		</PanelBody>
 	);
 }

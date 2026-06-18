@@ -20,7 +20,7 @@
 
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
-export default function SaveBlock( { attributes } ) {
+export default function SaveBlock({ attributes }) {
 	const {
 		iconsGap,
 		groupMargin,
@@ -30,20 +30,20 @@ export default function SaveBlock( { attributes } ) {
 	} = attributes;
 
 	// Block props
-	const blockProps = useBlockProps.save( {
+	const blockProps = useBlockProps.save({
 		className: 'cbb-social-icons-group',
 		style: {
 			margin: groupMargin.differentMarginsEnabled
-				? `${ groupMargin.top } ${ groupMargin.right } ${ groupMargin.bottom } ${ groupMargin.left }`
-				: `${ groupMargin.top }`,
-			gap: `${ iconsGap }px`,
-			'--cbb-social-icon-size': `${ socialIconsSize }px`,
-			'--cbb-social-icon-color': `${ socialIconsColor }`,
-			'--cbb-social-icon-dark-color': `${ socialIconsDarkColor }`,
+				? `${groupMargin.top} ${groupMargin.right} ${groupMargin.bottom} ${groupMargin.left}`
+				: `${groupMargin.top}`,
+			gap: `${iconsGap}px`,
+			'--cbb-social-icon-size': `${socialIconsSize}px`,
+			'--cbb-social-icon-color': `${socialIconsColor}`,
+			'--cbb-social-icon-dark-color': `${socialIconsDarkColor}`,
 		},
-	} );
+	});
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<InnerBlocks.Content />
 		</div>
 	);

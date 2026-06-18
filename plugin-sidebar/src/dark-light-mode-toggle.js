@@ -25,17 +25,16 @@ import { __ } from '@wordpress/i18n';
 
 export default function DarkLightModeToggle() {
 	// Declare state to manage the toggle
-	const [ toggleState, setToggleState ] = useState( false );
+	const [toggleState, setToggleState] = useState(false);
 
 	// Function to change the theme mode
 	const changeThemeMode = () => {
 		// Select iframe editor
 		const iframe =
-			document.querySelector(
-				'.edit-site-visual-editor__editor-canvas'
-			) || document.querySelector( 'iframe[name="editor-canvas"]' );
+			document.querySelector('.edit-site-visual-editor__editor-canvas') ||
+			document.querySelector('iframe[name="editor-canvas"]');
 
-		if ( ! iframe ) {
+		if (!iframe) {
 			// console.error(
 			// 	'Iframe editor not found. Please refresh and try again.'
 			// );
@@ -45,7 +44,7 @@ export default function DarkLightModeToggle() {
 		const iframeDocument =
 			iframe.contentDocument || iframe.contentWindow.document;
 
-		if ( ! iframeDocument || iframeDocument.readyState !== 'complete' ) {
+		if (!iframeDocument || iframeDocument.readyState !== 'complete') {
 			// console.error(
 			// 	'Iframe document not ready. Please refresh and try again.'
 			// );
@@ -56,7 +55,7 @@ export default function DarkLightModeToggle() {
 			'.block-editor-iframe__html'
 		);
 
-		if ( ! iframeEditor ) {
+		if (!iframeEditor) {
 			// console.error(
 			// 	'Iframe editor not found. Please refresh and try again.'
 			// );
@@ -66,11 +65,11 @@ export default function DarkLightModeToggle() {
 		// Toggle data-attribute
 		iframeEditor.setAttribute(
 			'data-theme',
-			`${ toggleState ? 'light' : 'dark' }`
+			`${toggleState ? 'light' : 'dark'}`
 		);
 
 		// Change toggle state
-		setToggleState( ( oldToggleState ) => ! oldToggleState );
+		setToggleState((oldToggleState) => !oldToggleState);
 	};
 
 	return (
@@ -83,16 +82,16 @@ export default function DarkLightModeToggle() {
 				title="Dark/Light Mode"
 				icon="admin-appearance"
 			>
-				<div style={ { padding: '16px' } }>
+				<div style={{ padding: '16px' }}>
 					<ToggleControl
 						__nextHasNoMarginBottom
-						label={ __( 'Enable dark mode', 'caledros-blocks' ) }
-						checked={ toggleState }
-						onChange={ changeThemeMode }
-						help={ __(
+						label={__('Enable dark mode', 'caledros-blocks')}
+						checked={toggleState}
+						onChange={changeThemeMode}
+						help={__(
 							'Enable this option to preview the dark theme in the editor.',
 							'caledros-blocks'
-						) }
+						)}
 					/>
 				</div>
 			</PluginSidebar>

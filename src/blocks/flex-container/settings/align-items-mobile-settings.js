@@ -21,44 +21,44 @@
 import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function AlignItemsMobileSettings( {
+export default function AlignItemsMobileSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { containerAlignItemsMobile } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Align Items (Mobile)', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Align Items (Mobile)', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Enable control', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Enable control', 'caledros-basic-blocks')}
+				help={__(
 					"This control enables selecting a custom value for the 'align items' property in mobile devices.",
 					'caledros-basic-blocks'
-				) }
-				checked={ containerAlignItemsMobile.enabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={containerAlignItemsMobile.enabled}
+				onChange={(newValue) => {
+					setAttributes({
 						containerAlignItemsMobile: {
 							...containerAlignItemsMobile,
 							enabled: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ containerAlignItemsMobile.enabled && (
+			{containerAlignItemsMobile.enabled && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Select the value for the align items property.',
 						'caledros-basic-blocks'
-					) }
-					value={ containerAlignItemsMobile.value }
-					options={ [
+					)}
+					value={containerAlignItemsMobile.value}
+					options={[
 						{
 							label: 'Flex start',
 							value: 'flex-start',
@@ -83,17 +83,17 @@ export default function AlignItemsMobileSettings( {
 							label: 'Normal (default)',
 							value: 'normal',
 						},
-					] }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					]}
+					onChange={(newValue) => {
+						setAttributes({
 							containerAlignItemsMobile: {
 								...containerAlignItemsMobile,
 								value: newValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

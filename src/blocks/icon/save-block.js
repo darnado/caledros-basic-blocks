@@ -20,7 +20,7 @@
 
 import { useBlockProps } from '@wordpress/block-editor';
 
-export default function SaveBlock( { attributes } ) {
+export default function SaveBlock({ attributes }) {
 	const {
 		icon,
 		iconLink,
@@ -30,27 +30,27 @@ export default function SaveBlock( { attributes } ) {
 		iconsDarkColor,
 	} = attributes;
 	// Block props
-	const blockProps = useBlockProps.save( {
-		className: `cbb-icon cbb-icon--${ icon }`,
+	const blockProps = useBlockProps.save({
+		className: `cbb-icon cbb-icon--${icon}`,
 		style: {
-			'--cbb-icon-size': `${ iconsSize }px`,
-			'--cbb-icon-color': `${ iconsColor }`,
-			'--cbb-icon-dark-color': `${ iconsDarkColor }`,
+			'--cbb-icon-size': `${iconsSize}px`,
+			'--cbb-icon-color': `${iconsColor}`,
+			'--cbb-icon-dark-color': `${iconsDarkColor}`,
 		},
-	} );
+	});
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<span className="cbb-icon__icon-container"></span>
-			{ iconLinkEnabled && (
+			{iconLinkEnabled && (
 				<a
-					href={ iconLink }
+					href={iconLink}
 					className="cbb-icon__main-link"
-					aria-label={ icon }
+					aria-label={icon}
 				></a>
-			) }
-			{ ! iconLinkEnabled && (
+			)}
+			{!iconLinkEnabled && (
 				<span className="cbb-icon__simple-icon"></span>
-			) }
+			)}
 		</div>
 	);
 }

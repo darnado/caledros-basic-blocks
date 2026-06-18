@@ -27,32 +27,30 @@ import {
 import { __, sprintf } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
-export default function PostTitleLetterSpacingSettings( {
+export default function PostTitleLetterSpacingSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { postTitleLetterSpacing } = attributes;
-	const [ useNormalLetterSpacing, setUseNormalLetterSpacing ] = useState(
+	const [useNormalLetterSpacing, setUseNormalLetterSpacing] = useState(
 		postTitleLetterSpacing === 'normal' ? true : false
 	);
 
 	// Recover the unit used in the letter spacing
-	const unit = postTitleLetterSpacing.replace( /[\d.]+/g, '' ) || 'px';
-	const letterSpacingUnit = [ 'px', 'em', 'rem' ].includes( unit )
-		? unit
-		: 'px';
+	const unit = postTitleLetterSpacing.replace(/[\d.]+/g, '') || 'px';
+	const letterSpacingUnit = ['px', 'em', 'rem'].includes(unit) ? unit : 'px';
 
 	// Recover the numeric value of the letter spacing
-	const letterSpacingNumber = ( unitP ) => {
-		if ( unitP === 'px' ) {
-			return parseInt( postTitleLetterSpacing ) || 0;
+	const letterSpacingNumber = (unitP) => {
+		if (unitP === 'px') {
+			return parseInt(postTitleLetterSpacing) || 0;
 		}
-		return parseFloat( postTitleLetterSpacing ) || 0;
+		return parseFloat(postTitleLetterSpacing) || 0;
 	};
 
 	// Enforce max value for pixels
-	const enforceMaxValue = ( unitP, valueNumber ) => {
-		if ( unitP !== 'px' && valueNumber > 10 ) {
+	const enforceMaxValue = (unitP, valueNumber) => {
+		if (unitP !== 'px' && valueNumber > 10) {
 			return 10;
 		}
 		return valueNumber;
@@ -60,34 +58,31 @@ export default function PostTitleLetterSpacingSettings( {
 
 	return (
 		<PanelBody
-			title={ __( 'Post Title Letter spacing', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Post Title Letter spacing', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
-					'Use normal letter spacing',
-					'caledros-basic-blocks'
-				) }
-				checked={ useNormalLetterSpacing }
-				onChange={ () => {
+				label={__('Use normal letter spacing', 'caledros-basic-blocks')}
+				checked={useNormalLetterSpacing}
+				onChange={() => {
 					const temporalValue = useNormalLetterSpacing
 						? '0'
 						: 'normal';
-					setUseNormalLetterSpacing( ( oldValue ) => ! oldValue );
-					setAttributes( {
-						postTitleLetterSpacing: `${ temporalValue }${
+					setUseNormalLetterSpacing((oldValue) => !oldValue);
+					setAttributes({
+						postTitleLetterSpacing: `${temporalValue}${
 							temporalValue === 'normal' ? '' : letterSpacingUnit
 						}`,
-					} );
-				} }
+					});
+				}}
 			/>
-			{ ! useNormalLetterSpacing && (
+			{!useNormalLetterSpacing && (
 				<div className="cbb-editor__grid">
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ sprintf(
+						help={sprintf(
 							/**
 							 * translators: %s letter spacing unit
 							 */
@@ -96,25 +91,25 @@ export default function PostTitleLetterSpacingSettings( {
 								'caledros-basic-blocks'
 							),
 							letterSpacingUnit
-						) }
-						value={ parseFloat( postTitleLetterSpacing ) || 0 }
-						max={ letterSpacingUnit === 'px' ? 50 : 10 }
-						min={ 0 }
-						step={ letterSpacingUnit === 'px' ? 1 : 0.01 }
-						onChange={ ( newLetterSpacing ) => {
-							setAttributes( {
-								postTitleLetterSpacing: `${ enforceMaxValue(
+						)}
+						value={parseFloat(postTitleLetterSpacing) || 0}
+						max={letterSpacingUnit === 'px' ? 50 : 10}
+						min={0}
+						step={letterSpacingUnit === 'px' ? 1 : 0.01}
+						onChange={(newLetterSpacing) => {
+							setAttributes({
+								postTitleLetterSpacing: `${enforceMaxValue(
 									letterSpacingUnit,
 									newLetterSpacing
-								) }${ letterSpacingUnit }`,
-							} );
-						} }
+								)}${letterSpacingUnit}`,
+							});
+						}}
 					/>
 					<SelectControl
 						__nextHasNoMarginBottom
 						__next40pxDefaultSize
-						value={ letterSpacingUnit }
-						options={ [
+						value={letterSpacingUnit}
+						options={[
 							{
 								label: 'px',
 								value: 'px',
@@ -127,18 +122,18 @@ export default function PostTitleLetterSpacingSettings( {
 								label: 'rem',
 								value: 'rem',
 							},
-						] }
-						onChange={ ( newUnit ) => {
-							setAttributes( {
-								postTitleLetterSpacing: `${ enforceMaxValue(
+						]}
+						onChange={(newUnit) => {
+							setAttributes({
+								postTitleLetterSpacing: `${enforceMaxValue(
 									newUnit,
-									letterSpacingNumber( newUnit )
-								) }${ newUnit }`,
-							} );
-						} }
+									letterSpacingNumber(newUnit)
+								)}${newUnit}`,
+							});
+						}}
 					/>
 				</div>
-			) }
+			)}
 		</PanelBody>
 	);
 }

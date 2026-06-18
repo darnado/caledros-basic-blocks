@@ -22,55 +22,55 @@ import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
-export default function BorderStyleSettings( { attributes, setAttributes } ) {
+export default function BorderStyleSettings({ attributes, setAttributes }) {
 	const { imgBorder } = attributes;
 
-	const borderArray = imgBorder.style.split( ' ' );
-	const topBorder = borderArray[ 0 ] || 'solid';
-	const rightBorder = borderArray[ 1 ] || 'none';
-	const bottomBorder = borderArray[ 2 ] || 'none';
-	const leftBorder = borderArray[ 3 ] || 'none';
+	const borderArray = imgBorder.style.split(' ');
+	const topBorder = borderArray[0] || 'solid';
+	const rightBorder = borderArray[1] || 'none';
+	const bottomBorder = borderArray[2] || 'none';
+	const leftBorder = borderArray[3] || 'none';
 
-	const [ useDifferentBorderStyles, setUseDifferentBorderStyles ] = useState(
-		imgBorder.style.includes( ' ' ) ? true : false
+	const [useDifferentBorderStyles, setUseDifferentBorderStyles] = useState(
+		imgBorder.style.includes(' ') ? true : false
 	);
 	return (
 		<PanelBody
-			title={ __( 'Border style', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Border style', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
 				label="Use different border styles for each side"
-				checked={ useDifferentBorderStyles }
-				onChange={ () => {
-					const newValue = ! useDifferentBorderStyles;
-					setUseDifferentBorderStyles( newValue );
+				checked={useDifferentBorderStyles}
+				onChange={() => {
+					const newValue = !useDifferentBorderStyles;
+					setUseDifferentBorderStyles(newValue);
 
-					if ( newValue ) {
-						setAttributes( {
+					if (newValue) {
+						setAttributes({
 							imgBorder: {
 								...imgBorder,
 								style: 'solid none none none',
 							},
-						} );
+						});
 					} else {
-						setAttributes( {
+						setAttributes({
 							imgBorder: { ...imgBorder, style: 'solid' },
-						} );
+						});
 					}
-				} }
+				}}
 			/>
-			{ ! useDifferentBorderStyles && (
+			{!useDifferentBorderStyles && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the border style.',
 						'caledros-basic-blocks'
-					) }
-					value={ imgBorder.style }
-					options={ [
+					)}
+					value={imgBorder.style}
+					options={[
 						{
 							disabled: true,
 							label: 'Select an option',
@@ -112,26 +112,26 @@ export default function BorderStyleSettings( { attributes, setAttributes } ) {
 							label: 'Outset',
 							value: 'outset',
 						},
-					] }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					]}
+					onChange={(newValue) => {
+						setAttributes({
 							imgBorder: { ...imgBorder, style: newValue },
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 
-			{ useDifferentBorderStyles && (
+			{useDifferentBorderStyles && (
 				<>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Choose the style for the top border.',
 							'caledros-basic-blocks'
-						) }
-						value={ topBorder }
-						options={ [
+						)}
+						value={topBorder}
+						options={[
 							{
 								disabled: true,
 								label: 'Select an option',
@@ -173,25 +173,25 @@ export default function BorderStyleSettings( { attributes, setAttributes } ) {
 								label: 'Outset',
 								value: 'outset',
 							},
-						] }
-						onChange={ ( newValue ) => {
-							setAttributes( {
+						]}
+						onChange={(newValue) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									style: `${ newValue } ${ rightBorder } ${ bottomBorder } ${ leftBorder }`,
+									style: `${newValue} ${rightBorder} ${bottomBorder} ${leftBorder}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Choose the style for the right border.',
 							'caledros-basic-blocks'
-						) }
-						value={ rightBorder }
-						options={ [
+						)}
+						value={rightBorder}
+						options={[
 							{
 								disabled: true,
 								label: 'Select an option',
@@ -233,25 +233,25 @@ export default function BorderStyleSettings( { attributes, setAttributes } ) {
 								label: 'Outset',
 								value: 'outset',
 							},
-						] }
-						onChange={ ( newValue ) => {
-							setAttributes( {
+						]}
+						onChange={(newValue) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									style: `${ topBorder } ${ newValue } ${ bottomBorder } ${ leftBorder }`,
+									style: `${topBorder} ${newValue} ${bottomBorder} ${leftBorder}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Choose the style for the bottom border.',
 							'caledros-basic-blocks'
-						) }
-						value={ bottomBorder }
-						options={ [
+						)}
+						value={bottomBorder}
+						options={[
 							{
 								disabled: true,
 								label: 'Select an option',
@@ -293,25 +293,25 @@ export default function BorderStyleSettings( { attributes, setAttributes } ) {
 								label: 'Outset',
 								value: 'outset',
 							},
-						] }
-						onChange={ ( newValue ) => {
-							setAttributes( {
+						]}
+						onChange={(newValue) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									style: `${ topBorder } ${ rightBorder } ${ newValue } ${ leftBorder }`,
+									style: `${topBorder} ${rightBorder} ${newValue} ${leftBorder}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Choose the style for the left border.',
 							'caledros-basic-blocks'
-						) }
-						value={ leftBorder }
-						options={ [
+						)}
+						value={leftBorder}
+						options={[
 							{
 								disabled: true,
 								label: 'Select an option',
@@ -353,18 +353,18 @@ export default function BorderStyleSettings( { attributes, setAttributes } ) {
 								label: 'Outset',
 								value: 'outset',
 							},
-						] }
-						onChange={ ( newValue ) => {
-							setAttributes( {
+						]}
+						onChange={(newValue) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									style: `${ topBorder } ${ rightBorder } ${ bottomBorder } ${ newValue }`,
+									style: `${topBorder} ${rightBorder} ${bottomBorder} ${newValue}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 				</>
-			) }
+			)}
 		</PanelBody>
 	);
 }

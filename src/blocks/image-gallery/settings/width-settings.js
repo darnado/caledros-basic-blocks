@@ -28,21 +28,21 @@ import { __, sprintf } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 import { useSettings } from '@wordpress/block-editor';
 
-export default function WidthSettings( { attributes, setAttributes } ) {
+export default function WidthSettings({ attributes, setAttributes }) {
 	// Recover block attributes
 	const { width } = attributes;
 
 	// Recover the unit used in the width
-	const unit = width.replace( /\d+/g, '' ) || 'px';
-	const widthUnit = [ 'px', '%', 'em', 'rem', 'vw' ].includes( unit )
+	const unit = width.replace(/\d+/g, '') || 'px';
+	const widthUnit = ['px', '%', 'em', 'rem', 'vw'].includes(unit)
 		? unit
 		: 'px';
 
 	// Recover the numeric value of the width
-	const widthNumber = parseInt( width ) || 0;
+	const widthNumber = parseInt(width) || 0;
 
 	// Set state when a custom width is used
-	const [ useCustomWidth, setUseCustomWidth ] = useState(
+	const [useCustomWidth, setUseCustomWidth] = useState(
 		width === '100%' ||
 			width === 'var(--wp--style--global--content-size)' ||
 			width === 'var(--wp--style--global--wide-size)'
@@ -52,13 +52,13 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 
 	// Retrieve settings for the block
 	const themeSettings =
-		useSettings( 'layout.contentSize', 'layout.wideSize' ) || [];
-	const [ layoutContentSize = '620px', layoutWideSize = '1280px' ] =
+		useSettings('layout.contentSize', 'layout.wideSize') || [];
+	const [layoutContentSize = '620px', layoutWideSize = '1280px'] =
 		themeSettings;
 
 	// Restrict maximum value for % and vw units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( [ '%', 'vw' ].includes( newUnit ) && valueNumber > 100 ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (['%', 'vw'].includes(newUnit) && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
@@ -66,27 +66,25 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Maximum width', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Maximum width', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
 				label="Use custom width"
-				checked={ useCustomWidth }
-				onChange={ () =>
-					setUseCustomWidth(
-						( oldUseCustomWidth ) => ! oldUseCustomWidth
-					)
+				checked={useCustomWidth}
+				onChange={() =>
+					setUseCustomWidth((oldUseCustomWidth) => !oldUseCustomWidth)
 				}
 			/>
-			{ ! useCustomWidth && (
+			{!useCustomWidth && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the maximum width for the gallery.',
 						'caledros-basic-blocks'
-					) }
+					)}
 					value={
 						width === '100%' ||
 						width === 'var(--wp--style--global--content-size)' ||
@@ -94,7 +92,7 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 							? width
 							: ''
 					}
-					options={ [
+					options={[
 						{
 							disabled: true,
 							label: 'Select an option',
@@ -105,25 +103,25 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 							value: '100%',
 						},
 						{
-							label: `Content size (${ layoutContentSize })`,
+							label: `Content size (${layoutContentSize})`,
 							value: 'var(--wp--style--global--content-size)',
 						},
 						{
-							label: `Wide size (${ layoutWideSize })`,
+							label: `Wide size (${layoutWideSize})`,
 							value: 'var(--wp--style--global--wide-size)',
 						},
-					] }
-					onChange={ ( newWidth ) => {
-						setAttributes( { width: newWidth } );
-					} }
+					]}
+					onChange={(newWidth) => {
+						setAttributes({ width: newWidth });
+					}}
 				/>
-			) }
-			{ useCustomWidth && (
+			)}
+			{useCustomWidth && (
 				<div className="cbb-editor__grid">
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ sprintf(
+						help={sprintf(
 							/**
 							 * translators: %s maximum width's unit
 							 */
@@ -132,30 +130,30 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 								'caledros-basic-blocks'
 							),
 							widthUnit
-						) }
+						)}
 						value={
 							width ===
 								'var(--wp--style--global--content-size)' ||
 							width === 'var(--wp--style--global--wide-size)'
 								? 0
-								: parseInt( width )
+								: parseInt(width)
 						}
 						max={
 							widthUnit === '%' || widthUnit === 'vw' ? 100 : 3000
 						}
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newWidth ) => {
-							setAttributes( {
-								width: `${ newWidth }${ widthUnit }`,
-							} );
-						} }
+						min={0}
+						step={1}
+						onChange={(newWidth) => {
+							setAttributes({
+								width: `${newWidth}${widthUnit}`,
+							});
+						}}
 					/>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						value={ widthUnit }
-						options={ [
+						value={widthUnit}
+						options={[
 							{
 								label: 'px',
 								value: 'px',
@@ -176,18 +174,18 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 								label: 'vw',
 								value: 'vw',
 							},
-						] }
-						onChange={ ( newUnit ) => {
-							setAttributes( {
-								width: `${ enforceMaxValue(
+						]}
+						onChange={(newUnit) => {
+							setAttributes({
+								width: `${enforceMaxValue(
 									newUnit,
 									widthNumber
-								) }${ newUnit }`,
-							} );
-						} }
+								)}${newUnit}`,
+							});
+						}}
 					/>
 				</div>
-			) }
+			)}
 		</PanelBody>
 	);
 }

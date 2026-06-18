@@ -21,36 +21,33 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ShowUncategorizedCategorySettings( {
+export default function ShowUncategorizedCategorySettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { showUncategorizedCategory } = attributes;
 
 	return (
 		<PanelBody
-			title={ __(
-				'Show uncategorized category',
-				'caledros-basic-blocks'
-			) }
-			initialOpen={ false }
+			title={__('Show uncategorized category', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Show uncategorized category',
 					'caledros-basic-blocks'
-				) }
-				help={ __(
+				)}
+				help={__(
 					'Display the uncategorized category.',
 					'caledros-basic-blocks'
-				) }
-				checked={ showUncategorizedCategory }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={showUncategorizedCategory}
+				onChange={(newValue) => {
+					setAttributes({
 						showUncategorizedCategory: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

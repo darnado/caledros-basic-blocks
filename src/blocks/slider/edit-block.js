@@ -49,7 +49,7 @@ import apiFetch from '@wordpress/api-fetch';
 
 // Global store used only at editor runtime (never saved in database)
 const uniqueIds = [];
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	// Block attributes
 	const {
 		numberOfCards,
@@ -73,25 +73,25 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	} = attributes;
 
 	// Function to generate a persistent ID
-	const generateId = () => Math.random().toString( 36 ).substring( 2, 10 );
+	const generateId = () => Math.random().toString(36).substring(2, 10);
 
 	// Assign a unique ID only if:
 	// - Block is newly created (uniqueId is missing)
 	// - Block was duplicated (uniqueId already exists in uniqueIds[])
-	useEffect( () => {
+	useEffect(() => {
 		let id = identifier;
 
-		if ( ! id || uniqueIds.includes( id ) ) {
+		if (!id || uniqueIds.includes(id)) {
 			id = generateId();
-			setAttributes( { identifier: id } );
+			setAttributes({ identifier: id });
 		}
 
-		uniqueIds.push( id );
+		uniqueIds.push(id);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [] ); // runs only once per block instance
+	}, []); // runs only once per block instance
 
 	// Block properties
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: 'cbb-slider',
 		style: {
 			'--cbb-slider-light-color': lightColor,
@@ -100,10 +100,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			width,
 			height: minHeight,
 		},
-	} );
+	});
 
 	// Fetch template cards
-	const [ cardContents, setCardContents ] = useState( {} );
+	const [cardContents, setCardContents] = useState({});
 
 	const cardSlugs = useMemo(
 		() => [
@@ -124,53 +124,53 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		]
 	);
 
-	useEffect( () => {
-		cardSlugs.forEach( ( { key, slug } ) => {
-			if ( slug ) {
-				apiFetch( {
-					path: `/caledros-basic-blocks/v1/template-part/${ slug }`,
-				} )
-					.then( ( part ) => {
-						if ( part ) {
-							setCardContents( ( prevContents ) => ( {
+	useEffect(() => {
+		cardSlugs.forEach(({ key, slug }) => {
+			if (slug) {
+				apiFetch({
+					path: `/caledros-basic-blocks/v1/template-part/${slug}`,
+				})
+					.then((part) => {
+						if (part) {
+							setCardContents((prevContents) => ({
 								...prevContents,
-								[ key ]: part,
-							} ) );
+								[key]: part,
+							}));
 						}
-					} )
-					.catch( ( error ) => {
-						setCardContents( ( prevContents ) => ( {
+					})
+					.catch((error) => {
+						setCardContents((prevContents) => ({
 							...prevContents,
-							[ key ]: `
+							[key]: `
               <div style="height:100%;display: flex; flex-direction: column; justify-content: center; align-items: center; background-color:#2291BD">
-                <p style="color:#fff; font-size:25px; text-align:center;">Template part for slug '${ slug }' failed to load.</p>
-                <p style="color:#fff; font-size:25px; text-align:center;">${ error.message }</p>
+                <p style="color:#fff; font-size:25px; text-align:center;">Template part for slug '${slug}' failed to load.</p>
+                <p style="color:#fff; font-size:25px; text-align:center;">${error.message}</p>
               </div>`,
-						} ) );
-					} );
+						}));
+					});
 			}
-		} );
-	}, [ cardSlugs ] );
+		});
+	}, [cardSlugs]);
 
 	// Pagination Settings
 	const paginationSettings = () => {
-		if ( enablePagination && paginationType === 'bullets' ) {
+		if (enablePagination && paginationType === 'bullets') {
 			return { clickable: true, type: 'bullets' };
 		}
-		if ( enablePagination && paginationType === 'fraction' ) {
+		if (enablePagination && paginationType === 'fraction') {
 			return { type: 'fraction' };
 		}
-		if ( enablePagination && paginationType === 'progressbar' ) {
+		if (enablePagination && paginationType === 'progressbar') {
 			return { type: 'progressbar' };
 		}
-		if ( ! enablePagination ) {
+		if (!enablePagination) {
 			return false;
 		}
 	};
 
 	// Autoplay settings
 	const autoplaySettings = () => {
-		if ( autoplay.enableAutoplay ) {
+		if (autoplay.enableAutoplay) {
 			return {
 				delay: autoplay.delay,
 				disableOnInteraction: false,
@@ -185,7 +185,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'content',
 							title: 'Content',
@@ -198,120 +198,120 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'content' ) {
+					{(tab) => {
+						if (tab.name === 'content') {
 							return (
 								<>
-									{ /* <IdentifierSettings
+									{/* <IdentifierSettings
 										attributes={ attributes }
 										setAttributes={ setAttributes }
-									></IdentifierSettings> */ }
+									></IdentifierSettings> */}
 									<NumberOfCards
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfCards>
 									<CardOneTemplateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CardOneTemplateSettings>
 									<CardTwoTemplateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CardTwoTemplateSettings>
 									<CardThreeTemplateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CardThreeTemplateSettings>
 									<CardFourTemplateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CardFourTemplateSettings>
 									<CardFiveTemplateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CardFiveTemplateSettings>
 									<CardSixTemplateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CardSixTemplateSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<LightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LightColorSettings>
 									<DarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></DarkColorSettings>
 									<WidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></WidthSettings>
 									<MinHeightSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></MinHeightSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<LoopSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LoopSettings>
 									<NavigationArrowsSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NavigationArrowsSettings>
 									<PaginationSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PaginationSettings>
 									<AutoplaySettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></AutoplaySettings>
 									<EffectSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></EffectSettings>
 								</>
 							);
 						}
 						return null;
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<Swiper
-					key={ `${ paginationType }-${ enableLoop }-${ autoplay.enableAutoplay }-${ autoplay.delay }-${ enableNavigationArrows }-${ sliderEffect }` }
-					navigation={ enableNavigationArrows }
-					allowTouchMove={ false }
-					modules={ [
+					key={`${paginationType}-${enableLoop}-${autoplay.enableAutoplay}-${autoplay.delay}-${enableNavigationArrows}-${sliderEffect}`}
+					navigation={enableNavigationArrows}
+					allowTouchMove={false}
+					modules={[
 						Navigation,
 						Pagination,
 						Autoplay,
 						EffectFade,
 						EffectCoverflow,
-					] }
-					className={ `cbb-swiper-${ identifier }` }
-					loop={ enableLoop }
-					pagination={ paginationSettings() }
-					autoplay={ autoplaySettings() }
-					{ ...( sliderEffect === 'fade' && {
+					]}
+					className={`cbb-swiper-${identifier}`}
+					loop={enableLoop}
+					pagination={paginationSettings()}
+					autoplay={autoplaySettings()}
+					{...(sliderEffect === 'fade' && {
 						effect: 'fade',
 						fadeEffect: { crossFade: true },
-					} ) }
-					{ ...( sliderEffect === 'coverflow' && {
+					})}
+					{...(sliderEffect === 'coverflow' && {
 						effect: 'coverflow',
 						grabCursor: true,
 						centeredSlides: true,
@@ -331,18 +331,18 @@ export default function EditBlock( { attributes, setAttributes } ) {
 								slidesPerView: 1,
 							},
 						},
-					} ) }
+					})}
 				>
-					{ cardSlugs.slice( 0, numberOfCards ).map( ( { key } ) => (
-						<SwiperSlide key={ key }>
+					{cardSlugs.slice(0, numberOfCards).map(({ key }) => (
+						<SwiperSlide key={key}>
 							<div
-								dangerouslySetInnerHTML={ {
-									__html: cardContents[ key ],
-								} }
-								style={ { height: '100%' } }
+								dangerouslySetInnerHTML={{
+									__html: cardContents[key],
+								}}
+								style={{ height: '100%' }}
 							/>
 						</SwiperSlide>
-					) ) }
+					))}
 				</Swiper>
 			</div>
 		</>

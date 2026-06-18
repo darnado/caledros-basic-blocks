@@ -29,7 +29,7 @@ import IconsSizeSettings from './settings/icons-size-settings';
 import MarginSettings from './settings/margin-settings';
 import SpaceBetweenIconsSettings from './settings/space-between-icons-settings';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	const {
 		iconsGap,
 		groupMargin,
@@ -39,51 +39,51 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	} = attributes;
 
 	// Block props
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: 'cbb-social-icons-group',
 		style: {
 			margin: groupMargin.differentMarginsEnabled
-				? `${ groupMargin.top } ${ groupMargin.right } ${ groupMargin.bottom } ${ groupMargin.left }`
-				: `${ groupMargin.top }`,
-			'--cbb-icon-group-gap': `${ iconsGap }px`,
-			'--cbb-social-icon-size': `${ socialIconsSize }px`,
-			'--cbb-social-icon-color': `${ socialIconsColor }`,
-			'--cbb-social-icon-dark-color': `${ socialIconsDarkColor }`,
+				? `${groupMargin.top} ${groupMargin.right} ${groupMargin.bottom} ${groupMargin.left}`
+				: `${groupMargin.top}`,
+			'--cbb-icon-group-gap': `${iconsGap}px`,
+			'--cbb-social-icon-size': `${socialIconsSize}px`,
+			'--cbb-social-icon-color': `${socialIconsColor}`,
+			'--cbb-social-icon-dark-color': `${socialIconsDarkColor}`,
 		},
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<IconsColorSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></IconsColorSettings>
 				<IconsDarkColorSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></IconsDarkColorSettings>
 				<IconsSizeSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></IconsSizeSettings>
 				<SpaceBetweenIconsSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></SpaceBetweenIconsSettings>
 				<MarginSettings
-					attributes={ attributes }
-					setAttributes={ setAttributes }
+					attributes={attributes}
+					setAttributes={setAttributes}
 				></MarginSettings>
 			</InspectorControls>
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<InnerBlocks
-					template={ [
-						[ 'caledros-basic-blocks/social-icon' ],
-						[ 'caledros-basic-blocks/social-icon' ],
-						[ 'caledros-basic-blocks/social-icon' ],
-					] }
-					allowedBlocks={ [ 'caledros-basic-blocks/social-icon' ] }
+					template={[
+						['caledros-basic-blocks/social-icon'],
+						['caledros-basic-blocks/social-icon'],
+						['caledros-basic-blocks/social-icon'],
+					]}
+					allowedBlocks={['caledros-basic-blocks/social-icon']}
 				/>
 			</div>
 		</>

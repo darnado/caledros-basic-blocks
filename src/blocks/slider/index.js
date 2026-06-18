@@ -25,7 +25,7 @@ import EditBlock from './edit-block';
 import './style.css';
 import './editor.css';
 
-registerBlockType( metadata.name, {
+registerBlockType(metadata.name, {
 	icon: blocksIcon.icon,
 	edit: EditBlock,
-} );
+});

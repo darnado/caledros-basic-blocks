@@ -21,36 +21,33 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ShowNumberOfPublicationsSettings( {
+export default function ShowNumberOfPublicationsSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { showNumberOfPublications } = attributes;
 
 	return (
 		<PanelBody
-			title={ __(
-				'Show number of publications',
-				'caledros-basic-blocks'
-			) }
-			initialOpen={ false }
+			title={__('Show number of publications', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Show number of publications',
 					'caledros-basic-blocks'
-				) }
-				help={ __(
+				)}
+				help={__(
 					'Show the number of publications per category.',
 					'caledros-basic-blocks'
-				) }
-				checked={ showNumberOfPublications }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={showNumberOfPublications}
+				onChange={(newValue) => {
+					setAttributes({
 						showNumberOfPublications: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

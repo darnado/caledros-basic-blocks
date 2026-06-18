@@ -22,10 +22,10 @@ import { PanelBody, ComboboxControl } from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
 
-export default function CardFiveTemplateSettings( {
+export default function CardFiveTemplateSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { cardFiveSlug } = attributes;
 
 	let overlayOptions = [];
@@ -38,32 +38,32 @@ export default function CardFiveTemplateSettings( {
 	);
 
 	// Recover the available template parts for the mega menu
-	if ( hasResolved ) {
+	if (hasResolved) {
 		overlayOptions = records
-			.filter( ( item ) => item.area === 'slider-card' )
-			.map( ( item ) => ( {
+			.filter((item) => item.area === 'slider-card')
+			.map((item) => ({
 				label: item.title.rendered,
 				value: item.slug,
-			} ) );
+			}));
 	}
 
 	return (
 		<PanelBody
-			title={ __( '5th Card Template', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('5th Card Template', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ComboboxControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Select the template for the 5th card.',
 					'caledros-basic-blocks'
-				) }
-				value={ cardFiveSlug }
-				options={ overlayOptions }
-				onChange={ ( slugValue ) => {
-					setAttributes( { cardFiveSlug: slugValue } );
-				} }
+				)}
+				value={cardFiveSlug}
+				options={overlayOptions}
+				onChange={(slugValue) => {
+					setAttributes({ cardFiveSlug: slugValue });
+				}}
 			/>
 		</PanelBody>
 	);

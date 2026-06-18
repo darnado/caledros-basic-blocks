@@ -46,7 +46,7 @@ import PostTitleLetterSpacingSettings from './settings/post-title-letter-spacing
 import PostTitleFontSizeSettings from './settings/post-title-font-size-settings';
 import DemoData from './demo-data';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	// Attributes
 	const {
 		numberOfItems,
@@ -79,47 +79,47 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	let postOptions = [];
 
 	// Fetch published posts
-	const { hasResolved, records } = useEntityRecords( 'postType', 'post', {
+	const { hasResolved, records } = useEntityRecords('postType', 'post', {
 		per_page: numberOfItems,
 		_embed: true,
 		order: sortOrder,
 		orderby: orderType,
-		...( categoryFilter.enable && categoryFilter.categoryId
+		...(categoryFilter.enable && categoryFilter.categoryId
 			? { categories: categoryFilter.categoryId }
-			: {} ),
-		...( categoryFilter.enable && ! categoryFilter.categoryId
-			? { include: [ 0 ] }
-			: {} ),
-		...( tagFilter.enable && tagFilter.tagId
+			: {}),
+		...(categoryFilter.enable && !categoryFilter.categoryId
+			? { include: [0] }
+			: {}),
+		...(tagFilter.enable && tagFilter.tagId
 			? { tags: tagFilter.tagId }
-			: {} ),
-		...( tagFilter.enable && ! tagFilter.tagId ? { include: [ 0 ] } : {} ),
-		...( authorFilter.enable && authorFilter.authorId
+			: {}),
+		...(tagFilter.enable && !tagFilter.tagId ? { include: [0] } : {}),
+		...(authorFilter.enable && authorFilter.authorId
 			? { author: authorFilter.authorId }
-			: {} ),
-		...( authorFilter.enable && ! authorFilter.authorId
-			? { include: [ 0 ] }
-			: {} ),
-	} );
+			: {}),
+		...(authorFilter.enable && !authorFilter.authorId
+			? { include: [0] }
+			: {}),
+	});
 
 	// Recover the available posts
-	if ( hasResolved ) {
-		postOptions = records.map( ( post ) => ( {
+	if (hasResolved) {
+		postOptions = records.map((post) => ({
 			title: post?.title?.rendered,
 			permaLink: post?.link,
 			date: post?.date,
-			author: post?._embedded?.author[ 0 ]?.name,
-			categories: post?._embedded[ 'wp:term' ]?.[ 0 ],
-			tags: post?._embedded[ 'wp:term' ]?.[ 1 ],
+			author: post?._embedded?.author[0]?.name,
+			categories: post?._embedded['wp:term']?.[0],
+			tags: post?._embedded['wp:term']?.[1],
 			excerpt: post?.excerpt.raw,
 			featuredImage:
-				post?._embedded[ 'wp:featuredmedia' ]?.[ 0 ]?.source_url ?? '',
-		} ) );
+				post?._embedded['wp:featuredmedia']?.[0]?.source_url ?? '',
+		}));
 	}
 
 	// Function to format dates
-	function formatPostDate( dateFormat, postDate ) {
-		const date = new Date( postDate );
+	function formatPostDate(dateFormat, postDate) {
+		const date = new Date(postDate);
 		const dayNames = [
 			'Sunday',
 			'Monday',
@@ -144,27 +144,27 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			'December',
 		];
 
-		const DD = String( date.getDate() ).padStart( 2, '0' );
-		const MM = String( date.getMonth() + 1 ).padStart( 2, '0' );
+		const DD = String(date.getDate()).padStart(2, '0');
+		const MM = String(date.getMonth() + 1).padStart(2, '0');
 		const YYYY = date.getFullYear();
-		const Month = monthNames[ date.getMonth() ];
-		const Day = dayNames[ date.getDay() ];
+		const Month = monthNames[date.getMonth()];
+		const Day = dayNames[date.getDay()];
 
-		switch ( dateFormat ) {
+		switch (dateFormat) {
 			case 'MM/DD/YYYY':
-				return `${ MM }/${ DD }/${ YYYY }`;
+				return `${MM}/${DD}/${YYYY}`;
 			case 'DD/MM/YYYY':
-				return `${ DD }/${ MM }/${ YYYY }`;
+				return `${DD}/${MM}/${YYYY}`;
 			case 'YYYY-MM-DD':
-				return `${ YYYY }-${ MM }-${ DD }`;
+				return `${YYYY}-${MM}-${DD}`;
 			case 'Month DD, YYYY':
-				return `${ Month } ${ DD }, ${ YYYY }`;
+				return `${Month} ${DD}, ${YYYY}`;
 			case 'DD Month YYYY':
-				return `${ DD } ${ Month } ${ YYYY }`;
+				return `${DD} ${Month} ${YYYY}`;
 			case 'Day, Month DD, YYYY':
-				return `${ Day }, ${ Month } ${ DD }, ${ YYYY }`;
+				return `${Day}, ${Month} ${DD}, ${YYYY}`;
 			case 'Month DD':
-				return `${ Month } ${ DD }`;
+				return `${Month} ${DD}`;
 			default:
 				return postDate;
 		}
@@ -176,11 +176,11 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		wordLimit,
 		more = excerptOptions.showEllipsis ? '...' : ''
 	) {
-		const words = text.trim().split( /\s+/ );
-		if ( words.length <= wordLimit ) {
+		const words = text.trim().split(/\s+/);
+		if (words.length <= wordLimit) {
 			return text;
 		}
-		return words.slice( 0, wordLimit ).join( ' ' ) + more;
+		return words.slice(0, wordLimit).join(' ') + more;
 	}
 
 	// Post info classes
@@ -188,51 +188,51 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		'cbb-posts-loop__post-info',
 		loopStyle === 'style-2' && 'cbb-posts-loop__post-info--style-2 ',
 	]
-		.filter( Boolean )
-		.join( ' ' );
+		.filter(Boolean)
+		.join(' ');
 
 	// Post title inline styles
 	const postTitleInlineStyles = {
-		...( postTitleFontFamily !== '' && {
-			'--cbb-post-title-font-family': `var(--wp--preset--font-family--${ postTitleFontFamily })`,
-		} ),
-		...( postTitleFontWeight !== 400 && {
+		...(postTitleFontFamily !== '' && {
+			'--cbb-post-title-font-family': `var(--wp--preset--font-family--${postTitleFontFamily})`,
+		}),
+		...(postTitleFontWeight !== 400 && {
 			'--cbb-post-title-font-weight': postTitleFontWeight,
-		} ),
-		...( postTitleFontStyle !== 'normal' && {
+		}),
+		...(postTitleFontStyle !== 'normal' && {
 			'--cbb-post-title-font-style': postTitleFontStyle,
-		} ),
-		...( postTitleFontSize !== '18px' && {
+		}),
+		...(postTitleFontSize !== '18px' && {
 			'--cbb-post-title-font-size': postTitleFontSize,
-		} ),
-		...( postTitleLetterSpacing !== 'normal' && {
+		}),
+		...(postTitleLetterSpacing !== 'normal' && {
 			'--cbb-post-title-letter-spacing': postTitleLetterSpacing,
-		} ),
+		}),
 	};
 
 	// Block props
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: 'cbb-posts-loop',
 		style: {
-			...( columnNoDesktop.enableCustomValue && {
+			...(columnNoDesktop.enableCustomValue && {
 				'--cbb-column-no-desktop': columnNoDesktop.columnNo,
-			} ),
-			...( columnNoTablet.enableCustomValue && {
+			}),
+			...(columnNoTablet.enableCustomValue && {
 				'--cbb-column-no-tablet': columnNoTablet.columnNo,
-			} ),
-			...( columnNoMobile.enableCustomValue && {
+			}),
+			...(columnNoMobile.enableCustomValue && {
 				'--cbb-column-no-mobile': columnNoMobile.columnNo,
-			} ),
+			}),
 			...postTitleInlineStyles,
 		},
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'content',
 							title: 'Content',
@@ -245,128 +245,128 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'content' ) {
+					{(tab) => {
+						if (tab.name === 'content') {
 							return (
 								<>
 									<PostsLoopTitle
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PostsLoopTitle>
 									<NumberOfItemsSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfItemsSettings>
 									<PageTypeSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PageTypeSettings>
 									<CategoryFilterSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CategoryFilterSettings>
 									<TagFilterSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></TagFilterSettings>
 									<AuthorFilterSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></AuthorFilterSettings>
 									<OrderTypeSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></OrderTypeSettings>
 									<SortOrderSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></SortOrderSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<NumberOfColumnsDesktopSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsDesktopSettings>
 									<NumberOfColumnsTabletSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsTabletSettings>
 									<NumberOfColumnsMobileSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsMobileSettings>
 									<PostTitleTypographyGroupSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PostTitleTypographyGroupSettings>
 									<PostTitleFontSizeSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PostTitleFontSizeSettings>
 									<PostTitleLetterSpacingSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PostTitleLetterSpacingSettings>
 									<LoopStyleSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LoopStyleSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<DateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></DateSettings>
 									<ShowAuthorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowAuthorSettings>
 									<ShowCategorySettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowCategorySettings>
 									<ShowTagSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowTagSettings>
 									<ExcerptSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ExcerptSettings>
 									<ShowNavigationLinksSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowNavigationLinksSettings>
 									<ShowDemoDataSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowDemoDataSettings>
 								</>
 							);
 						}
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			{ ! hasResolved && <p>Posts loading, please wait...</p> }
-			<div { ...blockProps }>
-				{ ! showDemoData && (
+			{!hasResolved && <p>Posts loading, please wait...</p>}
+			<div {...blockProps}>
+				{!showDemoData && (
 					<>
 						<div className="cbb-posts-loop__container">
-							{ postOptions.map( ( post, index ) => {
+							{postOptions.map((post, index) => {
 								return (
 									<div
 										className="cbb-posts-loop__card"
-										key={ index }
+										key={index}
 									>
 										<div className="cbb-posts-loop__post-header">
 											<p className="cbb-posts-loop__website-title">
@@ -380,10 +380,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 													}
 													alt="Post title icon"
 												></img>
-												{ postsLoopTitle }
+												{postsLoopTitle}
 											</p>
 											<div className="cbb-posts-loop__post-author-and-date">
-												{ showAuthor && (
+												{showAuthor && (
 													<span className="cbb-posts-loop__author">
 														<svg
 															xmlns="http://www.w3.org/2000/svg"
@@ -395,10 +395,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 														>
 															<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
 														</svg>
-														{ post.author }
+														{post.author}
 													</span>
-												) }
-												{ dateOptions.showDate && (
+												)}
+												{dateOptions.showDate && (
 													<span className="cbb-posts-loop__date">
 														<svg
 															xmlns="http://www.w3.org/2000/svg"
@@ -412,43 +412,41 @@ export default function EditBlock( { attributes, setAttributes } ) {
 															<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" />
 															<path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z" />
 														</svg>
-														{ formatPostDate(
+														{formatPostDate(
 															dateOptions.dateFormat,
 															post.date
-														) }
+														)}
 													</span>
-												) }
+												)}
 											</div>
 										</div>
 										<div className="cbb-posts-loop__img-container">
 											<div className="cbb-posts-loop__img-link cbb-posts-loop__link--demo ">
-												{ post.featuredImage && (
+												{post.featuredImage && (
 													<img
-														src={
-															post.featuredImage
-														}
+														src={post.featuredImage}
 														alt="Single post"
 													/>
-												) }
-												{ loopStyle === 'style-1' && (
+												)}
+												{loopStyle === 'style-1' && (
 													<span className="cbb-posts-loop__post-title">
-														{ post.title }
+														{post.title}
 													</span>
-												) }
+												)}
 											</div>
 										</div>
-										{ loopStyle === 'style-2' && (
+										{loopStyle === 'style-2' && (
 											<div className="cbb-posts-loop__post-title cbb-posts-loop__post-title--style-2">
-												{ post.title }
+												{post.title}
 											</div>
-										) }
-										{ ( showCategory || showTags ) && (
-											<div className={ postInfoClasses }>
+										)}
+										{(showCategory || showTags) && (
+											<div className={postInfoClasses}>
 												<div className="cbb-posts-loop__category-and-tag">
-													{ showCategory &&
-														! categoryFilter.enable && (
+													{showCategory &&
+														!categoryFilter.enable && (
 															<div className="cbb-posts-loop__categories-container">
-																{ post.categories.map(
+																{post.categories.map(
 																	(
 																		category,
 																		catIndex
@@ -475,10 +473,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 																			}
 																		</div>
 																	)
-																) }
+																)}
 															</div>
-														) }
-													{ showCategory &&
+														)}
+													{showCategory &&
 														categoryFilter.enable && (
 															<div className="cbb-posts-loop__categories-container">
 																<div className="cbb-posts-loop__category cbb-posts-loop__link--demo ">
@@ -493,7 +491,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 																		<path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z" />
 																		<path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1" />
 																	</svg>
-																	{ post.categories
+																	{post.categories
 																		.filter(
 																			(
 																				category
@@ -516,15 +514,15 @@ export default function EditBlock( { attributes, setAttributes } ) {
 																					}
 																				</span>
 																			)
-																		) }
+																		)}
 																</div>
 															</div>
-														) }
-													{ showTags &&
+														)}
+													{showTags &&
 														post.tags !== null &&
-														! tagFilter.enable && (
+														!tagFilter.enable && (
 															<div className="cbb-posts-loop__tags-container">
-																{ post.tags.map(
+																{post.tags.map(
 																	(
 																		tag,
 																		tagIndex
@@ -551,10 +549,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 																			}
 																		</div>
 																	)
-																) }
+																)}
 															</div>
-														) }
-													{ showTags &&
+														)}
+													{showTags &&
 														post.tags !== null &&
 														tagFilter.enable && (
 															<div className="cbb-posts-loop__tags-container">
@@ -570,7 +568,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 																		<path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
 																		<path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
 																	</svg>
-																	{ post.tags
+																	{post.tags
 																		.filter(
 																			(
 																				tag
@@ -593,26 +591,26 @@ export default function EditBlock( { attributes, setAttributes } ) {
 																					}
 																				</span>
 																			)
-																		) }
+																		)}
 																</div>
 															</div>
-														) }
+														)}
 												</div>
 											</div>
-										) }
-										{ excerptOptions.showExcerpt && (
+										)}
+										{excerptOptions.showExcerpt && (
 											<p className="cbb-posts-loop__post-excerpt">
-												{ trimWords(
+												{trimWords(
 													post.excerpt,
 													excerptOptions.excerptLength
-												) }
+												)}
 											</p>
-										) }
+										)}
 									</div>
 								);
-							} ) }
+							})}
 						</div>
-						{ showNavigationLinks && (
+						{showNavigationLinks && (
 							<div className="cbb-posts-loop_pagination">
 								<span className="page-numbers current">1</span>
 								<div
@@ -628,10 +626,10 @@ export default function EditBlock( { attributes, setAttributes } ) {
 									&gt;
 								</div>
 							</div>
-						) }
+						)}
 					</>
-				) }
-				{ showDemoData && <DemoData></DemoData> }
+				)}
+				{showDemoData && <DemoData></DemoData>}
 			</div>
 		</>
 	);

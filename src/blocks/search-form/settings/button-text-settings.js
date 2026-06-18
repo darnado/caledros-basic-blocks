@@ -21,22 +21,22 @@
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ButtonTextSettings( { attributes, setAttributes } ) {
+export default function ButtonTextSettings({ attributes, setAttributes }) {
 	const { buttonText } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Button text', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Button text', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<TextControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				onChange={ ( newValue ) => {
-					setAttributes( { buttonText: newValue } );
-				} }
-				value={ buttonText }
-				help={ __( 'Write the button text.', 'caledros-basic-blocks' ) }
+				onChange={(newValue) => {
+					setAttributes({ buttonText: newValue });
+				}}
+				value={buttonText}
+				help={__('Write the button text.', 'caledros-basic-blocks')}
 			/>
 		</PanelBody>
 	);

@@ -21,30 +21,30 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function NumberOfColumnsMobileSettings( {
+export default function NumberOfColumnsMobileSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { numberOfColumnsMobile } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'No. of columns (mobile)', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('No. of columns (mobile)', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Please select the number of columns for the container (mobile devices).',
 					'caledros-basic-blocks'
-				) }
-				value={ numberOfColumnsMobile }
-				initialPosition={ 1 }
-				max={ 6 }
-				min={ 1 }
-				step={ 1 }
-				onChange={ ( newValue ) =>
-					setAttributes( { numberOfColumnsMobile: newValue } )
+				)}
+				value={numberOfColumnsMobile}
+				initialPosition={1}
+				max={6}
+				min={1}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ numberOfColumnsMobile: newValue })
 				}
 			/>
 		</PanelBody>

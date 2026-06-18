@@ -28,7 +28,7 @@ import ButtonTextSettings from './settings/button-text-settings';
 import PlaceholderTextSettings from './settings/placeholder-text-settings';
 import WidthSettings from './settings/width-settings';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	const {
 		buttonText,
 		placeholderText,
@@ -40,16 +40,16 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	} = attributes;
 
 	// Block props
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: 'cbb-search-form',
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'content',
 							title: 'Content',
@@ -62,82 +62,82 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'content' ) {
+					{(tab) => {
+						if (tab.name === 'content') {
 							return (
 								<>
 									<ButtonTextSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ButtonTextSettings>
 									<PlaceholderTextSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PlaceholderTextSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<ButtonLightBackgroundColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ButtonLightBackgroundColorSettings>
 									<ButtonLightTextColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ButtonLightTextColorSettings>
 									<ButtonDarkBackgroundColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ButtonDarkBackgroundColorSettings>
 									<ButtonDarkTextColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ButtonDarkTextColorSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<WidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></WidthSettings>
 								</>
 							);
 						}
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<form
 					role="search"
 					className="cbb-search-form__form"
-					style={ { maxWidth: `${ formWidth }` } }
+					style={{ maxWidth: `${formWidth}` }}
 				>
 					<input
 						className="cbb-search-form__search-field"
 						readOnly
-						style={ { pointerEvents: 'none' } }
-						placeholder={ placeholderText }
+						style={{ pointerEvents: 'none' }}
+						placeholder={placeholderText}
 					/>
 					<button
 						type="submit"
 						className="cbb-search-form__button"
-						style={ {
+						style={{
 							pointerEvents: 'none',
-							'--cbb-light-bg-color': `${ buttonLightBackgroundColor }`,
-							'--cbb-light-text-color': `${ buttonLightTextColor }`,
-							'--cbb-dark-bg-color': `${ buttonDarkBackgroundColor }`,
-							'--cbb-dark-text-color': `${ buttonDarkTextColor }`,
-						} }
+							'--cbb-light-bg-color': `${buttonLightBackgroundColor}`,
+							'--cbb-light-text-color': `${buttonLightTextColor}`,
+							'--cbb-dark-bg-color': `${buttonDarkBackgroundColor}`,
+							'--cbb-dark-text-color': `${buttonDarkTextColor}`,
+						}}
 					>
-						{ buttonText }
+						{buttonText}
 					</button>
 				</form>
 			</div>

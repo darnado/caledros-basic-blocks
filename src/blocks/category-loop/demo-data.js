@@ -10,7 +10,7 @@ export default function DemoData() {
 						<p className="cbb-categories-loop_website-title">
 							<img
 								className="cbb-categories-loop_website-title-icon"
-								src={ placeholder }
+								src={placeholder}
 								alt="placeholder"
 							/>
 							My Website
@@ -18,10 +18,7 @@ export default function DemoData() {
 					</div>
 					<div className="cbb-categories-loop__img-container">
 						<div className="cbb-categories-loop__img-link cbb-categories-loop__img-link--demo">
-							<img
-								src={ placeholderMountains }
-								alt="placeholder"
-							/>
+							<img src={placeholderMountains} alt="placeholder" />
 							<span className="cbb-categories-loop__post-title">
 								Marketing
 							</span>
@@ -51,7 +48,7 @@ export default function DemoData() {
 						<p className="cbb-categories-loop_website-title">
 							<img
 								className="cbb-categories-loop_website-title-icon"
-								src={ placeholder }
+								src={placeholder}
 								alt="placeholder"
 							/>
 							My Website
@@ -59,10 +56,7 @@ export default function DemoData() {
 					</div>
 					<div className="cbb-categories-loop__img-container">
 						<div className="cbb-categories-loop__img-link cbb-categories-loop__img-link--demo">
-							<img
-								src={ placeholderMountains }
-								alt="placeholder"
-							/>
+							<img src={placeholderMountains} alt="placeholder" />
 							<span className="cbb-categories-loop__post-title">
 								Web Design
 							</span>
@@ -92,7 +86,7 @@ export default function DemoData() {
 						<p className="cbb-categories-loop_website-title">
 							<img
 								className="cbb-categories-loop_website-title-icon"
-								src={ placeholder }
+								src={placeholder}
 								alt="placeholder"
 							/>
 							My Website
@@ -100,10 +94,7 @@ export default function DemoData() {
 					</div>
 					<div className="cbb-categories-loop__img-container">
 						<div className="cbb-categories-loop__img-link cbb-categories-loop__img-link--demo">
-							<img
-								src={ placeholderMountains }
-								alt="placeholder"
-							/>
+							<img src={placeholderMountains} alt="placeholder" />
 							<span className="cbb-categories-loop__post-title">
 								Graphic Design
 							</span>
@@ -133,7 +124,7 @@ export default function DemoData() {
 						<p className="cbb-categories-loop_website-title">
 							<img
 								className="cbb-categories-loop_website-title-icon"
-								src={ placeholder }
+								src={placeholder}
 								alt="placeholder"
 							/>
 							My Website
@@ -141,10 +132,7 @@ export default function DemoData() {
 					</div>
 					<div className="cbb-categories-loop__img-container">
 						<div className="cbb-categories-loop__img-link cbb-categories-loop__img-link--demo">
-							<img
-								src={ placeholderMountains }
-								alt="placeholder"
-							/>
+							<img src={placeholderMountains} alt="placeholder" />
 							<span className="cbb-categories-loop__post-title">
 								Latest News
 							</span>

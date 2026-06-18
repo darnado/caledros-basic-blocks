@@ -26,68 +26,65 @@ import {
 import { useEntityRecords } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
 
-export default function AuthorFilterSettings( { attributes, setAttributes } ) {
+export default function AuthorFilterSettings({ attributes, setAttributes }) {
 	const { authorFilter, pageType } = attributes;
 
 	let authorOptions = [];
 
 	// Fetch all categories
-	const { hasResolved, records } = useEntityRecords( 'root', 'user', {
+	const { hasResolved, records } = useEntityRecords('root', 'user', {
 		who: 'authors',
 		per_page: -1,
-	} );
+	});
 
 	// Build options once data is fetched
-	if ( hasResolved && records ) {
-		authorOptions = records.map( ( author ) => ( {
+	if (hasResolved && records) {
+		authorOptions = records.map((author) => ({
 			label: author.name,
 			value: author.id,
-		} ) );
+		}));
 	}
 
 	return (
 		<PanelBody
-			title={ __( 'Filter by author', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Filter by author', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
-					'Filter posts by author',
-					'caledros-basic-blocks'
-				) }
-				help={ __(
+				label={__('Filter posts by author', 'caledros-basic-blocks')}
+				help={__(
 					'Choose whether or not the posts will be filtered by author.',
 					'caledros-basic-blocks'
-				) }
-				checked={ authorFilter.enable }
-				disabled={ pageType === 'author-template' }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={authorFilter.enable}
+				disabled={pageType === 'author-template'}
+				onChange={(newValue) => {
+					setAttributes({
 						authorFilter: {
 							...authorFilter,
 							enable: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ authorFilter.enable && (
+			{authorFilter.enable && (
 				<ComboboxControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __( 'Choose the author.', 'caledros-basic-blocks' ) }
-					value={ authorFilter.authorId }
-					options={ authorOptions }
-					onChange={ ( selectedValue ) => {
-						setAttributes( {
+					help={__('Choose the author.', 'caledros-basic-blocks')}
+					value={authorFilter.authorId}
+					options={authorOptions}
+					onChange={(selectedValue) => {
+						setAttributes({
 							authorFilter: {
 								...authorFilter,
 								authorId: selectedValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

@@ -21,22 +21,22 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ObjectFitSettings( { attributes, setAttributes } ) {
+export default function ObjectFitSettings({ attributes, setAttributes }) {
 	const { imgObjectFit } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'Object fit', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Object fit', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the object fit property for the image.',
 					'caledros-basic-blocks'
-				) }
-				value={ imgObjectFit }
-				options={ [
+				)}
+				value={imgObjectFit}
+				options={[
 					{
 						label: 'Contain',
 						value: 'contain',
@@ -45,11 +45,11 @@ export default function ObjectFitSettings( { attributes, setAttributes } ) {
 						label: 'Cover',
 						value: 'cover',
 					},
-				] }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				]}
+				onChange={(newValue) =>
+					setAttributes({
 						imgObjectFit: newValue,
-					} )
+					})
 				}
 			/>
 		</PanelBody>

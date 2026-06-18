@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FlexDirectionSettings( { attributes, setAttributes } ) {
+export default function FlexDirectionSettings({ attributes, setAttributes }) {
 	const { containerFlexDirection } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Flex direction (desktop)', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Flex direction (desktop)', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the flex direction for the container (desktop).',
 					'caledros-basic-blocks'
-				) }
-				value={ containerFlexDirection.desktop }
-				options={ [
+				)}
+				value={containerFlexDirection.desktop}
+				options={[
 					{
 						label: 'Row',
 						value: 'row',
@@ -54,15 +54,15 @@ export default function FlexDirectionSettings( { attributes, setAttributes } ) {
 						label: 'Column reverse',
 						value: 'column-reverse',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						containerFlexDirection: {
 							...containerFlexDirection,
 							desktop: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

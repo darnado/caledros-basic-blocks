@@ -21,49 +21,49 @@
 import { PanelBody, ToggleControl, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function AutoplaySettings( { attributes, setAttributes } ) {
+export default function AutoplaySettings({ attributes, setAttributes }) {
 	const { autoplay } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Autoplay', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Autoplay', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				checked={ autoplay.enableAutoplay }
-				label={ __( 'Enable autoplay', 'caledros-basic-blocks' ) }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				checked={autoplay.enableAutoplay}
+				label={__('Enable autoplay', 'caledros-basic-blocks')}
+				onChange={(newValue) => {
+					setAttributes({
 						autoplay: {
 							...autoplay,
 							enableAutoplay: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ autoplay.enableAutoplay && (
+			{autoplay.enableAutoplay && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Select the delay between transitions (milliseconds).',
 						'caledros-basic-blocks'
-					) }
-					value={ autoplay.delay }
-					max={ 20000 }
-					min={ 100 }
-					step={ 100 }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					)}
+					value={autoplay.delay}
+					max={20000}
+					min={100}
+					step={100}
+					onChange={(newValue) => {
+						setAttributes({
 							autoplay: {
 								...autoplay,
 								delay: newValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

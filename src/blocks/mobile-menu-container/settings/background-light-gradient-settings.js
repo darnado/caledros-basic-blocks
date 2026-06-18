@@ -26,49 +26,49 @@ import {
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export default function BackgroundLightGradientSettings( {
+export default function BackgroundLightGradientSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { containerLightBackgroundGradient } = attributes;
-	const [ enableGradient, setEnableGradient ] = useState(
+	const [enableGradient, setEnableGradient] = useState(
 		containerLightBackgroundGradient !== '' ? true : false
 	);
 
 	return (
 		<PanelBody
-			title={ __(
+			title={__(
 				'Background gradient (light mode)',
 				'caledros-basic-blocks'
-			) }
-			initialOpen={ false }
+			)}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Enable background gradient',
 					'caledros-basic-blocks'
-				) }
-				checked={ enableGradient }
-				onChange={ () => {
-					setEnableGradient( ( oldValue ) => ! oldValue );
-					setAttributes( { containerLightBackgroundGradient: '' } );
-				} }
+				)}
+				checked={enableGradient}
+				onChange={() => {
+					setEnableGradient((oldValue) => !oldValue);
+					setAttributes({ containerLightBackgroundGradient: '' });
+				}}
 			/>
-			{ enableGradient && (
+			{enableGradient && (
 				<CustomGradientPicker
-					onChange={ ( newGradient ) => {
-						setAttributes( {
+					onChange={(newGradient) => {
+						setAttributes({
 							containerLightBackgroundGradient: newGradient,
-						} );
-					} }
+						});
+					}}
 					value={
 						containerLightBackgroundGradient === ''
 							? 'linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))'
 							: containerLightBackgroundGradient
 					}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

@@ -50,7 +50,7 @@ import FullWidthTabletSettings from './settings/full-width-tablet-settings';
 import FullWidthMobileSettings from './settings/full-width-mobile-settings';
 import BlurSettings from './settings/blur-settings';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	const {
 		containerWidth,
 		numberOfColumns,
@@ -82,58 +82,58 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		containerBoxShadow.enabled && 'cbb-grid-container--has-box-shadow',
 		containerBorder.width !== '0px' &&
 			containerBorder.style !== 'none' &&
-			( containerBorder.lightColor !== '#00000000' ||
-				containerBorder.darkColor !== '#00000000' ) &&
+			(containerBorder.lightColor !== '#00000000' ||
+				containerBorder.darkColor !== '#00000000') &&
 			'cbb-grid-container--has-border',
-		( containerLightBackgroundColor !== '#00000000' ||
-			containerDarkBackgroundColor !== '#00000000' ) &&
+		(containerLightBackgroundColor !== '#00000000' ||
+			containerDarkBackgroundColor !== '#00000000') &&
 			'cbb-grid-container--has-bg-color',
-		( containerLightBackgroundGradient !== '' ||
+		(containerLightBackgroundGradient !== '' ||
 			containerDarkBackgroundGradient !== '' ||
-			containerBackgroundImage.url ) &&
+			containerBackgroundImage.url) &&
 			'cbb-grid-container--has-bg-gradient',
 		fullWidthTabletEnabled && 'cbb-grid-container--full-width-tablet',
 		fullWidthMobileEnabled && 'cbb-grid-container--full-width-mobile',
 		containerBlur.enabled && 'cbb-grid-container--has-blur',
 	]
-		.filter( ( className ) => className )
-		.join( ' ' );
+		.filter((className) => className)
+		.join(' ');
 
 	// Function to generate the content of background-image
-	const bgImageCssVariable = ( imgUrl, gradient, theme ) => {
-		if ( ! imgUrl && ! gradient ) {
+	const bgImageCssVariable = (imgUrl, gradient, theme) => {
+		if (!imgUrl && !gradient) {
 			return {};
 		}
 		return {
-			[ `--cbb-${ theme }-bg-gradient` ]: [
+			[`--cbb-${theme}-bg-gradient`]: [
 				gradient,
-				imgUrl && `url(${ imgUrl })`,
+				imgUrl && `url(${imgUrl})`,
 			]
-				.filter( ( value ) => value )
-				.join( ', ' ),
+				.filter((value) => value)
+				.join(', '),
 		};
 	};
 
 	// Block properties
-	const blockProperties = useBlockProps( {
-		className: `${ classNamesList }`,
+	const blockProperties = useBlockProps({
+		className: `${classNamesList}`,
 		style: {
 			maxWidth: containerWidth,
 			width: '100%',
 			margin: containerMargin.differentMarginsEnabled
-				? `${ containerMargin.top } ${ containerMargin.right } ${ containerMargin.bottom } ${ containerMargin.left }`
-				: `${ containerMargin.top }`,
-			...( containerPadding.useGlobalPadding
+				? `${containerMargin.top} ${containerMargin.right} ${containerMargin.bottom} ${containerMargin.left}`
+				: `${containerMargin.top}`,
+			...(containerPadding.useGlobalPadding
 				? {
 						'--cbb-gc-padding':
 							'0px var(--wp--style--root--padding-right, 0px) 0px var(--wp--style--root--padding-left, 0px)',
-				  }
+					}
 				: {
 						'--cbb-gc-padding':
 							containerPadding.differentPaddingsEnabled
-								? `${ containerPadding.top } ${ containerPadding.right } ${ containerPadding.bottom } ${ containerPadding.left }`
-								: `${ containerPadding.top }`,
-				  } ),
+								? `${containerPadding.top} ${containerPadding.right} ${containerPadding.bottom} ${containerPadding.left}`
+								: `${containerPadding.top}`,
+					}),
 			'--cbb-min-height': containerMinHeight,
 			'--cbb-row-gap': containerRowGap,
 			'--cbb-column-gap': containerColumnGap,
@@ -149,21 +149,21 @@ export default function EditBlock( { attributes, setAttributes } ) {
 				containerLightBackgroundGradient,
 				'light'
 			),
-			'--cbb-bg-position': `${ containerBgImageFocalPoint.x * 100 }% ${
+			'--cbb-bg-position': `${containerBgImageFocalPoint.x * 100}% ${
 				containerBgImageFocalPoint.y * 100
 			}%`,
 			'--cbb-br-style':
 				containerBorder.width !== '0px' &&
 				containerBorder.style !== 'none' &&
-				( containerBorder.lightColor !== '#00000000' ||
-					containerBorder.darkColor !== '#00000000' )
+				(containerBorder.lightColor !== '#00000000' ||
+					containerBorder.darkColor !== '#00000000')
 					? containerBorder.style
 					: 'none',
 			'--cbb-br-width':
 				containerBorder.width !== '0px' &&
 				containerBorder.style !== 'none' &&
-				( containerBorder.lightColor !== '#00000000' ||
-					containerBorder.darkColor !== '#00000000' )
+				(containerBorder.lightColor !== '#00000000' ||
+					containerBorder.darkColor !== '#00000000')
 					? containerBorder.width
 					: '0px',
 			'--cbb-light-border-color':
@@ -178,27 +178,27 @@ export default function EditBlock( { attributes, setAttributes } ) {
 				containerBorder.darkColor !== '#00000000'
 					? containerBorder.darkColor
 					: '#00000000',
-			...( containerBlur.enabled && {
-				'--cbb-blur': `${ containerBlur.value }`,
-			} ),
+			...(containerBlur.enabled && {
+				'--cbb-blur': `${containerBlur.value}`,
+			}),
 			'--cbb-br-radius': containerBorder.radius,
-			'--cbb-light-box-shadow': `${ containerBoxShadow.style } ${ containerBoxShadow.hOffset } ${ containerBoxShadow.vOffset } ${ containerBoxShadow.blur } ${ containerBoxShadow.spread } ${ containerBoxShadow.lightColor }`,
-			'--cbb-dark-box-shadow': `${ containerBoxShadow.style } ${ containerBoxShadow.hOffset } ${ containerBoxShadow.vOffset } ${ containerBoxShadow.blur } ${ containerBoxShadow.spread } ${ containerBoxShadow.darkColor }`,
+			'--cbb-light-box-shadow': `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.lightColor}`,
+			'--cbb-dark-box-shadow': `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.darkColor}`,
 			'--cbb-gc-x-align': containerAlignment.verticalAlignment,
 			'--cbb-gc-y-align': containerAlignment.horizontalAlignment,
-			'--cbb-col-lg': `${ numberOfColumns }`,
-			'--cbb-col-md': `${ numberOfColumnsTablet }`,
-			'--cbb-col-sm': `${ numberOfColumnsMobile }`,
+			'--cbb-col-lg': `${numberOfColumns}`,
+			'--cbb-col-md': `${numberOfColumnsTablet}`,
+			'--cbb-col-sm': `${numberOfColumnsMobile}`,
 			'--cbb-overflow': containerOverflow,
 		},
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'layout',
 							title: 'Layout',
@@ -211,132 +211,132 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'layout' ) {
+					{(tab) => {
+						if (tab.name === 'layout') {
 							return (
 								<>
 									<NumberOfColumnsSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsSettings>
 									<NumberOfColumnsTabletSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsTabletSettings>
 									<NumberOfColumnsMobileSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsMobileSettings>
 									<WidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></WidthSettings>
 									<FullWidthTabletSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></FullWidthTabletSettings>
 									<FullWidthMobileSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></FullWidthMobileSettings>
 									<MinHeightSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></MinHeightSettings>
 									<RowGapSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></RowGapSettings>
 									<ColumnGapSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ColumnGapSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<BackgroundLightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundLightColorSettings>
 									<BackgroundDarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundDarkColorSettings>
 									<BackgroundImageSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundImageSettings>
 									<BackgroundLightGradientSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundLightGradientSettings>
 									<BackgroundDarkGradientSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundDarkGradientSettings>
 									<BorderStyleSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderStyleSettings>
 									<BorderWidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderWidthSettings>
 									<BorderLightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderLightColorSettings>
 									<BorderDarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderDarkColorSettings>
 									<BorderRadiusSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderRadiusSettings>
 									<BoxShadowSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BoxShadowSettings>
 									<BlurSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BlurSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<MarginSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></MarginSettings>
 									<PaddingSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PaddingSettings>
 									<AlignmentSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></AlignmentSettings>
 									<OverflowSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></OverflowSettings>
 								</>
 							);
 						}
 						return null;
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			<div { ...blockProperties }>
+			<div {...blockProperties}>
 				<InnerBlocks />
 			</div>
 		</>

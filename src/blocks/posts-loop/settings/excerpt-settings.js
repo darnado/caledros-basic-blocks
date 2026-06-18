@@ -21,76 +21,73 @@
 import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ExcerptSettings( { attributes, setAttributes } ) {
+export default function ExcerptSettings({ attributes, setAttributes }) {
 	const { excerptOptions } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Excerpt options', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Excerpt options', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Show excerpt', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Show excerpt', 'caledros-basic-blocks')}
+				help={__(
 					'Each post card will displayed a short excerpt',
 					'caledros-basic-blocks'
-				) }
-				checked={ excerptOptions.showExcerpt }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={excerptOptions.showExcerpt}
+				onChange={(newValue) => {
+					setAttributes({
 						excerptOptions: {
 							...excerptOptions,
 							showExcerpt: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ excerptOptions.showExcerpt && (
+			{excerptOptions.showExcerpt && (
 				<>
 					<ToggleControl
 						__nextHasNoMarginBottom
-						label={ __( 'Show ellipsis', 'caledros-basic-blocks' ) }
-						help={ __(
+						label={__('Show ellipsis', 'caledros-basic-blocks')}
+						help={__(
 							'A ellipsis will appear at the end of the excerpt.',
 							'caledros-basic-blocks'
-						) }
-						checked={ excerptOptions.showEllipsis }
-						onChange={ ( newValue ) => {
-							setAttributes( {
+						)}
+						checked={excerptOptions.showEllipsis}
+						onChange={(newValue) => {
+							setAttributes({
 								excerptOptions: {
 									...excerptOptions,
 									showEllipsis: newValue,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the excerpt length (number of words).',
 							'caledros-basic-blocks'
-						) }
-						value={ excerptOptions.excerptLength }
-						label={ __(
-							'Excerpt length',
-							'caledros-basic-blocks'
-						) }
-						max={ 50 }
-						min={ 1 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={excerptOptions.excerptLength}
+						label={__('Excerpt length', 'caledros-basic-blocks')}
+						max={50}
+						min={1}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								excerptOptions: {
 									...excerptOptions,
 									excerptLength: newValue,
 								},
-							} )
+							})
 						}
 					/>
 				</>
-			) }
+			)}
 		</PanelBody>
 	);
 }

@@ -31,7 +31,7 @@ export default function DemoData() {
 							<img
 								decoding="async"
 								className="cbb-posts-loop__website-title-icon"
-								src={ placeholder }
+								src={placeholder}
 								alt="placeholder"
 							/>
 							Basic Theme
@@ -70,10 +70,7 @@ export default function DemoData() {
 					</div>
 					<div className="cbb-posts-loop__img-container">
 						<div className="cbb-posts-loop__img-link cbb-posts-loop__link--demo">
-							<img
-								src={ placeholderMountains }
-								alt="Placeholder"
-							/>
+							<img src={placeholderMountains} alt="Placeholder" />
 							<span className="cbb-posts-loop__post-title">
 								Marketing Moves That Matter
 							</span>
@@ -119,7 +116,7 @@ export default function DemoData() {
 							<img
 								decoding="async"
 								className="cbb-posts-loop__website-title-icon"
-								src={ placeholder }
+								src={placeholder}
 								alt="placeholder"
 							/>
 							Basic Theme
@@ -158,10 +155,7 @@ export default function DemoData() {
 					</div>
 					<div className="cbb-posts-loop__img-container">
 						<div className="cbb-posts-loop__img-link cbb-posts-loop__link--demo">
-							<img
-								src={ placeholderMountains }
-								alt="Placeholder"
-							/>
+							<img src={placeholderMountains} alt="Placeholder" />
 							<span className="cbb-posts-loop__post-title">
 								What’s Working in 2025
 							</span>
@@ -207,7 +201,7 @@ export default function DemoData() {
 							<img
 								decoding="async"
 								className="cbb-posts-loop__website-title-icon"
-								src={ placeholder }
+								src={placeholder}
 								alt="placeholder"
 							/>
 							Basic Theme
@@ -246,10 +240,7 @@ export default function DemoData() {
 					</div>
 					<div className="cbb-posts-loop__img-container">
 						<div className="cbb-posts-loop__img-link cbb-posts-loop__link--demo">
-							<img
-								src={ placeholderMountains }
-								alt="Placeholder"
-							/>
+							<img src={placeholderMountains} alt="Placeholder" />
 							<span className="cbb-posts-loop__post-title">
 								Quick Wins for Smart Marketers
 							</span>
@@ -295,7 +286,7 @@ export default function DemoData() {
 							<img
 								decoding="async"
 								className="cbb-posts-loop__website-title-icon"
-								src={ placeholder }
+								src={placeholder}
 								alt="placeholder"
 							/>
 							Basic Theme
@@ -334,10 +325,7 @@ export default function DemoData() {
 					</div>
 					<div className="cbb-posts-loop__img-container">
 						<div className="cbb-posts-loop__img-link cbb-posts-loop__link--demo">
-							<img
-								src={ placeholderMountains }
-								alt="Placeholder"
-							/>
+							<img src={placeholderMountains} alt="Placeholder" />
 							<span className="cbb-posts-loop__post-title">
 								Trends to Watch This Quarter
 							</span>

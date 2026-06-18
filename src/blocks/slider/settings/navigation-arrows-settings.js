@@ -21,31 +21,28 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function NavigationArrowsSettings( {
+export default function NavigationArrowsSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { enableNavigationArrows } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Navigation Arrows', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Navigation Arrows', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				checked={ enableNavigationArrows }
-				label={ __(
-					'Enable navigation arrows',
-					'caledros-basic-blocks'
-				) }
-				help={ __(
+				checked={enableNavigationArrows}
+				label={__('Enable navigation arrows', 'caledros-basic-blocks')}
+				help={__(
 					'Choose whether or not the navigation arrows are visible.',
 					'caledros-basic-blocks'
-				) }
-				onChange={ ( newValue ) => {
-					setAttributes( { enableNavigationArrows: newValue } );
-				} }
+				)}
+				onChange={(newValue) => {
+					setAttributes({ enableNavigationArrows: newValue });
+				}}
 			/>
 		</PanelBody>
 	);

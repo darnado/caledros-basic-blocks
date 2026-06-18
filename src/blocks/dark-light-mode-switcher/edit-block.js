@@ -22,12 +22,12 @@ import { useBlockProps } from '@wordpress/block-editor';
 
 export default function EditBlock() {
 	// Block props
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: 'cbb-dark-light-switcher',
-	} );
+	});
 
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<div className="cbb-dark-light-switcher__toggle">
 				<span className="cbb-dark-light-switcher__slider"></span>
 			</div>

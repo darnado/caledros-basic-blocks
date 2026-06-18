@@ -21,28 +21,28 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function IconsSizeSettings( { attributes, setAttributes } ) {
+export default function IconsSizeSettings({ attributes, setAttributes }) {
 	const { socialIconsSize } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Social icons size', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Social icons size', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Adjust the size (px) of the social media icons',
 					'caledros-basic-blocks'
-				) }
-				initialPosition={ socialIconsSize }
-				value={ socialIconsSize }
-				max={ 100 }
-				min={ 0 }
-				step={ 1 }
-				onChange={ ( newValue ) =>
-					setAttributes( { socialIconsSize: newValue } )
+				)}
+				initialPosition={socialIconsSize}
+				value={socialIconsSize}
+				max={100}
+				min={0}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ socialIconsSize: newValue })
 				}
 			/>
 		</PanelBody>

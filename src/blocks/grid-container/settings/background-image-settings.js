@@ -22,72 +22,66 @@ import { Button, PanelBody, FocalPointPicker } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
-export default function BackgroundImageSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function BackgroundImageSettings({ attributes, setAttributes }) {
 	const { containerBackgroundImage, containerBgImageFocalPoint } = attributes;
 
 	// Function for choosing the image
-	const selectImg = ( image ) => {
-		setAttributes( {
+	const selectImg = (image) => {
+		setAttributes({
 			containerBackgroundImage: {
 				id: image.id,
 				alt: image.alt,
 				url: image.url,
 			},
-		} );
+		});
 	};
 
 	// Function for removing the image
 	const removeImg = () => {
-		setAttributes( {
+		setAttributes({
 			containerBackgroundImage: {
 				id: '',
 				alt: '',
 				url: '',
 			},
-		} );
+		});
 	};
 	return (
 		<PanelBody
-			title={ __( 'Background image', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Background image', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<MediaUploadCheck>
 				<MediaUpload
-					allowedTypes={ [ 'image' ] }
-					value={ containerBackgroundImage.id }
-					render={ ( { open } ) => (
+					allowedTypes={['image']}
+					value={containerBackgroundImage.id}
+					render={({ open }) => (
 						<>
-							{ containerBackgroundImage.url && (
+							{containerBackgroundImage.url && (
 								<FocalPointPicker
 									__nextHasNoMarginBottom
-									onChange={ ( newValue ) => {
-										setAttributes( {
+									onChange={(newValue) => {
+										setAttributes({
 											containerBgImageFocalPoint:
 												newValue,
-										} );
-									} }
-									url={ containerBackgroundImage.url }
-									value={ containerBgImageFocalPoint }
+										});
+									}}
+									url={containerBackgroundImage.url}
+									value={containerBgImageFocalPoint}
 								/>
-							) }
+							)}
 
-							<div style={ { display: 'flex', gap: '10px' } }>
-								<Button variant="primary" onClick={ open }>
+							<div style={{ display: 'flex', gap: '10px' }}>
+								<Button variant="primary" onClick={open}>
 									Select image
 								</Button>
-								<Button
-									variant="secondary"
-									onClick={ removeImg }
-								>
+								<Button variant="secondary" onClick={removeImg}>
 									Remove image
 								</Button>
 							</div>
 						</>
-					) }
-					onSelect={ selectImg }
+					)}
+					onSelect={selectImg}
 				/>
 			</MediaUploadCheck>
 		</PanelBody>

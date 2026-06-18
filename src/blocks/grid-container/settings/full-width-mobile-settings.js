@@ -21,27 +21,24 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FullWidthMobileSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function FullWidthMobileSettings({ attributes, setAttributes }) {
 	const { fullWidthMobileEnabled } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Full Width (Mobile)', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Full Width (Mobile)', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Enable the grid container to expand to full width only on mobile devices.',
 					'caledros-basic-blocks'
-				) }
-				checked={ fullWidthMobileEnabled }
-				onChange={ ( newValue ) => {
-					setAttributes( { fullWidthMobileEnabled: newValue } );
-				} }
+				)}
+				checked={fullWidthMobileEnabled}
+				onChange={(newValue) => {
+					setAttributes({ fullWidthMobileEnabled: newValue });
+				}}
 			/>
 		</PanelBody>
 	);

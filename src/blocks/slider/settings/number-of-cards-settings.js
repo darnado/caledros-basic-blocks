@@ -21,26 +21,26 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function NumberOfCards( { attributes, setAttributes } ) {
+export default function NumberOfCards({ attributes, setAttributes }) {
 	const { numberOfCards } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'No. of Cards', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('No. of Cards', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Please select the number of cards to be displayed on the slider.',
 					'caledros-basic-blocks'
-				) }
-				value={ numberOfCards }
-				max={ 6 }
-				min={ 1 }
-				step={ 1 }
-				onChange={ ( newValue ) =>
-					setAttributes( { numberOfCards: newValue } )
+				)}
+				value={numberOfCards}
+				max={6}
+				min={1}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ numberOfCards: newValue })
 				}
 			/>
 		</PanelBody>

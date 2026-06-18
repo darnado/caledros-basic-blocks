@@ -21,50 +21,50 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ShowAuthorSettings( { attributes, setAttributes } ) {
+export default function ShowAuthorSettings({ attributes, setAttributes }) {
 	const { showAuthor, authorFilter } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Author options', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Author options', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Show author', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Show author', 'caledros-basic-blocks')}
+				help={__(
 					"Display the name of the post's author.",
 					'caledros-basic-blocks'
-				) }
-				checked={ showAuthor }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={showAuthor}
+				onChange={(newValue) => {
+					setAttributes({
 						showAuthor: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
-			{ showAuthor && (
+			{showAuthor && (
 				<ToggleControl
 					__nextHasNoMarginBottom
-					label={ __(
+					label={__(
 						"Enable author's page link",
 						'caledros-basic-blocks'
-					) }
-					help={ __(
+					)}
+					help={__(
 						"Turn the name of the post's author into a link to the author's page.",
 						'caledros-basic-blocks'
-					) }
-					checked={ authorFilter.enableAuthorLink }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					)}
+					checked={authorFilter.enableAuthorLink}
+					onChange={(newValue) => {
+						setAttributes({
 							authorFilter: {
 								...authorFilter,
 								enableAuthorLink: newValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

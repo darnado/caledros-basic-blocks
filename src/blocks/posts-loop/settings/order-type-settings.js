@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function OrderTypeSettings( { attributes, setAttributes } ) {
+export default function OrderTypeSettings({ attributes, setAttributes }) {
 	const { orderType } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Order type', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Order type', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the criteria for ordering the posts.',
 					'caledros-basic-blocks'
-				) }
-				value={ orderType }
-				options={ [
+				)}
+				value={orderType}
+				options={[
 					{
 						label: 'Date',
 						value: 'date',
@@ -46,12 +46,12 @@ export default function OrderTypeSettings( { attributes, setAttributes } ) {
 						label: 'Title',
 						value: 'title',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						orderType: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

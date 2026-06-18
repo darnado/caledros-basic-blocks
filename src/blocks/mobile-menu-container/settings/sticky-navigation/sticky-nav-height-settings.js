@@ -21,26 +21,23 @@
 import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
 
-export default function StickyNavHeightSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function StickyNavHeightSettings({ attributes, setAttributes }) {
 	const { stickyNavHeight } = attributes;
 
 	// Recover the unit used in the height
-	const heightUnit = stickyNavHeight.replace( /[\d.]+/g, '' ) || 'px';
+	const heightUnit = stickyNavHeight.replace(/[\d.]+/g, '') || 'px';
 
 	// Recover the numeric value of the height
-	const heightNumber = ( unit ) => {
-		if ( unit === 'px' ) {
-			return parseInt( stickyNavHeight ) || 0;
+	const heightNumber = (unit) => {
+		if (unit === 'px') {
+			return parseInt(stickyNavHeight) || 0;
 		}
-		return parseFloat( stickyNavHeight ) || 0;
+		return parseFloat(stickyNavHeight) || 0;
 	};
 
 	// Restrict maximum value for vh units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( newUnit === 'vh' && valueNumber > 100 ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (newUnit === 'vh' && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
@@ -48,14 +45,14 @@ export default function StickyNavHeightSettings( {
 
 	return (
 		<PanelBody
-			title={ __( 'Height', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Height', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<div className="cbb-editor__grid">
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ sprintf(
+					help={sprintf(
 						/**
 						 * translators: %s height's unit
 						 */
@@ -64,22 +61,22 @@ export default function StickyNavHeightSettings( {
 							'caledros-basic-blocks'
 						),
 						heightUnit
-					) }
-					value={ heightNumber( heightUnit ) }
-					max={ heightUnit === 'vh' ? 100 : 3000 }
-					min={ 0 }
-					step={ heightUnit === 'px' ? 1 : 0.01 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
-							stickyNavHeight: `${ newValue }${ heightUnit }`,
-						} )
+					)}
+					value={heightNumber(heightUnit)}
+					max={heightUnit === 'vh' ? 100 : 3000}
+					min={0}
+					step={heightUnit === 'px' ? 1 : 0.01}
+					onChange={(newValue) =>
+						setAttributes({
+							stickyNavHeight: `${newValue}${heightUnit}`,
+						})
 					}
 				/>
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					value={ heightUnit }
-					options={ [
+					value={heightUnit}
+					options={[
 						{
 							label: 'px',
 							value: 'px',
@@ -96,15 +93,15 @@ export default function StickyNavHeightSettings( {
 							label: 'vh',
 							value: 'vh',
 						},
-					] }
-					onChange={ ( newUnit ) => {
-						setAttributes( {
-							stickyNavHeight: `${ enforceMaxValue(
+					]}
+					onChange={(newUnit) => {
+						setAttributes({
+							stickyNavHeight: `${enforceMaxValue(
 								newUnit,
-								heightNumber( newUnit )
-							) }${ newUnit }`,
-						} );
-					} }
+								heightNumber(newUnit)
+							)}${newUnit}`,
+						});
+					}}
 				/>
 			</div>
 		</PanelBody>

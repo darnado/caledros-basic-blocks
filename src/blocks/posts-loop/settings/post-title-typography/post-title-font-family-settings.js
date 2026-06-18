@@ -21,76 +21,76 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function PostTitleFontFamilySettings( {
+export default function PostTitleFontFamilySettings({
 	attributes,
 	setAttributes,
 	registeredFonts,
 	getAvailableFontStyles,
 	getAvailableFontWeights,
 	doesFontExist,
-} ) {
+}) {
 	const { postTitleFontFamily, postTitleFontWeight, postTitleFontStyle } =
 		attributes;
 
 	// Recover theme fonts and custom fonts
 	const themeFonts =
-		registeredFonts?.theme?.map( ( font ) => {
+		registeredFonts?.theme?.map((font) => {
 			return { label: font.name, value: font.slug };
-		} ) || [];
+		}) || [];
 
 	const customFonts =
-		registeredFonts?.custom?.map( ( font ) => {
+		registeredFonts?.custom?.map((font) => {
 			return { label: font?.name, value: font?.slug };
-		} ) || [];
+		}) || [];
 
 	const fontOptions = [
 		{ label: 'Default', value: '' },
-		...( themeFonts.length !== 0 ? themeFonts : [] ),
-		...( customFonts && customFonts?.length !== 0 ? customFonts : [] ),
+		...(themeFonts.length !== 0 ? themeFonts : []),
+		...(customFonts && customFonts?.length !== 0 ? customFonts : []),
 	];
 
 	return (
 		<SelectControl
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
-			help={ __( 'Select the font family.', 'caledros-basic-blocks' ) }
-			value={ postTitleFontFamily }
-			options={ fontOptions }
-			onChange={ ( newFontFamily ) => {
+			help={__('Select the font family.', 'caledros-basic-blocks')}
+			value={postTitleFontFamily}
+			options={fontOptions}
+			onChange={(newFontFamily) => {
 				// Compute available font styles for the new font family and update if necessary
-				const availableFontStyles = doesFontExist( newFontFamily )
-					? getAvailableFontStyles( newFontFamily )
+				const availableFontStyles = doesFontExist(newFontFamily)
+					? getAvailableFontStyles(newFontFamily)
 					: [];
 
 				const newFontStyle = availableFontStyles.includes(
 					postTitleFontStyle
 				)
 					? postTitleFontStyle
-					: availableFontStyles[ 0 ];
+					: availableFontStyles[0];
 
 				// Compute available font weights for the new font family and update if necessary
-				const availableFontWeights = doesFontExist( newFontFamily )
-					? getAvailableFontWeights( newFontFamily, newFontStyle )
+				const availableFontWeights = doesFontExist(newFontFamily)
+					? getAvailableFontWeights(newFontFamily, newFontStyle)
 					: [];
 
 				const newFontWeight = availableFontWeights.includes(
 					postTitleFontWeight
 				)
 					? postTitleFontWeight
-					: availableFontWeights[ 0 ];
+					: availableFontWeights[0];
 
-				setAttributes( {
+				setAttributes({
 					postTitleFontFamily: newFontFamily,
-					...( doesFontExist( newFontFamily ) &&
+					...(doesFontExist(newFontFamily) &&
 						newFontStyle !== postTitleFontStyle && {
 							postTitleFontStyle: newFontStyle,
-						} ),
-					...( doesFontExist( newFontFamily ) &&
+						}),
+					...(doesFontExist(newFontFamily) &&
 						newFontWeight !== postTitleFontWeight && {
 							postTitleFontWeight: newFontWeight,
-						} ),
-				} );
-			} }
+						}),
+				});
+			}}
 		/>
 	);
 }

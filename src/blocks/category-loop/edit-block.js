@@ -31,7 +31,7 @@ import NumberOfColumnsTabletSettings from './settings/no-of-columns-tablet-setti
 import NumberOfColumnsMobileSettings from './settings/no-of-columns-mobile-settings';
 import DemoData from './demo-data';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	// Attributes
 	const {
 		showNumberOfPublications,
@@ -48,53 +48,53 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	let categoryList = [];
 
 	// Fetch published categories
-	const { hasResolved, records } = useEntityRecords( 'taxonomy', 'category', {
+	const { hasResolved, records } = useEntityRecords('taxonomy', 'category', {
 		per_page: -1,
 		hide_empty: true,
 		_embed: true,
-	} );
+	});
 
 	// Recover the available categories
-	if ( hasResolved ) {
+	if (hasResolved) {
 		categoryList = records
-			.filter( ( category ) => {
-				if ( ! showUncategorizedCategory ) {
+			.filter((category) => {
+				if (!showUncategorizedCategory) {
 					return (
 						category.slug !== 'uncategorized' && category.id !== 1
 					);
 				}
 				return true;
-			} )
-			.map( ( category ) => ( {
+			})
+			.map((category) => ({
 				title: category?.name,
 				count: category?.count,
 				featuredImage: category?.meta?.category_image_url,
 				altTextFeaturedImage: category?.meta?.alt_text_category_image,
-			} ) );
+			}));
 	}
 
 	// Block props
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: 'cbb-categories-loop',
 		style: {
-			...( columnNoDesktop.enableCustomValue && {
+			...(columnNoDesktop.enableCustomValue && {
 				'--cbb-column-no-desktop': columnNoDesktop.columnNo,
-			} ),
-			...( columnNoTablet.enableCustomValue && {
+			}),
+			...(columnNoTablet.enableCustomValue && {
 				'--cbb-column-no-tablet': columnNoTablet.columnNo,
-			} ),
-			...( columnNoMobile.enableCustomValue && {
+			}),
+			...(columnNoMobile.enableCustomValue && {
 				'--cbb-column-no-mobile': columnNoMobile.columnNo,
-			} ),
+			}),
 		},
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'content',
 							title: 'Content',
@@ -107,68 +107,68 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'content' ) {
+					{(tab) => {
+						if (tab.name === 'content') {
 							return (
 								<>
 									<CategoriesLoopTitle
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CategoriesLoopTitle>
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<NumberOfColumnsDesktopSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsDesktopSettings>
 									<NumberOfColumnsTabletSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsTabletSettings>
 									<NumberOfColumnsMobileSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></NumberOfColumnsMobileSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<ShowNumberOfPublicationsSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowNumberOfPublicationsSettings>
 									<ShowDemoDataSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowDemoDataSettings>
 									<ShowUncategorizedCategorySettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ShowUncategorizedCategorySettings>
 								</>
 							);
 						}
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			{ ! hasResolved && <p>Categories loading, please wait...</p> }
-			<div { ...blockProps }>
-				{ ! showDemoData && (
+			{!hasResolved && <p>Categories loading, please wait...</p>}
+			<div {...blockProps}>
+				{!showDemoData && (
 					<>
 						<div className="cbb-categories-loop__container">
-							{ categoryList.map( ( category, index ) => {
+							{categoryList.map((category, index) => {
 								return (
 									<div
 										className="cbb-categories-loop__card"
-										key={ index }
+										key={index}
 									>
 										<div className="cbb-categories-loop_post-header">
 											<p className="cbb-categories-loop_website-title">
@@ -182,27 +182,27 @@ export default function EditBlock( { attributes, setAttributes } ) {
 													}
 													alt="Category title icon"
 												></img>
-												{ categoriesLoopTitle }
+												{categoriesLoopTitle}
 											</p>
 										</div>
 										<div className="cbb-categories-loop__img-container">
 											<div className="cbb-categories-loop__img-link cbb-categories-loop__img-link--demo ">
-												{ category.featuredImage && (
+												{category.featuredImage && (
 													<img
 														src={
 															category.featuredImage
 														}
 														alt="Category"
 													/>
-												) }
+												)}
 												<span className="cbb-categories-loop__post-title">
-													{ category.title }
+													{category.title}
 												</span>
 											</div>
 										</div>
 										<div className="cbb-categories-loop__post-info">
 											<div className="cbb-categories-loop__category-and-tag">
-												{ showNumberOfPublications &&
+												{showNumberOfPublications &&
 													category.count !== null && (
 														<span className="cbb-categories-loop__number-of-publications">
 															<svg
@@ -216,21 +216,21 @@ export default function EditBlock( { attributes, setAttributes } ) {
 																<path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2" />
 																<path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0" />
 															</svg>
-															{ category.count }{ ' ' }
-															{ category.count > 1
+															{category.count}{' '}
+															{category.count > 1
 																? 'publications'
-																: 'publication' }
+																: 'publication'}
 														</span>
-													) }
+													)}
 											</div>
 										</div>
 									</div>
 								);
-							} ) }
+							})}
 						</div>
 					</>
-				) }
-				{ showDemoData && <DemoData></DemoData> }
+				)}
+				{showDemoData && <DemoData></DemoData>}
 			</div>
 		</>
 	);

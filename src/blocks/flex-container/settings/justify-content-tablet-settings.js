@@ -21,47 +21,47 @@
 import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function JustifyContentTabletSettings( {
+export default function JustifyContentTabletSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { containerJustifyContentTablet } = attributes;
 
 	return (
 		<PanelBody
-			title={ __(
+			title={__(
 				'Justify Content (Tablet and Mobile)',
 				'caledros-basic-blocks'
-			) }
-			initialOpen={ false }
+			)}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Enable control', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Enable control', 'caledros-basic-blocks')}
+				help={__(
 					"This control enables selecting a custom value for the 'justify content' property in both tablet and mobile devices.",
 					'caledros-basic-blocks'
-				) }
-				checked={ containerJustifyContentTablet.enabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={containerJustifyContentTablet.enabled}
+				onChange={(newValue) => {
+					setAttributes({
 						containerJustifyContentTablet: {
 							...containerJustifyContentTablet,
 							enabled: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ containerJustifyContentTablet.enabled && (
+			{containerJustifyContentTablet.enabled && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Select the value for the justify content property.',
 						'caledros-basic-blocks'
-					) }
-					value={ containerJustifyContentTablet.value }
-					options={ [
+					)}
+					value={containerJustifyContentTablet.value}
+					options={[
 						{
 							label: 'Flex start (default)',
 							value: 'flex-start',
@@ -86,17 +86,17 @@ export default function JustifyContentTabletSettings( {
 							label: 'Space evenly',
 							value: 'space-evenly',
 						},
-					] }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					]}
+					onChange={(newValue) => {
+						setAttributes({
 							containerJustifyContentTablet: {
 								...containerJustifyContentTablet,
 								value: newValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

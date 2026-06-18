@@ -25,70 +25,70 @@ const caledrosBasicBlocksMegaMenu = 'caledros-basic-blocks/mega-menu';
 // Disable mega menu block variation
 const caledrosBasicBlocksDisableMegaMenu = () => {
 	// Get current post type
-	const currentPostType = wp.data.useSelect( ( select ) => {
-		const editor = select( 'core/editor' );
+	const currentPostType = wp.data.useSelect((select) => {
+		const editor = select('core/editor');
 		return editor?.getCurrentPostType();
-	}, [] );
+	}, []);
 
 	// Get current template area
-	const currentTemplateArea = wp.data.useSelect( ( select ) => {
-		const editor = select( 'core/editor' );
-		return editor?.getCurrentPostAttribute( 'area' );
-	}, [] );
+	const currentTemplateArea = wp.data.useSelect((select) => {
+		const editor = select('core/editor');
+		return editor?.getCurrentPostAttribute('area');
+	}, []);
 
 	// Original variation block settings
-	const originalVariation = wp.element.useRef( null );
+	const originalVariation = wp.element.useRef(null);
 
 	// Capture the original variation block once, after the blocks have been initialized
-	wp.element.useEffect( () => {
+	wp.element.useEffect(() => {
 		// Return if current post type is undefined
-		if ( currentPostType === undefined ) {
+		if (currentPostType === undefined) {
 			return;
 		}
 
 		// Return if the block variation is already stored
-		if ( originalVariation.current ) {
+		if (originalVariation.current) {
 			return;
 		}
 
 		// Get all block variations
 		const activeBlockVariations =
-			wp.blocks.getBlockVariations( caledrosBasicBlocksMenuLink ) || [];
+			wp.blocks.getBlockVariations(caledrosBasicBlocksMenuLink) || [];
 
 		// Store the settings of the original block variation
 		originalVariation.current =
 			activeBlockVariations.find(
-				( blockVariation ) =>
+				(blockVariation) =>
 					blockVariation.name === caledrosBasicBlocksMegaMenu
 			) || null;
-	}, [] );
+	}, []);
 
 	// Whenever the editing context changes, unregister or re-register
-	wp.element.useEffect( () => {
+	wp.element.useEffect(() => {
 		// Return if current post type is undefined
-		if ( currentPostType === undefined ) {
+		if (currentPostType === undefined) {
 			return;
 		}
 
 		const currentBlockVariations =
-			wp.blocks.getBlockVariations?.( caledrosBasicBlocksMenuLink ) || [];
+			wp.blocks.getBlockVariations?.(caledrosBasicBlocksMenuLink) || [];
 
 		const exists = currentBlockVariations.some(
-			( variation ) => variation.name === caledrosBasicBlocksMegaMenu
+			(variation) => variation.name === caledrosBasicBlocksMegaMenu
 		);
 
-		if ( currentTemplateArea !== 'header' && exists ) {
+		if (currentTemplateArea !== 'header' && exists) {
 			wp.blocks.unregisterBlockVariation(
 				caledrosBasicBlocksMenuLink,
 				caledrosBasicBlocksMegaMenu
 			);
-		} else if ( currentTemplateArea === 'header' && ! exists ) {
+		} else if (currentTemplateArea === 'header' && !exists) {
 			wp.blocks.registerBlockVariation(
 				caledrosBasicBlocksMenuLink,
 				originalVariation.current
 			);
 		}
-	}, [ currentTemplateArea ] );
+	}, [currentTemplateArea]);
 
 	// The plugin is solely for disabling blocks, so there's no need to render anything
 	return null;

@@ -21,28 +21,23 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function OverlayNavSettings( { attributes, setAttributes } ) {
+export default function OverlayNavSettings({ attributes, setAttributes }) {
 	const { overlayNav } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Overlay navigation', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Overlay navigation', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
-					'Enable overlay navigation',
-					'caledros-basic-blocks'
-				) }
-				help={ __(
+				label={__('Enable overlay navigation', 'caledros-basic-blocks')}
+				help={__(
 					"This option transforms the navigation bar into an overlay, allowing it to overlap the website's content.",
 					'caledros-basic-blocks'
-				) }
-				checked={ overlayNav }
-				onChange={ ( newValue ) =>
-					setAttributes( { overlayNav: newValue } )
-				}
+				)}
+				checked={overlayNav}
+				onChange={(newValue) => setAttributes({ overlayNav: newValue })}
 			/>
 		</PanelBody>
 	);

@@ -19,17 +19,17 @@
  */
 
 import { store, getContext } from '@wordpress/interactivity';
-store( 'mobile-overlay', {
+store('mobile-overlay', {
 	actions: {
 		click: () => {
 			const context = getContext();
-			context.visible = ! context.visible;
-			const bodyElement = document.querySelector( 'body' );
-			if ( context.visible ) {
-				bodyElement.classList.add( 'visible-overlay' );
+			context.visible = !context.visible;
+			const bodyElement = document.querySelector('body');
+			if (context.visible) {
+				bodyElement.classList.add('visible-overlay');
 			} else {
-				bodyElement.classList.remove( 'visible-overlay' );
+				bodyElement.classList.remove('visible-overlay');
 			}
 		},
 	},
-} );
+});

@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function LetterCaseSettings( { attributes, setAttributes } ) {
+export default function LetterCaseSettings({ attributes, setAttributes }) {
 	const { menuLetterCase } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Letter case', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Letter case', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Select the letter case transformation.',
 					'caledros-basic-blocks'
-				) }
-				value={ menuLetterCase }
-				options={ [
+				)}
+				value={menuLetterCase}
+				options={[
 					{
 						label: 'Capitalize',
 						value: 'capitalize',
@@ -54,12 +54,12 @@ export default function LetterCaseSettings( { attributes, setAttributes } ) {
 						label: 'None',
 						value: 'none',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						menuLetterCase: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function SortOrderSettings( { attributes, setAttributes } ) {
+export default function SortOrderSettings({ attributes, setAttributes }) {
 	const { sortOrder } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Sort order', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Sort order', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the sort order: ascending or descending',
 					'caledros-basic-blocks'
-				) }
-				value={ sortOrder }
-				options={ [
+				)}
+				value={sortOrder}
+				options={[
 					{
 						label: 'Desc',
 						value: 'desc',
@@ -46,12 +46,12 @@ export default function SortOrderSettings( { attributes, setAttributes } ) {
 						label: 'Asc',
 						value: 'asc',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						sortOrder: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

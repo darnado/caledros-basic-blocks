@@ -27,75 +27,71 @@ import {
 import { __, sprintf } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
-export default function BorderRadiusSettings( { attributes, setAttributes } ) {
+export default function BorderRadiusSettings({ attributes, setAttributes }) {
 	const { imgBorder } = attributes;
 
 	// Recover the border radius of each corner
-	const borderArray = imgBorder.radius.split( ' ' );
-	const topLeftCorner = parseInt( borderArray[ 0 ] ) || 0;
-	const topRightCorner = parseInt( borderArray[ 1 ] ) || 0;
-	const bottomRightCorner = parseInt( borderArray[ 2 ] ) || 0;
-	const bottomLeftCorner = parseInt( borderArray[ 3 ] ) || 0;
+	const borderArray = imgBorder.radius.split(' ');
+	const topLeftCorner = parseInt(borderArray[0]) || 0;
+	const topRightCorner = parseInt(borderArray[1]) || 0;
+	const bottomRightCorner = parseInt(borderArray[2]) || 0;
+	const bottomLeftCorner = parseInt(borderArray[3]) || 0;
 
 	// Recover the unit used in the border radiuses
-	const unitArray = imgBorder.radius.split( ' ' );
-	const topLeftUnit = unitArray[ 0 ]
-		? unitArray[ 0 ].replace( /\d+/g, '' )
+	const unitArray = imgBorder.radius.split(' ');
+	const topLeftUnit = unitArray[0] ? unitArray[0].replace(/\d+/g, '') : 'px';
+	const topRightUnit = unitArray[1] ? unitArray[1].replace(/\d+/g, '') : 'px';
+	const bottomRightUnit = unitArray[2]
+		? unitArray[2].replace(/\d+/g, '')
 		: 'px';
-	const topRightUnit = unitArray[ 1 ]
-		? unitArray[ 1 ].replace( /\d+/g, '' )
-		: 'px';
-	const bottomRightUnit = unitArray[ 2 ]
-		? unitArray[ 2 ].replace( /\d+/g, '' )
-		: 'px';
-	const bottomLeftUnit = unitArray[ 3 ]
-		? unitArray[ 3 ].replace( /\d+/g, '' )
+	const bottomLeftUnit = unitArray[3]
+		? unitArray[3].replace(/\d+/g, '')
 		: 'px';
 
-	const [ useDifferentBorderRadiuses, setUseDifferentBorderRadiuses ] =
-		useState( imgBorder.radius.includes( ' ' ) ? true : false );
+	const [useDifferentBorderRadiuses, setUseDifferentBorderRadiuses] =
+		useState(imgBorder.radius.includes(' ') ? true : false);
 
 	// Restrict maximum value for % and vw units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( newUnit === '%' && valueNumber > 100 ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (newUnit === '%' && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
 	};
 	return (
 		<PanelBody
-			title={ __( 'Border radius', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Border radius', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
 				label="Use different border radiuses for each corner"
-				checked={ useDifferentBorderRadiuses }
-				onChange={ () => {
+				checked={useDifferentBorderRadiuses}
+				onChange={() => {
 					const differentRadiusesEnabled =
-						! useDifferentBorderRadiuses;
-					setUseDifferentBorderRadiuses( differentRadiusesEnabled );
+						!useDifferentBorderRadiuses;
+					setUseDifferentBorderRadiuses(differentRadiusesEnabled);
 
-					if ( differentRadiusesEnabled ) {
-						setAttributes( {
+					if (differentRadiusesEnabled) {
+						setAttributes({
 							imgBorder: {
 								...imgBorder,
 								radius: '10px 10px 10px 10px',
 							},
-						} );
+						});
 					} else {
-						setAttributes( {
+						setAttributes({
 							imgBorder: { ...imgBorder, radius: '10px' },
-						} );
+						});
 					}
-				} }
+				}}
 			/>
-			{ ! useDifferentBorderRadiuses && (
+			{!useDifferentBorderRadiuses && (
 				<div className="cbb-editor__grid">
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ sprintf(
+						help={sprintf(
 							/**
 							 * translators: %s border radius's unit
 							 */
@@ -104,25 +100,25 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 								'caledros-basic-blocks'
 							),
 							topLeftUnit
-						) }
-						value={ parseInt( imgBorder.radius ) }
-						max={ topLeftUnit === '%' ? 100 : 150 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newRadius ) => {
-							setAttributes( {
+						)}
+						value={parseInt(imgBorder.radius)}
+						max={topLeftUnit === '%' ? 100 : 150}
+						min={0}
+						step={1}
+						onChange={(newRadius) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									radius: `${ newRadius }${ topLeftUnit }`,
+									radius: `${newRadius}${topLeftUnit}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						value={ topLeftUnit }
-						options={ [
+						value={topLeftUnit}
+						options={[
 							{
 								label: 'px',
 								value: 'px',
@@ -131,28 +127,28 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 								label: '%',
 								value: '%',
 							},
-						] }
-						onChange={ ( newUnit ) => {
-							setAttributes( {
+						]}
+						onChange={(newUnit) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									radius: `${ enforceMaxValue(
+									radius: `${enforceMaxValue(
 										newUnit,
-										parseInt( imgBorder.radius )
-									) }${ newUnit }`,
+										parseInt(imgBorder.radius)
+									)}${newUnit}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 				</div>
-			) }
-			{ useDifferentBorderRadiuses && (
+			)}
+			{useDifferentBorderRadiuses && (
 				<>
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s top left border radius's unit
 								 */
@@ -161,25 +157,25 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								topLeftUnit
-							) }
-							value={ topLeftCorner }
-							max={ topLeftUnit === '%' ? 100 : 150 }
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newRadius ) => {
-								setAttributes( {
+							)}
+							value={topLeftCorner}
+							max={topLeftUnit === '%' ? 100 : 150}
+							min={0}
+							step={1}
+							onChange={(newRadius) => {
+								setAttributes({
 									imgBorder: {
 										...imgBorder,
-										radius: `${ newRadius }${ topLeftUnit } ${ topRightCorner }${ topRightUnit } ${ bottomRightCorner }${ bottomRightUnit } ${ bottomLeftCorner }${ bottomLeftUnit }`,
+										radius: `${newRadius}${topLeftUnit} ${topRightCorner}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ topLeftUnit }
-							options={ [
+							value={topLeftUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -188,25 +184,25 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 									label: '%',
 									value: '%',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									imgBorder: {
 										...imgBorder,
-										radius: `${ enforceMaxValue(
+										radius: `${enforceMaxValue(
 											newUnit,
 											topLeftCorner
-										) }${ newUnit } ${ topRightCorner }${ topRightUnit } ${ bottomRightCorner }${ bottomRightUnit } ${ bottomLeftCorner }${ bottomLeftUnit }`,
+										)}${newUnit} ${topRightCorner}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s top right border radius's unit
 								 */
@@ -215,25 +211,25 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								topRightUnit
-							) }
-							value={ topRightCorner }
-							max={ topRightUnit === '%' ? 100 : 150 }
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newRadius ) => {
-								setAttributes( {
+							)}
+							value={topRightCorner}
+							max={topRightUnit === '%' ? 100 : 150}
+							min={0}
+							step={1}
+							onChange={(newRadius) => {
+								setAttributes({
 									imgBorder: {
 										...imgBorder,
-										radius: `${ topLeftCorner }${ topLeftUnit } ${ newRadius }${ topRightUnit } ${ bottomRightCorner }${ bottomRightUnit } ${ bottomLeftCorner }${ bottomLeftUnit }`,
+										radius: `${topLeftCorner}${topLeftUnit} ${newRadius}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ topRightUnit }
-							options={ [
+							value={topRightUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -242,25 +238,25 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 									label: '%',
 									value: '%',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									imgBorder: {
 										...imgBorder,
-										radius: `${ topLeftCorner }${ topLeftUnit } ${ enforceMaxValue(
+										radius: `${topLeftCorner}${topLeftUnit} ${enforceMaxValue(
 											newUnit,
 											topRightCorner
-										) }${ newUnit } ${ bottomRightCorner }${ bottomRightUnit } ${ bottomLeftCorner }${ bottomLeftUnit }`,
+										)}${newUnit} ${bottomRightCorner}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s bottom right border radius's unit
 								 */
@@ -269,25 +265,25 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								bottomRightUnit
-							) }
-							value={ bottomRightCorner }
-							max={ bottomRightUnit === '%' ? 100 : 150 }
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newRadius ) => {
-								setAttributes( {
+							)}
+							value={bottomRightCorner}
+							max={bottomRightUnit === '%' ? 100 : 150}
+							min={0}
+							step={1}
+							onChange={(newRadius) => {
+								setAttributes({
 									imgBorder: {
 										...imgBorder,
-										radius: `${ topLeftCorner }${ topLeftUnit } ${ topRightCorner }${ topRightUnit } ${ newRadius }${ bottomRightUnit } ${ bottomLeftCorner }${ bottomLeftUnit }`,
+										radius: `${topLeftCorner}${topLeftUnit} ${topRightCorner}${topRightUnit} ${newRadius}${bottomRightUnit} ${bottomLeftCorner}${bottomLeftUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ bottomRightUnit }
-							options={ [
+							value={bottomRightUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -296,25 +292,25 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 									label: '%',
 									value: '%',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									imgBorder: {
 										...imgBorder,
-										radius: `${ topLeftCorner }${ topLeftUnit } ${ topRightCorner }${ topRightUnit } ${ enforceMaxValue(
+										radius: `${topLeftCorner}${topLeftUnit} ${topRightCorner}${topRightUnit} ${enforceMaxValue(
 											newUnit,
 											bottomRightCorner
-										) }${ newUnit } ${ bottomLeftCorner }${ bottomLeftUnit }`,
+										)}${newUnit} ${bottomLeftCorner}${bottomLeftUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s bottom left border radius's unit
 								 */
@@ -323,25 +319,25 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								bottomLeftUnit
-							) }
-							value={ bottomLeftCorner }
-							max={ bottomLeftUnit === '%' ? 100 : 150 }
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newRadius ) => {
-								setAttributes( {
+							)}
+							value={bottomLeftCorner}
+							max={bottomLeftUnit === '%' ? 100 : 150}
+							min={0}
+							step={1}
+							onChange={(newRadius) => {
+								setAttributes({
 									imgBorder: {
 										...imgBorder,
-										radius: `${ topLeftCorner }${ topLeftUnit } ${ topRightCorner }${ topRightUnit } ${ bottomRightCorner }${ bottomRightUnit } ${ newRadius }${ bottomLeftUnit }`,
+										radius: `${topLeftCorner}${topLeftUnit} ${topRightCorner}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${newRadius}${bottomLeftUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ bottomLeftUnit }
-							options={ [
+							value={bottomLeftUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -350,22 +346,22 @@ export default function BorderRadiusSettings( { attributes, setAttributes } ) {
 									label: '%',
 									value: '%',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									imgBorder: {
 										...imgBorder,
-										radius: `${ topLeftCorner }${ topLeftUnit } ${ topRightCorner }${ topRightUnit } ${ bottomRightCorner }${ bottomRightUnit } ${ enforceMaxValue(
+										radius: `${topLeftCorner}${topLeftUnit} ${topRightCorner}${topRightUnit} ${bottomRightCorner}${bottomRightUnit} ${enforceMaxValue(
 											newUnit,
 											bottomLeftCorner
-										) }${ newUnit }`,
+										)}${newUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
 				</>
-			) }
+			)}
 		</PanelBody>
 	);
 }

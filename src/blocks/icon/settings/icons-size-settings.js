@@ -21,29 +21,27 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function IconsSizeSettings( { attributes, setAttributes } ) {
+export default function IconsSizeSettings({ attributes, setAttributes }) {
 	const { iconsSize } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Icon size', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Icon size', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Adjust the size (px) of the icon',
 					'caledros-basic-blocks'
-				) }
-				initialPosition={ iconsSize }
-				value={ iconsSize }
-				max={ 300 }
-				min={ 0 }
-				step={ 1 }
-				onChange={ ( newValue ) =>
-					setAttributes( { iconsSize: newValue } )
-				}
+				)}
+				initialPosition={iconsSize}
+				value={iconsSize}
+				max={300}
+				min={0}
+				step={1}
+				onChange={(newValue) => setAttributes({ iconsSize: newValue })}
 			/>
 		</PanelBody>
 	);

@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function PageTypeSettings( { attributes, setAttributes } ) {
+export default function PageTypeSettings({ attributes, setAttributes }) {
 	const { pageType, categoryFilter, tagFilter, authorFilter } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Page type', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Page type', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the type of page where the loop will be displayed.',
 					'caledros-basic-blocks'
-				) }
-				value={ pageType }
-				options={ [
+				)}
+				value={pageType}
+				options={[
 					{
 						label: 'Front page',
 						value: 'front-page',
@@ -62,34 +62,34 @@ export default function PageTypeSettings( { attributes, setAttributes } ) {
 						label: 'Search results page',
 						value: 'search-results-page',
 					},
-				] }
-				onChange={ ( newValue ) => {
+				]}
+				onChange={(newValue) => {
 					const newAttributes = {
 						pageType: newValue,
 					};
 
-					if ( newValue === 'category-template' ) {
+					if (newValue === 'category-template') {
 						newAttributes.categoryFilter = {
 							...categoryFilter,
 							enable: false,
 						};
 					}
 
-					if ( newValue === 'tag-template' ) {
+					if (newValue === 'tag-template') {
 						newAttributes.tagFilter = {
 							...tagFilter,
 							enable: false,
 						};
 					}
 
-					if ( newValue === 'author-template' ) {
+					if (newValue === 'author-template') {
 						newAttributes.authorFilter = {
 							...authorFilter,
 							enable: false,
 						};
 					}
-					setAttributes( newAttributes );
-				} }
+					setAttributes(newAttributes);
+				}}
 			/>
 		</PanelBody>
 	);

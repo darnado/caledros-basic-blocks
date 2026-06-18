@@ -21,26 +21,26 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function NumberOfItemsSettings( { attributes, setAttributes } ) {
+export default function NumberOfItemsSettings({ attributes, setAttributes }) {
 	const { numberOfItems } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'No. of items', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('No. of items', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Please select the number of items to be displayed per page.',
 					'caledros-basic-blocks'
-				) }
-				value={ numberOfItems }
-				max={ 20 }
-				min={ 1 }
-				step={ 1 }
-				onChange={ ( newValue ) =>
-					setAttributes( { numberOfItems: newValue } )
+				)}
+				value={numberOfItems}
+				max={20}
+				min={1}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ numberOfItems: newValue })
 				}
 			/>
 		</PanelBody>

@@ -21,11 +21,11 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function PostTitleFontWeightSettings( {
+export default function PostTitleFontWeightSettings({
 	attributes,
 	setAttributes,
 	getAvailableFontWeights,
-} ) {
+}) {
 	const { postTitleFontFamily, postTitleFontWeight, postTitleFontStyle } =
 		attributes;
 
@@ -46,22 +46,22 @@ export default function PostTitleFontWeightSettings( {
 	const fontWeightOptions = getAvailableFontWeights(
 		postTitleFontFamily,
 		postTitleFontStyle
-	)?.map( ( weightValue ) => {
-		return { label: `${ weightValue }`, value: weightValue };
-	} );
+	)?.map((weightValue) => {
+		return { label: `${weightValue}`, value: weightValue };
+	});
 
 	return (
 		<SelectControl
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
-			help={ __( 'Select the font weight.', 'caledros-basic-blocks' ) }
-			value={ postTitleFontWeight }
-			options={ fontWeightOptions || defaultFontWeights }
-			onChange={ ( newValue ) => {
-				setAttributes( {
-					postTitleFontWeight: parseInt( newValue ),
-				} );
-			} }
+			help={__('Select the font weight.', 'caledros-basic-blocks')}
+			value={postTitleFontWeight}
+			options={fontWeightOptions || defaultFontWeights}
+			onChange={(newValue) => {
+				setAttributes({
+					postTitleFontWeight: parseInt(newValue),
+				});
+			}}
 		/>
 	);
 }

@@ -21,27 +21,27 @@
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function LabelSettings( { attributes, setAttributes } ) {
+export default function LabelSettings({ attributes, setAttributes }) {
 	const { menuLabel } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Label', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Label', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<TextControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Type the label for the menu link.',
 					'caledros-basic-blocks'
-				) }
-				value={ menuLabel }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				value={menuLabel}
+				onChange={(newValue) => {
+					setAttributes({
 						menuLabel: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

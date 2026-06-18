@@ -21,44 +21,44 @@
 import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function JustifyContentMobileSettings( {
+export default function JustifyContentMobileSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { containerJustifyContentMobile } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Justify content (Mobile)', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Justify content (Mobile)', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Enable control', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Enable control', 'caledros-basic-blocks')}
+				help={__(
 					"This control enables selecting a custom value for the 'justify content' property in mobile devices.",
 					'caledros-basic-blocks'
-				) }
-				checked={ containerJustifyContentMobile.enabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={containerJustifyContentMobile.enabled}
+				onChange={(newValue) => {
+					setAttributes({
 						containerJustifyContentMobile: {
 							...containerJustifyContentMobile,
 							enabled: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ containerJustifyContentMobile.enabled && (
+			{containerJustifyContentMobile.enabled && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Select the value for the justify content property.',
 						'caledros-basic-blocks'
-					) }
-					value={ containerJustifyContentMobile.value }
-					options={ [
+					)}
+					value={containerJustifyContentMobile.value}
+					options={[
 						{
 							label: 'Flex start (default)',
 							value: 'flex-start',
@@ -83,17 +83,17 @@ export default function JustifyContentMobileSettings( {
 							label: 'Space evenly',
 							value: 'space-evenly',
 						},
-					] }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					]}
+					onChange={(newValue) => {
+						setAttributes({
 							containerJustifyContentMobile: {
 								...containerJustifyContentMobile,
 								value: newValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

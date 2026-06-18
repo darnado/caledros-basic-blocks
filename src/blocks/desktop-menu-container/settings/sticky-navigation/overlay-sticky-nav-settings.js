@@ -21,30 +21,30 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function OverlayStickyNavSettings( {
+export default function OverlayStickyNavSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { overlayStickyNav } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Overlay navigation', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Overlay navigation', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Enable overlay sticky navigation',
 					'caledros-basic-blocks'
-				) }
-				help={ __(
+				)}
+				help={__(
 					"This option transforms the sticky navigation bar into an overlay, allowing it to overlap the website's content until the user begins scrolling.",
 					'caledros-basic-blocks'
-				) }
-				checked={ overlayStickyNav }
-				onChange={ ( newValue ) =>
-					setAttributes( { overlayStickyNav: newValue } )
+				)}
+				checked={overlayStickyNav}
+				onChange={(newValue) =>
+					setAttributes({ overlayStickyNav: newValue })
 				}
 			/>
 		</PanelBody>

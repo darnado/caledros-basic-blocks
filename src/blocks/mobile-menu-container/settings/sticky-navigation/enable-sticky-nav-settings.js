@@ -21,30 +21,24 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function EnableStickyNavSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function EnableStickyNavSettings({ attributes, setAttributes }) {
 	const { stickyNavigationEnabled } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Sticky navigation', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Sticky navigation', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
-					'Enable sticky navigation',
-					'caledros-basic-blocks'
-				) }
-				help={ __(
+				label={__('Enable sticky navigation', 'caledros-basic-blocks')}
+				help={__(
 					'A sticky navigation bar will stick to the top of the screen while scrolling. The effect is only visible in the frontend, not in the editor.',
 					'caledros-basic-blocks'
-				) }
-				checked={ stickyNavigationEnabled }
-				onChange={ ( newValue ) =>
-					setAttributes( { stickyNavigationEnabled: newValue } )
+				)}
+				checked={stickyNavigationEnabled}
+				onChange={(newValue) =>
+					setAttributes({ stickyNavigationEnabled: newValue })
 				}
 			/>
 		</PanelBody>

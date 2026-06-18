@@ -24,7 +24,7 @@ import './style.css';
 import blocksIcon from '../../assets/blocks-icon';
 import EditBlock from './edit-block';
 
-registerBlockType( metadata.name, {
+registerBlockType(metadata.name, {
 	icon: blocksIcon.icon,
 	edit: EditBlock,
-} );
+});

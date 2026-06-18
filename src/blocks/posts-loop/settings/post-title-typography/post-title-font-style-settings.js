@@ -21,13 +21,13 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function PostTitleFontStyleSettings( {
+export default function PostTitleFontStyleSettings({
 	attributes,
 	setAttributes,
 	getAvailableFontStyles,
 	getAvailableFontWeights,
 	doesFontExist,
-} ) {
+}) {
 	const { postTitleFontFamily, postTitleFontStyle, postTitleFontWeight } =
 		attributes;
 
@@ -38,13 +38,11 @@ export default function PostTitleFontStyleSettings( {
 	];
 
 	// Create options array for the controller
-	const fontStyleOptions = getAvailableFontStyles( postTitleFontFamily )?.map(
-		( styleValue ) => {
+	const fontStyleOptions = getAvailableFontStyles(postTitleFontFamily)?.map(
+		(styleValue) => {
 			return {
-				label: `${ styleValue[ 0 ].toUpperCase() }${ styleValue.slice(
-					1
-				) }`,
-				value: `${ styleValue }`,
+				label: `${styleValue[0].toUpperCase()}${styleValue.slice(1)}`,
+				value: `${styleValue}`,
 			};
 		}
 	);
@@ -53,37 +51,32 @@ export default function PostTitleFontStyleSettings( {
 		<SelectControl
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
-			help={ __( 'Select the font style.', 'caledros-basic-blocks' ) }
-			value={ postTitleFontStyle }
+			help={__('Select the font style.', 'caledros-basic-blocks')}
+			value={postTitleFontStyle}
 			options={
 				fontStyleOptions.length === 0
 					? defaultFontStyles
 					: fontStyleOptions
 			}
-			onChange={ ( newFontStyle ) => {
-				const availableFontWeights = doesFontExist(
-					postTitleFontFamily
-				)
-					? getAvailableFontWeights(
-							postTitleFontFamily,
-							newFontStyle
-					  )
+			onChange={(newFontStyle) => {
+				const availableFontWeights = doesFontExist(postTitleFontFamily)
+					? getAvailableFontWeights(postTitleFontFamily, newFontStyle)
 					: [];
 
 				const newFontWeight = availableFontWeights.includes(
 					postTitleFontWeight
 				)
 					? postTitleFontWeight
-					: availableFontWeights[ 0 ];
+					: availableFontWeights[0];
 
-				setAttributes( {
+				setAttributes({
 					postTitleFontStyle: newFontStyle,
-					...( doesFontExist( postTitleFontFamily ) &&
+					...(doesFontExist(postTitleFontFamily) &&
 						postTitleFontWeight !== newFontWeight && {
 							postTitleFontWeight: newFontWeight,
-						} ),
-				} );
-			} }
+						}),
+				});
+			}}
 		/>
 	);
 }

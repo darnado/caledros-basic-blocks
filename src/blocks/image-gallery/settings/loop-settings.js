@@ -21,26 +21,26 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function LoopSettings( { attributes, setAttributes } ) {
+export default function LoopSettings({ attributes, setAttributes }) {
 	const { enableLoop, galleryEffect, images } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Loop', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Loop', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				checked={ enableLoop }
-				disabled={ galleryEffect === 'coverflow' && images.length < 3 }
-				label={ __( 'Enable loop', 'caledros-basic-blocks' ) }
-				help={ __(
+				checked={enableLoop}
+				disabled={galleryEffect === 'coverflow' && images.length < 3}
+				label={__('Enable loop', 'caledros-basic-blocks')}
+				help={__(
 					'Enable the continuous loop mode.',
 					'caledros-basic-blocks'
-				) }
-				onChange={ ( newValue ) => {
-					setAttributes( { enableLoop: newValue } );
-				} }
+				)}
+				onChange={(newValue) => {
+					setAttributes({ enableLoop: newValue });
+				}}
 			/>
 		</PanelBody>
 	);

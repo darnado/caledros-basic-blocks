@@ -21,32 +21,30 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function SpaceBetweenIconsSettings( {
+export default function SpaceBetweenIconsSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { iconsGap } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Space between icons', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Space between icons', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Adjust the spacing (px) between the icons',
 					'caledros-basic-blocks'
-				) }
-				initialPosition={ iconsGap }
-				value={ iconsGap }
-				max={ 100 }
-				min={ 0 }
-				step={ 1 }
-				onChange={ ( newValue ) =>
-					setAttributes( { iconsGap: newValue } )
-				}
+				)}
+				initialPosition={iconsGap}
+				value={iconsGap}
+				max={100}
+				min={0}
+				step={1}
+				onChange={(newValue) => setAttributes({ iconsGap: newValue })}
 			/>
 		</PanelBody>
 	);

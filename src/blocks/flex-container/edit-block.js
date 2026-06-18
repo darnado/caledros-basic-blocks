@@ -55,7 +55,7 @@ import AlignItemsTabletSettings from './settings/align-items-tablet-settings';
 import AlignItemsMobileSettings from './settings/align-items-mobile-settings';
 import BlurSettings from './settings/blur-settings';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	// Block attributes
 	const {
 		containerWidth,
@@ -86,17 +86,17 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	} = attributes;
 
 	// Function to generate the content of background-image
-	const bgImageCssVariable = ( imgUrl, gradient, theme ) => {
-		if ( ! imgUrl && ! gradient ) {
+	const bgImageCssVariable = (imgUrl, gradient, theme) => {
+		if (!imgUrl && !gradient) {
 			return {};
 		}
 		return {
-			[ `--cbb-${ theme }-bg-gradient` ]: [
+			[`--cbb-${theme}-bg-gradient`]: [
 				gradient,
-				imgUrl && `url(${ imgUrl })`,
+				imgUrl && `url(${imgUrl})`,
 			]
-				.filter( ( value ) => value )
-				.join( ', ' ),
+				.filter((value) => value)
+				.join(', '),
 		};
 	};
 
@@ -106,15 +106,15 @@ export default function EditBlock( { attributes, setAttributes } ) {
 		containerBoxShadow.enabled && 'cbb-flex-container--has-box-shadow',
 		containerBorder.width !== '0px' &&
 			containerBorder.style !== 'none' &&
-			( containerBorder.lightColor !== '#00000000' ||
-				containerBorder.darkColor !== '#00000000' ) &&
+			(containerBorder.lightColor !== '#00000000' ||
+				containerBorder.darkColor !== '#00000000') &&
 			'cbb-flex-container--has-border',
-		( containerLightBackgroundColor !== '#00000000' ||
-			containerDarkBackgroundColor !== '#00000000' ) &&
+		(containerLightBackgroundColor !== '#00000000' ||
+			containerDarkBackgroundColor !== '#00000000') &&
 			'cbb-flex-container--has-bg-color',
-		( containerLightBackgroundGradient !== '' ||
+		(containerLightBackgroundGradient !== '' ||
 			containerDarkBackgroundGradient !== '' ||
-			containerBackgroundImage.url ) &&
+			containerBackgroundImage.url) &&
 			'cbb-flex-container--has-bg-gradient',
 		fullWidthTabletEnabled && 'cbb-flex-container--full-width-tablet',
 		fullWidthMobileEnabled && 'cbb-flex-container--full-width-mobile',
@@ -128,46 +128,46 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			'cbb-flex-container--custom-align-items-mobile',
 		containerBlur.enabled && 'cbb-flex-container--has-blur',
 	]
-		.filter( ( className ) => className )
-		.join( ' ' );
+		.filter((className) => className)
+		.join(' ');
 
 	// Block properties
-	const blockProperties = useBlockProps( {
-		className: `${ classNamesList }`,
+	const blockProperties = useBlockProps({
+		className: `${classNamesList}`,
 		style: {
-			maxWidth: `${ containerWidth }`,
+			maxWidth: `${containerWidth}`,
 			width: '100%',
 			margin: containerMargin.differentMarginsEnabled
-				? `${ containerMargin.top } ${ containerMargin.right } ${ containerMargin.bottom } ${ containerMargin.left }`
-				: `${ containerMargin.top }`,
-			...( containerPadding.useGlobalPadding
+				? `${containerMargin.top} ${containerMargin.right} ${containerMargin.bottom} ${containerMargin.left}`
+				: `${containerMargin.top}`,
+			...(containerPadding.useGlobalPadding
 				? {
 						'--cbb-fc-padding':
 							'0px var(--wp--style--root--padding-right, 0px) 0px var(--wp--style--root--padding-left, 0px)',
-				  }
+					}
 				: {
 						'--cbb-fc-padding':
 							containerPadding.differentPaddingsEnabled
-								? `${ containerPadding.top } ${ containerPadding.right } ${ containerPadding.bottom } ${ containerPadding.left }`
-								: `${ containerPadding.top }`,
-				  } ),
+								? `${containerPadding.top} ${containerPadding.right} ${containerPadding.bottom} ${containerPadding.left}`
+								: `${containerPadding.top}`,
+					}),
 			'--cbb-fdir-lg': containerFlexDirection.desktop,
 			'--cbb-fdir-md': containerFlexDirection.tablet,
 			'--cbb-fdir-sm': containerFlexDirection.mobile,
 			'--cbb-just-content': containerJustifyContent,
-			...( containerJustifyContentTablet.enabled && {
+			...(containerJustifyContentTablet.enabled && {
 				'--cbb-just-content-md': containerJustifyContentTablet.value,
-			} ),
-			...( containerJustifyContentMobile.enabled && {
+			}),
+			...(containerJustifyContentMobile.enabled && {
 				'--cbb-just-content-sm': containerJustifyContentMobile.value,
-			} ),
+			}),
 			'--cbb-align-items': containerAlignItems,
-			...( containerAlignItemsTablet.enabled && {
+			...(containerAlignItemsTablet.enabled && {
 				'--cbb-align-items-md': containerAlignItemsTablet.value,
-			} ),
-			...( containerAlignItemsMobile.enabled && {
+			}),
+			...(containerAlignItemsMobile.enabled && {
 				'--cbb-align-items-sm': containerAlignItemsMobile.value,
-			} ),
+			}),
 			'--cbb-min-height': containerMinHeight,
 			'--cbb-row-gap': containerRowGap,
 			'--cbb-column-gap': containerColumnGap,
@@ -183,21 +183,21 @@ export default function EditBlock( { attributes, setAttributes } ) {
 				containerLightBackgroundGradient,
 				'light'
 			),
-			'--cbb-bg-position': `${ containerBgImageFocalPoint.x * 100 }% ${
+			'--cbb-bg-position': `${containerBgImageFocalPoint.x * 100}% ${
 				containerBgImageFocalPoint.y * 100
 			}%`,
 			'--cbb-br-style':
 				containerBorder.width !== '0px' &&
 				containerBorder.style !== 'none' &&
-				( containerBorder.lightColor !== '#00000000' ||
-					containerBorder.darkColor !== '#00000000' )
+				(containerBorder.lightColor !== '#00000000' ||
+					containerBorder.darkColor !== '#00000000')
 					? containerBorder.style
 					: 'none',
 			'--cbb-br-width':
 				containerBorder.width !== '0px' &&
 				containerBorder.style !== 'none' &&
-				( containerBorder.lightColor !== '#00000000' ||
-					containerBorder.darkColor !== '#00000000' )
+				(containerBorder.lightColor !== '#00000000' ||
+					containerBorder.darkColor !== '#00000000')
 					? containerBorder.width
 					: '0px',
 			'--cbb-light-border-color':
@@ -212,22 +212,22 @@ export default function EditBlock( { attributes, setAttributes } ) {
 				containerBorder.darkColor !== '#00000000'
 					? containerBorder.darkColor
 					: '#00000000',
-			...( containerBlur.enabled && {
-				'--cbb-blur': `${ containerBlur.value }`,
-			} ),
+			...(containerBlur.enabled && {
+				'--cbb-blur': `${containerBlur.value}`,
+			}),
 			'--cbb-br-radius': containerBorder.radius,
-			'--cbb-light-box-shadow': `${ containerBoxShadow.style } ${ containerBoxShadow.hOffset } ${ containerBoxShadow.vOffset } ${ containerBoxShadow.blur } ${ containerBoxShadow.spread } ${ containerBoxShadow.lightColor }`,
-			'--cbb-dark-box-shadow': `${ containerBoxShadow.style } ${ containerBoxShadow.hOffset } ${ containerBoxShadow.vOffset } ${ containerBoxShadow.blur } ${ containerBoxShadow.spread } ${ containerBoxShadow.darkColor }`,
+			'--cbb-light-box-shadow': `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.lightColor}`,
+			'--cbb-dark-box-shadow': `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.darkColor}`,
 			'--cbb-overflow': containerOverflow,
 		},
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'layout',
 							title: 'Layout',
@@ -240,152 +240,152 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'layout' ) {
+					{(tab) => {
+						if (tab.name === 'layout') {
 							return (
 								<>
 									<FlexDirectionSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></FlexDirectionSettings>
 									<FlexDirectionTabletSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></FlexDirectionTabletSettings>
 									<FlexDirectionMobileSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></FlexDirectionMobileSettings>
 									<WidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></WidthSettings>
 									<FullWidthTabletSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></FullWidthTabletSettings>
 									<FullWidthMobileSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></FullWidthMobileSettings>
 									<MinHeightSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></MinHeightSettings>
 									<RowGapSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></RowGapSettings>
 									<ColumnGapSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ColumnGapSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<BackgroundLightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundLightColorSettings>
 									<BackgroundDarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundDarkColorSettings>
 									<BackgroundImageSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundImageSettings>
 									<BackgroundLightGradientSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundLightGradientSettings>
 									<BackgroundDarkGradientSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundDarkGradientSettings>
 									<BorderStyleSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderStyleSettings>
 									<BorderWidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderWidthSettings>
 									<BorderLightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderLightColorSettings>
 									<BorderDarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderDarkColorSettings>
 									<BorderRadiusSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BorderRadiusSettings>
 									<BoxShadowSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BoxShadowSettings>
 									<BlurSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BlurSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<MarginSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></MarginSettings>
 									<PaddingSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></PaddingSettings>
 									<JustifyContentSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></JustifyContentSettings>
 									<JustifyContentTabletSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></JustifyContentTabletSettings>
 									<JustifyContentMobileSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></JustifyContentMobileSettings>
 									<AlignItemsSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></AlignItemsSettings>
 									<AlignItemsTabletSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></AlignItemsTabletSettings>
 									<AlignItemsMobileSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></AlignItemsMobileSettings>
 									<OverflowSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></OverflowSettings>
 								</>
 							);
 						}
 						return null;
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			<div { ...blockProperties }>
+			<div {...blockProperties}>
 				<InnerBlocks />
 			</div>
 		</>

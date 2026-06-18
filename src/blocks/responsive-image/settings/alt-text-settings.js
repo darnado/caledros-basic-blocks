@@ -21,27 +21,27 @@
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function AltTextSettings( { attributes, setAttributes } ) {
+export default function AltTextSettings({ attributes, setAttributes }) {
 	const { sourceImage } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Alt text', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Alt text', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<TextControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				onChange={(newValue) => {
+					setAttributes({
 						sourceImage: { ...sourceImage, alt: newValue },
-					} );
-				} }
-				value={ sourceImage.alt }
-				help={ __(
+					});
+				}}
+				value={sourceImage.alt}
+				help={__(
 					'Write the alt text for the image.',
 					'caledros-basic-blocks'
-				) }
+				)}
 			/>
 		</PanelBody>
 	);

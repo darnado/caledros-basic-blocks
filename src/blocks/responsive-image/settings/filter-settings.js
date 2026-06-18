@@ -29,15 +29,15 @@ import { __ } from '@wordpress/i18n';
 import { useSettings } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 
-export default function FilterSettings( { attributes, setAttributes } ) {
+export default function FilterSettings({ attributes, setAttributes }) {
 	const { imgFilter } = attributes;
 
 	// Recover the numeric value of the image filter
-	const filterNumber = parseInt( imgFilter.content ) || 0;
+	const filterNumber = parseInt(imgFilter.content) || 0;
 
 	// Function for setting a valid unit for each type of filter
-	const setValidUnit = ( filterType ) => {
-		switch ( true ) {
+	const setValidUnit = (filterType) => {
+		switch (true) {
 			case filterType === 'blur':
 				return 'px';
 			case filterType === 'hue-rotate':
@@ -50,7 +50,7 @@ export default function FilterSettings( { attributes, setAttributes } ) {
 				'opacity',
 				'saturate',
 				'sepia',
-			].includes( filterType ):
+			].includes(filterType):
 				return '%';
 			default:
 				return '';
@@ -58,8 +58,8 @@ export default function FilterSettings( { attributes, setAttributes } ) {
 	};
 
 	// Function for setting a maximum value for each type of filter
-	const setMaxValue = ( filterType, numericValue ) => {
-		switch ( true ) {
+	const setMaxValue = (filterType, numericValue) => {
+		switch (true) {
 			case [
 				'blur',
 				'grayscale',
@@ -67,9 +67,9 @@ export default function FilterSettings( { attributes, setAttributes } ) {
 				'opacity',
 				'saturate',
 				'sepia',
-			].includes( filterType ) && numericValue > 100:
+			].includes(filterType) && numericValue > 100:
 				return 100;
-			case [ 'brightness', 'contrast' ].includes( filterType ) &&
+			case ['brightness', 'contrast'].includes(filterType) &&
 				numericValue > 200:
 				return 200;
 			default:
@@ -77,63 +77,60 @@ export default function FilterSettings( { attributes, setAttributes } ) {
 		}
 	};
 
-	const [ themeJsonPalette, defaultPalette ] = useSettings(
+	const [themeJsonPalette, defaultPalette] = useSettings(
 		'color.palette',
 		'color.defaultPalette'
 	);
 
 	// Define fallback color options
-	const fallbackColorOptions = themeJsonPalette.map( ( registeredColor ) => {
+	const fallbackColorOptions = themeJsonPalette.map((registeredColor) => {
 		return {
-			color: `var(--wp--preset--color--${ registeredColor.slug })`,
+			color: `var(--wp--preset--color--${registeredColor.slug})`,
 			name: registeredColor.name,
 		};
-	} );
+	});
 
 	// Get available color palettes present in the Full Site Editor
-	const editorSettings = select( 'core/editor' )?.getEditorSettings();
+	const editorSettings = select('core/editor')?.getEditorSettings();
 	const editorPalette =
 		editorSettings?.__experimentalFeatures?.color?.palette;
 
 	// Function to get the color palettes
-	const createColorOptions = ( colorPalette, paletteType ) => {
+	const createColorOptions = (colorPalette, paletteType) => {
 		return {
-			colors: colorPalette?.[ paletteType ]?.map( ( palette ) => {
+			colors: colorPalette?.[paletteType]?.map((palette) => {
 				return {
-					color: `var(--wp--preset--color--${ palette.slug })`,
+					color: `var(--wp--preset--color--${palette.slug})`,
 					name: palette.name,
 				};
-			} ),
-			name: `${ paletteType }`,
+			}),
+			name: `${paletteType}`,
 		};
 	};
 
 	// Available color palettes
-	const defaultColors = createColorOptions( editorPalette, 'default' );
-	const themeColors = createColorOptions( editorPalette, 'theme' );
-	const customColors = createColorOptions( editorPalette, 'custom' );
+	const defaultColors = createColorOptions(editorPalette, 'default');
+	const themeColors = createColorOptions(editorPalette, 'theme');
+	const customColors = createColorOptions(editorPalette, 'custom');
 
 	// Define color options for the controller
 	const colorOptions = [
-		...( defaultPalette ? [ defaultColors ] : [] ),
+		...(defaultPalette ? [defaultColors] : []),
 		themeColors,
-		...( customColors.colors ? [ customColors ] : [] ),
+		...(customColors.colors ? [customColors] : []),
 	];
 
 	return (
 		<PanelBody
-			title={ __( 'Filter', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Filter', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
-					'Choose the filter type.',
-					'caledros-basic-blocks'
-				) }
-				value={ imgFilter.type }
-				options={ [
+				help={__('Choose the filter type.', 'caledros-basic-blocks')}
+				value={imgFilter.type}
+				options={[
 					{
 						label: 'None',
 						value: 'none',
@@ -178,311 +175,299 @@ export default function FilterSettings( { attributes, setAttributes } ) {
 						label: 'Sepia',
 						value: 'sepia',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						imgFilter: {
 							...imgFilter,
 							type: newValue,
-							content: `${ setMaxValue(
+							content: `${setMaxValue(
 								newValue,
 								filterNumber
-							) }${ setValidUnit( newValue ) }`,
+							)}${setValidUnit(newValue)}`,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ imgFilter.type === 'blur' && (
+			{imgFilter.type === 'blur' && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the blur value (px).',
 						'caledros-basic-blocks'
-					) }
-					value={ filterNumber }
-					max={ 100 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={filterNumber}
+					max={100}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${
-									newValue > 100 ? 100 : newValue
-								}px`,
+								content: `${newValue > 100 ? 100 : newValue}px`,
 							},
-						} )
+						})
 					}
 				/>
-			) }
-			{ imgFilter.type === 'brightness' && (
+			)}
+			{imgFilter.type === 'brightness' && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the brightness value (%).',
 						'caledros-basic-blocks'
-					) }
-					value={ filterNumber }
-					max={ 200 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={filterNumber}
+					max={200}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${ newValue }%`,
+								content: `${newValue}%`,
 							},
-						} )
+						})
 					}
 				/>
-			) }
-			{ imgFilter.type === 'contrast' && (
+			)}
+			{imgFilter.type === 'contrast' && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the contrast value (%).',
 						'caledros-basic-blocks'
-					) }
-					value={ filterNumber }
-					max={ 200 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={filterNumber}
+					max={200}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${ newValue }%`,
+								content: `${newValue}%`,
 							},
-						} )
+						})
 					}
 				/>
-			) }
-			{ imgFilter.type === 'drop-shadow' && (
+			)}
+			{imgFilter.type === 'drop-shadow' && (
 				<>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the horizontal offset (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( imgFilter.hOffset ) }
-						max={ 100 }
-						min={ -100 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(imgFilter.hOffset)}
+						max={100}
+						min={-100}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgFilter: {
 									...imgFilter,
-									hOffset: `${ newValue }px`,
+									hOffset: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the vertical offset (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( imgFilter.vOffset ) }
-						max={ 100 }
-						min={ -100 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(imgFilter.vOffset)}
+						max={100}
+						min={-100}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgFilter: {
 									...imgFilter,
-									vOffset: `${ newValue }px`,
+									vOffset: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the blur (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( imgFilter.blur ) }
-						max={ 100 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(imgFilter.blur)}
+						max={100}
+						min={0}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgFilter: {
 									...imgFilter,
-									blur: `${ newValue }px`,
+									blur: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<p className="cbb-editor-label">
-						{ __(
+						{__(
 							'Choose a color for the drop shadow',
 							'caledros-basic-blocks'
-						) }
+						)}
 					</p>
 					<ColorPalette
 						colors={
 							editorPalette ? colorOptions : fallbackColorOptions
 						}
-						value={ imgFilter.color }
-						onChange={ ( newColor ) =>
-							setAttributes( {
+						value={imgFilter.color}
+						onChange={(newColor) =>
+							setAttributes({
 								imgFilter: {
 									...imgFilter,
 									color: newColor || '#00000000',
 								},
-							} )
+							})
 						}
-						enableAlpha={ true }
-						clearable={ true }
+						enableAlpha={true}
+						clearable={true}
 					/>
 				</>
-			) }
-			{ imgFilter.type === 'grayscale' && (
+			)}
+			{imgFilter.type === 'grayscale' && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the grayscale value (%).',
 						'caledros-basic-blocks'
-					) }
-					value={ filterNumber > 100 ? 100 : filterNumber }
-					max={ 100 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={filterNumber > 100 ? 100 : filterNumber}
+					max={100}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${
-									newValue > 100 ? 100 : newValue
-								}%`,
+								content: `${newValue > 100 ? 100 : newValue}%`,
 							},
-						} )
+						})
 					}
 				/>
-			) }
-			{ imgFilter.type === 'hue-rotate' && (
+			)}
+			{imgFilter.type === 'hue-rotate' && (
 				<AnglePickerControl
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${ newValue }deg`,
+								content: `${newValue}deg`,
 							},
-						} )
+						})
 					}
-					value={ filterNumber }
-					label={ __(
+					value={filterNumber}
+					label={__(
 						'Hue-rotate value (deg)',
 						'caledros-basic-blocks'
-					) }
+					)}
 				/>
-			) }
-			{ imgFilter.type === 'invert' && (
+			)}
+			{imgFilter.type === 'invert' && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the invert value (%).',
 						'caledros-basic-blocks'
-					) }
-					value={ filterNumber > 100 ? 100 : filterNumber }
-					max={ 100 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={filterNumber > 100 ? 100 : filterNumber}
+					max={100}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${
-									newValue > 100 ? 100 : newValue
-								}%`,
+								content: `${newValue > 100 ? 100 : newValue}%`,
 							},
-						} )
+						})
 					}
 				/>
-			) }
-			{ imgFilter.type === 'opacity' && (
+			)}
+			{imgFilter.type === 'opacity' && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the opacity value (%).',
 						'caledros-basic-blocks'
-					) }
-					value={ filterNumber > 100 ? 100 : filterNumber }
-					max={ 100 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={filterNumber > 100 ? 100 : filterNumber}
+					max={100}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${
-									newValue > 100 ? 100 : newValue
-								}%`,
+								content: `${newValue > 100 ? 100 : newValue}%`,
 							},
-						} )
+						})
 					}
 				/>
-			) }
-			{ imgFilter.type === 'saturate' && (
+			)}
+			{imgFilter.type === 'saturate' && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the saturation value (%).',
 						'caledros-basic-blocks'
-					) }
-					value={ filterNumber > 100 ? 100 : filterNumber }
-					max={ 100 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={filterNumber > 100 ? 100 : filterNumber}
+					max={100}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${
-									newValue > 100 ? 100 : newValue
-								}%`,
+								content: `${newValue > 100 ? 100 : newValue}%`,
 							},
-						} )
+						})
 					}
 				/>
-			) }
-			{ imgFilter.type === 'sepia' && (
+			)}
+			{imgFilter.type === 'sepia' && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Choose the sepia filter value (%).',
 						'caledros-basic-blocks'
-					) }
-					value={ filterNumber > 100 ? 100 : filterNumber }
-					max={ 100 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={filterNumber > 100 ? 100 : filterNumber}
+					max={100}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							imgFilter: {
 								...imgFilter,
-								content: `${
-									newValue > 100 ? 100 : newValue
-								}%`,
+								content: `${newValue > 100 ? 100 : newValue}%`,
 							},
-						} )
+						})
 					}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

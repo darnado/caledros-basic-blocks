@@ -22,45 +22,42 @@ import { PanelBody, Button } from '@wordpress/components';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-export default function ImagesSettings( { attributes, setAttributes } ) {
+export default function ImagesSettings({ attributes, setAttributes }) {
 	const { images, enableLoop, galleryEffect } = attributes;
 
 	// Functions
-	const onSelectImages = ( newImages ) => {
-		setAttributes( {
-			images: newImages.map( ( image ) => ( {
+	const onSelectImages = (newImages) => {
+		setAttributes({
+			images: newImages.map((image) => ({
 				id: image.id,
 				url: image.url,
 				alt: image.alt,
-			} ) ),
-			...( newImages.length < 3 &&
+			})),
+			...(newImages.length < 3 &&
 				enableLoop &&
-				galleryEffect === 'coverflow' && { enableLoop: false } ),
-		} );
+				galleryEffect === 'coverflow' && { enableLoop: false }),
+		});
 	};
 
 	return (
 		<PanelBody
-			title={ __( 'Image Settings', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Image Settings', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<MediaUploadCheck>
 				<MediaUpload
-					onSelect={ onSelectImages }
-					allowedTypes={ [ 'image' ] }
-					multiple={ true }
-					gallery={ true }
-					value={ images.map( ( image ) => image.id ) }
-					render={ ( { open } ) => (
-						<Button onClick={ open } variant="secondary">
-							{ images.length === 0
-								? __( 'Add Images', 'caledros-basic-blocks' )
-								: __(
-										'Edit Gallery',
-										'caledros-basic-blocks'
-								  ) }
+					onSelect={onSelectImages}
+					allowedTypes={['image']}
+					multiple={true}
+					gallery={true}
+					value={images.map((image) => image.id)}
+					render={({ open }) => (
+						<Button onClick={open} variant="secondary">
+							{images.length === 0
+								? __('Add Images', 'caledros-basic-blocks')
+								: __('Edit Gallery', 'caledros-basic-blocks')}
 						</Button>
-					) }
+					)}
 				/>
 			</MediaUploadCheck>
 		</PanelBody>

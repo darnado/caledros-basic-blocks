@@ -22,38 +22,36 @@ import { ComboboxControl } from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
 
-export default function PageLinkSettings( { attributes, setAttributes } ) {
+export default function PageLinkSettings({ attributes, setAttributes }) {
 	const { menuLink } = attributes;
 	let linkOptions = [];
 
 	// Fetch available links for the menu item (pages, posts)
-	const { hasResolved, records } = useEntityRecords( 'postType', 'page', {
+	const { hasResolved, records } = useEntityRecords('postType', 'page', {
 		per_page: -1,
 		status: 'publish',
-	} );
+	});
 
 	// Recover the available links
-	if ( hasResolved ) {
-		linkOptions = records.map( ( item ) => ( {
+	if (hasResolved) {
+		linkOptions = records.map((item) => ({
 			label: item.title.rendered,
 			value: item.link,
-		} ) );
+		}));
 	}
 
 	return (
 		<ComboboxControl
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
-			label={ __( 'Page link', 'caledros-basic-blocks' ) }
-			help={ __(
+			label={__('Page link', 'caledros-basic-blocks')}
+			help={__(
 				'Select the page to link with the menu item.',
 				'caledros-basic-blocks'
-			) }
-			value={ menuLink }
-			options={ linkOptions }
-			onChange={ ( linkValue ) =>
-				setAttributes( { menuLink: linkValue } )
-			}
+			)}
+			value={menuLink}
+			options={linkOptions}
+			onChange={(linkValue) => setAttributes({ menuLink: linkValue })}
 		/>
 	);
 }

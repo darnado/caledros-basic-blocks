@@ -21,7 +21,7 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { escapeHTML } from '@wordpress/escape-html';
 
-export default function SaveBlock( { attributes } ) {
+export default function SaveBlock({ attributes }) {
 	const {
 		sourceImage,
 		imgWidth,
@@ -46,22 +46,22 @@ export default function SaveBlock( { attributes } ) {
 	) => {
 		const { top, right, bottom, left } = dimensionValue;
 
-		if ( ! differentValuesEnabled && parseInt( top ) === 0 ) {
+		if (!differentValuesEnabled && parseInt(top) === 0) {
 			return {};
 		}
-		if ( differentValuesEnabled ) {
+		if (differentValuesEnabled) {
 			return {
-				[ dimensionName ]: `${ top } ${ right } ${ bottom } ${ left }`,
+				[dimensionName]: `${top} ${right} ${bottom} ${left}`,
 			};
 		}
 		return {
-			[ dimensionName ]: `${ top }`,
+			[dimensionName]: `${top}`,
 		};
 	};
 
-	const blockProps = useBlockProps.save( {
+	const blockProps = useBlockProps.save({
 		className: `cbb-resp-img${
-			( imgBoxShadow.enabled && imgBoxShadow.style ) === 'inset'
+			(imgBoxShadow.enabled && imgBoxShadow.style) === 'inset'
 				? ' inset-shadow'
 				: ''
 		}`,
@@ -77,140 +77,140 @@ export default function SaveBlock( { attributes } ) {
 				imgPadding.differentPaddingsEnabled
 			),
 			maxWidth: imgWidth.defaultWidthEnabled
-				? `${ sourceImage.width }px`
+				? `${sourceImage.width}px`
 				: imgWidth.content,
 			height: imgHeight.defaultHeightEnabled
-				? `${ sourceImage.height }px`
+				? `${sourceImage.height}px`
 				: imgHeight.content,
-			...( imgBoxShadow.enabled &&
+			...(imgBoxShadow.enabled &&
 				imgBoxShadow.style === 'inset' && {
-					'--inset-box-shadow': `${ imgBoxShadow.style } ${ imgBoxShadow.hOffset } ${ imgBoxShadow.vOffset } ${ imgBoxShadow.blur } ${ imgBoxShadow.spread } ${ imgBoxShadow.color }`,
-				} ),
-			...( imgBoxShadow.enabled &&
+					'--inset-box-shadow': `${imgBoxShadow.style} ${imgBoxShadow.hOffset} ${imgBoxShadow.vOffset} ${imgBoxShadow.blur} ${imgBoxShadow.spread} ${imgBoxShadow.color}`,
+				}),
+			...(imgBoxShadow.enabled &&
 				imgBoxShadow.style === 'inset' &&
 				imgBorder.radius !== '0px' &&
 				imgBorder.radius !== '0%' && {
 					'--inset-border-radius': imgBorder.radius,
-				} ),
-			...( lazyLoadingOverlayColor !== '#00000000' && {
+				}),
+			...(lazyLoadingOverlayColor !== '#00000000' && {
 				'--lazy-loading-overlay-color': lazyLoadingOverlayColor,
-			} ),
+			}),
 		},
-	} );
+	});
 	return (
 		<>
-			{ imgLink && (
-				<figure { ...blockProps }>
-					<a className="cbb-resp-img__link" href={ imgLink }>
+			{imgLink && (
+				<figure {...blockProps}>
+					<a className="cbb-resp-img__link" href={imgLink}>
 						<img
-							src={ sourceImage.url }
-							alt={ escapeHTML( sourceImage.alt ) }
-							width={ sourceImage.width }
-							height={ sourceImage.height }
-							{ ...( imgLazyLoad && { loading: 'lazy' } ) }
-							{ ...( imgLazyLoad && {
+							src={sourceImage.url}
+							alt={escapeHTML(sourceImage.alt)}
+							width={sourceImage.width}
+							height={sourceImage.height}
+							{...(imgLazyLoad && { loading: 'lazy' })}
+							{...(imgLazyLoad && {
 								className: 'lazy-image',
-							} ) }
-							style={ {
-								objectFit: `${ imgObjectFit }`,
+							})}
+							style={{
+								objectFit: `${imgObjectFit}`,
 								width: '100%',
 								height: '100%',
-								aspectRatio: `${ sourceImage.width }/${ sourceImage.height }`,
-								...( imgBorder.width !== '0px' &&
+								aspectRatio: `${sourceImage.width}/${sourceImage.height}`,
+								...(imgBorder.width !== '0px' &&
 									imgBorder.style !== 'none' &&
 									imgBorder.color !== '#00000000' && {
 										borderStyle: imgBorder.style,
-									} ),
-								...( imgBorder.width !== '0px' &&
+									}),
+								...(imgBorder.width !== '0px' &&
 									imgBorder.style !== 'none' &&
 									imgBorder.color !== '#00000000' && {
 										borderWidth: imgBorder.width,
-									} ),
-								...( imgBorder.width !== '0px' &&
+									}),
+								...(imgBorder.width !== '0px' &&
 									imgBorder.style !== 'none' &&
 									imgBorder.color !== '#00000000' && {
 										borderColor: imgBorder.color,
-									} ),
-								...( imgBorder.radius !== '0px' &&
+									}),
+								...(imgBorder.radius !== '0px' &&
 									imgBorder.radius !== '0%' && {
 										borderRadius: imgBorder.radius,
-									} ),
-								...( imgBoxShadow.enabled &&
+									}),
+								...(imgBoxShadow.enabled &&
 									imgBoxShadow.style !== 'inset' && {
-										boxShadow: `${ imgBoxShadow.style } ${ imgBoxShadow.hOffset } ${ imgBoxShadow.vOffset } ${ imgBoxShadow.blur } ${ imgBoxShadow.spread } ${ imgBoxShadow.color }`,
-									} ),
-								...( ! [ 'none', 'drop-shadow' ].includes(
+										boxShadow: `${imgBoxShadow.style} ${imgBoxShadow.hOffset} ${imgBoxShadow.vOffset} ${imgBoxShadow.blur} ${imgBoxShadow.spread} ${imgBoxShadow.color}`,
+									}),
+								...(!['none', 'drop-shadow'].includes(
 									imgFilter.type
 								) && {
-									filter: `${ imgFilter.type }(${ imgFilter.content })`,
-								} ),
-								...( imgFilter.type === 'drop-shadow' && {
-									filter: `${ imgFilter.type }(${ imgFilter.hOffset } ${ imgFilter.vOffset } ${ imgFilter.blur } ${ imgFilter.color })`,
-								} ),
-							} }
-							srcSet={ sourceImage.srcSet }
-							sizes={ sourceImage.sizes }
+									filter: `${imgFilter.type}(${imgFilter.content})`,
+								}),
+								...(imgFilter.type === 'drop-shadow' && {
+									filter: `${imgFilter.type}(${imgFilter.hOffset} ${imgFilter.vOffset} ${imgFilter.blur} ${imgFilter.color})`,
+								}),
+							}}
+							srcSet={sourceImage.srcSet}
+							sizes={sourceImage.sizes}
 						/>
 					</a>
-					{ imgCaption.enabled && (
-						<figcaption>{ imgCaption.content }</figcaption>
-					) }
+					{imgCaption.enabled && (
+						<figcaption>{imgCaption.content}</figcaption>
+					)}
 				</figure>
-			) }
-			{ ! imgLink && (
-				<figure { ...blockProps }>
+			)}
+			{!imgLink && (
+				<figure {...blockProps}>
 					<img
-						src={ sourceImage.url }
-						alt={ escapeHTML( sourceImage.alt ) }
-						width={ sourceImage.width }
-						height={ sourceImage.height }
-						{ ...( imgLazyLoad && { loading: 'lazy' } ) }
-						{ ...( imgLazyLoad && { className: 'lazy-image' } ) }
-						style={ {
-							objectFit: `${ imgObjectFit }`,
+						src={sourceImage.url}
+						alt={escapeHTML(sourceImage.alt)}
+						width={sourceImage.width}
+						height={sourceImage.height}
+						{...(imgLazyLoad && { loading: 'lazy' })}
+						{...(imgLazyLoad && { className: 'lazy-image' })}
+						style={{
+							objectFit: `${imgObjectFit}`,
 							width: '100%',
 							height: '100%',
-							aspectRatio: `${ sourceImage.width }/${ sourceImage.height }`,
-							...( imgBorder.width !== '0px' &&
+							aspectRatio: `${sourceImage.width}/${sourceImage.height}`,
+							...(imgBorder.width !== '0px' &&
 								imgBorder.style !== 'none' &&
 								imgBorder.color !== '#00000000' && {
 									borderStyle: imgBorder.style,
-								} ),
-							...( imgBorder.width !== '0px' &&
+								}),
+							...(imgBorder.width !== '0px' &&
 								imgBorder.style !== 'none' &&
 								imgBorder.color !== '#00000000' && {
 									borderWidth: imgBorder.width,
-								} ),
-							...( imgBorder.width !== '0px' &&
+								}),
+							...(imgBorder.width !== '0px' &&
 								imgBorder.style !== 'none' &&
 								imgBorder.color !== '#00000000' && {
 									borderColor: imgBorder.color,
-								} ),
-							...( imgBorder.radius !== '0px' &&
+								}),
+							...(imgBorder.radius !== '0px' &&
 								imgBorder.radius !== '0%' && {
 									borderRadius: imgBorder.radius,
-								} ),
-							...( imgBoxShadow.enabled &&
+								}),
+							...(imgBoxShadow.enabled &&
 								imgBoxShadow.style !== 'inset' && {
-									boxShadow: `${ imgBoxShadow.style } ${ imgBoxShadow.hOffset } ${ imgBoxShadow.vOffset } ${ imgBoxShadow.blur } ${ imgBoxShadow.spread } ${ imgBoxShadow.color }`,
-								} ),
-							...( ! [ 'none', 'drop-shadow' ].includes(
+									boxShadow: `${imgBoxShadow.style} ${imgBoxShadow.hOffset} ${imgBoxShadow.vOffset} ${imgBoxShadow.blur} ${imgBoxShadow.spread} ${imgBoxShadow.color}`,
+								}),
+							...(!['none', 'drop-shadow'].includes(
 								imgFilter.type
 							) && {
-								filter: `${ imgFilter.type }(${ imgFilter.content })`,
-							} ),
-							...( imgFilter.type === 'drop-shadow' && {
-								filter: `${ imgFilter.type }(${ imgFilter.hOffset } ${ imgFilter.vOffset } ${ imgFilter.blur } ${ imgFilter.color })`,
-							} ),
-						} }
-						srcSet={ sourceImage.srcSet }
-						sizes={ sourceImage.sizes }
+								filter: `${imgFilter.type}(${imgFilter.content})`,
+							}),
+							...(imgFilter.type === 'drop-shadow' && {
+								filter: `${imgFilter.type}(${imgFilter.hOffset} ${imgFilter.vOffset} ${imgFilter.blur} ${imgFilter.color})`,
+							}),
+						}}
+						srcSet={sourceImage.srcSet}
+						sizes={sourceImage.sizes}
 					/>
-					{ imgCaption.enabled && (
-						<figcaption>{ imgCaption.content }</figcaption>
-					) }
+					{imgCaption.enabled && (
+						<figcaption>{imgCaption.content}</figcaption>
+					)}
 				</figure>
-			) }
+			)}
 		</>
 	);
 }

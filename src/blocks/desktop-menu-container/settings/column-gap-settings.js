@@ -22,52 +22,52 @@ import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
-export default function ColumnGapSettings( { attributes, setAttributes } ) {
+export default function ColumnGapSettings({ attributes, setAttributes }) {
 	const { containerColumnGap } = attributes;
-	const [ useNormalColumnGap, setUseNormalColumnGap ] = useState(
+	const [useNormalColumnGap, setUseNormalColumnGap] = useState(
 		containerColumnGap === 'normal' ? true : false
 	);
 	return (
 		<PanelBody
-			title={ __( 'Column gap', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Column gap', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Use normal column gap (default value)',
 					'caledros-basic-blocks'
-				) }
-				checked={ useNormalColumnGap }
-				onChange={ () => {
+				)}
+				checked={useNormalColumnGap}
+				onChange={() => {
 					const temporalValue = useNormalColumnGap ? '0' : 'normal';
-					setUseNormalColumnGap( ( oldValue ) => ! oldValue );
-					setAttributes( { containerColumnGap: temporalValue } );
-				} }
+					setUseNormalColumnGap((oldValue) => !oldValue);
+					setAttributes({ containerColumnGap: temporalValue });
+				}}
 			/>
-			{ ! useNormalColumnGap && (
+			{!useNormalColumnGap && (
 				<RangeControl
 					__nextHasNoMarginBottom
 					__next40pxDefaultSize
-					help={ __(
+					help={__(
 						'Please select the column gap (px) for the flex container.',
 						'caledros-basic-blocks'
-					) }
+					)}
 					value={
-						isNaN( parseInt( containerColumnGap ) )
+						isNaN(parseInt(containerColumnGap))
 							? 0
-							: parseInt( containerColumnGap )
+							: parseInt(containerColumnGap)
 					}
-					max={ 200 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newColumnGap ) =>
-						setAttributes( {
-							containerColumnGap: `${ newColumnGap }px`,
-						} )
+					max={200}
+					min={0}
+					step={1}
+					onChange={(newColumnGap) =>
+						setAttributes({
+							containerColumnGap: `${newColumnGap}px`,
+						})
 					}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

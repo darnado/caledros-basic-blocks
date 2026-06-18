@@ -21,40 +21,40 @@
 import { PanelBody, ToggleControl, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function CaptionSettings( { attributes, setAttributes } ) {
+export default function CaptionSettings({ attributes, setAttributes }) {
 	const { imgCaption } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Caption', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Caption', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				checked={ imgCaption.enabled }
-				label={ __( 'Enable image caption', 'caledros-basic-blocks' ) }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				checked={imgCaption.enabled}
+				label={__('Enable image caption', 'caledros-basic-blocks')}
+				onChange={(newValue) => {
+					setAttributes({
 						imgCaption: { ...imgCaption, enabled: newValue },
-					} );
-				} }
+					});
+				}}
 			/>
-			{ imgCaption.enabled && (
+			{imgCaption.enabled && (
 				<TextControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					onChange={(newValue) => {
+						setAttributes({
 							imgCaption: { ...imgCaption, content: newValue },
-						} );
-					} }
-					value={ imgCaption.content }
-					help={ __(
+						});
+					}}
+					value={imgCaption.content}
+					help={__(
 						'Write the image caption.',
 						'caledros-basic-blocks'
-					) }
+					)}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

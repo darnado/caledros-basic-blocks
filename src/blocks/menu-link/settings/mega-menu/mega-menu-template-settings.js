@@ -22,10 +22,10 @@ import { PanelBody, ComboboxControl } from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
 
-export default function MegaMenuTemplateSettings( {
+export default function MegaMenuTemplateSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { megaMenuSlug } = attributes;
 
 	let megaMenuOptions = [];
@@ -38,32 +38,32 @@ export default function MegaMenuTemplateSettings( {
 	);
 
 	// Recover the available template parts for the mega menu
-	if ( hasResolved ) {
+	if (hasResolved) {
 		megaMenuOptions = records
-			.filter( ( item ) => item.area === 'mega-menu' )
-			.map( ( item ) => ( {
+			.filter((item) => item.area === 'mega-menu')
+			.map((item) => ({
 				label: item.title.rendered,
 				value: item.slug,
-			} ) );
+			}));
 	}
 
 	return (
 		<PanelBody
-			title={ __( 'Mega menu template', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Mega menu template', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ComboboxControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Select the template for the mega menu.',
 					'caledros-basic-blocks'
-				) }
-				value={ megaMenuSlug }
-				options={ megaMenuOptions }
-				onChange={ ( slugValue ) => {
-					setAttributes( { megaMenuSlug: slugValue } );
-				} }
+				)}
+				value={megaMenuSlug}
+				options={megaMenuOptions}
+				onChange={(slugValue) => {
+					setAttributes({ megaMenuSlug: slugValue });
+				}}
 			/>
 		</PanelBody>
 	);

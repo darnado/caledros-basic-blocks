@@ -21,56 +21,56 @@
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function CloseButtonPositionSettings( {
+export default function CloseButtonPositionSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	// Block attributes
 	const { closeButtonPosition } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Close button position', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Close button position', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					`Please select the top padding (px) for the close button. The close button is only visible in the frontend.`,
 					'caledros-basic-blocks'
-				) }
-				max={ 100 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonPosition.top ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={100}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonPosition.top)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonPosition: {
 							...closeButtonPosition,
-							top: `${ newValue }px`,
+							top: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 			<RangeControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					`Please select the right padding (px) for the close button. The close button is only visible in the frontend.`,
 					'caledros-basic-blocks'
-				) }
-				max={ 100 }
-				min={ 0 }
-				step={ 1 }
-				value={ parseInt( closeButtonPosition.right ) }
-				onChange={ ( newValue ) =>
-					setAttributes( {
+				)}
+				max={100}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonPosition.right)}
+				onChange={(newValue) =>
+					setAttributes({
 						closeButtonPosition: {
 							...closeButtonPosition,
-							right: `${ newValue }px`,
+							right: `${newValue}px`,
 						},
-					} )
+					})
 				}
 			/>
 		</PanelBody>

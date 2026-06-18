@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function LoopStyleSettings( { attributes, setAttributes } ) {
+export default function LoopStyleSettings({ attributes, setAttributes }) {
 	const { loopStyle } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Loop Style', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Loop Style', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the style for the posts loop',
 					'caledros-basic-blocks'
-				) }
-				value={ loopStyle }
-				options={ [
+				)}
+				value={loopStyle}
+				options={[
 					{
 						label: 'Style 1',
 						value: 'style-1',
@@ -46,12 +46,12 @@ export default function LoopStyleSettings( { attributes, setAttributes } ) {
 						label: 'Style 2',
 						value: 'style-2',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						loopStyle: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

@@ -21,21 +21,21 @@
 import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
 
-export default function MinHeightSettings( { attributes, setAttributes } ) {
+export default function MinHeightSettings({ attributes, setAttributes }) {
 	const { containerMinHeight } = attributes;
 
 	// Recover the unit used in the minimum height
-	const minHeightUnit = containerMinHeight.replace( /\d+/g, '' ) || 'px';
+	const minHeightUnit = containerMinHeight.replace(/\d+/g, '') || 'px';
 
 	// Recover the numeric value of the minimum height
-	const minHeightNumber = parseInt( containerMinHeight ) || 0;
+	const minHeightNumber = parseInt(containerMinHeight) || 0;
 
 	// Restrict maximum value for % and vw units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( newUnit === 'auto' ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (newUnit === 'auto') {
 			return '';
 		}
-		if ( newUnit === 'vh' && valueNumber > 100 ) {
+		if (newUnit === 'vh' && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
@@ -43,14 +43,14 @@ export default function MinHeightSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Minimum height', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Minimum height', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<div className="cbb-editor__grid">
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ sprintf(
+					help={sprintf(
 						/**
 						 * translators: %s minimum height's unit
 						 */
@@ -59,26 +59,26 @@ export default function MinHeightSettings( { attributes, setAttributes } ) {
 							'caledros-basic-blocks'
 						),
 						minHeightUnit
-					) }
-					initialPosition={ 0 }
-					max={ minHeightUnit === 'vh' ? 100 : 1000 }
-					min={ 0 }
-					step={ 1 }
-					value={ minHeightUnit === 'auto' ? 0 : minHeightNumber }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					initialPosition={0}
+					max={minHeightUnit === 'vh' ? 100 : 1000}
+					min={0}
+					step={1}
+					value={minHeightUnit === 'auto' ? 0 : minHeightNumber}
+					onChange={(newValue) =>
+						setAttributes({
 							containerMinHeight: `${
 								minHeightUnit !== 'auto' ? newValue : ''
-							}${ minHeightUnit }`,
-						} )
+							}${minHeightUnit}`,
+						})
 					}
-					disabled={ minHeightUnit === 'auto' }
+					disabled={minHeightUnit === 'auto'}
 				/>
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					value={ minHeightUnit }
-					options={ [
+					value={minHeightUnit}
+					options={[
 						{
 							label: 'px',
 							value: 'px',
@@ -99,15 +99,15 @@ export default function MinHeightSettings( { attributes, setAttributes } ) {
 							label: 'auto',
 							value: 'auto',
 						},
-					] }
-					onChange={ ( newUnit ) => {
-						setAttributes( {
-							containerMinHeight: `${ enforceMaxValue(
+					]}
+					onChange={(newUnit) => {
+						setAttributes({
+							containerMinHeight: `${enforceMaxValue(
 								newUnit,
 								minHeightNumber
-							) }${ newUnit }`,
-						} );
-					} }
+							)}${newUnit}`,
+						});
+					}}
 				/>
 			</div>
 		</PanelBody>

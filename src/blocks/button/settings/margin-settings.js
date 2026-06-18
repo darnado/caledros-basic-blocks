@@ -26,27 +26,27 @@ import {
 } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
 
-export default function MarginSettings( { attributes, setAttributes } ) {
+export default function MarginSettings({ attributes, setAttributes }) {
 	const { buttonMargin } = attributes;
 
 	// Recover the margins
-	const topMargin = parseInt( buttonMargin.top ) || 0;
-	const leftMargin = parseInt( buttonMargin.left ) || 0;
-	const bottomMargin = parseInt( buttonMargin.bottom ) || 0;
-	const rightMargin = parseInt( buttonMargin.right ) || 0;
+	const topMargin = parseInt(buttonMargin.top) || 0;
+	const leftMargin = parseInt(buttonMargin.left) || 0;
+	const bottomMargin = parseInt(buttonMargin.bottom) || 0;
+	const rightMargin = parseInt(buttonMargin.right) || 0;
 
 	// Recover the unit used in the margins
-	const topUnit = buttonMargin.top.replace( /\d+/g, '' );
-	const leftUnit = buttonMargin.left.replace( /\d+/g, '' );
-	const bottomUnit = buttonMargin.bottom.replace( /\d+/g, '' );
-	const rightUnit = buttonMargin.right.replace( /\d+/g, '' );
+	const topUnit = buttonMargin.top.replace(/\d+/g, '');
+	const leftUnit = buttonMargin.left.replace(/\d+/g, '');
+	const bottomUnit = buttonMargin.bottom.replace(/\d+/g, '');
+	const rightUnit = buttonMargin.right.replace(/\d+/g, '');
 
 	// Restrict maximum value for % and vw units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( newUnit === 'auto' ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (newUnit === 'auto') {
 			return '';
 		}
-		if ( [ '%', 'vw' ].includes( newUnit ) && valueNumber > 100 ) {
+		if (['%', 'vw'].includes(newUnit) && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
@@ -54,31 +54,28 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Margin', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Margin', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
-					'Enable different margins',
-					'caledros-basic-blocks'
-				) }
-				checked={ buttonMargin.differentMarginsEnabled }
-				onChange={ ( newMargin ) => {
-					setAttributes( {
+				label={__('Enable different margins', 'caledros-basic-blocks')}
+				checked={buttonMargin.differentMarginsEnabled}
+				onChange={(newMargin) => {
+					setAttributes({
 						buttonMargin: {
 							...buttonMargin,
 							differentMarginsEnabled: newMargin,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ ! buttonMargin.differentMarginsEnabled && (
+			{!buttonMargin.differentMarginsEnabled && (
 				<div className="cbb-editor__grid">
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ sprintf(
+						help={sprintf(
 							/**
 							 * translators: %s margin's unit
 							 */
@@ -87,28 +84,28 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 								'caledros-basic-blocks'
 							),
 							topUnit
-						) }
-						value={ topMargin }
-						max={ [ '%', 'vw' ].includes( topUnit ) ? 100 : 500 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newMargin ) => {
-							setAttributes( {
+						)}
+						value={topMargin}
+						max={['%', 'vw'].includes(topUnit) ? 100 : 500}
+						min={0}
+						step={1}
+						onChange={(newMargin) => {
+							setAttributes({
 								buttonMargin: {
 									...buttonMargin,
 									top: `${
 										topUnit === 'auto' ? '' : newMargin
-									}${ topUnit }`,
+									}${topUnit}`,
 								},
-							} );
-						} }
-						disabled={ topUnit === 'auto' }
+							});
+						}}
+						disabled={topUnit === 'auto'}
 					/>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						value={ topUnit }
-						options={ [
+						value={topUnit}
+						options={[
 							{
 								label: 'px',
 								value: 'px',
@@ -133,28 +130,28 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 								label: 'auto',
 								value: 'auto',
 							},
-						] }
-						onChange={ ( newUnit ) => {
-							setAttributes( {
+						]}
+						onChange={(newUnit) => {
+							setAttributes({
 								buttonMargin: {
 									...buttonMargin,
-									top: `${ enforceMaxValue(
+									top: `${enforceMaxValue(
 										newUnit,
 										topMargin
-									) }${ newUnit }`,
+									)}${newUnit}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 				</div>
-			) }
-			{ buttonMargin.differentMarginsEnabled && (
+			)}
+			{buttonMargin.differentMarginsEnabled && (
 				<>
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s top margin's unit
 								 */
@@ -163,30 +160,28 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								topUnit
-							) }
-							value={ topMargin }
-							max={
-								[ '%', 'vw' ].includes( topUnit ) ? 100 : 500
-							}
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newMargin ) => {
-								setAttributes( {
+							)}
+							value={topMargin}
+							max={['%', 'vw'].includes(topUnit) ? 100 : 500}
+							min={0}
+							step={1}
+							onChange={(newMargin) => {
+								setAttributes({
 									buttonMargin: {
 										...buttonMargin,
 										top: `${
 											topUnit === 'auto' ? '' : newMargin
-										}${ topUnit }`,
+										}${topUnit}`,
 									},
-								} );
-							} }
-							disabled={ topUnit === 'auto' }
+								});
+							}}
+							disabled={topUnit === 'auto'}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ topUnit }
-							options={ [
+							value={topUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -211,25 +206,25 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 									label: 'auto',
 									value: 'auto',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									buttonMargin: {
 										...buttonMargin,
-										top: `${ enforceMaxValue(
+										top: `${enforceMaxValue(
 											newUnit,
 											topMargin
-										) }${ newUnit }`,
+										)}${newUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s right margin's unit
 								 */
@@ -238,32 +233,30 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								rightUnit
-							) }
-							value={ rightMargin }
-							max={
-								[ '%', 'vw' ].includes( rightUnit ) ? 100 : 500
-							}
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newMargin ) => {
-								setAttributes( {
+							)}
+							value={rightMargin}
+							max={['%', 'vw'].includes(rightUnit) ? 100 : 500}
+							min={0}
+							step={1}
+							onChange={(newMargin) => {
+								setAttributes({
 									buttonMargin: {
 										...buttonMargin,
 										right: `${
 											rightUnit === 'auto'
 												? ''
 												: newMargin
-										}${ rightUnit }`,
+										}${rightUnit}`,
 									},
-								} );
-							} }
-							disabled={ rightUnit === 'auto' }
+								});
+							}}
+							disabled={rightUnit === 'auto'}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ rightUnit }
-							options={ [
+							value={rightUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -288,25 +281,25 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 									label: 'auto',
 									value: 'auto',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									buttonMargin: {
 										...buttonMargin,
-										right: `${ enforceMaxValue(
+										right: `${enforceMaxValue(
 											newUnit,
 											rightMargin
-										) }${ newUnit }`,
+										)}${newUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s bottom margin's unit
 								 */
@@ -315,32 +308,30 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								bottomUnit
-							) }
-							value={ bottomMargin }
-							max={
-								[ '%', 'vw' ].includes( bottomUnit ) ? 100 : 500
-							}
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newMargin ) => {
-								setAttributes( {
+							)}
+							value={bottomMargin}
+							max={['%', 'vw'].includes(bottomUnit) ? 100 : 500}
+							min={0}
+							step={1}
+							onChange={(newMargin) => {
+								setAttributes({
 									buttonMargin: {
 										...buttonMargin,
 										bottom: `${
 											bottomUnit === 'auto'
 												? ''
 												: newMargin
-										}${ bottomUnit }`,
+										}${bottomUnit}`,
 									},
-								} );
-							} }
-							disabled={ bottomUnit === 'auto' }
+								});
+							}}
+							disabled={bottomUnit === 'auto'}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ bottomUnit }
-							options={ [
+							value={bottomUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -365,25 +356,25 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 									label: 'auto',
 									value: 'auto',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									buttonMargin: {
 										...buttonMargin,
-										bottom: `${ enforceMaxValue(
+										bottom: `${enforceMaxValue(
 											newUnit,
 											bottomMargin
-										) }${ newUnit }`,
+										)}${newUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s left margin's unit
 								 */
@@ -392,30 +383,28 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								leftUnit
-							) }
-							value={ leftMargin }
-							max={
-								[ '%', 'vw' ].includes( leftUnit ) ? 100 : 500
-							}
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newMargin ) => {
-								setAttributes( {
+							)}
+							value={leftMargin}
+							max={['%', 'vw'].includes(leftUnit) ? 100 : 500}
+							min={0}
+							step={1}
+							onChange={(newMargin) => {
+								setAttributes({
 									buttonMargin: {
 										...buttonMargin,
 										left: `${
 											leftUnit === 'auto' ? '' : newMargin
-										}${ leftUnit }`,
+										}${leftUnit}`,
 									},
-								} );
-							} }
-							disabled={ leftUnit === 'auto' }
+								});
+							}}
+							disabled={leftUnit === 'auto'}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ leftUnit }
-							options={ [
+							value={leftUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -440,22 +429,22 @@ export default function MarginSettings( { attributes, setAttributes } ) {
 									label: 'auto',
 									value: 'auto',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									buttonMargin: {
 										...buttonMargin,
-										left: `${ enforceMaxValue(
+										left: `${enforceMaxValue(
 											newUnit,
 											leftMargin
-										) }${ newUnit }`,
+										)}${newUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
 				</>
-			) }
+			)}
 		</PanelBody>
 	);
 }

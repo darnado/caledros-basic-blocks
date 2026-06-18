@@ -20,7 +20,7 @@
 
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
-export default function SaveBlock( { attributes } ) {
+export default function SaveBlock({ attributes }) {
 	const {
 		containerWidth,
 		containerMinHeight,
@@ -50,17 +50,17 @@ export default function SaveBlock( { attributes } ) {
 	} = attributes;
 
 	// Function to generate the content of background-image
-	const bgImageCssVariable = ( imgUrl, gradient, theme ) => {
-		if ( ! imgUrl && ! gradient ) {
+	const bgImageCssVariable = (imgUrl, gradient, theme) => {
+		if (!imgUrl && !gradient) {
 			return {};
 		}
 		return {
-			[ `--cbb-${ theme }-bg-gradient` ]: [
+			[`--cbb-${theme}-bg-gradient`]: [
 				gradient,
-				imgUrl && `url(${ imgUrl })`,
+				imgUrl && `url(${imgUrl})`,
 			]
-				.filter( ( value ) => value )
-				.join( ', ' ),
+				.filter((value) => value)
+				.join(', '),
 		};
 	};
 
@@ -71,14 +71,14 @@ export default function SaveBlock( { attributes } ) {
 		containerBoxShadow.enabled && 'cbb-flex-container--has-box-shadow',
 		containerBorder.width !== '0px' &&
 			containerBorder.style !== 'none' &&
-			( containerBorder.lightColor !== '#00000000' ||
-				containerBorder.darkColor !== '#00000000' ) &&
+			(containerBorder.lightColor !== '#00000000' ||
+				containerBorder.darkColor !== '#00000000') &&
 			'cbb-flex-container--has-border',
-		( containerLightBackgroundColor !== '#00000000' ||
-			containerDarkBackgroundColor !== '#00000000' ) &&
+		(containerLightBackgroundColor !== '#00000000' ||
+			containerDarkBackgroundColor !== '#00000000') &&
 			'cbb-flex-container--has-bg-color',
-		( containerLightBackgroundGradient !== '' ||
-			containerDarkBackgroundGradient !== '' ) &&
+		(containerLightBackgroundGradient !== '' ||
+			containerDarkBackgroundGradient !== '') &&
 			'cbb-flex-container--has-bg-gradient',
 		fullWidthTabletEnabled && 'cbb-flex-container--full-width-tablet',
 		fullWidthMobileEnabled && 'cbb-flex-container--full-width-mobile',
@@ -92,57 +92,57 @@ export default function SaveBlock( { attributes } ) {
 			'cbb-flex-container--custom-align-items-mobile',
 		containerBlur.enabled && 'cbb-flex-container--has-blur',
 	]
-		.filter( ( className ) => className )
-		.join( ' ' );
+		.filter((className) => className)
+		.join(' ');
 
 	// Block properties
-	const blockProperties = useBlockProps.save( {
-		className: `${ classNamesList }`,
+	const blockProperties = useBlockProps.save({
+		className: `${classNamesList}`,
 		style: {
 			maxWidth: containerWidth,
 			width: '100%',
 			margin: containerMargin.differentMarginsEnabled
-				? `${ containerMargin.top } ${ containerMargin.right } ${ containerMargin.bottom } ${ containerMargin.left }`
-				: `${ containerMargin.top }`,
-			...( ! containerPadding.useGlobalPadding && {
+				? `${containerMargin.top} ${containerMargin.right} ${containerMargin.bottom} ${containerMargin.left}`
+				: `${containerMargin.top}`,
+			...(!containerPadding.useGlobalPadding && {
 				padding: containerPadding.differentPaddingsEnabled
-					? `${ containerPadding.top } ${ containerPadding.right } ${ containerPadding.bottom } ${ containerPadding.left }`
-					: `${ containerPadding.top }`,
-			} ),
-			...( containerLightBackgroundColor !== '#00000000' && {
+					? `${containerPadding.top} ${containerPadding.right} ${containerPadding.bottom} ${containerPadding.left}`
+					: `${containerPadding.top}`,
+			}),
+			...(containerLightBackgroundColor !== '#00000000' && {
 				'--cbb-light-bg-color': containerLightBackgroundColor,
-			} ),
-			...( containerDarkBackgroundColor !== '#00000000' && {
+			}),
+			...(containerDarkBackgroundColor !== '#00000000' && {
 				'--cbb-dark-bg-color': containerDarkBackgroundColor,
-			} ),
-			...( containerJustifyContent !== 'flex-start' && {
+			}),
+			...(containerJustifyContent !== 'flex-start' && {
 				justifyContent: containerJustifyContent,
-			} ),
-			...( containerJustifyContentTablet.enabled && {
+			}),
+			...(containerJustifyContentTablet.enabled && {
 				'--cbb-just-content-md': containerJustifyContentTablet.value,
-			} ),
-			...( containerJustifyContentMobile.enabled && {
+			}),
+			...(containerJustifyContentMobile.enabled && {
 				'--cbb-just-content-sm': containerJustifyContentMobile.value,
-			} ),
-			...( containerAlignItems !== 'normal' && {
+			}),
+			...(containerAlignItems !== 'normal' && {
 				alignItems: containerAlignItems,
-			} ),
-			...( containerAlignItemsTablet.enabled && {
+			}),
+			...(containerAlignItemsTablet.enabled && {
 				'--cbb-align-items-md': containerAlignItemsTablet.value,
-			} ),
-			...( containerAlignItemsMobile.enabled && {
+			}),
+			...(containerAlignItemsMobile.enabled && {
 				'--cbb-align-items-sm': containerAlignItemsMobile.value,
-			} ),
-			...( containerMinHeight !== 0 && {
+			}),
+			...(containerMinHeight !== 0 && {
 				minHeight: containerMinHeight,
-			} ),
-			...( containerRowGap !== 'normal' && {
+			}),
+			...(containerRowGap !== 'normal' && {
 				rowGap: containerRowGap,
-			} ),
-			...( containerColumnGap !== 'normal' && {
+			}),
+			...(containerColumnGap !== 'normal' && {
 				columnGap: containerColumnGap,
-			} ),
-			...( containerLightBackgroundGradient !== '' ||
+			}),
+			...(containerLightBackgroundGradient !== '' ||
 			containerDarkBackgroundGradient !== ''
 				? {
 						...bgImageCssVariable(
@@ -155,63 +155,63 @@ export default function SaveBlock( { attributes } ) {
 							containerLightBackgroundGradient,
 							'light'
 						),
-				  }
+					}
 				: {
-						...( containerBackgroundImage.url && {
-							backgroundImage: `url(${ containerBackgroundImage.url })`,
-						} ),
-				  } ),
-			...( containerBackgroundImage.url !== '' && {
-				backgroundPosition: `${ containerBgImageFocalPoint.x * 100 }% ${
+						...(containerBackgroundImage.url && {
+							backgroundImage: `url(${containerBackgroundImage.url})`,
+						}),
+					}),
+			...(containerBackgroundImage.url !== '' && {
+				backgroundPosition: `${containerBgImageFocalPoint.x * 100}% ${
 					containerBgImageFocalPoint.y * 100
 				}%`,
-			} ),
-			...( containerBorder.width !== '0px' &&
+			}),
+			...(containerBorder.width !== '0px' &&
 				containerBorder.style !== 'none' &&
-				( containerBorder.lightColor !== '#00000000' ||
-					containerBorder.darkColor !== '#00000000' ) && {
+				(containerBorder.lightColor !== '#00000000' ||
+					containerBorder.darkColor !== '#00000000') && {
 					borderStyle: containerBorder.style,
-				} ),
-			...( containerBorder.width !== '0px' &&
+				}),
+			...(containerBorder.width !== '0px' &&
 				containerBorder.style !== 'none' &&
-				( containerBorder.lightColor !== '#00000000' ||
-					containerBorder.darkColor !== '#00000000' ) && {
+				(containerBorder.lightColor !== '#00000000' ||
+					containerBorder.darkColor !== '#00000000') && {
 					borderWidth: containerBorder.width,
-				} ),
-			...( containerBorder.width !== '0px' &&
+				}),
+			...(containerBorder.width !== '0px' &&
 				containerBorder.style !== 'none' &&
 				containerBorder.lightColor !== '#00000000' && {
 					'--cbb-light-border-color': containerBorder.lightColor,
-				} ),
-			...( containerBorder.width !== '0px' &&
+				}),
+			...(containerBorder.width !== '0px' &&
 				containerBorder.style !== 'none' &&
 				containerBorder.darkColor !== '#00000000' && {
 					'--cbb-dark-border-color': containerBorder.darkColor,
-				} ),
-			...( containerBorder.radius !== '0px' &&
+				}),
+			...(containerBorder.radius !== '0px' &&
 				containerBorder.radius !== '0%' && {
 					borderRadius: containerBorder.radius,
-				} ),
-			...( containerBoxShadow.enabled && {
-				'--cbb-light-box-shadow': `${ containerBoxShadow.style } ${ containerBoxShadow.hOffset } ${ containerBoxShadow.vOffset } ${ containerBoxShadow.blur } ${ containerBoxShadow.spread } ${ containerBoxShadow.lightColor }`,
-			} ),
-			...( containerBoxShadow.enabled && {
-				'--cbb-dark-box-shadow': `${ containerBoxShadow.style } ${ containerBoxShadow.hOffset } ${ containerBoxShadow.vOffset } ${ containerBoxShadow.blur } ${ containerBoxShadow.spread } ${ containerBoxShadow.darkColor }`,
-			} ),
-			...( containerOverflow !== 'visible' && {
+				}),
+			...(containerBoxShadow.enabled && {
+				'--cbb-light-box-shadow': `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.lightColor}`,
+			}),
+			...(containerBoxShadow.enabled && {
+				'--cbb-dark-box-shadow': `${containerBoxShadow.style} ${containerBoxShadow.hOffset} ${containerBoxShadow.vOffset} ${containerBoxShadow.blur} ${containerBoxShadow.spread} ${containerBoxShadow.darkColor}`,
+			}),
+			...(containerOverflow !== 'visible' && {
 				overflow: containerOverflow,
-			} ),
-			...( containerBlur.enabled && {
-				'--cbb-blur': `${ containerBlur.value }`,
-			} ),
+			}),
+			...(containerBlur.enabled && {
+				'--cbb-blur': `${containerBlur.value}`,
+			}),
 			'--cbb-fdir-lg': containerFlexDirection.desktop,
 			'--cbb-fdir-md': containerFlexDirection.tablet,
 			'--cbb-fdir-sm': containerFlexDirection.mobile,
 		},
-	} );
+	});
 
 	return (
-		<div { ...blockProperties }>
+		<div {...blockProperties}>
 			<InnerBlocks.Content />
 		</div>
 	);

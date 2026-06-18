@@ -25,13 +25,13 @@ const scrollWatcher = document.querySelector(
 	'.cbb-mobile-menu-container__watcher'
 );
 
-if ( scrollWatcher ) {
-	const navigationObserver = new IntersectionObserver( ( entries ) => {
+if (scrollWatcher) {
+	const navigationObserver = new IntersectionObserver((entries) => {
 		mobileMenuContainer.classList.toggle(
 			'cbb-mobile-menu-container--sticking-enabled',
-			! entries[ 0 ].isIntersecting
+			!entries[0].isIntersecting
 		);
-	} );
+	});
 
-	navigationObserver.observe( scrollWatcher );
+	navigationObserver.observe(scrollWatcher);
 }

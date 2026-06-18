@@ -21,23 +21,23 @@
 import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
 
-export default function HeightSettings( { attributes, setAttributes } ) {
+export default function HeightSettings({ attributes, setAttributes }) {
 	const { containerHeight } = attributes;
 
 	// Recover the unit used in the height
-	const heightUnit = containerHeight.replace( /\d+/g, '' ) || 'px';
+	const heightUnit = containerHeight.replace(/\d+/g, '') || 'px';
 
 	// Recover the numeric value of the height
-	const heightNumber = ( unit ) => {
-		if ( unit === 'px' ) {
-			return parseInt( containerHeight ) || 0;
+	const heightNumber = (unit) => {
+		if (unit === 'px') {
+			return parseInt(containerHeight) || 0;
 		}
-		return parseFloat( containerHeight ) || 0;
+		return parseFloat(containerHeight) || 0;
 	};
 
 	// Restrict maximum value for vh units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( newUnit === 'vh' && valueNumber > 100 ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (newUnit === 'vh' && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
@@ -45,14 +45,14 @@ export default function HeightSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Height', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Height', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<div className="cbb-editor__grid">
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ sprintf(
+					help={sprintf(
 						/**
 						 * translators: %s container height's unit
 						 */
@@ -61,22 +61,22 @@ export default function HeightSettings( { attributes, setAttributes } ) {
 							'caledros-basic-blocks'
 						),
 						heightUnit
-					) }
-					value={ heightNumber( heightUnit ) }
-					max={ heightUnit === 'vh' ? 100 : 3000 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
-							containerHeight: `${ newValue }${ heightUnit }`,
-						} )
+					)}
+					value={heightNumber(heightUnit)}
+					max={heightUnit === 'vh' ? 100 : 3000}
+					min={0}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
+							containerHeight: `${newValue}${heightUnit}`,
+						})
 					}
 				/>
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					value={ heightUnit }
-					options={ [
+					value={heightUnit}
+					options={[
 						{
 							label: 'px',
 							value: 'px',
@@ -93,15 +93,15 @@ export default function HeightSettings( { attributes, setAttributes } ) {
 							label: 'vh',
 							value: 'vh',
 						},
-					] }
-					onChange={ ( newUnit ) => {
-						setAttributes( {
-							containerHeight: `${ enforceMaxValue(
+					]}
+					onChange={(newUnit) => {
+						setAttributes({
+							containerHeight: `${enforceMaxValue(
 								newUnit,
-								heightNumber( newUnit )
-							) }${ newUnit }`,
-						} );
-					} }
+								heightNumber(newUnit)
+							)}${newUnit}`,
+						});
+					}}
 				/>
 			</div>
 		</PanelBody>

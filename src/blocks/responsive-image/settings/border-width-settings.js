@@ -22,152 +22,152 @@ import { PanelBody, ToggleControl, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
-export default function BorderWidthSettings( { attributes, setAttributes } ) {
+export default function BorderWidthSettings({ attributes, setAttributes }) {
 	const { imgBorder } = attributes;
 
-	const borderArray = imgBorder.width.split( ' ' );
-	const topBorder = parseInt( borderArray[ 0 ] ) || 0;
-	const rightBorder = parseInt( borderArray[ 1 ] ) || 0;
-	const bottomBorder = parseInt( borderArray[ 2 ] ) || 0;
-	const leftBorder = parseInt( borderArray[ 3 ] ) || 0;
+	const borderArray = imgBorder.width.split(' ');
+	const topBorder = parseInt(borderArray[0]) || 0;
+	const rightBorder = parseInt(borderArray[1]) || 0;
+	const bottomBorder = parseInt(borderArray[2]) || 0;
+	const leftBorder = parseInt(borderArray[3]) || 0;
 
-	const [ useDifferentBorderWidths, setUseDifferentBorderWidths ] = useState(
-		imgBorder.width.includes( ' ' ) ? true : false
+	const [useDifferentBorderWidths, setUseDifferentBorderWidths] = useState(
+		imgBorder.width.includes(' ') ? true : false
 	);
 	return (
 		<PanelBody
-			title={ __( 'Border width', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Border width', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
 				label="Use different border widths for each side"
-				checked={ useDifferentBorderWidths }
-				onChange={ () => {
-					const differentWidthsEnabled = ! useDifferentBorderWidths;
-					setUseDifferentBorderWidths( differentWidthsEnabled );
+				checked={useDifferentBorderWidths}
+				onChange={() => {
+					const differentWidthsEnabled = !useDifferentBorderWidths;
+					setUseDifferentBorderWidths(differentWidthsEnabled);
 
-					if ( differentWidthsEnabled ) {
-						setAttributes( {
+					if (differentWidthsEnabled) {
+						setAttributes({
 							imgBorder: {
 								...imgBorder,
 								width: '1px 1px 1px 1px',
 							},
-						} );
+						});
 					} else {
-						setAttributes( {
+						setAttributes({
 							imgBorder: { ...imgBorder, width: '1px' },
-						} );
+						});
 					}
-				} }
+				}}
 			/>
-			{ ! useDifferentBorderWidths && (
+			{!useDifferentBorderWidths && (
 				<RangeControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Please select the border width (px) for the image.',
 						'caledros-basic-blocks'
-					) }
-					value={ parseInt( imgBorder.width ) }
-					max={ 50 }
-					min={ 0 }
-					step={ 1 }
-					onChange={ ( newWidth ) => {
-						setAttributes( {
+					)}
+					value={parseInt(imgBorder.width)}
+					max={50}
+					min={0}
+					step={1}
+					onChange={(newWidth) => {
+						setAttributes({
 							imgBorder: {
 								...imgBorder,
-								width: `${ newWidth }px`,
+								width: `${newWidth}px`,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 
-			{ useDifferentBorderWidths && (
+			{useDifferentBorderWidths && (
 				<>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the top border width (px) for the image.',
 							'caledros-basic-blocks'
-						) }
-						value={ topBorder }
-						max={ 50 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newWidth ) => {
-							setAttributes( {
+						)}
+						value={topBorder}
+						max={50}
+						min={0}
+						step={1}
+						onChange={(newWidth) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									width: `${ newWidth }px ${ rightBorder }px ${ bottomBorder }px ${ leftBorder }px`,
+									width: `${newWidth}px ${rightBorder}px ${bottomBorder}px ${leftBorder}px`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the right border width (px) for the image.',
 							'caledros-basic-blocks'
-						) }
-						value={ rightBorder }
-						max={ 50 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newWidth ) => {
-							setAttributes( {
+						)}
+						value={rightBorder}
+						max={50}
+						min={0}
+						step={1}
+						onChange={(newWidth) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									width: `${ topBorder }px ${ newWidth }px ${ bottomBorder }px ${ leftBorder }px`,
+									width: `${topBorder}px ${newWidth}px ${bottomBorder}px ${leftBorder}px`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the bottom border width (px) for the image.',
 							'caledros-basic-blocks'
-						) }
-						value={ bottomBorder }
-						max={ 50 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newWidth ) => {
-							setAttributes( {
+						)}
+						value={bottomBorder}
+						max={50}
+						min={0}
+						step={1}
+						onChange={(newWidth) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									width: `${ topBorder }px ${ rightBorder }px ${ newWidth }px ${ leftBorder }px`,
+									width: `${topBorder}px ${rightBorder}px ${newWidth}px ${leftBorder}px`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the left border width (px) for the image.',
 							'caledros-basic-blocks'
-						) }
-						value={ leftBorder }
-						max={ 50 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newWidth ) => {
-							setAttributes( {
+						)}
+						value={leftBorder}
+						max={50}
+						min={0}
+						step={1}
+						onChange={(newWidth) => {
+							setAttributes({
 								imgBorder: {
 									...imgBorder,
-									width: `${ topBorder }px ${ rightBorder }px ${ bottomBorder }px ${ newWidth }px`,
+									width: `${topBorder}px ${rightBorder}px ${bottomBorder}px ${newWidth}px`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 				</>
-			) }
+			)}
 		</PanelBody>
 	);
 }

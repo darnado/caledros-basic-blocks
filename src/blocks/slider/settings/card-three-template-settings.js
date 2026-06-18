@@ -22,10 +22,10 @@ import { PanelBody, ComboboxControl } from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
 
-export default function CardThreeTemplateSettings( {
+export default function CardThreeTemplateSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { cardThreeSlug } = attributes;
 
 	let overlayOptions = [];
@@ -38,32 +38,32 @@ export default function CardThreeTemplateSettings( {
 	);
 
 	// Recover the available template parts for the mega menu
-	if ( hasResolved ) {
+	if (hasResolved) {
 		overlayOptions = records
-			.filter( ( item ) => item.area === 'slider-card' )
-			.map( ( item ) => ( {
+			.filter((item) => item.area === 'slider-card')
+			.map((item) => ({
 				label: item.title.rendered,
 				value: item.slug,
-			} ) );
+			}));
 	}
 
 	return (
 		<PanelBody
-			title={ __( '3rd Card Template', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('3rd Card Template', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ComboboxControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Select the template for the 3rd card.',
 					'caledros-basic-blocks'
-				) }
-				value={ cardThreeSlug }
-				options={ overlayOptions }
-				onChange={ ( slugValue ) => {
-					setAttributes( { cardThreeSlug: slugValue } );
-				} }
+				)}
+				value={cardThreeSlug}
+				options={overlayOptions}
+				onChange={(slugValue) => {
+					setAttributes({ cardThreeSlug: slugValue });
+				}}
 			/>
 		</PanelBody>
 	);

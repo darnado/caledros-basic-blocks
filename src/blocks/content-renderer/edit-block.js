@@ -25,7 +25,7 @@ export default function EditBlock() {
 	const blockProps = useBlockProps();
 
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<p>
 				The Content Renderer block allows you to display the content of
 				a specific page or post dynamically. Unlike the default content

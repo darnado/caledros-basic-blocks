@@ -21,7 +21,7 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function EffectSettings( { attributes, setAttributes } ) {
+export default function EffectSettings({ attributes, setAttributes }) {
 	const { galleryEffect, images, enableLoop } = attributes;
 
 	const defaultOptions = [
@@ -52,32 +52,32 @@ export default function EffectSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Effect', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Effect', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the effect for the gallery.',
 					'caledros-basic-blocks'
-				) }
-				value={ galleryEffect }
+				)}
+				value={galleryEffect}
 				options={
 					enableLoop && images.length < 3
 						? coverflowLoopTwoImgOptions
 						: defaultOptions
 				}
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				onChange={(newValue) => {
+					setAttributes({
 						galleryEffect: newValue,
-						...( newValue === 'coverflow' &&
+						...(newValue === 'coverflow' &&
 							enableLoop &&
 							images.length < 3 && {
 								enableLoop: false,
-							} ),
-					} );
-				} }
+							}),
+					});
+				}}
 			/>
 		</PanelBody>
 	);

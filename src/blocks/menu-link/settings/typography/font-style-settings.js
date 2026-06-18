@@ -21,13 +21,13 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FontStyleSettings( {
+export default function FontStyleSettings({
 	attributes,
 	setAttributes,
 	getAvailableFontStyles,
 	getAvailableFontWeights,
 	doesFontExist,
-} ) {
+}) {
 	const { menuFontFamily, menuFontStyle, menuFontWeight } = attributes;
 
 	// Default font styles
@@ -37,13 +37,11 @@ export default function FontStyleSettings( {
 	];
 
 	// Create options array for the controller
-	const fontStyleOptions = getAvailableFontStyles( menuFontFamily )?.map(
-		( styleValue ) => {
+	const fontStyleOptions = getAvailableFontStyles(menuFontFamily)?.map(
+		(styleValue) => {
 			return {
-				label: `${ styleValue[ 0 ].toUpperCase() }${ styleValue.slice(
-					1
-				) }`,
-				value: `${ styleValue }`,
+				label: `${styleValue[0].toUpperCase()}${styleValue.slice(1)}`,
+				value: `${styleValue}`,
 			};
 		}
 	);
@@ -52,32 +50,32 @@ export default function FontStyleSettings( {
 		<SelectControl
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
-			help={ __( 'Select the font style.', 'caledros-basic-blocks' ) }
-			value={ menuFontStyle }
+			help={__('Select the font style.', 'caledros-basic-blocks')}
+			value={menuFontStyle}
 			options={
 				fontStyleOptions.length === 0
 					? defaultFontStyles
 					: fontStyleOptions
 			}
-			onChange={ ( newFontStyle ) => {
-				const availableFontWeights = doesFontExist( menuFontFamily )
-					? getAvailableFontWeights( menuFontFamily, newFontStyle )
+			onChange={(newFontStyle) => {
+				const availableFontWeights = doesFontExist(menuFontFamily)
+					? getAvailableFontWeights(menuFontFamily, newFontStyle)
 					: [];
 
 				const newFontWeight = availableFontWeights.includes(
 					menuFontWeight
 				)
 					? menuFontWeight
-					: availableFontWeights[ 0 ];
+					: availableFontWeights[0];
 
-				setAttributes( {
+				setAttributes({
 					menuFontStyle: newFontStyle,
-					...( doesFontExist( menuFontFamily ) &&
+					...(doesFontExist(menuFontFamily) &&
 						menuFontWeight !== newFontWeight && {
 							menuFontWeight: newFontWeight,
-						} ),
-				} );
-			} }
+						}),
+				});
+			}}
 		/>
 	);
 }

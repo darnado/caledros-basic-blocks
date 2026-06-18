@@ -21,27 +21,27 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ShowTagSettings( { attributes, setAttributes } ) {
+export default function ShowTagSettings({ attributes, setAttributes }) {
 	const { showTags } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Tag options', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Tag options', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Show tag', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Show tag', 'caledros-basic-blocks')}
+				help={__(
 					'Display the first tag of the post.',
 					'caledros-basic-blocks'
-				) }
-				checked={ showTags }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={showTags}
+				onChange={(newValue) => {
+					setAttributes({
 						showTags: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

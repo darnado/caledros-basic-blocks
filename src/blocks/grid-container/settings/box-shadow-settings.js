@@ -29,85 +29,85 @@ import { __ } from '@wordpress/i18n';
 import { useSettings } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 
-export default function BoxShadowSettings( { attributes, setAttributes } ) {
+export default function BoxShadowSettings({ attributes, setAttributes }) {
 	const { containerBoxShadow } = attributes;
 
-	const [ themeJsonPalette, defaultPalette ] = useSettings(
+	const [themeJsonPalette, defaultPalette] = useSettings(
 		'color.palette',
 		'color.defaultPalette'
 	);
 
 	// Define fallback color options
-	const fallbackColorOptions = themeJsonPalette.map( ( registeredColor ) => {
+	const fallbackColorOptions = themeJsonPalette.map((registeredColor) => {
 		return {
-			color: `var(--wp--preset--color--${ registeredColor.slug })`,
+			color: `var(--wp--preset--color--${registeredColor.slug})`,
 			name: registeredColor.name,
 		};
-	} );
+	});
 
 	// Get available color palettes present in the Full Site Editor
-	const editorSettings = select( 'core/editor' )?.getEditorSettings();
+	const editorSettings = select('core/editor')?.getEditorSettings();
 	const editorPalette =
 		editorSettings?.__experimentalFeatures?.color?.palette;
 
 	// Function to get the color palettes
-	const createColorOptions = ( colorPalette, paletteType ) => {
+	const createColorOptions = (colorPalette, paletteType) => {
 		return {
-			colors: colorPalette?.[ paletteType ]?.map( ( palette ) => {
+			colors: colorPalette?.[paletteType]?.map((palette) => {
 				return {
-					color: `var(--wp--preset--color--${ palette.slug })`,
+					color: `var(--wp--preset--color--${palette.slug})`,
 					name: palette.name,
 				};
-			} ),
-			name: `${ paletteType }`,
+			}),
+			name: `${paletteType}`,
 		};
 	};
 
 	// Available color palettes
-	const defaultColors = createColorOptions( editorPalette, 'default' );
-	const themeColors = createColorOptions( editorPalette, 'theme' );
-	const customColors = createColorOptions( editorPalette, 'custom' );
+	const defaultColors = createColorOptions(editorPalette, 'default');
+	const themeColors = createColorOptions(editorPalette, 'theme');
+	const customColors = createColorOptions(editorPalette, 'custom');
 
 	// Define color options for the controller
 	const colorOptions = [
-		...( defaultPalette ? [ defaultColors ] : [] ),
+		...(defaultPalette ? [defaultColors] : []),
 		themeColors,
-		...( customColors.colors ? [ customColors ] : [] ),
+		...(customColors.colors ? [customColors] : []),
 	];
 
 	return (
 		<PanelBody
-			title={ __( 'Box shadow', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Box shadow', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Enable box shadow', 'caledros-basic-blocks' ) }
-				checked={ containerBoxShadow.enabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				label={__('Enable box shadow', 'caledros-basic-blocks')}
+				checked={containerBoxShadow.enabled}
+				onChange={(newValue) => {
+					setAttributes({
 						containerBoxShadow: {
 							...containerBoxShadow,
 							enabled: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ containerBoxShadow.enabled && (
+			{containerBoxShadow.enabled && (
 				<>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Choose the style for the box shadow.',
 							'caledros-basic-blocks'
-						) }
+						)}
 						value={
 							containerBoxShadow.style === ''
 								? 'outline'
 								: 'inset'
 						}
-						options={ [
+						options={[
 							{
 								label: 'Outline',
 								value: 'outline',
@@ -116,144 +116,144 @@ export default function BoxShadowSettings( { attributes, setAttributes } ) {
 								label: 'Inset',
 								value: 'inset',
 							},
-						] }
-						onChange={ ( newValue ) => {
-							setAttributes( {
+						]}
+						onChange={(newValue) => {
+							setAttributes({
 								containerBoxShadow: {
 									...containerBoxShadow,
 									style: `${
 										newValue === 'outline' ? '' : newValue
 									}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the horizontal offset (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( containerBoxShadow.hOffset ) }
-						max={ 100 }
-						min={ -100 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(containerBoxShadow.hOffset)}
+						max={100}
+						min={-100}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								containerBoxShadow: {
 									...containerBoxShadow,
-									hOffset: `${ newValue }px`,
+									hOffset: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the vertical offset (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( containerBoxShadow.vOffset ) }
-						max={ 100 }
-						min={ -100 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(containerBoxShadow.vOffset)}
+						max={100}
+						min={-100}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								containerBoxShadow: {
 									...containerBoxShadow,
-									vOffset: `${ newValue }px`,
+									vOffset: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the blur (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( containerBoxShadow.blur ) }
-						max={ 100 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(containerBoxShadow.blur)}
+						max={100}
+						min={0}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								containerBoxShadow: {
 									...containerBoxShadow,
-									blur: `${ newValue }px`,
+									blur: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the spread (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( containerBoxShadow.spread ) }
-						max={ 100 }
-						min={ -100 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(containerBoxShadow.spread)}
+						max={100}
+						min={-100}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								containerBoxShadow: {
 									...containerBoxShadow,
-									spread: `${ newValue }px`,
+									spread: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 					<p className="cbb-editor-label">
-						{ __(
+						{__(
 							'Choose a color for the box shadow (light mode)',
 							'caledros-basic-blocks'
-						) }
+						)}
 					</p>
 					<ColorPalette
 						colors={
 							editorPalette ? colorOptions : fallbackColorOptions
 						}
-						value={ containerBoxShadow.lightColor }
-						onChange={ ( newColor ) =>
-							setAttributes( {
+						value={containerBoxShadow.lightColor}
+						onChange={(newColor) =>
+							setAttributes({
 								containerBoxShadow: {
 									...containerBoxShadow,
 									lightColor: newColor || '#00000000',
 								},
-							} )
+							})
 						}
-						enableAlpha={ true }
-						clearable={ true }
+						enableAlpha={true}
+						clearable={true}
 					/>
 					<p className="cbb-editor-label">
-						{ __(
+						{__(
 							'Choose a color for the box shadow (dark mode)',
 							'caledros-basic-blocks'
-						) }
+						)}
 					</p>
 					<ColorPalette
 						colors={
 							editorPalette ? colorOptions : fallbackColorOptions
 						}
-						value={ containerBoxShadow.darkColor }
-						onChange={ ( newColor ) =>
-							setAttributes( {
+						value={containerBoxShadow.darkColor}
+						onChange={(newColor) =>
+							setAttributes({
 								containerBoxShadow: {
 									...containerBoxShadow,
 									darkColor: newColor || '#00000000',
 								},
-							} )
+							})
 						}
-						enableAlpha={ true }
-						clearable={ true }
+						enableAlpha={true}
+						clearable={true}
 					/>
 				</>
-			) }
+			)}
 		</PanelBody>
 	);
 }

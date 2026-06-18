@@ -21,64 +21,64 @@
 // Disable blocks in the site editor
 const caledrosBasicBlocksDisableBlocksSiteEditor = () => {
 	// Get current post type
-	const currentPostType = wp.data.useSelect( ( select ) => {
-		const editor = select( 'core/editor' );
+	const currentPostType = wp.data.useSelect((select) => {
+		const editor = select('core/editor');
 		return editor?.getCurrentPostType();
-	}, [] );
+	}, []);
 
 	// Get current template area
-	const currentTemplateArea = wp.data.useSelect( ( select ) => {
-		const editor = select( 'core/editor' );
-		return editor?.getCurrentPostAttribute( 'area' );
-	}, [] );
+	const currentTemplateArea = wp.data.useSelect((select) => {
+		const editor = select('core/editor');
+		return editor?.getCurrentPostAttribute('area');
+	}, []);
 
-	wp.element.useEffect( () => {
+	wp.element.useEffect(() => {
 		// Return if current post type is undefined
-		if ( currentPostType === undefined ) {
+		if (currentPostType === undefined) {
 			return;
 		}
-		if ( currentPostType !== 'wp_template' ) {
+		if (currentPostType !== 'wp_template') {
 			wp.data
-				.dispatch( 'core/edit-post' )
-				.hideBlockTypes( [ 'caledros-basic-blocks/content-renderer' ] );
-		} else if ( currentPostType === 'wp_template' ) {
+				.dispatch('core/edit-post')
+				.hideBlockTypes(['caledros-basic-blocks/content-renderer']);
+		} else if (currentPostType === 'wp_template') {
 			wp.data
-				.dispatch( 'core/edit-post' )
-				.showBlockTypes( [ 'caledros-basic-blocks/content-renderer' ] );
+				.dispatch('core/edit-post')
+				.showBlockTypes(['caledros-basic-blocks/content-renderer']);
 		}
-	}, [ currentPostType ] );
+	}, [currentPostType]);
 
-	wp.element.useEffect( () => {
+	wp.element.useEffect(() => {
 		// Return if current post type is undefined
-		if ( currentPostType === undefined ) {
+		if (currentPostType === undefined) {
 			return;
 		}
-		if ( currentTemplateArea !== 'header' ) {
+		if (currentTemplateArea !== 'header') {
 			wp.data
-				.dispatch( 'core/edit-post' )
-				.hideBlockTypes( [
+				.dispatch('core/edit-post')
+				.hideBlockTypes([
 					'caledros-basic-blocks/dark-light-mode-switcher',
 					'caledros-basic-blocks/desktop-menu-container',
 					'caledros-basic-blocks/mobile-menu-container',
 					'caledros-basic-blocks/sidebar-menu',
-				] );
-		} else if ( currentTemplateArea === 'header' ) {
+				]);
+		} else if (currentTemplateArea === 'header') {
 			wp.data
-				.dispatch( 'core/edit-post' )
-				.showBlockTypes( [
+				.dispatch('core/edit-post')
+				.showBlockTypes([
 					'caledros-basic-blocks/dark-light-mode-switcher',
 					'caledros-basic-blocks/desktop-menu-container',
 					'caledros-basic-blocks/mobile-menu-container',
 					'caledros-basic-blocks/sidebar-menu',
-				] );
+				]);
 		}
-	}, [ currentTemplateArea ] );
+	}, [currentTemplateArea]);
 
 	// The plugin is solely for disabling blocks, so there's no need to render anything
 	return null;
 };
 
 // Register plugin
-wp.plugins.registerPlugin( 'caledros-basic-blocks-disable-blocks-site-editor', {
+wp.plugins.registerPlugin('caledros-basic-blocks-disable-blocks-site-editor', {
 	render: caledrosBasicBlocksDisableBlocksSiteEditor,
-} );
+});

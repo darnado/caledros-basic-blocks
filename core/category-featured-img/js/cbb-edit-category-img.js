@@ -18,23 +18,23 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-jQuery( document ).ready( function ( $ ) {
-	$( '#category_media_button' ).click( function ( e ) {
+jQuery(document).ready(function ($) {
+	$('#category_media_button').click(function (e) {
 		e.preventDefault();
 		const image = wp
-			.media( {
+			.media({
 				title: 'Upload Image',
 				multiple: false,
-			} )
+			})
 			.open()
-			.on( 'select', function () {
-				const uploadedImage = image.state().get( 'selection' ).first();
+			.on('select', function () {
+				const uploadedImage = image.state().get('selection').first();
 				const imageUrl = uploadedImage.toJSON().url;
-				$( '#category_image' ).val( uploadedImage.id );
-				$( '#category_image_url' ).val( imageUrl );
-				$( '#image-preview' ).html(
+				$('#category_image').val(uploadedImage.id);
+				$('#category_image_url').val(imageUrl);
+				$('#image-preview').html(
 					"<img src='" + imageUrl + "' style='max-width: 200px;'>"
 				);
-			} );
-	} );
-} );
+			});
+	});
+});

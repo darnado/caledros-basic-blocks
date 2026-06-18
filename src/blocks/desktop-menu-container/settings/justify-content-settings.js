@@ -21,26 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function JustifyContentSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function JustifyContentSettings({ attributes, setAttributes }) {
 	const { containerJustifyContent } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Justify content', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Justify content', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Select the value for the justify content property.',
 					'caledros-basic-blocks'
-				) }
-				value={ containerJustifyContent }
-				options={ [
+				)}
+				value={containerJustifyContent}
+				options={[
 					{
 						label: 'Flex start (default)',
 						value: 'flex-start',
@@ -65,12 +62,12 @@ export default function JustifyContentSettings( {
 						label: 'Space evenly',
 						value: 'space-evenly',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						containerJustifyContent: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

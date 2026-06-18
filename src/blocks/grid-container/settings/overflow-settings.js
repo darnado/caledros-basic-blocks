@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function OverflowSettings( { attributes, setAttributes } ) {
+export default function OverflowSettings({ attributes, setAttributes }) {
 	const { containerOverflow } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Overflow', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Overflow', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					"Select the value for the overflow property. The container will automatically have 'overflow:hidden' applied if it's the parent of a slider or image gallery block.",
 					'caledros-basic-blocks'
-				) }
-				value={ containerOverflow }
-				options={ [
+				)}
+				value={containerOverflow}
+				options={[
 					{
 						label: 'Visible (default)',
 						value: 'visible',
@@ -54,12 +54,12 @@ export default function OverflowSettings( { attributes, setAttributes } ) {
 						label: 'Auto',
 						value: 'auto',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						containerOverflow: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

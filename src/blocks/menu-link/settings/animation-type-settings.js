@@ -21,23 +21,23 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function AnimationTypeSettings( { attributes, setAttributes } ) {
+export default function AnimationTypeSettings({ attributes, setAttributes }) {
 	const { animationType } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Animation type', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Animation type', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Select the animation type for the menu link.',
 					'caledros-basic-blocks'
-				) }
-				value={ animationType }
-				options={ [
+				)}
+				value={animationType}
+				options={[
 					{
 						label: 'Slide-in underline',
 						value: 'slide-in-underline',
@@ -50,12 +50,12 @@ export default function AnimationTypeSettings( { attributes, setAttributes } ) {
 						label: 'None',
 						value: 'none',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						animationType: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

@@ -21,62 +21,59 @@
 import { PanelBody, ToggleControl, RangeControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function NumberOfColumnsDesktopSettings( {
+export default function NumberOfColumnsDesktopSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { columnNoDesktop } = attributes;
 
 	return (
 		<PanelBody
-			title={ __(
-				'Number of columns (desktop)',
-				'caledros-basic-blocks'
-			) }
-			initialOpen={ false }
+			title={__('Number of columns (desktop)', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Enable custom columns number',
 					'caledros-basic-blocks'
-				) }
-				help={ __(
+				)}
+				help={__(
 					'Use a custom number of columns for desktop screens. If this option is not enabled, the default value is 4 columns.',
 					'caledros-basic-blocks'
-				) }
-				checked={ columnNoDesktop.enableCustomValue }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={columnNoDesktop.enableCustomValue}
+				onChange={(newValue) => {
+					setAttributes({
 						columnNoDesktop: {
 							...columnNoDesktop,
 							enableCustomValue: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ columnNoDesktop.enableCustomValue && (
+			{columnNoDesktop.enableCustomValue && (
 				<RangeControl
 					__nextHasNoMarginBottom
 					__next40pxDefaultSize
-					help={ __(
+					help={__(
 						'Please select the number columns for the posts container (desktop screens).',
 						'caledros-basic-blocks'
-					) }
-					value={ columnNoDesktop.columnNo }
-					max={ 6 }
-					min={ 1 }
-					step={ 1 }
-					onChange={ ( newValue ) =>
-						setAttributes( {
+					)}
+					value={columnNoDesktop.columnNo}
+					max={6}
+					min={1}
+					step={1}
+					onChange={(newValue) =>
+						setAttributes({
 							columnNoDesktop: {
 								...columnNoDesktop,
 								columnNo: newValue,
 							},
-						} )
+						})
 					}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }

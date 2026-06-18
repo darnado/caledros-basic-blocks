@@ -21,13 +21,13 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function FontStyleSettings( {
+export default function FontStyleSettings({
 	attributes,
 	setAttributes,
 	getAvailableFontStyles,
 	getAvailableFontWeights,
 	doesFontExist,
-} ) {
+}) {
 	const { buttonFontFamily, buttonFontStyle, buttonFontWeight } = attributes;
 
 	// Default font styles
@@ -37,13 +37,11 @@ export default function FontStyleSettings( {
 	];
 
 	// Create options array for the controller
-	const fontStyleOptions = getAvailableFontStyles( buttonFontFamily )?.map(
-		( styleValue ) => {
+	const fontStyleOptions = getAvailableFontStyles(buttonFontFamily)?.map(
+		(styleValue) => {
 			return {
-				label: `${ styleValue[ 0 ].toUpperCase() }${ styleValue.slice(
-					1
-				) }`,
-				value: `${ styleValue }`,
+				label: `${styleValue[0].toUpperCase()}${styleValue.slice(1)}`,
+				value: `${styleValue}`,
 			};
 		}
 	);
@@ -52,32 +50,32 @@ export default function FontStyleSettings( {
 		<SelectControl
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
-			help={ __( 'Select the font style.', 'caledros-basic-blocks' ) }
-			value={ buttonFontStyle }
+			help={__('Select the font style.', 'caledros-basic-blocks')}
+			value={buttonFontStyle}
 			options={
 				fontStyleOptions.length === 0
 					? defaultFontStyles
 					: fontStyleOptions
 			}
-			onChange={ ( newFontStyle ) => {
-				const availableFontWeights = doesFontExist( buttonFontFamily )
-					? getAvailableFontWeights( buttonFontFamily, newFontStyle )
+			onChange={(newFontStyle) => {
+				const availableFontWeights = doesFontExist(buttonFontFamily)
+					? getAvailableFontWeights(buttonFontFamily, newFontStyle)
 					: [];
 
 				const newFontWeight = availableFontWeights.includes(
 					buttonFontWeight
 				)
 					? buttonFontWeight
-					: availableFontWeights[ 0 ];
+					: availableFontWeights[0];
 
-				setAttributes( {
+				setAttributes({
 					buttonFontStyle: newFontStyle,
-					...( doesFontExist( buttonFontFamily ) &&
+					...(doesFontExist(buttonFontFamily) &&
 						buttonFontWeight !== newFontWeight && {
 							buttonFontWeight: newFontWeight,
-						} ),
-				} );
-			} }
+						}),
+				});
+			}}
 		/>
 	);
 }

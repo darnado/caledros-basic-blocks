@@ -23,62 +23,62 @@ import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import placeholder from '../assets/placeholder.webp';
 
-export default function PostsLoopTitle( { attributes, setAttributes } ) {
+export default function PostsLoopTitle({ attributes, setAttributes }) {
 	const { postsLoopTitle, postsLoopTitleIcon } = attributes;
 
 	// Function for choosing the image
-	const selectImg = ( image ) => {
-		setAttributes( {
+	const selectImg = (image) => {
+		setAttributes({
 			postsLoopTitleIcon: {
 				id: image.id,
 				alt: image.alt,
 				url: image.url,
 			},
-		} );
+		});
 	};
 
 	// Function for removing the image
 	const removeImg = () => {
-		setAttributes( {
+		setAttributes({
 			postsLoopTitleIcon: {
 				id: '',
 				alt: '',
 				url: '',
 			},
-		} );
+		});
 	};
 
 	return (
 		<>
 			<PanelBody
-				title={ __( 'Posts loop title', 'caledros-basic-blocks' ) }
-				initialOpen={ false }
+				title={__('Posts loop title', 'caledros-basic-blocks')}
+				initialOpen={false}
 			>
 				<TextControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Write the title for the posts loop.',
 						'caledros-basic-blocks'
-					) }
-					value={ postsLoopTitle }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					)}
+					value={postsLoopTitle}
+					onChange={(newValue) => {
+						setAttributes({
 							postsLoopTitle: newValue,
-						} );
-					} }
+						});
+					}}
 				/>
 			</PanelBody>
 			<PanelBody
-				title={ __( 'Post title icon', 'caledros-basic-blocks' ) }
-				initialOpen={ false }
+				title={__('Post title icon', 'caledros-basic-blocks')}
+				initialOpen={false}
 			>
 				<div
-					style={ {
+					style={{
 						display: 'flex',
 						flexDirection: 'row',
 						padding: '0px 5px 10px 5px',
-					} }
+					}}
 				>
 					<img
 						src={
@@ -91,26 +91,26 @@ export default function PostsLoopTitle( { attributes, setAttributes } ) {
 				</div>
 				<MediaUploadCheck>
 					<MediaUpload
-						allowedTypes={ [ 'image' ] }
-						value={ postsLoopTitleIcon.id }
-						render={ ( { open } ) => (
+						allowedTypes={['image']}
+						value={postsLoopTitleIcon.id}
+						render={({ open }) => (
 							<>
-								<div style={ { display: 'flex', gap: '10px' } }>
-									<Button variant="primary" onClick={ open }>
+								<div style={{ display: 'flex', gap: '10px' }}>
+									<Button variant="primary" onClick={open}>
 										Select image
 									</Button>
-									{ postsLoopTitleIcon.url !== '' && (
+									{postsLoopTitleIcon.url !== '' && (
 										<Button
 											variant="secondary"
-											onClick={ removeImg }
+											onClick={removeImg}
 										>
 											Remove image
 										</Button>
-									) }
+									)}
 								</div>
 							</>
-						) }
-						onSelect={ selectImg }
+						)}
+						onSelect={selectImg}
 					/>
 				</MediaUploadCheck>
 			</PanelBody>

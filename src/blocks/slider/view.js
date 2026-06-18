@@ -29,11 +29,11 @@ import {
 import 'swiper/css/bundle';
 import { store, getContext } from '@wordpress/interactivity';
 
-store( 'cbb-slider-store', {
+store('cbb-slider-store', {
 	callbacks: {
 		onInit: () => {
 			const context = getContext();
-			const swiperClass = `.cbb-swiper-${ context.identifier }`;
+			const swiperClass = `.cbb-swiper-${context.identifier}`;
 			const paginationEnabled = getContext().pagination;
 			const paginationType = getContext().paginationType;
 			const autoplayEnabled = getContext().autoPlayEnabled;
@@ -42,7 +42,7 @@ store( 'cbb-slider-store', {
 			const sliderEffect = getContext().sliderEffect;
 
 			const paginationSettings = () => {
-				if ( paginationEnabled && paginationType === 'bullets' ) {
+				if (paginationEnabled && paginationType === 'bullets') {
 					return {
 						pagination: {
 							el: '.swiper-pagination',
@@ -51,7 +51,7 @@ store( 'cbb-slider-store', {
 						},
 					};
 				}
-				if ( paginationEnabled && paginationType === 'fraction' ) {
+				if (paginationEnabled && paginationType === 'fraction') {
 					return {
 						pagination: {
 							el: '.swiper-pagination',
@@ -59,7 +59,7 @@ store( 'cbb-slider-store', {
 						},
 					};
 				}
-				if ( paginationEnabled && paginationType === 'progressbar' ) {
+				if (paginationEnabled && paginationType === 'progressbar') {
 					return {
 						pagination: {
 							el: '.swiper-pagination',
@@ -67,12 +67,12 @@ store( 'cbb-slider-store', {
 						},
 					};
 				}
-				if ( ! paginationEnabled ) {
+				if (!paginationEnabled) {
 					return { pagination: false };
 				}
 			};
 			const autoplaySettings = () => {
-				if ( autoplayEnabled ) {
+				if (autoplayEnabled) {
 					return {
 						autoplay: {
 							delay: autoplayDelay,
@@ -86,7 +86,7 @@ store( 'cbb-slider-store', {
 				};
 			};
 			const navigationSettings = () => {
-				if ( enableNavigationArrows ) {
+				if (enableNavigationArrows) {
 					return {
 						navigation: {
 							nextEl: '.swiper-button-next',
@@ -99,19 +99,19 @@ store( 'cbb-slider-store', {
 
 			// Load modules
 			const navigationModules = enableNavigationArrows
-				? [ Navigation ]
+				? [Navigation]
 				: [];
-			const paginationModules = paginationEnabled ? [ Pagination ] : [];
-			const autoplayModules = autoplayEnabled ? [ Autoplay ] : [];
+			const paginationModules = paginationEnabled ? [Pagination] : [];
+			const autoplayModules = autoplayEnabled ? [Autoplay] : [];
 			const fadeEffectModule =
-				sliderEffect === 'fade' ? [ EffectFade ] : [];
+				sliderEffect === 'fade' ? [EffectFade] : [];
 			const coverflowEffectModule =
-				sliderEffect === 'coverflow' ? [ EffectCoverflow ] : [];
+				sliderEffect === 'coverflow' ? [EffectCoverflow] : [];
 
 			// Slider creation
 			// eslint-disable-next-line no-unused-vars
-			const swiper = new Swiper( swiperClass, {
-				cssMode: ! ( sliderEffect === 'fade' ),
+			const swiper = new Swiper(swiperClass, {
+				cssMode: !(sliderEffect === 'fade'),
 				modules: [
 					...navigationModules,
 					...paginationModules,
@@ -123,11 +123,11 @@ store( 'cbb-slider-store', {
 				...navigationSettings(),
 				...paginationSettings(),
 				...autoplaySettings(),
-				...( sliderEffect === 'fade' && {
+				...(sliderEffect === 'fade' && {
 					effect: 'fade',
 					fadeEffect: { crossFade: true },
-				} ),
-				...( sliderEffect === 'coverflow' && {
+				}),
+				...(sliderEffect === 'coverflow' && {
 					effect: 'coverflow',
 					grabCursor: true,
 					centeredSlides: true,
@@ -146,8 +146,8 @@ store( 'cbb-slider-store', {
 							slidesPerView: 1,
 						},
 					},
-				} ),
-			} );
+				}),
+			});
 		},
 	},
-} );
+});

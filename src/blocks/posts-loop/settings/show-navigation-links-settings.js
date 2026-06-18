@@ -21,31 +21,31 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function ShowNavigationLinksSettings( {
+export default function ShowNavigationLinksSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { showNavigationLinks } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Show navigation links', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Show navigation links', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __(
+				label={__(
 					'Show the page navigation links.',
 					'caledros-basic-blocks'
-				) }
-				help={ __(
+				)}
+				help={__(
 					'The page navigation links will be displayed below the post loop.',
 					'caledros-basic-blocks'
-				) }
-				checked={ showNavigationLinks }
-				onChange={ ( newValue ) => {
-					setAttributes( { showNavigationLinks: newValue } );
-				} }
+				)}
+				checked={showNavigationLinks}
+				onChange={(newValue) => {
+					setAttributes({ showNavigationLinks: newValue });
+				}}
 			/>
 		</PanelBody>
 	);

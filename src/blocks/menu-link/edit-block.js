@@ -35,7 +35,7 @@ import LineHeightSettings from './settings/line-height-settings';
 import MegaMenuTemplateSettings from './settings/mega-menu/mega-menu-template-settings';
 import MegaMenuWidthSettings from './settings/mega-menu/mega-menu-width-settings';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	const {
 		menuLabel,
 		animationType,
@@ -54,9 +54,9 @@ export default function EditBlock( { attributes, setAttributes } ) {
 	} = attributes;
 
 	// Block props
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: `cbb-menu-link ${
-			animationType === 'none' ? '' : `cbb-menu-link--${ animationType }`
+			animationType === 'none' ? '' : `cbb-menu-link--${animationType}`
 		}`,
 		style: {
 			'--cbb-menu-light-color': menuTextLightColor,
@@ -66,27 +66,27 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			fontWeight: menuFontWeight,
 			fontStyle: menuFontStyle,
 			fontSize: menuFontSize,
-			...( menuFontFamily !== '' && {
-				fontFamily: `var(--wp--preset--font-family--${ menuFontFamily })`,
-			} ),
-			...( menuLineHeight !== '' && {
+			...(menuFontFamily !== '' && {
+				fontFamily: `var(--wp--preset--font-family--${menuFontFamily})`,
+			}),
+			...(menuLineHeight !== '' && {
 				lineHeight: menuLineHeight,
-			} ),
-			...( menuLetterSpacing !== 'normal' && {
+			}),
+			...(menuLetterSpacing !== 'normal' && {
 				letterSpacing: menuLetterSpacing,
-			} ),
-			...( menuLetterCase !== 'none' && {
+			}),
+			...(menuLetterCase !== 'none' && {
 				textTransform: menuLetterCase,
-			} ),
+			}),
 		},
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'content',
 							title: 'Content',
@@ -99,20 +99,20 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'content' ) {
-							if ( menuType === 'simple' ) {
+					{(tab) => {
+						if (tab.name === 'content') {
+							if (menuType === 'simple') {
 								return (
 									<>
 										<LabelSettings
-											attributes={ attributes }
-											setAttributes={ setAttributes }
+											attributes={attributes}
+											setAttributes={setAttributes}
 										></LabelSettings>
 										<ContentTypeGroupSettings
-											attributes={ attributes }
-											setAttributes={ setAttributes }
+											attributes={attributes}
+											setAttributes={setAttributes}
 										></ContentTypeGroupSettings>
 									</>
 								);
@@ -120,81 +120,81 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							return (
 								<>
 									<LabelSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LabelSettings>
 									<ContentTypeGroupSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ContentTypeGroupSettings>
 									<MegaMenuTemplateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></MegaMenuTemplateSettings>
 									<MegaMenuWidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></MegaMenuWidthSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<AnimationTypeSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></AnimationTypeSettings>
 									<LightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LightColorSettings>
 									<DarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></DarkColorSettings>
 									<TypographyGroupSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></TypographyGroupSettings>
 									<FontSizeSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></FontSizeSettings>
 									<LineHeightSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LineHeightSettings>
 									<LetterSpacingSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LetterSpacingSettings>
 									<LetterCaseSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LetterCaseSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<LightHoverColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></LightHoverColorSettings>
 									<DarkHoverColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></DarkHoverColorSettings>
 								</>
 							);
 						}
 						return null;
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			<a { ...blockProps }>{ menuLabel }</a>
+			<a {...blockProps}>{menuLabel}</a>
 		</>
 	);
 }

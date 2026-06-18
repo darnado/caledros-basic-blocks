@@ -22,10 +22,7 @@ import { PanelBody, ComboboxControl } from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
 
-export default function SidebarTemplateSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function SidebarTemplateSettings({ attributes, setAttributes }) {
 	const { sidebarSlug } = attributes;
 
 	let overlayOptions = [];
@@ -38,32 +35,32 @@ export default function SidebarTemplateSettings( {
 	);
 
 	// Recover the available template parts for the mega menu
-	if ( hasResolved ) {
+	if (hasResolved) {
 		overlayOptions = records
-			.filter( ( item ) => item.area === 'sidebar-menu' )
-			.map( ( item ) => ( {
+			.filter((item) => item.area === 'sidebar-menu')
+			.map((item) => ({
 				label: item.title.rendered,
 				value: item.slug,
-			} ) );
+			}));
 	}
 
 	return (
 		<PanelBody
-			title={ __( 'Sidebar template', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Sidebar template', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ComboboxControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Select the template for the sidebar menu.',
 					'caledros-basic-blocks'
-				) }
-				value={ sidebarSlug }
-				options={ overlayOptions }
-				onChange={ ( slugValue ) => {
-					setAttributes( { sidebarSlug: slugValue } );
-				} }
+				)}
+				value={sidebarSlug}
+				options={overlayOptions}
+				onChange={(slugValue) => {
+					setAttributes({ sidebarSlug: slugValue });
+				}}
 			/>
 		</PanelBody>
 	);

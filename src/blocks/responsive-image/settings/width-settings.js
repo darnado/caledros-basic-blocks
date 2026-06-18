@@ -26,21 +26,21 @@ import {
 } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
 
-export default function WidthSettings( { attributes, setAttributes } ) {
+export default function WidthSettings({ attributes, setAttributes }) {
 	const { imgWidth, sourceImage } = attributes;
 
 	// Recover the unit used in the width
-	const unit = imgWidth.content.replace( /\d+/g, '' ) || 'px';
-	const widthUnit = [ 'px', '%', 'em', 'rem', 'vw' ].includes( unit )
+	const unit = imgWidth.content.replace(/\d+/g, '') || 'px';
+	const widthUnit = ['px', '%', 'em', 'rem', 'vw'].includes(unit)
 		? unit
 		: 'px';
 
 	// Recover the numeric value of the width
-	const widthNumber = parseInt( imgWidth.content ) || 0;
+	const widthNumber = parseInt(imgWidth.content) || 0;
 
 	// Restrict maximum value for % and vw units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( [ '%', 'vw' ].includes( newUnit ) && valueNumber > 100 ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (['%', 'vw'].includes(newUnit) && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
@@ -48,34 +48,34 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Max width', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Max width', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ sprintf(
+				label={sprintf(
 					/**
 					 * translators: %s source image width's unit
 					 */
-					__( 'Use actual width (%spx)', 'caledros-basic-blocks' ),
+					__('Use actual width (%spx)', 'caledros-basic-blocks'),
 					sourceImage.width
-				) }
-				checked={ imgWidth.defaultWidthEnabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={imgWidth.defaultWidthEnabled}
+				onChange={(newValue) => {
+					setAttributes({
 						imgWidth: {
-							content: `${ sourceImage.width }px`,
+							content: `${sourceImage.width}px`,
 							defaultWidthEnabled: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ ! imgWidth.defaultWidthEnabled && (
+			{!imgWidth.defaultWidthEnabled && (
 				<div className="cbb-editor__grid">
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ sprintf(
+						help={sprintf(
 							/**
 							 * translators: %s image width's unit
 							 */
@@ -84,27 +84,27 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 								'caledros-basic-blocks'
 							),
 							widthUnit
-						) }
-						value={ parseInt( imgWidth.content ) }
+						)}
+						value={parseInt(imgWidth.content)}
 						max={
 							widthUnit === '%' || widthUnit === 'vw' ? 100 : 2000
 						}
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						min={0}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								imgWidth: {
 									...imgWidth,
-									content: `${ newValue }${ widthUnit }`,
+									content: `${newValue}${widthUnit}`,
 								},
-							} )
+							})
 						}
 					/>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						value={ widthUnit }
-						options={ [
+						value={widthUnit}
+						options={[
 							{
 								label: 'px',
 								value: 'px',
@@ -125,21 +125,21 @@ export default function WidthSettings( { attributes, setAttributes } ) {
 								label: 'vw',
 								value: 'vw',
 							},
-						] }
-						onChange={ ( newUnit ) => {
-							setAttributes( {
+						]}
+						onChange={(newUnit) => {
+							setAttributes({
 								imgWidth: {
 									...imgWidth,
-									content: `${ enforceMaxValue(
+									content: `${enforceMaxValue(
 										newUnit,
 										widthNumber
-									) }${ newUnit }`,
+									)}${newUnit}`,
 								},
-							} );
-						} }
+							});
+						}}
 					/>
 				</div>
-			) }
+			)}
 		</PanelBody>
 	);
 }

@@ -21,27 +21,24 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function CenterStickyNavSettings( {
-	attributes,
-	setAttributes,
-} ) {
+export default function CenterStickyNavSettings({ attributes, setAttributes }) {
 	const { centerStickyNav } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Center navigation bar', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Center navigation bar', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Center navigation bar', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Center navigation bar', 'caledros-basic-blocks')}
+				help={__(
 					"Center the sticky navigation bar when the maximum width has a fixed value, or when it's less than 100%. For this option to work, the container's left and right margins must be set to 'auto'.",
 					'caledros-basic-blocks'
-				) }
-				checked={ centerStickyNav }
-				onChange={ ( newValue ) =>
-					setAttributes( { centerStickyNav: newValue } )
+				)}
+				checked={centerStickyNav}
+				onChange={(newValue) =>
+					setAttributes({ centerStickyNav: newValue })
 				}
 			/>
 		</PanelBody>

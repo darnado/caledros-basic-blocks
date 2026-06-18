@@ -21,48 +21,48 @@
 import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function BlurSettings( { attributes, setAttributes } ) {
+export default function BlurSettings({ attributes, setAttributes }) {
 	const { containerBlur } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Blur', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Blur', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Enable blur', 'caledros-basic-blocks' ) }
-				checked={ containerBlur.enabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				label={__('Enable blur', 'caledros-basic-blocks')}
+				checked={containerBlur.enabled}
+				onChange={(newValue) => {
+					setAttributes({
 						containerBlur: { ...containerBlur, enabled: newValue },
-					} );
-				} }
+					});
+				}}
 			/>
-			{ containerBlur.enabled && (
+			{containerBlur.enabled && (
 				<>
 					<RangeControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						help={ __(
+						help={__(
 							'Please select the value for the blur filter (px).',
 							'caledros-basic-blocks'
-						) }
-						value={ parseInt( containerBlur.value ) }
-						max={ 100 }
-						min={ 0 }
-						step={ 1 }
-						onChange={ ( newValue ) =>
-							setAttributes( {
+						)}
+						value={parseInt(containerBlur.value)}
+						max={100}
+						min={0}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
 								containerBlur: {
 									...containerBlur,
-									value: `${ newValue }px`,
+									value: `${newValue}px`,
 								},
-							} )
+							})
 						}
 					/>
 				</>
-			) }
+			)}
 		</PanelBody>
 	);
 }

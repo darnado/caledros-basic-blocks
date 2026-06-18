@@ -26,24 +26,24 @@ import {
 } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
 
-export default function PaddingSettings( { attributes, setAttributes } ) {
+export default function PaddingSettings({ attributes, setAttributes }) {
 	const { containerPadding } = attributes;
 
 	// Recover the paddings
-	const topPadding = parseInt( containerPadding.top ) || 0;
-	const leftPadding = parseInt( containerPadding.left ) || 0;
-	const bottomPadding = parseInt( containerPadding.bottom ) || 0;
-	const rightPadding = parseInt( containerPadding.right ) || 0;
+	const topPadding = parseInt(containerPadding.top) || 0;
+	const leftPadding = parseInt(containerPadding.left) || 0;
+	const bottomPadding = parseInt(containerPadding.bottom) || 0;
+	const rightPadding = parseInt(containerPadding.right) || 0;
 
 	// Recover the unit used in the paddings
-	const topUnit = containerPadding.top.replace( /\d+/g, '' );
-	const leftUnit = containerPadding.left.replace( /\d+/g, '' );
-	const bottomUnit = containerPadding.bottom.replace( /\d+/g, '' );
-	const rightUnit = containerPadding.right.replace( /\d+/g, '' );
+	const topUnit = containerPadding.top.replace(/\d+/g, '');
+	const leftUnit = containerPadding.left.replace(/\d+/g, '');
+	const bottomUnit = containerPadding.bottom.replace(/\d+/g, '');
+	const rightUnit = containerPadding.right.replace(/\d+/g, '');
 
 	// Restrict maximum value for % and vw units
-	const enforceMaxValue = ( newUnit, valueNumber ) => {
-		if ( [ '%', 'vw' ].includes( newUnit ) && valueNumber > 100 ) {
+	const enforceMaxValue = (newUnit, valueNumber) => {
+		if (['%', 'vw'].includes(newUnit) && valueNumber > 100) {
 			return 100;
 		}
 		return valueNumber;
@@ -51,52 +51,52 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 
 	return (
 		<PanelBody
-			title={ __( 'Padding', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Padding', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Use global padding', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Use global padding', 'caledros-basic-blocks')}
+				help={__(
 					'This option applies predefined padding to the right and left sides of the block, ensuring consistency across the entire site. To adjust this padding, navigate to the Layout section in the Full Site Editor.',
 					'caledros-basic-blocks'
-				) }
-				checked={ containerPadding.useGlobalPadding }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={containerPadding.useGlobalPadding}
+				onChange={(newValue) => {
+					setAttributes({
 						containerPadding: {
 							...containerPadding,
 							useGlobalPadding: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ ! containerPadding.useGlobalPadding && (
+			{!containerPadding.useGlobalPadding && (
 				<ToggleControl
 					__nextHasNoMarginBottom
-					label={ __(
+					label={__(
 						'Enable different paddings',
 						'caledros-basic-blocks'
-					) }
-					checked={ containerPadding.differentPaddingsEnabled }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					)}
+					checked={containerPadding.differentPaddingsEnabled}
+					onChange={(newValue) => {
+						setAttributes({
 							containerPadding: {
 								...containerPadding,
 								differentPaddingsEnabled: newValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 
-			{ ! containerPadding.differentPaddingsEnabled &&
-				! containerPadding.useGlobalPadding && (
+			{!containerPadding.differentPaddingsEnabled &&
+				!containerPadding.useGlobalPadding && (
 					<div className="cbb-editor__grid">
 						<RangeControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							help={ sprintf(
+							help={sprintf(
 								/**
 								 * translators: %s padding's unit
 								 */
@@ -105,27 +105,25 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 									'caledros-basic-blocks'
 								),
 								topUnit
-							) }
-							value={ topPadding }
-							max={
-								[ '%', 'vw' ].includes( topUnit ) ? 100 : 500
-							}
-							min={ 0 }
-							step={ 1 }
-							onChange={ ( newPadding ) => {
-								setAttributes( {
+							)}
+							value={topPadding}
+							max={['%', 'vw'].includes(topUnit) ? 100 : 500}
+							min={0}
+							step={1}
+							onChange={(newPadding) => {
+								setAttributes({
 									containerPadding: {
 										...containerPadding,
-										top: `${ newPadding }${ topUnit }`,
+										top: `${newPadding}${topUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 						<SelectControl
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
-							value={ topUnit }
-							options={ [
+							value={topUnit}
+							options={[
 								{
 									label: 'px',
 									value: 'px',
@@ -146,29 +144,29 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 									label: 'vw',
 									value: 'vw',
 								},
-							] }
-							onChange={ ( newUnit ) => {
-								setAttributes( {
+							]}
+							onChange={(newUnit) => {
+								setAttributes({
 									containerPadding: {
 										...containerPadding,
-										top: `${ enforceMaxValue(
+										top: `${enforceMaxValue(
 											newUnit,
 											topPadding
-										) }${ newUnit }`,
+										)}${newUnit}`,
 									},
-								} );
-							} }
+								});
+							}}
 						/>
 					</div>
-				) }
-			{ containerPadding.differentPaddingsEnabled &&
-				! containerPadding.useGlobalPadding && (
+				)}
+			{containerPadding.differentPaddingsEnabled &&
+				!containerPadding.useGlobalPadding && (
 					<>
 						<div className="cbb-editor__grid">
 							<RangeControl
 								__next40pxDefaultSize
 								__nextHasNoMarginBottom
-								help={ sprintf(
+								help={sprintf(
 									/**
 									 * translators: %s top padding's unit
 									 */
@@ -177,29 +175,25 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 										'caledros-basic-blocks'
 									),
 									topUnit
-								) }
-								value={ topPadding }
-								max={
-									[ '%', 'vw' ].includes( topUnit )
-										? 100
-										: 500
-								}
-								min={ 0 }
-								step={ 1 }
-								onChange={ ( newPadding ) => {
-									setAttributes( {
+								)}
+								value={topPadding}
+								max={['%', 'vw'].includes(topUnit) ? 100 : 500}
+								min={0}
+								step={1}
+								onChange={(newPadding) => {
+									setAttributes({
 										containerPadding: {
 											...containerPadding,
-											top: `${ newPadding }${ topUnit }`,
+											top: `${newPadding}${topUnit}`,
 										},
-									} );
-								} }
+									});
+								}}
 							/>
 							<SelectControl
 								__next40pxDefaultSize
 								__nextHasNoMarginBottom
-								value={ topUnit }
-								options={ [
+								value={topUnit}
+								options={[
 									{
 										label: 'px',
 										value: 'px',
@@ -220,25 +214,25 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 										label: 'vw',
 										value: 'vw',
 									},
-								] }
-								onChange={ ( newUnit ) => {
-									setAttributes( {
+								]}
+								onChange={(newUnit) => {
+									setAttributes({
 										containerPadding: {
 											...containerPadding,
-											top: `${ enforceMaxValue(
+											top: `${enforceMaxValue(
 												newUnit,
 												topPadding
-											) }${ newUnit }`,
+											)}${newUnit}`,
 										},
-									} );
-								} }
+									});
+								}}
 							/>
 						</div>
 						<div className="cbb-editor__grid">
 							<RangeControl
 								__next40pxDefaultSize
 								__nextHasNoMarginBottom
-								help={ sprintf(
+								help={sprintf(
 									/**
 									 * translators: %s right padding's unit
 									 */
@@ -247,29 +241,27 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 										'caledros-basic-blocks'
 									),
 									rightUnit
-								) }
-								value={ rightPadding }
+								)}
+								value={rightPadding}
 								max={
-									[ '%', 'vw' ].includes( rightUnit )
-										? 100
-										: 500
+									['%', 'vw'].includes(rightUnit) ? 100 : 500
 								}
-								min={ 0 }
-								step={ 1 }
-								onChange={ ( newPadding ) => {
-									setAttributes( {
+								min={0}
+								step={1}
+								onChange={(newPadding) => {
+									setAttributes({
 										containerPadding: {
 											...containerPadding,
-											right: `${ newPadding }${ rightUnit }`,
+											right: `${newPadding}${rightUnit}`,
 										},
-									} );
-								} }
+									});
+								}}
 							/>
 							<SelectControl
 								__next40pxDefaultSize
 								__nextHasNoMarginBottom
-								value={ rightUnit }
-								options={ [
+								value={rightUnit}
+								options={[
 									{
 										label: 'px',
 										value: 'px',
@@ -290,25 +282,25 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 										label: 'vw',
 										value: 'vw',
 									},
-								] }
-								onChange={ ( newUnit ) => {
-									setAttributes( {
+								]}
+								onChange={(newUnit) => {
+									setAttributes({
 										containerPadding: {
 											...containerPadding,
-											right: `${ enforceMaxValue(
+											right: `${enforceMaxValue(
 												newUnit,
 												rightPadding
-											) }${ newUnit }`,
+											)}${newUnit}`,
 										},
-									} );
-								} }
+									});
+								}}
 							/>
 						</div>
 						<div className="cbb-editor__grid">
 							<RangeControl
 								__next40pxDefaultSize
 								__nextHasNoMarginBottom
-								help={ sprintf(
+								help={sprintf(
 									/**
 									 * translators: %s bottom padding's unit
 									 */
@@ -317,29 +309,27 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 										'caledros-basic-blocks'
 									),
 									bottomUnit
-								) }
-								value={ bottomPadding }
+								)}
+								value={bottomPadding}
 								max={
-									[ '%', 'vw' ].includes( bottomUnit )
-										? 100
-										: 500
+									['%', 'vw'].includes(bottomUnit) ? 100 : 500
 								}
-								min={ 0 }
-								step={ 1 }
-								onChange={ ( newPadding ) => {
-									setAttributes( {
+								min={0}
+								step={1}
+								onChange={(newPadding) => {
+									setAttributes({
 										containerPadding: {
 											...containerPadding,
-											bottom: `${ newPadding }${ bottomUnit }`,
+											bottom: `${newPadding}${bottomUnit}`,
 										},
-									} );
-								} }
+									});
+								}}
 							/>
 							<SelectControl
 								__next40pxDefaultSize
 								__nextHasNoMarginBottom
-								value={ bottomUnit }
-								options={ [
+								value={bottomUnit}
+								options={[
 									{
 										label: 'px',
 										value: 'px',
@@ -360,25 +350,25 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 										label: 'vw',
 										value: 'vw',
 									},
-								] }
-								onChange={ ( newUnit ) => {
-									setAttributes( {
+								]}
+								onChange={(newUnit) => {
+									setAttributes({
 										containerPadding: {
 											...containerPadding,
-											bottom: `${ enforceMaxValue(
+											bottom: `${enforceMaxValue(
 												newUnit,
 												bottomPadding
-											) }${ newUnit }`,
+											)}${newUnit}`,
 										},
-									} );
-								} }
+									});
+								}}
 							/>
 						</div>
 						<div className="cbb-editor__grid">
 							<RangeControl
 								__next40pxDefaultSize
 								__nextHasNoMarginBottom
-								help={ sprintf(
+								help={sprintf(
 									/**
 									 * translators: %s left padding's unit
 									 */
@@ -387,29 +377,25 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 										'caledros-basic-blocks'
 									),
 									leftUnit
-								) }
-								value={ leftPadding }
-								max={
-									[ '%', 'vw' ].includes( leftUnit )
-										? 100
-										: 500
-								}
-								min={ 0 }
-								step={ 1 }
-								onChange={ ( newPadding ) => {
-									setAttributes( {
+								)}
+								value={leftPadding}
+								max={['%', 'vw'].includes(leftUnit) ? 100 : 500}
+								min={0}
+								step={1}
+								onChange={(newPadding) => {
+									setAttributes({
 										containerPadding: {
 											...containerPadding,
-											left: `${ newPadding }${ leftUnit }`,
+											left: `${newPadding}${leftUnit}`,
 										},
-									} );
-								} }
+									});
+								}}
 							/>
 							<SelectControl
 								__next40pxDefaultSize
 								__nextHasNoMarginBottom
-								value={ leftUnit }
-								options={ [
+								value={leftUnit}
+								options={[
 									{
 										label: 'px',
 										value: 'px',
@@ -430,22 +416,22 @@ export default function PaddingSettings( { attributes, setAttributes } ) {
 										label: 'vw',
 										value: 'vw',
 									},
-								] }
-								onChange={ ( newUnit ) => {
-									setAttributes( {
+								]}
+								onChange={(newUnit) => {
+									setAttributes({
 										containerPadding: {
 											...containerPadding,
-											left: `${ enforceMaxValue(
+											left: `${enforceMaxValue(
 												newUnit,
 												leftPadding
-											) }${ newUnit }`,
+											)}${newUnit}`,
 										},
-									} );
-								} }
+									});
+								}}
 							/>
 						</div>
 					</>
-				) }
+				)}
 		</PanelBody>
 	);
 }

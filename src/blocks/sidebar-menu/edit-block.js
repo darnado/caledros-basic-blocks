@@ -31,7 +31,7 @@ import OpenButtonStylesSettings from './settings/open-button-styles-settings';
 import OpenButtonPaddingSettings from './settings/open-button-padding-settings';
 import SidebarMinWidthSettings from './settings/sidebar-min-width-settings';
 
-export default function EditBlock( { attributes, setAttributes } ) {
+export default function EditBlock({ attributes, setAttributes }) {
 	// Block attributes
 	const {
 		buttonLightColor,
@@ -48,7 +48,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 			<InspectorControls>
 				<TabPanel
 					activeClass="cbb-active-tab"
-					tabs={ [
+					tabs={[
 						{
 							name: 'content',
 							title: 'Content',
@@ -61,89 +61,89 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							name: 'additional',
 							title: 'Additional',
 						},
-					] }
+					]}
 				>
-					{ ( tab ) => {
-						if ( tab.name === 'content' ) {
+					{(tab) => {
+						if (tab.name === 'content') {
 							return (
 								<>
 									<SidebarTemplateSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></SidebarTemplateSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'style' ) {
+						if (tab.name === 'style') {
 							return (
 								<>
 									<BackgroundLightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundLightColorSettings>
 									<BackgroundDarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></BackgroundDarkColorSettings>
 									<ButtonLightColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ButtonLightColorSettings>
 									<ButtonDarkColorSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></ButtonDarkColorSettings>
 									<OpenButtonStylesSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></OpenButtonStylesSettings>
 									<CloseButtonStylesSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CloseButtonStylesSettings>
 									<SidebarMinWidthSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></SidebarMinWidthSettings>
 								</>
 							);
 						}
-						if ( tab.name === 'additional' ) {
+						if (tab.name === 'additional') {
 							return (
 								<>
 									<OpenButtonPaddingSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></OpenButtonPaddingSettings>
 									<CloseButtonPositionSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
+										attributes={attributes}
+										setAttributes={setAttributes}
 									></CloseButtonPositionSettings>
 								</>
 							);
 						}
 						return null;
-					} }
+					}}
 				</TabPanel>
 			</InspectorControls>
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<div
 					className="cbb-sidebar-menu__button"
-					style={ {
+					style={{
 						'--cbb-btn-light-color': buttonLightColor,
 						'--cbb-btn-dark-color': buttonDarkColor,
 						height: openButtonStyles.buttonHeight,
 						gap: openButtonStyles.buttonGap,
 						padding: openButtonPadding.differentPaddingsEnabled
-							? `${ openButtonPadding.top } ${ openButtonPadding.right } ${ openButtonPadding.bottom } ${ openButtonPadding.left }`
-							: `${ openButtonPadding.top }`,
-						...( openButtonStyles.buttonBorderWidth !== '0px' && {
+							? `${openButtonPadding.top} ${openButtonPadding.right} ${openButtonPadding.bottom} ${openButtonPadding.left}`
+							: `${openButtonPadding.top}`,
+						...(openButtonStyles.buttonBorderWidth !== '0px' && {
 							'--cbb-open-btn-border-width':
 								openButtonStyles.buttonBorderWidth,
-						} ),
-						...( openButtonStyles.borderRadius !== '0px' && {
+						}),
+						...(openButtonStyles.borderRadius !== '0px' && {
 							borderRadius: openButtonStyles.buttonBorderRadius,
-						} ),
+						}),
 						'--cbb-open-btn-bar-height':
 							openButtonStyles.barsHeight,
 						'--cbb-open-btn-top-bottom-bar-width':
@@ -152,7 +152,7 @@ export default function EditBlock( { attributes, setAttributes } ) {
 							openButtonStyles.centerBarWidth,
 						'--cbb-open-btn-bar-border-radius':
 							openButtonStyles.barsBorderRadius,
-					} }
+					}}
 				>
 					<span></span>
 				</div>

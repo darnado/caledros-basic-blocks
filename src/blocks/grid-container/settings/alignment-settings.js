@@ -21,22 +21,22 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function AlignmentSettings( { attributes, setAttributes } ) {
+export default function AlignmentSettings({ attributes, setAttributes }) {
 	const { containerAlignment } = attributes;
 	return (
 		<PanelBody
-			title={ __( 'Content alignment', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Content alignment', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the vertical alignment for the container items.',
 					'caledros-basic-blocks'
-				) }
-				value={ containerAlignment.verticalAlignment }
-				options={ [
+				)}
+				value={containerAlignment.verticalAlignment}
+				options={[
 					{
 						label: 'Start',
 						value: 'start',
@@ -57,25 +57,25 @@ export default function AlignmentSettings( { attributes, setAttributes } ) {
 						label: 'Normal (default value)',
 						value: 'normal',
 					},
-				] }
-				onChange={ ( newAlignment ) => {
-					setAttributes( {
+				]}
+				onChange={(newAlignment) => {
+					setAttributes({
 						containerAlignment: {
 							...containerAlignment,
 							verticalAlignment: newAlignment,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
-				help={ __(
+				help={__(
 					'Choose the horizontal alignment for the container items.',
 					'caledros-basic-blocks'
-				) }
-				value={ containerAlignment.horizontalAlignment }
-				options={ [
+				)}
+				value={containerAlignment.horizontalAlignment}
+				options={[
 					{
 						label: 'Start',
 						value: 'start',
@@ -96,15 +96,15 @@ export default function AlignmentSettings( { attributes, setAttributes } ) {
 						label: 'Legacy (default value)',
 						value: 'legacy',
 					},
-				] }
-				onChange={ ( newAlignment ) => {
-					setAttributes( {
+				]}
+				onChange={(newAlignment) => {
+					setAttributes({
 						containerAlignment: {
 							...containerAlignment,
 							horizontalAlignment: newAlignment,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

@@ -21,47 +21,47 @@
 import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function AlignItemsTabletSettings( {
+export default function AlignItemsTabletSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { containerAlignItemsTablet } = attributes;
 
 	return (
 		<PanelBody
-			title={ __(
+			title={__(
 				'Align Items (Tablet and Mobile)',
 				'caledros-basic-blocks'
-			) }
-			initialOpen={ false }
+			)}
+			initialOpen={false}
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Enable control', 'caledros-basic-blocks' ) }
-				help={ __(
+				label={__('Enable control', 'caledros-basic-blocks')}
+				help={__(
 					"This control enables selecting a custom value for the 'align items' property in both tablets and mobile devices.",
 					'caledros-basic-blocks'
-				) }
-				checked={ containerAlignItemsTablet.enabled }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				)}
+				checked={containerAlignItemsTablet.enabled}
+				onChange={(newValue) => {
+					setAttributes({
 						containerAlignItemsTablet: {
 							...containerAlignItemsTablet,
 							enabled: newValue,
 						},
-					} );
-				} }
+					});
+				}}
 			/>
-			{ containerAlignItemsTablet.enabled && (
+			{containerAlignItemsTablet.enabled && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
-					help={ __(
+					help={__(
 						'Select the value for the align items property.',
 						'caledros-basic-blocks'
-					) }
-					value={ containerAlignItemsTablet.value }
-					options={ [
+					)}
+					value={containerAlignItemsTablet.value}
+					options={[
 						{
 							label: 'Flex start',
 							value: 'flex-start',
@@ -86,17 +86,17 @@ export default function AlignItemsTabletSettings( {
 							label: 'Normal (default)',
 							value: 'normal',
 						},
-					] }
-					onChange={ ( newValue ) => {
-						setAttributes( {
+					]}
+					onChange={(newValue) => {
+						setAttributes({
 							containerAlignItemsTablet: {
 								...containerAlignItemsTablet,
 								value: newValue,
 							},
-						} );
-					} }
+						});
+					}}
 				/>
-			) }
+			)}
 		</PanelBody>
 	);
 }
