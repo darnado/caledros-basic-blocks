@@ -24,9 +24,25 @@
   "license": "GPL-2.0-or-later",
   "description": "",
   "devDependencies": {
-    "@wordpress/scripts": "^30.25.0"
+    "@wordpress/api-fetch": "^7.48.1",
+    "@wordpress/blob": "^4.48.1",
+    "@wordpress/block-editor": "^15.21.1",
+    "@wordpress/blocks": "^15.21.1",
+    "@wordpress/components": "^35.0.1",
+    "@wordpress/core-data": "^7.48.1",
+    "@wordpress/data": "^10.48.1",
+    "@wordpress/editor": "^14.48.1",
+    "@wordpress/element": "^8.0.1",
+    "@wordpress/escape-html": "^3.48.1",
+    "@wordpress/eslint-plugin": "^25.4.1",
+    "@wordpress/hooks": "^4.48.1",
+    "@wordpress/i18n": "^6.21.1",
+    "@wordpress/interactivity": "^6.48.1",
+    "@wordpress/plugins": "^7.48.1",
+    "@wordpress/scripts": "^32.4.1",
+    "globals": "^17.6.0"
   },
   "dependencies": {
-    "swiper": "^11.2.6"
+    "swiper": "^12.2.0"
   }
 }

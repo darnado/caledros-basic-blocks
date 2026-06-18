@@ -21,26 +21,26 @@
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function IconFlexDirectionSettings( {
+export default function IconFlexDirectionSettings({
 	attributes,
 	setAttributes,
-} ) {
+}) {
 	const { buttonIconFlexDirection } = attributes;
 
 	return (
 		<PanelBody
-			title={ __( 'Button flex direction', 'caledros-basic-blocks' ) }
-			initialOpen={ false }
+			title={__('Button flex direction', 'caledros-basic-blocks')}
+			initialOpen={false}
 		>
 			<SelectControl
 				__nextHasNoMarginBottom
 				__next40pxDefaultSize
-				help={ __(
+				help={__(
 					"Choose the flex direction for the button's items.",
 					'caledros-basic-blocks'
-				) }
-				value={ buttonIconFlexDirection }
-				options={ [
+				)}
+				value={buttonIconFlexDirection}
+				options={[
 					{
 						label: 'Row (default)',
 						value: 'row',
@@ -49,12 +49,12 @@ export default function IconFlexDirectionSettings( {
 						label: 'Row reverse',
 						value: 'row-reverse',
 					},
-				] }
-				onChange={ ( newValue ) => {
-					setAttributes( {
+				]}
+				onChange={(newValue) => {
+					setAttributes({
 						buttonIconFlexDirection: newValue,
-					} );
-				} }
+					});
+				}}
 			/>
 		</PanelBody>
 	);

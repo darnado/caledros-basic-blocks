@@ -20,7 +20,7 @@
 
 import { useBlockProps } from '@wordpress/block-editor';
 
-export default function SaveBlock( { attributes } ) {
+export default function SaveBlock({ attributes }) {
 	const {
 		buttonText,
 		buttonLink,
@@ -56,7 +56,7 @@ export default function SaveBlock( { attributes } ) {
 	// Class list
 	const classesList = [
 		'cbb-button',
-		`${ buttonType === 'button-with-icon' ? 'cbb-button-with-icon' : '' }`,
+		`${buttonType === 'button-with-icon' ? 'cbb-button-with-icon' : ''}`,
 		`${
 			buttonHoverTextLightColor.enabled
 				? 'cbb-button--hover-text-light-color'
@@ -67,14 +67,8 @@ export default function SaveBlock( { attributes } ) {
 				? 'cbb-button--hover-text-dark-color'
 				: ''
 		}`,
-		`${
-			iconHoverLightColor.enabled
-				? 'cbb-button--icon-text-light-color'
-				: ''
-		}`,
-		`${
-			iconHoverDarkColor.enabled ? 'cbb-button--icon-text-dark-color' : ''
-		}`,
+		`${iconHoverLightColor.enabled ? 'cbb-button--icon-text-light-color' : ''}`,
+		`${iconHoverDarkColor.enabled ? 'cbb-button--icon-text-dark-color' : ''}`,
 		`${
 			borderHoverLightColor.enabled
 				? 'cbb-button--hover-border-light-color'
@@ -86,11 +80,11 @@ export default function SaveBlock( { attributes } ) {
 				: ''
 		}`,
 	]
-		.filter( ( classItem ) => classItem )
-		.join( ' ' );
+		.filter((classItem) => classItem)
+		.join(' ');
 
 	// Block properties
-	const blockProperties = useBlockProps.save( {
+	const blockProperties = useBlockProps.save({
 		className: classesList,
 		style: {
 			'--cbb-button-light-color': buttonLightColor,
@@ -98,104 +92,104 @@ export default function SaveBlock( { attributes } ) {
 			'--cbb-button-hover-light-color': buttonHoverLightColor,
 			'--cbb-button-hover-dark-color': buttonHoverDarkColor,
 			'--cbb-button-text-light-color': buttonTextLightColor,
-			...( buttonHoverTextLightColor.enabled && {
+			...(buttonHoverTextLightColor.enabled && {
 				'--cbb-button-hover-text-light-color':
 					buttonHoverTextLightColor.value,
-			} ),
+			}),
 			'--cbb-button-text-dark-color': buttonTextDarkColor,
-			...( buttonHoverTextDarkColor.enabled && {
+			...(buttonHoverTextDarkColor.enabled && {
 				'--cbb-button-hover-text-dark-color':
 					buttonHoverTextDarkColor.value,
-			} ),
-			...( buttonType === 'button-with-icon' && {
+			}),
+			...(buttonType === 'button-with-icon' && {
 				'--cbb-button-flex-direction': buttonIconFlexDirection,
-			} ),
-			...( buttonFontFamily !== '' && {
-				fontFamily: `var(--wp--preset--font-family--${ buttonFontFamily })`,
-			} ),
+			}),
+			...(buttonFontFamily !== '' && {
+				fontFamily: `var(--wp--preset--font-family--${buttonFontFamily})`,
+			}),
 			fontWeight: buttonFontWeight,
 			fontStyle: buttonFontStyle,
 			fontSize: buttonFontSize,
-			...( buttonBorder.width !== '0px' &&
+			...(buttonBorder.width !== '0px' &&
 				buttonBorder.style !== 'none' &&
-				( buttonBorder.lightColor !== '#00000000' ||
-					buttonBorder.darkColor !== '#00000000' ) && {
+				(buttonBorder.lightColor !== '#00000000' ||
+					buttonBorder.darkColor !== '#00000000') && {
 					borderStyle: buttonBorder.style,
-				} ),
-			...( buttonBorder.width !== '0px' &&
+				}),
+			...(buttonBorder.width !== '0px' &&
 				buttonBorder.style !== 'none' &&
-				( buttonBorder.lightColor !== '#00000000' ||
-					buttonBorder.darkColor !== '#00000000' ) && {
+				(buttonBorder.lightColor !== '#00000000' ||
+					buttonBorder.darkColor !== '#00000000') && {
 					borderWidth: buttonBorder.width,
-				} ),
-			...( buttonBorder.width !== '0px' &&
+				}),
+			...(buttonBorder.width !== '0px' &&
 				buttonBorder.style !== 'none' &&
 				buttonBorder.lightColor !== '#00000000' && {
 					'--cbb-button-light-border-color': buttonBorder.lightColor,
-				} ),
-			...( buttonBorder.width !== '0px' &&
+				}),
+			...(buttonBorder.width !== '0px' &&
 				buttonBorder.style !== 'none' &&
 				buttonBorder.darkColor !== '#00000000' && {
 					'--cbb-button-dark-border-color': buttonBorder.darkColor,
-				} ),
-			...( borderHoverLightColor.enabled && {
+				}),
+			...(borderHoverLightColor.enabled && {
 				'--cbb-button-border-hover-light-color':
 					borderHoverLightColor.value,
-			} ),
-			...( borderHoverDarkColor.enabled && {
+			}),
+			...(borderHoverDarkColor.enabled && {
 				'--cbb-button-border-hover-dark-color':
 					borderHoverDarkColor.value,
-			} ),
-			...( buttonBorder.radius !== '0px' &&
+			}),
+			...(buttonBorder.radius !== '0px' &&
 				buttonBorder.radius !== '0%' && {
 					borderRadius: buttonBorder.radius,
-				} ),
-			...( buttonLetterSpacing !== 'normal' && {
+				}),
+			...(buttonLetterSpacing !== 'normal' && {
 				letterSpacing: buttonLetterSpacing,
-			} ),
+			}),
 			margin: buttonMargin.differentMarginsEnabled
-				? `${ buttonMargin.top } ${ buttonMargin.right } ${ buttonMargin.bottom } ${ buttonMargin.left }`
-				: `${ buttonMargin.top }`,
+				? `${buttonMargin.top} ${buttonMargin.right} ${buttonMargin.bottom} ${buttonMargin.left}`
+				: `${buttonMargin.top}`,
 			padding: buttonPadding.differentPaddingsEnabled
-				? `${ buttonPadding.top } ${ buttonPadding.right } ${ buttonPadding.bottom } ${ buttonPadding.left }`
-				: `${ buttonPadding.top }`,
-			...( contentGap.enabled && {
-				'--cbb-content-gap': `${ contentGap.value }px`,
-			} ),
+				? `${buttonPadding.top} ${buttonPadding.right} ${buttonPadding.bottom} ${buttonPadding.left}`
+				: `${buttonPadding.top}`,
+			...(contentGap.enabled && {
+				'--cbb-content-gap': `${contentGap.value}px`,
+			}),
 		},
-	} );
+	});
 
 	return (
 		<>
-			{ buttonType === 'simple-button' && (
-				<a { ...blockProperties } href={ buttonLink }>
-					{ buttonText }
+			{buttonType === 'simple-button' && (
+				<a {...blockProperties} href={buttonLink}>
+					{buttonText}
 				</a>
-			) }
-			{ buttonType !== 'simple-button' && (
-				<a { ...blockProperties } href={ buttonLink }>
-					{ buttonText }
+			)}
+			{buttonType !== 'simple-button' && (
+				<a {...blockProperties} href={buttonLink}>
+					{buttonText}
 					<span
-						className={ `cbb-button__icon cbb-button__icon--${ buttonIcon }` }
-						style={ {
-							'--cbb-icon-size': `${ buttonIconSize }px`,
+						className={`cbb-button__icon cbb-button__icon--${buttonIcon}`}
+						style={{
+							'--cbb-icon-size': `${buttonIconSize}px`,
 							'--cbb-icon-color': buttonIconColor,
 							'--cbb-icon-dark-color': buttonIconDarkColor,
-							...( iconHoverLightColor.enabled && {
+							...(iconHoverLightColor.enabled && {
 								'--cbb-hover-icon-light-color':
 									iconHoverLightColor.value,
-							} ),
-							...( iconHoverDarkColor.enabled && {
+							}),
+							...(iconHoverDarkColor.enabled && {
 								'--cbb-hover-icon-dark-color':
 									iconHoverDarkColor.value,
-							} ),
-						} }
+							}),
+						}}
 					>
 						<span className="cbb-button__icon-container"></span>
 						<span className="cbb-button__icon-content"></span>
 					</span>
 				</a>
-			) }
+			)}
 		</>
 	);
 }
