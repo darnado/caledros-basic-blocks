@@ -30,7 +30,6 @@ import {
 	EffectCoverflow,
 } from 'swiper/modules';
 import LoopSettings from './settings/loop-settings';
-import IdentifierSettings from './settings/identifier-settings';
 import PaginationSettings from './settings/pagination-settings';
 import AutoplaySettings from './settings/autoplay-settings';
 import LightColorSettings from './settings/light-color-settings';
@@ -126,10 +125,6 @@ export default function EditBlock({ attributes, setAttributes }) {
 						if (tab.name === 'content') {
 							return (
 								<>
-									<IdentifierSettings
-										attributes={attributes}
-										setAttributes={setAttributes}
-									></IdentifierSettings>
 									{!showDemoData && (
 										<ImagesSettings
 											attributes={attributes}
