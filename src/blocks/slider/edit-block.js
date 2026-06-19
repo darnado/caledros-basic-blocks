@@ -204,10 +204,6 @@ export default function EditBlock({ attributes, setAttributes }) {
 						if (tab.name === 'content') {
 							return (
 								<>
-									{/* <IdentifierSettings
-										attributes={ attributes }
-										setAttributes={ setAttributes }
-									></IdentifierSettings> */}
 									<NumberOfCards
 										attributes={attributes}
 										setAttributes={setAttributes}
