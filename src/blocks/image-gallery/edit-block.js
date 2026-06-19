@@ -22,6 +22,7 @@ import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { TabPanel, Placeholder } from '@wordpress/components';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect } from '@wordpress/element';
 import {
 	Navigation,
 	Pagination,
@@ -44,6 +45,8 @@ import birdImage from './assets/bird.webp';
 import flowerImage from './assets/flower.webp';
 import mountainsImage from './assets/mountains.webp';
 
+// Global store used only at editor runtime (never saved in database)
+const uniqueIds = [];
 export default function EditBlock({ attributes, setAttributes }) {
 	// Block attributes
 	const {
@@ -61,6 +64,24 @@ export default function EditBlock({ attributes, setAttributes }) {
 		galleryEffect,
 		showDemoData,
 	} = attributes;
+
+	// Function to generate a persistent ID
+	const generateId = () => Math.random().toString(36).substring(2, 10);
+
+	// Assign a unique ID only if:
+	// - Block is newly created (uniqueId is missing)
+	// - Block was duplicated (uniqueId already exists in uniqueIds[])
+	useEffect(() => {
+		let id = identifier;
+
+		if (!id || uniqueIds.includes(id)) {
+			id = generateId();
+			setAttributes({ identifier: id });
+		}
+
+		uniqueIds.push(id);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []); // runs only once per block instance
 
 	// Block properties
 	const blockProps = useBlockProps({
