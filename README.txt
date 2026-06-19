@@ -171,6 +171,7 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 **Removed**
 
 * Unique identifier control in the Slider block. Now, the identifier attribute's value is generated automatically on block creation.  
+* Unique identifier control in the Image Gallery block. Now, the identifier attribute's value is generated automatically on block creation.
 
 = 3.1.2 - 2026-05-21 =
 
@@ -385,7 +386,7 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 == Upgrade Notice ==
 
 = 4.0.0 =
-This update removes the unique identifier control in the Slider block.
+This update removes the unique identifier control in the Slider and Image Gallery blocks.
 
 = 3.1.2 =
 This update removes a default border that was being added to the flex and grid blocks in WordPress 7.0.
