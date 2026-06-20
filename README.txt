@@ -152,12 +152,12 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 
 = 4.0.0 - 2026-06-19 =
 
-** Added **
+**Added**
 
 * Style control to the Posts Loop block. This new control allows to select between 2 block styles. Each style displays the post title in a different position.
 * Typography, font size, and letter spacing controls for the post titles in the Posts Loop Block. These new controls allow to change the appearance of the post titles text.
 
-** Changed **
+**Changed**
 
 * Plugin admin menu's position. Now such menu is located after "Settings" in the WordPress sidebar.
 * Source code format. PHP files now comply with PHPCS+WPCS standards. JS files now comply with WordPress coding standards for Javascript, which are defined in @wordpress/eslint-plugin.
