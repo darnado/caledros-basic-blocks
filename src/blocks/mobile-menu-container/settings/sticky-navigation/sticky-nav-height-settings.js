@@ -54,7 +54,7 @@ export default function StickyNavHeightSettings({ attributes, setAttributes }) {
 					__nextHasNoMarginBottom
 					help={sprintf(
 						/**
-						 * translators: %s height's unit
+						 * translators: %s sticky navigation's height
 						 */
 						__(
 							'Please select the height (%s) for the sticky navigation bar. This feature is only visible in the frontend.',

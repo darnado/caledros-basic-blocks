@@ -97,7 +97,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
 						__nextHasNoMarginBottom
 						help={sprintf(
 							/**
-							 * translators: %s border radius unit
+							 * translators: %s border radius's unit
 							 */
 							__(
 								'Please select the border radius (%s) for the container.',

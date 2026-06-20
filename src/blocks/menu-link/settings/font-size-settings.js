@@ -175,7 +175,7 @@ export default function FontSizeSettings({ attributes, setAttributes }) {
 						__nextHasNoMarginBottom
 						help={sprintf(
 							/**
-							 * translators: %s font size's unit
+							 * translators: %s font size unit
 							 */
 							__(
 								'Please select the custom font size (%s).',

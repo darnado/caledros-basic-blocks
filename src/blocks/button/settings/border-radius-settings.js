@@ -151,7 +151,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
 							__next40pxDefaultSize
 							help={sprintf(
 								/**
-								 * translators: %s border radius unit (px, %)
+								 * translators: %s top left border radius's unit
 								 */
 								__(
 									'Please select the top-left border radius (%s).',
@@ -259,7 +259,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
 							__next40pxDefaultSize
 							help={sprintf(
 								/**
-								 * translators: %s border radius unit (px, %)
+								 * translators: %s bottom right border radius's unit
 								 */
 								__(
 									'Please select the bottom-right border radius (%s).',
@@ -313,7 +313,7 @@ export default function BorderRadiusSettings({ attributes, setAttributes }) {
 							__next40pxDefaultSize
 							help={sprintf(
 								/**
-								 * translators: %s border radius unit (px, %)
+								 * translators: %s bottom left border radius's unit
 								 */
 								__(
 									'Please select the bottom-left border radius (%s).',

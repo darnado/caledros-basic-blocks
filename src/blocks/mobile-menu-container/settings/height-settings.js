@@ -54,7 +54,7 @@ export default function HeightSettings({ attributes, setAttributes }) {
 					__nextHasNoMarginBottom
 					help={sprintf(
 						/**
-						 * translators: %s height's unit
+						 * translators: %s container height's unit
 						 */
 						__(
 							'Please select the height (%s) for the container. To ensure a consistent design, all direct child elements must have its minimum height set to zero.',

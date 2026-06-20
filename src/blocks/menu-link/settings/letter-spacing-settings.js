@@ -81,7 +81,7 @@ export default function LetterSpacingSettings({ attributes, setAttributes }) {
 						__nextHasNoMarginBottom
 						help={sprintf(
 							/**
-							 * translators: %s letter spacing's unit
+							 * translators: %s letter spacing unit
 							 */
 							__(
 								'Please select the custom letter spacing (%s).',

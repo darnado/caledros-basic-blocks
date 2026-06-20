@@ -123,7 +123,7 @@ export default function WidthSettings({ attributes, setAttributes }) {
 						__nextHasNoMarginBottom
 						help={sprintf(
 							/**
-							 * translators: %s width's unit
+							 * translators: %s maximum width's unit
 							 */
 							__(
 								'Please select the custom maximum width (%s) for the container.',
