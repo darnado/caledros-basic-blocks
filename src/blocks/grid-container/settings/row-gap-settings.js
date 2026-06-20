@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,52 +18,54 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
-import { useState } from "@wordpress/element";
+import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { useState } from '@wordpress/element';
 
 export default function RowGapSettings({ attributes, setAttributes }) {
-  const { containerRowGap } = attributes;
-  const [useNormalRowGap, setUseNormalRowGap] = useState(
-    containerRowGap === "normal" ? true : false
-  );
-  return (
-    <PanelBody
-      title={__("Row gap", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__(
-          "Use normal row gap (default value)",
-          "caledros-basic-blocks"
-        )}
-        checked={useNormalRowGap}
-        onChange={() => {
-          let temporalValue = useNormalRowGap ? "0" : "normal";
-          setUseNormalRowGap((oldValue) => !oldValue);
-          setAttributes({ containerRowGap: temporalValue });
-        }}
-      />
-      {!useNormalRowGap && (
-        <RangeControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            "Please select the row gap (px) for the grid container.",
-            "caledros-basic-blocks"
-          )}
-          value={
-            isNaN(parseInt(containerRowGap)) ? 0 : parseInt(containerRowGap)
-          }
-          max={200}
-          min={0}
-          step={1}
-          onChange={(newRowGap) =>
-            setAttributes({ containerRowGap: `${newRowGap}px` })
-          }
-        />
-      )}
-    </PanelBody>
-  );
+	const { containerRowGap } = attributes;
+	const [useNormalRowGap, setUseNormalRowGap] = useState(
+		containerRowGap === 'normal' ? true : false
+	);
+	return (
+		<PanelBody
+			title={__('Row gap', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__(
+					'Use normal row gap (default value)',
+					'caledros-basic-blocks'
+				)}
+				checked={useNormalRowGap}
+				onChange={() => {
+					const temporalValue = useNormalRowGap ? '0' : 'normal';
+					setUseNormalRowGap((oldValue) => !oldValue);
+					setAttributes({ containerRowGap: temporalValue });
+				}}
+			/>
+			{!useNormalRowGap && (
+				<RangeControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={__(
+						'Please select the row gap (px) for the grid container.',
+						'caledros-basic-blocks'
+					)}
+					value={
+						isNaN(parseInt(containerRowGap))
+							? 0
+							: parseInt(containerRowGap)
+					}
+					max={200}
+					min={0}
+					step={1}
+					onChange={(newRowGap) =>
+						setAttributes({ containerRowGap: `${newRowGap}px` })
+					}
+				/>
+			)}
+		</PanelBody>
+	);
 }

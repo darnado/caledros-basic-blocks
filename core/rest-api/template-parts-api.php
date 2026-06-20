@@ -1,13 +1,19 @@
 <?php
+/**
+ * Registers API for the custom template parts
+ *
+ * @package Caledros_Basic_Blocks
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 /**
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
- * 
+ * Copyright (C) 2025-2026  David Arnado
+ *
  * This file is part of Caledros Basic Blocks.
- * 
+ *
  * Caledros Basic Blocks is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -22,15 +28,29 @@ if ( ! defined( 'ABSPATH' ) ) {
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-// Register custom endpoint
-add_action('rest_api_init', function () {
-    register_rest_route('caledros-basic-blocks/v1', '/template-part/(?P<slug>[a-zA-Z0-9-_]+)', [
-        'methods' => 'GET',
-        'callback' => function ($data) {
-            ob_start();
-            block_template_part($data['slug']);
-            return ob_get_clean();
-        },
-        'permission_callback' => '__return_true',
-    ]);
-});
+/**
+ * Register custom API endpoint
+ *
+ * This endpoint allows to get the content of the custom template parts
+ * using the GET method. Hooked to 'rest_api_init'.
+ *
+ * @return void
+ */
+add_action(
+	'rest_api_init',
+	function () {
+		register_rest_route(
+			'caledros-basic-blocks/v1',
+			'/template-part/(?P<slug>[a-zA-Z0-9-_]+)',
+			array(
+				'methods'             => 'GET',
+				'callback'            => function ( $data ) {
+					ob_start();
+					block_template_part( $data['slug'] );
+					return ob_get_clean();
+				},
+				'permission_callback' => '__return_true',
+			)
+		);
+	}
+);

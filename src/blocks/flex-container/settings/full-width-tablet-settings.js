@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,28 +18,31 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function FullWidthTabletSettings({ attributes, setAttributes }) {
-  const { fullWidthTabletEnabled } = attributes;
+	const { fullWidthTabletEnabled } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Full Width (Tablet and Mobile)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__(
-          "Enable the flex container to expand to full width on tablets and mobile devices.",
-          "caledros-basic-blocks"
-        )}
-        checked={fullWidthTabletEnabled}
-        onChange={(newValue) => {
-          setAttributes({ fullWidthTabletEnabled: newValue });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__(
+				'Full Width (Tablet and Mobile)',
+				'caledros-basic-blocks'
+			)}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__(
+					'Enable the flex container to expand to full width on tablets and mobile devices.',
+					'caledros-basic-blocks'
+				)}
+				checked={fullWidthTabletEnabled}
+				onChange={(newValue) => {
+					setAttributes({ fullWidthTabletEnabled: newValue });
+				}}
+			/>
+		</PanelBody>
+	);
 }

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -37,9 +37,4 @@
     rgba(68, 189, 214, 1) 56%,
     rgba(31, 169, 203, 1) 98%
   );
-}
-
-/* Hide the switcher checkbox */
-.cbb-dark-light-switcher__checkbox {
-  display: none !important;
 }

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,24 +18,30 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function LoopSettings({ attributes, setAttributes }) {
-  const { enableLoop, galleryEffect, images } = attributes;
+	const { enableLoop, galleryEffect, images } = attributes;
 
-  return (
-    <PanelBody title={__("Loop", "caledros-basic-blocks")} initialOpen={false}>
-      <ToggleControl
-        __nextHasNoMarginBottom
-        checked={enableLoop}
-        disabled={galleryEffect === "coverflow" && images.length < 3}
-        label={__("Enable loop", "caledros-basic-blocks")}
-        help={__("Enable the continuous loop mode.", "caledros-basic-blocks")}
-        onChange={(newValue) => {
-          setAttributes({ enableLoop: newValue });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Loop', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				checked={enableLoop}
+				disabled={galleryEffect === 'coverflow' && images.length < 3}
+				label={__('Enable loop', 'caledros-basic-blocks')}
+				help={__(
+					'Enable the continuous loop mode.',
+					'caledros-basic-blocks'
+				)}
+				onChange={(newValue) => {
+					setAttributes({ enableLoop: newValue });
+				}}
+			/>
+		</PanelBody>
+	);
 }

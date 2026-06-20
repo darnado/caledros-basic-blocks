@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,29 +18,29 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function EnableStickyNavSettings({ attributes, setAttributes }) {
-  const { stickyNavigationEnabled } = attributes;
+	const { stickyNavigationEnabled } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Sticky navigation", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable sticky navigation", "caledros-basic-blocks")}
-        help={__(
-          "A sticky navigation bar will stick to the top of the screen while scrolling. The effect is only visible in the frontend, not in the editor.",
-          "caledros-basic-blocks"
-        )}
-        checked={stickyNavigationEnabled}
-        onChange={(newValue) =>
-          setAttributes({ stickyNavigationEnabled: newValue })
-        }
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Sticky navigation', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__('Enable sticky navigation', 'caledros-basic-blocks')}
+				help={__(
+					'A sticky navigation bar will stick to the top of the screen while scrolling. The effect is only visible in the frontend, not in the editor.',
+					'caledros-basic-blocks'
+				)}
+				checked={stickyNavigationEnabled}
+				onChange={(newValue) =>
+					setAttributes({ stickyNavigationEnabled: newValue })
+				}
+			/>
+		</PanelBody>
+	);
 }

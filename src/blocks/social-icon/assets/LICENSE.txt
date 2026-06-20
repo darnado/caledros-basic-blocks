@@ -1,4 +1,4 @@
-*** License information for the icons (SVG files located in the current "assets" folder) used in the Social Icon block ***
+*** License information of the icons (SVG files located in the current "assets" folder) used in the Social Icon block ***
 
 The MIT License (MIT)
 

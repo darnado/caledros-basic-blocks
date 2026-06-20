@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 7.0
-Stable tag: 3.1.2
+Stable tag: 4.0.0
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -149,6 +149,29 @@ However, other third party plugins can slow down your website if they are used t
 == Changelog ==
 
 This changelog format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Also, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+= 4.0.0 - 2026-06-19 =
+
+** Added **
+
+* Style control to the Posts Loop block. This new control allows to select between 2 block styles. Each style displays the post title in a different position.
+* Typography, font size, and letter spacing controls for the post titles in the Posts Loop Block. These new controls allow to change the appearance of the post titles text.
+
+** Changed **
+
+* Plugin admin menu's position. Now such menu is located after "Settings" in the WordPress sidebar.
+* Source code format. PHP files now comply with PHPCS+WPCS standards. JS files now comply with WordPress coding standards for Javascript, which are defined in @wordpress/eslint-plugin.
+
+**Fixed**
+
+* Automatic border that was being added to the desktop menu container in the editor. Now this border is no longer visible.
+* Automatic border that was being added to the mobile menu container in the editor. Now this border is no longer visible.
+* Variable name in the border light color control of the grid container block.
+
+**Removed**
+
+* Unique identifier control in the Slider block. Now, the identifier attribute's value is generated automatically on block creation.  
+* Unique identifier control in the Image Gallery block. Now, the identifier attribute's value is generated automatically on block creation.
 
 = 3.1.2 - 2026-05-21 =
 
@@ -361,6 +384,9 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 * CSS stylesheet preloader for improved performance. This preloader can be disabled.
 
 == Upgrade Notice ==
+
+= 4.0.0 =
+This update removes the unique identifier control in the Slider and Image Gallery blocks.
 
 = 3.1.2 =
 This update removes a default border that was being added to the flex and grid blocks in WordPress 7.0.

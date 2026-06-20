@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,30 +18,32 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function NumberOfColumnsSettings({ attributes, setAttributes }) {
-  const { numberOfColumns } = attributes;
-  return (
-    <PanelBody
-      title={__("No. of columns (desktop)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Please select the number of columns for the container (desktop).",
-          "caledros-basic-blocks"
-        )}
-        value={numberOfColumns}
-        initialPosition={1}
-        max={6}
-        min={1}
-        step={1}
-        onChange={(newValue) => setAttributes({ numberOfColumns: newValue })}
-      />
-    </PanelBody>
-  );
+	const { numberOfColumns } = attributes;
+	return (
+		<PanelBody
+			title={__('No. of columns (desktop)', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Please select the number of columns for the container (desktop).',
+					'caledros-basic-blocks'
+				)}
+				value={numberOfColumns}
+				initialPosition={1}
+				max={6}
+				min={1}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ numberOfColumns: newValue })
+				}
+			/>
+		</PanelBody>
+	);
 }

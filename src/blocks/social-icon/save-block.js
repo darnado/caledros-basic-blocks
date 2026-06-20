@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,22 +18,22 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { useBlockProps } from "@wordpress/block-editor";
+import { useBlockProps } from '@wordpress/block-editor';
 
 export default function SaveBlock({ attributes }) {
-  const { socialMediaIcon, iconLink } = attributes;
-  // Block props
-  const blockProps = useBlockProps.save({
-    className: `cbb-social-icon cbb-social-icon--${socialMediaIcon}`,
-  });
-  return (
-    <div {...blockProps}>
-      <span className="cbb-social-icon__icon-container"></span>
-      <a
-        href={iconLink}
-        className="cbb-social-icon__main-link"
-        aria-label={socialMediaIcon}
-      ></a>
-    </div>
-  );
+	const { socialMediaIcon, iconLink } = attributes;
+	// Block props
+	const blockProps = useBlockProps.save({
+		className: `cbb-social-icon cbb-social-icon--${socialMediaIcon}`,
+	});
+	return (
+		<div {...blockProps}>
+			<span className="cbb-social-icon__icon-container"></span>
+			<a
+				href={iconLink}
+				className="cbb-social-icon__main-link"
+				aria-label={socialMediaIcon}
+			></a>
+		</div>
+	);
 }

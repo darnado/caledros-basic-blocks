@@ -1,6 +1,6 @@
-/**
+/*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -19,22 +19,22 @@
  */
 
 jQuery(document).ready(function ($) {
-  $("#category_media_button").click(function (e) {
-    e.preventDefault();
-    var image = wp
-      .media({
-        title: "Upload Image",
-        multiple: false,
-      })
-      .open()
-      .on("select", function (e) {
-        var uploaded_image = image.state().get("selection").first();
-        var image_url = uploaded_image.toJSON().url;
-        $("#category_image").val(uploaded_image.id);
-        $("#category_image_url").val(image_url);
-        $("#image-preview").html(
-          "<img src='" + image_url + "' style='max-width: 200px;'>"
-        );
-      });
-  });
+	$('#category_media_button').click(function (e) {
+		e.preventDefault();
+		const image = wp
+			.media({
+				title: 'Upload Image',
+				multiple: false,
+			})
+			.open()
+			.on('select', function () {
+				const uploadedImage = image.state().get('selection').first();
+				const imageUrl = uploadedImage.toJSON().url;
+				$('#category_image').val(uploadedImage.id);
+				$('#category_image_url').val(imageUrl);
+				$('#image-preview').html(
+					"<img src='" + imageUrl + "' style='max-width: 200px;'>"
+				);
+			});
+	});
 });

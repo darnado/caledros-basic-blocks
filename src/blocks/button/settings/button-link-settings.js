@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,28 +18,31 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, TextControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, TextControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function ButtonLinkSettings({ attributes, setAttributes }) {
-  const { buttonLink } = attributes;
+	const { buttonLink } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Button link", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <TextControl
-        __nextHasNoMarginBottom
-        __next40pxDefaultSize
-        help={__("Paste the link for the button.", "caledros-basic-blocks")}
-        value={buttonLink}
-        onChange={(newValue) => {
-          setAttributes({
-            buttonLink: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Button link', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<TextControl
+				__nextHasNoMarginBottom
+				__next40pxDefaultSize
+				help={__(
+					'Paste the link for the button.',
+					'caledros-basic-blocks'
+				)}
+				value={buttonLink}
+				onChange={(newValue) => {
+					setAttributes({
+						buttonLink: newValue,
+					});
+				}}
+			/>
+		</PanelBody>
+	);
 }

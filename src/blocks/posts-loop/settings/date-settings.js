@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,74 +18,77 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function DateSettings({ attributes, setAttributes }) {
-  const { dateOptions } = attributes;
+	const { dateOptions } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Date options", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Show date", "caledros-basic-blocks")}
-        help={__(
-          "Each post card will show its publication date",
-          "caledros-basic-blocks"
-        )}
-        checked={dateOptions.showDate}
-        onChange={(newValue) => {
-          setAttributes({
-            dateOptions: { ...dateOptions, showDate: newValue },
-          });
-        }}
-      />
-      {dateOptions.showDate && (
-        <SelectControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__("Choose the date format", "caledros-basic-blocks")}
-          value={dateOptions.dateFormat}
-          options={[
-            {
-              label: "MM/DD/YYYY",
-              value: "MM/DD/YYYY",
-            },
-            {
-              label: "DD/MM/YYYY",
-              value: "DD/MM/YYYY",
-            },
-            {
-              label: "YYYY-MM-DD",
-              value: "YYYY-MM-DD",
-            },
-            {
-              label: "Month DD, YYYY",
-              value: "Month DD, YYYY",
-            },
-            {
-              label: "DD Month YYYY",
-              value: "DD Month YYYY",
-            },
-            {
-              label: "Day, Month DD, YYYY",
-              value: "Day, Month DD, YYYY",
-            },
-            {
-              label: "Month DD",
-              value: "Month DD",
-            },
-          ]}
-          onChange={(newValue) => {
-            setAttributes({
-              dateOptions: { ...dateOptions, dateFormat: newValue },
-            });
-          }}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Date options', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__('Show date', 'caledros-basic-blocks')}
+				help={__(
+					'Each post card will show its publication date',
+					'caledros-basic-blocks'
+				)}
+				checked={dateOptions.showDate}
+				onChange={(newValue) => {
+					setAttributes({
+						dateOptions: { ...dateOptions, showDate: newValue },
+					});
+				}}
+			/>
+			{dateOptions.showDate && (
+				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={__('Choose the date format', 'caledros-basic-blocks')}
+					value={dateOptions.dateFormat}
+					options={[
+						{
+							label: 'MM/DD/YYYY',
+							value: 'MM/DD/YYYY',
+						},
+						{
+							label: 'DD/MM/YYYY',
+							value: 'DD/MM/YYYY',
+						},
+						{
+							label: 'YYYY-MM-DD',
+							value: 'YYYY-MM-DD',
+						},
+						{
+							label: 'Month DD, YYYY',
+							value: 'Month DD, YYYY',
+						},
+						{
+							label: 'DD Month YYYY',
+							value: 'DD Month YYYY',
+						},
+						{
+							label: 'Day, Month DD, YYYY',
+							value: 'Day, Month DD, YYYY',
+						},
+						{
+							label: 'Month DD',
+							value: 'Month DD',
+						},
+					]}
+					onChange={(newValue) => {
+						setAttributes({
+							dateOptions: {
+								...dateOptions,
+								dateFormat: newValue,
+							},
+						});
+					}}
+				/>
+			)}
+		</PanelBody>
+	);
 }

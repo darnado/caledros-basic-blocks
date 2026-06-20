@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,42 +18,45 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function EffectSettings({ attributes, setAttributes }) {
-  const { sliderEffect } = attributes;
+	const { sliderEffect } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Effect", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__("Choose the effect for the slider.", "caledros-basic-blocks")}
-        value={sliderEffect}
-        options={[
-          {
-            label: "None",
-            value: "none",
-          },
-          {
-            label: "Fade",
-            value: "fade",
-          },
-          {
-            label: "Coverflow",
-            value: "coverflow",
-          },
-        ]}
-        onChange={(newValue) => {
-          setAttributes({
-            sliderEffect: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Effect', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Choose the effect for the slider.',
+					'caledros-basic-blocks'
+				)}
+				value={sliderEffect}
+				options={[
+					{
+						label: 'None',
+						value: 'none',
+					},
+					{
+						label: 'Fade',
+						value: 'fade',
+					},
+					{
+						label: 'Coverflow',
+						value: 'coverflow',
+					},
+				]}
+				onChange={(newValue) => {
+					setAttributes({
+						sliderEffect: newValue,
+					});
+				}}
+			/>
+		</PanelBody>
+	);
 }

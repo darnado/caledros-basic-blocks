@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -19,112 +19,118 @@
  */
 
 import {
-  PanelBody,
-  RangeControl,
-  ToggleControl,
-  SelectControl,
-} from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
-import { useState } from "@wordpress/element";
+	PanelBody,
+	RangeControl,
+	ToggleControl,
+	SelectControl,
+} from '@wordpress/components';
+import { __, sprintf } from '@wordpress/i18n';
+import { useState } from '@wordpress/element';
 
 export default function LetterSpacingSettings({ attributes, setAttributes }) {
-  const { menuLetterSpacing } = attributes;
-  const [useNormalLetterSpacing, setUseNormalLetterSpacing] = useState(
-    menuLetterSpacing === "normal" ? true : false
-  );
+	const { menuLetterSpacing } = attributes;
+	const [useNormalLetterSpacing, setUseNormalLetterSpacing] = useState(
+		menuLetterSpacing === 'normal' ? true : false
+	);
 
-  // Recover the unit used in the letter spacing
-  const unit = menuLetterSpacing.replace(/[\d.]+/g, "") || "px";
-  const letterSpacingUnit = ["px", "em", "rem"].includes(unit) ? unit : "px";
+	// Recover the unit used in the letter spacing
+	const unit = menuLetterSpacing.replace(/[\d.]+/g, '') || 'px';
+	const letterSpacingUnit = ['px', 'em', 'rem'].includes(unit) ? unit : 'px';
 
-  // Recover the numeric value of the letter spacing
-  const letterSpacingNumber = (unit) => {
-    if (unit === "px") {
-      return parseInt(menuLetterSpacing) || 0;
-    } else {
-      return parseFloat(menuLetterSpacing) || 0;
-    }
-  };
+	// Recover the numeric value of the letter spacing
+	const letterSpacingNumber = (unitP) => {
+		if (unitP === 'px') {
+			return parseInt(menuLetterSpacing) || 0;
+		}
+		return parseFloat(menuLetterSpacing) || 0;
+	};
 
-  // Enforce max value for pixels
-  const enforceMaxValue = (unit, valueNumber) => {
-    if (unit !== "px" && valueNumber > 10) {
-      return 10;
-    } else {
-      return valueNumber;
-    }
-  };
+	// Enforce max value for pixels
+	const enforceMaxValue = (unitP, valueNumber) => {
+		if (unitP !== 'px' && valueNumber > 10) {
+			return 10;
+		}
+		return valueNumber;
+	};
 
-  return (
-    <PanelBody
-      title={__("Letter spacing", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Use normal letter spacing", "caledros-basic-blocks")}
-        checked={useNormalLetterSpacing}
-        onChange={() => {
-          const temporalValue = useNormalLetterSpacing ? "0" : "normal";
-          setUseNormalLetterSpacing((oldValue) => !oldValue);
-          setAttributes({
-            menuLetterSpacing: `${temporalValue}${
-              temporalValue === "normal" ? "" : letterSpacingUnit
-            }`,
-          });
-        }}
-      />
-      {!useNormalLetterSpacing && (
-        <div className="cbb-editor__grid">
-          <RangeControl
-            __next40pxDefaultSize
-            __nextHasNoMarginBottom
-            help={__(
-              `Please select the custom letter spacing (${letterSpacingUnit}).`,
-              "caledros-basic-blocks"
-            )}
-            value={parseFloat(menuLetterSpacing) || 0}
-            max={letterSpacingUnit === "px" ? 50 : 10}
-            min={0}
-            step={letterSpacingUnit === "px" ? 1 : 0.01}
-            onChange={(newLetterSpacing) => {
-              setAttributes({
-                menuLetterSpacing: `${enforceMaxValue(
-                  letterSpacingUnit,
-                  newLetterSpacing
-                )}${letterSpacingUnit}`,
-              });
-            }}
-          />
-          <SelectControl
-            __next40pxDefaultSize
-            __nextHasNoMarginBottom
-            value={letterSpacingUnit}
-            options={[
-              {
-                label: "px",
-                value: "px",
-              },
-              {
-                label: "em",
-                value: "em",
-              },
-              {
-                label: "rem",
-                value: "rem",
-              },
-            ]}
-            onChange={(newUnit) => {
-              setAttributes({
-                menuLetterSpacing: `${enforceMaxValue(
-                  newUnit,
-                  letterSpacingNumber(newUnit)
-                )}${newUnit}`,
-              });
-            }}
-          />
-        </div>
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Letter spacing', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__('Use normal letter spacing', 'caledros-basic-blocks')}
+				checked={useNormalLetterSpacing}
+				onChange={() => {
+					const temporalValue = useNormalLetterSpacing
+						? '0'
+						: 'normal';
+					setUseNormalLetterSpacing((oldValue) => !oldValue);
+					setAttributes({
+						menuLetterSpacing: `${temporalValue}${
+							temporalValue === 'normal' ? '' : letterSpacingUnit
+						}`,
+					});
+				}}
+			/>
+			{!useNormalLetterSpacing && (
+				<div className="cbb-editor__grid">
+					<RangeControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						help={sprintf(
+							/**
+							 * translators: %s letter spacing unit
+							 */
+							__(
+								'Please select the custom letter spacing (%s).',
+								'caledros-basic-blocks'
+							),
+							letterSpacingUnit
+						)}
+						value={parseFloat(menuLetterSpacing) || 0}
+						max={letterSpacingUnit === 'px' ? 50 : 10}
+						min={0}
+						step={letterSpacingUnit === 'px' ? 1 : 0.01}
+						onChange={(newLetterSpacing) => {
+							setAttributes({
+								menuLetterSpacing: `${enforceMaxValue(
+									letterSpacingUnit,
+									newLetterSpacing
+								)}${letterSpacingUnit}`,
+							});
+						}}
+					/>
+					<SelectControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						value={letterSpacingUnit}
+						options={[
+							{
+								label: 'px',
+								value: 'px',
+							},
+							{
+								label: 'em',
+								value: 'em',
+							},
+							{
+								label: 'rem',
+								value: 'rem',
+							},
+						]}
+						onChange={(newUnit) => {
+							setAttributes({
+								menuLetterSpacing: `${enforceMaxValue(
+									newUnit,
+									letterSpacingNumber(newUnit)
+								)}${newUnit}`,
+							});
+						}}
+					/>
+				</div>
+			)}
+		</PanelBody>
+	);
 }

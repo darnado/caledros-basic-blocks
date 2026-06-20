@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,33 +18,33 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 export default function SaveBlock({ attributes }) {
-  const {
-    iconsGap,
-    groupMargin,
-    socialIconsSize,
-    socialIconsColor,
-    socialIconsDarkColor,
-  } = attributes;
+	const {
+		iconsGap,
+		groupMargin,
+		socialIconsSize,
+		socialIconsColor,
+		socialIconsDarkColor,
+	} = attributes;
 
-  // Block props
-  const blockProps = useBlockProps.save({
-    className: "cbb-social-icons-group",
-    style: {
-      margin: groupMargin.differentMarginsEnabled
-        ? `${groupMargin.top} ${groupMargin.right} ${groupMargin.bottom} ${groupMargin.left}`
-        : `${groupMargin.top}`,
-      gap: `${iconsGap}px`,
-      "--cbb-social-icon-size": `${socialIconsSize}px`,
-      "--cbb-social-icon-color": `${socialIconsColor}`,
-      "--cbb-social-icon-dark-color": `${socialIconsDarkColor}`,
-    },
-  });
-  return (
-    <div {...blockProps}>
-      <InnerBlocks.Content />
-    </div>
-  );
+	// Block props
+	const blockProps = useBlockProps.save({
+		className: 'cbb-social-icons-group',
+		style: {
+			margin: groupMargin.differentMarginsEnabled
+				? `${groupMargin.top} ${groupMargin.right} ${groupMargin.bottom} ${groupMargin.left}`
+				: `${groupMargin.top}`,
+			gap: `${iconsGap}px`,
+			'--cbb-social-icon-size': `${socialIconsSize}px`,
+			'--cbb-social-icon-color': `${socialIconsColor}`,
+			'--cbb-social-icon-dark-color': `${socialIconsDarkColor}`,
+		},
+	});
+	return (
+		<div {...blockProps}>
+			<InnerBlocks.Content />
+		</div>
+	);
 }

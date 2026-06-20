@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,23 +18,23 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { useBlockProps } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
+import { useBlockProps } from '@wordpress/block-editor';
 
 export default function EditBlock() {
-  // Block props
-  const blockProps = useBlockProps();
+	// Block props
+	const blockProps = useBlockProps();
 
-  return (
-    <div {...blockProps}>
-      <p>
-        The Content Renderer block allows you to display the content of a
-        specific page or post dynamically. Unlike the default content block,
-        this block seamlessly integrates the content without adding any extra
-        wrapper or unnecessary markup, ensuring clean and minimal output. Ideal
-        for developers and designers who want to maintain precise control over
-        the structure and styling of their layouts.
-      </p>
-    </div>
-  );
+	return (
+		<div {...blockProps}>
+			<p>
+				The Content Renderer block allows you to display the content of
+				a specific page or post dynamically. Unlike the default content
+				block, this block seamlessly integrates the content without
+				adding any extra wrapper or unnecessary markup, ensuring clean
+				and minimal output. Ideal for developers and designers who want
+				to maintain precise control over the structure and styling of
+				their layouts.
+			</p>
+		</div>
+	);
 }

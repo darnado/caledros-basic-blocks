@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,32 +18,32 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function NavigationArrowsSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  const { enableNavigationArrows } = attributes;
+	const { enableNavigationArrows } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Navigation Arrows", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        checked={enableNavigationArrows}
-        label={__("Enable navigation arrows", "caledros-basic-blocks")}
-        help={__(
-          "Choose whether or not the navigation arrows are visible.",
-          "caledros-basic-blocks"
-        )}
-        onChange={(newValue) => {
-          setAttributes({ enableNavigationArrows: newValue });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Navigation Arrows', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				checked={enableNavigationArrows}
+				label={__('Enable navigation arrows', 'caledros-basic-blocks')}
+				help={__(
+					'Choose whether or not the navigation arrows are visible.',
+					'caledros-basic-blocks'
+				)}
+				onChange={(newValue) => {
+					setAttributes({ enableNavigationArrows: newValue });
+				}}
+			/>
+		</PanelBody>
+	);
 }

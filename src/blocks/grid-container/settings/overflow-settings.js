@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,49 +18,49 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function OverflowSettings({ attributes, setAttributes }) {
-  const { containerOverflow } = attributes;
+	const { containerOverflow } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Overflow", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Select the value for the overflow property. The container will automatically have 'overflow:hidden' applied if it's the parent of a slider or image gallery block.",
-          "caledros-basic-blocks"
-        )}
-        value={containerOverflow}
-        options={[
-          {
-            label: "Visible (default)",
-            value: "visible",
-          },
-          {
-            label: "Hidden",
-            value: "hidden",
-          },
-          {
-            label: "Scroll",
-            value: "scroll",
-          },
-          {
-            label: "Auto",
-            value: "auto",
-          },
-        ]}
-        onChange={(newValue) => {
-          setAttributes({
-            containerOverflow: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Overflow', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					"Select the value for the overflow property. The container will automatically have 'overflow:hidden' applied if it's the parent of a slider or image gallery block.",
+					'caledros-basic-blocks'
+				)}
+				value={containerOverflow}
+				options={[
+					{
+						label: 'Visible (default)',
+						value: 'visible',
+					},
+					{
+						label: 'Hidden',
+						value: 'hidden',
+					},
+					{
+						label: 'Scroll',
+						value: 'scroll',
+					},
+					{
+						label: 'Auto',
+						value: 'auto',
+					},
+				]}
+				onChange={(newValue) => {
+					setAttributes({
+						containerOverflow: newValue,
+					});
+				}}
+			/>
+		</PanelBody>
+	);
 }

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,32 +18,35 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function ShowNavigationLinksSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  const { showNavigationLinks } = attributes;
+	const { showNavigationLinks } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Show navigation links", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Show the  page navigation links.", "caledros-basic-blocks")}
-        help={__(
-          "The page navigation links will be displayed below the post loop.",
-          "caledros-basic-blocks"
-        )}
-        checked={showNavigationLinks}
-        onChange={(newValue) => {
-          setAttributes({ showNavigationLinks: newValue });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Show navigation links', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__(
+					'Show the page navigation links.',
+					'caledros-basic-blocks'
+				)}
+				help={__(
+					'The page navigation links will be displayed below the post loop.',
+					'caledros-basic-blocks'
+				)}
+				checked={showNavigationLinks}
+				onChange={(newValue) => {
+					setAttributes({ showNavigationLinks: newValue });
+				}}
+			/>
+		</PanelBody>
+	);
 }

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,67 +18,70 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
-import PageLinkSettings from "./page-link-settings";
-import PostLinkSettings from "./post-link-settings";
-import CustomLinkSettings from "./custom-link-settings";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import PageLinkSettings from './page-link-settings';
+import PostLinkSettings from './post-link-settings';
+import CustomLinkSettings from './custom-link-settings';
 
 export default function ContentTypeGroupSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  const { contentType } = attributes;
+	const { contentType } = attributes;
 
-  return (
-    <PanelBody title={__("Link", "caledros-basic-blocks")} initialOpen={false}>
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__("Content type", "caledros-basic-blocks")}
-        help={__(
-          "Select the content type to link to.",
-          "caledros-basic-blocks"
-        )}
-        value={contentType}
-        options={[
-          {
-            label: "Page",
-            value: "page",
-          },
-          {
-            label: "Post",
-            value: "post",
-          },
-          {
-            label: "Custom link",
-            value: "custom",
-          },
-        ]}
-        onChange={(newValue) => {
-          setAttributes({
-            contentType: newValue,
-          });
-        }}
-      />
-      {contentType === "page" && (
-        <PageLinkSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></PageLinkSettings>
-      )}
-      {contentType === "post" && (
-        <PostLinkSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></PostLinkSettings>
-      )}
-      {contentType === "custom" && (
-        <CustomLinkSettings
-          attributes={attributes}
-          setAttributes={setAttributes}
-        ></CustomLinkSettings>
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Link', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__('Content type', 'caledros-basic-blocks')}
+				help={__(
+					'Select the content type to link to.',
+					'caledros-basic-blocks'
+				)}
+				value={contentType}
+				options={[
+					{
+						label: 'Page',
+						value: 'page',
+					},
+					{
+						label: 'Post',
+						value: 'post',
+					},
+					{
+						label: 'Custom link',
+						value: 'custom',
+					},
+				]}
+				onChange={(newValue) => {
+					setAttributes({
+						contentType: newValue,
+					});
+				}}
+			/>
+			{contentType === 'page' && (
+				<PageLinkSettings
+					attributes={attributes}
+					setAttributes={setAttributes}
+				></PageLinkSettings>
+			)}
+			{contentType === 'post' && (
+				<PostLinkSettings
+					attributes={attributes}
+					setAttributes={setAttributes}
+				></PostLinkSettings>
+			)}
+			{contentType === 'custom' && (
+				<CustomLinkSettings
+					attributes={attributes}
+					setAttributes={setAttributes}
+				></CustomLinkSettings>
+			)}
+		</PanelBody>
+	);
 }

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,33 +18,36 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, TextControl, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function LinkSettings({ attributes, setAttributes }) {
-  const { iconLink, iconLinkEnabled } = attributes;
-  return (
-    <PanelBody
-      title={__("Icon link", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        checked={iconLinkEnabled}
-        label={__("Enable icon link", "caledros-basic-blocks")}
-        onChange={(newValue) => {
-          setAttributes({ iconLinkEnabled: newValue });
-        }}
-      />
-      {iconLinkEnabled && (
-        <TextControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          onChange={(newLink) => setAttributes({ iconLink: newLink })}
-          value={__(iconLink, "caledros-basic-blocks")}
-          help={__("Paste the link for the icon", "caledros-basic-blocks")}
-        />
-      )}
-    </PanelBody>
-  );
+	const { iconLink, iconLinkEnabled } = attributes;
+	return (
+		<PanelBody
+			title={__('Icon link', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				checked={iconLinkEnabled}
+				label={__('Enable icon link', 'caledros-basic-blocks')}
+				onChange={(newValue) => {
+					setAttributes({ iconLinkEnabled: newValue });
+				}}
+			/>
+			{iconLinkEnabled && (
+				<TextControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					onChange={(newLink) => setAttributes({ iconLink: newLink })}
+					value={iconLink}
+					help={__(
+						'Paste the link for the icon',
+						'caledros-basic-blocks'
+					)}
+				/>
+			)}
+		</PanelBody>
+	);
 }

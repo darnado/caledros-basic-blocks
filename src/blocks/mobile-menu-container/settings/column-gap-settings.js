@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,54 +18,56 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
-import { useState } from "@wordpress/element";
+import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { useState } from '@wordpress/element';
 
 export default function ColumnGapSettings({ attributes, setAttributes }) {
-  const { containerColumnGap } = attributes;
-  const [useNormalColumnGap, setUseNormalColumnGap] = useState(
-    containerColumnGap === "normal" ? true : false
-  );
-  return (
-    <PanelBody
-      title={__("Column gap", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__(
-          "Use normal column gap (default value)",
-          "caledros-basic-blocks"
-        )}
-        checked={useNormalColumnGap}
-        onChange={() => {
-          const temporalValue = useNormalColumnGap ? "0" : "normal";
-          setUseNormalColumnGap((oldValue) => !oldValue);
-          setAttributes({ containerColumnGap: temporalValue });
-        }}
-      />
-      {!useNormalColumnGap && (
-        <RangeControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            "Please select the column gap (px) for the flex container.",
-            "caledros-basic-blocks"
-          )}
-          value={
-            isNaN(parseInt(containerColumnGap))
-              ? 0
-              : parseInt(containerColumnGap)
-          }
-          max={200}
-          min={0}
-          step={1}
-          onChange={(newColumnGap) =>
-            setAttributes({ containerColumnGap: `${newColumnGap}px` })
-          }
-        />
-      )}
-    </PanelBody>
-  );
+	const { containerColumnGap } = attributes;
+	const [useNormalColumnGap, setUseNormalColumnGap] = useState(
+		containerColumnGap === 'normal' ? true : false
+	);
+	return (
+		<PanelBody
+			title={__('Column gap', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__(
+					'Use normal column gap (default value)',
+					'caledros-basic-blocks'
+				)}
+				checked={useNormalColumnGap}
+				onChange={() => {
+					const temporalValue = useNormalColumnGap ? '0' : 'normal';
+					setUseNormalColumnGap((oldValue) => !oldValue);
+					setAttributes({ containerColumnGap: temporalValue });
+				}}
+			/>
+			{!useNormalColumnGap && (
+				<RangeControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={__(
+						'Please select the column gap (px) for the flex container.',
+						'caledros-basic-blocks'
+					)}
+					value={
+						isNaN(parseInt(containerColumnGap))
+							? 0
+							: parseInt(containerColumnGap)
+					}
+					max={200}
+					min={0}
+					step={1}
+					onChange={(newColumnGap) =>
+						setAttributes({
+							containerColumnGap: `${newColumnGap}px`,
+						})
+					}
+				/>
+			)}
+		</PanelBody>
+	);
 }

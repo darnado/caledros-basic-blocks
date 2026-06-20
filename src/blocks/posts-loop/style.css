@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -67,7 +67,6 @@
 /*Post information*/
 .cbb-posts-loop__post-title {
   line-height: 1.4;
-  font-size: 22px;
   text-decoration: none;
   color: #fff;
   position: absolute;
@@ -75,10 +74,14 @@
   bottom: 10px;
   display: block;
   padding: 0px 5px 0px 5px;
-  font-weight: 500;
+  font-family: var(--cbb-post-title-font-family, inherit);
+  font-weight: var(--cbb-post-title-font-weight, 400);
+  font-style: var(--cbb-post-title-font-style, normal);
+  font-size: var(--cbb-post-title-font-size, 18px);
+  letter-spacing: var(--cbb-post-title-letter-spacing, normal);
 }
 
-.cbb-posts-loop_website-title-icon {
+.cbb-posts-loop__website-title-icon {
   width: 22px;
   height: 22px;
 }
@@ -87,6 +90,7 @@
   border-radius: 15px;
   background-color: #fff;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 .cbb-posts-loop__post-info {
@@ -96,14 +100,14 @@
   padding: 15px 10px;
 }
 
-.cbb-posts-loop_post-header {
+.cbb-posts-loop__post-header {
   display: flex;
   flex-direction: column;
   padding: 10px;
   row-gap: 5px;
 }
 
-.cbb-posts-loop_post-author-and-date {
+.cbb-posts-loop__post-author-and-date {
   display: flex;
   flex-direction: row;
   column-gap: 10px;
@@ -126,7 +130,7 @@
   column-gap: 5px;
 }
 
-.cbb-posts-loop_website-title {
+.cbb-posts-loop__website-title {
   font-weight: 500;
   display: flex;
   flex-direction: row;
@@ -236,4 +240,29 @@ html[data-theme="dark"] .cbb-posts-loop__date {
 html[data-theme="dark"] .cbb-posts-loop__category,
 html[data-theme="dark"] .cbb-posts-loop__tag {
   color: var(--wp--preset--color--paragraph-dark, #fff);
+}
+
+/*Custom styles for the image link demo content*/
+.cbb-posts-loop__link--demo {
+  cursor: pointer;
+}
+
+/*Posts Loop styles*/
+.cbb-posts-loop__post-title--style-2 {
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  color: #000;
+}
+
+.cbb-posts-loop__post-info--style-2 {
+  padding: 0px 10px 10px 10px;
+}
+
+html[data-theme="dark"] .cbb-posts-loop__post-title--style-2 {
+  color: #fff;
 }

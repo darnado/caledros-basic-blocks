@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,56 +18,56 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function ContentGapSettings({ attributes, setAttributes }) {
-  const { contentGap } = attributes;
+	const { contentGap } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Content gap", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable control", "caledros-basic-blocks")}
-        help={__(
-          "This control enables selecting a custom value for the button's content gap.",
-          "caledros-basic-blocks"
-        )}
-        checked={contentGap.enabled}
-        onChange={(newValue) => {
-          setAttributes({
-            contentGap: {
-              ...contentGap,
-              enabled: newValue,
-            },
-          });
-        }}
-      />
-      {contentGap.enabled && (
-        <RangeControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            `Please select the space between the icon and the text (px).`,
-            "caledros-basic-blocks"
-          )}
-          value={contentGap.value}
-          max={40}
-          min={0}
-          step={1}
-          onChange={(newValue) => {
-            setAttributes({
-              contentGap: {
-                ...contentGap,
-                value: newValue,
-              },
-            });
-          }}
-        />
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Content gap', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__('Enable control', 'caledros-basic-blocks')}
+				help={__(
+					"This control enables selecting a custom value for the button's content gap.",
+					'caledros-basic-blocks'
+				)}
+				checked={contentGap.enabled}
+				onChange={(newValue) => {
+					setAttributes({
+						contentGap: {
+							...contentGap,
+							enabled: newValue,
+						},
+					});
+				}}
+			/>
+			{contentGap.enabled && (
+				<RangeControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={__(
+						`Please select the space between the icon and the text (px).`,
+						'caledros-basic-blocks'
+					)}
+					value={contentGap.value}
+					max={40}
+					min={0}
+					step={1}
+					onChange={(newValue) => {
+						setAttributes({
+							contentGap: {
+								...contentGap,
+								value: newValue,
+							},
+						});
+					}}
+				/>
+			)}
+		</PanelBody>
+	);
 }

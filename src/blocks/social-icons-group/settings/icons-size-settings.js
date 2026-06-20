@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,31 +18,33 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function IconsSizeSettings({ attributes, setAttributes }) {
-  const { socialIconsSize } = attributes;
+	const { socialIconsSize } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Social icons size", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Adjust the size (px) of the social media icons",
-          "caledros-basic-blocks"
-        )}
-        initialPosition={socialIconsSize}
-        value={socialIconsSize}
-        max={100}
-        min={0}
-        step={1}
-        onChange={(newValue) => setAttributes({ socialIconsSize: newValue })}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Social icons size', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Adjust the size (px) of the social media icons',
+					'caledros-basic-blocks'
+				)}
+				initialPosition={socialIconsSize}
+				value={socialIconsSize}
+				max={100}
+				min={0}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ socialIconsSize: newValue })
+				}
+			/>
+		</PanelBody>
+	);
 }

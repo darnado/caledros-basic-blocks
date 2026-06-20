@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,61 +18,61 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function CloseButtonPositionSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  // Block attributes
-  const { closeButtonPosition } = attributes;
+	// Block attributes
+	const { closeButtonPosition } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Close button position", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          `Please select the top padding (px) for the close button. The close button is only visible in the frontend.`,
-          "caledros-basic-blocks"
-        )}
-        max={100}
-        min={0}
-        step={1}
-        value={parseInt(closeButtonPosition.top)}
-        onChange={(newValue) =>
-          setAttributes({
-            closeButtonPosition: {
-              ...closeButtonPosition,
-              top: `${newValue}px`,
-            },
-          })
-        }
-      />
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          `Please select the right padding (px) for the close button. The close button is only visible in the frontend.`,
-          "caledros-basic-blocks"
-        )}
-        max={100}
-        min={0}
-        step={1}
-        value={parseInt(closeButtonPosition.right)}
-        onChange={(newValue) =>
-          setAttributes({
-            closeButtonPosition: {
-              ...closeButtonPosition,
-              right: `${newValue}px`,
-            },
-          })
-        }
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Close button position', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					`Please select the top padding (px) for the close button. The close button is only visible in the frontend.`,
+					'caledros-basic-blocks'
+				)}
+				max={100}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonPosition.top)}
+				onChange={(newValue) =>
+					setAttributes({
+						closeButtonPosition: {
+							...closeButtonPosition,
+							top: `${newValue}px`,
+						},
+					})
+				}
+			/>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					`Please select the right padding (px) for the close button. The close button is only visible in the frontend.`,
+					'caledros-basic-blocks'
+				)}
+				max={100}
+				min={0}
+				step={1}
+				value={parseInt(closeButtonPosition.right)}
+				onChange={(newValue) =>
+					setAttributes({
+						closeButtonPosition: {
+							...closeButtonPosition,
+							right: `${newValue}px`,
+						},
+					})
+				}
+			/>
+		</PanelBody>
+	);
 }

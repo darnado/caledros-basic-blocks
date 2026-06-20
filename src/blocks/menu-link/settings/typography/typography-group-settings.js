@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,80 +18,85 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody } from "@wordpress/components";
-import { useSettings } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
-import FontFamilySettings from "./font-family-settings";
-import FontWeightSettings from "./font-weight-settings";
-import FontStyleSettings from "./font-style-settings";
+import { PanelBody } from '@wordpress/components';
+import { useSettings } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+import FontFamilySettings from './font-family-settings';
+import FontWeightSettings from './font-weight-settings';
+import FontStyleSettings from './font-style-settings';
 
 export default function TypographyGroupSettings({ attributes, setAttributes }) {
-  const [registeredFonts] = useSettings("typography.fontFamilies");
-  const { theme = [], custom = [] } = registeredFonts || {};
-  const allFonts = [...theme, ...custom];
+	const [registeredFonts] = useSettings('typography.fontFamilies');
+	const { theme = [], custom = [] } = registeredFonts || {};
+	const allFonts = [...theme, ...custom];
 
-  const doesFontExist = (fontFamily) => {
-    return allFonts.some((font) => font?.slug === fontFamily);
-  };
+	const doesFontExist = (fontFamily) => {
+		return allFonts.some((font) => font?.slug === fontFamily);
+	};
 
-  const getAvailableFontStyles = (fontFamily) => {
-    const fontFamilyData = allFonts.find((font) => font?.slug === fontFamily);
-    const fontStyles =
-      fontFamilyData?.fontFace?.map((fontFace) => fontFace?.fontStyle) || [];
+	const getAvailableFontStyles = (fontFamily) => {
+		const fontFamilyData = allFonts.find(
+			(font) => font?.slug === fontFamily
+		);
+		const fontStyles =
+			fontFamilyData?.fontFace?.map((fontFace) => fontFace?.fontStyle) ||
+			[];
 
-    return [...new Set(fontStyles)];
-  };
+		return [...new Set(fontStyles)];
+	};
 
-  const getAvailableFontWeights = (fontFamily, fontStyle) => {
-    const fontFamilyData = allFonts.find((font) => font?.slug === fontFamily);
-    const fontStyles = fontFamilyData?.fontFace?.filter((fontFace) => {
-      return fontFace?.fontStyle === fontStyle;
-    });
-    const fontWeights = fontStyles
-      ?.map((fontStyle) => {
-        if (fontStyle?.fontWeight?.includes(" ")) {
-          const [start, end] = fontStyle?.fontWeight
-            .split(" ")
-            .map((value) => parseInt(value));
-          const range = [];
-          for (let i = start; i <= end; i += 100) {
-            range.push(i);
-          }
-          return range;
-        }
-        return parseInt(fontStyle?.fontWeight);
-      })
-      .flat()
-      .sort((a, b) => a - b);
+	const getAvailableFontWeights = (fontFamily, fontStyle) => {
+		const fontFamilyData = allFonts.find(
+			(font) => font?.slug === fontFamily
+		);
+		const fontStyles = fontFamilyData?.fontFace?.filter((fontFace) => {
+			return fontFace?.fontStyle === fontStyle;
+		});
+		const fontWeights = fontStyles
+			?.map((fontStyleEl) => {
+				if (fontStyleEl?.fontWeight?.includes(' ')) {
+					const [start, end] = fontStyleEl?.fontWeight
+						.split(' ')
+						.map((value) => parseInt(value));
+					const range = [];
+					for (let i = start; i <= end; i += 100) {
+						range.push(i);
+					}
+					return range;
+				}
+				return parseInt(fontStyleEl?.fontWeight);
+			})
+			.flat()
+			.sort((a, b) => a - b);
 
-    return fontWeights;
-  };
+		return fontWeights;
+	};
 
-  return (
-    <PanelBody
-      title={__("Typography", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <FontFamilySettings
-        attributes={attributes}
-        setAttributes={setAttributes}
-        registeredFonts={registeredFonts}
-        getAvailableFontStyles={getAvailableFontStyles}
-        getAvailableFontWeights={getAvailableFontWeights}
-        doesFontExist={doesFontExist}
-      ></FontFamilySettings>
-      <FontStyleSettings
-        attributes={attributes}
-        setAttributes={setAttributes}
-        getAvailableFontStyles={getAvailableFontStyles}
-        getAvailableFontWeights={getAvailableFontWeights}
-        doesFontExist={doesFontExist}
-      ></FontStyleSettings>
-      <FontWeightSettings
-        attributes={attributes}
-        setAttributes={setAttributes}
-        getAvailableFontWeights={getAvailableFontWeights}
-      ></FontWeightSettings>
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Typography', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<FontFamilySettings
+				attributes={attributes}
+				setAttributes={setAttributes}
+				registeredFonts={registeredFonts}
+				getAvailableFontStyles={getAvailableFontStyles}
+				getAvailableFontWeights={getAvailableFontWeights}
+				doesFontExist={doesFontExist}
+			></FontFamilySettings>
+			<FontStyleSettings
+				attributes={attributes}
+				setAttributes={setAttributes}
+				getAvailableFontStyles={getAvailableFontStyles}
+				getAvailableFontWeights={getAvailableFontWeights}
+				doesFontExist={doesFontExist}
+			></FontStyleSettings>
+			<FontWeightSettings
+				attributes={attributes}
+				setAttributes={setAttributes}
+				getAvailableFontWeights={getAvailableFontWeights}
+			></FontWeightSettings>
+		</PanelBody>
+	);
 }

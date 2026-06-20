@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,146 +18,146 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function OpenButtonPaddingSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  const { openButtonPadding } = attributes;
+	const { openButtonPadding } = attributes;
 
-  // Recover the paddings
-  const topPadding = parseInt(openButtonPadding.top) || 0;
-  const leftPadding = parseInt(openButtonPadding.left) || 0;
-  const bottomPadding = parseInt(openButtonPadding.bottom) || 0;
-  const rightPadding = parseInt(openButtonPadding.right) || 0;
+	// Recover the paddings
+	const topPadding = parseInt(openButtonPadding.top) || 0;
+	const leftPadding = parseInt(openButtonPadding.left) || 0;
+	const bottomPadding = parseInt(openButtonPadding.bottom) || 0;
+	const rightPadding = parseInt(openButtonPadding.right) || 0;
 
-  return (
-    <PanelBody
-      title={__("Open button padding", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable different paddings", "caledros-basic-blocks")}
-        checked={openButtonPadding.differentPaddingsEnabled}
-        onChange={(newValue) => {
-          setAttributes({
-            openButtonPadding: {
-              ...openButtonPadding,
-              differentPaddingsEnabled: newValue,
-            },
-          });
-        }}
-      />
+	return (
+		<PanelBody
+			title={__('Open button padding', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__('Enable different paddings', 'caledros-basic-blocks')}
+				checked={openButtonPadding.differentPaddingsEnabled}
+				onChange={(newValue) => {
+					setAttributes({
+						openButtonPadding: {
+							...openButtonPadding,
+							differentPaddingsEnabled: newValue,
+						},
+					});
+				}}
+			/>
 
-      {!openButtonPadding.differentPaddingsEnabled && (
-        <RangeControl
-          __next40pxDefaultSize
-          __nextHasNoMarginBottom
-          help={__(
-            "Please select the padding (px) for the button",
-            "caledros-basic-blocks"
-          )}
-          value={topPadding}
-          max={30}
-          min={0}
-          step={1}
-          onChange={(newPadding) => {
-            setAttributes({
-              openButtonPadding: {
-                ...openButtonPadding,
-                top: `${newPadding}px`,
-              },
-            });
-          }}
-        />
-      )}
-      {openButtonPadding.differentPaddingsEnabled && (
-        <>
-          <RangeControl
-            __next40pxDefaultSize
-            __nextHasNoMarginBottom
-            help={__(
-              "Please select the top padding (px) for the button",
-              "caledros-basic-blocks"
-            )}
-            value={topPadding}
-            max={30}
-            min={0}
-            step={1}
-            onChange={(newPadding) => {
-              setAttributes({
-                openButtonPadding: {
-                  ...openButtonPadding,
-                  top: `${newPadding}px`,
-                },
-              });
-            }}
-          />
-          <RangeControl
-            __next40pxDefaultSize
-            __nextHasNoMarginBottom
-            help={__(
-              "Please select the right padding (px) for the button",
-              "caledros-basic-blocks"
-            )}
-            value={rightPadding}
-            max={30}
-            min={0}
-            step={1}
-            onChange={(newPadding) => {
-              setAttributes({
-                openButtonPadding: {
-                  ...openButtonPadding,
-                  right: `${newPadding}px`,
-                },
-              });
-            }}
-          />
-          <RangeControl
-            __next40pxDefaultSize
-            __nextHasNoMarginBottom
-            help={__(
-              "Please select the bottom padding (px) for the button",
-              "caledros-basic-blocks"
-            )}
-            value={bottomPadding}
-            max={30}
-            min={0}
-            step={1}
-            onChange={(newPadding) => {
-              setAttributes({
-                openButtonPadding: {
-                  ...openButtonPadding,
-                  bottom: `${newPadding}px`,
-                },
-              });
-            }}
-          />
-          <RangeControl
-            __next40pxDefaultSize
-            __nextHasNoMarginBottom
-            help={__(
-              "Please select the left padding (px) for the button",
-              "caledros-basic-blocks"
-            )}
-            value={leftPadding}
-            max={30}
-            min={0}
-            step={1}
-            onChange={(newPadding) => {
-              setAttributes({
-                openButtonPadding: {
-                  ...openButtonPadding,
-                  left: `${newPadding}px`,
-                },
-              });
-            }}
-          />
-        </>
-      )}
-    </PanelBody>
-  );
+			{!openButtonPadding.differentPaddingsEnabled && (
+				<RangeControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					help={__(
+						'Please select the padding (px) for the button',
+						'caledros-basic-blocks'
+					)}
+					value={topPadding}
+					max={30}
+					min={0}
+					step={1}
+					onChange={(newPadding) => {
+						setAttributes({
+							openButtonPadding: {
+								...openButtonPadding,
+								top: `${newPadding}px`,
+							},
+						});
+					}}
+				/>
+			)}
+			{openButtonPadding.differentPaddingsEnabled && (
+				<>
+					<RangeControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						help={__(
+							'Please select the top padding (px) for the button',
+							'caledros-basic-blocks'
+						)}
+						value={topPadding}
+						max={30}
+						min={0}
+						step={1}
+						onChange={(newPadding) => {
+							setAttributes({
+								openButtonPadding: {
+									...openButtonPadding,
+									top: `${newPadding}px`,
+								},
+							});
+						}}
+					/>
+					<RangeControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						help={__(
+							'Please select the right padding (px) for the button',
+							'caledros-basic-blocks'
+						)}
+						value={rightPadding}
+						max={30}
+						min={0}
+						step={1}
+						onChange={(newPadding) => {
+							setAttributes({
+								openButtonPadding: {
+									...openButtonPadding,
+									right: `${newPadding}px`,
+								},
+							});
+						}}
+					/>
+					<RangeControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						help={__(
+							'Please select the bottom padding (px) for the button',
+							'caledros-basic-blocks'
+						)}
+						value={bottomPadding}
+						max={30}
+						min={0}
+						step={1}
+						onChange={(newPadding) => {
+							setAttributes({
+								openButtonPadding: {
+									...openButtonPadding,
+									bottom: `${newPadding}px`,
+								},
+							});
+						}}
+					/>
+					<RangeControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						help={__(
+							'Please select the left padding (px) for the button',
+							'caledros-basic-blocks'
+						)}
+						value={leftPadding}
+						max={30}
+						min={0}
+						step={1}
+						onChange={(newPadding) => {
+							setAttributes({
+								openButtonPadding: {
+									...openButtonPadding,
+									left: `${newPadding}px`,
+								},
+							});
+						}}
+					/>
+				</>
+			)}
+		</PanelBody>
+	);
 }

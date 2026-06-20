@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,45 +18,45 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function AnimationTypeSettings({ attributes, setAttributes }) {
-  const { animationType } = attributes;
+	const { animationType } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Animation type", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Select the animation type for the menu link.",
-          "caledros-basic-blocks"
-        )}
-        value={animationType}
-        options={[
-          {
-            label: "Slide-in underline",
-            value: "slide-in-underline",
-          },
-          {
-            label: "Bounce underline",
-            value: "bounce-underline",
-          },
-          {
-            label: "None",
-            value: "none",
-          },
-        ]}
-        onChange={(newValue) => {
-          setAttributes({
-            animationType: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Animation type', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Select the animation type for the menu link.',
+					'caledros-basic-blocks'
+				)}
+				value={animationType}
+				options={[
+					{
+						label: 'Slide-in underline',
+						value: 'slide-in-underline',
+					},
+					{
+						label: 'Bounce underline',
+						value: 'bounce-underline',
+					},
+					{
+						label: 'None',
+						value: 'none',
+					},
+				]}
+				onChange={(newValue) => {
+					setAttributes({
+						animationType: newValue,
+					});
+				}}
+			/>
+		</PanelBody>
+	);
 }

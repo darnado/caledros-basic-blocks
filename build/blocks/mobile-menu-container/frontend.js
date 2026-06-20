@@ -1,1 +1,0 @@
-(()=>{const e=document.querySelector(".cbb-mobile-menu-container"),n=document.querySelector(".cbb-mobile-menu-container__watcher");n&&new IntersectionObserver((n=>{e.classList.toggle("cbb-mobile-menu-container--sticking-enabled",!n[0].isIntersecting)})).observe(n)})();

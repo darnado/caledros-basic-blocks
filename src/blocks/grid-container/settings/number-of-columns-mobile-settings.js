@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,35 +18,35 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function NumberOfColumnsMobileSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  const { numberOfColumnsMobile } = attributes;
-  return (
-    <PanelBody
-      title={__("No. of columns (mobile)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Please select the number of columns for the container (mobile devices).",
-          "caledros-basic-blocks"
-        )}
-        value={numberOfColumnsMobile}
-        initialPosition={1}
-        max={6}
-        min={1}
-        step={1}
-        onChange={(newValue) =>
-          setAttributes({ numberOfColumnsMobile: newValue })
-        }
-      />
-    </PanelBody>
-  );
+	const { numberOfColumnsMobile } = attributes;
+	return (
+		<PanelBody
+			title={__('No. of columns (mobile)', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Please select the number of columns for the container (mobile devices).',
+					'caledros-basic-blocks'
+				)}
+				value={numberOfColumnsMobile}
+				initialPosition={1}
+				max={6}
+				min={1}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ numberOfColumnsMobile: newValue })
+				}
+			/>
+		</PanelBody>
+	);
 }

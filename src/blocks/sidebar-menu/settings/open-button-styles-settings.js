@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,192 +18,198 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function OpenButtonStylesSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  // Block attributes
-  const { openButtonStyles } = attributes;
+	// Block attributes
+	const { openButtonStyles } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Open button styles", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__("Button height", "caledros-basic-blocks")}
-        help={__(
-          "Please select the value (px) for the button height.",
-          "caledros-basic-blocks"
-        )}
-        max={100}
-        min={0}
-        step={1}
-        value={parseInt(openButtonStyles.buttonHeight)}
-        onChange={(newValue) =>
-          setAttributes({
-            openButtonStyles: {
-              ...openButtonStyles,
-              buttonHeight: `${newValue}px`,
-            },
-          })
-        }
-      />
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__("Button gap", "caledros-basic-blocks")}
-        help={__(
-          "Please select the value (px) for the gap between the button bars.",
-          "caledros-basic-blocks"
-        )}
-        max={15}
-        min={0}
-        step={1}
-        value={parseInt(openButtonStyles.buttonGap)}
-        onChange={(newValue) =>
-          setAttributes({
-            openButtonStyles: {
-              ...openButtonStyles,
-              buttonGap: `${newValue}px`,
-            },
-          })
-        }
-      />
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__("Button border width", "caledros-basic-blocks")}
-        help={__(
-          "Please select the width (px) for the button border.",
-          "caledros-basic-blocks"
-        )}
-        max={10}
-        min={0}
-        step={1}
-        value={parseInt(openButtonStyles.buttonBorderWidth)}
-        onChange={(newValue) =>
-          setAttributes({
-            openButtonStyles: {
-              ...openButtonStyles,
-              buttonBorderWidth: `${newValue}px`,
-            },
-          })
-        }
-      />
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__("Button border radius", "caledros-basic-blocks")}
-        help={__(
-          "Please select the radius (px) for the button border.",
-          "caledros-basic-blocks"
-        )}
-        max={50}
-        min={0}
-        step={1}
-        value={parseInt(openButtonStyles.buttonBorderRadius)}
-        onChange={(newValue) =>
-          setAttributes({
-            openButtonStyles: {
-              ...openButtonStyles,
-              buttonBorderRadius: `${newValue}px`,
-            },
-          })
-        }
-      />
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__("Button bars' height", "caledros-basic-blocks")}
-        help={__(
-          "Please select the height (px) of the button bars.",
-          "caledros-basic-blocks"
-        )}
-        max={10}
-        min={0}
-        step={1}
-        value={parseInt(openButtonStyles.barsHeight)}
-        onChange={(newValue) =>
-          setAttributes({
-            openButtonStyles: {
-              ...openButtonStyles,
-              barsHeight: `${newValue}px`,
-            },
-          })
-        }
-      />
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__(
-          "Width of the button's top and bottom bars",
-          "caledros-basic-blocks"
-        )}
-        help={__(
-          "Please select the width (px) of the button's top and bottom bars.",
-          "caledros-basic-blocks"
-        )}
-        max={50}
-        min={0}
-        step={1}
-        value={parseInt(openButtonStyles.topAndBottomBarsWidth)}
-        onChange={(newValue) =>
-          setAttributes({
-            openButtonStyles: {
-              ...openButtonStyles,
-              topAndBottomBarsWidth: `${newValue}px`,
-            },
-          })
-        }
-      />
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__("Width of the button's center bar", "caledros-basic-blocks")}
-        help={__(
-          "Please select the width (px) of the button's center bar.",
-          "caledros-basic-blocks"
-        )}
-        max={50}
-        min={0}
-        step={1}
-        value={parseInt(openButtonStyles.centerBarWidth)}
-        onChange={(newValue) =>
-          setAttributes({
-            openButtonStyles: {
-              ...openButtonStyles,
-              centerBarWidth: `${newValue}px`,
-            },
-          })
-        }
-      />
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        label={__("Button bars' border radius", "caledros-basic-blocks")}
-        help={__(
-          "Please select the border radius (px) for the button bars.",
-          "caledros-basic-blocks"
-        )}
-        max={50}
-        min={0}
-        step={1}
-        value={parseInt(openButtonStyles.barsBorderRadius)}
-        onChange={(newValue) =>
-          setAttributes({
-            openButtonStyles: {
-              ...openButtonStyles,
-              barsBorderRadius: `${newValue}px`,
-            },
-          })
-        }
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Open button styles', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__('Button height', 'caledros-basic-blocks')}
+				help={__(
+					'Please select the value (px) for the button height.',
+					'caledros-basic-blocks'
+				)}
+				max={100}
+				min={0}
+				step={1}
+				value={parseInt(openButtonStyles.buttonHeight)}
+				onChange={(newValue) =>
+					setAttributes({
+						openButtonStyles: {
+							...openButtonStyles,
+							buttonHeight: `${newValue}px`,
+						},
+					})
+				}
+			/>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__('Button gap', 'caledros-basic-blocks')}
+				help={__(
+					'Please select the value (px) for the gap between the button bars.',
+					'caledros-basic-blocks'
+				)}
+				max={15}
+				min={0}
+				step={1}
+				value={parseInt(openButtonStyles.buttonGap)}
+				onChange={(newValue) =>
+					setAttributes({
+						openButtonStyles: {
+							...openButtonStyles,
+							buttonGap: `${newValue}px`,
+						},
+					})
+				}
+			/>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__('Button border width', 'caledros-basic-blocks')}
+				help={__(
+					'Please select the width (px) for the button border.',
+					'caledros-basic-blocks'
+				)}
+				max={10}
+				min={0}
+				step={1}
+				value={parseInt(openButtonStyles.buttonBorderWidth)}
+				onChange={(newValue) =>
+					setAttributes({
+						openButtonStyles: {
+							...openButtonStyles,
+							buttonBorderWidth: `${newValue}px`,
+						},
+					})
+				}
+			/>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__('Button border radius', 'caledros-basic-blocks')}
+				help={__(
+					'Please select the radius (px) for the button border.',
+					'caledros-basic-blocks'
+				)}
+				max={50}
+				min={0}
+				step={1}
+				value={parseInt(openButtonStyles.buttonBorderRadius)}
+				onChange={(newValue) =>
+					setAttributes({
+						openButtonStyles: {
+							...openButtonStyles,
+							buttonBorderRadius: `${newValue}px`,
+						},
+					})
+				}
+			/>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__("Button bars' height", 'caledros-basic-blocks')}
+				help={__(
+					'Please select the height (px) of the button bars.',
+					'caledros-basic-blocks'
+				)}
+				max={10}
+				min={0}
+				step={1}
+				value={parseInt(openButtonStyles.barsHeight)}
+				onChange={(newValue) =>
+					setAttributes({
+						openButtonStyles: {
+							...openButtonStyles,
+							barsHeight: `${newValue}px`,
+						},
+					})
+				}
+			/>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__(
+					"Width of the button's top and bottom bars",
+					'caledros-basic-blocks'
+				)}
+				help={__(
+					"Please select the width (px) of the button's top and bottom bars.",
+					'caledros-basic-blocks'
+				)}
+				max={50}
+				min={0}
+				step={1}
+				value={parseInt(openButtonStyles.topAndBottomBarsWidth)}
+				onChange={(newValue) =>
+					setAttributes({
+						openButtonStyles: {
+							...openButtonStyles,
+							topAndBottomBarsWidth: `${newValue}px`,
+						},
+					})
+				}
+			/>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__(
+					"Width of the button's center bar",
+					'caledros-basic-blocks'
+				)}
+				help={__(
+					"Please select the width (px) of the button's center bar.",
+					'caledros-basic-blocks'
+				)}
+				max={50}
+				min={0}
+				step={1}
+				value={parseInt(openButtonStyles.centerBarWidth)}
+				onChange={(newValue) =>
+					setAttributes({
+						openButtonStyles: {
+							...openButtonStyles,
+							centerBarWidth: `${newValue}px`,
+						},
+					})
+				}
+			/>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={__(
+					"Button bars' border radius",
+					'caledros-basic-blocks'
+				)}
+				help={__(
+					'Please select the border radius (px) for the button bars.',
+					'caledros-basic-blocks'
+				)}
+				max={50}
+				min={0}
+				step={1}
+				value={parseInt(openButtonStyles.barsBorderRadius)}
+				onChange={(newValue) =>
+					setAttributes({
+						openButtonStyles: {
+							...openButtonStyles,
+							barsBorderRadius: `${newValue}px`,
+						},
+					})
+				}
+			/>
+		</PanelBody>
+	);
 }

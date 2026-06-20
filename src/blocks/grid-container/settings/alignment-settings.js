@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,94 +18,94 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function AlignmentSettings({ attributes, setAttributes }) {
-  const { containerAlignment } = attributes;
-  return (
-    <PanelBody
-      title={__("Content alignment", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Choose the vertical alignment for the container items.",
-          "caledros-basic-blocks"
-        )}
-        value={containerAlignment.verticalAlignment}
-        options={[
-          {
-            label: "Start",
-            value: "start",
-          },
-          {
-            label: "Center",
-            value: "center",
-          },
-          {
-            label: "End",
-            value: "end",
-          },
-          {
-            label: "Stretch",
-            value: "stretch",
-          },
-          {
-            label: "Normal (default value)",
-            value: "normal",
-          },
-        ]}
-        onChange={(newAlignment) => {
-          setAttributes({
-            containerAlignment: {
-              ...containerAlignment,
-              verticalAlignment: newAlignment,
-            },
-          });
-        }}
-      />
-      <SelectControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Choose the horizontal alignment for the container items.",
-          "caledros-basic-blocks"
-        )}
-        value={containerAlignment.horizontalAlignment}
-        options={[
-          {
-            label: "Start",
-            value: "start",
-          },
-          {
-            label: "Center",
-            value: "center",
-          },
-          {
-            label: "End",
-            value: "end",
-          },
-          {
-            label: "Stretch",
-            value: "stretch",
-          },
-          {
-            label: "Legacy (default value)",
-            value: "legacy",
-          },
-        ]}
-        onChange={(newAlignment) => {
-          setAttributes({
-            containerAlignment: {
-              ...containerAlignment,
-              horizontalAlignment: newAlignment,
-            },
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	const { containerAlignment } = attributes;
+	return (
+		<PanelBody
+			title={__('Content alignment', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Choose the vertical alignment for the container items.',
+					'caledros-basic-blocks'
+				)}
+				value={containerAlignment.verticalAlignment}
+				options={[
+					{
+						label: 'Start',
+						value: 'start',
+					},
+					{
+						label: 'Center',
+						value: 'center',
+					},
+					{
+						label: 'End',
+						value: 'end',
+					},
+					{
+						label: 'Stretch',
+						value: 'stretch',
+					},
+					{
+						label: 'Normal (default value)',
+						value: 'normal',
+					},
+				]}
+				onChange={(newAlignment) => {
+					setAttributes({
+						containerAlignment: {
+							...containerAlignment,
+							verticalAlignment: newAlignment,
+						},
+					});
+				}}
+			/>
+			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Choose the horizontal alignment for the container items.',
+					'caledros-basic-blocks'
+				)}
+				value={containerAlignment.horizontalAlignment}
+				options={[
+					{
+						label: 'Start',
+						value: 'start',
+					},
+					{
+						label: 'Center',
+						value: 'center',
+					},
+					{
+						label: 'End',
+						value: 'end',
+					},
+					{
+						label: 'Stretch',
+						value: 'stretch',
+					},
+					{
+						label: 'Legacy (default value)',
+						value: 'legacy',
+					},
+				]}
+				onChange={(newAlignment) => {
+					setAttributes({
+						containerAlignment: {
+							...containerAlignment,
+							horizontalAlignment: newAlignment,
+						},
+					});
+				}}
+			/>
+		</PanelBody>
+	);
 }

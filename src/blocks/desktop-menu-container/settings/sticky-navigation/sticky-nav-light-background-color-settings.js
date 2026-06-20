@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,99 +18,106 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ColorPalette, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
-import { useState } from "@wordpress/element";
-import { useSettings } from "@wordpress/block-editor";
-import { select } from "@wordpress/data";
+import { PanelBody, ColorPalette, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { useState } from '@wordpress/element';
+import { useSettings } from '@wordpress/block-editor';
+import { select } from '@wordpress/data';
 
 export default function StickyLightNavBackgroundColorSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  const { stickyNavLightBackgroundColor } = attributes;
-  const [useTransparentBackground, setUseTransparentBackground] = useState(
-    stickyNavLightBackgroundColor === "#00000000" ? true : false
-  );
-  const [themeJsonPalette, defaultPalette] = useSettings(
-    "color.palette",
-    "color.defaultPalette"
-  );
+	const { stickyNavLightBackgroundColor } = attributes;
+	const [useTransparentBackground, setUseTransparentBackground] = useState(
+		stickyNavLightBackgroundColor === '#00000000' ? true : false
+	);
+	const [themeJsonPalette, defaultPalette] = useSettings(
+		'color.palette',
+		'color.defaultPalette'
+	);
 
-  // Define fallback color options
-  const fallbackColorOptions = themeJsonPalette.map((registeredColor) => {
-    return {
-      color: `var(--wp--preset--color--${registeredColor.slug})`,
-      name: registeredColor.name,
-    };
-  });
+	// Define fallback color options
+	const fallbackColorOptions = themeJsonPalette.map((registeredColor) => {
+		return {
+			color: `var(--wp--preset--color--${registeredColor.slug})`,
+			name: registeredColor.name,
+		};
+	});
 
-  // Get available color palettes present in the Full Site Editor
-  const editorSettings = select("core/editor")?.getEditorSettings();
-  const editorPalette = editorSettings?.__experimentalFeatures?.color?.palette;
+	// Get available color palettes present in the Full Site Editor
+	const editorSettings = select('core/editor')?.getEditorSettings();
+	const editorPalette =
+		editorSettings?.__experimentalFeatures?.color?.palette;
 
-  // Function to get the color palettes
-  const createColorOptions = (editorPalette, paletteType) => {
-    return {
-      colors: editorPalette?.[paletteType]?.map((palette) => {
-        return {
-          color: `var(--wp--preset--color--${palette.slug})`,
-          name: palette.name,
-        };
-      }),
-      name: `${paletteType}`,
-    };
-  };
+	// Function to get the color palettes
+	const createColorOptions = (colorPalette, paletteType) => {
+		return {
+			colors: colorPalette?.[paletteType]?.map((palette) => {
+				return {
+					color: `var(--wp--preset--color--${palette.slug})`,
+					name: palette.name,
+				};
+			}),
+			name: `${paletteType}`,
+		};
+	};
 
-  // Available color palettes
-  const defaultColors = createColorOptions(editorPalette, "default");
-  const themeColors = createColorOptions(editorPalette, "theme");
-  const customColors = createColorOptions(editorPalette, "custom");
+	// Available color palettes
+	const defaultColors = createColorOptions(editorPalette, 'default');
+	const themeColors = createColorOptions(editorPalette, 'theme');
+	const customColors = createColorOptions(editorPalette, 'custom');
 
-  // Define color options for the controller
-  const colorOptions = [
-    ...(defaultPalette ? [defaultColors] : []),
-    themeColors,
-    ...(customColors.colors ? [customColors] : []),
-  ];
+	// Define color options for the controller
+	const colorOptions = [
+		...(defaultPalette ? [defaultColors] : []),
+		themeColors,
+		...(customColors.colors ? [customColors] : []),
+	];
 
-  return (
-    <PanelBody
-      title={__("Background color (light mode)", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label="Use transparent background"
-        help={__(
-          "Enable this option to set a transparent background for the sticky navigation bar. This feature is only visible in the frontend.",
-          "caledros-basic-blocks"
-        )}
-        checked={useTransparentBackground}
-        onChange={() => {
-          setUseTransparentBackground((oldValue) => !oldValue);
-          setAttributes({ stickyNavLightBackgroundColor: "#00000000" });
-        }}
-      />
-      {!useTransparentBackground && (
-        <>
-          <label className="cbb-editor-label">
-            {__(
-              "Choose a custom background color for the sticky navigation bar. This feature is only visible in the frontend.",
-              "caledros-basic-blocks"
-            )}
-          </label>
-          <ColorPalette
-            colors={editorPalette ? colorOptions : fallbackColorOptions}
-            value={stickyNavLightBackgroundColor}
-            onChange={(newColor) =>
-              setAttributes({ stickyNavLightBackgroundColor: newColor })
-            }
-            enableAlpha={true}
-            clearable={false}
-          />
-        </>
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Background color (light mode)', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label="Use transparent background"
+				help={__(
+					'Enable this option to set a transparent background for the sticky navigation bar. This feature is only visible in the frontend.',
+					'caledros-basic-blocks'
+				)}
+				checked={useTransparentBackground}
+				onChange={() => {
+					setUseTransparentBackground((oldValue) => !oldValue);
+					setAttributes({
+						stickyNavLightBackgroundColor: '#00000000',
+					});
+				}}
+			/>
+			{!useTransparentBackground && (
+				<>
+					<p className="cbb-editor-label">
+						{__(
+							'Choose a custom background color for the sticky navigation bar. This feature is only visible in the frontend.',
+							'caledros-basic-blocks'
+						)}
+					</p>
+					<ColorPalette
+						colors={
+							editorPalette ? colorOptions : fallbackColorOptions
+						}
+						value={stickyNavLightBackgroundColor}
+						onChange={(newColor) =>
+							setAttributes({
+								stickyNavLightBackgroundColor: newColor,
+							})
+						}
+						enableAlpha={true}
+						clearable={false}
+					/>
+				</>
+			)}
+		</PanelBody>
+	);
 }

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,28 +18,31 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function ShowTagSettings({ attributes, setAttributes }) {
-  const { showTags } = attributes;
+	const { showTags } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Tag options", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Show tag", "caledros-basic-blocks")}
-        help={__("Display the first tag of the post.", "caledros-basic-blocks")}
-        checked={showTags}
-        onChange={(newValue) => {
-          setAttributes({
-            showTags: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Tag options', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__('Show tag', 'caledros-basic-blocks')}
+				help={__(
+					'Display the first tag of the post.',
+					'caledros-basic-blocks'
+				)}
+				checked={showTags}
+				onChange={(newValue) => {
+					setAttributes({
+						showTags: newValue,
+					});
+				}}
+			/>
+		</PanelBody>
+	);
 }

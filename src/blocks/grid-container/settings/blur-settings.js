@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,48 +18,51 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function BlurSettings({ attributes, setAttributes }) {
-  const { containerBlur } = attributes;
+	const { containerBlur } = attributes;
 
-  return (
-    <PanelBody title={__("Blur", "caledros-basic-blocks")} initialOpen={false}>
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable blur", "caledros-basic-blocks")}
-        checked={containerBlur.enabled}
-        onChange={(newValue) => {
-          setAttributes({
-            containerBlur: { ...containerBlur, enabled: newValue },
-          });
-        }}
-      />
-      {containerBlur.enabled && (
-        <>
-          <RangeControl
-            __next40pxDefaultSize
-            __nextHasNoMarginBottom
-            help={__(
-              "Please select the value for the blur filter (px).",
-              "caledros-basic-blocks"
-            )}
-            value={parseInt(containerBlur.value)}
-            max={100}
-            min={0}
-            step={1}
-            onChange={(newValue) =>
-              setAttributes({
-                containerBlur: {
-                  ...containerBlur,
-                  value: `${newValue}px`,
-                },
-              })
-            }
-          />
-        </>
-      )}
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Blur', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__('Enable blur', 'caledros-basic-blocks')}
+				checked={containerBlur.enabled}
+				onChange={(newValue) => {
+					setAttributes({
+						containerBlur: { ...containerBlur, enabled: newValue },
+					});
+				}}
+			/>
+			{containerBlur.enabled && (
+				<>
+					<RangeControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						help={__(
+							'Please select the value for the blur filter (px).',
+							'caledros-basic-blocks'
+						)}
+						value={parseInt(containerBlur.value)}
+						max={100}
+						min={0}
+						step={1}
+						onChange={(newValue) =>
+							setAttributes({
+								containerBlur: {
+									...containerBlur,
+									value: `${newValue}px`,
+								},
+							})
+						}
+					/>
+				</>
+			)}
+		</PanelBody>
+	);
 }

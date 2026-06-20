@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,25 +18,31 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, TextControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, TextControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function LabelSettings({ attributes, setAttributes }) {
-  const { menuLabel } = attributes;
+	const { menuLabel } = attributes;
 
-  return (
-    <PanelBody title={__("Label", "caledros-basic-blocks")} initialOpen={false}>
-      <TextControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__("Type the label for the menu link.", "caledros-basic-blocks")}
-        value={menuLabel}
-        onChange={(newValue) => {
-          setAttributes({
-            menuLabel: newValue,
-          });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Label', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<TextControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Type the label for the menu link.',
+					'caledros-basic-blocks'
+				)}
+				value={menuLabel}
+				onChange={(newValue) => {
+					setAttributes({
+						menuLabel: newValue,
+					});
+				}}
+			/>
+		</PanelBody>
+	);
 }

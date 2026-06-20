@@ -88,8 +88,3 @@ html[data-theme="light"] .cbb-dark-light-switcher__slider::before {
 html[data-theme="dark"] .cbb-dark-light-switcher__slider::before {
   transform: translateX(36px);
 }
-
-/* Hide the switcher checkbox */
-.cbb-dark-light-switcher__checkbox {
-  display: none;
-}

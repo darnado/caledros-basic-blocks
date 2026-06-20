@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,18 +18,18 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { store, getContext } from "@wordpress/interactivity";
-store("mobile-overlay", {
-  actions: {
-    click: () => {
-      const context = getContext();
-      context.visible = !context.visible;
-      const bodyElement = document.querySelector("body");
-      if (context.visible) {
-        bodyElement.classList.add("visible-overlay");
-      } else {
-        bodyElement.classList.remove("visible-overlay");
-      }
-    },
-  },
+import { store, getContext } from '@wordpress/interactivity';
+store('mobile-overlay', {
+	actions: {
+		click: () => {
+			const context = getContext();
+			context.visible = !context.visible;
+			const bodyElement = document.querySelector('body');
+			if (context.visible) {
+				bodyElement.classList.add('visible-overlay');
+			} else {
+				bodyElement.classList.remove('visible-overlay');
+			}
+		},
+	},
 });

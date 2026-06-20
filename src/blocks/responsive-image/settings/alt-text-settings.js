@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,26 +18,31 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, TextControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, TextControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function AltTextSettings({ attributes, setAttributes }) {
-  const { sourceImage } = attributes;
+	const { sourceImage } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Alt text", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <TextControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        onChange={(newValue) => {
-          setAttributes({ sourceImage: { ...sourceImage, alt: newValue } });
-        }}
-        value={sourceImage.alt}
-        help={__("Write the alt text for the image.", "caledros-basic-blocks")}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Alt text', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<TextControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				onChange={(newValue) => {
+					setAttributes({
+						sourceImage: { ...sourceImage, alt: newValue },
+					});
+				}}
+				value={sourceImage.alt}
+				help={__(
+					'Write the alt text for the image.',
+					'caledros-basic-blocks'
+				)}
+			/>
+		</PanelBody>
+	);
 }

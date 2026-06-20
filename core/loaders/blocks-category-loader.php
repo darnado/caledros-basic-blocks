@@ -1,13 +1,19 @@
 <?php
+/**
+ * Loads custom block category
+ *
+ * @package Caledros_Basic_Blocks
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 /**
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
- * 
+ * Copyright (C) 2025-2026  David Arnado
+ *
  * This file is part of Caledros Basic Blocks.
- * 
+ *
  * Caledros Basic Blocks is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -22,16 +28,25 @@ if ( ! defined( 'ABSPATH' ) ) {
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-function caledros_basic_blocks_category_loader( $caledros_basic_blocks_category ) {	
-    array_unshift(
-        $caledros_basic_blocks_category,
-        array(
-            'slug'  => 'caledros-basic-blocks',
-            'title' => 'Caledros Basic Blocks',
-            'icon'  => null,
-        )
-    ); 
+/**
+ * Prepend custom block category
+ *
+ * Prepends 'Caledros Basic Blocks' to the block category list. This callback is
+ * hooked to the 'block_categories_all' filter.
+ *
+ * @param array $caledros_basic_blocks_category Block category list.
+ * @return array Updated block category list.
+ */
+function caledros_basic_blocks_category_loader( $caledros_basic_blocks_category ) {
+	array_unshift(
+		$caledros_basic_blocks_category,
+		array(
+			'slug'  => 'caledros-basic-blocks',
+			'title' => 'Caledros Basic Blocks',
+			'icon'  => null,
+		)
+	);
 	return $caledros_basic_blocks_category;
 }
 
-add_filter('block_categories_all','caledros_basic_blocks_category_loader', 10, 1 ); 
+add_filter( 'block_categories_all', 'caledros_basic_blocks_category_loader', 10, 1 );

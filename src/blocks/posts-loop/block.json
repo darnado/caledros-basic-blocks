@@ -124,6 +124,30 @@
         "authorId": 1,
         "enableAuthorLink": false
       }
+    },
+    "loopStyle": {
+      "type": "string",
+      "default": "style-1"
+    },
+    "postTitleFontFamily": {
+      "type": "string",
+      "default": ""
+    },
+    "postTitleFontWeight": {
+      "type": "number",
+      "default": 400
+    },
+    "postTitleFontStyle": {
+      "type": "string",
+      "default": "normal"
+    },
+    "postTitleFontSize": {
+      "type": "string",
+      "default": "18px"
+    },
+    "postTitleLetterSpacing": {
+      "type": "string",
+      "default": "normal"
     }
   },
   "supports": {

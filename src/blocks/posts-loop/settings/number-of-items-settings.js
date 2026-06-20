@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,29 +18,31 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, RangeControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, RangeControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function NumberOfItemsSettings({ attributes, setAttributes }) {
-  const { numberOfItems } = attributes;
-  return (
-    <PanelBody
-      title={__("No. of items", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <RangeControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Please select the number of items to be displayed per page.",
-          "caledros-basic-blocks"
-        )}
-        value={numberOfItems}
-        max={20}
-        min={1}
-        step={1}
-        onChange={(newValue) => setAttributes({ numberOfItems: newValue })}
-      />
-    </PanelBody>
-  );
+	const { numberOfItems } = attributes;
+	return (
+		<PanelBody
+			title={__('No. of items', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<RangeControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Please select the number of items to be displayed per page.',
+					'caledros-basic-blocks'
+				)}
+				value={numberOfItems}
+				max={20}
+				min={1}
+				step={1}
+				onChange={(newValue) =>
+					setAttributes({ numberOfItems: newValue })
+				}
+			/>
+		</PanelBody>
+	);
 }

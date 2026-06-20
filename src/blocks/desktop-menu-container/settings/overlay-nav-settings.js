@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,27 +18,27 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function OverlayNavSettings({ attributes, setAttributes }) {
-  const { overlayNav } = attributes;
+	const { overlayNav } = attributes;
 
-  return (
-    <PanelBody
-      title={__("Overlay navigation", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ToggleControl
-        __nextHasNoMarginBottom
-        label={__("Enable overlay navigation", "caledros-basic-blocks")}
-        help={__(
-          "This option transforms the navigation bar into an overlay, allowing it to overlap the website's content.",
-          "caledros-basic-blocks"
-        )}
-        checked={overlayNav}
-        onChange={(newValue) => setAttributes({ overlayNav: newValue })}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('Overlay navigation', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ToggleControl
+				__nextHasNoMarginBottom
+				label={__('Enable overlay navigation', 'caledros-basic-blocks')}
+				help={__(
+					"This option transforms the navigation bar into an overlay, allowing it to overlap the website's content.",
+					'caledros-basic-blocks'
+				)}
+				checked={overlayNav}
+				onChange={(newValue) => setAttributes({ overlayNav: newValue })}
+			/>
+		</PanelBody>
+	);
 }

@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -18,53 +18,53 @@
  * with Caledros Basic Blocks; if not, see <https://www.gnu.org/licenses/>.
  */
 
-import { PanelBody, ComboboxControl } from "@wordpress/components";
-import { useEntityRecords } from "@wordpress/core-data";
-import { __ } from "@wordpress/i18n";
+import { PanelBody, ComboboxControl } from '@wordpress/components';
+import { useEntityRecords } from '@wordpress/core-data';
+import { __ } from '@wordpress/i18n';
 
 export default function CardFiveTemplateSettings({
-  attributes,
-  setAttributes,
+	attributes,
+	setAttributes,
 }) {
-  const { cardFiveSlug } = attributes;
+	const { cardFiveSlug } = attributes;
 
-  let overlayOptions = [];
+	let overlayOptions = [];
 
-  // Fetch available template parts
-  const { hasResolved, records } = useEntityRecords(
-    "postType",
-    "wp_template_part",
-    { per_page: -1 }
-  );
+	// Fetch available template parts
+	const { hasResolved, records } = useEntityRecords(
+		'postType',
+		'wp_template_part',
+		{ per_page: -1 }
+	);
 
-  // Recover the available template parts for the mega menu
-  if (hasResolved) {
-    overlayOptions = records
-      .filter((item) => item.area === "slider-card")
-      .map((item) => ({
-        label: item.title.rendered,
-        value: item.slug,
-      }));
-  }
+	// Recover the available template parts for the mega menu
+	if (hasResolved) {
+		overlayOptions = records
+			.filter((item) => item.area === 'slider-card')
+			.map((item) => ({
+				label: item.title.rendered,
+				value: item.slug,
+			}));
+	}
 
-  return (
-    <PanelBody
-      title={__("5th Card Template", "caledros-basic-blocks")}
-      initialOpen={false}
-    >
-      <ComboboxControl
-        __next40pxDefaultSize
-        __nextHasNoMarginBottom
-        help={__(
-          "Select the template for the 5th card.",
-          "caledros-basic-blocks"
-        )}
-        value={cardFiveSlug}
-        options={overlayOptions}
-        onChange={(slugValue) => {
-          setAttributes({ cardFiveSlug: slugValue });
-        }}
-      />
-    </PanelBody>
-  );
+	return (
+		<PanelBody
+			title={__('5th Card Template', 'caledros-basic-blocks')}
+			initialOpen={false}
+		>
+			<ComboboxControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				help={__(
+					'Select the template for the 5th card.',
+					'caledros-basic-blocks'
+				)}
+				value={cardFiveSlug}
+				options={overlayOptions}
+				onChange={(slugValue) => {
+					setAttributes({ cardFiveSlug: slugValue });
+				}}
+			/>
+		</PanelBody>
+	);
 }

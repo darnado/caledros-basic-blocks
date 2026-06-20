@@ -1,6 +1,6 @@
 /*
  * Caledros Basic Blocks - Easy to use Gutenberg blocks
- * Copyright (C) 2025  David Arnado
+ * Copyright (C) 2025-2026  David Arnado
  * 
  * This file is part of Caledros Basic Blocks.
  * 
@@ -50,6 +50,7 @@
 
 .cbb-desktop-menu-container {
   background-color: #00000000;
+  border: none !important;
 }
 
 /*Desktop container with box shadow*/
