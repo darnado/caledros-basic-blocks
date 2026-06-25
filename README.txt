@@ -154,7 +154,7 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 
 **Fixed**
 
-* CSS breakpoints. Now several blocks used updated breakpoints fully compatible with the WordPress editor. These blocks are the following: category loop, desktop menu container, flex container, grid container, mobile menu container, posts loop, and sidebar menu.
+* CSS breakpoints. Now several blocks use updated breakpoints fully compatible with the WordPress editor. These blocks are the following: category loop, desktop menu container, flex container, grid container, mobile menu container, posts loop, and sidebar menu.
 
 = 4.0.0 - 2026-06-19 =
 
