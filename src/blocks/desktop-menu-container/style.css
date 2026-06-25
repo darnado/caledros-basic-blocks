@@ -89,7 +89,7 @@
 }
 
 /*Hide desktop menu container in small devices and devices without cursors*/
-@media (max-width: 810px), (min-width: 811px) and (hover: none) {
+@media (max-width: 782px), (min-width: 783px) and (hover: none) {
   .cbb-desktop-menu-container {
     display: none;
   }

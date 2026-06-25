@@ -115,7 +115,7 @@
 }
 
 /*Grid container (Tablet)*/
-@media (max-width: 810px) {
+@media (max-width: 782px) {
   .cbb-grid-container
     > .block-editor-inner-blocks
     > .block-editor-block-list__layout {
@@ -124,7 +124,7 @@
 }
 
 /*Grid container (Mobile)*/
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .cbb-grid-container
     > .block-editor-inner-blocks
     > .block-editor-block-list__layout {

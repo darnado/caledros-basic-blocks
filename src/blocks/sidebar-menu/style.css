@@ -38,7 +38,7 @@
 }
 
 /*The sidebar occupies the whole screen in small devices (smartphones)*/
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .cbb-sidebar-menu__container {
     width: 100%;
   }

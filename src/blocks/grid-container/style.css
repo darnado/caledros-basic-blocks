@@ -53,14 +53,14 @@
 }
 
 /*Grid container (Tablet)*/
-@media (max-width: 810px) {
+@media (max-width: 782px) {
   .cbb-grid-container {
     grid-template-columns: repeat(var(--cbb-col-md, 1), 1fr);
   }
 }
 
 /*Grid container (Mobile)*/
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .cbb-grid-container {
     grid-template-columns: repeat(var(--cbb-col-sm, 1), 1fr);
   }
@@ -88,14 +88,14 @@ html[data-theme="dark"] .cbb-grid-container--has-border {
 }
 
 /*Full width container for mobile and tablets*/
-@media (max-width: 810px) {
+@media (max-width: 782px) {
   .cbb-grid-container--full-width-tablet {
     max-width: 100% !important;
   }
 }
 
 /*Full width container for mobile devices*/
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .cbb-grid-container--full-width-mobile {
     max-width: 100% !important;
   }

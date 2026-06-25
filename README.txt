@@ -4,7 +4,7 @@ Contributors: @darnado
 Tags: gutenberg, block editor, custom blocks
 Requires at least: 6.7
 Tested up to: 7.0
-Stable tag: 4.0.0
+Stable tag: 4.0.1
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -149,6 +149,12 @@ However, other third party plugins can slow down your website if they are used t
 == Changelog ==
 
 This changelog format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Also, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+= 4.0.1 - 2026-06-25 =
+
+**Fixed**
+
+* CSS breakpoints. Now several blocks use updated breakpoints fully compatible with the WordPress editor. These blocks are the following: category loop, desktop menu container, flex container, grid container, mobile menu container, posts loop, and sidebar menu.
 
 = 4.0.0 - 2026-06-19 =
 
@@ -384,6 +390,9 @@ This changelog format is based on [Keep a Changelog](https://keepachangelog.com/
 * CSS stylesheet preloader for improved performance. This preloader can be disabled.
 
 == Upgrade Notice ==
+
+= 4.0.1 =
+This update fixes the CSS breakpoints of several blocks.
 
 = 4.0.0 =
 This update removes the unique identifier control in the Slider and Image Gallery blocks.
