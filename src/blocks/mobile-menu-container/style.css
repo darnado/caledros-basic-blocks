@@ -97,7 +97,7 @@
 
 /*BLOCK VISIBILITY*/
 /*Hide mobile menu container in large devices with cursors*/
-@media (min-width: 811px) and (hover: hover) {
+@media (min-width: 783px) and (hover: hover) {
   .cbb-mobile-menu-container {
     display: none;
   }
